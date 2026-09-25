@@ -141,3 +141,54 @@ state_machines:
       success_requires:
         - fresh_target_dog_pulse
       failure_scope: target_local
+
+  STOP_BALL:
+    initial_state: READY
+    description: One reusable cancellation request channel bound to an exact FETCH_BALL job_id and generation.
+
+    states:
+      READY:
+        terminal: false
+        body_writers: []
+        meaning: No cancellation request is active.
+      LOADING:
+        terminal: false
+        body_writers: [COACH]
+        meaning: COACH owns the channel while writing and verifying a cancellation request.
+      REQUESTED:
+        terminal: false
+        body_writers: []
+        meaning: A complete immutable cancellation request is visible to FETCHER.
+      RETURNING:
+        terminal: false
+        body_writers: [FETCHER]
+        meaning: FETCHER is writing and verifying acknowledgement evidence.
+      ACKNOWLEDGED:
+        terminal: true
+        body_writers: []
+        meaning: FETCHER returned a stable acknowledgement for the exact requested job generation.
+      RECYCLING:
+        terminal: false
+        body_writers: [COACH]
+        meaning: COACH is clearing the reusable cancellation channel.
+
+    transitions:
+      - {from: READY, to: LOADING, actor: COACH, reason: reserve_channel}
+      - {from: LOADING, to: REQUESTED, actor: COACH, reason: request_body_verified}
+      - {from: LOADING, to: RECYCLING, actor: COACH, reason: abandon_unpublished_request}
+
+      - {from: REQUESTED, to: RETURNING, actor: FETCHER, reason: matching_request_observed}
+      - {from: REQUESTED, to: RECYCLING, actor: COACH, reason: request_expired_or_job_already_terminal}
+
+      - {from: RETURNING, to: ACKNOWLEDGED, actor: FETCHER, reason: acknowledgement_body_verified}
+
+      - {from: ACKNOWLEDGED, to: RECYCLING, actor: COACH, reason: acknowledgement_consumed}
+      - {from: RECYCLING, to: READY, actor: COACH, reason: channel_cleared_and_verified}
+
+    match_rules:
+      required:
+        - fetch_ball_object_id
+        - job_id
+        - generation
+      stale_or_mismatched_request: do_not_cancel
+      cancellation_result_lives_on: FETCH_BALL
