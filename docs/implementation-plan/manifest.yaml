@@ -38,7 +38,7 @@ steps:
     title: "STOP_BALL State Machine"
     status: IN_PROGRESS
     evidence: []
-    amendments: []
+    amendments: [docs/implementation-plan/amendments/IP-06/A-001-safe-stop-ball-staging.md]
   IP-07:
     title: "WATCHDOG Control States"
     status: PLANNED
