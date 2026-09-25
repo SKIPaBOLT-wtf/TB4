@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-11
+current_step: IP-12
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -61,12 +61,12 @@ steps:
     amendments: []
   IP-11:
     title: "FETCH_BALL Body Schema"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-11/E-001-fetch-ball-body-schema.md]
     amendments: []
   IP-12:
     title: "WAKE_BONE and STOP_BALL Body Schemas"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-13:
