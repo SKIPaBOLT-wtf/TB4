@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "protocol_major": 1,
+  "protocol_minor": 0,
+  "generation": 11,
+  "operation_id": "stop-1700002000-a1b2c3d4",
+  "given_at": 1700002000,
+  "expires_at": 1700002060,
+  "started_at": 1700002002,
+  "finished_at": 1700002005,
+  "run_limit_s": 60,
+  "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "result_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "artifact_refs": [],
+  "fetch_ball_object_id": "drive-file-fetch-ball-target-a",
+  "job_id": "job-1700000400-e1f2a3b4",
+  "request_reason_code": "USER_CANCEL",
+  "ack_code": "CANCEL_SIGNALLED",
+  "acknowledged_at": 1700002005
+}
