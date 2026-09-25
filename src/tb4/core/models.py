@@ -48,7 +48,10 @@ class ArtifactId:
     value: str
 
     def __post_init__(self) -> None:
-        _bounded_text(self.value, name="artifact_id", minimum=1, maximum=256, pattern=_ID_RE)
+        if not isinstance(self.value, str):
+            raise TypeError("artifact_id must be a string")
+        if not 1 <= len(self.value) <= 256:
+            raise ValueError("artifact_id length must be between 1 and 256")
 
     def __str__(self) -> str:
         return self.value
