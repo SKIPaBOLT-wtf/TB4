@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "protocol_major": 1,
+  "device_id": "target-a",
+  "sequence": 11,
+  "observed_at": 1700003040,
+  "published_at": 1700003040,
+  "reachability": "OFFLINE",
+  "probe_kind": "MULTI",
+  "addresses": [],
+  "mac_address": "02:00:00:00:00:10"
+}
