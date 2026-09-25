@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "protocol_major": 1,
+  "device_id": "target-a",
+  "reported_at": 1700003080,
+  "source": "FETCHER",
+  "severity": "BLOCKING",
+  "fault_code": "LOCAL_PERMISSION_FAILURE",
+  "description": "Fetcher self-check cannot access its configured working directory.",
+  "first_seen_at": 1700003075,
+  "last_seen_at": 1700003080,
+  "occurrence_count": 2
+}
