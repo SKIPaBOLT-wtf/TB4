@@ -1,0 +1,348 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/fetch-ball.schema.json",
+  "title": "TB4 FETCH_BALL Body",
+  "description": "Object-specific FETCH_BALL body layered on the common control envelope. Drive filename state remains authoritative lifecycle state.",
+  "type": "object",
+  "required": [
+    "payload_source",
+    "payload_type",
+    "inline_payload",
+    "payload_artifact_id",
+    "runtime_hint",
+    "result_code",
+    "reason_code",
+    "exit_code",
+    "stdout_tail",
+    "stderr_tail",
+    "effects_known",
+    "completed_effects",
+    "result_artifact_ids"
+  ],
+  "properties": {
+    "payload_source": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "INLINE",
+        "ARTIFACT",
+        null
+      ],
+      "description": "Exactly one request payload source once publishable. Null is allowed while idle/recycling."
+    },
+    "payload_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "SHELL",
+        "POWERSHELL",
+        "PYTHON",
+        "EXEC",
+        "OTHER",
+        null
+      ]
+    },
+    "inline_payload": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 8192,
+      "description": "Small inline payload only; larger scripts belong in TOY_BOX."
+    },
+    "payload_artifact_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "runtime_hint": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._+:/ -]+$",
+      "description": "Public-safe runtime hint such as pwsh, bash, python3, or executable family."
+    },
+    "result_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "DONE",
+        "PARTIAL",
+        "FAILED",
+        "CANCELLED",
+        "GONE",
+        null
+      ]
+    },
+    "reason_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Z0-9_]+$"
+    },
+    "exit_code": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": -2147483648,
+      "maximum": 2147483647
+    },
+    "stdout_tail": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 4096
+    },
+    "stderr_tail": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 4096
+    },
+    "effects_known": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "NONE",
+        "PARTIAL",
+        "KNOWN",
+        "UNKNOWN",
+        null
+      ]
+    },
+    "completed_effects": {
+      "type": "array",
+      "maxItems": 32,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256
+      }
+    },
+    "result_artifact_ids": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "control-envelope.schema.json"
+    },
+    {
+      "if": {
+        "properties": {
+          "payload_source": {
+            "const": "INLINE"
+          }
+        },
+        "required": [
+          "payload_source"
+        ]
+      },
+      "then": {
+        "properties": {
+          "inline_payload": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8192
+          },
+          "payload_artifact_id": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "payload_source": {
+            "const": "ARTIFACT"
+          }
+        },
+        "required": [
+          "payload_source"
+        ]
+      },
+      "then": {
+        "properties": {
+          "inline_payload": {
+            "type": "null"
+          },
+          "payload_artifact_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "result_code": {
+            "const": "PARTIAL"
+          }
+        },
+        "required": [
+          "result_code"
+        ]
+      },
+      "then": {
+        "properties": {
+          "effects_known": {
+            "enum": [
+              "PARTIAL",
+              "KNOWN"
+            ]
+          },
+          "completed_effects": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 32,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "result_code": {
+            "const": "GONE"
+          }
+        },
+        "required": [
+          "result_code"
+        ]
+      },
+      "then": {
+        "properties": {
+          "effects_known": {
+            "const": "UNKNOWN"
+          },
+          "exit_code": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "result_code": {
+            "const": "DONE"
+          }
+        },
+        "required": [
+          "result_code"
+        ]
+      },
+      "then": {
+        "properties": {
+          "effects_known": {
+            "const": "KNOWN"
+          }
+        }
+      }
+    }
+  ],
+  "propertyNames": {
+    "not": {
+      "enum": [
+        "state",
+        "lifecycle_state",
+        "filename_state"
+      ]
+    }
+  },
+  "unevaluatedProperties": false,
+  "$defs": {
+    "publishable_request": {
+      "allOf": [
+        {
+          "$ref": "#"
+        },
+        {
+          "properties": {
+            "operation_id": {
+              "type": "string"
+            },
+            "payload_source": {
+              "enum": [
+                "INLINE",
+                "ARTIFACT"
+              ]
+            },
+            "payload_type": {
+              "type": "string"
+            },
+            "payload_sha256": {
+              "type": "string"
+            },
+            "result_code": {
+              "type": "null"
+            }
+          }
+        }
+      ]
+    },
+    "terminal_result": {
+      "allOf": [
+        {
+          "$ref": "#"
+        },
+        {
+          "properties": {
+            "operation_id": {
+              "type": "string"
+            },
+            "result_code": {
+              "enum": [
+                "DONE",
+                "PARTIAL",
+                "FAILED",
+                "CANCELLED",
+                "GONE"
+              ]
+            },
+            "finished_at": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "result_sha256": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
