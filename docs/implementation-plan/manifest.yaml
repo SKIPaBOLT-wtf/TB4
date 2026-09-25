@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-09
+current_step: IP-10
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -51,12 +51,12 @@ steps:
     amendments: []
   IP-09:
     title: "Canonical Drive Tree Blueprint"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-09/E-001-drive-tree-blueprint.md]
     amendments: []
   IP-10:
     title: "Common Control Envelope Schema"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-11:
