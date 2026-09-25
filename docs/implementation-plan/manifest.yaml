@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-16
+current_step: IP-17
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -86,12 +86,12 @@ steps:
     amendments: []
   IP-16:
     title: "Protocol Validator CLI"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-16/E-001-protocol-validator-cli.md]
     amendments: []
   IP-17:
     title: "Core Python Models"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-18:
