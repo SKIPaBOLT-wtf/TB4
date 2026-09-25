@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-02
+current_step: IP-03
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -16,12 +16,12 @@ steps:
     amendments: []
   IP-02:
     title: "Canonical Repository Skeleton"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-02/E-001-skeleton-and-ci.md]
     amendments: []
   IP-03:
     title: "Canonical Vocabulary Registry"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-04:
