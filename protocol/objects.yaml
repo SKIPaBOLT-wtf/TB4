@@ -1,0 +1,135 @@
+schema_version: 1
+protocol_major: 1
+
+roles:
+  COACH:
+    purpose: AI-side orchestration and result interpretation
+    owns:
+      - target_selection
+      - work_intent
+      - run_limit_selection
+      - result_interpretation
+    must_not_own:
+      - drive_retry_loops
+      - lan_discovery
+      - local_process_execution
+
+  WATCHDOG:
+    purpose: LAN coordination, wake/bootstrap, tree health, and global control-plane health
+    owns:
+      - lan_observation
+      - target_wake
+      - fetcher_bootstrap
+      - tree_audit
+      - tree_repair
+      - retention
+      - global_blocking_fault
+    must_not_own:
+      - arbitrary_target_job_execution
+
+  FETCHER:
+    purpose: target-side claim, execution coordination, heartbeat, cancellation, and result return
+    owns:
+      - fetch_ball_claim
+      - execution_coordination
+      - fetcher_heartbeat
+      - cancellation
+      - result_return
+      - idle_shutdown
+    must_not_own:
+      - lan_discovery
+      - global_watchdog_health
+
+  RUNNER:
+    purpose: local subprocess and script execution only
+    owns:
+      - child_process_lifecycle
+      - stdout_capture
+      - stderr_capture
+      - process_timeout
+      - process_termination
+    must_not_own:
+      - drive_state
+      - protocol_transitions
+
+directories:
+  GENESIS:
+    purpose: reconstructable canonical bootstrap metadata
+  SETTINGS:
+    purpose: public-safe runtime configuration objects
+  DOG_HOUSE:
+    purpose: active WATCHDOG control objects
+  BALL_PARK:
+    purpose: deterministic per-device control trees
+  KENNEL:
+    purpose: per-device wake/bootstrap channel
+  PLAYGROUND:
+    purpose: per-device active work and cancellation channels
+  TOY_BOX:
+    purpose: bounded request and result artifacts
+  BONEYARD:
+    purpose: short-lived terminal history and evidence
+  STRAY_YARD:
+    purpose: observed but unregistered LAN devices
+  DOG_POUND:
+    purpose: quarantined ambiguous, duplicate, or malformed objects
+
+fixed_objects:
+  START_HERE:
+    purpose: remote protocol entrypoint
+  PARK_MAP:
+    purpose: canonical mapping from logical objects to stable Drive object IDs
+  DOG_TAG:
+    purpose: stable device identity and capability declaration
+  DOG_PULSE:
+    purpose: executor or watchdog heartbeat evidence
+  DOG_SNIFF:
+    purpose: WATCHDOG LAN observation evidence
+
+stateful_objects:
+  FETCH_BALL:
+    purpose: one reusable work channel per target in protocol v1
+    states:
+      - READY
+      - LOADING
+      - TOSS
+      - CHEW
+      - RETURNING
+      - DONE
+      - PARTIAL
+      - FAILED
+      - CANCELLED
+      - GONE
+      - RECYCLING
+
+  WAKE_BONE:
+    purpose: one reusable wake/bootstrap request channel per target
+    states:
+      - READY
+      - LOADING
+      - TOSS
+      - CHEW
+      - DONE
+      - FAILED
+      - RECYCLING
+
+  STOP_BALL:
+    purpose: cancellation request channel bound to one job generation
+    states:
+      - READY
+      - REQUESTED
+      - ACKNOWLEDGED
+
+  WATCHDOG_MODE:
+    purpose: watchdog activity mode
+    filenames:
+      SNOOZE: DOG_SNOOZE
+      AWAKE: DOG_AWAKE
+
+  WATCHDOG_FAULT:
+    purpose: global watchdog or control-plane blocking state
+    root_name: DOG_SHIT
+    states:
+      - CLEAN
+      - BLOCKING
+      - REVIEWED
