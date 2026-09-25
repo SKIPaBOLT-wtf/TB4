@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-15
+current_step: IP-16
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -81,12 +81,12 @@ steps:
     amendments: []
   IP-15:
     title: "Configuration Relationship Validator Specification"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-15/E-001-config-rule-spec.md]
     amendments: []
   IP-16:
     title: "Protocol Validator CLI"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-17:
