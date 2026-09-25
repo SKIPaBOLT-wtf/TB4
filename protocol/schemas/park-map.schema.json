@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/park-map.schema.json",
+  "title": "TB4 PARK_MAP",
+  "description": "Canonical exact-ID index. Logical references are deterministic; object IDs are stable provider identities. Runtime lookup must fail closed rather than scan when a reference is absent or ambiguous.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "protocol_major",
+    "map_generation",
+    "root_id",
+    "devices",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "protocol_major": {
+      "type": "integer",
+      "const": 1
+    },
+    "map_generation": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "root_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "devices": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[A-Za-z0-9._-]{1,128}$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "device_key"
+        ],
+        "properties": {
+          "device_key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9._-]+$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "entries": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[A-Z0-9._:-]+$"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256
+      }
+    }
+  },
+  "additionalProperties": false
+}
