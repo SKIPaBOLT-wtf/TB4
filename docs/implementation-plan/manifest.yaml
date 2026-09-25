@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-19
+current_step: IP-20
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -101,12 +101,12 @@ steps:
     amendments: []
   IP-19:
     title: "FenceGuard"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-19/E-001-fenceguard.md]
     amendments: []
   IP-20:
     title: "Clock and Deadline Helpers"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-21:
