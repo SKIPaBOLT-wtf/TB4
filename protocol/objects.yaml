@@ -117,8 +117,11 @@ stateful_objects:
     purpose: cancellation request channel bound to one job generation
     states:
       - READY
+      - LOADING
       - REQUESTED
+      - RETURNING
       - ACKNOWLEDGED
+      - RECYCLING
 
   WATCHDOG_MODE:
     purpose: watchdog activity mode
