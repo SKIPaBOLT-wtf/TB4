@@ -1,0 +1,79 @@
+schema_version: 1
+protocol_major: 1
+
+objects:
+  DOG_TAG:
+    authority: declared_identity_and_capabilities
+    mutable_frequency: rare
+    fields_later_defined_by_schema:
+      - device_id
+      - hostname
+      - os_family
+      - capabilities
+    semantics:
+      hostname_is_identity: false
+      capabilities_are_reachability: false
+
+  DOG_PULSE:
+    authority: fetcher_readiness_evidence
+    mutable_frequency: heartbeat
+    semantics:
+      fresh_pulse_implies_fetcher_ready: true
+      stale_pulse_implies_fetcher_ready: false
+      sequence_must_advance: true
+
+  DOG_SNIFF:
+    authority: watchdog_lan_observation
+    mutable_frequency: write_on_change_plus_periodic_freshness
+    reachability_values:
+      - ONLINE
+      - OFFLINE
+      - UNKNOWN
+    semantics:
+      online_implies_fetcher_ready: false
+      offline_is_not_global_fault: true
+
+resolution:
+  - when:
+      dog_pulse: FRESH
+      dog_sniff: ANY
+    conclude:
+      fetcher: READY
+      host: REACHABLE_BY_PROTOCOL
+      note: A fresh FETCHER pulse outranks a conflicting local probe for protocol readiness.
+
+  - when:
+      dog_pulse: STALE_OR_MISSING
+      dog_sniff: ONLINE
+    conclude:
+      fetcher: NOT_READY
+      host: ONLINE
+
+  - when:
+      dog_pulse: STALE_OR_MISSING
+      dog_sniff: OFFLINE
+    conclude:
+      fetcher: NOT_READY
+      host: OFFLINE
+
+  - when:
+      dog_pulse: STALE_OR_MISSING
+      dog_sniff: STALE_OR_UNKNOWN
+    conclude:
+      fetcher: UNKNOWN
+      host: UNKNOWN
+
+conflict_rules:
+  fresh_pulse_with_offline_sniff:
+    result: FETCHER_READY_WITH_PROBE_CONFLICT
+    action: keep_protocol_ready_but_refresh_sniff
+  no_observation_is_not_offline:
+    result: UNKNOWN
+
+publication:
+  dog_sniff:
+    local_probe_may_be_frequent: true
+    remote_write_on_unchanged_probe: false
+    periodic_freshness_republish: true
+  dog_pulse:
+    bounded_by_configured_heartbeat: true
