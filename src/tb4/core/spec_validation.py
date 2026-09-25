@@ -265,8 +265,44 @@ def _validate_tree(
     walk(tree, "")
 
 
+def _eval_value(expr: Any, config: dict[str, Any]) -> Any:
+    if isinstance(expr, (int, float)):
+        return expr
+    if isinstance(expr, dict) and set(expr) == {"ref"}:
+        return _config_ref(config, expr["ref"])
+    if not isinstance(expr, dict):
+        raise ValueError(f"unsupported value expression {expr!r}")
+
+    op = expr.get("op")
+    if op == "mul":
+        result = 1
+        for item in expr["args"]:
+            result *= _eval_value(item, config)
+        return result
+    if op == "add":
+        return sum(_eval_value(item, config) for item in expr["args"])
+    if op == "sum":
+        return sum(_eval_value(item, config) for item in _eval_value(expr["value"], config))
+    raise ValueError(f"unsupported arithmetic operator {op!r}")
+
+
+def _eval_check(check: dict[str, Any], config: dict[str, Any]) -> bool:
+    op = check.get("op")
+    if op == "gte":
+        return _eval_value(check["left"], config) >= _eval_value(check["right"], config)
+    if op == "lte":
+        return _eval_value(check["left"], config) <= _eval_value(check["right"], config)
+    if op == "nondecreasing":
+        values = _eval_value(check["value"], config)
+        return values == sorted(values)
+    raise ValueError(f"unsupported rule operator {op!r}")
+
+
 def _validate_config_rules(
-    rules: dict[str, Any], config: dict[str, Any], errors: list[SpecError]
+    rules: dict[str, Any],
+    config: dict[str, Any],
+    errors: list[SpecError],
+    warnings: list[SpecError],
 ) -> None:
     allowed_ops = {"gte", "lte", "mul", "add", "sum", "nondecreasing"}
     seen: set[str] = set()
