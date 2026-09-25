@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-13
+current_step: IP-14
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -71,12 +71,12 @@ steps:
     amendments: []
   IP-13:
     title: "DOG_TAG, DOG_PULSE, DOG_SNIFF, and Fault Schemas"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-13/E-001-status-identity-schemas.md]
     amendments: []
   IP-14:
     title: "Configuration Defaults"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-15:
