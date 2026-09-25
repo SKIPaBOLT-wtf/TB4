@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "protocol_major": 1,
+  "device_id": "target-a",
+  "sequence": 12,
+  "observed_at": 0,
+  "published_at": 1700003060,
+  "reachability": "UNKNOWN",
+  "probe_kind": "NONE",
+  "addresses": [],
+  "mac_address": null
+}
