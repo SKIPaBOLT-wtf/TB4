@@ -272,3 +272,42 @@ state_machines:
       repair_actions_allowed_in_BLOCKING: true
       timeout_alone_clears_fault: false
       clear_requires_invariant_revalidation: true
+
+  TARGET_LEASH:
+    initial_state: CLEAR
+    description: Per-target TB4 infrastructure fault state.
+
+    states:
+      CLEAR:
+        terminal: false
+        body_writers: [WATCHDOG, FETCHER]
+        filename: LEASH_CLEAR
+        meaning: No known target-local infrastructure fault currently blocks TB4 operation for this target.
+      TANGLED:
+        terminal: false
+        body_writers: [WATCHDOG, FETCHER]
+        filename: LEASH_TANGLED
+        meaning: A target-local infrastructure fault prevents reliable TB4 operation for this target.
+
+    transitions:
+      - {from: CLEAR, to: TANGLED, actor: WATCHDOG, reason: target_infrastructure_fault_observed}
+      - {from: CLEAR, to: TANGLED, actor: FETCHER, reason: local_self_check_failed}
+      - {from: TANGLED, to: CLEAR, actor: WATCHDOG, reason: target_invariant_revalidated}
+      - {from: TANGLED, to: CLEAR, actor: FETCHER, reason: local_invariant_revalidated}
+
+    scope_rules:
+      global_blocking: false
+      timeout_alone_clears_fault: false
+      examples:
+        tangled:
+          - fetcher_service_broken
+          - target_drive_authorization_unavailable
+          - bootstrap_configuration_invalid
+          - incompatible_target_protocol
+          - local_permission_failure
+        not_tangled_by_itself:
+          - host_temporarily_offline
+          - wake_timeout
+          - one_job_failed
+          - one_job_partial
+          - one_job_gone
