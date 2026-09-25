@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "protocol_major": 1,
+  "device_id": "target-a",
+  "reported_at": 1700003070,
+  "source": "WATCHDOG",
+  "severity": "NONE",
+  "fault_code": null,
+  "description": null,
+  "first_seen_at": 0,
+  "last_seen_at": 0,
+  "occurrence_count": 0
+}
