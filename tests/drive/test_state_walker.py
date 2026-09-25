@@ -67,8 +67,8 @@ def test_immediate_success_uses_exact_object_only() -> None:
 
     assert report.outcome is StateWalkOutcome.NEW_SUCCESS
     assert backend.operation_counts["rename"] == 1
-    assert backend.operation_counts["list_children"] == 0
-    assert backend.operation_counts["replace_text"] == 0
+    assert backend.operation_counts.get("list_children", 0) == 0
+    assert backend.operation_counts.get("replace_text", 0) == 0
 
     metadata = backend.get_metadata(object_id)
     assert metadata.value is not None
@@ -92,7 +92,7 @@ def test_delayed_visibility_confirms_without_second_rename() -> None:
     assert report.outcome is StateWalkOutcome.NEW_SUCCESS
     assert report.confirmation_probes == 3
     assert backend.operation_counts["rename"] == 1
-    assert backend.operation_counts["list_children"] == 0
+    assert backend.operation_counts.get("list_children", 0) == 0
 
 
 def test_ambiguous_rename_that_applied_is_reconciled_without_replay() -> None:
@@ -170,7 +170,7 @@ def test_wrong_expected_state_is_conflict_without_mutation() -> None:
     )
 
     assert report.outcome is StateWalkOutcome.STATE_CONFLICT
-    assert backend.operation_counts["rename"] == 0
+    assert backend.operation_counts.get("rename", 0) == 0
 
 
 def test_illegal_transition_is_conflict_without_remote_mutation() -> None:
@@ -187,7 +187,7 @@ def test_illegal_transition_is_conflict_without_remote_mutation() -> None:
     )
 
     assert report.outcome is StateWalkOutcome.STATE_CONFLICT
-    assert backend.operation_counts["rename"] == 0
+    assert backend.operation_counts.get("rename", 0) == 0
 
 
 def test_stale_generation_fence_blocks_rename() -> None:
@@ -210,7 +210,7 @@ def test_stale_generation_fence_blocks_rename() -> None:
     )
 
     assert report.outcome is StateWalkOutcome.STALE_FENCE
-    assert backend.operation_counts["rename"] == 0
+    assert backend.operation_counts.get("rename", 0) == 0
 
 
 def test_retry_exhaustion_is_failure_with_exact_attempt_count() -> None:
@@ -246,4 +246,4 @@ def test_already_visible_target_is_idempotent_success_without_rename() -> None:
     )
 
     assert report.outcome is StateWalkOutcome.IDEMPOTENT_SUCCESS
-    assert backend.operation_counts["rename"] == 0
+    assert backend.operation_counts.get("rename", 0) == 0
