@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-08
+current_step: IP-09
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -46,12 +46,12 @@ steps:
     amendments: []
   IP-08:
     title: "Device Observation and Local Fault Semantics"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-08/E-001-device-observation-and-leash.md]
     amendments: []
   IP-09:
     title: "Canonical Drive Tree Blueprint"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-10:
