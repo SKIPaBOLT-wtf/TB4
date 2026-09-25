@@ -1,0 +1,44 @@
+# TB4 public-safe default configuration.
+# All time values use seconds unless the key explicitly ends in _ms.
+
+[drive]
+confirm_backoff_ms = [250, 500, 1000, 2000, 4000, 8000]
+transition_attempts = 3
+full_audit_interval_s = 21600
+
+[watchdog]
+heartbeat_idle_s = 30
+heartbeat_active_s = 10
+stale_idle_s = 90
+stale_active_s = 35
+awake_lease_s = 1800
+clock_skew_tolerance_s = 10
+
+[network]
+known_device_probe_s = 20
+known_device_publish_s = 300
+stray_scan_s = 600
+
+[wake]
+wol_initial_wait_s = 10
+probe_interval_s = 5
+wake_deadline_s = 90
+
+[fetcher]
+busy_heartbeat_s = 10
+idle_heartbeat_s = 60
+idle_exit_s = 600
+gone_grace_s = 30
+
+[job]
+accept_ttl_s = 120
+default_run_limit_s = 300
+max_run_limit_s = 21600
+inline_result_max_bytes = 32768
+inline_payload_max_chars = 8192
+result_tail_max_chars = 4096
+
+[retention]
+boneyard_days = 7
+toy_box_days = 7
+sweep_interval_s = 3600
