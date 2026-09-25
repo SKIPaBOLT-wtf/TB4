@@ -209,11 +209,15 @@ def bootstrap_tree(
     park_map_text = canonical_json_text(park_map.to_dict())
     map_id = park_map.lookup("PARK_MAP")
 
-    write = backend.replace_text(map_id, park_map_text)
-    if not write.ok and write.outcome is not BackendOutcome.AMBIGUOUS:
-        raise BootstrapError(
-            f"failed to write PARK_MAP: {write.outcome.value}: {write.message or ''}"
-        )
+    current_map = backend.read_text(map_id)
+    if current_map.ok and current_map.value is not None and current_map.value.text == park_map_text:
+        write = None
+    else:
+        write = backend.replace_text(map_id, park_map_text)
+        if not write.ok and write.outcome is not BackendOutcome.AMBIGUOUS:
+            raise BootstrapError(
+                f"failed to write PARK_MAP: {write.outcome.value}: {write.message or ''}"
+            )
 
     readback = backend.read_text(map_id)
     if not readback.ok or readback.value is None:
