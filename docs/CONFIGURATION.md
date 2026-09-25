@@ -83,3 +83,19 @@ default run limit <= maximum run limit <= protocol hard ceiling
 ```
 
 IP-15 adds executable relationship validation so invalid combinations are rejected instead of merely documented.
+
+
+## Machine-checkable relationship rules
+
+`protocol/config-rules.yaml` is the canonical relationship specification used by later validator code.
+
+Rules are intentionally divided by severity:
+
+- `FATAL` — the configuration can violate timing/safety assumptions; startup must be rejected.
+- `WARNING` — the configuration remains interpretable, but it is inefficient or contrary to the intended operating profile.
+
+Rules may reference configuration values only. They do not reference other rules, which prevents dependency cycles inside the rule graph.
+
+The specification also records runtime invariants that cannot be proven from static TOML alone, such as pausing the FETCHER idle timer while active work exists and requiring stale execution evidence before declaring a job GONE.
+
+Drive mutation retry timing and heartbeat freshness are intentionally separate concepts. A Drive rename-confirmation backoff is not used as an invented network/heartbeat visibility allowance.
