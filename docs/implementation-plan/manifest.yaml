@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-03
+current_step: IP-04
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -21,12 +21,12 @@ steps:
     amendments: []
   IP-03:
     title: "Canonical Vocabulary Registry"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-03/E-001-vocabulary-and-ci.md]
     amendments: []
   IP-04:
     title: "FETCH_BALL State Machine"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-05:
