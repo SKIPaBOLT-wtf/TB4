@@ -1,0 +1,244 @@
+schema_version: 1
+contract: TB4_EXECUTION_CONTRACT
+status_authority: docs/execution-contract/manifest.yaml
+statuses:
+  ACTIVE: binding, not yet independently verified as satisfied
+  IN_PROGRESS: currently being applied or verified
+  VERIFIED: completion evidence exists and was reviewed
+  BLOCKED: cannot currently be verified
+  SUPERSEDED: replaced by an explicit amendment or newer contract point
+points:
+  EC-01:
+    title: "Purpose of This Prompt"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-02:
+    title: "Privacy Boundary"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-03:
+    title: "Repository Is Project Memory"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-04:
+    title: "Required Project Entrypoints"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-05:
+    title: "Public Implementation Plan"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-06:
+    title: "Step Size Rule"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-07:
+    title: "Required Format for Every Plan Step"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-08:
+    title: "One Step at a Time"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-09:
+    title: "Protocol Vocabulary Is Canonical"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-10:
+    title: "Active State and History Stay Separate"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-11:
+    title: "Deterministic Control Path"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-12:
+    title: "State Mutation Contract"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-13:
+    title: "Ambiguous Write Rule"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-14:
+    title: "Helper-First Architecture"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-15:
+    title: "Component Ownership"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-16:
+    title: "Concurrency and Fencing"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-17:
+    title: "Script and Payload Execution"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-18:
+    title: "Result Size"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-19:
+    title: "Configuration Classes"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-20:
+    title: "Configuration Relationships"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-21:
+    title: "Efficiency"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-22:
+    title: "Failure Scopes"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-23:
+    title: "Partial Execution"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-24:
+    title: "Recovery Philosophy"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-25:
+    title: "Tree Repair"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-26:
+    title: "Test-First Dependency Order"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-27:
+    title: "Testing Rule"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-28:
+    title: "Failure Injection"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-29:
+    title: "Machine-Readable Specification"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-30:
+    title: "Protocol Changes"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-31:
+    title: "Git Discipline"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-32:
+    title: "Step Completion Loop"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-33:
+    title: "Completion Evidence"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-34:
+    title: "Decision Records"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-35:
+    title: "Step-Planning Algorithm"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-36:
+    title: "Plan Review Before Execution"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-37:
+    title: "Initial User-Provided Step"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-38:
+    title: "Final Acceptance Step"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
+  EC-39:
+    title: "Final Rule"
+    status: ACTIVE
+    verified_at: null
+    evidence: []
+    amendments: []
