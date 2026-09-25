@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-24
+current_step: IP-25
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -126,12 +126,12 @@ steps:
     amendments: []
   IP-24:
     title: "Verified StateWalker Rename Transaction"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-24/E-001-state-walker.md]
     amendments: []
   IP-25:
     title: "Verified BodyKeeper Transaction"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-26:
