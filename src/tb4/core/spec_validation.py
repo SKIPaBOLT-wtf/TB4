@@ -23,6 +23,16 @@ class SpecError:
         return f"{location}: {self.message}"
 
 
+@dataclass(frozen=True)
+class ValidationReport:
+    errors: tuple[SpecError, ...]
+    warnings: tuple[SpecError, ...]
+
+    @property
+    def ok(self) -> bool:
+        return not self.errors
+
+
 class _UniqueKeyLoader(yaml.SafeLoader):
     pass
 
@@ -90,11 +100,12 @@ def _expected_filename(object_name: str, definition: dict[str, Any], state: str)
     return f"{root}_{state}"
 
 
-def validate_protocol(root: Path) -> list[SpecError]:
+def validate_protocol(root: Path) -> ValidationReport:
     """Validate canonical TB4 specification files without modifying them."""
 
     root = root.resolve()
     errors: list[SpecError] = []
+    warnings: list[SpecError] = []
 
     paths = {
         "objects": root / "protocol" / "objects.yaml",
@@ -136,10 +147,10 @@ def validate_protocol(root: Path) -> list[SpecError]:
         _validate_tree(loaded["objects"], loaded["states"], loaded["tree"], errors)
 
     if {"rules", "defaults"} <= loaded.keys():
-        _validate_config_rules(loaded["rules"], loaded["defaults"], errors)
+        _validate_config_rules(loaded["rules"], loaded["defaults"], errors, warnings)
 
     _validate_required_schemas(schemas, errors)
-    return errors
+    return ValidationReport(tuple(errors), tuple(warnings))
 
 
 def _validate_objects_and_states(
