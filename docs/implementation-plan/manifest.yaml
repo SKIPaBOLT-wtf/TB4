@@ -23,7 +23,7 @@ steps:
     title: "Canonical Vocabulary Registry"
     status: VERIFIED
     evidence: [docs/implementation-plan/evidence/IP-03/E-001-vocabulary-and-ci.md]
-    amendments: []
+    amendments: [docs/implementation-plan/amendments/IP-03/A-001-stop-ball-staging-states.md]
   IP-04:
     title: "FETCH_BALL State Machine"
     status: VERIFIED
