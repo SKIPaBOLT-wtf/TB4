@@ -1,0 +1,193 @@
+schema_version: 1
+protocol_major: 1
+
+root:
+  logical_name: TB4_ROOT
+  kind: folder
+  repair_policy: never_auto_recreate
+  reason: A missing configured root must never create a second independent control plane.
+
+  children:
+    START_HERE:
+      kind: file
+      required: true
+      control_path: false
+      repair_policy: create_from_canonical_template
+
+    PARK_MAP:
+      kind: file
+      required: true
+      control_path: true
+      repair_policy: rebuild_only_if_tree_is_unambiguous
+
+    GENESIS:
+      kind: folder
+      required: true
+      control_path: false
+      repair_policy: create_from_embedded_canonical_spec
+
+    SETTINGS:
+      kind: folder
+      required: true
+      control_path: true
+      repair_policy: create_folder_only
+      note: Missing user/deployment values must not be guessed or silently replaced.
+
+    DOG_HOUSE:
+      kind: folder
+      required: true
+      control_path: true
+      repair_policy: create_if_parent_is_verified
+      children:
+        DOG_TAG:
+          kind: fixed_object
+          logical_object: DOG_TAG
+          required: true
+          repair_policy: rebuild_only_from_verified_watchdog_identity
+        DOG_PULSE:
+          kind: fixed_object
+          logical_object: DOG_PULSE
+          required: true
+          repair_policy: create_empty_initial_if_missing
+        DOG_MODE:
+          kind: stateful_object
+          logical_object: WATCHDOG_MODE
+          initial_name: DOG_SNOOZE
+          required: true
+          repair_policy: create_initial_if_unambiguously_missing
+        DOG_SHIT:
+          kind: stateful_object
+          logical_object: WATCHDOG_FAULT
+          initial_name: DOG_SHIT_CLEAN
+          required: true
+          repair_policy: create_initial_if_unambiguously_missing
+
+    BALL_PARK:
+      kind: folder
+      required: true
+      control_path: true
+      repair_policy: create_if_parent_is_verified
+      dynamic_children:
+        DEVICE:
+          key: device_key
+          kind: folder
+          registration_only: true
+          auto_rename_on_hostname_change: false
+          key_assignment:
+            priority:
+              - explicit_stable_alias
+              - unique_normalized_initial_hostname
+              - generated_stable_id_fragment
+          subtree: DEVICE_TREE
+
+    STRAY_YARD:
+      kind: folder
+      required: true
+      control_path: false
+      repair_policy: create_if_parent_is_verified
+      dynamic_children:
+        STRAY:
+          key: stray_key
+          name_pattern: "stray-<stable-id-fragment>"
+          kind: folder
+          registration_only: false
+          control_path: false
+
+    DOG_POUND:
+      kind: folder
+      required: true
+      control_path: false
+      repair_policy: create_if_parent_is_verified
+      purpose: Quarantine ambiguous, duplicate, or malformed objects without silent deletion.
+
+subtrees:
+  DEVICE_TREE:
+    children:
+      DOG_TAG:
+        kind: fixed_object
+        logical_object: DOG_TAG
+        required: true
+        control_path: true
+        repair_policy: rebuild_only_from_verified_device_identity
+
+      DOG_SNIFF:
+        kind: fixed_object
+        logical_object: DOG_SNIFF
+        required: true
+        control_path: true
+        repair_policy: create_empty_initial_if_missing
+
+      DOG_PULSE:
+        kind: fixed_object
+        logical_object: DOG_PULSE
+        required: true
+        control_path: true
+        repair_policy: create_empty_initial_if_missing
+
+      LEASH:
+        kind: stateful_object
+        logical_object: TARGET_LEASH
+        initial_name: LEASH_CLEAR
+        required: true
+        control_path: true
+        repair_policy: create_initial_if_unambiguously_missing
+
+      KENNEL:
+        kind: folder
+        required: true
+        control_path: true
+        repair_policy: create_if_parent_is_verified
+        children:
+          WAKE_BONE:
+            kind: stateful_object
+            logical_object: WAKE_BONE
+            initial_name: WAKE_BONE_READY
+            required: true
+            control_path: true
+            repair_policy: create_initial_if_unambiguously_missing
+
+      PLAYGROUND:
+        kind: folder
+        required: true
+        control_path: true
+        repair_policy: create_if_parent_is_verified
+        children:
+          FETCH_BALL:
+            kind: stateful_object
+            logical_object: FETCH_BALL
+            initial_name: FETCH_BALL_READY
+            required: true
+            control_path: true
+            repair_policy: create_initial_if_unambiguously_missing
+            multiplicity: exactly_one
+
+          STOP_BALL:
+            kind: stateful_object
+            logical_object: STOP_BALL
+            initial_name: STOP_BALL_READY
+            required: true
+            control_path: true
+            repair_policy: create_initial_if_unambiguously_missing
+            multiplicity: exactly_one
+
+      TOY_BOX:
+        kind: folder
+        required: true
+        control_path: false
+        repair_policy: create_if_parent_is_verified
+        purpose: Request and result artifacts referenced by stable object ID.
+
+      BONEYARD:
+        kind: folder
+        required: true
+        control_path: false
+        repair_policy: create_if_parent_is_verified
+        purpose: Short-lived terminal history and evidence.
+
+invariants:
+  one_work_thread_per_device_v1: true
+  active_control_names_deterministic: true
+  history_and_artifacts_outside_live_control_path: true
+  root_never_auto_recreated: true
+  device_folder_name_is_identity: false
+  park_map_preferred_for_runtime_lookup: true
