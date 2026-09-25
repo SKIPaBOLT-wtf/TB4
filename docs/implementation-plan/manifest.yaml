@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-26
+current_step: IP-27
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -136,12 +136,12 @@ steps:
     amendments: []
   IP-26:
     title: "PARK_MAP Index Model"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-26/E-001-park-map.md]
     amendments: []
   IP-27:
     title: "GENESIS Tree Bootstrap"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-28:
