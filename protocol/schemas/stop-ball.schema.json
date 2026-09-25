@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/stop-ball.schema.json",
+  "title": "TB4 STOP_BALL Body",
+  "type": "object",
+  "description": "Cancellation request bound to one exact FETCH_BALL object, job ID, and generation. Common envelope generation is the target FETCH_BALL generation for STOP_BALL.",
+  "required": [
+    "fetch_ball_object_id",
+    "job_id",
+    "request_reason_code",
+    "ack_code",
+    "acknowledged_at"
+  ],
+  "properties": {
+    "fetch_ball_object_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "job_id": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "request_reason_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Z0-9_]+$"
+    },
+    "ack_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "CANCEL_SIGNALLED",
+        "ALREADY_TERMINAL",
+        "NO_MATCH",
+        "FAILED",
+        null
+      ]
+    },
+    "acknowledged_at": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "control-envelope.schema.json"
+    },
+    {
+      "if": {
+        "properties": {
+          "ack_code": {
+            "not": {
+              "type": "null"
+            }
+          }
+        },
+        "required": [
+          "ack_code"
+        ]
+      },
+      "then": {
+        "properties": {
+          "acknowledged_at": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "finished_at": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "result_sha256": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "propertyNames": {
+    "not": {
+      "enum": [
+        "state",
+        "lifecycle_state",
+        "filename_state"
+      ]
+    }
+  },
+  "unevaluatedProperties": false
+}
