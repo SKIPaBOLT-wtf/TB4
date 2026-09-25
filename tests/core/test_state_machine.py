@@ -45,18 +45,22 @@ def test_every_canonical_transition_edge_is_legal_for_its_actor() -> None:
             )
 
 
-def test_every_canonical_transition_rejects_wrong_known_actor() -> None:
+def test_every_canonical_transition_rejects_non_owner_known_actors() -> None:
     roles = {role.value for role in Role}
     for object_name, machine in _spec().items():
+        edge_actors: dict[tuple[str, str], set[str]] = {}
         for edge in machine["transitions"]:
-            wrong_actor = next(actor for actor in roles if actor != edge["actor"])
-            decision = validate_transition(
-                object_name,
-                edge["from"],
-                edge["to"],
-                wrong_actor,
-            )
-            assert decision.disposition is TransitionDisposition.ILLEGAL
+            edge_actors.setdefault((edge["from"], edge["to"]), set()).add(edge["actor"])
+
+        for (current, target), allowed_actors in edge_actors.items():
+            for wrong_actor in roles - allowed_actors:
+                decision = validate_transition(
+                    object_name,
+                    current,
+                    target,
+                    wrong_actor,
+                )
+                assert decision.disposition is TransitionDisposition.ILLEGAL
 
 
 def test_every_known_same_state_request_is_idempotent() -> None:
