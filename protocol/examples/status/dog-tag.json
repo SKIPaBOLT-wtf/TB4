@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "protocol_major": 1,
+  "device_id": "target-a",
+  "hostname": "target-a",
+  "os_family": "LINUX",
+  "capabilities": {
+    "wake_on_lan": true,
+    "ssh_bootstrap": true,
+    "fetcher_ephemeral": true,
+    "inline_commands": true,
+    "script_artifacts": true
+  }
+}
