@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-23
+current_step: IP-24
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -121,12 +121,12 @@ steps:
     amendments: []
   IP-23:
     title: "InMemoryDriveBackend"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-23/E-001-memory-drive-backend.md]
     amendments: []
   IP-24:
     title: "Verified StateWalker Rename Transaction"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-25:
