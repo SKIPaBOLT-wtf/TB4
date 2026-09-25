@@ -12,12 +12,12 @@ license = {file = "LICENSE"}
 authors = [{name = "SKIPaBOLT-wtf"}]
 dependencies = [
   "PyYAML>=6.0",
+  "jsonschema>=4.0",
 ]
 
 [project.optional-dependencies]
 dev = [
   "pytest>=8.0",
-  "jsonschema>=4.0",
 ]
 
 [tool.setuptools]
