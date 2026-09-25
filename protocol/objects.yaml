@@ -136,3 +136,9 @@ stateful_objects:
       - CLEAN
       - BLOCKING
       - REVIEWED
+
+  TARGET_LEASH:
+    purpose: target-local TB4 infrastructure fault state
+    filenames:
+      CLEAR: LEASH_CLEAR
+      TANGLED: LEASH_TANGLED
