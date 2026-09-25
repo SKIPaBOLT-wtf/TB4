@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-18
+current_step: IP-19
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -96,12 +96,12 @@ steps:
     amendments: []
   IP-18:
     title: "State Transition Validator"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-18/E-001-state-transition-validator.md]
     amendments: []
   IP-19:
     title: "FenceGuard"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-20:
