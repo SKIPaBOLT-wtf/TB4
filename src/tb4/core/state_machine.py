@@ -36,6 +36,7 @@ class TransitionDecision:
 class Machine:
     states: frozenset[str]
     terminal_states: frozenset[str]
+    body_writers: Mapping[str, frozenset[str]]
     edges: Mapping[tuple[str, str], frozenset[str]]
 
 
@@ -61,6 +62,12 @@ class StateMachineRegistry:
                     state
                     for state, state_def in state_defs.items()
                     if state_def.get("terminal", False)
+                ),
+                body_writers=MappingProxyType(
+                    {
+                        state: frozenset(state_def.get("body_writers", []))
+                        for state, state_def in state_defs.items()
+                    }
                 ),
                 edges=MappingProxyType(
                     {key: frozenset(actors) for key, actors in edge_actors.items()}
@@ -172,6 +179,22 @@ class StateMachineRegistry:
             actor_name,
             "canonical transition",
         )
+
+    def can_write_body(
+        self,
+        logical_object: LogicalObject | str,
+        state: str,
+        actor: Role | str,
+    ) -> bool:
+        machine = self.machine(logical_object)
+        if machine is None:
+            return False
+        state_name = str(state).upper()
+        actor_name = actor.value if isinstance(actor, Role) else str(actor)
+        writers = machine.body_writers.get(state_name)
+        if writers is None:
+            return False
+        return actor_name in writers
 
     def is_terminal(self, logical_object: LogicalObject | str, state: str) -> bool:
         machine = self.machine(logical_object)
