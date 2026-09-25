@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/control-envelope.schema.json",
+  "title": "TB4 Common Control Envelope",
+  "description": "Common body fields for reusable TB4 request/control objects. Lifecycle state is authoritative in the Drive filename and must not be duplicated here.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "protocol_major",
+    "protocol_minor",
+    "generation",
+    "operation_id",
+    "given_at",
+    "expires_at",
+    "started_at",
+    "finished_at",
+    "run_limit_s",
+    "payload_sha256",
+    "result_sha256",
+    "artifact_refs"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "protocol_major": {
+      "type": "integer",
+      "const": 1
+    },
+    "protocol_minor": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "generation": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "operation_id": {
+      "type": ["string", "null"],
+      "minLength": 8,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "given_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "expires_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "started_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "finished_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "run_limit_s": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 86400
+    },
+    "payload_sha256": {
+      "$ref": "#/$defs/nullable_sha256"
+    },
+    "result_sha256": {
+      "$ref": "#/$defs/nullable_sha256"
+    },
+    "artifact_refs": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "$ref": "#/$defs/artifact_ref"
+      }
+    }
+  },
+  "propertyNames": {
+    "not": {
+      "enum": ["state", "lifecycle_state", "filename_state"]
+    }
+  },
+  "$defs": {
+    "nullable_sha256": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "artifact_ref": {
+      "type": "object",
+      "required": ["artifact_id", "kind", "size_bytes", "sha256"],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32,
+          "pattern": "^[A-Z0-9_]+$"
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
