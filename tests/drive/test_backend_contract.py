@@ -115,6 +115,7 @@ def test_backend_outcomes_cover_required_normalized_failures() -> None:
         "SUCCESS",
         "NOT_FOUND",
         "PERMISSION_DENIED",
+        "CONFLICT",
         "TRANSIENT_ERROR",
         "AMBIGUOUS",
     }
@@ -125,6 +126,7 @@ def test_backend_outcomes_cover_required_normalized_failures() -> None:
     [
         BackendOutcome.NOT_FOUND,
         BackendOutcome.PERMISSION_DENIED,
+        BackendOutcome.CONFLICT,
         BackendOutcome.TRANSIENT_ERROR,
         BackendOutcome.AMBIGUOUS,
     ],
