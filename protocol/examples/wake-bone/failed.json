@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "protocol_major": 1,
+  "protocol_minor": 0,
+  "generation": 3,
+  "operation_id": "wake-1700001000-a1b2c3d4",
+  "given_at": 1700001000,
+  "expires_at": 1700001090,
+  "started_at": 1700001003,
+  "finished_at": 1700001090,
+  "run_limit_s": 90,
+  "payload_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "result_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "artifact_refs": [],
+  "target_device_id": "target-a",
+  "fetcher_start_mode": "IF_NEEDED",
+  "wake_reason_code": "FETCHER_REQUIRED",
+  "host_seen_at": 0,
+  "fetcher_started_at": 0,
+  "pulse_confirmed_at": 0,
+  "result_code": "FAILED",
+  "reason_code": "WAKE_DEADLINE"
+}
