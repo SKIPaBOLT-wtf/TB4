@@ -1,0 +1,85 @@
+schema_version: 1
+protocol_major: 1
+
+state_machines:
+  FETCH_BALL:
+    initial_state: READY
+    description: One reusable work channel per target in protocol v1.
+
+    states:
+      READY:
+        terminal: false
+        body_writers: []
+        meaning: Channel is idle and the previous result has been consumed.
+      LOADING:
+        terminal: false
+        body_writers: [COACH]
+        meaning: COACH owns the channel while preparing and verifying a request body.
+      TOSS:
+        terminal: false
+        body_writers: []
+        meaning: A complete verified request is available for FETCHER to claim.
+      CHEW:
+        terminal: false
+        body_writers: [FETCHER]
+        meaning: FETCHER owns the current generation and local execution may be active.
+      RETURNING:
+        terminal: false
+        body_writers: [FETCHER, WATCHDOG]
+        meaning: A terminal body is being prepared and remotely verified before terminal state publication.
+      DONE:
+        terminal: true
+        body_writers: []
+        meaning: A trustworthy result says the requested execution completed successfully.
+      PARTIAL:
+        terminal: true
+        body_writers: []
+        meaning: A trustworthy result exists and meaningful work occurred before incomplete completion or failure.
+      FAILED:
+        terminal: true
+        body_writers: []
+        meaning: A trustworthy terminal result exists and no meaningful partial effect is known.
+      CANCELLED:
+        terminal: true
+        body_writers: []
+        meaning: Execution was intentionally interrupted and returned known evidence.
+      GONE:
+        terminal: true
+        body_writers: [WATCHDOG]
+        meaning: A trustworthy execution result did not return; side effects may be unknown.
+      RECYCLING:
+        terminal: false
+        body_writers: [COACH]
+        meaning: COACH has consumed terminal evidence and is clearing the reusable channel.
+
+    transitions:
+      - {from: READY, to: LOADING, actor: COACH, reason: reserve_channel}
+      - {from: LOADING, to: TOSS, actor: COACH, reason: request_body_verified}
+      - {from: LOADING, to: RECYCLING, actor: COACH, reason: abandon_unpublished_request}
+
+      - {from: TOSS, to: CHEW, actor: FETCHER, reason: claim_valid_request}
+      - {from: TOSS, to: RETURNING, actor: WATCHDOG, reason: unclaimed_request_expired}
+
+      - {from: CHEW, to: RETURNING, actor: FETCHER, reason: execution_report_ready}
+      - {from: CHEW, to: GONE, actor: WATCHDOG, reason: fetcher_lost_beyond_grace}
+
+      - {from: RETURNING, to: DONE, actor: FETCHER, reason: verified_success_result}
+      - {from: RETURNING, to: PARTIAL, actor: FETCHER, reason: verified_partial_result}
+      - {from: RETURNING, to: FAILED, actor: FETCHER, reason: verified_failure_result}
+      - {from: RETURNING, to: CANCELLED, actor: FETCHER, reason: verified_cancel_result}
+      - {from: RETURNING, to: FAILED, actor: WATCHDOG, reason: verified_unclaimed_or_transport_failure}
+
+      - {from: DONE, to: RECYCLING, actor: COACH, reason: result_consumed}
+      - {from: PARTIAL, to: RECYCLING, actor: COACH, reason: result_consumed}
+      - {from: FAILED, to: RECYCLING, actor: COACH, reason: result_consumed}
+      - {from: CANCELLED, to: RECYCLING, actor: COACH, reason: result_consumed}
+      - {from: GONE, to: RECYCLING, actor: COACH, reason: unknown_effect_reviewed}
+
+      - {from: RECYCLING, to: READY, actor: COACH, reason: channel_cleared_and_verified}
+
+    replay_rules:
+      DONE: never_replay_implicitly
+      PARTIAL: inspect_effects_before_any_retry
+      FAILED: retry_only_by_new_explicit_generation
+      CANCELLED: retry_only_by_new_explicit_generation
+      GONE: inspect_effects_before_any_retry
