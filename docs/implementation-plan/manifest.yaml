@@ -1,0 +1,61 @@
+schema_version: 1
+plan: TB4_IMPLEMENTATION_PLAN
+status_authority: docs/implementation-plan/manifest.yaml
+current_step: IP-02
+statuses:
+  PLANNED: not started
+  IN_PROGRESS: current work
+  VERIFIED: completion evidence reviewed
+  BLOCKED: cannot proceed without external dependency or decision
+  SUPERSEDED: replaced by explicit amendment
+steps:
+  IP-01:
+    title: "Execution Contract Baseline"
+    status: VERIFIED
+    evidence: []
+    amendments: []
+  IP-02:
+    title: "Canonical Repository Skeleton"
+    status: IN_PROGRESS
+    evidence: []
+    amendments: []
+  IP-03:
+    title: "Canonical Vocabulary Registry"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-04:
+    title: "FETCH_BALL State Machine"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-05:
+    title: "WAKE_BONE State Machine"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-06:
+    title: "STOP_BALL State Machine"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-07:
+    title: "WATCHDOG Control States"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-08:
+    title: "Device Observation and Local Fault Semantics"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-09:
+    title: "Canonical Drive Tree Blueprint"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-10:
+    title: "Common Control Envelope Schema"
+    status: PLANNED
+    evidence: []
+    amendments: []
