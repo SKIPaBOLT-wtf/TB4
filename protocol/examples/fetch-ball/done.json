@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "protocol_major": 1,
+  "protocol_minor": 0,
+  "generation": 10,
+  "operation_id": "job-1700000300-d1e2f3a4",
+  "given_at": 1700000300,
+  "expires_at": 1700000420,
+  "started_at": 1700000305,
+  "finished_at": 1700000310,
+  "run_limit_s": 300,
+  "payload_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "result_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "artifact_refs": [],
+  "payload_source": "INLINE",
+  "payload_type": "SHELL",
+  "inline_payload": "printf 'hello\\n'",
+  "payload_artifact_id": null,
+  "runtime_hint": "bash",
+  "result_code": "DONE",
+  "reason_code": "EXIT_ZERO",
+  "exit_code": 0,
+  "stdout_tail": "hello\\n",
+  "stderr_tail": "",
+  "effects_known": "KNOWN",
+  "completed_effects": [
+    "Requested command completed successfully."
+  ],
+  "result_artifact_ids": []
+}
