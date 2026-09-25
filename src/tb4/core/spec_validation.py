@@ -339,12 +339,34 @@ def _validate_config_rules(
             errors.append(SpecError("protocol/config-rules.yaml", path + ".check", "missing check expression"))
             continue
         walk_ops(check, path + ".check")
+        refs_valid = True
         for ref in _walk_refs(check):
             try:
                 _config_ref(config, ref)
             except KeyError:
+                refs_valid = False
                 errors.append(SpecError("protocol/config-rules.yaml", path + ".check",
                                         f"unknown configuration reference {ref!r}"))
+
+        if refs_valid:
+            try:
+                passed = _eval_check(check, config)
+            except (KeyError, TypeError, ValueError) as exc:
+                errors.append(
+                    SpecError("protocol/config-rules.yaml", path + ".check",
+                              f"cannot evaluate rule {rule_id!r}: {exc}")
+                )
+            else:
+                if not passed:
+                    issue = SpecError(
+                        "protocol/config-rules.yaml",
+                        path + ".check",
+                        f"canonical defaults violate {rule.get('severity')} rule {rule_id!r}",
+                    )
+                    if rule.get("severity") == "WARNING":
+                        warnings.append(issue)
+                    else:
+                        errors.append(issue)
 
 
 def _validate_required_schemas(
