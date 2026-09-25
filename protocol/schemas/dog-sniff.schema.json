@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/dog-sniff.schema.json",
+  "title": "TB4 DOG_SNIFF",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "protocol_major",
+    "device_id",
+    "sequence",
+    "observed_at",
+    "published_at",
+    "reachability",
+    "probe_kind",
+    "addresses",
+    "mac_address"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "protocol_major": {
+      "type": "integer",
+      "const": 1
+    },
+    "device_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "observed_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "published_at": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "reachability": {
+      "type": "string",
+      "enum": [
+        "ONLINE",
+        "OFFLINE",
+        "UNKNOWN"
+      ]
+    },
+    "probe_kind": {
+      "type": "string",
+      "enum": [
+        "ICMP",
+        "TCP",
+        "ARP",
+        "MULTI",
+        "NONE"
+      ]
+    },
+    "addresses": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64
+      }
+    },
+    "mac_address": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 32
+    }
+  },
+  "additionalProperties": false
+}
