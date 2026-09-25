@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/dog-tag.schema.json",
+  "title": "TB4 DOG_TAG",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "protocol_major",
+    "device_id",
+    "hostname",
+    "os_family",
+    "capabilities"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "protocol_major": {
+      "type": "integer",
+      "const": 1
+    },
+    "device_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "hostname": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 255
+    },
+    "os_family": {
+      "type": "string",
+      "enum": [
+        "WINDOWS",
+        "LINUX",
+        "MACOS",
+        "OTHER"
+      ]
+    },
+    "capabilities": {
+      "type": "object",
+      "required": [
+        "wake_on_lan",
+        "ssh_bootstrap",
+        "fetcher_ephemeral",
+        "inline_commands",
+        "script_artifacts"
+      ],
+      "properties": {
+        "wake_on_lan": {
+          "type": "boolean"
+        },
+        "ssh_bootstrap": {
+          "type": "boolean"
+        },
+        "fetcher_ephemeral": {
+          "type": "boolean"
+        },
+        "inline_commands": {
+          "type": "boolean"
+        },
+        "script_artifacts": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "propertyNames": {
+    "not": {
+      "enum": [
+        "online",
+        "reachable",
+        "ip_address",
+        "password",
+        "token",
+        "credential",
+        "credentials",
+        "ssh_private_key"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
