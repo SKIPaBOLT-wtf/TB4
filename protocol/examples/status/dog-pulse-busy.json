@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "protocol_major": 1,
+  "device_id": "target-a",
+  "emitted_at": 1700003010,
+  "sequence": 43,
+  "instance_id": "fetcher-abc12345",
+  "claimed_generation": 12,
+  "claimed_operation_id": "job-1700000500-f1a2b3c4"
+}
