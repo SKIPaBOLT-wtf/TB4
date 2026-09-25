@@ -1,0 +1,155 @@
+schema_version: 1
+protocol_major: 1
+
+semantics:
+  reference_scope: config_only
+  fatal_action: reject_startup
+  warning_action: report_and_continue
+  numeric_units:
+    seconds_suffix: _s
+    milliseconds_suffix: _ms
+
+rules:
+  - id: WATCHDOG_IDLE_STALE_MARGIN
+    severity: FATAL
+    description: Idle WATCHDOG freshness must survive at least three missed idle pulses.
+    check:
+      op: gte
+      left: {ref: watchdog.stale_idle_s}
+      right:
+        op: mul
+        args: [3, {ref: watchdog.heartbeat_idle_s}]
+
+  - id: WATCHDOG_ACTIVE_STALE_MARGIN
+    severity: FATAL
+    description: Active WATCHDOG freshness must survive at least three missed active pulses.
+    check:
+      op: gte
+      left: {ref: watchdog.stale_active_s}
+      right:
+        op: mul
+        args: [3, {ref: watchdog.heartbeat_active_s}]
+
+  - id: ACTIVE_HEARTBEAT_NOT_SLOWER_THAN_IDLE
+    severity: WARNING
+    description: Active cadence should be at least as responsive as idle cadence.
+    check:
+      op: lte
+      left: {ref: watchdog.heartbeat_active_s}
+      right: {ref: watchdog.heartbeat_idle_s}
+
+  - id: WAKE_HAS_MULTIPLE_PROBE_OPPORTUNITIES
+    severity: FATAL
+    description: Wake deadline must allow initial boot delay plus at least three subsequent probes.
+    check:
+      op: gte
+      left: {ref: wake.wake_deadline_s}
+      right:
+        op: add
+        args:
+          - {ref: wake.wol_initial_wait_s}
+          - {op: mul, args: [3, {ref: wake.probe_interval_s}]}
+
+  - id: GONE_GRACE_EXCEEDS_BUSY_PULSE_JITTER
+    severity: FATAL
+    description: GONE grace must span at least two expected busy FETCHER heartbeats.
+    check:
+      op: gte
+      left: {ref: fetcher.gone_grace_s}
+      right:
+        op: mul
+        args: [2, {ref: fetcher.busy_heartbeat_s}]
+
+  - id: FETCHER_IDLE_EXIT_SPANS_HEARTBEATS
+    severity: FATAL
+    description: Ephemeral FETCHER idle exit must allow at least two idle heartbeats before shutdown.
+    check:
+      op: gte
+      left: {ref: fetcher.idle_exit_s}
+      right:
+        op: mul
+        args: [2, {ref: fetcher.idle_heartbeat_s}]
+
+  - id: DEFAULT_RUN_LIMIT_WITHIN_MAXIMUM
+    severity: FATAL
+    description: Default job runtime may not exceed the configurable maximum.
+    check:
+      op: lte
+      left: {ref: job.default_run_limit_s}
+      right: {ref: job.max_run_limit_s}
+
+  - id: MAX_RUN_LIMIT_WITHIN_PROTOCOL_CEILING
+    severity: FATAL
+    description: Configured maximum runtime may not exceed the protocol hard ceiling.
+    check:
+      op: lte
+      left: {ref: job.max_run_limit_s}
+      right: 86400
+
+  - id: ACCEPT_TTL_NOT_LONGER_THAN_MAX_RUNTIME
+    severity: FATAL
+    description: A stale unclaimed request must not remain acceptable longer than the maximum job runtime.
+    check:
+      op: lte
+      left: {ref: job.accept_ttl_s}
+      right: {ref: job.max_run_limit_s}
+
+  - id: DRIVE_TRANSITION_ATTEMPTS_BOUNDED
+    severity: FATAL
+    description: A state mutation may not retry indefinitely.
+    check:
+      op: lte
+      left: {ref: drive.transition_attempts}
+      right: 5
+
+  - id: DRIVE_CONFIRM_BACKOFF_NONDECREASING
+    severity: FATAL
+    description: Confirmation retries must not become more aggressive over time.
+    check:
+      op: nondecreasing
+      value: {ref: drive.confirm_backoff_ms}
+
+  - id: DRIVE_TOTAL_CONFIRM_BUDGET_BOUNDED
+    severity: FATAL
+    description: Worst-case confirmation sleep budget across complete transition attempts must remain bounded.
+    check:
+      op: lte
+      left:
+        op: mul
+        args:
+          - {op: sum, value: {ref: drive.confirm_backoff_ms}}
+          - {ref: drive.transition_attempts}
+      right: 60000
+      unit: ms
+
+  - id: UNCHANGED_SNIFF_PUBLISH_NOT_FASTER_THAN_PROBE
+    severity: WARNING
+    description: Publishing unchanged LAN state more often than probing provides no useful freshness.
+    check:
+      op: gte
+      left: {ref: network.known_device_publish_s}
+      right: {ref: network.known_device_probe_s}
+
+  - id: STRAY_SCAN_NOT_FASTER_THAN_KNOWN_PROBE
+    severity: WARNING
+    description: Full stray discovery should normally be less frequent than cheap known-device probes.
+    check:
+      op: gte
+      left: {ref: network.stray_scan_s}
+      right: {ref: network.known_device_probe_s}
+
+runtime_invariants:
+  - id: IDLE_TIMER_PAUSES_DURING_ACTIVE_WORK
+    severity: FATAL
+    owner: FETCHER
+    description: The idle-exit timer must not advance while FETCH_BALL is owned by active execution.
+
+  - id: GONE_REQUIRES_STALE_EXECUTION_EVIDENCE
+    severity: FATAL
+    owner: WATCHDOG
+    description: elapsed gone_grace_s alone must never classify a job GONE without stale or missing FETCHER evidence.
+
+  - id: CURRENT_TIME_EXPIRY_IS_RUNTIME_ONLY
+    severity: FATAL
+    owner: DeadlineGuard
+    description: Schema validation proves expiry shape; runtime compares expires_at against current time.
