@@ -127,3 +127,13 @@ These appeared during design and are **not** canonical protocol names:
 - `DOG_MODE_NAPPING` -> use `DOG_SNOOZE`
 
 Do not accept both spellings in protocol v1 merely for convenience. If compatibility is ever required, implement an explicit migration.
+
+
+## Target-local LEASH state
+
+```text
+LEASH_CLEAR
+LEASH_TANGLED
+```
+
+This is a per-target infrastructure state. It must never be treated as an alias for the global `DOG_SHIT` register.
