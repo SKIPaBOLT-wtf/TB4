@@ -83,3 +83,61 @@ state_machines:
       FAILED: retry_only_by_new_explicit_generation
       CANCELLED: retry_only_by_new_explicit_generation
       GONE: inspect_effects_before_any_retry
+
+  WAKE_BONE:
+    initial_state: READY
+    description: One reusable target wake/bootstrap request channel per target.
+
+    states:
+      READY:
+        terminal: false
+        body_writers: []
+        meaning: No wake request is active.
+      LOADING:
+        terminal: false
+        body_writers: [COACH]
+        meaning: COACH owns the channel while preparing and verifying a wake request.
+      TOSS:
+        terminal: false
+        body_writers: []
+        meaning: A complete verified wake request is available for WATCHDOG to claim.
+      CHEW:
+        terminal: false
+        body_writers: [WATCHDOG]
+        meaning: WATCHDOG owns the request and may evaluate expiry, probe, wake, bootstrap, and write a bounded result.
+      DONE:
+        terminal: true
+        body_writers: []
+        meaning: A trustworthy result confirms target FETCHER readiness.
+      FAILED:
+        terminal: true
+        body_writers: [WATCHDOG]
+        meaning: A trustworthy wake/bootstrap result says readiness was not achieved; expired requests are terminalized here without performing wake/bootstrap actions.
+      RECYCLING:
+        terminal: false
+        body_writers: [COACH]
+        meaning: COACH has consumed the wake result and is clearing the reusable channel.
+
+    transitions:
+      - {from: READY, to: LOADING, actor: COACH, reason: reserve_channel}
+      - {from: LOADING, to: TOSS, actor: COACH, reason: request_body_verified}
+      - {from: LOADING, to: RECYCLING, actor: COACH, reason: abandon_unpublished_request}
+
+      - {from: TOSS, to: CHEW, actor: WATCHDOG, reason: claim_request}
+      - {from: TOSS, to: FAILED, actor: WATCHDOG, reason: expired_before_claim}
+
+      - {from: CHEW, to: DONE, actor: WATCHDOG, reason: fresh_fetcher_pulse_confirmed}
+      - {from: CHEW, to: FAILED, actor: WATCHDOG, reason: wake_or_bootstrap_not_completed}
+
+      - {from: DONE, to: RECYCLING, actor: COACH, reason: result_consumed}
+      - {from: FAILED, to: RECYCLING, actor: COACH, reason: result_consumed}
+      - {from: RECYCLING, to: READY, actor: COACH, reason: channel_cleared_and_verified}
+
+    action_rules:
+      before_wol_or_ssh:
+        - request_schema_valid
+        - request_not_expired
+        - target_identity_matches
+      success_requires:
+        - fresh_target_dog_pulse
+      failure_scope: target_local
