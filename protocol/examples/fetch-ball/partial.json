@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "protocol_major": 1,
+  "protocol_minor": 0,
+  "generation": 11,
+  "operation_id": "job-1700000400-e1f2a3b4",
+  "given_at": 1700000400,
+  "expires_at": 1700000520,
+  "started_at": 1700000404,
+  "finished_at": 1700000419,
+  "run_limit_s": 300,
+  "payload_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "result_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "artifact_refs": [],
+  "payload_source": "INLINE",
+  "payload_type": "SHELL",
+  "inline_payload": "printf 'hello\\n'",
+  "payload_artifact_id": null,
+  "runtime_hint": "bash",
+  "result_code": "PARTIAL",
+  "reason_code": "STEP_FAILED_AFTER_EFFECT",
+  "exit_code": 1,
+  "stdout_tail": "step 1 complete\\n",
+  "stderr_tail": "step 2 failed\\n",
+  "effects_known": "PARTIAL",
+  "completed_effects": [
+    "Step 1 created the requested local directory."
+  ],
+  "result_artifact_ids": []
+}
