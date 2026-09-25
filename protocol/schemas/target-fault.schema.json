@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/target-fault.schema.json",
+  "title": "TB4 TARGET_LEASH Fault Body",
+  "type": "object",
+  "description": "Body for LEASH_CLEAR/LEASH_TANGLED. Filename is authoritative fault state.",
+  "required": [
+    "schema_version",
+    "protocol_major",
+    "device_id",
+    "reported_at",
+    "source",
+    "severity",
+    "fault_code",
+    "description",
+    "first_seen_at",
+    "last_seen_at",
+    "occurrence_count"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "protocol_major": {
+      "type": "integer",
+      "const": 1
+    },
+    "device_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "reported_at": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "WATCHDOG",
+        "FETCHER"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "WARNING",
+        "BLOCKING"
+      ]
+    },
+    "fault_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Z0-9_]+$"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 512
+    },
+    "first_seen_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "last_seen_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "occurrence_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000000000
+    }
+  },
+  "propertyNames": {
+    "not": {
+      "enum": [
+        "state",
+        "leash_state",
+        "password",
+        "token",
+        "credential",
+        "credentials"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
