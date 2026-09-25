@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/dog-pulse.schema.json",
+  "title": "TB4 DOG_PULSE",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "protocol_major",
+    "device_id",
+    "emitted_at",
+    "sequence",
+    "instance_id",
+    "claimed_generation",
+    "claimed_operation_id"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "protocol_major": {
+      "type": "integer",
+      "const": 1
+    },
+    "device_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "emitted_at": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "instance_id": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "claimed_generation": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "claimed_operation_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 8,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "claimed_generation": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "claimed_generation"
+        ]
+      },
+      "then": {
+        "properties": {
+          "claimed_operation_id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "claimed_operation_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "claimed_operation_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "claimed_generation": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}
