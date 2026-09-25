@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-05
+current_step: IP-06
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -31,12 +31,12 @@ steps:
     amendments: []
   IP-05:
     title: "WAKE_BONE State Machine"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-05/E-001-wake-bone-state-machine.md]
     amendments: []
   IP-06:
     title: "STOP_BALL State Machine"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-07:
