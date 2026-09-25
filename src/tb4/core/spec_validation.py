@@ -384,3 +384,34 @@ def _validate_required_schemas(
     }
     for missing in sorted(required - schemas.keys()):
         errors.append(SpecError("protocol/schemas", missing, "required canonical schema is missing"))
+
+
+def main(argv: list[str] | None = None) -> int:
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Validate canonical TB4 protocol specifications."
+    )
+    parser.add_argument(
+        "--root",
+        type=Path,
+        default=Path.cwd(),
+        help="TB4 repository root (default: current directory)",
+    )
+    args = parser.parse_args(argv)
+
+    report = validate_protocol(args.root)
+    for warning in report.warnings:
+        print(f"WARNING: {warning.format()}")
+    for error in report.errors:
+        print(f"ERROR: {error.format()}")
+
+    if report.ok:
+        print("TB4 protocol validation OK")
+        return 0
+    print(f"TB4 protocol validation FAILED ({len(report.errors)} error(s))")
+    return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
