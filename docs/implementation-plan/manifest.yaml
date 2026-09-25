@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-06
+current_step: IP-07
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -36,12 +36,12 @@ steps:
     amendments: []
   IP-06:
     title: "STOP_BALL State Machine"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-06/E-001-stop-ball-state-machine.md]
     amendments: [docs/implementation-plan/amendments/IP-06/A-001-safe-stop-ball-staging.md]
   IP-07:
     title: "WATCHDOG Control States"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-08:
