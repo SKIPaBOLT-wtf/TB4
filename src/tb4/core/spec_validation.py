@@ -220,8 +220,13 @@ def _validate_tree(
     machines = states.get("state_machines", {})
 
     def walk(node: Any, path: str) -> None:
+        if isinstance(node, list):
+            for index, child in enumerate(node):
+                walk(child, f"{path}[{index}]")
+            return
         if not isinstance(node, dict):
             return
+
         logical = node.get("logical_object")
         kind = node.get("kind")
         if logical:
@@ -245,9 +250,6 @@ def _validate_tree(
         for key, child in node.items():
             if isinstance(child, (dict, list)):
                 walk(child, f"{path}.{key}" if path else key)
-        if isinstance(node, list):
-            for index, child in enumerate(node):
-                walk(child, f"{path}[{index}]")
 
     walk(tree, "")
 
