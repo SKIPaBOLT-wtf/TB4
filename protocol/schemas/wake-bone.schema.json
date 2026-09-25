@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/wake-bone.schema.json",
+  "title": "TB4 WAKE_BONE Body",
+  "type": "object",
+  "description": "WAKE_BONE request/result body. Filename is lifecycle authority. Runtime expiry comparison belongs to DeadlineGuard.",
+  "required": [
+    "target_device_id",
+    "fetcher_start_mode",
+    "wake_reason_code",
+    "host_seen_at",
+    "fetcher_started_at",
+    "pulse_confirmed_at",
+    "result_code",
+    "reason_code"
+  ],
+  "properties": {
+    "target_device_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "fetcher_start_mode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "IF_NEEDED",
+        "REQUIRE_START",
+        "DO_NOT_START",
+        null
+      ]
+    },
+    "wake_reason_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Z0-9_]+$"
+    },
+    "host_seen_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "fetcher_started_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "pulse_confirmed_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "result_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "DONE",
+        "FAILED",
+        null
+      ]
+    },
+    "reason_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Z0-9_]+$"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "control-envelope.schema.json"
+    },
+    {
+      "properties": {
+        "expires_at": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "result_code": {
+            "const": "DONE"
+          }
+        },
+        "required": [
+          "result_code"
+        ]
+      },
+      "then": {
+        "properties": {
+          "pulse_confirmed_at": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "finished_at": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "result_sha256": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "result_code": {
+            "const": "FAILED"
+          }
+        },
+        "required": [
+          "result_code"
+        ]
+      },
+      "then": {
+        "properties": {
+          "reason_code": {
+            "type": "string"
+          },
+          "finished_at": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "result_sha256": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "propertyNames": {
+    "not": {
+      "enum": [
+        "state",
+        "lifecycle_state",
+        "filename_state",
+        "ssh_password",
+        "ssh_private_key",
+        "password",
+        "token",
+        "credential",
+        "credentials"
+      ]
+    }
+  },
+  "unevaluatedProperties": false
+}
