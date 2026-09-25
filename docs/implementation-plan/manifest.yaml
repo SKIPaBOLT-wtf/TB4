@@ -59,3 +59,258 @@ steps:
     status: PLANNED
     evidence: []
     amendments: []
+  IP-11:
+    title: "FETCH_BALL Body Schema"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-12:
+    title: "WAKE_BONE and STOP_BALL Body Schemas"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-13:
+    title: "DOG_TAG, DOG_PULSE, DOG_SNIFF, and Fault Schemas"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-14:
+    title: "Configuration Defaults"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-15:
+    title: "Configuration Relationship Validator Specification"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-16:
+    title: "Protocol Validator CLI"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-17:
+    title: "Core Python Models"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-18:
+    title: "State Transition Validator"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-19:
+    title: "FenceGuard"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-20:
+    title: "Clock and Deadline Helpers"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-21:
+    title: "Retry and Backoff Helpers"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-22:
+    title: "DriveBackend Interface"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-23:
+    title: "InMemoryDriveBackend"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-24:
+    title: "Verified StateWalker Rename Transaction"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-25:
+    title: "Verified BodyKeeper Transaction"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-26:
+    title: "PARK_MAP Index Model"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-27:
+    title: "GENESIS Tree Bootstrap"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-28:
+    title: "Tree Audit, Repair, and DOG_POUND Quarantine"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-29:
+    title: "TOY_BOX Artifact Protocol"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-30:
+    title: "RUNNER Interface"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-31:
+    title: "Inline Command Runner"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-32:
+    title: "Script Artifact Runner"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-33:
+    title: "Output Bounding and Artifact Spool"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-34:
+    title: "Result Classifier"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-35:
+    title: "FETCHER Ball Claim and Return Pipeline"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-36:
+    title: "FETCHER Heartbeat"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-37:
+    title: "FETCHER Cancellation"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-38:
+    title: "FETCHER Idle and Restart Lifecycle"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-39:
+    title: "WATCHDOG Scheduler"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-40:
+    title: "Known-Device SNIFFER"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-41:
+    title: "STRAY_HUNTER Discovery"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-42:
+    title: "BONE_THROWER Wake-on-LAN Helper"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-43:
+    title: "DOOR_SCRATCHER SSH Bootstrap Helper"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-44:
+    title: "WAKE_BONE WakeManager"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-45:
+    title: "WATCHDOG Health and DOG_SHIT Handling"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-46:
+    title: "BONEYARD Retention and Cleanup"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-47:
+    title: "Google Drive Authentication and Client Boundary"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-48:
+    title: "Google Drive Exact-Object Operations"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-49:
+    title: "Google Drive Maintenance Operations"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-50:
+    title: "Google Drive Transaction Compatibility Tests"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-51:
+    title: "Linux Service Packaging"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-52:
+    title: "Windows Service Packaging"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-53:
+    title: "End-to-End In-Memory Simulation"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-54:
+    title: "Integrated Failure-Injection Suite"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-55:
+    title: "Efficiency and Remote-Rate Validation"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-56:
+    title: "Security Hardening"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-57:
+    title: "TB4 Skill and COACH Interface"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-58:
+    title: "Fresh Bootstrap and Reproducibility"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-59:
+    title: "Private Pilot Preparation"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-60:
+    title: "Real Two-Machine Pilot"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-61:
+    title: "Final Acceptance"
+    status: PLANNED
+    evidence: []
+    amendments: []
