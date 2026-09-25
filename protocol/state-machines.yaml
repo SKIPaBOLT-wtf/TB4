@@ -192,3 +192,83 @@ state_machines:
         - generation
       stale_or_mismatched_request: do_not_cancel
       cancellation_result_lives_on: FETCH_BALL
+
+  WATCHDOG_MODE:
+    initial_state: SNOOZE
+    description: WATCHDOG activity mode. The canonical filenames are DOG_SNOOZE and DOG_AWAKE.
+
+    states:
+      SNOOZE:
+        terminal: false
+        body_writers: [WATCHDOG]
+        filename: DOG_SNOOZE
+        meaning: WATCHDOG is healthy but using low-frequency idle cadence.
+      AWAKE:
+        terminal: false
+        body_writers: [WATCHDOG]
+        filename: DOG_AWAKE
+        meaning: WATCHDOG has active work or an active lease and uses responsive cadence.
+
+    transitions:
+      - {from: SNOOZE, to: AWAKE, actor: WATCHDOG, reason: active_work_or_event_detected}
+      - {from: AWAKE, to: SNOOZE, actor: WATCHDOG, reason: awake_lease_expired_and_no_active_work}
+
+    mode_rules:
+      awake_triggers:
+        - wake_bone_active
+        - fetch_ball_watch_active
+        - tree_repair_active
+        - explicit_local_maintenance
+      snooze_requires:
+        - no_active_work
+        - awake_lease_expired
+      mode_is_health: false
+
+  WATCHDOG_FAULT:
+    initial_state: CLEAN
+    root_name: DOG_SHIT
+    description: One global WATCHDOG/control-plane blocking fault register.
+
+    states:
+      CLEAN:
+        terminal: false
+        body_writers: [WATCHDOG]
+        meaning: No known global fault prevents reliable control-plane work.
+      BLOCKING:
+        terminal: false
+        body_writers: [WATCHDOG]
+        meaning: WATCHDOG cannot safely accept or progress normal control work.
+      REVIEWED:
+        terminal: false
+        body_writers: [COACH]
+        meaning: COACH has acknowledged the current blocking fault; WATCHDOG must still revalidate the underlying invariant before clearing it.
+
+    transitions:
+      - {from: CLEAN, to: BLOCKING, actor: WATCHDOG, reason: global_control_invariant_failed}
+      - {from: BLOCKING, to: REVIEWED, actor: COACH, reason: fault_read_and_acknowledged}
+      - {from: REVIEWED, to: BLOCKING, actor: WATCHDOG, reason: invariant_still_broken}
+      - {from: REVIEWED, to: CLEAN, actor: WATCHDOG, reason: invariant_revalidated_and_fault_cleared}
+
+    fault_scope:
+      blocking_examples:
+        - persistent_drive_root_unreachable
+        - park_map_irreducibly_ambiguous
+        - canonical_tree_irreducibly_ambiguous
+        - verified_state_mutation_cannot_be_confirmed
+        - watchdog_drive_authorization_unavailable
+        - clock_unsafely_wrong_for_ttl
+      explicitly_nonblocking_examples:
+        - one_target_offline
+        - wol_failed
+        - ssh_bootstrap_failed
+        - one_fetch_ball_failed
+        - one_fetch_ball_partial
+        - one_fetch_ball_gone
+        - one_wake_bone_failed
+
+    blocking_rules:
+      new_control_work_allowed_in_BLOCKING: false
+      diagnostic_reads_allowed_in_BLOCKING: true
+      repair_actions_allowed_in_BLOCKING: true
+      timeout_alone_clears_fault: false
+      clear_requires_invariant_revalidation: true
