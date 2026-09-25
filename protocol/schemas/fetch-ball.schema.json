@@ -272,6 +272,56 @@
           }
         }
       }
+    },
+    {
+      "if": {
+        "properties": {
+          "payload_source": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "payload_source"
+        ]
+      },
+      "then": {
+        "properties": {
+          "inline_payload": {
+            "type": "null"
+          },
+          "payload_artifact_id": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "result_code": {
+            "not": {
+              "type": "null"
+            }
+          }
+        },
+        "required": [
+          "result_code"
+        ]
+      },
+      "then": {
+        "properties": {
+          "operation_id": {
+            "type": "string"
+          },
+          "finished_at": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "result_sha256": {
+            "type": "string"
+          }
+        }
+      }
     }
   ],
   "propertyNames": {
