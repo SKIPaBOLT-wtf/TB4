@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-38
+current_step: IP-39
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -196,12 +196,12 @@ steps:
     amendments: []
   IP-38:
     title: "FETCHER Idle and Restart Lifecycle"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-38/E-001-fetcher-idle-restart-lifecycle.md]
     amendments: []
   IP-39:
     title: "WATCHDOG Scheduler"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-40:
