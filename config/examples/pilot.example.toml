@@ -30,6 +30,17 @@ enabled = true
 host_alias = "replace-at-deploy-time"
 platform = "LINUX_SYSTEMD"
 
+[target.fetcher]
+ephemeral = true
+idle_exit_s = 600
+artifact_work_dir = "replace-at-deploy-time"
+
+[network]
+# Optional. Empty means passive neighbor-table discovery only.
+discovery_cidrs = []
+discovery_max_hosts = 1024
+discovery_workers = 16
+
 [policy]
 # Keep the public defaults for the first pilot unless a measured condition
 # demonstrates that a change is necessary.
