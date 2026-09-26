@@ -4,7 +4,7 @@ import hashlib
 import json
 import shutil
 import tempfile
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import BinaryIO
 
@@ -29,6 +29,15 @@ class OutputCapture:
 
     root: Path
     max_total_bytes: int
+    work_dir: Path = field(init=False)
+    stdout_path: Path = field(init=False)
+    stderr_path: Path = field(init=False)
+    _stdout: BinaryIO = field(init=False, repr=False)
+    _stderr: BinaryIO = field(init=False, repr=False)
+    stdout_bytes: int = field(init=False, default=0)
+    stderr_bytes: int = field(init=False, default=0)
+    error: str | None = field(init=False, default=None)
+    _closed: bool = field(init=False, default=False, repr=False)
 
     def __post_init__(self) -> None:
         if self.max_total_bytes <= 0:
@@ -40,10 +49,6 @@ class OutputCapture:
         self.stderr_path = self.work_dir / "stderr.bin"
         self._stdout = self.stdout_path.open("xb")
         self._stderr = self.stderr_path.open("xb")
-        self.stdout_bytes = 0
-        self.stderr_bytes = 0
-        self.error: str | None = None
-        self._closed = False
 
     @property
     def total_bytes(self) -> int:
