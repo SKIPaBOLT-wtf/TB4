@@ -5,7 +5,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from tools.preflight import evaluate
+from tb4.pilot.preflight import evaluate
 
 
 ROOT = Path(__file__).resolve().parents[2]
