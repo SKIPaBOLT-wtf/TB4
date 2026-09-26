@@ -52,6 +52,10 @@ device_id = "watchdog-host"
 
 [target]
 device_id = "target-a"
+device_key = "target-a"
+hostname = "example-host"
+os_family = "LINUX"
+address_hints = ["192.0.2.10"]
 
 [target.wol]
 enabled = true
@@ -98,6 +102,7 @@ mac = ""
 [target.ssh_bootstrap]
 enabled = true
 host_alias = "{secret_marker}"
+platform = "LINUX_SYSTEMD"
 
 [policy]
 use_public_timing_defaults = true
