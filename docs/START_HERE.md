@@ -16,7 +16,9 @@ this file
    |
    +--> current implementation-plan step
    |
-   +--> only the protocol/config/code references required by that step
+   +--> docs/COACH.md when operating TB4
+   |
+   +--> only the protocol/config/code references required by that step or operation
 ```
 
 ## Two different progress systems
@@ -49,8 +51,14 @@ Dog/ball names are intentional project terminology. Examples include:
 
 Humor is allowed. Ambiguity is not.
 
+## Operating TB4
+
+The AI-side COACH workflow is defined in `docs/COACH.md`.
+
+The installable ChatGPT Skill source is intentionally compact and lives under `skill/tb4/`. It points back to canonical repository/Drive sources instead of embedding a second copy of the protocol.
+
 ## Current repository state
 
-At the time this entrypoint was created, the repository contains the execution contract but the implementation is not yet present. The implementation plan begins by creating the canonical project skeleton and machine-readable protocol definitions.
+TB4 has an implemented and tested core, Drive abstraction, WATCHDOG/FETCHER components, platform packaging, integration simulation, failure-injection coverage, efficiency budgets, and security hardening. The authoritative implementation status remains `docs/implementation-plan/manifest.yaml`; do not infer completion from this prose.
 
-Never assume a component exists because it was discussed outside the repository. Inspect the repository first.
+Never assume a component exists or is complete because it was discussed outside the repository. Inspect the repository and current implementation-plan evidence first.
