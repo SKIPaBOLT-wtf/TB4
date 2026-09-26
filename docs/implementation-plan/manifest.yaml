@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-30
+current_step: IP-31
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -156,12 +156,12 @@ steps:
     amendments: []
   IP-30:
     title: "RUNNER Interface"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-30/E-001-runner-interface.md]
     amendments: []
   IP-31:
     title: "Inline Command Runner"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-32:
