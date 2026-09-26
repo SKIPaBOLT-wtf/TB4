@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-35
+current_step: IP-36
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -181,12 +181,12 @@ steps:
     amendments: []
   IP-35:
     title: "FETCHER Ball Claim and Return Pipeline"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-35/E-001-fetcher-ball-pipeline.md]
     amendments: []
   IP-36:
     title: "FETCHER Heartbeat"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-37:
