@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-49
+current_step: IP-50
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -251,12 +251,12 @@ steps:
     amendments: []
   IP-49:
     title: "Google Drive Maintenance Operations"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-49/E-001-google-drive-maintenance.md]
     amendments: []
   IP-50:
     title: "Google Drive Transaction Compatibility Tests"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-51:
