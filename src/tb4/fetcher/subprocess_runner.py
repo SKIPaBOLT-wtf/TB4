@@ -85,10 +85,35 @@ class SubprocessRunner:
     ) -> ExecutionReport:
         if request.source is not ExecutionSource.INLINE:
             raise RunnerConfigurationError(
-                "SubprocessRunner inline step accepts only INLINE requests"
+                "SubprocessRunner.run accepts only INLINE requests; use run_script for SCRIPT_FILE"
             )
+        return self._run_argv(
+            request,
+            self._inline_argv(request),
+            cancel_requested=cancel_requested,
+        )
 
-        argv = self._inline_argv(request)
+    def run_script(
+        self,
+        request: ExecutionRequest,
+        *,
+        cancel_requested: CancelCheck | None = None,
+    ) -> ExecutionReport:
+        if request.source is not ExecutionSource.SCRIPT_FILE:
+            raise RunnerConfigurationError("run_script requires SCRIPT_FILE request")
+        return self._run_argv(
+            request,
+            self._script_argv(request),
+            cancel_requested=cancel_requested,
+        )
+
+    def _run_argv(
+        self,
+        request: ExecutionRequest,
+        argv: list[str],
+        *,
+        cancel_requested: CancelCheck | None = None,
+    ) -> ExecutionReport:
         env = os.environ.copy()
         env.update(dict(request.environment))
 
@@ -191,6 +216,30 @@ class SubprocessRunner:
             started_monotonic_s=started,
             finished_monotonic_s=finished,
             message=termination_message,
+        )
+
+    def _script_argv(self, request: ExecutionRequest) -> list[str]:
+        path = request.script_path
+        assert path is not None
+        path_arg = os.fspath(path)
+
+        if request.interpreter is Interpreter.PWSH:
+            return [self._require("pwsh"), "-NoLogo", "-NoProfile", "-NonInteractive", "-File", path_arg]
+        if request.interpreter is Interpreter.POWERSHELL:
+            executable = "powershell.exe" if os.name == "nt" else "powershell"
+            return [self._require(executable), "-NoLogo", "-NoProfile", "-NonInteractive", "-File", path_arg]
+        if request.interpreter is Interpreter.BASH:
+            return [self._require("bash"), path_arg]
+        if request.interpreter is Interpreter.SH:
+            return [self._require("sh"), path_arg]
+        if request.interpreter is Interpreter.PYTHON3:
+            return [self._require("python3"), path_arg]
+        if request.interpreter is Interpreter.PYTHON:
+            return [self._require("python"), path_arg]
+        if request.interpreter is Interpreter.EXEC:
+            return [path_arg]
+        raise RunnerConfigurationError(
+            f"interpreter {request.interpreter.value!r} is not valid for script files"
         )
 
     def _inline_argv(self, request: ExecutionRequest) -> list[str]:
