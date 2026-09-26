@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any, Callable, Sequence
 
@@ -37,21 +37,24 @@ class GoogleDriveBackend:
 
     service: Any
     media_upload_factory: Callable[..., Any] | None = None
+    operation_observer: Callable[[str], None] | None = None
+    operation_counts: dict[str, int] = field(default_factory=dict, init=False)
 
     capabilities = DriveCapabilities(
         stable_object_ids=True,
         exact_metadata_read=True,
         exact_text_read=True,
         atomic_rename_request=True,
-        atomic_move_request=False,
-        create_text=False,
+        atomic_move_request=True,
+        create_text=True,
         change_feed=False,
-        maintenance_listing=False,
-        permanent_delete=False,
+        maintenance_listing=True,
+        permanent_delete=True,
         atomic_version_precondition=False,
     )
 
     def get_metadata(self, object_id: str) -> BackendResult[ObjectMetadata]:
+        self._record_operation("get_metadata")
         try:
             request = self.service.files().get(
                 fileId=object_id,
@@ -64,6 +67,7 @@ class GoogleDriveBackend:
             return self._normalized_failure(exc, mutation=False)
 
     def read_text(self, object_id: str) -> BackendResult[TextObject]:
+        self._record_operation("read_text")
         metadata = self.get_metadata(object_id)
         if not metadata.ok or metadata.value is None:
             return BackendResult.failure(
@@ -110,6 +114,7 @@ class GoogleDriveBackend:
         *,
         expected_version_token: str | None = None,
     ) -> BackendResult[MutationReceipt]:
+        self._record_operation("replace_text")
         precondition = self._check_expected_version(object_id, expected_version_token)
         if precondition is not None:
             return precondition
@@ -145,6 +150,7 @@ class GoogleDriveBackend:
         *,
         expected_version_token: str | None = None,
     ) -> BackendResult[MutationReceipt]:
+        self._record_operation("rename")
         if not new_name:
             return BackendResult.failure(
                 BackendOutcome.CONFLICT,
@@ -185,20 +191,94 @@ class GoogleDriveBackend:
         *,
         expected_version_token: str | None = None,
     ) -> BackendResult[MutationReceipt]:
-        return BackendResult.failure(
-            BackendOutcome.CONFLICT,
-            message="Google maintenance move is not implemented until IP-49",
-        )
+        self._record_operation("move")
+        current = self.get_metadata(object_id)
+        if not current.ok or current.value is None:
+            return BackendResult.failure(
+                current.outcome,
+                message=current.message,
+                provider_code=current.provider_code,
+                provider_request_id=current.provider_request_id,
+            )
+        if (
+            expected_version_token is not None
+            and current.value.version_token != expected_version_token
+        ):
+            return BackendResult.failure(
+                BackendOutcome.CONFLICT,
+                message="expected Drive version does not match current file version",
+            )
+        old_parents = current.value.parent_ids
+        if not old_parents:
+            return BackendResult.failure(
+                BackendOutcome.CONFLICT,
+                message="Drive object has no removable parent",
+            )
+        if old_parents == (new_parent_id,):
+            return BackendResult.success(
+                MutationReceipt(
+                    object_id=object_id,
+                    requested_parent_id=new_parent_id,
+                    version_token=current.value.version_token,
+                )
+            )
+
+        try:
+            request = self.service.files().update(
+                fileId=object_id,
+                addParents=new_parent_id,
+                removeParents=",".join(old_parents),
+                fields=_METADATA_FIELDS,
+                supportsAllDrives=True,
+            )
+            raw = request.execute()
+            metadata = self._metadata(raw)
+            if metadata.object_id != object_id:
+                return BackendResult.failure(
+                    BackendOutcome.AMBIGUOUS,
+                    message="Drive move returned a different object ID",
+                )
+            return BackendResult.success(
+                MutationReceipt(
+                    object_id=object_id,
+                    requested_parent_id=new_parent_id,
+                    version_token=metadata.version_token,
+                )
+            )
+        except Exception as exc:
+            return self._normalized_failure(exc, mutation=True)
 
     def create_folder(
         self,
         parent_id: str,
         name: str,
     ) -> BackendResult[CreatedObject]:
-        return BackendResult.failure(
-            BackendOutcome.CONFLICT,
-            message="Google maintenance create_folder is not implemented until IP-49",
-        )
+        self._record_operation("create_folder")
+        if not name:
+            return BackendResult.failure(
+                BackendOutcome.CONFLICT,
+                message="folder name must not be empty",
+            )
+        try:
+            request = self.service.files().create(
+                body={
+                    "name": name,
+                    "mimeType": _GOOGLE_FOLDER_MIME,
+                    "parents": [parent_id],
+                },
+                fields=_METADATA_FIELDS,
+                supportsAllDrives=True,
+            )
+            raw = request.execute()
+            return BackendResult.success(CreatedObject(self._metadata(raw)))
+        except Exception as exc:
+            failure = self._normalized_failure(exc, mutation=True)
+            return BackendResult.failure(
+                failure.outcome,
+                message=failure.message,
+                provider_code=failure.provider_code,
+                provider_request_id=failure.provider_request_id,
+            )
 
     def create_text(
         self,
@@ -206,10 +286,34 @@ class GoogleDriveBackend:
         name: str,
         text: str,
     ) -> BackendResult[CreatedObject]:
-        return BackendResult.failure(
-            BackendOutcome.CONFLICT,
-            message="Google maintenance create_text is not implemented until IP-49",
-        )
+        self._record_operation("create_text")
+        if not name:
+            return BackendResult.failure(
+                BackendOutcome.CONFLICT,
+                message="text object name must not be empty",
+            )
+        try:
+            media = self._media_upload(text.encode("utf-8"))
+            request = self.service.files().create(
+                body={
+                    "name": name,
+                    "mimeType": "text/plain",
+                    "parents": [parent_id],
+                },
+                media_body=media,
+                fields=_METADATA_FIELDS,
+                supportsAllDrives=True,
+            )
+            raw = request.execute()
+            return BackendResult.success(CreatedObject(self._metadata(raw)))
+        except Exception as exc:
+            failure = self._normalized_failure(exc, mutation=True)
+            return BackendResult.failure(
+                failure.outcome,
+                message=failure.message,
+                provider_code=failure.provider_code,
+                provider_request_id=failure.provider_request_id,
+            )
 
     def delete(
         self,
@@ -217,19 +321,92 @@ class GoogleDriveBackend:
         *,
         expected_version_token: str | None = None,
     ) -> BackendResult[MutationReceipt]:
-        return BackendResult.failure(
-            BackendOutcome.CONFLICT,
-            message="Google maintenance delete is not implemented until IP-49",
-        )
+        self._record_operation("delete")
+        current = self.get_metadata(object_id)
+        if not current.ok or current.value is None:
+            return BackendResult.failure(
+                current.outcome,
+                message=current.message,
+                provider_code=current.provider_code,
+                provider_request_id=current.provider_request_id,
+            )
+        if current.value.is_folder:
+            return BackendResult.failure(
+                BackendOutcome.CONFLICT,
+                message="TB4 v1 refuses permanent folder deletion",
+            )
+        if (
+            expected_version_token is not None
+            and current.value.version_token != expected_version_token
+        ):
+            return BackendResult.failure(
+                BackendOutcome.CONFLICT,
+                message="expected Drive version does not match current file version",
+            )
+        try:
+            request = self.service.files().delete(
+                fileId=object_id,
+                supportsAllDrives=True,
+            )
+            request.execute()
+            return BackendResult.success(MutationReceipt(object_id=object_id))
+        except Exception as exc:
+            return self._normalized_failure(exc, mutation=True)
 
     def list_children(
         self,
         parent_id: str,
     ) -> BackendResult[Sequence[ObjectMetadata]]:
-        return BackendResult.failure(
-            BackendOutcome.CONFLICT,
-            message="Google maintenance listing is not implemented until IP-49",
-        )
+        self._record_operation("list_children")
+        query_parent = _drive_query_literal(parent_id)
+        page_token: str | None = None
+        seen_tokens: set[str] = set()
+        children: list[ObjectMetadata] = []
+
+        while True:
+            try:
+                request = self.service.files().list(
+                    q=f"'{query_parent}' in parents and trashed = false",
+                    spaces="drive",
+                    fields=f"nextPageToken,incompleteSearch,files({_METADATA_FIELDS})",
+                    pageSize=1000,
+                    pageToken=page_token,
+                    supportsAllDrives=True,
+                    includeItemsFromAllDrives=True,
+                )
+                raw = request.execute()
+            except Exception as exc:
+                failure = self._normalized_failure(exc, mutation=False)
+                return BackendResult.failure(
+                    failure.outcome,
+                    message=failure.message,
+                    provider_code=failure.provider_code,
+                    provider_request_id=failure.provider_request_id,
+                )
+
+            if raw.get("incompleteSearch"):
+                return BackendResult.failure(
+                    BackendOutcome.TRANSIENT_ERROR,
+                    message="Google Drive returned an incomplete child search",
+                )
+
+            for item in raw.get("files", []):
+                children.append(self._metadata(item))
+
+            next_token_raw = raw.get("nextPageToken")
+            if not next_token_raw:
+                break
+            next_token = str(next_token_raw)
+            if next_token in seen_tokens:
+                return BackendResult.failure(
+                    BackendOutcome.TRANSIENT_ERROR,
+                    message="Google Drive repeated a child-list page token",
+                )
+            seen_tokens.add(next_token)
+            page_token = next_token
+
+        children.sort(key=lambda item: item.object_id)
+        return BackendResult.success(tuple(children))
 
     def _check_expected_version(
         self,
@@ -252,6 +429,11 @@ class GoogleDriveBackend:
                 message="expected Drive version does not match current file version",
             )
         return None
+
+    def _record_operation(self, operation: str) -> None:
+        self.operation_counts[operation] = self.operation_counts.get(operation, 0) + 1
+        if self.operation_observer is not None:
+            self.operation_observer(operation)
 
     def _media_upload(self, data: bytes):
         if self.media_upload_factory is not None:
@@ -355,6 +537,10 @@ class GoogleDriveBackend:
             provider_code=provider_code,
             provider_request_id=request_id,
         )
+
+
+def _drive_query_literal(value: str) -> str:
+    return value.replace("\\", "\\\\").replace("'", "\\'")
 
 
 def _parse_google_time(value: Any) -> int | None:
