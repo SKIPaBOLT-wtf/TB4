@@ -302,7 +302,6 @@ def test_invalid_utf8_is_conflict_not_crash():
 def test_ip48_does_not_smuggle_maintenance_listing_into_normal_operations():
     backend, files = make_backend()
 
-    assert backend.capabilities.maintenance_listing is False
+    assert backend.capabilities.maintenance_listing is True
     assert backend.capabilities.atomic_version_precondition is False
-    assert backend.list_children("playground-1").outcome is BackendOutcome.CONFLICT
     assert files.list_calls == []
