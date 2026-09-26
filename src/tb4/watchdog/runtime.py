@@ -57,6 +57,11 @@ class WatchdogRuntime:
     def run(self, stop_event: threading.Event) -> int:
         self._publish_watchdog_identity()
         self._set_mode(DogMode.SNOOZE)
+        first_pulse = self.heartbeat.tick(active=False)
+        if first_pulse.outcome.value not in {"PUBLISHED", "NOT_DUE"}:
+            raise RuntimeError(
+                f"initial WATCHDOG heartbeat failed: {first_pulse.outcome.value}"
+            )
 
         while not stop_event.is_set():
             self.scheduler.run_due()
