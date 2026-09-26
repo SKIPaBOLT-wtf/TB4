@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-56
+current_step: IP-57
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -286,12 +286,12 @@ steps:
     amendments: []
   IP-56:
     title: "Security Hardening"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-56/E-001-security-hardening.md]
     amendments: []
   IP-57:
     title: "TB4 Skill and COACH Interface"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-58:
