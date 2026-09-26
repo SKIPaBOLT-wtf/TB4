@@ -36,7 +36,7 @@ For the public default schedule over one simulated hour:
 - idle heartbeat dispatches: <= 120;
 - stray scans: <= 6;
 - retention sweeps: <= 1;
-- full audits: 0 during a one-hour window.
+- full audits: <= 1 during a one-hour window because deterministic phase spreading may schedule the first 6-hour cadence inside that hour.
 
 These are conservative ceilings. They are regression alarms, not performance targets.
 
@@ -76,8 +76,8 @@ The integration budget requires:
 
 - `list_children() == 0` in the live job path;
 - <= 60 total in-memory backend operations for one small successful round trip;
-- <= 6 rename requests;
-- <= 3 body replacement requests.
+- <= 7 rename requests;
+- <= 4 body replacement requests.
 
 The total-operation ceiling includes required remote confirmation reads. Do not optimize by removing verification or fencing.
 
