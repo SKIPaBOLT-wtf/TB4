@@ -31,8 +31,8 @@ def test_scan_without_cidrs_performs_no_active_ping(monkeypatch) -> None:
     called = []
 
     discovery = LanDiscovery()
-    monkeypatch.setattr(discovery, "_ping", lambda address: called.append(address))
-    monkeypatch.setattr(discovery, "_neighbors", lambda: ())
+    monkeypatch.setattr(LanDiscovery, "_ping", lambda self, address: called.append(address))
+    monkeypatch.setattr(LanDiscovery, "_neighbors", lambda self: ())
 
     assert discovery.scan() == ()
     assert called == []
@@ -41,8 +41,8 @@ def test_scan_without_cidrs_performs_no_active_ping(monkeypatch) -> None:
 def test_explicit_cidr_uses_host_addresses_only(monkeypatch) -> None:
     called = []
     discovery = LanDiscovery(cidrs=("192.0.2.0/30",), max_hosts=10, workers=1)
-    monkeypatch.setattr(discovery, "_ping", lambda address: called.append(address))
-    monkeypatch.setattr(discovery, "_neighbors", lambda: ())
+    monkeypatch.setattr(LanDiscovery, "_ping", lambda self, address: called.append(address))
+    monkeypatch.setattr(LanDiscovery, "_neighbors", lambda self: ())
 
     discovery.scan()
 
