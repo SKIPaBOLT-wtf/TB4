@@ -3,7 +3,7 @@ from __future__ import annotations
 from tb4.fetcher.execution_models import ExecutionDisposition
 from tb4.watchdog.wake_manager import WakeManagerOutcome
 
-from tests.support.simulation import SimulationHarness, execution_report
+from tb4.testing.simulation import SimulationHarness, execution_report
 
 
 def test_awake_target_direct_job_returns_to_ready_without_runtime_folder_scan() -> None:
