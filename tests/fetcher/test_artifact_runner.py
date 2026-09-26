@@ -84,7 +84,7 @@ def test_hash_mismatch_refuses_before_materialization(tmp_path: Path) -> None:
     with pytest.raises(ArtifactExecutionError, match="hash"):
         ArtifactRunner(tmp_path, SubprocessRunner()).run_script(
             desc,
-            b"print('tampered')\n",
+            b"print('evil')\n",
             run_limit_s=5,
             now_epoch_s=1500,
         )
