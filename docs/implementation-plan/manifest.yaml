@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-28
+current_step: IP-29
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -146,12 +146,12 @@ steps:
     amendments: []
   IP-28:
     title: "Tree Audit, Repair, and DOG_POUND Quarantine"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-28/E-001-tree-audit-repair.md]
     amendments: []
   IP-29:
     title: "TOY_BOX Artifact Protocol"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-30:
