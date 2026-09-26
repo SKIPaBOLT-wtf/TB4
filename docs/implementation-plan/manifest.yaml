@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-47
+current_step: IP-48
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -241,12 +241,12 @@ steps:
     amendments: []
   IP-47:
     title: "Google Drive Authentication and Client Boundary"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-47/E-001-google-drive-auth-client.md]
     amendments: []
   IP-48:
     title: "Google Drive Exact-Object Operations"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-49:
