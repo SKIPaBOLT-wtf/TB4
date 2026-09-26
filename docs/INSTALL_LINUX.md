@@ -30,16 +30,16 @@ Install TB4 into a system-managed Python environment or virtual environment and 
 
 The committed units use `/usr/bin/env tb4` so they do not embed a machine-specific Python path.
 
-## Packaging check
+## Configuration/runtime check
 
-Before runtime composition is configured:
+Before enabling a service:
 
 ```sh
 tb4 watchdog --check --config /etc/tb4/watchdog.toml
 tb4 fetcher --check --config /etc/tb4/fetcher.toml
 ```
 
-These commands validate the stable service boundary and external config path without claiming end-to-end runtime readiness.
+These commands parse the role configuration, validate bounded deployment settings, and resolve the production runtime factory. They deliberately do not authenticate to Google Drive, send network probes, wake a host, or execute a job. End-to-end readiness is proven by the private pilot, not by a local config check.
 
 ## Install units
 
@@ -68,7 +68,7 @@ journalctl -u tb4-watchdog.service
 
 systemd sends SIGTERM. `ServiceHost` converts SIGTERM/SIGINT into a shared stop event and runs registered cleanup callbacks exactly once in reverse registration order.
 
-FETCHER runtime composition must register child-process termination cleanup before it is considered pilot-ready. `KillMode=mixed` provides a final systemd safety net for processes remaining in the service cgroup after the graceful stop interval.
+FETCHER combines the service stop event with STOP_BALL cancellation while a child process is active, so SIGTERM participates in the same bounded process-tree shutdown path. `KillMode=mixed` remains a final systemd safety net for processes remaining in the service cgroup after the graceful stop interval.
 
 ## Security boundary
 
