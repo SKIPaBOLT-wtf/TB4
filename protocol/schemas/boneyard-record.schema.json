@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/boneyard-record.schema.json",
+  "title": "TB4 BONEYARD Terminal Summary",
+  "type": "object",
+  "description": "Small terminal evidence record. BONEYARD is history, not live control state.",
+  "required": [
+    "schema_version",
+    "protocol_major",
+    "device_id",
+    "operation_id",
+    "generation",
+    "terminal_state",
+    "finished_at",
+    "recorded_at",
+    "expires_at",
+    "reason_code",
+    "exit_code",
+    "result_artifact_ids"
+  ],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "protocol_major": {"type": "integer", "const": 1},
+    "device_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "operation_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "generation": {"type": "integer", "minimum": 1},
+    "terminal_state": {
+      "type": "string",
+      "enum": ["DONE", "PARTIAL", "FAILED", "CANCELLED", "GONE"]
+    },
+    "finished_at": {"type": "integer", "minimum": 1},
+    "recorded_at": {"type": "integer", "minimum": 1},
+    "expires_at": {"type": "integer", "minimum": 1},
+    "reason_code": {
+      "type": ["string", "null"],
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Z0-9_]+$"
+    },
+    "exit_code": {"type": ["integer", "null"]},
+    "result_artifact_ids": {
+      "type": "array",
+      "maxItems": 32,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256,
+        "pattern": "^[A-Za-z0-9._:-]+$"
+      }
+    }
+  },
+  "propertyNames": {
+    "not": {
+      "enum": ["password", "token", "credential", "credentials", "stdout", "stderr"]
+    }
+  },
+  "additionalProperties": false
+}
