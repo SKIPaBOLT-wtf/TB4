@@ -25,6 +25,9 @@ google = [
   "google-auth-httplib2>=0.2",
   "google-auth-oauthlib>=1.0",
 ]
+windows = [
+  "pywin32>=311; sys_platform == 'win32'",
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
