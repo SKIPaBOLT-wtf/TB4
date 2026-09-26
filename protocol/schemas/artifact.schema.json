@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/artifact.schema.json",
+  "title": "TB4 TOY_BOX Artifact Descriptor",
+  "description": "Immutable descriptor created only after artifact content has been remotely verified. FETCH_BALL references this descriptor by its stable Drive object ID.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "protocol_major",
+    "artifact_id",
+    "kind",
+    "content_object_id",
+    "size_bytes",
+    "sha256",
+    "interpreter_hint",
+    "safe_suffix",
+    "created_at",
+    "expires_at",
+    "complete"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "protocol_major": {
+      "const": 1
+    },
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[A-Za-z0-9._:-]+$",
+      "description": "Stable Drive object ID of this descriptor. Runtime verification must require it to equal the object ID used to fetch the descriptor."
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "REQUEST_SCRIPT",
+        "REQUEST_DATA",
+        "RESULT_TEXT",
+        "RESULT_BINARY",
+        "RESULT_DATA"
+      ]
+    },
+    "content_object_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[A-Za-z0-9._:-]+$",
+      "description": "Stable exact ID of the separately stored artifact content object."
+    },
+    "size_bytes": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1073741824,
+      "description": "Exact verified content size. Runtime policy may impose a lower configured limit."
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "interpreter_hint": {
+      "type": ["string", "null"],
+      "enum": [
+        "pwsh",
+        "powershell",
+        "bash",
+        "sh",
+        "python3",
+        "python",
+        "exec",
+        null
+      ],
+      "description": "Execution family hint only. Never interpreted as a shell command or arbitrary local path."
+    },
+    "safe_suffix": {
+      "type": "string",
+      "enum": [
+        ".ps1",
+        ".sh",
+        ".py",
+        ".txt",
+        ".json",
+        ".bin",
+        ".dat"
+      ],
+      "description": "Whitelisted suffix used by FETCHER when deriving a temporary local filename."
+    },
+    "created_at": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "expires_at": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "complete": {
+      "const": true,
+      "description": "A descriptor is publishable only after content size/hash readback verification succeeded."
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "REQUEST_SCRIPT"
+          }
+        },
+        "required": ["kind"]
+      },
+      "then": {
+        "properties": {
+          "interpreter_hint": {
+            "type": "string",
+            "enum": ["pwsh", "powershell", "bash", "sh", "python3", "python"]
+          },
+          "safe_suffix": {
+            "enum": [".ps1", ".sh", ".py"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "enum": ["RESULT_BINARY", "RESULT_DATA"]
+          }
+        },
+        "required": ["kind"]
+      },
+      "then": {
+        "properties": {
+          "interpreter_hint": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ],
+  "propertyNames": {
+    "not": {
+      "enum": [
+        "path",
+        "local_path",
+        "remote_path",
+        "filename",
+        "command",
+        "arguments"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
