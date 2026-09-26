@@ -23,6 +23,7 @@ class BackendResult(Generic[T]):
     value: T | None = None
     message: str | None = None
     provider_code: str | None = None
+    provider_request_id: str | None = None
 
     def __post_init__(self) -> None:
         if self.outcome is BackendOutcome.SUCCESS and self.value is None:
@@ -49,6 +50,7 @@ class BackendResult(Generic[T]):
         *,
         message: str | None = None,
         provider_code: str | None = None,
+        provider_request_id: str | None = None,
     ) -> "BackendResult[T]":
         if outcome is BackendOutcome.SUCCESS:
             raise ValueError("use BackendResult.success for successful results")
@@ -56,4 +58,5 @@ class BackendResult(Generic[T]):
             outcome,
             message=message,
             provider_code=provider_code,
+            provider_request_id=provider_request_id,
         )
