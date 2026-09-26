@@ -1,0 +1,69 @@
+schema_version: 1
+protocol_major: 1
+
+scenarios:
+  ready_target_job:
+    conditions:
+      watchdog_fault: CLEAN
+      fetcher_fresh: true
+      fetch_ball: READY
+    coach_actions:
+      - reserve_fetch_ball
+      - write_and_verify_request
+      - publish_fetch_ball_toss
+      - wait_for_terminal_state
+      - interpret_terminal_evidence
+      - recycle_after_consumption
+
+  sleeping_target_job:
+    conditions:
+      watchdog_fault: CLEAN
+      fetcher_fresh: false
+      wake_capable: true
+      wake_bone: READY
+    coach_actions:
+      - reserve_wake_bone
+      - write_and_verify_wake_request
+      - publish_wake_bone_toss
+      - wait_for_fresh_dog_pulse
+      - dispatch_fetch_ball_after_ready
+
+  cancel_active_job:
+    conditions:
+      fetch_ball: CHEW
+      stop_ball: READY
+    coach_actions:
+      - bind_cancel_to_exact_fetch_identity
+      - write_and_verify_stop_request
+      - publish_stop_ball_requested
+      - wait_for_acknowledgement_and_fetch_terminal
+      - consume_terminal_evidence
+
+  partial_result:
+    conditions:
+      fetch_ball: PARTIAL
+    coach_actions:
+      - inspect_completed_effects
+      - determine_remaining_work
+      - never_implicitly_replay
+      - recycle_after_consumption
+
+  gone_mutating_result:
+    conditions:
+      fetch_ball: GONE
+      job_effect: MUTATING_OR_UNKNOWN
+    coach_actions:
+      - preserve_unknown_effect_evidence
+      - inspect_current_target_state
+      - never_implicitly_replay
+      - decide_explicit_new_generation_only_after_reconciliation
+
+  watchdog_blocking:
+    conditions:
+      watchdog_fault: BLOCKING
+    coach_actions:
+      - refuse_new_normal_control_work
+      - allow_diagnostic_reads
+      - allow_documented_repair
+      - acknowledge_only_when_review_is_meaningful
+      - require_watchdog_revalidation_before_clean
