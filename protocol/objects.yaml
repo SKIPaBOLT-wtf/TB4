@@ -85,6 +85,8 @@ fixed_objects:
     purpose: executor or watchdog heartbeat evidence
   DOG_SNIFF:
     purpose: WATCHDOG LAN observation evidence
+  STRAY_CARD:
+    purpose: bounded observation evidence for one unregistered LAN device
 
 stateful_objects:
   FETCH_BALL:
