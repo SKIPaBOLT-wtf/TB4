@@ -20,17 +20,51 @@ No private answer belongs in this repository.
 
 ## Private configuration workflow
 
+Use one private pilot file as the source of deployment truth.
+
 1. Copy `config/examples/pilot.example.toml` to a location outside the repository.
-2. Replace every `replace-at-deploy-time` placeholder.
-3. Disable optional capabilities explicitly when they do not apply.
-4. Protect the file using operating-system permissions appropriate for local deployment.
-5. Run:
+2. Replace every required `replace-at-deploy-time` placeholder.
+3. Disable optional WOL/SSH capabilities explicitly when they do not apply.
+4. Protect the private file with local operating-system permissions.
+5. Install the Google provider dependency:
+
+```sh
+python -m pip install -e ".[google]"
+```
+
+6. Perform the one explicit local OAuth authorization:
+
+```sh
+python tools/authorize_drive.py --config /private/path/pilot.toml
+```
+
+7. Run the sanitized pilot preflight:
 
 ```sh
 python tools/preflight.py --config /private/path/pilot.toml
 ```
 
-The preflight output reports check names and statuses only. It never prints configured root IDs, addresses, MAC addresses, usernames, paths containing secrets, or credential contents.
+8. Generate role-specific service configs in a private directory:
+
+```sh
+python tools/prepare_pilot.py \
+  --config /private/path/pilot.toml \
+  --output-dir /private/tb4-generated
+```
+
+This writes `watchdog.toml` and `fetcher.toml` from the same target/root identity and applies private POSIX permissions where supported.
+
+9. Bootstrap the canonical TB4 tree inside the explicitly selected existing Drive folder:
+
+```sh
+python tools/bootstrap_drive.py --config /private/path/pilot.toml
+```
+
+The bootstrap operation is idempotent and never creates a second TB4 root.
+
+10. Copy each generated role config to the appropriate host private configuration location, then use the platform installation/check procedure.
+
+The preflight and setup tools deliberately avoid echoing configured root IDs, addresses, MAC addresses, SSH aliases, credential paths, or credential contents into public evidence.
 
 ## Required readiness areas
 
