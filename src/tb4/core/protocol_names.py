@@ -16,6 +16,7 @@ class LogicalObject(StrEnum):
     DOG_TAG = "DOG_TAG"
     DOG_PULSE = "DOG_PULSE"
     DOG_SNIFF = "DOG_SNIFF"
+    STRAY_CARD = "STRAY_CARD"
     FETCH_BALL = "FETCH_BALL"
     WAKE_BONE = "WAKE_BONE"
     STOP_BALL = "STOP_BALL"
