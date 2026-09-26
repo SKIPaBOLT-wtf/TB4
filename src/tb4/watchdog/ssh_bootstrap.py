@@ -4,6 +4,8 @@ from dataclasses import dataclass
 from enum import StrEnum
 from typing import Protocol, runtime_checkable
 
+from tb4.security import redact_sensitive_text
+
 
 class BootstrapPlatform(StrEnum):
     LINUX_SYSTEMD = "LINUX_SYSTEMD"
@@ -208,7 +210,7 @@ class DoorScratcher:
     @staticmethod
     def _bounded_message(result: SshCommandResult, limit: int = 512) -> str:
         text = (result.stderr or result.stdout or result.failure_kind or "SSH failure")
-        return str(text)[:limit]
+        return redact_sensitive_text(str(text))[:limit]
 
 
 def fixed_bootstrap_commands(platform: BootstrapPlatform) -> tuple[str, str]:
