@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-51
+current_step: IP-52
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -261,12 +261,12 @@ steps:
     amendments: []
   IP-51:
     title: "Linux Service Packaging"
-    status: IN_PROGRESS
-    evidence: []
-    amendments: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-51/E-001-linux-service-packaging.md]
+    amendments: [docs/implementation-plan/amendments/IP-51/A-001-packaging-boundary.md]
   IP-52:
     title: "Windows Service Packaging"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-53:
