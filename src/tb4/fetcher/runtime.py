@@ -26,6 +26,7 @@ from tb4.runtime_support import (
     RuntimeConfigurationError,
     RuntimeContext,
     build_context,
+    load_toml,
     optional_bool,
     require_string,
     require_table,
