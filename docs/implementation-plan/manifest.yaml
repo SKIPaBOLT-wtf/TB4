@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-36
+current_step: IP-37
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -186,12 +186,12 @@ steps:
     amendments: []
   IP-36:
     title: "FETCHER Heartbeat"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-36/E-001-fetcher-heartbeat.md]
     amendments: []
   IP-37:
     title: "FETCHER Cancellation"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-38:
