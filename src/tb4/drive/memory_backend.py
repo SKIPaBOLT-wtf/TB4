@@ -45,6 +45,7 @@ class InMemoryDriveBackend:
         change_feed=False,
         maintenance_listing=True,
         permanent_delete=True,
+        atomic_version_precondition=True,
     )
 
     def __init__(self) -> None:
