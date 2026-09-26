@@ -115,6 +115,11 @@ class ArtifactRunner:
                 dir=self.temp_root,
             )
         )
+        try:
+            work_dir.chmod(0o700)
+        except OSError:
+            # Windows and some filesystems do not expose POSIX mode semantics.
+            pass
         script_path = work_dir / f"fetch-{token}{descriptor.safe_suffix}"
 
         try:
