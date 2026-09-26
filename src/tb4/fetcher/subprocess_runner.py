@@ -297,19 +297,33 @@ class SubprocessRunner:
         if process.poll() is not None:
             return requested, None
 
+        if os.name == "nt":
+            from tb4.platform.windows_process import terminate_windows_process_tree
+
+            try:
+                outcome = terminate_windows_process_tree(
+                    process,
+                    grace_s=TERMINATION_GRACE_S,
+                )
+            except OSError as exc:
+                return ExecutionDisposition.TERMINATION_FAILED, str(exc)
+            if outcome.stopped:
+                message = outcome.message
+                if outcome.forced and message is None:
+                    message = "process tree required forced termination"
+                return requested, message
+            return (
+                ExecutionDisposition.TERMINATION_FAILED,
+                outcome.message or "Windows process tree did not terminate",
+            )
+
         try:
-            if os.name == "nt":
-                process.terminate()
-            else:
-                os.killpg(process.pid, signal.SIGTERM)
+            os.killpg(process.pid, signal.SIGTERM)
             process.wait(timeout=TERMINATION_GRACE_S)
             return requested, None
         except (OSError, subprocess.TimeoutExpired):
             try:
-                if os.name == "nt":
-                    process.kill()
-                else:
-                    os.killpg(process.pid, signal.SIGKILL)
+                os.killpg(process.pid, signal.SIGKILL)
                 process.wait(timeout=TERMINATION_GRACE_S)
                 return requested, "process tree required forced termination"
             except (OSError, subprocess.TimeoutExpired) as exc:
