@@ -1,0 +1,22 @@
+# Public-safe WATCHDOG deployment template.
+# Copy to a private deployment location before editing.
+
+[identity]
+device_id = "watchdog-host"
+role = "watchdog"
+
+[drive]
+# Private deployment value. Never commit the real value.
+root_id = "replace-at-deploy-time"
+client_secrets_path = "/private/tb4/google-client-secrets.json"
+token_path = "/private/tb4/google-token.json"
+
+[network]
+# Documentation-only TEST-NET range, not a private LAN.
+scan_cidr = "198.51.100.0/24"
+
+[service]
+ephemeral = false
+
+[notes]
+source = "config/examples/watchdog.toml.example"
