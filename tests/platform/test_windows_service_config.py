@@ -69,7 +69,7 @@ def test_windows_tree_termination_escalates_to_force() -> None:
 
 def test_powershell_script_uses_file_and_no_profile(monkeypatch) -> None:
     runner = SubprocessRunner()
-    monkeypatch.setattr(runner, "_require", lambda executable: executable)
+    monkeypatch.setattr(SubprocessRunner, "_require", staticmethod(lambda executable: executable))
     request = ExecutionRequest(
         source=ExecutionSource.SCRIPT_FILE,
         interpreter=Interpreter.POWERSHELL,
