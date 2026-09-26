@@ -98,6 +98,28 @@ def evaluate(config_path: Path, *, template: bool = False) -> list[Check]:
     checks.append(
         _check_device_id("target.device_id", _nested(data, "target", "device_id"))
     )
+    checks.append(
+        _check_device_id("target.device_key", _nested(data, "target", "device_key"))
+    )
+
+    os_family = _nested(data, "target", "os_family")
+    if os_family in {"LINUX", "WINDOWS", "MACOS", "OTHER"}:
+        checks.append(Check("target.os_family", "PASS", "target OS family is configured"))
+    else:
+        checks.append(Check("target.os_family", "INVALID", "target OS family is invalid"))
+
+    addresses = _nested(data, "target", "address_hints")
+    if (
+        isinstance(addresses, list)
+        and addresses
+        and all(isinstance(item, str) and item.strip() for item in addresses)
+    ):
+        if template or all(item != PLACEHOLDER for item in addresses):
+            checks.append(Check("target.address_hints", "PASS", "target address hint list is configured"))
+        else:
+            checks.append(Check("target.address_hints", "MISSING", "target address hint must be replaced for deployment"))
+    else:
+        checks.append(Check("target.address_hints", "MISSING", "at least one target address hint is required"))
 
     wol_enabled = _nested(data, "target", "wol", "enabled")
     if wol_enabled is False:
@@ -111,7 +133,13 @@ def evaluate(config_path: Path, *, template: bool = False) -> list[Check]:
         elif not MAC_RE.fullmatch(mac):
             checks.append(Check("target.wol", "INVALID", "WOL MAC has invalid format"))
         else:
-            checks.append(Check("target.wol", "PASS", "WOL capability is configured"))
+            broadcast = _nested(data, "target", "wol", "broadcast_address")
+            if template and broadcast == PLACEHOLDER:
+                checks.append(Check("target.wol", "PASS", "WOL deployment placeholders are present"))
+            elif not _present_string(broadcast):
+                checks.append(Check("target.wol", "MISSING", "WOL is enabled but broadcast address is missing"))
+            else:
+                checks.append(Check("target.wol", "PASS", "WOL capability is configured"))
     else:
         checks.append(Check("target.wol", "INVALID", "enabled must be true or false"))
 
@@ -125,7 +153,11 @@ def evaluate(config_path: Path, *, template: bool = False) -> list[Check]:
         elif not _present_string(alias):
             checks.append(Check("target.ssh_bootstrap", "MISSING", "SSH bootstrap is enabled but host alias is missing"))
         else:
-            checks.append(Check("target.ssh_bootstrap", "PASS", "SSH bootstrap host alias is configured"))
+            platform = _nested(data, "target", "ssh_bootstrap", "platform")
+            if platform not in {"LINUX_SYSTEMD", "WINDOWS_SERVICE"}:
+                checks.append(Check("target.ssh_bootstrap", "INVALID", "SSH bootstrap platform is invalid"))
+            else:
+                checks.append(Check("target.ssh_bootstrap", "PASS", "SSH bootstrap host alias and platform are configured"))
     else:
         checks.append(Check("target.ssh_bootstrap", "INVALID", "enabled must be true or false"))
 
