@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-50
+current_step: IP-51
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -256,12 +256,12 @@ steps:
     amendments: []
   IP-50:
     title: "Google Drive Transaction Compatibility Tests"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-50/E-001-google-transaction-compatibility.md]
     amendments: []
   IP-51:
     title: "Linux Service Packaging"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-52:
