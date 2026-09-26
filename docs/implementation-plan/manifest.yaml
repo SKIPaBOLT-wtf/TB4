@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-37
+current_step: IP-38
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -191,12 +191,12 @@ steps:
     amendments: []
   IP-37:
     title: "FETCHER Cancellation"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-37/E-001-fetcher-cancellation.md]
     amendments: []
   IP-38:
     title: "FETCHER Idle and Restart Lifecycle"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-39:
