@@ -335,6 +335,7 @@ class TreeAuditor:
 
             canonical_ids: set[str] = set()
             duplicate_ids: set[str] = set()
+            recognized_candidate_ids: set[str] = set()
 
             for expected in children_specs:
                 canonical_id = park_map.entries.get(expected.logical_ref)
@@ -358,8 +359,10 @@ class TreeAuditor:
                     if item.name in expected.allowed_names
                 )
                 matching_ids = tuple(item.object_id for item in matching)
+                recognized_candidate_ids.update(matching_ids)
 
                 canonical = self.backend.get_metadata(canonical_id)
+                canonical_present_in_expected_parent = False
                 if canonical.outcome is BackendOutcome.NOT_FOUND:
                     issues.append(
                         self._issue(
@@ -384,6 +387,11 @@ class TreeAuditor:
                     )
                 else:
                     meta = canonical.value
+                    canonical_present_in_expected_parent = (
+                        meta.parent_ids == (parent_id,)
+                        and meta.is_folder == expected.expected_is_folder
+                        and meta.name in expected.allowed_names
+                    )
                     if meta.parent_ids != (parent_id,):
                         issues.append(
                             self._issue(
@@ -418,10 +426,14 @@ class TreeAuditor:
                             )
                         )
 
-                extras = tuple(
-                    item.object_id
-                    for item in matching
-                    if item.object_id != canonical_id
+                extras = (
+                    tuple(
+                        item.object_id
+                        for item in matching
+                        if item.object_id != canonical_id
+                    )
+                    if canonical_present_in_expected_parent
+                    else ()
                 )
                 if extras:
                     duplicate_ids.update(extras)
@@ -443,7 +455,11 @@ class TreeAuditor:
             } or parent_ref.endswith(".TOY_BOX") or parent_ref.endswith(".BONEYARD")
             if not allowed_dynamic_parent:
                 for child in children:
-                    if child.object_id in canonical_ids or child.object_id in known_noncanonical:
+                    if (
+                        child.object_id in canonical_ids
+                        or child.object_id in known_noncanonical
+                        or child.object_id in recognized_candidate_ids
+                    ):
                         continue
                     issues.append(
                         TreeIssue(
