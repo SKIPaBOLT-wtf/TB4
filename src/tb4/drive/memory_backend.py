@@ -44,6 +44,7 @@ class InMemoryDriveBackend:
         create_text=True,
         change_feed=False,
         maintenance_listing=True,
+        permanent_delete=True,
     )
 
     def __init__(self) -> None:
@@ -176,6 +177,54 @@ class InMemoryDriveBackend:
             lambda obj: setattr(obj, "parent_id", new_parent_id),
             requested_parent_id=new_parent_id,
         )
+
+    def delete(
+        self,
+        object_id: str,
+        *,
+        expected_version_token: str | None = None,
+    ) -> BackendResult[MutationReceipt]:
+        self._count("delete")
+        injected = self._consume_injected("delete")
+        if injected is not None and injected is not BackendOutcome.AMBIGUOUS:
+            return BackendResult.failure(injected, message="injected delete outcome")
+
+        obj = self._objects.get(object_id)
+        if obj is None:
+            return BackendResult.failure(BackendOutcome.NOT_FOUND)
+        if object_id == self._root_id:
+            return BackendResult.failure(BackendOutcome.CONFLICT, message="root cannot be deleted")
+        if (
+            expected_version_token is not None
+            and expected_version_token != self._version_token(obj)
+        ):
+            return BackendResult.failure(
+                BackendOutcome.CONFLICT,
+                message="expected version token does not match current object",
+            )
+        if obj.is_folder and any(
+            candidate.parent_id == object_id for candidate in self._objects.values()
+        ):
+            return BackendResult.failure(
+                BackendOutcome.CONFLICT,
+                message="non-empty folder cannot be deleted",
+            )
+
+        snapshot = replace(obj)
+        del self._objects[object_id]
+        if self._next_visibility_delay_reads > 0:
+            self._visibility_lag[object_id] = _VisibilityLag(
+                snapshot=snapshot,
+                remaining_reads=self._next_visibility_delay_reads,
+            )
+            self._next_visibility_delay_reads = 0
+
+        if injected is BackendOutcome.AMBIGUOUS:
+            return BackendResult.failure(
+                BackendOutcome.AMBIGUOUS,
+                message="injected ambiguous delete; object may be gone",
+            )
+        return BackendResult.success(MutationReceipt(object_id=object_id))
 
     def create_folder(
         self,
