@@ -104,6 +104,14 @@ def scan_text(path: str, text: str) -> tuple[SecurityFinding, ...]:
     findings: list[SecurityFinding] = []
 
     for line_number, line in enumerate(text.splitlines(), start=1):
+        # Test fixtures may opt out one exact source line. The marker is valid
+        # only under tests/ so production/docs/config cannot suppress findings.
+        if (
+            path.startswith("tests/")
+            and "tb4-secret-scan: allow-test-fixture" in line
+        ):
+            continue
+
         for code, pattern in _SECRET_PATTERNS:
             if pattern.search(line):
                 findings.append(
