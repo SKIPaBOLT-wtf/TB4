@@ -12,3 +12,10 @@ htmlcov/
 .env.*
 !.env.example
 *.log
+
+# TB4 local/private Google OAuth material
+.tb4-private/
+credentials.json
+token.json
+google-client-secrets.json
+google-token.json
