@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-34
+current_step: IP-35
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -176,12 +176,12 @@ steps:
     amendments: []
   IP-34:
     title: "Result Classifier"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-34/E-001-result-classifier.md]
     amendments: []
   IP-35:
     title: "FETCHER Ball Claim and Return Pipeline"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-36:
