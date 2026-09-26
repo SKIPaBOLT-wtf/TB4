@@ -106,23 +106,6 @@ class BoneyardKeeper:
 
     def record_terminal_summary(self, summary: TerminalSummary) -> SummaryRecord:
         store = self.schema_store if self.schema_store is not None else load_schema_store()
-        recorded_at = int(self.epoch_now())
-        body: dict[str, object] = {
-            "schema_version": 1,
-            "protocol_major": 1,
-            "device_id": summary.device_id,
-            "operation_id": summary.operation_id,
-            "generation": summary.generation,
-            "terminal_state": summary.terminal_state,
-            "finished_at": summary.finished_at,
-            "recorded_at": recorded_at,
-            "expires_at": summary.finished_at + self.policy.boneyard_retention_s,
-            "reason_code": summary.reason_code,
-            "exit_code": summary.exit_code,
-            "result_artifact_ids": list(summary.result_artifact_ids),
-        }
-        store.validate("boneyard-record.schema.json", body)
-        text = canonical_json_text(body)
 
         token = hashlib.sha256(summary.operation_id.encode("utf-8")).hexdigest()[:16]
         name = (
@@ -142,9 +125,48 @@ class BoneyardKeeper:
             existing = self.backend.read_text(matches[0].object_id)
             if not existing.ok or existing.value is None:
                 raise RetentionError("existing BONEYARD summary cannot be read")
-            if existing.value.text != text:
-                raise RetentionError("existing BONEYARD summary conflicts with canonical body")
-            return SummaryRecord(matches[0].object_id, name, body)
+            try:
+                existing_body = json.loads(existing.value.text)
+                if not isinstance(existing_body, dict):
+                    raise ValueError("summary body is not an object")
+                store.validate("boneyard-record.schema.json", existing_body)
+            except (json.JSONDecodeError, SchemaValidationError, ValueError) as exc:
+                raise RetentionError(f"existing BONEYARD summary is invalid: {exc}") from exc
+
+            immutable_expected = {
+                "device_id": summary.device_id,
+                "operation_id": summary.operation_id,
+                "generation": summary.generation,
+                "terminal_state": summary.terminal_state,
+                "finished_at": summary.finished_at,
+                "reason_code": summary.reason_code,
+                "exit_code": summary.exit_code,
+                "result_artifact_ids": list(summary.result_artifact_ids),
+            }
+            if any(
+                existing_body.get(key) != value
+                for key, value in immutable_expected.items()
+            ):
+                raise RetentionError("existing BONEYARD summary conflicts with terminal evidence")
+            return SummaryRecord(matches[0].object_id, name, existing_body)
+
+        recorded_at = int(self.epoch_now())
+        body: dict[str, object] = {
+            "schema_version": 1,
+            "protocol_major": 1,
+            "device_id": summary.device_id,
+            "operation_id": summary.operation_id,
+            "generation": summary.generation,
+            "terminal_state": summary.terminal_state,
+            "finished_at": summary.finished_at,
+            "recorded_at": recorded_at,
+            "expires_at": summary.finished_at + self.policy.boneyard_retention_s,
+            "reason_code": summary.reason_code,
+            "exit_code": summary.exit_code,
+            "result_artifact_ids": list(summary.result_artifact_ids),
+        }
+        store.validate("boneyard-record.schema.json", body)
+        text = canonical_json_text(body)
 
         created = self.backend.create_text(self.boneyard_folder_id, name, text)
         if created.outcome is BackendOutcome.AMBIGUOUS:
