@@ -1,0 +1,29 @@
+# TB4 first-pilot template.
+# Copy this file outside the repository and replace placeholders there.
+
+[pilot]
+name = "first-two-machine-pilot"
+
+[drive]
+root_id = "replace-at-deploy-time"
+client_secrets_path = "replace-at-deploy-time"
+token_path = "replace-at-deploy-time"
+
+[watchdog]
+device_id = "watchdog-host"
+
+[target]
+device_id = "target-a"
+
+[target.wol]
+enabled = true
+mac = "replace-at-deploy-time"
+
+[target.ssh_bootstrap]
+enabled = true
+host_alias = "replace-at-deploy-time"
+
+[policy]
+# Keep the public defaults for the first pilot unless a measured condition
+# demonstrates that a change is necessary.
+use_public_timing_defaults = true
