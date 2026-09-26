@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/watchdog-fault.schema.json",
+  "title": "TB4 WATCHDOG_FAULT Body",
+  "type": "object",
+  "description": "Compact current DOG_SHIT fault register. Filename is authoritative state; this body stores only the current blocking fault or CLEAN reset evidence.",
+  "required": [
+    "schema_version",
+    "protocol_major",
+    "reported_at",
+    "source",
+    "scope",
+    "fault_code",
+    "description",
+    "invariant_key",
+    "first_seen_at",
+    "last_seen_at",
+    "occurrence_count"
+  ],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "protocol_major": {"type": "integer", "const": 1},
+    "reported_at": {"type": "integer", "minimum": 1},
+    "source": {"type": "string", "const": "WATCHDOG"},
+    "scope": {
+      "type": "string",
+      "enum": ["NONE", "PROTOCOL_BLOCKING", "GLOBAL_BLOCKING"]
+    },
+    "fault_code": {
+      "type": ["string", "null"],
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Z0-9_]+$"
+    },
+    "description": {
+      "type": ["string", "null"],
+      "maxLength": 512
+    },
+    "invariant_key": {
+      "type": ["string", "null"],
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "first_seen_at": {"type": "integer", "minimum": 0},
+    "last_seen_at": {"type": "integer", "minimum": 0},
+    "occurrence_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000000000
+    }
+  },
+  "propertyNames": {
+    "not": {
+      "enum": ["state", "dog_shit_state", "password", "token", "credential", "credentials"]
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {"properties": {"scope": {"const": "NONE"}}},
+      "then": {
+        "properties": {
+          "fault_code": {"type": "null"},
+          "description": {"type": "null"},
+          "invariant_key": {"type": "null"},
+          "first_seen_at": {"const": 0},
+          "last_seen_at": {"const": 0},
+          "occurrence_count": {"const": 0}
+        }
+      },
+      "else": {
+        "properties": {
+          "fault_code": {"type": "string"},
+          "description": {"type": "string"},
+          "invariant_key": {"type": "string"},
+          "first_seen_at": {"minimum": 1},
+          "last_seen_at": {"minimum": 1},
+          "occurrence_count": {"minimum": 1}
+        }
+      }
+    }
+  ]
+}
