@@ -161,16 +161,22 @@ def test_genesis_records_public_protocol_metadata_only() -> None:
     }
 
 
-def test_demo_cli_requires_explicit_root_and_can_bootstrap_memory_backend() -> None:
-    missing = subprocess.run(
+def test_demo_cli_fresh_bootstrap_needs_no_hidden_root_knowledge() -> None:
+    success = subprocess.run(
         [sys.executable, str(ROOT / "tools" / "bootstrap_drive.py"), "--demo-memory"],
         cwd=ROOT,
         text=True,
         capture_output=True,
         check=False,
     )
-    assert missing.returncode != 0
+    assert success.returncode == 0, success.stdout + success.stderr
+    body = json.loads(success.stdout)
+    assert body["root_id"] == "mem-000001"
+    assert body["created_count"] > 0
+    assert body["park_map_generation"] == 0
 
+
+def test_demo_cli_still_accepts_an_explicit_existing_root() -> None:
     success = subprocess.run(
         [
             sys.executable,
