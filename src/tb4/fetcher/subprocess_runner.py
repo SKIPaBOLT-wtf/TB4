@@ -24,6 +24,8 @@ DEFAULT_CAPTURE_LIMIT_BYTES = 65_536
 POLL_INTERVAL_S = 0.05
 TERMINATION_GRACE_S = 1.0
 
+OutputObserver = Callable[[str, bytes], None]
+
 
 class RunnerConfigurationError(ValueError):
     pass
@@ -52,13 +54,21 @@ class _TailBuffer:
         return bytes(self.data).decode("utf-8", errors="replace")
 
 
-def _read_stream(stream: BinaryIO, buffer: _TailBuffer) -> None:
+def _read_stream(
+    stream: BinaryIO,
+    buffer: _TailBuffer,
+    *,
+    stream_name: str,
+    observer: OutputObserver | None,
+) -> None:
     try:
         while True:
             chunk = stream.read(4096)
             if not chunk:
                 return
             buffer.append(chunk)
+            if observer is not None:
+                observer(stream_name, chunk)
     finally:
         stream.close()
 
@@ -72,6 +82,7 @@ class SubprocessRunner:
 
     capture_limit_bytes: int = DEFAULT_CAPTURE_LIMIT_BYTES
     monotonic_now: Callable[[], float] = time.monotonic
+    output_observer: OutputObserver | None = None
 
     def __post_init__(self) -> None:
         if self.capture_limit_bytes <= 0:
@@ -154,11 +165,13 @@ class SubprocessRunner:
             threading.Thread(
                 target=_read_stream,
                 args=(process.stdout, stdout_tail),
+                kwargs={"stream_name": "stdout", "observer": self.output_observer},
                 daemon=True,
             ),
             threading.Thread(
                 target=_read_stream,
                 args=(process.stderr, stderr_tail),
+                kwargs={"stream_name": "stderr", "observer": self.output_observer},
                 daemon=True,
             ),
         ]
