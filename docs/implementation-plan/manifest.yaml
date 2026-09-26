@@ -23,7 +23,7 @@ steps:
     title: "Canonical Vocabulary Registry"
     status: VERIFIED
     evidence: [docs/implementation-plan/evidence/IP-03/E-001-vocabulary-and-ci.md]
-    amendments: [docs/implementation-plan/amendments/IP-03/A-001-stop-ball-staging-states.md, docs/implementation-plan/amendments/IP-03/A-002-target-leash-vocabulary.md]
+    amendments: [docs/implementation-plan/amendments/IP-03/A-001-stop-ball-staging-states.md, docs/implementation-plan/amendments/IP-03/A-002-target-leash-vocabulary.md, docs/implementation-plan/amendments/IP-03/A-003-stray-card-vocabulary.md]
   IP-04:
     title: "FETCH_BALL State Machine"
     status: VERIFIED
@@ -53,7 +53,7 @@ steps:
     title: "Canonical Drive Tree Blueprint"
     status: VERIFIED
     evidence: [docs/implementation-plan/evidence/IP-09/E-001-drive-tree-blueprint.md]
-    amendments: []
+    amendments: [docs/implementation-plan/amendments/IP-09/A-001-stray-tree-card.md]
   IP-10:
     title: "Common Control Envelope Schema"
     status: VERIFIED
