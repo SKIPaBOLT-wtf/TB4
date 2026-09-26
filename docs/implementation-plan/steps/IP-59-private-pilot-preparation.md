@@ -24,12 +24,15 @@ IP-58 VERIFIED.
 4. Create preflight commands that report readiness without exposing secrets.
 5. Create rollback/uninstall checklist.
 6. Ensure public evidence records only generic pass/fail facts.
+7. Implement and test the WATCHDOG/FETCHER runtime factories referenced by the stable CLI so real service startup does not depend on missing modules.
 
 ## Files / modules
 
 - `docs/PILOT.md`
 - `config/examples/pilot.example.toml`
 - `tools/preflight.py`
+- `src/tb4/watchdog/runtime.py`
+- `src/tb4/fetcher/runtime.py`
 
 ## Required invariants
 
@@ -41,6 +44,7 @@ IP-58 VERIFIED.
 - Example config validates.
 - Preflight with missing capability gives precise result.
 - Rollback paths documented.
+- Stable CLI resolves and constructs both runtime factories with sanitized configuration/failure behavior.
 
 ## Failure cases
 
@@ -50,6 +54,7 @@ IP-58 VERIFIED.
 ## Completion evidence required
 
 - Generic pilot checklist and validation tooling are ready.
+- WATCHDOG/FETCHER runtime composition is present and tested before private host intervention.
 
 ## Handoff state
 
