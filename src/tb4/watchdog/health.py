@@ -162,6 +162,12 @@ class WatchdogHealth:
             )
 
         current_name = metadata.value.name
+        prior = (
+            self._read_fault_body()
+            if current_name in {"DOG_SHIT_BLOCKING", "DOG_SHIT_REVIEWED"}
+            else None
+        )
+
         if current_name == "DOG_SHIT_CLEAN":
             walked = self.state_walker.walk(
                 object_id=self.dog_shit_object_id,
@@ -194,7 +200,7 @@ class WatchdogHealth:
                 message=f"unexpected DOG_SHIT filename {current_name!r}",
             )
 
-        body = self._blocking_body(signal)
+        body = self._blocking_body(signal, prior=prior)
         write = self.body_keeper.replace_verified(
             object_id=self.dog_shit_object_id,
             logical_object=LogicalObject.WATCHDOG_FAULT,
