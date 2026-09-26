@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-59
+current_step: IP-60
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -301,12 +301,12 @@ steps:
     amendments: []
   IP-59:
     title: "Private Pilot Preparation"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-59/E-001-private-pilot-preparation.md]
     amendments: [docs/implementation-plan/amendments/IP-59/A-001-runtime-composition-prerequisite.md]
   IP-60:
     title: "Real Two-Machine Pilot"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-61:
