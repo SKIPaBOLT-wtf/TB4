@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-55
+current_step: IP-56
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -281,12 +281,12 @@ steps:
     amendments: []
   IP-55:
     title: "Efficiency and Remote-Rate Validation"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-55/E-001-efficiency-operation-budgets.md]
     amendments: []
   IP-56:
     title: "Security Hardening"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-57:
