@@ -132,6 +132,39 @@ class StopBallCancellation:
                 message="cancellation request does not match active job",
             )
 
+        fetch_state = self.backend.get_metadata(self.fetch_ball_object_id)
+        if not fetch_state.ok or fetch_state.value is None:
+            return CancellationReport(
+                CancellationOutcome.FAILURE,
+                False,
+                message=fetch_state.message or fetch_state.outcome.value,
+            )
+
+        if fetch_state.value.name != "FETCH_BALL_CHEW":
+            terminal_names = {
+                "FETCH_BALL_DONE",
+                "FETCH_BALL_PARTIAL",
+                "FETCH_BALL_FAILED",
+                "FETCH_BALL_CANCELLED",
+                "FETCH_BALL_GONE",
+                "FETCH_BALL_RETURNING",
+                "FETCH_BALL_RECYCLING",
+                "FETCH_BALL_READY",
+            }
+            if fetch_state.value.name in terminal_names:
+                return self._acknowledge(
+                    body,
+                    ack_code="ALREADY_TERMINAL",
+                    should_cancel=False,
+                    message="matching job is no longer actively executing",
+                )
+            return self._acknowledge(
+                body,
+                ack_code="NO_MATCH",
+                should_cancel=False,
+                message=f"matching job is not cancellable in state {fetch_state.value.name}",
+            )
+
         return self._acknowledge(
             body,
             ack_code="CANCEL_SIGNALLED",
