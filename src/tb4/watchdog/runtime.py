@@ -23,6 +23,7 @@ from tb4.runtime_support import (
     require_string,
     require_table,
 )
+from tb4.watchdog.job_reaper import JobReaper
 from tb4.watchdog.openssh_transport import OpenSshBootstrapTransport
 from tb4.watchdog.scheduler import DogMode, ScheduledTask, WatchdogScheduler
 from tb4.watchdog.sniffer import KnownDeviceSniffer, KnownDeviceTarget
@@ -38,6 +39,7 @@ class TargetRuntime:
     probe_target: KnownDeviceTarget
     sniffer: KnownDeviceSniffer
     wake_manager: WakeManager
+    job_reaper: JobReaper
     wake_bone_id: str
 
 
@@ -339,11 +341,25 @@ def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
             sleeper=time.sleep,
         )
 
+        reaper = JobReaper(
+            backend=context.backend,
+            state_walker=walker,
+            body_keeper=keeper,
+            fetch_ball_object_id=park_map.lookup_device(device_id, "PLAYGROUND.FETCH_BALL"),
+            dog_pulse_object_id=park_map.lookup_device(device_id, "DOG_PULSE"),
+            target_device_id=device_id,
+            stale_after_s=int(watchdog_defaults["stale_active_s"]),
+            gone_grace_s=int(defaults["fetcher"]["gone_grace_s"]),
+            clock_skew_tolerance_s=int(watchdog_defaults["clock_skew_tolerance_s"]),
+            epoch_now=lambda: int(time.time()),
+        )
+
         entry = TargetRuntime(
             device_id=device_id,
             probe_target=sniff_target,
             sniffer=sniffer,
             wake_manager=manager,
+            job_reaper=reaper,
             wake_bone_id=park_map.lookup_device(device_id, "KENNEL.WAKE_BONE"),
         )
         runtime_targets.append(entry)
@@ -373,6 +389,16 @@ def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
                 snooze_interval_s=float(network_defaults["known_device_probe_s"]),
                 awake_interval_s=max(1.0, float(wake_defaults["probe_interval_s"])),
                 phase_key=f"wake:{device_id}",
+            )
+        )
+
+        scheduler.register(
+            ScheduledTask(
+                name=f"reap:{device_id}",
+                callback=lambda _reason, item=entry: item.job_reaper.check_once(),
+                snooze_interval_s=float(network_defaults["known_device_probe_s"]),
+                awake_interval_s=max(1.0, float(watchdog_defaults["heartbeat_active_s"])),
+                phase_key=f"reap:{device_id}",
             )
         )
 
