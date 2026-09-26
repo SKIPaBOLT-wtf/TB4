@@ -1,0 +1,23 @@
+# Public-safe FETCHER deployment template.
+# Copy to a private deployment location before editing.
+
+[identity]
+device_id = "target-a"
+role = "fetcher"
+
+[drive]
+# Private deployment value. Never commit the real value.
+root_id = "replace-at-deploy-time"
+client_secrets_path = "/private/tb4/google-client-secrets.json"
+token_path = "/private/tb4/google-token.json"
+
+[service]
+ephemeral = true
+idle_exit_s = 600
+
+[execution]
+artifact_work_dir = "/private/tb4/work"
+allow_inline_commands = true
+
+[notes]
+source = "config/examples/fetcher.toml.example"
