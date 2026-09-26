@@ -1,0 +1,20 @@
+[Unit]
+Description=TB4 FETCHER
+Documentation=https://github.com/SKIPaBOLT-wtf/TB4
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=tb4
+Group=tb4
+EnvironmentFile=-/etc/tb4/tb4.env
+ExecStart=/usr/bin/env tb4 fetcher --config /etc/tb4/fetcher.toml
+Restart=on-failure
+RestartSec=5s
+TimeoutStopSec=30s
+KillMode=mixed
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
