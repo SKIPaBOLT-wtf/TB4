@@ -16,6 +16,7 @@ class DriveCapabilities:
     create_text: bool
     change_feed: bool
     maintenance_listing: bool = True
+    permanent_delete: bool = False
 
 
 @dataclass(frozen=True, slots=True)
@@ -107,6 +108,20 @@ class DriveBackend(Protocol):
         name: str,
         text: str,
     ) -> BackendResult[CreatedObject]:
+        ...
+
+    def delete(
+        self,
+        object_id: str,
+        *,
+        expected_version_token: str | None = None,
+    ) -> BackendResult[MutationReceipt]:
+        """Maintenance-only permanent deletion.
+
+        Runtime control state must never use deletion as a state transition.
+        Callers must prove the object belongs to a canonical retention root.
+        """
+
         ...
 
     def list_children(
