@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-58
+current_step: IP-59
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -296,12 +296,12 @@ steps:
     amendments: []
   IP-58:
     title: "Fresh Bootstrap and Reproducibility"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-58/E-001-fresh-bootstrap-reproducibility.md]
     amendments: []
   IP-59:
     title: "Private Pilot Preparation"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-60:
