@@ -209,6 +209,18 @@ class TreeHealer:
                     progress = changed = True
                     continue
 
+                if issue.kind is TreeIssueKind.CANONICAL_NAME_INVALID and issue.stateful:
+                    return self._blocked(
+                        current_map,
+                        pass_number,
+                        audit,
+                        created,
+                        adopted,
+                        restored,
+                        quarantined,
+                        f"stateful canonical name for {issue.logical_ref} is invalid; state cannot be guessed",
+                    )
+
                 if issue.repair_policy not in _SAFE_RECREATE_POLICIES:
                     return self._blocked(
                         current_map,
