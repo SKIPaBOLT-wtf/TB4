@@ -16,6 +16,8 @@ from tb4.drive.body_keeper import BodyKeeper
 from tb4.drive.delete_keeper import DeleteKeeper
 from tb4.drive.device_registration import DeviceProfile, DeviceRegistrar
 from tb4.drive.state_walker import StateWalker
+from tb4.drive.tree_audit import TreeAuditor
+from tb4.drive.tree_healer import TreeHealer
 from tb4.fetcher.heartbeat import HeartbeatPublisher
 from tb4.runtime_support import (
     RuntimeConfigurationError,
@@ -23,6 +25,12 @@ from tb4.runtime_support import (
     build_context,
     require_string,
     require_table,
+)
+from tb4.watchdog.health import (
+    FaultScope,
+    FaultSignal,
+    WatchdogHealth,
+    WorkKind,
 )
 from tb4.watchdog.job_reaper import JobReaper
 from tb4.watchdog.lan_discovery import LanDiscovery
@@ -55,6 +63,7 @@ class WatchdogRuntime:
     device_id: str
     walker: StateWalker
     heartbeat: HeartbeatPublisher
+    health: WatchdogHealth
     scheduler: WatchdogScheduler
     targets: tuple[TargetRuntime, ...]
     dog_mode_id: str
@@ -201,7 +210,19 @@ def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
     watchdog_id = require_string(watchdog_cfg, "device_id")
     defaults = context.defaults
 
-    park_map = context.park_map
+    # Repair only before role helpers capture exact IDs. If a later audit finds
+    # drift, runtime blocks new control work instead of hot-swapping IDs under
+    # already-composed helpers.
+    repaired = TreeHealer(context.backend).repair(
+        root_id=context.park_map.root_id,
+        park_map=context.park_map,
+    )
+    if not repaired.success:
+        raise RuntimeError(
+            f"canonical TB4 tree is not safely repairable: {repaired.message or repaired.outcome.value}"
+        )
+
+    park_map = repaired.park_map
     registrar = DeviceRegistrar(context.backend)
     target_configs = _targets(config)
 
@@ -247,6 +268,14 @@ def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
     watchdog_defaults = defaults["watchdog"]
     network_defaults = defaults["network"]
     wake_defaults = defaults["wake"]
+
+    health = WatchdogHealth(
+        backend=context.backend,
+        state_walker=walker,
+        body_keeper=keeper,
+        dog_shit_object_id=park_map.lookup("DOG_HOUSE.WATCHDOG_FAULT"),
+        epoch_now=lambda: int(time.time()),
+    )
 
     heartbeat = HeartbeatPublisher(
         backend=context.backend,
@@ -426,6 +455,8 @@ def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
         )
 
         def wake_check(_reason, item=entry):
+            if not runtime_holder["runtime"].health.can_accept(WorkKind.NORMAL_CONTROL):
+                return
             metadata = context.backend.get_metadata(item.wake_bone_id)
             if not metadata.ok or metadata.value is None:
                 return
@@ -494,6 +525,31 @@ def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
         )
     )
 
+    auditor = TreeAuditor(context.backend)
+
+    def audit_control_tree(_reason):
+        report = auditor.audit(root_id=park_map.root_id, park_map=park_map)
+        if report.clean:
+            return report
+        return health.report(
+            FaultSignal(
+                code="CANONICAL_TREE_AMBIGUOUS",
+                description="runtime tree audit found canonical structure drift; repair/restart is required before new control work",
+                scope=FaultScope.PROTOCOL_BLOCKING,
+                invariant_key="canonical-tree",
+            )
+        )
+
+    scheduler.register(
+        ScheduledTask(
+            name="tree-audit",
+            callback=audit_control_tree,
+            snooze_interval_s=float(defaults["drive"]["full_audit_interval_s"]),
+            awake_interval_s=float(defaults["drive"]["full_audit_interval_s"]),
+            phase_key="tree-audit",
+        )
+    )
+
     scheduler.register(
         ScheduledTask(
             name="dog-pulse",
@@ -520,6 +576,7 @@ def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
         device_id=watchdog_id,
         walker=walker,
         heartbeat=heartbeat,
+        health=health,
         scheduler=scheduler,
         targets=tuple(runtime_targets),
         dog_mode_id=park_map.lookup("DOG_HOUSE.WATCHDOG_MODE"),
