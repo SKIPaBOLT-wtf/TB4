@@ -18,22 +18,33 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Bootstrap a TB4 tree inside an explicitly selected existing root."
     )
-    parser.add_argument("--root-id", required=True, help="Existing backend folder object ID")
+    parser.add_argument(
+        "--root-id",
+        help=(
+            "Existing backend folder object ID. Required for real backends; "
+            "optional for --demo-memory, which uses its deterministic built-in root."
+        ),
+    )
     parser.add_argument(
         "--demo-memory",
         action="store_true",
-        help="Use deterministic in-memory backend. Real Google Drive wiring is added in later implementation steps.",
+        help=(
+            "Use the deterministic in-memory backend for fresh-bootstrap and "
+            "protocol validation without external credentials."
+        ),
     )
     args = parser.parse_args(argv)
 
     if not args.demo_memory:
         parser.error(
-            "no production backend is wired yet; use --demo-memory for protocol/bootstrap validation"
+            "this bootstrap command currently exposes only --demo-memory; "
+            "real Google Drive bootstrap is configured during pilot preparation"
         )
 
     backend = InMemoryDriveBackend()
+    root_id = args.root_id or backend.root_id
     try:
-        report = bootstrap_tree(backend, root_id=args.root_id)
+        report = bootstrap_tree(backend, root_id=root_id)
     except BootstrapError as exc:
         print(f"TB4 bootstrap failed: {exc}", file=sys.stderr)
         return 1
