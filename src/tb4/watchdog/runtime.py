@@ -23,6 +23,7 @@ from tb4.runtime_support import (
     RuntimeConfigurationError,
     RuntimeContext,
     build_context,
+    load_toml,
     require_string,
     require_table,
 )
@@ -201,6 +202,60 @@ def _bool(table: Mapping[str, Any], key: str) -> bool:
     if not isinstance(value, bool):
         raise RuntimeConfigurationError(f"{key!r} must be boolean")
     return value
+
+
+def validate_config(config_path: Path) -> None:
+    config = load_toml(config_path)
+    watchdog = require_table(config, "watchdog")
+    drive = require_table(config, "drive")
+    service = require_table(config, "service")
+
+    require_string(watchdog, "device_id")
+    require_string(drive, "root_id")
+    require_string(drive, "client_secrets_path")
+    require_string(drive, "token_path")
+    poll_interval_s = float(service.get("poll_interval_s", 1.0))
+    if poll_interval_s <= 0:
+        raise RuntimeConfigurationError("service.poll_interval_s must be positive")
+
+    for target in _targets(config):
+        require_string(target, "device_id")
+        require_string(target, "device_key")
+        require_string(target, "os_family")
+        _string_list(target, "address_hints")
+
+        wol = require_table(target, "wol")
+        if _bool(wol, "enabled"):
+            require_string(wol, "mac")
+            require_string(wol, "broadcast_address")
+            port = int(wol.get("port", 9))
+            if not 1 <= port <= 65535:
+                raise RuntimeConfigurationError("target WOL port must be between 1 and 65535")
+
+        ssh = require_table(target, "ssh_bootstrap")
+        if _bool(ssh, "enabled"):
+            require_string(ssh, "host_alias")
+            platform_name = str(ssh.get("platform", ""))
+            try:
+                BootstrapPlatform(platform_name)
+            except ValueError as exc:
+                raise RuntimeConfigurationError(
+                    f"invalid SSH bootstrap platform {platform_name!r}"
+                ) from exc
+
+    network_cfg = config.get("network", {})
+    if not isinstance(network_cfg, Mapping):
+        raise RuntimeConfigurationError("[network] must be a table")
+    cidrs = network_cfg.get("discovery_cidrs", [])
+    if not isinstance(cidrs, list) or not all(
+        isinstance(item, str) and item.strip() for item in cidrs
+    ):
+        raise RuntimeConfigurationError("network.discovery_cidrs must be a string list")
+    LanDiscovery(
+        cidrs=tuple(item.strip() for item in cidrs),
+        max_hosts=int(network_cfg.get("discovery_max_hosts", 1024)),
+        workers=int(network_cfg.get("discovery_workers", 16)),
+    )
 
 
 def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
