@@ -155,7 +155,9 @@ class FetcherRuntime:
         try:
             result = self.pipeline.process_one(
                 self.fetch_ball_id,
-                cancel_requested=cancellation.should_cancel,
+                cancel_requested=lambda: (
+                    stop_event.is_set() or cancellation.should_cancel()
+                ),
             )
         finally:
             self._child_active = False
