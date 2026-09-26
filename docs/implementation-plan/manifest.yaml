@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-29
+current_step: IP-30
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -151,12 +151,12 @@ steps:
     amendments: []
   IP-29:
     title: "TOY_BOX Artifact Protocol"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-29/E-001-toy-box-artifact-protocol.md]
     amendments: []
   IP-30:
     title: "RUNNER Interface"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-31:
