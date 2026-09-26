@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SKIPaBOLT-wtf/TB4/protocol/schemas/stray-card.schema.json",
+  "title": "TB4 STRAY_CARD",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "protocol_major",
+    "stray_key",
+    "identity_kind",
+    "identity_fingerprint",
+    "first_seen",
+    "last_seen",
+    "addresses",
+    "mac_address",
+    "discovery_kind"
+  ],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "protocol_major": {"type": "integer", "const": 1},
+    "stray_key": {
+      "type": "string",
+      "pattern": "^stray-[a-f0-9]{12}$"
+    },
+    "identity_kind": {
+      "type": "string",
+      "enum": ["HARDWARE", "MAC", "TOKEN", "ADDRESS_SET"]
+    },
+    "identity_fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "first_seen": {"type": "integer", "minimum": 1},
+    "last_seen": {"type": "integer", "minimum": 1},
+    "addresses": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {"type": "string", "minLength": 1, "maxLength": 128}
+    },
+    "mac_address": {
+      "type": ["string", "null"],
+      "maxLength": 64
+    },
+    "discovery_kind": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    }
+  },
+  "additionalProperties": false
+}
