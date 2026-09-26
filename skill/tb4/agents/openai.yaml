@@ -1,0 +1,3 @@
+interface:
+  display_name: "TB4"
+  short_description: "Operate the deterministic TB4 Drive control plane"
