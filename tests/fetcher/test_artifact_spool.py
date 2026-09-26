@@ -60,7 +60,7 @@ def test_small_output_stays_inline_and_capture_is_cleaned(tmp_path: Path) -> Non
     assert bounded.full_output_preserved is True
     assert "small ball" in bounded.stdout_tail
     assert list(tmp_path.iterdir()) == []
-    assert backend.operation_counts.get("create_text", 0) == 1  # TOY_BOX folder is create_folder, no artifact text.
+    assert backend.operation_counts.get("create_text", 0) == 0  # Inline result creates no TOY_BOX artifact text.
 
 
 def test_large_stdout_is_preserved_in_verified_result_artifact(tmp_path: Path) -> None:
