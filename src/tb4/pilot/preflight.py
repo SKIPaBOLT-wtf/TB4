@@ -10,6 +10,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from tb4.watchdog.lan_discovery import LanDiscovery
+
 ROOT = Path(__file__).resolve().parents[3]
 PLACEHOLDER = "replace-at-deploy-time"
 DEVICE_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
@@ -160,6 +162,51 @@ def evaluate(config_path: Path, *, template: bool = False) -> list[Check]:
                 checks.append(Check("target.ssh_bootstrap", "PASS", "SSH bootstrap host alias and platform are configured"))
     else:
         checks.append(Check("target.ssh_bootstrap", "INVALID", "enabled must be true or false"))
+
+    fetcher = _nested(data, "target", "fetcher")
+    if not isinstance(fetcher, dict):
+        checks.append(Check("target.fetcher", "MISSING", "target FETCHER settings are required"))
+    else:
+        work_dir = fetcher.get("artifact_work_dir")
+        if template and work_dir == PLACEHOLDER:
+            checks.append(Check("target.fetcher.work_dir", "PASS", "FETCHER work-dir placeholder is present"))
+        elif not _present_string(work_dir):
+            checks.append(Check("target.fetcher.work_dir", "MISSING", "FETCHER artifact_work_dir is required"))
+        else:
+            checks.append(Check("target.fetcher.work_dir", "PASS", "FETCHER artifact work directory is configured"))
+        ephemeral = fetcher.get("ephemeral")
+        if not isinstance(ephemeral, bool):
+            checks.append(Check("target.fetcher.ephemeral", "INVALID", "FETCHER ephemeral must be boolean"))
+        else:
+            checks.append(Check("target.fetcher.ephemeral", "PASS", "FETCHER lifecycle mode is configured"))
+        try:
+            idle_exit_s = int(fetcher.get("idle_exit_s", 600))
+        except (TypeError, ValueError):
+            idle_exit_s = 0
+        if idle_exit_s <= 0:
+            checks.append(Check("target.fetcher.idle_exit_s", "INVALID", "FETCHER idle_exit_s must be positive"))
+        else:
+            checks.append(Check("target.fetcher.idle_exit_s", "PASS", "FETCHER idle timeout is configured"))
+
+    network = data.get("network", {})
+    if not isinstance(network, dict):
+        checks.append(Check("network.discovery", "INVALID", "[network] must be a table"))
+    else:
+        cidrs = network.get("discovery_cidrs", [])
+        try:
+            if not isinstance(cidrs, list) or not all(
+                isinstance(item, str) and item.strip() for item in cidrs
+            ):
+                raise ValueError("discovery_cidrs must be a string list")
+            LanDiscovery(
+                cidrs=tuple(item.strip() for item in cidrs),
+                max_hosts=int(network.get("discovery_max_hosts", 1024)),
+                workers=int(network.get("discovery_workers", 16)),
+            )
+        except (TypeError, ValueError) as exc:
+            checks.append(Check("network.discovery", "INVALID", f"discovery configuration is invalid: {exc}"))
+        else:
+            checks.append(Check("network.discovery", "PASS", "bounded LAN discovery configuration is valid"))
 
     timing = _nested(data, "policy", "use_public_timing_defaults")
     if timing is True:
