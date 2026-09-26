@@ -27,6 +27,7 @@ class ContractBackend:
         atomic_move_request=True,
         create_text=True,
         change_feed=False,
+        permanent_delete=True,
     )
 
     def get_metadata(self, object_id: str) -> BackendResult[ObjectMetadata]:
@@ -57,6 +58,14 @@ class ContractBackend:
         self,
         object_id: str,
         new_parent_id: str,
+        *,
+        expected_version_token: str | None = None,
+    ) -> BackendResult[MutationReceipt]:
+        return BackendResult.failure(BackendOutcome.NOT_FOUND)
+
+    def delete(
+        self,
+        object_id: str,
         *,
         expected_version_token: str | None = None,
     ) -> BackendResult[MutationReceipt]:
@@ -98,6 +107,7 @@ def test_exact_object_operations_are_first_class_contract_methods() -> None:
         "move",
         "create_folder",
         "create_text",
+        "delete",
         "list_children",
     }
     assert required <= set(DriveBackend.__dict__)
@@ -175,6 +185,7 @@ def test_capabilities_make_provider_differences_explicit() -> None:
     assert caps.exact_metadata_read
     assert caps.exact_text_read
     assert caps.maintenance_listing
+    assert caps.permanent_delete
     assert not caps.change_feed
 
 
