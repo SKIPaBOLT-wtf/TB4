@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-46
+current_step: IP-47
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -236,12 +236,12 @@ steps:
     amendments: []
   IP-46:
     title: "BONEYARD Retention and Cleanup"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-46/E-001-boneyard-retention.md]
     amendments: []
   IP-47:
     title: "Google Drive Authentication and Client Boundary"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-48:
