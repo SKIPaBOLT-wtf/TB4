@@ -124,7 +124,7 @@ def test_expired_refreshable_token_refreshes_and_rewrites_private_cache(tmp_path
     FakeCredentials.loaded = FakeCredentials(
         valid=False,
         expired=True,
-        refresh_token="fake-refresh",
+        refresh_token="fake-refresh",  # tb4-secret-scan: allow-test-fixture
         serialized='{"refreshed":true}',
     )
 
@@ -149,7 +149,7 @@ def test_refresh_failure_is_normalized_without_serializing_secret(tmp_path):
     FakeCredentials.loaded = FakeCredentials(
         valid=False,
         expired=True,
-        refresh_token="refresh-secret-marker",
+        refresh_token="refresh-secret-marker",  # tb4-secret-scan: allow-test-fixture
         refresh_should_fail=True,
     )
 
