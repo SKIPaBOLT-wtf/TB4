@@ -19,6 +19,11 @@ RUNTIME_FACTORIES = {
     "fetcher": "tb4.fetcher.runtime:create_runtime",
 }
 
+CONFIG_VALIDATORS = {
+    "watchdog": "tb4.watchdog.runtime:validate_config",
+    "fetcher": "tb4.fetcher.runtime:validate_config",
+}
+
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -42,15 +47,19 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _resolve_factory(spec: str) -> Callable[[Path], ManagedRuntime]:
+def _resolve_callable(spec: str) -> Callable:
     module_name, separator, attribute = spec.partition(":")
     if not separator or not module_name or not attribute:
         raise RuntimeError(f"invalid runtime factory spec {spec!r}")
     module = importlib.import_module(module_name)
     factory = getattr(module, attribute, None)
     if factory is None or not callable(factory):
-        raise RuntimeError(f"runtime factory {spec!r} is unavailable")
+        raise RuntimeError(f"configured callable {spec!r} is unavailable")
     return factory
+
+
+def _resolve_factory(spec: str) -> Callable[[Path], ManagedRuntime]:
+    return _resolve_callable(spec)
 
 
 def _validate_config_path(path: Path) -> None:
@@ -63,6 +72,9 @@ def _validate_config_path(path: Path) -> None:
 def run_role(role: str, config_path: Path, *, check_only: bool = False) -> int:
     _validate_config_path(config_path)
     if check_only:
+        validator = _resolve_callable(CONFIG_VALIDATORS[role])
+        validator(config_path)
+        _resolve_factory(RUNTIME_FACTORIES[role])
         return 0
 
     override = os.environ.get("TB4_RUNTIME_FACTORY")
