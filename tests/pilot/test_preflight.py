@@ -64,6 +64,16 @@ mac = ""
 [target.ssh_bootstrap]
 enabled = false
 
+[target.fetcher]
+ephemeral = true
+idle_exit_s = 600
+artifact_work_dir = "/tmp/tb4-work"
+
+[network]
+discovery_cidrs = []
+discovery_max_hosts = 1024
+discovery_workers = 16
+
 [policy]
 use_public_timing_defaults = true
 """,
@@ -107,6 +117,16 @@ mac = ""
 enabled = true
 host_alias = "{secret_marker}"
 platform = "LINUX_SYSTEMD"
+
+[target.fetcher]
+ephemeral = true
+idle_exit_s = 600
+artifact_work_dir = "/tmp/tb4-work"
+
+[network]
+discovery_cidrs = []
+discovery_max_hosts = 1024
+discovery_workers = 16
 
 [policy]
 use_public_timing_defaults = true
