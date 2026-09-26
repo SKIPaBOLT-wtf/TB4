@@ -167,6 +167,30 @@ class FetcherRuntime:
             stop_event.wait(self.poll_interval_s)
 
 
+def validate_config(config_path: Path) -> None:
+    config = load_toml(config_path)
+    identity = require_table(config, "identity")
+    drive = require_table(config, "drive")
+    service = require_table(config, "service")
+    execution = require_table(config, "execution")
+
+    require_string(identity, "device_id")
+    require_string(drive, "root_id")
+    require_string(drive, "client_secrets_path")
+    require_string(drive, "token_path")
+    require_string(execution, "artifact_work_dir")
+
+    ephemeral = service.get("ephemeral", True)
+    if not isinstance(ephemeral, bool):
+        raise RuntimeConfigurationError("service.ephemeral must be boolean")
+    idle_exit_s = int(service.get("idle_exit_s", 600))
+    poll_interval_s = float(service.get("poll_interval_s", 1.0))
+    if idle_exit_s <= 0:
+        raise RuntimeConfigurationError("service.idle_exit_s must be positive")
+    if poll_interval_s <= 0:
+        raise RuntimeConfigurationError("service.poll_interval_s must be positive")
+
+
 def create_runtime_from_context(context: RuntimeContext) -> FetcherRuntime:
     config = context.config
     identity = require_table(config, "identity")
