@@ -62,11 +62,29 @@ python -m pip install -e ".[google]"
 
 ## First authorization
 
-First authorization must be an explicit local action. Construct `GoogleAuthConfig` with `allow_interactive=True` and call `build_google_drive_client`.
+First authorization must be an explicit local action. The supported pilot command is:
 
-The local OAuth flow opens/uses the Google authorization page and writes the resulting authorized-user token file locally. Later service starts use that token without interactive login and refresh it when possible.
+```sh
+python tools/authorize_drive.py --config /private/path/pilot.toml
+```
+
+The tool constructs `GoogleAuthConfig` with `allow_interactive=True`, runs the local OAuth flow, and writes the resulting authorized-user token only to the private path named by the local configuration. Later service starts use that token without interactive login and refresh it when possible.
+
+The equivalent library boundary remains `build_google_drive_client()`; the CLI is only a safe deployment wrapper.
 
 Normal background service startup must use `allow_interactive=False`. If authorization is missing or invalid it must report a normalized authentication outcome instead of silently launching a browser.
+
+## Bootstrap the selected existing root
+
+After OAuth is ready, bootstrap the canonical TB4 structure inside the explicitly selected existing Drive folder:
+
+```sh
+python tools/bootstrap_drive.py --config /private/path/pilot.toml
+```
+
+The configured root must already exist. TB4 will not silently create a replacement root elsewhere. Re-running bootstrap against the same canonical tree is idempotent; ambiguous duplicate canonical objects fail closed and require audit/repair.
+
+The command does not echo the private root ID in its machine-readable success output.
 
 ## Token protection
 
