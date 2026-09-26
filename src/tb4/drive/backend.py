@@ -17,6 +17,7 @@ class DriveCapabilities:
     change_feed: bool
     maintenance_listing: bool = True
     permanent_delete: bool = False
+    atomic_version_precondition: bool = False
 
 
 @dataclass(frozen=True, slots=True)
