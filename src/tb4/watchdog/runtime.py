@@ -24,10 +24,12 @@ from tb4.runtime_support import (
     require_table,
 )
 from tb4.watchdog.job_reaper import JobReaper
+from tb4.watchdog.lan_discovery import LanDiscovery
 from tb4.watchdog.openssh_transport import OpenSshBootstrapTransport
 from tb4.watchdog.scheduler import DogMode, ScheduledTask, WatchdogScheduler
 from tb4.watchdog.sniffer import KnownDeviceSniffer, KnownDeviceTarget
 from tb4.watchdog.ssh_bootstrap import BootstrapPlatform, BootstrapTarget, DoorScratcher
+from tb4.watchdog.stray_hunter import StrayHunter
 from tb4.watchdog.system_probe import SystemPingProbe
 from tb4.watchdog.wake_manager import WakeManager, WakeTiming
 from tb4.watchdog.wol import BoneThrower, UdpBroadcastSender, WakeTarget
@@ -260,6 +262,29 @@ def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
     door = DoorScratcher(OpenSshBootstrapTransport())
     bone = BoneThrower(UdpBroadcastSender())
 
+    network_cfg = config.get("network", {})
+    if not isinstance(network_cfg, Mapping):
+        raise RuntimeConfigurationError("[network] must be a table")
+    discovery_cidrs_raw = network_cfg.get("discovery_cidrs", [])
+    if not isinstance(discovery_cidrs_raw, list) or not all(
+        isinstance(item, str) and item.strip() for item in discovery_cidrs_raw
+    ):
+        raise RuntimeConfigurationError("network.discovery_cidrs must be a string list")
+    discovery = LanDiscovery(
+        cidrs=tuple(item.strip() for item in discovery_cidrs_raw),
+        max_hosts=int(network_cfg.get("discovery_max_hosts", 1024)),
+        workers=int(network_cfg.get("discovery_workers", 16)),
+    )
+    stray_hunter = StrayHunter(
+        backend=context.backend,
+        discovery=discovery,
+        stray_yard_folder_id=park_map.lookup("STRAY_YARD"),
+        retry_policy=context.retry_policy,
+        epoch_now=lambda: int(time.time()),
+        monotonic_now=time.monotonic,
+        sleeper=time.sleep,
+    )
+
     runtime_targets: list[TargetRuntime] = []
     runtime_holder: dict[str, WatchdogRuntime] = {}
 
@@ -401,6 +426,16 @@ def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
                 phase_key=f"reap:{device_id}",
             )
         )
+
+    scheduler.register(
+        ScheduledTask(
+            name="stray-hunt",
+            callback=lambda _reason: stray_hunter.scan_once(),
+            snooze_interval_s=float(network_defaults["stray_scan_s"]),
+            awake_interval_s=float(network_defaults["stray_scan_s"]),
+            phase_key="stray-hunt",
+        )
+    )
 
     scheduler.register(
         ScheduledTask(
