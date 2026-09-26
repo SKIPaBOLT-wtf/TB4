@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-52
+current_step: IP-53
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -266,12 +266,12 @@ steps:
     amendments: [docs/implementation-plan/amendments/IP-51/A-001-packaging-boundary.md]
   IP-52:
     title: "Windows Service Packaging"
-    status: IN_PROGRESS
-    evidence: []
-    amendments: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-52/E-001-windows-service-packaging.md]
+    amendments: [docs/implementation-plan/amendments/IP-52/A-001-packaging-boundary.md]
   IP-53:
     title: "End-to-End In-Memory Simulation"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-54:
