@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-44
+current_step: IP-45
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -226,12 +226,12 @@ steps:
     amendments: []
   IP-44:
     title: "WAKE_BONE WakeManager"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-44/E-001-wake-manager.md]
     amendments: []
   IP-45:
     title: "WATCHDOG Health and DOG_SHIT Handling"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-46:
