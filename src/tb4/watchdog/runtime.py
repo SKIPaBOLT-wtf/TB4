@@ -13,6 +13,7 @@ from typing import Any, Mapping
 from tb4.core.protocol_names import LogicalObject, Role
 from tb4.core.schemas import canonical_json_text, load_schema_store
 from tb4.drive.body_keeper import BodyKeeper
+from tb4.drive.delete_keeper import DeleteKeeper
 from tb4.drive.device_registration import DeviceProfile, DeviceRegistrar
 from tb4.drive.state_walker import StateWalker
 from tb4.fetcher.heartbeat import HeartbeatPublisher
@@ -26,6 +27,7 @@ from tb4.runtime_support import (
 from tb4.watchdog.job_reaper import JobReaper
 from tb4.watchdog.lan_discovery import LanDiscovery
 from tb4.watchdog.openssh_transport import OpenSshBootstrapTransport
+from tb4.watchdog.retention import BoneyardKeeper, RetentionPolicy
 from tb4.watchdog.scheduler import DogMode, ScheduledTask, WatchdogScheduler
 from tb4.watchdog.sniffer import KnownDeviceSniffer, KnownDeviceTarget
 from tb4.watchdog.ssh_bootstrap import BootstrapPlatform, BootstrapTarget, DoorScratcher
@@ -42,6 +44,8 @@ class TargetRuntime:
     sniffer: KnownDeviceSniffer
     wake_manager: WakeManager
     job_reaper: JobReaper
+    retention: BoneyardKeeper
+    fetch_ball_id: str
     wake_bone_id: str
 
 
@@ -379,12 +383,34 @@ def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
             epoch_now=lambda: int(time.time()),
         )
 
+        fetch_ball_id = park_map.lookup_device(device_id, "PLAYGROUND.FETCH_BALL")
+        retention_defaults = defaults["retention"]
+        retention = BoneyardKeeper(
+            backend=context.backend,
+            delete_keeper=DeleteKeeper(
+                context.backend,
+                context.retry_policy,
+                time.monotonic,
+                time.sleep,
+            ),
+            boneyard_folder_id=park_map.lookup_device(device_id, "BONEYARD"),
+            toy_box_folder_id=park_map.lookup_device(device_id, "TOY_BOX"),
+            policy=RetentionPolicy(
+                boneyard_retention_s=int(retention_defaults["boneyard_days"]) * 86400,
+                toy_box_retention_s=int(retention_defaults["toy_box_days"]) * 86400,
+            ),
+            epoch_now=lambda: int(time.time()),
+            clock_safe=lambda: 1_577_836_800 <= int(time.time()) <= 4_102_444_800,
+        )
+
         entry = TargetRuntime(
             device_id=device_id,
             probe_target=sniff_target,
             sniffer=sniffer,
             wake_manager=manager,
             job_reaper=reaper,
+            retention=retention,
+            fetch_ball_id=fetch_ball_id,
             wake_bone_id=park_map.lookup_device(device_id, "KENNEL.WAKE_BONE"),
         )
         runtime_targets.append(entry)
@@ -424,6 +450,37 @@ def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
                 snooze_interval_s=float(network_defaults["known_device_probe_s"]),
                 awake_interval_s=max(1.0, float(watchdog_defaults["heartbeat_active_s"])),
                 phase_key=f"reap:{device_id}",
+            )
+        )
+
+        def retention_sweep(_reason, item=entry):
+            protected: list[str] = []
+            remote = context.backend.read_text(item.fetch_ball_id)
+            if remote.ok and remote.value is not None:
+                try:
+                    active = json.loads(remote.value.text)
+                    refs = active.get("artifact_refs", [])
+                    if isinstance(refs, list):
+                        for ref in refs:
+                            if isinstance(ref, Mapping):
+                                artifact_id = ref.get("artifact_id")
+                                if isinstance(artifact_id, str) and artifact_id:
+                                    protected.append(artifact_id)
+                except (json.JSONDecodeError, TypeError):
+                    # Malformed live control state must not cause retention to
+                    # guess what is safe to delete; skip this sweep entirely.
+                    return None
+            else:
+                return None
+            return item.retention.sweep(protected_artifact_ids=protected)
+
+        scheduler.register(
+            ScheduledTask(
+                name=f"bury:{device_id}",
+                callback=retention_sweep,
+                snooze_interval_s=float(retention_defaults["sweep_interval_s"]),
+                awake_interval_s=float(retention_defaults["sweep_interval_s"]),
+                phase_key=f"bury:{device_id}",
             )
         )
 
