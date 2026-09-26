@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-27
+current_step: IP-28
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -141,12 +141,12 @@ steps:
     amendments: []
   IP-27:
     title: "GENESIS Tree Bootstrap"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-27/E-001-genesis-tree-bootstrap.md]
     amendments: []
   IP-28:
     title: "Tree Audit, Repair, and DOG_POUND Quarantine"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-29:
