@@ -303,7 +303,7 @@ steps:
     title: "Private Pilot Preparation"
     status: IN_PROGRESS
     evidence: []
-    amendments: []
+    amendments: [docs/implementation-plan/amendments/IP-59/A-001-runtime-composition-prerequisite.md]
   IP-60:
     title: "Real Two-Machine Pilot"
     status: PLANNED
