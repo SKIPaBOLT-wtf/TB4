@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-40
+current_step: IP-41
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -206,12 +206,12 @@ steps:
     amendments: []
   IP-40:
     title: "Known-Device SNIFFER"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-40/E-001-known-device-sniffer.md]
     amendments: []
   IP-41:
     title: "STRAY_HUNTER Discovery"
-    status: PLANNED
+    status: IN_PROGRESS
     evidence: []
     amendments: []
   IP-42:
