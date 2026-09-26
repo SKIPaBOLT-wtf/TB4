@@ -92,6 +92,7 @@ root:
           kind: folder
           registration_only: false
           control_path: false
+          subtree: STRAY_TREE
 
     DOG_POUND:
       kind: folder
@@ -101,6 +102,15 @@ root:
       purpose: Quarantine ambiguous, duplicate, or malformed objects without silent deletion.
 
 subtrees:
+  STRAY_TREE:
+    children:
+      STRAY_CARD:
+        kind: fixed_object
+        logical_object: STRAY_CARD
+        required: true
+        control_path: false
+        repair_policy: recreate_from_current_discovery_if_parent_identity_is_unambiguous
+
   DEVICE_TREE:
     children:
       DOG_TAG:
