@@ -306,8 +306,8 @@ steps:
     amendments: [docs/implementation-plan/amendments/IP-59/A-001-runtime-composition-prerequisite.md]
   IP-60:
     title: "Real Two-Machine Pilot"
-    status: IN_PROGRESS
-    evidence: []
+    status: BLOCKED
+    evidence: [docs/implementation-plan/evidence/IP-60/E-001-private-environment-prerequisite-audit.md]
     amendments: []
   IP-61:
     title: "Final Acceptance"
