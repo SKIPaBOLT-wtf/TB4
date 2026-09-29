@@ -346,8 +346,8 @@ steps:
     amendments: []
   IP-68:
     title: "Private Same-Host Desktop Pilot"
-    status: PLANNED
-    evidence: []
+    status: IN_PROGRESS
+    evidence: [docs/implementation-plan/evidence/IP-68/E-001-pilot-start.md]
     amendments: []
   IP-69:
     title: "Independent-Machine Expansion Pilot"
