@@ -28,6 +28,10 @@ google = [
 windows = [
   "pywin32>=311; sys_platform == 'win32'",
 ]
+desktop = [
+  "PySide6>=6.8,<7",
+  "tomlkit>=0.13,<1",
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -42,3 +46,7 @@ addopts = "-q"
 
 [project.scripts]
 tb4 = "tb4.cli:main"
+
+[project.gui-scripts]
+tb4-watchdog = "tb4.desktop.entry:watchdog_main"
+tb4-fetcher = "tb4.desktop.entry:fetcher_main"

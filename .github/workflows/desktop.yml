@@ -1,0 +1,34 @@
+name: Desktop
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 40
+    env:
+      QT_QPA_PLATFORM: offscreen
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Linux Qt dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libegl1 libopengl0 libxkbcommon0 libxcb-cursor0
+      - name: Install development and desktop dependencies
+        run: python -m pip install -e ".[dev,google,desktop]" "pyinstaller>=6.11,<7"
+      - name: Desktop tests with real GUI and core imports
+        run: python -m pytest tests/desktop -ra
+      - name: Complete Linux regression suite
+        if: runner.os == 'Linux'
+        run: python -m pytest
