@@ -3,13 +3,13 @@
 Date: 2026-09-29.
 
 Tested development head: `1269d2ebfb1e91223f1a8d125e5915b0233a2f47`.
-Tested PR integration checkout: `2730e33126f726ccab8686c90144a6d2222497b6`.
+Tested PR integration checkout: `7d161781b17edf68802809e0e506d944bcc08eca`.
 
 Both native platform jobs completed successfully:
 https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/36619412954
 
 The original CI workflow for that development head also completed successfully:
-https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/36619412977
+https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/36619412988
 
 ## Evidence reviewed
 
@@ -20,7 +20,7 @@ https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/36619412977
 - IP-65 E-001: actual Windows installers, native acceptance, independent local
   installer hash verification and removal/profile isolation.
 - IP-66 E-001: actual Linux bundles/installers, native acceptance and isolation;
-  its independent local archive-read limitation is explicitly recorded.
+  the initial local archive-read limitation and successful follow-up are recorded.
 
 The matrix installs GUI/provider dependencies before desktop tests, so these
 checks exercise PySide6 and production imports rather than treating local skips
@@ -31,6 +31,16 @@ repository security scan.
 Distribution acceptance uses actual built/installed applications, not only
 installer source. Upload occurs only after acceptance passes. Bundle resources
 come from tracked source/config/protocol files, not private untracked directories.
+
+## Evidence metadata correction - 2026-09-29
+
+A subsequent byte-level readback found transcription errors in the original
+checkout identity, Windows job/product metadata, Linux ZIP digest and original
+CI run link. These fields are corrected in IP-64..IP-67; prior values remain in
+Git history. IP-65 and IP-66 each include `E-002-artifact-readback.json` with
+independently computed hashes matching the provider and bundled checksums.
+The installers were not rebuilt or changed. This is not a new native CI run or
+a private pilot, and no implementation status was advanced by this correction.
 
 ## Development acceptance
 

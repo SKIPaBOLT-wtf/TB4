@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "verification_date": "2026-09-29",
+  "workflow_run_id": 36619412954,
+  "development_head": "1269d2ebfb1e91223f1a8d125e5915b0233a2f47",
+  "tested_merge_sha": "7d161781b17edf68802809e0e506d944bcc08eca",
+  "artifact_id": 11057008722,
+  "zip_sha256": "c0622f58e6a859e8795eb4b735af8c6dc31da3a0f23545e98c3ebfa608f1471c",
+  "zip_size_bytes": 310643471,
+  "products": [
+    {
+      "name": "TB4-fetcher-0.0.1-linux-x64.tar.gz",
+      "size_bytes": 156278580,
+      "sha256": "c3142ee003bdf314ac30620407b1e9f92da900ddeb2ec8b2625c3510a9ec9071"
+    },
+    {
+      "name": "TB4-watchdog-0.0.1-linux-x64.tar.gz",
+      "size_bytes": 156279554,
+      "sha256": "96505f5873c21d745fce14f337010810222c182bdb45cbdc8ad0b76a2266cec6"
+    }
+  ],
+  "archive_and_product_hashes_verified": true,
+  "acceptance_report": {
+    "results": [
+      {
+        "role": "watchdog",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      },
+      {
+        "role": "fetcher",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      }
+    ],
+    "scope": "credential-free-platform-CI"
+  },
+  "scope": "Existing downloaded artifact verification only; no new native or private-host test."
+}

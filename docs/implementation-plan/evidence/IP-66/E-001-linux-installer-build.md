@@ -3,7 +3,7 @@
 Date: 2026-09-29.
 
 Development head: `1269d2ebfb1e91223f1a8d125e5915b0233a2f47`.
-PR integration checkout: `2730e33126f726ccab8686c90144a6d2222497b6`.
+PR integration checkout: `7d161781b17edf68802809e0e506d944bcc08eca`.
 Verified run:
 https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/36619412954
 
@@ -19,15 +19,20 @@ install/uninstall scripts. Python, Qt dependencies and canonical runtime data ar
 bundled. Compatible host graphics/system libraries remain prerequisites.
 
 Artifact ID: `11057008722`.
-Name: `tb4-desktop-Linux-2730e33126f726ccab8686c90144a6d2222497b6`.
+Name: `tb4-desktop-Linux-7d161781b17edf68802809e0e506d944bcc08eca`.
 GitHub-reported ZIP SHA-256:
-`8a9e451a3c450b657872196a93e42e1a4015ee2892edb95f5f9de1f60d783f31`.
+`c0622f58e6a859e8795eb4b735af8c6dc31da3a0f23545e98c3ebfa608f1471c`.
 
 The artifact contains both installers, checksums and an acceptance report. The
 connector returned a downloaded archive, but the subsequent local container read
-failed with a tool ClientError. No independent local Linux ZIP hash/readback is
-claimed. Native CI acceptance/publication were verified separately through the
-completed job record.
+failed with a tool ClientError during the original continuation.
+
+Follow-up on 2026-09-29 successfully read the archive, verified its ZIP digest
+against GitHub metadata, checked both product hashes and read `acceptance.json`.
+The previously transcribed ZIP hash and checkout identity were incorrect and are
+corrected above. Exact readback is in `E-002-artifact-readback.json`. The earlier
+read limitation is historical, not the current verification state. No native test
+was rerun by this byte-level check.
 
 ## Verification and isolation
 

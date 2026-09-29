@@ -7,8 +7,12 @@ Native Windows/Linux run:
 https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/36619412954
 
 The PR integration checkout was
-`2730e33126f726ccab8686c90144a6d2222497b6`, combining that head with the
+`7d161781b17edf68802809e0e506d944bcc08eca`, combining that head with the
 unchanged main baseline. Both platform jobs completed successfully.
+
+Correction on 2026-09-29: the checkout identity above now matches the actual
+artifact name and CI checkout; the previous value was a transcription error.
+This changes metadata only and does not claim a new test run.
 
 ## Implemented boundary
 
