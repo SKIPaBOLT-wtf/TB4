@@ -33,3 +33,40 @@ def test_two_role_windows_are_independent_and_do_not_start_workers(application, 
             window.tray.hide()
             window.deleteLater()
         application.processEvents()
+
+
+def test_gui_save_uses_real_worker_and_failed_save_preserves_config(application, tmp_path):
+    import time
+    window = RoleWindow(profile_for('fetcher', tmp_path), smoke=True)
+
+    def finish_action():
+        deadline = time.monotonic() + 20
+        while time.monotonic() < deadline:
+            application.processEvents()
+            window.refresh()
+            if not window.client.active and window.snapshot and window.snapshot['process_state'] in {'EXITED', 'FAILED'}:
+                return
+            time.sleep(.01)
+        raise AssertionError('bounded GUI worker action did not finish')
+
+    try:
+        window.set_field('drive', 'root_id', 'explicit-test-root')
+        window.set_field('drive', 'client_secrets_path', str(tmp_path / 'client.json'))
+        window.save()
+        finish_action()
+        assert window.profile.config.is_file()
+        original = window.profile.config.read_bytes()
+        assert window.snapshot['process_state'] == 'EXITED'
+        assert window.snapshot['last_drive_at'] is None
+        window.set_field('drive', 'root_id', 'replace-at-deploy-time')
+        window.save()
+        finish_action()
+        assert window.snapshot['process_state'] == 'FAILED'
+        assert window.profile.config.read_bytes() == original
+    finally:
+        if window.client.active:
+            window.client.request_stop()
+        window.timer.stop()
+        window.tray.hide()
+        window.deleteLater()
+        application.processEvents()

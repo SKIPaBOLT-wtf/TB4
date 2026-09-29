@@ -10,7 +10,9 @@ from .profile import ProfileLock, profile_for
 
 
 def packaged_self_test(role: str) -> dict:
-    """Import/resource checks only: no credentials, Drive access or live worker."""
+    """Import/resource/native-child checks; no credentials or Drive access."""
+    from .environment import prepare_external_programs
+    prepare_external_programs()
     from tb4.core.schemas import load_schema_store
     from tb4.core.state_machine import load_state_machines
     from tb4.runtime_support import load_public_defaults
@@ -24,7 +26,22 @@ def packaged_self_test(role: str) -> dict:
     assert get_static_doc("drive", "v3")
     from PySide6 import QtCore, QtWidgets
     assert QtCore.qVersion() and QtWidgets.QSystemTrayIcon
-    return {"role": role, "self_test": "PASS", "scope": "imports-and-resources-only"}
+    import os
+    import subprocess
+    import tempfile
+    from .provider import google_backend
+    from .profile import ProfileError
+    with tempfile.TemporaryDirectory(prefix="tb4-self-test-") as directory:
+        try:
+            google_backend({"drive": {"client_secrets_path": str(Path(directory) / "absent-client.json"),
+                                      "token_path": str(Path(directory) / "absent-token.json")}})
+        except ProfileError as exc:
+            assert str(exc) == "AUTH_MISSING_LOCAL_CREDENTIALS"
+        else:
+            raise AssertionError("missing credentials were not refused")
+    command = [os.environ["COMSPEC"], "/d", "/c", "exit", "0"] if os.name == "nt" else ["/bin/sh", "-c", "exit 0"]
+    subprocess.run(command, check=True, capture_output=True, timeout=10)
+    return {"role": role, "self_test": "PASS", "scope": "imports-resources-native-child-no-Drive"}
 
 
 def main(fixed_role: str | None = None, argv: list[str] | None = None) -> int:
@@ -57,6 +74,8 @@ def main(fixed_role: str | None = None, argv: list[str] | None = None) -> int:
         from .app import run_gui
         return run_gui(profile, smoke_report=args.report if args.action == "gui-smoke" else None,
                        smoke=args.action == "gui-smoke")
+    from .environment import prepare_external_programs
+    prepare_external_programs()
     from .worker import main as worker_main
     return worker_main(profile, args.action)
 

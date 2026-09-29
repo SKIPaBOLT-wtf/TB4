@@ -72,3 +72,13 @@ def test_queue_is_bounded():
     for number in range(1000):
         client._event({'kind': 'sample', 'number': number})
     assert client.events.qsize() == 200
+
+
+def test_stop_request_never_waits_for_a_blocked_writer():
+    client = WorkerProcess('fetcher')
+    client.start([sys.executable, '-c', 'import sys; sys.stdin.readline()'], 'run')
+    with client.write_lock:
+        before = time.monotonic()
+        assert client.request_stop()
+        assert time.monotonic() - before < .5
+    assert wait_exit(client)[-1]['code'] == 0

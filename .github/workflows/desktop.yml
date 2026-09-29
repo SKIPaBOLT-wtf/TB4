@@ -32,3 +32,17 @@ jobs:
       - name: Complete Linux regression suite
         if: runner.os == 'Linux'
         run: python -m pytest
+      - name: Build WATCHDOG
+        run: python tools/build_desktop.py --role watchdog
+      - name: Build FETCHER
+        run: python tools/build_desktop.py --role fetcher
+      - name: Packaged application and installer acceptance
+        run: python tools/test_desktop_distribution.py
+      - name: Publish installers and checksums
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: tb4-desktop-${{ runner.os }}-${{ github.sha }}
+          path: |
+            desktop-dist/installers/*
+            desktop-dist/acceptance.json
+          if-no-files-found: error

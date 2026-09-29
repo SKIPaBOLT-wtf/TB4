@@ -56,7 +56,6 @@ class WorkerProcess:
     def start(self, command: list[str], action: str, payload: dict | None = None) -> None:
         if self.active:
             raise RuntimeError("WORKER_ALREADY_RUNNING")
-        # Never pass a command through a shell, even when a profile path has spaces.
         options = dict(stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                        bufsize=0, shell=False)
         if os.name == "nt":
@@ -73,19 +72,17 @@ class WorkerProcess:
             reader.start()
         threading.Thread(target=self._wait, args=(process, action, readers), daemon=True).start()
         if payload is not None:
-            threading.Thread(target=self.send, args=(payload,), daemon=True).start()
+            threading.Thread(target=self._send_to, args=(process, payload), daemon=True).start()
 
-    def send(self, payload: dict) -> bool:
+    def _send_to(self, process, payload: dict) -> bool:
         with self.write_lock:
-            process = self.process
             if process is None or process.poll() is not None or process.stdin is None:
                 return False
             try:
                 data = (json.dumps(payload, ensure_ascii=True) + "\n").encode("utf-8")
                 if len(data) > 2 * 1024 * 1024:
                     raise ValueError("CONTROL_MESSAGE_TOO_LARGE")
-                # Only the small stop command is sent on the UI thread. The
-                # larger configuration payload is sent from an action thread.
+                # Pipe writes always run outside the GUI event thread.
                 offset = 0
                 while offset < len(data):
                     count = process.stdin.write(data[offset:])
@@ -98,7 +95,12 @@ class WorkerProcess:
                 return False
 
     def request_stop(self) -> bool:
-        return self.send({"op": "stop"})
+        process = self.process
+        if process is None or process.poll() is not None:
+            return False
+        # Bind this request to this process, never a later restart.
+        threading.Thread(target=self._send_to, args=(process, {"op": "stop"}), daemon=True).start()
+        return True
 
     def _read_stdout(self, process) -> None:
         stream = process.stdout

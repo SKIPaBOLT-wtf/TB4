@@ -59,12 +59,13 @@ def test_save_preserves_text_and_backups(tmp_path):
         assert p.directory.stat().st_mode & 0o777 == 0o700
 
 
-def test_conflict_does_not_overwrite_external_change(tmp_path):
+@pytest.mark.parametrize('newline', ['\n', '\r\n'])
+def test_conflict_does_not_overwrite_external_change(tmp_path, newline):
     p = profile_for('watchdog', tmp_path)
     text = configured(p)
     save_config(p, text, expected_digest=None, validator=no_provider)
-    external = text + '\n# external edit\n'
-    p.config.write_text(external, encoding='utf-8')
+    external = (text + '\n# external edit\n').replace('\n', newline)
+    p.config.write_bytes(external.encode('utf-8'))
     with pytest.raises(ProfileError, match='CONFIG_CHANGED'):
         save_config(p, text, expected_digest=content_digest(text), validator=no_provider)
     assert read_config(p.config) == external
@@ -100,7 +101,7 @@ def test_folder_link_parser(url, expected):
     assert drive_root_id(url) == expected
 
 
-@pytest.mark.parametrize('value', ['', 'replace-at-deploy-time', '../root', 'G:\\My Drive',
+@pytest.mark.parametrize('value', ['', 'replace-at-deploy-time', '../root', 'X:\\My Drive',
     'https://evil.example/drive/folders/abc', 'https://drive.google.com.evil/drive/folders/abc',
     'https://user@drive.google.com/drive/folders/abc', 'https://drive.google.com/file/d/abc/view'])
 def test_folder_link_rejects_ambiguous_or_local_paths(value):
