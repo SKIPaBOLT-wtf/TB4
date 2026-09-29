@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-63
+current_step: IP-68
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -321,28 +321,28 @@ steps:
     amendments: []
   IP-63:
     title: "Desktop Profiles Configuration and Diagnostics"
-    status: IN_PROGRESS
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-63/E-001-profiles-and-diagnostics.md]
     amendments: []
   IP-64:
     title: "Role Tray Applications and Runtime Integration"
-    status: PLANNED
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-64/E-001-tray-runtime-integration.md]
     amendments: []
   IP-65:
     title: "Independent Windows Desktop Installers"
-    status: PLANNED
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-65/E-001-windows-installer-build.md]
     amendments: []
   IP-66:
     title: "Independent Linux Desktop Installers"
-    status: PLANNED
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-66/E-001-linux-installer-build.md]
     amendments: []
   IP-67:
     title: "Desktop Automated Acceptance"
-    status: PLANNED
-    evidence: []
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-67/E-001-desktop-automated-acceptance.md]
     amendments: []
   IP-68:
     title: "Private Same-Host Desktop Pilot"

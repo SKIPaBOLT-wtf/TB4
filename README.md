@@ -4,6 +4,18 @@ TB4 is an experimental terminal-bridge project for deterministic, low-overhead r
 
 The repository is the project's persistent public memory. Private deployment details, credentials, and private infrastructure information do not belong here.
 
+## Desktop applications
+
+WATCHDOG and FETCHER have separate Windows installers and Linux desktop bundles,
+each with its own system-tray application for configuration, status and diagnostics.
+Start with the [desktop quick start](docs/DESKTOP_QUICKSTART.md). The
+[desktop contract](docs/DESKTOP.md) defines isolation, safety and rollback.
+
+Build and installer evidence is under implementation-plan steps IP-64 through
+IP-67. The first private same-host pilot is IP-68; an independent-machine pilot
+remains a separate later step. Only the [manifest](docs/implementation-plan/manifest.yaml)
+contains authoritative completion status. A successful build is not a live pilot.
+
 ## Development reference
 
 The project's development method is defined by the [TB4 Execution Contract](docs/execution-contract/README.md).
