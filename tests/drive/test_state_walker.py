@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, replace
+from dataclasses import dataclass
 
 from tb4.core.fencing import FenceToken
 from tb4.core.models import Generation, ObjectStateRef, OperationId
