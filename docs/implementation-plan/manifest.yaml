@@ -1,7 +1,7 @@
 schema_version: 1
 plan: TB4_IMPLEMENTATION_PLAN
 status_authority: docs/implementation-plan/manifest.yaml
-current_step: IP-60
+current_step: IP-63
 statuses:
   PLANNED: not started
   IN_PROGRESS: current work
@@ -306,11 +306,56 @@ steps:
     amendments: [docs/implementation-plan/amendments/IP-59/A-001-runtime-composition-prerequisite.md]
   IP-60:
     title: "Real Two-Machine Pilot"
-    status: BLOCKED
+    status: SUPERSEDED
     evidence: [docs/implementation-plan/evidence/IP-60/E-001-private-environment-prerequisite-audit.md]
-    amendments: []
+    amendments: [docs/implementation-plan/amendments/IP-60/A-001-desktop-development-first.md]
   IP-61:
     title: "Final Acceptance"
+    status: SUPERSEDED
+    evidence: []
+    amendments: [docs/implementation-plan/amendments/IP-61/A-001-expanded-acceptance-order.md]
+  IP-62:
+    title: "Desktop Role Contract"
+    status: VERIFIED
+    evidence: [docs/implementation-plan/evidence/IP-62/E-001-desktop-contract-and-order.md]
+    amendments: []
+  IP-63:
+    title: "Desktop Profiles Configuration and Diagnostics"
+    status: IN_PROGRESS
+    evidence: []
+    amendments: []
+  IP-64:
+    title: "Role Tray Applications and Runtime Integration"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-65:
+    title: "Independent Windows Desktop Installers"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-66:
+    title: "Independent Linux Desktop Installers"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-67:
+    title: "Desktop Automated Acceptance"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-68:
+    title: "Private Same-Host Desktop Pilot"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-69:
+    title: "Independent-Machine Expansion Pilot"
+    status: PLANNED
+    evidence: []
+    amendments: []
+  IP-70:
+    title: "Expanded Final Acceptance"
     status: PLANNED
     evidence: []
     amendments: []
