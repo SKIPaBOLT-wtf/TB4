@@ -1,20 +1,20 @@
 schema_version: 1
 revision: "R2"
 work_item: "RP-002"
-check: "RP-002.C1"
+check: "RP-002.C4"
 attempt: "A001"
-phase: "REVIEWED"
+phase: "ACCEPTANCE_CHECK"
 source_branch: "work/rp-002-a001"
 source_commit: "25539e6b0cda63aeb8db544710602fbaa9ca98ca"
 journal: "docs/development/journal/RP-002/A001/events.jsonl"
-last_verified_event: "RP-002-A001-0011"
+last_verified_event: "RP-002-A001-0012"
 last_completed: "RP-002 checks reviewed; guarded Windows/Linux tests and real checkpoint readback passed; acceptance validation and merge remain."
-next_action: "Validate coordinated check receipts and publication privacy, then publish a separate merge INTENT for PR 9."
+next_action: "Record actual validation then publish PR 9 exact-head merge INTENT."
 verification: "RP-001 validates candidate ledgers; new tests exercise publication interruption and no-replay resume."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-002-A001-0012"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
