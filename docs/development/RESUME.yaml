@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-005"
 check: "RP-005.C3"
 attempt: "A001"
-phase: "READY_TO_MERGE"
+phase: "MERGE"
 source_branch: "work/rp-005-a001"
 source_commit: "d3ac272140e6a583777dccb891c7d2aef0e1d4e7"
 journal: "docs/development/journal/RP-005/A001/events.jsonl"
-last_verified_event: "RP-005-A001-0007"
+last_verified_event: "RP-005-A001-0008"
 last_completed: "RP-001 through RP-004 VERIFIED and merged; main Progress passed; DEF-001/DEF-002 remain OPEN."
-next_action: "Publish exact-head merge INTENT; merge PR 12, then coordinated acceptance and main Progress."
+next_action: "Inspect merge, publish acceptance and verify main Progress before RP-006."
 verification: "Closed schema and semantic checks; varied synthetic topology/observation fixtures; private projection and revision/authority negative tests."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-005-A001-0008"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
