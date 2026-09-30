@@ -1,20 +1,20 @@
 schema_version: 1
 revision: "R2"
 work_item: "RP-003"
-check: "RP-003.C1"
+check: "RP-003.C4"
 attempt: "A001"
-phase: "SOURCE_RECORDED"
+phase: "TEST"
 source_branch: "work/rp-003-a001"
 source_commit: "065b56939b2761d73f7b12698995f6bb6379ad5f"
 journal: "docs/development/journal/RP-003/A001/events.jsonl"
-last_verified_event: "RP-003-A001-0002"
+last_verified_event: "RP-003-A001-0003"
 last_completed: "RP-001 and RP-002 VERIFIED and merged; main Progress passed. Legacy DEF-001/DEF-002 and issue 7 remain open."
-next_action: "Publish targeted validation INTENT; run Windows development/security/plan tests, ledger history, public scan and diff review; open PR for required CI."
+next_action: "Inspect exact local results and CI runs; retain any failure before repair."
 verification: "Typed defect/schema validation, synthetic interruption/repair chain and prior ledger regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-003-A001-0003"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
