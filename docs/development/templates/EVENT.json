@@ -1,0 +1,23 @@
+{
+  "example_only": true,
+  "schema_version": 1,
+  "event_id": "RP-XXX-A001-0001",
+  "sequence": 1,
+  "at": "REPLACE_WITH_OBSERVED_UTC_TIMESTAMP",
+  "item": "RP-XXX",
+  "check": "RP-XXX.C1",
+  "attempt": "A001",
+  "phase": "PREPARE",
+  "event": "INTENT",
+  "action_id": "ACTION-001",
+  "related_event": null,
+  "source_ref": "REPLACE_WITH_VERIFIED_PUBLIC_SOURCE_SHA",
+  "procedure": "Exact public-safe command or procedure; private values resolved locally",
+  "expected": "Observable invariant",
+  "observed": null,
+  "outcome": "PENDING",
+  "evidence": [],
+  "rollback": "Exact bounded recovery and irreversible limits",
+  "next_action": "Exact next action plus verification",
+  "uncertainty": "State which facts remain unverified"
+}

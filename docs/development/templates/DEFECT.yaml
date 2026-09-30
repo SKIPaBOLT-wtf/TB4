@@ -1,0 +1,17 @@
+example_only: true
+id: DEF-XXX
+title: Replace with bounded symptom
+status: OPEN
+detected_in: RP-XXX.C1
+suspected_origin: null
+proven_origin: null
+first_bad_source: null
+last_known_good_source: null
+reproduction: null
+hypotheses: []
+repair_step: null
+repair_attempt: null
+regression_test: null
+affected_acceptance: []
+resolution_evidence: []
+next_action: Establish current facts and a minimal reproduction.

@@ -1,0 +1,10 @@
+schema_version: 1
+active_revision: R2
+manifest: docs/implementation-plan/revisions/R2/manifest.yaml
+checklist: docs/implementation-plan/revisions/R2/CHECKLIST.md
+requirements: docs/implementation-plan/revisions/R2/requirements.yaml
+work_instruction: docs/development/WORK_INSTRUCTION.md
+resume: docs/development/RESUME.yaml
+legacy_manifest: docs/implementation-plan/manifest.yaml
+legacy_scope: Historical IP-01 through IP-70; not R2 completion authority.
+authorization: PLANNING_ONLY

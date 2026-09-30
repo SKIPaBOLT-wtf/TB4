@@ -1,0 +1,18 @@
+example_only: true
+schema_version: 1
+revision: R2
+item: RP-XXX
+check: RP-XXX.C1
+attempt: A001
+phase: PREPARE
+source_branch: work/RP-XXX-A001
+source_commit: null
+last_verified_event: null
+last_completed_action: null
+unsettled_intents: []
+expected_user_action: null
+blocked_by: []
+next_action: Replace with one exact bounded action.
+verification: Replace with the observable success/failure criterion.
+rollback: Replace with scoped rollback or irreversible boundary.
+authorization: Record the current explicitly granted scope.

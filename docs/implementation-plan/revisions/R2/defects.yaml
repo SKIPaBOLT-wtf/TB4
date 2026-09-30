@@ -1,0 +1,26 @@
+schema_version: 1
+defects:
+  DEF-001:
+    title: Ordinary terminal publication remains in RETURNING after rename conflict
+    status: OPEN
+    evidence_source: docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md
+    observation_kind: Historical evidence plus owner-submitted FAILED telemetry; not a new live read.
+    detected_in: IP-68
+    suspected_origin: null
+    proven_origin: null
+    reproduction_step: RP-013
+    repair_steps: [RP-015, RP-047, RP-048]
+    required_acceptance: [RP-058, RP-062, RP-064]
+    rule: A successful manual recovery or DONE body is not proof that ordinary publication is fixed.
+  DEF-002:
+    title: Cancellation acknowledgement/classification may outlive natural completion
+    status: OPEN
+    issue: https://github.com/SKIPaBOLT-wtf/TB4/issues/7
+    evidence_source: docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md
+    detected_in: IP-68
+    suspected_origin: null
+    proven_origin: null
+    reproduction_step: RP-014
+    repair_steps: [RP-044, RP-045, RP-046]
+    required_acceptance: [RP-058, RP-062, RP-064]
+    rule: Preserve output and actual termination evidence; publication-only recovery cannot close this defect.
