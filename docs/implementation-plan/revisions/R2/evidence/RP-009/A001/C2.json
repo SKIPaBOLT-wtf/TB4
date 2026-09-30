@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "item": "RP-009",
+  "check": "RP-009.C2",
+  "attempt": "A001",
+  "source_ref": "25aecb2586f82525a1ca506ae50b5f532072ba6b",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Review machine specification/pure validator and named slot, saturation, generation, byte, partial-create/duplicate and preservation tests. Execute targeted Windows suite, Linux CI and native Desktop builds at recorded heads; validate ledger/privacy/history. See reviewed-validation.md and collected-tests.txt.",
+  "expected": "Finite setup-selected capacity/generations/byte budgets apply backpressure without new per-operation objects.",
+  "observed": "Windows 378 passed in 17.76s; Linux CI 987 passed/2 skipped; Desktop Linux full 997 and GUI 67 passed, Windows GUI 63 passed/4 POSIX skips. Both roles/platforms built and passed bundled self-test, GUI and install/uninstall/profile isolation. Maximum saturated layout is 514586 bytes under 524288, 694 logical records/129 fixed physical objects. History/scanner/diff passed; no live provisioning or throughput acceptance claimed.",
+  "exit_code": 0,
+  "platform_scope": "Windows/Linux Python 3.11; synthetic layout tests; native GUI/package/installer checks for both roles. No live provider provisioning or alternate-storage qualification.",
+  "negative_cases": [
+    "Unknown/missing slots and unrecognized capacity dimensions",
+    "Zero/overflow/noninteger capacity and generation bounds",
+    "Filled work/history/artifact pools keep cancel/ACK/status available",
+    "UTF-8 and JSON escaping exceed slot limits",
+    "Unknown/duplicate provisioning identity and shrink/noop/revision wrap"
+  ],
+  "unverified_scope": "Pure layout/structural contract. Business schemas, atomic reservation, aggregate provider rate, real commissioning/raw-artifact IO and live migration remain later gates; bodies here are opaque, not authorized execution input.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "No live state changed. Preserve v1/current installed protocol, increasing generations and all unread/unknown records; expansion is unpublished data until explicitly authorized provisioning/CAS/readback.",
+  "intent_event": "RP-009-A001-0003",
+  "outcome_event": "RP-009-A001-0005",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-009/A001/reviewed-validation.md"
+  ]
+}
