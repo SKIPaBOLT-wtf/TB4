@@ -2,22 +2,22 @@ schema_version: 1
 revision: R2
 work_item: PLAN-R2
 attempt: A001
-phase: AWAITING_IMPLEMENTATION_AUTHORIZATION
+phase: AUTHORIZATION_INTENT
 source_branch: main
 source_commit: 4c353ed7e2ab7ea234ceb667755f65683b266842
 journal: docs/development/journal/PLAN-R2/A001/events.jsonl
 last_verified_event: PLAN-R2-A001-0005
 last_completed: Detailed R2 plan, work instruction, templates and navigation published and verified; 64 steps, 256 checks, 22 requirements.
 validation: docs/implementation-plan/revisions/R2/PLANNING_VALIDATION.md
-next_action: Await explicit implementation authorization. Then inspect RP-001.C1 and publish the first implementation INTENT before modifying code.
+next_action: Read back PLAN-R2-A001-0006, then register the newly granted implementation scope consistently.
 verification: RP-001 dependencies, authorization and current source confirmed; no earlier unresolved planning intent.
 execution_authorization: DOCUMENTATION_AND_PLANNING_ONLY
 runtime_actions_allowed: false
 implementation_started: false
 next_implementation_step: RP-001
 next_implementation_check: RP-001.C1
-unsettled_intents: []
-expected_user_action: Explicitly authorize the implementation phase when ready.
+unsettled_intents: [PLAN-R2-A001-0006]
+expected_user_action: null
 blocking_decisions: []
 known_open_defects:
 - DEF-001
