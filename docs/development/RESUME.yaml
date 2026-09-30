@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-014"
-check: "RP-014.C1"
+work_item: "RP-015"
+check: "RP-015.C1"
 attempt: "A001"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "b22cc63fc4424ba3cd21c664a8a1de3cf59b2e58"
-journal: "docs/development/journal/RP-014/A001/events.jsonl"
-last_verified_event: "RP-014-A001-0012"
+phase: "SOURCE"
+source_branch: "work/rp-015-a001"
+source_commit: "9f5ff5110d89b81ccb1fdeeb9f2e854491ff035a"
+journal: "docs/development/journal/RP-015/A001/events.jsonl"
+last_verified_event: "RP-015-A001-0001"
 last_completed: "RP-014"
-next_action: "Verify main Progress and ledger, then start dependency-ready RP015 native-document exact-object conditional mutation."
-verification: "Main progress/history plus ledger; RP015 must port benign-conflict invariant to strict native Docs CAS, never blind v1 retry."
+next_action: "Inspect exact native Docs API and current layout/contract; implement minimal adapter/reconciler plus shared wire conformance tests, then publish source before tests."
+verification: "Pin published source and test backend request bodies, UTF16/newline/tab identity, strict revision conflicts and complete binding/hash readback; no duplicate payload execution."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-015-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Synthetic-only additions; no real process group exists to terminate, no old generation rerun or archive mutation."
+rollback: "Unreleased adapter is opt-in/unwired; revert additions without touching installed v1 authority, generations, or work. No deployment migration occurs."
 next_implementation_step: "RP-015"
 next_implementation_check: "RP-015.C1"
