@@ -2,24 +2,24 @@ schema_version: 1
 revision: R2
 work_item: PLAN-R2
 attempt: A001
-phase: PUBLICATION_PENDING
-source_branch: docs/r2-plan-20260930
-base_commit: 3d3e6e0dc0eee51e694e83b37547c047cea8e355
-step_definitions_commit: cbd385a7f3d110c746b12a70c2b3ae02d6738f7d
+phase: AWAITING_IMPLEMENTATION_AUTHORIZATION
+source_branch: main
+source_commit: 4c353ed7e2ab7ea234ceb667755f65683b266842
 journal: docs/development/journal/PLAN-R2/A001/events.jsonl
-last_completed: Planning snapshot passed structural and local/remote hash validation; no RP implementation started.
-next_action: Compare final documentation diff, fast-forward main non-force, verify publication and append outcome.
-verification: Main ref and CURRENT/R2/checklist/work-instruction/cursor readback match reviewed documentation.
+last_verified_event: PLAN-R2-A001-0005
+last_completed: Detailed R2 plan, work instruction, templates and navigation published and verified; 64 steps, 256 checks, 22 requirements.
+validation: docs/implementation-plan/revisions/R2/PLANNING_VALIDATION.md
+next_action: Await explicit implementation authorization. Then inspect RP-001.C1 and publish the first implementation INTENT before modifying code.
+verification: RP-001 dependencies, authorization and current source confirmed; no earlier unresolved planning intent.
 execution_authorization: DOCUMENTATION_AND_PLANNING_ONLY
 runtime_actions_allowed: false
 implementation_started: false
 next_implementation_step: RP-001
 next_implementation_check: RP-001.C1
-unsettled_intents:
-- PLAN-R2-A001-0004
+unsettled_intents: []
+expected_user_action: Explicitly authorize the implementation phase when ready.
 blocking_decisions: []
 known_open_defects:
 - DEF-001
 - DEF-002
-rollback: Documentation-only revert; preserve planning journal and legacy evidence.
-source_commit: 56110d29b5c808bf74903f1484b603d7cbfec911
+rollback: Documentation-only correction/revert preserving append-only journal and legacy evidence.
