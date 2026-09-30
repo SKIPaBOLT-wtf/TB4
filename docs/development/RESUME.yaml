@@ -1,28 +1,21 @@
 schema_version: 1
-revision: R2
-work_item: RP-002
-check: RP-002.C1
-attempt: A001
-phase: CI_RUNNING
-source_branch: work/rp-002-a001
-source_commit: 25539e6b0cda63aeb8db544710602fbaa9ca98ca
-journal: docs/development/journal/RP-002/A001/events.jsonl
-last_verified_event: RP-002-A001-0010
-last_completed: RP-001 VERIFIED, merged PR 8, main Progress 36758213874 passed.
-next_action: Inspect these exact CI runs; at most three checks over two minutes before
-  job-log diagnosis. Verify all prepared checkpoint files remotely before dependent
-  work.
-verification: RP-001 validates candidate ledgers; new tests exercise publication interruption
-  and no-replay resume.
-execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
+revision: "R2"
+work_item: "RP-002"
+check: "RP-002.C1"
+attempt: "A001"
+phase: "REVIEWED"
+source_branch: "work/rp-002-a001"
+source_commit: "25539e6b0cda63aeb8db544710602fbaa9ca98ca"
+journal: "docs/development/journal/RP-002/A001/events.jsonl"
+last_verified_event: "RP-002-A001-0011"
+last_completed: "RP-002 checks reviewed; guarded Windows/Linux tests and real checkpoint readback passed; acceptance validation and merge remain."
+next_action: "Validate coordinated check receipts and publication privacy, then publish a separate merge INTENT for PR 9."
+verification: "RP-001 validates candidate ledgers; new tests exercise publication interruption and no-replay resume."
+execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-002-A001-0009
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects:
-- DEF-001
-- DEF-002
-rollback: Disable development helper; preserve pending/journal records; use manual
-  checkpoints.
+known_open_defects: ["DEF-001","DEF-002"]
+rollback: "Disable development helper; preserve pending/journal records; use manual checkpoints."

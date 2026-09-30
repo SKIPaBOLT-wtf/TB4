@@ -71,7 +71,7 @@ defects:
     proposed_resolution: Use python -m pytest consistently with Progress and Desktop workflows.
   DEF-007:
     title: Checkpoint preparation did not bind local documents to declared public parent
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-002.C2
     suspected_origin: 467ac1033c5795fe88fd7765bbd1ad1142db26c7
     proven_origin: null
@@ -79,3 +79,4 @@ defects:
     reproduction: Supply a current remote expected head with stale local ledger documents; candidate validation lacked an explicit base identity guard.
     repair_steps: [RP-002]
     required_acceptance: [RP-002.C1, RP-002.C2, RP-002.C4]
+    resolution_evidence: [docs/implementation-plan/revisions/R2/evidence/RP-002/A001/reviewed-validation.md]
