@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-008"
 check: "RP-008.C4"
 attempt: "A002"
-phase: "REPAIR_PUBLISHED"
+phase: "VALIDATION"
 source_branch: "work/rp-008-a002"
 source_commit: "f576f0815669af5708f238c1fb34d7e3942ef70a"
 journal: "docs/development/journal/RP-008/A002/events.jsonl"
-last_verified_event: "RP-008-A002-0008"
+last_verified_event: "RP-008-A002-0009"
 last_completed: "Owner approved RP-008 candidate 3 design and prototypes, no live migration; RP-013 inspected only and deferred without source changes."
-next_action: "Validate repaired history and repeat local tests with dedicated new workspace basetemp and captured child exit codes."
+next_action: "Publish test counts, exact run identities and source-bound C1-C4 design receipts only after all required gates pass."
 verification: "Deterministic Doc-CAS authority and effect barrier tests plus original provider evidence; cross-platform regressions and exact-source review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-008-A002-0009"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-010","DEF-011"]
