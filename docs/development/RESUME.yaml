@@ -3,20 +3,20 @@ revision: "R2"
 work_item: "RP-013"
 check: "RP-013.C1"
 attempt: "A001"
-phase: "SOURCE"
-source_branch: "work/rp-013-a001"
+phase: "DEFERRED_AFTER_OWNER_DECISION"
+source_branch: "main"
 source_commit: "2acaa515a143106bebd99d9bb64b65ccf250fc34"
 journal: "docs/development/journal/RP-013/A001/events.jsonl"
-last_verified_event: "RP-013-A001-0001"
-last_completed: "RP-001 through RP-007 VERIFIED; RP-008 C1-C3 reviewed/C4 BLOCKED, evidence merged and Progress passed. Schedule permits RP-013/014 only."
-next_action: "Implement scoped deterministic reproductions and expected-failure handoff; publish source outcome and separate validation INTENT."
+last_verified_event: "RP-013-A001-0002"
+last_completed: "Owner approved RP-008 candidate 3 design and prototypes, no live migration; RP-013 inspected only and deferred without source changes."
+next_action: "Record owner decision and reopen RP-008 design qualification before any source/test unit."
 verification: "Controlled return-publication races and negative ownership cases, bounded public-safe diagnostics; exact-source tests/CI and retained hypotheses."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-013-A001-0001"]
-expected_user_action: "Approve or reject candidate 3 in RP-008/A001/storage-decision.md; no live migration authorized by that decision."
-blocking_decisions: ["RP-008.C4: approve candidate 3 native Docs sole-authority design amendment with protected-effect fencing, or explicitly select another storage/fallback contract."]
+unsettled_intents: []
+expected_user_action: null
+blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-010"]
 rollback: "Only isolated synthetic fixtures; preserve original live result and archived pilot evidence unchanged."
 next_implementation_step: "RP-013"
