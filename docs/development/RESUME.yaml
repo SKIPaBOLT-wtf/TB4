@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-003"
 check: "RP-003.C3"
 attempt: "A001"
-phase: "SOURCE_REPAIR"
+phase: "SOURCE_REPAIR_RECORDED"
 source_branch: "work/rp-003-a001"
-source_commit: "065b56939b2761d73f7b12698995f6bb6379ad5f"
+source_commit: "dd24ce579220b60a58fb2bc036b6c3658cc409de"
 journal: "docs/development/journal/RP-003/A001/events.jsonl"
-last_verified_event: "RP-003-A001-0006"
+last_verified_event: "RP-003-A001-0007"
 last_completed: "RP-001 and RP-002 VERIFIED and merged; main Progress passed. Legacy DEF-001/DEF-002 and issue 7 remain open."
-next_action: "Publish source repair outcome and repeat targeted/CI validation; no acceptance until all checks pass."
+next_action: "Publish validation INTENT then run targeted checks and required CI."
 verification: "Typed defect/schema validation, synthetic interruption/repair chain and prior ledger regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-003-A001-0006"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
