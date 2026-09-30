@@ -5,16 +5,16 @@ check: "RP-010.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-010-a001"
-source_commit: "55e617d77f4490f83e3454a650c8875280af1e61"
+source_commit: "179c76be7071692a36b4d6bfbecb02aee08dedbb"
 journal: "docs/development/journal/RP-010/A001/events.jsonl"
-last_verified_event: "RP-010-A001-0014"
+last_verified_event: "RP-010-A001-0015"
 last_completed: "RP-001 through RP-009 VERIFIED; all relevant Windows/Linux/native checks passed and RP-009 merged. Current RP-008 amendment requires takeover without global old-host/sink ACK."
-next_action: "Implement input guard and regressions, publish source outcome, then rerun current targeted and required CI gates."
+next_action: "Run final focused regressions and required exact-head CI/Progress/native checks; preserve current and earlier run identities."
 verification: "Positive/negative schema and slot-budget fixtures, malformed/different-payload duplicates, busy targets, claim-versus-timeout orderings, correlated cancel/result/ACK, stale-generation and actor restrictions; prior regressions and exact-source CI/build review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-010-A001-0014"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-012"]
