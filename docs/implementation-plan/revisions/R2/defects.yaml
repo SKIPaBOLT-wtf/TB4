@@ -35,3 +35,14 @@ defects:
     repair_steps: [RP-001]
     required_acceptance: [RP-001.C1]
     resolution: PLAN-R2-A001-0009; exact current paragraphs compared with recorded grant; prior defective source preserved.
+  DEF-004:
+    title: Windows test runner exits in unrelated stale temporary-directory cleanup
+    status: OPEN
+    detected_in: RP-001.C1
+    suspected_origin: Test environment outside the development checkout
+    proven_origin: null
+    evidence_source: docs/implementation-plan/revisions/R2/evidence/RP-001/A001/initial-validation.md
+    reproduction: Initial targeted pytest process ended with WinError 5 during temporary-root cleanup.
+    repair_steps: [RP-001]
+    required_acceptance: [RP-001.C1]
+    proposed_resolution: Use a dedicated new workspace temporary root; preserve unrelated old directory.
