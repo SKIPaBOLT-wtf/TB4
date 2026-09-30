@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-009"
-check: "RP-009.C1"
+work_item: "RP-010"
+check: "RP-010.C1"
 attempt: "A001"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "25aecb2586f82525a1ca506ae50b5f532072ba6b"
-journal: "docs/development/journal/RP-009/A001/events.jsonl"
-last_verified_event: "RP-009-A001-0009"
-last_completed: "RP-001 through RP-009 VERIFIED. Current takeover policy follows owner correction; fixed exchange contract accepted with runtime/provisioning/throughput limits explicit. RP-013 A001 retained for later numerical-order resumption."
-next_action: "Verify main Progress/ledger, then begin RP-010 schema/ownership contract using the accepted layout and current owner takeover amendment."
-verification: "Minimum/default/maximum and cross-capacity bounds, exact lookup IDs, saturation with cancel/ACK availability, interrupted setup/expansion/duplicate identities and retained unknown/unread results; Windows/Linux regression and privacy/history checks."
+phase: "SOURCE"
+source_branch: "work/rp-010-a001"
+source_commit: "6bea04e86f0f74efedb366eb39c66cdb393dd535"
+journal: "docs/development/journal/RP-010/A001/events.jsonl"
+last_verified_event: "RP-010-A001-0001"
+last_completed: "RP-001 through RP-009 VERIFIED; all relevant Windows/Linux/native checks passed and RP-009 merged. Current RP-008 amendment requires takeover without global old-host/sink ACK."
+next_action: "Implement compact schemas, correlated lifecycle/admission model and boundary fixtures; publish exact source outcome before targeted and native validation."
+verification: "Positive/negative schema and slot-budget fixtures, malformed/different-payload duplicates, busy targets, claim-versus-timeout orderings, correlated cancel/result/ACK, stale-generation and actor restrictions; prior regressions and exact-source CI/build review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-010-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Only synthetic local source/tests. Preserve legacy blueprint and unknown/unread records; no authority/root creation and no epoch/generation rollback."
+rollback: "Public draft specification only; preserve current v1 runtime and immutable evidence. No operation is retried or removed, no real control authority changed."
 next_implementation_step: "RP-010"
 next_implementation_check: "RP-010.C1"
