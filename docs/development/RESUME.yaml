@@ -7,14 +7,14 @@ phase: CI_RUNNING
 source_branch: work/rp-001-a001
 source_commit: 88f7850895a7f5ed664818538b5c9308cb7aac8f
 journal: docs/development/journal/RP-001/A001/events.jsonl
-last_verified_event: RP-001-A001-0015
+last_verified_event: RP-001-A001-0016
 last_completed: Implementation authorization published and read back.
-next_action: Inspect Desktop 36757039221 and Progress 36757034135; reconcile old Desktop 36756514139. General CI and Progress PR run passed.
+next_action: Finish current Desktop run 36757039221; older run reconciled without replay. Current general CI passed.
 verification: Exact branch ownership, source/diff inspection, then separately journaled targeted tests and full-plan validation.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: [RP-001-A001-0009, RP-001-A001-0014]
+unsettled_intents: [RP-001-A001-0014]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: [DEF-001, DEF-002]
