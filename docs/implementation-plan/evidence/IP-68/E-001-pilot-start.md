@@ -27,3 +27,10 @@ are completed and sanitized evidence is reviewed.
 
 Private OAuth paths, token contents, root/object IDs, host identity and other
 deployment-specific values are deliberately excluded.
+
+## Follow-on evidence
+
+The pilot-start observations above are preserved as historical evidence.
+The later 2026-09-30 recovery implementation, verified build and remaining private
+acceptance gates are recorded separately in
+[E-002 - Recorded-return recovery build](E-002-recorded-return-recovery.md).
