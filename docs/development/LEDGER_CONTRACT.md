@@ -36,8 +36,9 @@ strict schema. No old event is rewritten to make it look conformant.
 
 Use `--base <public-sha>` to additionally compare append-only journal prefixes and
 allowed status transitions against a fetched base. Reopening VERIFIED requires
-a later attempt and explicit revalidation scope. Later RP-003 adds full defect and
-transitive revalidation handling. This validator does not claim that later feature.
+a later attempt and explicit revalidation scope. Accepted RP-003 adds typed defect
+provenance, preserved acceptance snapshots and transitive revalidation holds;
+see [DEFECT_CONTRACT.md](DEFECT_CONTRACT.md) for the current contract.
 
 Progress CI runs only the ledger tests, current-plan validation, history checks
 and public-data scan. Installer CI selects product/packaging inputs; progress-only

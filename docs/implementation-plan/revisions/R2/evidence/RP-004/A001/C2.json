@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "item": "RP-004",
+  "check": "RP-004.C2",
+  "attempt": "A001",
+  "source_ref": "daac7245a46862eae214ce2e02ae80ab2808231e",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Review code paths and named canary assertions against classification policy, plus exact Windows/Linux packaged results.",
+  "procedure": "Targeted Windows security/desktop/development suite; public ledger/history/scan; CI 36764551422, Progress and Desktop 36764551412 with both role builds and installed acceptance.",
+  "expected": "Closed public reports and private BALLPARK projections exclude raw data and credential bindings.",
+  "observed": "Local 173 passed with 6 environment skips. General Linux 758 passed with 2 optional GUI skips. Desktop Linux 67 GUI tests and 768 full tests passed; Windows 63 passed with 4 POSIX-only skips. Both platform role bundles and installer/profile-isolation checks passed. Canary and closed-schema assertions pass.",
+  "exit_code": 0,
+  "platform_scope": "Windows local Python 3.11; Linux and Windows CI with GUI and packaged binaries; synthetic privacy fixtures.",
+  "negative_cases": [
+    "Code-shaped secret canary",
+    "Encoded/nested values and URLs",
+    "Custom exception names",
+    "Unvalidated extra log fields",
+    "Unsafe export filename and binary screenshot",
+    "Private projection offered to public exporter",
+    "Raw stdout/stderr"
+  ],
+  "unverified_scope": "No live deployment, real credentials or automated arbitrary-image sanitization; raw private result channels remain private.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Retain stricter publication block and manual review if sanitizer is reverted; preserve evidence.",
+  "intent_event": "RP-004-A001-0003",
+  "outcome_event": "RP-004-A001-0005",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-004/A001/reviewed-validation.md"
+  ]
+}
