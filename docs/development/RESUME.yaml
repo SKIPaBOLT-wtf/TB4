@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-012"
 check: "RP-012.C1"
 attempt: "A001"
-phase: "VALIDATION"
+phase: "DEBUG"
 source_branch: "work/rp-012-a001"
 source_commit: "d31bfe687bda0944307ca82f279d2a2296c4bacc"
 journal: "docs/development/journal/RP-012/A001/events.jsonl"
-last_verified_event: "RP-012-A001-0004"
+last_verified_event: "RP-012-A001-0005"
 last_completed: "RP-011 VERIFIED via PR19; accepted main e52be7a3883e3b259fdf38b5a49d0295e540ac53."
-next_action: "Run bounded local suite and inspect the same required workflow runs."
+next_action: "Publish bounded diagnostic/fix intent, inspect the same failing synthetic parameter with compact filtered traceback, then bound parameter IDs without weakening parser data/assertions. Preserve original failure and rerun affected/broad checks."
 verification: "Review exact actor/action ownership, fault scope, canonical input/reference bounds and every declared mode/blocker; validate source-linked synthetic/CI evidence before design acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-012-A001-0003"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
