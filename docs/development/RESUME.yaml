@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-005"
 check: "RP-005.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "SOURCE_RECORDED"
 source_branch: "work/rp-005-a001"
-source_commit: "ed9c4652c089bf8f067dcbf56d8af22189fe9092"
+source_commit: "d3ac272140e6a583777dccb891c7d2aef0e1d4e7"
 journal: "docs/development/journal/RP-005/A001/events.jsonl"
-last_verified_event: "RP-005-A001-0001"
+last_verified_event: "RP-005-A001-0002"
 last_completed: "RP-001 through RP-004 VERIFIED and merged; main Progress passed; DEF-001/DEF-002 remain OPEN."
-next_action: "Publish source outcome, then targeted schema/privacy/plan tests and required CI."
+next_action: "Publish test INTENT; run targeted schema/privacy/development checks and required CI/packaging."
 verification: "Closed schema and semantic checks; varied synthetic topology/observation fixtures; private projection and revision/authority negative tests."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-005-A001-0001"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
