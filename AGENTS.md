@@ -2,8 +2,8 @@
 
 ## Current development direction - R2 implementation authorized, 2026-09-30
 
-The owner authorized the detailed realignment plan and durable work instruction.
-That planning checkpoint is complete; implementation is NOT yet authorized.
+The detailed planning checkpoint is complete. Ordinary public implementation is now
+authorized by docs/implementation-plan/revisions/R2/IMPLEMENTATION_AUTHORIZATION.md.
 Read these exact repository records before choosing any further work:
 
 1. `docs/implementation-plan/CURRENT.yaml` - active revision and authority paths.
@@ -38,7 +38,6 @@ loaded. Inspect only code/protocol/config needed for the selected step.
 - The future installed SKILL is only a repository pointer; operational guidance
   stays in the repository. This planning change does not install or update it.
 
-After later implementation authorization, start from the cursor and update the
-authorization gate before RP-001. Live testing, network changes and destructive
+Implementation authority is recorded; start from the current cursor. Live testing, network changes and destructive
 reset still require their own scoped authorization. No private root, topology,
 credential or host identity belongs in these public records.

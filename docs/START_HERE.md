@@ -8,8 +8,9 @@ verified transitions, bounded helpers and canonical dog/ball vocabulary.
 [CURRENT.yaml](implementation-plan/CURRENT.yaml) selects the active development
 revision. The [R2 checklist](implementation-plan/revisions/R2/CHECKLIST.md) has
 64 steps and 256 checks. Read the [work instruction](development/WORK_INSTRUCTION.md)
-and [resume cursor](development/RESUME.yaml) before any action. All RP steps are
-PLANNED; only planning/documentation has been authorized at this checkpoint.
+and [resume cursor](development/RESUME.yaml) before any action. The active manifest
+records acceptance. Later implementation authority is recorded in
+[IMPLEMENTATION_AUTHORIZATION.md](implementation-plan/revisions/R2/IMPLEMENTATION_AUTHORIZATION.md).
 
 The [realignment baseline](DEVELOPMENT_REALIGNMENT_PROMPT.md) records the corrected
 product target and source audit. Its earlier pause before planning was fulfilled

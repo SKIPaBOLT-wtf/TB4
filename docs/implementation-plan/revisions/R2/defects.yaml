@@ -26,7 +26,7 @@ defects:
     rule: Preserve output and actual termination evidence; publication-only recovery cannot close this defect.
   DEF-003:
     title: Authorization navigation retained stale planning-only paragraphs
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-001.C1
     suspected_origin: 33d616e65216373bfe8f964390946bd86c3c54b3
     proven_origin: 33d616e65216373bfe8f964390946bd86c3c54b3
@@ -34,3 +34,4 @@ defects:
     reproduction: Read AGENTS, START_HERE and WORK_INSTRUCTION at origin; compare with CURRENT and implementation authorization.
     repair_steps: [RP-001]
     required_acceptance: [RP-001.C1]
+    resolution: PLAN-R2-A001-0009; exact current paragraphs compared with recorded grant; prior defective source preserved.

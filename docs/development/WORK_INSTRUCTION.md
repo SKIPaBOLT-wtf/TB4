@@ -30,9 +30,9 @@ RESUME.yaml is the navigation cursor, not an independent proof of completion.
 Journal events establish what was intended and observed; evidence establishes
 acceptance. Any disagreement must be reconciled before new mutating work.
 
-The owner has authorized R2 planning, not implementation or a new live pilot.
-Before implementation, record a later explicit authorization and update the
-manifest/cursor gate. A general development authorization does not authorize
+The original planning checkpoint has been superseded for ordinary implementation
+by ../implementation-plan/revisions/R2/IMPLEMENTATION_AUTHORIZATION.md.
+CURRENT/manifest/cursor record that later scope. A general development authorization does not authorize
 network reconfiguration, credential disclosure, destructive reset or live workload
 replay. Obtain the relevant specific authorization at those boundaries.
 
@@ -223,8 +223,8 @@ source/test/evidence, unsettled actions, exact next action and verification,
 blocker/owner decision, rollback and the recorded authorization scope. It must
 be enough for a fresh agent to resume without asking for the entire chat.
 
-The current R2 plan remains PLANNED until implementation is authorized. Planning
-validation is not runtime testing. Public progress entries for this planning
+The R2 manifest records current implementation acceptance under the later authority.
+Planning validation is not runtime testing. Public progress entries for this planning
 session live under PLAN-R2, never as fabricated RP implementation acceptance.
 Use [templates](templates) as the field contract. All future tools must implement
 this discipline; tools are aids, not substitutes for verified records.
