@@ -3,23 +3,21 @@ revision: "R2"
 work_item: "RP-012"
 check: "RP-012.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "VALIDATION"
 source_branch: "work/rp-012-a001"
-source_commit: "d31bfe687bda0944307ca82f279d2a2296c4bacc"
+source_commit: "f57c88138e35130379b9a040714836ac8de702a3"
 journal: "docs/development/journal/RP-012/A001/events.jsonl"
-last_verified_event: "RP-012-A001-0007"
+last_verified_event: "RP-012-A001-0008"
 last_completed: "RP-011 VERIFIED via PR19; accepted main e52be7a3883e3b259fdf38b5a49d0295e540ac53."
-next_action: "Publish validation INTENT for same 988-node Windows scope and full Linux CI; qualify prior native packaging only if exact src/protocol/package equality holds, otherwise rerun required workflows."
+next_action: "Sync source, start revalidation and inspect current jobs."
 verification: "Review exact actor/action ownership, fault scope, canonical input/reference bounds and every declared mode/blocker; validate source-linked synthetic/CI evidence before design acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-012-A001-0008"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-014"]
 rollback: "Deny by default. Public design-only change leaves v1 installed behavior untouched; unsupported capabilities stay visibly unavailable and rollback cannot widen authority or replay unknown work."
 next_implementation_step: "RP-012"
 next_implementation_check: "RP-012.C1"
-pr: 20
-open_defects: ["DEF-001","DEF-002","DEF-014"]
