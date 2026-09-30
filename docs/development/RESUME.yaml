@@ -3,18 +3,18 @@ revision: R2
 work_item: RP-001
 check: RP-001.C2
 attempt: A001
-phase: CI_RUNNING
+phase: ACCEPTANCE_REVIEWED
 source_branch: work/rp-001-a001
 source_commit: 88f7850895a7f5ed664818538b5c9308cb7aac8f
 journal: docs/development/journal/RP-001/A001/events.jsonl
-last_verified_event: RP-001-A001-0016
-last_completed: Implementation authorization published and read back.
-next_action: Finish current Desktop run 36757039221; older run reconciled without replay. Current general CI passed.
+last_verified_event: RP-001-A001-0017
+last_completed: All four RP-001 checks have reviewed evidence; final checkpoint validation and merge remain.
+next_action: Validate coordinated acceptance and publish exact-head merge INTENT for PR 8; RP-001 stays IN_PROGRESS until merge readback.
 verification: Exact branch ownership, source/diff inspection, then separately journaled targeted tests and full-plan validation.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: [RP-001-A001-0014]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: [DEF-001, DEF-002]

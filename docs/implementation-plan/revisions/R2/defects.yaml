@@ -50,7 +50,7 @@ defects:
     resolution: Isolated workspace temporary root completed 45 tests with exit 0; unrelated old directory left intact; original environment cause not further investigated.
   DEF-005:
     title: Ledger review found incomplete event phase and active attempt consistency guards
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-001.C2
     suspected_origin: 82f8977d8f8b84d9e2ba067f4c0c5df332be5455
     proven_origin: null
@@ -60,7 +60,7 @@ defects:
 
   DEF-006:
     title: General CI cannot import repository development tools under console pytest
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-001.C4
     suspected_origin: 82f8977d8f8b84d9e2ba067f4c0c5df332be5455
     proven_origin: null

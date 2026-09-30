@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "item": "RP-001",
+  "check": "RP-001.C3",
+  "attempt": "A001",
+  "source_ref": "88f7850895a7f5ed664818538b5c9308cb7aac8f",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect named negative assertions, exact source-tree comparison, observed local exits and successful native CI jobs; compare with RP-001 definition.",
+  "procedure": "Trigger CI with this published checkpoint. Inspect its exact Progress, CI and Desktop runs, preserving run identities before waiting; compare product sources with the earlier validated source. Check final current ledger/history and privacy scan locally. Reconcile older run 36756514139 separately without replay.",
+  "expected": "Preserve uncertain/failed history; reject invalid sequencing and nonpublic commits.",
+  "observed": "Final checkpoint d1edecc805cbed348e6a865e9d12fc517bb67786: general CI 36757039191 passed (688 tests, 2 optional GUI skips); Progress runs 36757039378 and 36757034135 passed; Desktop 36757039221 passed both Linux and Windows jobs including native packaged application/installer checks. Local Windows 52-test result at 9f475a7 is applicable to unchanged tools/tests trees; final source differs only in the verified CI invocation and ledger documentation. Full plan/history and public scan passed. Reviewed all four invariants; no live deployment claim.",
+  "exit_code": 0,
+  "platform_scope": "Windows Python 3.11 and Linux GitHub runners; synthetic development ledger; native build regression only.",
+  "negative_cases": [
+    "Invalid evidence and dependencies rejected",
+    "Cursor/attempt/check mismatch rejected",
+    "Unknown outcomes remain pending",
+    "Duplicate/out-of-order and rewritten history rejected",
+    "Private canary and unpublished commit rejected"
+  ],
+  "unverified_scope": "No live deployment or R2 runtime feature acceptance. Arbitrary prose requires manual public-data review.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Revert development tool/CI wiring; preserve ledger; manual enforcement resumes; no live effects.",
+  "intent_event": "RP-001-A001-0014",
+  "outcome_event": "RP-001-A001-0017",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-001/A001/reviewed-validation.md"
+  ]
+}
