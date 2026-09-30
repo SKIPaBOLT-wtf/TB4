@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-006"
 check: "RP-006.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "SOURCE_RECORDED"
 source_branch: "work/rp-006-a001"
-source_commit: "8656f2d5c000c046a96a8249bd1a21006ce6bce3"
+source_commit: "643a99063aa0c8bcb94ae0a1838852c04766f6e2"
 journal: "docs/development/journal/RP-006/A001/events.jsonl"
-last_verified_event: "RP-006-A001-0001"
+last_verified_event: "RP-006-A001-0002"
 last_completed: "RP-001 through RP-005 VERIFIED and merged; main Progress passed; DEF-001/DEF-002 remain OPEN."
-next_action: "Publish source outcome then run resolver/privacy/security/ledger regressions and required CI."
+next_action: "Publish validation INTENT then run resolver/privacy/ledger regressions and required CI."
 verification: "Purpose/installation/trust and per-use permission negative tests, rotation/revocation/expiry/fault fixtures, no disclosure and independent standby capability."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-006-A001-0001"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
