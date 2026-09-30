@@ -2,19 +2,19 @@ schema_version: 1
 revision: "R2"
 work_item: "RP-008"
 check: "RP-008.C4"
-attempt: "A002"
-phase: "OWNER_CORRECTION_RECEIVED"
+attempt: "A003"
+phase: "SOURCE"
 source_branch: "work/rp-008-a002"
-source_commit: "f576f0815669af5708f238c1fb34d7e3942ef70a"
-journal: "docs/development/journal/RP-008/A002/events.jsonl"
-last_verified_event: "RP-008-A002-0013"
-last_completed: "Owner approved RP-008 candidate 3 design and prototypes, no live migration; RP-013 inspected only and deferred without source changes."
-next_action: "Continue existing PR/work branch under A003; record owner amendment, withdraw A002 current checks and implement immediate stale-record CAS takeover plus GUI request contract without a global sink barrier."
-verification: "Deterministic Doc-CAS authority and effect barrier tests plus original provider evidence; cross-platform regressions and exact-source review."
+source_commit: "65566cb1525e17c2ebf8cf8af78e76963820ddc1"
+journal: "docs/development/journal/RP-008/A003/events.jsonl"
+last_verified_event: "RP-008-A003-0001"
+last_completed: "RP-001 through RP-007 VERIFIED. Owner corrected RP-008 takeover policy before PR 16 merge; A002 evidence retained as historical rejected global barrier design."
+next_action: "Publish corrected design/model source outcome, then run targeted negative/regression tests and CI under a separate validation INTENT."
+verification: "Immediate stale-record conditional takeover, bounded forced-request flag, old-owner write rejection and independent unknown-effect retention; no all-sink activation barrier."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-008-A003-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-010","DEF-011"]
