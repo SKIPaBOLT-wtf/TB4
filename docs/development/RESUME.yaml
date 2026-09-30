@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-010"
 check: "RP-010.C1"
 attempt: "A001"
-phase: "VALIDATION_METADATA_CORRECTION"
+phase: "SOURCE"
 source_branch: "work/rp-010-a001"
-source_commit: "6d3ffdae313abff62629522f2f6e611d20e10505"
+source_commit: "45c6452a4d3006015a1a27778e7578d7f0239338"
 journal: "docs/development/journal/RP-010/A001/events.jsonl"
-last_verified_event: "RP-010-A001-0009"
+last_verified_event: "RP-010-A001-0010"
 last_completed: "RP-001 through RP-009 VERIFIED; all relevant Windows/Linux/native checks passed and RP-009 merged. Current RP-008 amendment requires takeover without global old-host/sink ACK."
-next_action: "Close repair source unit and validate strict correction guards plus full command regressions."
+next_action: "Run targeted Windows regressions, supported UTF-8 ledger CLI, public scan and new exact-head CI/Progress; inspect original and new native job results without altering runtime."
 verification: "Positive/negative schema and slot-budget fixtures, malformed/different-payload duplicates, busy targets, claim-versus-timeout orderings, correlated cancel/result/ACK, stale-generation and actor restrictions; prior regressions and exact-source CI/build review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-010-A001-0008"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-012"]
