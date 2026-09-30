@@ -3,13 +3,13 @@ revision: "R2"
 work_item: "RP-003"
 check: "RP-003.C4"
 attempt: "A001"
-phase: "CI_FINAL"
+phase: "CHECKS_REVIEWED"
 source_branch: "work/rp-003-a001"
 source_commit: "dd24ce579220b60a58fb2bc036b6c3658cc409de"
 journal: "docs/development/journal/RP-003/A001/events.jsonl"
-last_verified_event: "RP-003-A001-0009"
+last_verified_event: "RP-003-A001-0010"
 last_completed: "RP-001 and RP-002 VERIFIED and merged; main Progress passed. Legacy DEF-001/DEF-002 and issue 7 remain open."
-next_action: "Inspect these exact runs, then publish reviewed C1-C4 evidence and the acceptance candidate."
+next_action: "Publish final acceptance-candidate validation INTENT; validate ledger/history/privacy, compare tested source and inspect PR merge prerequisites."
 verification: "Typed defect/schema validation, synthetic interruption/repair chain and prior ledger regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
@@ -17,5 +17,5 @@ implementation_started: true
 unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-008"]
 rollback: "Revert helper/schema wiring through a correction preserving defect and acceptance history; never clear holds merely to restore a green status."

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "item": "RP-003",
+  "check": "RP-003.C4",
+  "attempt": "A001",
+  "source_ref": "dd24ce579220b60a58fb2bc036b6c3658cc409de",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect named negative assertions, three-step synthetic checkpoint/reacceptance workflow and lossless historical mapping against step invariants.",
+  "procedure": "Windows development/security/plan suite; ledger history and public scan/diff; inspect exact PR CI/Progress runs listed in reviewed-validation.md.",
+  "expected": "Synthetic defect follows the same checkpoint workflow and historical symptoms remain open.",
+  "observed": "Windows 88 passed; Linux CI 724 passed and 2 optional GUI skips; Progress passed. Three-step later-attempt reacceptance succeeds only with new receipts. Malformed impact, forged legacy, removed hypotheses/holds and stale build acceptance are rejected. DEF-001/002 remain OPEN. DEF-008 guards are covered.",
+  "exit_code": 0,
+  "platform_scope": "Windows Python 3.11 and Linux GitHub CI; synthetic public ledger and injected remote.",
+  "negative_cases": [
+    "Unproven culprit",
+    "Missing transitive rechecks",
+    "Issue closure without acceptance",
+    "Old receipts and removed history",
+    "Invented legacy exemption",
+    "Concurrent work takeover"
+  ],
+  "unverified_scope": "No live workload, provider recovery or pilot symptom acceptance.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Keep defect/acceptance history and manual checkpoint contract; corrective revert does not restore acceptance.",
+  "intent_event": "RP-003-A001-0008",
+  "outcome_event": "RP-003-A001-0010",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-003/A001/reviewed-validation.md"
+  ]
+}
