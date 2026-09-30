@@ -1,0 +1,274 @@
+from __future__ import annotations
+
+import copy
+import json
+import subprocess
+from pathlib import Path
+
+import pytest
+import yaml
+
+from tools.development.ledger import (
+    CURRENT, JOURNAL, PLAN, RESUME, LedgerError, PublicCommits,
+    load, main, public_data, public_path, validate, validate_history, validate_journal,
+)
+
+SHA = "a" * 40
+
+
+def event(n=1, kind="INTENT", related=None, outcome="PENDING"):
+    return dict(schema_version=1, event_id=f"RP-001-A001-{n:04d}", sequence=n,
+                at="2026-09-30T18:00:00Z", item="RP-001", check="RP-001.C1",
+                attempt="A001", phase="TEST", event=kind, action_id="CHECK-LEDGER",
+                related_event=related, source_ref=SHA, scope="Synthetic ledger only",
+                procedure="Validate synthetic ledger fixture", expected="Invalid acceptance rejected",
+                observed=None if kind == "INTENT" else "Synthetic check observed",
+                outcome=outcome, evidence=[], rollback="Discard synthetic fixture",
+                next_action="Inspect the same pending action", uncertainty="No runtime coverage")
+
+
+def save(root, name, value):
+    path = root / name
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if name.endswith(".jsonl"):
+        text = "".join(json.dumps(row) + "\n" for row in value)
+    elif name.endswith(".json"):
+        text = json.dumps(value)
+    elif isinstance(value, str):
+        text = value
+    else:
+        text = yaml.safe_dump(value, sort_keys=False)
+    path.write_text(text, encoding="utf-8")
+
+
+@pytest.fixture
+def ledger(tmp_path):
+    step = dict(title="Fixture", status="IN_PROGRESS", definition="steps/RP-001.md",
+                depends_on=[], requirements=["R19"], completed_checks=[], evidence=[],
+                amendments=[], active_attempt="A001", check_evidence={}, revalidation_required=[])
+    save(tmp_path, PLAN + "/manifest.yaml", dict(schema_version=1, revision="R2",
+         status_authority=PLAN + "/manifest.yaml", baseline_commit=SHA,
+         authorization="PUBLIC_IMPLEMENTATION_AUTHORIZED", current_step="RP-001", execution_started=True,
+         statuses=["PLANNED", "IN_PROGRESS", "BLOCKED", "VERIFIED", "SUPERSEDED"], steps={"RP-001": step}))
+    save(tmp_path, CURRENT, dict(active_revision="R2", manifest=PLAN + "/manifest.yaml", resume=RESUME,
+                                authorization="PUBLIC_IMPLEMENTATION_AUTHORIZED"))
+    save(tmp_path, PLAN + "/requirements.yaml", {"requirements": {"R19": {"steps": ["RP-001"]}}})
+    save(tmp_path, PLAN + "/steps/RP-001.md", "\n".join(f"- [ ] **RP-001.C{i}** - Check {i}" for i in range(1, 5)))
+    save(tmp_path, PLAN + "/CHECKLIST.md", "- [ ] [RP-001 - Fixture](steps/RP-001.md)\n")
+    save(tmp_path, JOURNAL + "/RP-001/A001/events.jsonl", [event()])
+    save(tmp_path, RESUME, dict(schema_version=1, revision="R2", work_item="RP-001", check="RP-001.C1",
+         attempt="A001", phase="TEST", source_branch="work/rp-001-a001", source_commit=SHA,
+         journal=JOURNAL + "/RP-001/A001/events.jsonl", last_verified_event="RP-001-A001-0001",
+         next_action="Inspect pending action", verification="Compare exact fixture",
+         execution_authorization="PUBLIC_IMPLEMENTATION_AUTHORIZED", runtime_actions_allowed=False,
+         implementation_started=True, unsettled_intents=["RP-001-A001-0001"], expected_user_action=None,
+         rollback="Discard fixture"))
+    return tmp_path
+
+
+def check(root):
+    return validate(root, reachable=lambda s: s == SHA)
+
+
+def update(root, path, change):
+    data = load(root, path)
+    change(data)
+    save(root, path, data)
+
+
+def accept(root):
+    save(root, JOURNAL + "/RP-001/A001/events.jsonl", [event(), event(2, "OUTCOME", "RP-001-A001-0001", "PASS")])
+    update(root, RESUME, lambda c: c.update(last_verified_event="RP-001-A001-0002", unsettled_intents=[]))
+    step = load(root, PLAN + "/manifest.yaml")["steps"]["RP-001"]
+    for i in range(1, 5):
+        c = f"RP-001.C{i}"
+        p = PLAN + f"/evidence/RP-001/A001/C{i}.json"
+        save(root, p, dict(schema_version=1, item="RP-001", check=c, attempt="A001", source_ref=SHA,
+             result="PASS", reviewed=True, review_method="Compare invariant and observed fixture results",
+             procedure="Validate synthetic fixture", expected="Invalid records rejected", observed="Rejection observed",
+             exit_code=0, platform_scope="Synthetic cross-platform files", negative_cases=["Invalid acceptance"],
+             unverified_scope="No live deployment", privacy_review="PUBLIC_SAFE_REVIEWED", rollback="Discard fixture",
+             intent_event="RP-001-A001-0001", outcome_event="RP-001-A001-0002", artifacts=[]))
+        step["completed_checks"].append(c)
+        step["evidence"].append(p)
+        step["check_evidence"][c] = [p]
+    step["status"] = "VERIFIED"
+    update(root, PLAN + "/manifest.yaml", lambda m: m["steps"].update({"RP-001": step}))
+    p = root / PLAN / "steps/RP-001.md"
+    p.write_text(p.read_text().replace("[ ]", "[x]"))
+    save(root, PLAN + "/CHECKLIST.md", "- [x] [RP-001 - Fixture](steps/RP-001.md)\n")
+
+
+def test_unsettled_intent_is_valid_but_never_accepted(ledger):
+    assert check(ledger)["unsettled_intents"] == ["RP-001-A001-0001"]
+    assert check(ledger)["verified"] == 0
+
+
+def test_complete_reviewed_evidence_is_accepted(ledger):
+    accept(ledger)
+    assert check(ledger)["verified"] == 1
+
+
+@pytest.mark.parametrize("mutation,code", [
+    (lambda m: m["steps"]["RP-001"].update(completed_checks=["RP-001.C1"]), "CHECK_PROJECTION_MISMATCH"),
+    (lambda m: m["steps"]["RP-001"].update(active_attempt=None), "ACTIVE_ATTEMPT_MISSING"),
+    (lambda m: m["steps"]["RP-001"].update(depends_on=["RP-001"]), "DEPENDENCY_MISSING_OR_CYCLE"),
+    (lambda m: m["steps"]["RP-001"].update(depends_on=["RP-999"]), "DEPENDENCY_MISSING_OR_CYCLE"),
+    (lambda m: m.update(authorization="PLANNING_ONLY"), "AUTHORIZATION_MISMATCH"),
+    (lambda m: m["steps"]["RP-001"].update(unknown_metadata="unreviewed"), "RECORD_SCHEMA_INVALID"),
+])
+def test_invalid_progress_rejected(ledger, mutation, code):
+    update(ledger, PLAN + "/manifest.yaml", mutation)
+    with pytest.raises(LedgerError, match=code):
+        check(ledger)
+
+
+@pytest.mark.parametrize("field,value,code", [
+    ("reviewed", False, "EVIDENCE_NOT_REVIEWED_PASS"),
+    ("result", "FAIL", "EVIDENCE_NOT_REVIEWED_PASS"),
+    ("exit_code", 1, "EVIDENCE_NOT_REVIEWED_PASS"),
+    ("source_ref", "b" * 40, "PUBLIC_COMMIT_MISSING"),
+    ("outcome_event", "RP-001-A001-0999", "EVIDENCE_EVENT_MISMATCH"),
+    ("attempt", "A002", "EVIDENCE_OWNER_MISMATCH"),
+])
+def test_bad_evidence_never_verifies(ledger, field, value, code):
+    accept(ledger)
+    update(ledger, PLAN + "/evidence/RP-001/A001/C1.json", lambda e: e.update({field: value}))
+    with pytest.raises(LedgerError, match=code):
+        check(ledger)
+
+
+def test_missing_receipt_rejected(ledger):
+    accept(ledger)
+    (ledger / PLAN / "evidence/RP-001/A001/C1.json").unlink()
+    with pytest.raises(LedgerError, match="REFERENCE_MISSING"):
+        check(ledger)
+
+
+def test_unaccepted_dependency_rejected(ledger):
+    def change(m):
+        dep = copy.deepcopy(m["steps"]["RP-001"])
+        dep.update(status="PLANNED", active_attempt=None, definition="steps/RP-002.md")
+        m["steps"]["RP-002"] = dep
+        m["steps"]["RP-001"]["depends_on"] = ["RP-002"]
+    update(ledger, PLAN + "/manifest.yaml", change)
+    with (ledger / PLAN / "CHECKLIST.md").open("a") as f:
+        f.write("- [ ] [RP-002 - Dependency](steps/RP-002.md)\n")
+    with pytest.raises(LedgerError, match="DEPENDENCY_NOT_VERIFIED"):
+        check(ledger)
+
+
+@pytest.mark.parametrize("change,code", [
+    (dict(unsettled_intents=[]), "CURSOR_UNSETTLED_MISMATCH"),
+    (dict(last_verified_event="RP-001-A001-9999"), "CURSOR_JOURNAL_MISMATCH"),
+    (dict(check="RP-001.C2"), "CURSOR_STEP_MISMATCH"),
+    (dict(source_commit="b" * 40), "PUBLIC_COMMIT_MISSING"),
+])
+def test_cursor_disagreement(ledger, change, code):
+    update(ledger, RESUME, lambda c: c.update(change))
+    with pytest.raises(LedgerError, match=code):
+        check(ledger)
+
+
+def test_duplicate_and_out_of_order_events():
+    for rows in ([event(), event()], [event(2)]):
+        with pytest.raises(LedgerError, match="EVENT_ORDER_OR_ID_INVALID"):
+            validate_journal(rows, "RP-001", "A001", lambda _: True)
+
+
+def test_failed_outcome_preserved_with_correction():
+    rows = [event(), event(2, "OUTCOME", "RP-001-A001-0001", "FAIL"),
+            event(3, "CORRECTION", "RP-001-A001-0002", "RECORDED")]
+    found, pending = validate_journal(rows, "RP-001", "A001", lambda _: True)
+    assert not pending and found["RP-001-A001-0002"]["outcome"] == "FAIL"
+
+
+def test_unknown_effect_stays_pending_until_reconciled():
+    rows = [event(), event(2, "OUTCOME", "RP-001-A001-0001", "UNKNOWN")]
+    assert validate_journal(rows, "RP-001", "A001", lambda _: True)[1]
+    rows.append(event(3, "RECONCILED", "RP-001-A001-0001", "PASS"))
+    assert not validate_journal(rows, "RP-001", "A001", lambda _: True)[1]
+
+
+def test_duplicate_outcome_and_orphan_correction_rejected():
+    for rows, code in [([event(), event(2, "OUTCOME", "RP-001-A001-0001", "PASS"),
+                        event(3, "OUTCOME", "RP-001-A001-0001", "PASS")], "OUTCOME_WITHOUT_PENDING_INTENT"),
+                       ([event(1, "CORRECTION", "absent", "RECORDED")], "CORRECTION_TARGET_MISSING")]:
+        with pytest.raises(LedgerError, match=code):
+            validate_journal(rows, "RP-001", "A001", lambda _: True)
+
+
+def test_unknown_commit_and_unallowlisted_fields():
+    with pytest.raises(LedgerError, match="PUBLIC_COMMIT_MISSING"):
+        validate_journal([event()], "RP-001", "A001", lambda _: False)
+    row = event()
+    row["raw_config"] = "synthetic canary"
+    with pytest.raises(LedgerError, match="RECORD_SCHEMA_INVALID"):
+        validate_journal([row], "RP-001", "A001", lambda _: True)
+
+
+def test_public_data_canary_not_echoed():
+    canary = "gh" + "p_" + "CANARY" * 5
+    with pytest.raises(LedgerError) as caught:
+        public_data({"observed": canary})
+    assert str(caught.value) == "PUBLIC_DATA_REJECTED" and canary not in str(caught.value)
+
+
+@pytest.mark.parametrize("path", ["../outside", "/absolute", "docs/../outside", "docs/x:stream", "docs\\outside"])
+def test_reference_cannot_escape(path, tmp_path):
+    with pytest.raises(LedgerError, match="UNSAFE_REFERENCE"):
+        public_path(tmp_path, path)
+
+
+def test_duplicate_yaml_and_json_keys_rejected(ledger):
+    for name, body in [("docs/duplicate.yaml", "x: one\nx: two\n"), ("docs/duplicate.json", '{"x":1,"x":2}')]:
+        save(ledger, name, body) if name.endswith("yaml") else (ledger / name).write_text(body)
+        with pytest.raises(LedgerError, match="DUPLICATE_OR_INVALID_KEY"):
+            load(ledger, name)
+
+
+def git_fixture(root, *args):
+    result = subprocess.run(["git", "-C", str(root), *args], capture_output=True, text=True)
+    assert result.returncode == 0, result.stderr
+    return result.stdout.strip()
+
+
+def test_unpublished_commit_is_not_public(ledger):
+    git_fixture(ledger, "init")
+    git_fixture(ledger, "add", ".")
+    git_fixture(ledger, "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid", "commit", "-m", "fixture")
+    sha = git_fixture(ledger, "rev-parse", "HEAD")
+    assert not PublicCommits(ledger)(sha)
+    git_fixture(ledger, "update-ref", "refs/remotes/origin/main", sha)
+    assert PublicCommits(ledger)(sha)
+    assert not PublicCommits(ledger)("b" * 40)
+
+
+def test_history_rewrite_rejected_and_append_allowed(ledger):
+    git_fixture(ledger, "init")
+    git_fixture(ledger, "add", ".")
+    git_fixture(ledger, "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid", "commit", "-m", "fixture")
+    sha = git_fixture(ledger, "rev-parse", "HEAD")
+    manifest = load(ledger, PLAN + "/manifest.yaml")
+    save(ledger, JOURNAL + "/RP-001/A001/events.jsonl", [event(), event(2, "OUTCOME", "RP-001-A001-0001", "FAIL")])
+    validate_history(ledger, sha, manifest)
+    altered = event()
+    altered["expected"] = "Rewritten history"
+    save(ledger, JOURNAL + "/RP-001/A001/events.jsonl", [altered])
+    with pytest.raises(LedgerError, match="HISTORY_REWRITTEN"):
+        validate_history(ledger, sha, manifest)
+
+
+def test_cli_failure_does_not_dump_invalid_input(tmp_path, capsys):
+    assert main(["--root", str(tmp_path)]) == 1
+    assert json.loads(capsys.readouterr().out)["result"] == "FAIL"
+
+
+def test_progress_ci_does_not_build_installers():
+    root = Path(__file__).resolve().parents[2]
+    progress = (root / ".github/workflows/progress.yml").read_text()
+    assert "build_desktop" not in progress and "fetch-depth: 0" in progress
+    desktop = (root / ".github/workflows/desktop.yml").read_text()
+    # Selection of code paths, with no broad docs match, keeps pure ledger
+    # checkpoints out of the heavyweight installer workflow.
+    assert "paths:" in desktop and "'docs/**'" not in desktop

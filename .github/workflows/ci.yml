@@ -3,7 +3,11 @@ name: CI
 on:
   push:
     branches: ["main"]
+    paths-ignore: &progress_only
+      - 'docs/**'
+      - 'AGENTS.md'
   pull_request:
+    paths-ignore: *progress_only
 
 permissions:
   contents: read
