@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "item": "RP-014",
+  "check": "RP-014.C2",
+  "attempt": "A001",
+  "source_ref": "b22cc63fc4424ba3cd21c664a8a1de3cf59b2e58",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Review exact-source diagnostic traces, assertion/control-flow causality, four check mappings, listed local/full-CI runs and unchanged runtime source.",
+  "expected": "ACK, signal and actual/reported exit remain separate.",
+  "observed": "Twenty diagnostic schedules completed without OS process/network. Windows911pass/2skip/5xfail; full Linux1328pass/2skip/5xfail; Progress PASS. Four new strict expected failures are required repair handoff, not repaired-runtime acceptance; DEF-002 and issue7 remain OPEN.",
+  "exit_code": 0,
+  "platform_scope": "Windows host, Python3.11; Linux CI Python3.11; both process-platform branches modeled with fake OS adapters, plus bounded actual heartbeat thread control.",
+  "negative_cases": [
+    "Late exit0/7 before cancel return",
+    "Natural exit between ACK and signal",
+    "Stale request identity",
+    "Provider wait beyond runtime",
+    "Denied termination remains untrustworthy",
+    "CLI rejects external process/host/token/replay"
+  ],
+  "unverified_scope": "No native process-tree/output-pressure, real provider latency, deployed historical cause or fixed runtime proof. DEF-002 and four strict expected-failure cases remain repair obligations.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Remove synthetic diagnostic/tests/docs only; no runtime or external state was changed.",
+  "intent_event": "RP-014-A001-0004",
+  "outcome_event": "RP-014-A001-0006",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-014/A001/reviewed-validation.md"
+  ]
+}

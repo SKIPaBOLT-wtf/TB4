@@ -10,10 +10,12 @@ defects:
     reproduction:
       procedure: Preserve output and actual termination evidence; publication-only recovery cannot close
         this defect.
-      failing_source: null
+      failing_source: b22cc63fc4424ba3cd21c664a8a1de3cf59b2e58
       passing_source: null
       evidence:
       - docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-014/A001/reviewed-validation.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-014/A001/synthetic-scenario-traces.json
     repair_steps:
     - RP-044
     - RP-045
@@ -45,12 +47,12 @@ defects:
     - R20
     - R21
     - R22
-    hypotheses: []
+    hypotheses: [{"id":"rp014-late-classification","claim":"The actual current-source _terminate returns requested cancellation for a naturally exited child after provider wait or between ACK and signal; the runner discards real exit0/7. Controlled synthetic reproduction only.","result":"SUPPORTED","evidence":["docs/implementation-plan/revisions/R2/evidence/RP-014/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-014/A001/synthetic-scenario-traces.json"]},{"id":"rp014-runtime-wait","claim":"The synchronous cancellation callback blocks local runtime polling; a 1s limit first signals at2.05s after a 2s provider wait, or the process exits beyond its limit and returns DONE.","result":"SUPPORTED","evidence":["docs/implementation-plan/revisions/R2/evidence/RP-014/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-014/A001/synthetic-scenario-traces.json"]},{"id":"rp014-ack-interruption","claim":"In the tested late-cancel schedule, CANCEL_SIGNALLED demonstrates that a local OS signal interrupted execution.","result":"FAILED","evidence":["docs/implementation-plan/revisions/R2/evidence/RP-014/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-014/A001/synthetic-scenario-traces.json"]},{"id":"rp014-heartbeat-block","claim":"The existing _HeartbeatExecutor invokes its provider heartbeat synchronously on the execution thread.","result":"FAILED","evidence":["docs/implementation-plan/revisions/R2/evidence/RP-014/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-014/A001/synthetic-scenario-traces.json"]},{"id":"rp014-historical","claim":"The modeled schedule caused the historical deployed issue7 incident; no matching original binary identity and local/provider timing proof is available.","result":"UNTESTED","evidence":["docs/implementation-plan/revisions/R2/evidence/RP-014/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-014/A001/synthetic-scenario-traces.json"]}]
     repairs: []
     issue: https://github.com/SKIPaBOLT-wtf/TB4/issues/7
-    regression_test: null
+    regression_test: tests/integration/test_cancellation_race_reproduction.py::test_required_invariant_late_cancel_preserves_natural_exit
     resolution_evidence: []
-    notes: Historical v1 migration; omitted proof remains unknown. Original fields retained in legacy_record.
+    notes: "Historical v1 migration; omitted proof remains unknown. Original fields retained in legacy_record. RP-014 proves current-source synthetic counterexamples, not historical attribution or a fix. Four strict expected-failure cases cover natural exit and independent monotonic deadline. DEF-002 and issue7 remain OPEN; RP-044/045/046 must supply native source-linked repair proof."
     legacy_record: '{"detected_in":"IP-68","evidence_source":"docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md","issue":"https://github.com/SKIPaBOLT-wtf/TB4/issues/7","proven_origin":null,"repair_steps":["RP-044","RP-045","RP-046"],"reproduction_step":"RP-014","required_acceptance":["RP-058","RP-062","RP-064"],"rule":"Preserve
       output and actual termination evidence; publication-only recovery cannot close this defect.","status":"OPEN","suspected_origin":null,"title":"Cancellation
       acknowledgement/classification may outlive natural completion"}'
