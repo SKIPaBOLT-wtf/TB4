@@ -17,6 +17,11 @@ cross-system/privacy acceptance axes. Use the current [resume cursor](../../../d
 
 ## Relationship to existing work
 
+The owner-approved [RP-008 storage amendment](amendments/RP-008/A-001-native-docs-authority.md)
+selects one native Docs authority with mandatory effect-sink fencing for the future
+Google mode. Read it for affected steps. Approval covers design/prototypes;
+acceptance remains in the manifest and live migration remains separately gated.
+
 The original IP manifest and evidence are retained unchanged as historical scope.
 New RP IDs deliberately do not overwrite, renumber or falsely re-VERIFY those
 steps. CURRENT.yaml selects this active revision. Each RP has an isolated

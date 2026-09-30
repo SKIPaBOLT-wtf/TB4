@@ -79,7 +79,7 @@ points:
     status: ACTIVE
     verified_at: null
     evidence: []
-    amendments: []
+    amendments: [docs/execution-contract/amendments/EC-12/A-001-native-docs-authority.md]
   EC-13:
     title: "Ambiguous Write Rule"
     status: ACTIVE
