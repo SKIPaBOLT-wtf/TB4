@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-012"
 check: "RP-012.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "VALIDATION"
 source_branch: "work/rp-012-a001"
 source_commit: "f57c88138e35130379b9a040714836ac8de702a3"
 journal: "docs/development/journal/RP-012/A001/events.jsonl"
-last_verified_event: "RP-012-A001-0012"
+last_verified_event: "RP-012-A001-0013"
 last_completed: "RP-011 VERIFIED via PR19; accepted main e52be7a3883e3b259fdf38b5a49d0295e540ac53."
-next_action: "Validate corrected current progress and capture exact local suite evidence; inspect already-running final-source CI/native jobs."
+next_action: "Sync and complete retained evidence; inspect existing jobs."
 verification: "Review exact actor/action ownership, fault scope, canonical input/reference bounds and every declared mode/blocker; validate source-linked synthetic/CI evidence before design acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-012-A001-0013"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-014"]
