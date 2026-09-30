@@ -1,21 +1,21 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-002"
-check: "RP-002.C4"
+work_item: "RP-003"
+check: "RP-003.C1"
 attempt: "A001"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "3ce8535ae5e1e8aabf86f1c7325c1022b2ba83ee"
-journal: "docs/development/journal/RP-002/A001/events.jsonl"
-last_verified_event: "RP-002-A001-0017"
-last_completed: "RP-002 VERIFIED and merged PR 9; guarded atomic publication, Windows/Linux tests and actual connector readback accepted."
-next_action: "Read RP-003 and relevant defect evidence; publish its A001 INTENT before implementation."
-verification: "RP-001 validates candidate ledgers; new tests exercise publication interruption and no-replay resume."
+phase: "IMPLEMENT"
+source_branch: "work/rp-003-a001"
+source_commit: "dd29900bdf946012a5a424d4dcce9f16e14870c2"
+journal: "docs/development/journal/RP-003/A001/events.jsonl"
+last_verified_event: "RP-003-A001-0001"
+last_completed: "RP-001 and RP-002 VERIFIED and merged; main Progress passed. Legacy DEF-001/DEF-002 and issue 7 remain open."
+next_action: "Publish source/outcome, then test synthetic repair and full earlier ledger/publication regressions before acceptance."
+verification: "Typed defect/schema validation, synthetic interruption/repair chain and prior ledger regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-003-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Disable development helper; preserve pending/journal records; use manual checkpoints."
+rollback: "Revert helper/schema wiring through a correction preserving defect and acceptance history; never clear holds merely to restore a green status."
