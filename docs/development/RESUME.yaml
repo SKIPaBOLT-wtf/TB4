@@ -14,7 +14,7 @@ verification: Exact branch ownership, source/diff inspection, then separately jo
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: [RP-001-A001-0001]
+unsettled_intents: [RP-001-A001-0001, PLAN-R2-A001-0008]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: [DEF-001, DEF-002]
