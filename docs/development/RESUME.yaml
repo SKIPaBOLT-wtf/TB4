@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-004"
-check: "RP-004.C3"
+work_item: "RP-005"
+check: "RP-005.C1"
 attempt: "A001"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "daac7245a46862eae214ce2e02ae80ab2808231e"
-journal: "docs/development/journal/RP-004/A001/events.jsonl"
-last_verified_event: "RP-004-A001-0010"
-last_completed: "RP-001 through RP-004 VERIFIED and merged. DEF-001/DEF-002 remain OPEN historical pilot findings."
-next_action: "Claim RP-005/A001 from this current main; use its ownership checkpoint as the final history-comparison base."
-verification: "Synthetic canary non-disclosure assertions, telemetry/process regressions, public scanner, Windows/Linux CI and artifact policy tests."
+phase: "SOURCE"
+source_branch: "work/rp-005-a001"
+source_commit: "ed9c4652c089bf8f067dcbf56d8af22189fe9092"
+journal: "docs/development/journal/RP-005/A001/events.jsonl"
+last_verified_event: "RP-005-A001-0001"
+last_completed: "RP-001 through RP-004 VERIFIED and merged; main Progress passed; DEF-001/DEF-002 remain OPEN."
+next_action: "Publish source outcome, then targeted schema/privacy/plan tests and required CI."
+verification: "Closed schema and semantic checks; varied synthetic topology/observation fixtures; private projection and revision/authority negative tests."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-005-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Keep the stricter publication block and required pre-upload review; revert implementation with recorded correction only, never republish unreviewed data."
+rollback: "Retain previous descriptor revision and mappings; schema/source rollback cannot reinterpret existing device identities or mutate a live root."
 next_implementation_step: "RP-005"
 next_implementation_check: "RP-005.C1"
