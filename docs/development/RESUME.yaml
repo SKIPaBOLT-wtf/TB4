@@ -3,20 +3,20 @@ revision: "R2"
 work_item: "RP-008"
 check: "RP-008.C4"
 attempt: "A001"
-phase: "MERGE"
-source_branch: "work/rp-008-a001"
+phase: "BLOCKED_OWNER_DECISION"
+source_branch: "main"
 source_commit: "061587a5a9fa3ed8b4081c6b967a077cd9700d4d"
 journal: "docs/development/journal/RP-008/A001/events.jsonl"
-last_verified_event: "RP-008-A001-0014"
-last_completed: "RP-001 through RP-007 VERIFIED and merged; main Progress 36772652989 job 110082655253 passed; DEF-001/DEF-002 remain OPEN."
-next_action: "Read merged journal; record blocked decision checkpoint, verify main Progress and continue only independent reproductions."
+last_verified_event: "RP-008-A001-0015"
+last_completed: "RP-001 through RP-007 VERIFIED; RP-008 C1-C3 reviewed, C4 BLOCKED; PR 15 merged. DEF-001/002/010 OPEN."
+next_action: "Verify main Progress, request the concrete C4 owner decision, and continue independent RP-013 then RP-014 under docs/development/schedules/RP-008-independent-reproductions.md."
 verification: "Reproducible schedules against actual adapter request shape and bounded candidate models; primary provider API guarantees; connector capability inventory; explicit limits and owner decision if architecture needs amendment."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-008-A001-0014"]
-expected_user_action: "Decide whether to authorize candidate 3 design amendment in storage-decision.md; it retains one TB4 domain and requires protected-effect fencing proof."
-blocking_decisions: ["RP-008.C4: owner approval of single native Docs authority design amendment or explicit alternative required; no live migration."]
+unsettled_intents: []
+expected_user_action: "Approve or reject candidate 3 in RP-008/A001/storage-decision.md; no live migration authorized by that decision."
+blocking_decisions: ["RP-008.C4: approve candidate 3 native Docs sole-authority design amendment with protected-effect fencing, or explicitly select another storage/fallback contract."]
 known_open_defects: ["DEF-001","DEF-002","DEF-010"]
 rollback: "Discard only isolated synthetic fixtures; preserve published evidence and leave real roots, leases and network services untouched."
 next_implementation_step: "RP-013"
