@@ -3,7 +3,11 @@ name: CI
 on:
   push:
     branches: ["main"]
+    paths-ignore: &progress_only
+      - 'docs/**'
+      - 'AGENTS.md'
   pull_request:
+    paths-ignore: *progress_only
 
 permissions:
   contents: read
@@ -29,4 +33,4 @@ jobs:
         run: python tools/scan_public_repo.py
 
       - name: Test
-        run: pytest
+        run: python -m pytest
