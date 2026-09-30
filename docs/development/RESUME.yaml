@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-010"
 check: "RP-010.C1"
 attempt: "A001"
-phase: "MERGE"
-source_branch: "work/rp-010-a001"
+phase: "VERIFIED"
+source_branch: "main"
 source_commit: "179c76be7071692a36b4d6bfbecb02aee08dedbb"
 journal: "docs/development/journal/RP-010/A001/events.jsonl"
-last_verified_event: "RP-010-A001-0023"
-last_completed: "RP-001 through RP-009 VERIFIED; all relevant Windows/Linux/native checks passed and RP-009 merged. Current RP-008 amendment requires takeover without global old-host/sink ACK."
-next_action: "After main readback and Progress pass, continue dependency-ready RP-011 timing semantics."
-verification: "Positive/negative schema and slot-budget fixtures, malformed/different-payload duplicates, busy targets, claim-versus-timeout orderings, correlated cancel/result/ACK, stale-generation and actor restrictions; prior regressions and exact-source CI/build review."
+last_verified_event: "RP-010-A001-0024"
+last_completed: "RP-010 VERIFIED via PR18; source 179c76be7071692a36b4d6bfbecb02aee08dedbb; merge 209801a01cafa0147a42f00c70af129724c9c348"
+next_action: "Verify main Progress and ledger at this acceptance checkpoint, then claim RP-011 A001 and define owner timing values and independent deadline relationships."
+verification: "Main Progress and UTF-8 ledger must pass before RP-011 ownership/source INTENT."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-010-A001-0023"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-012"]
+known_open_defects: ["DEF-001","DEF-002"]
 rollback: "Public draft specification only; preserve current v1 runtime and immutable evidence. No operation is retried or removed, no real control authority changed."
-next_implementation_step: "RP-010"
-next_implementation_check: "RP-010.C1"
+next_implementation_step: "RP-011"
+next_implementation_check: "RP-011.C1"
