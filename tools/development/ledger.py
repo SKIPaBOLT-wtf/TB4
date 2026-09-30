@@ -197,6 +197,12 @@ def validate_history(root, base, manifest):
         require(current.startswith(old.stdout.replace(b"\r\n", b"\n")), "HISTORY_REWRITTEN")
     old = yaml.load(git(root, "show", base + ":" + PLAN + "/manifest.yaml"), Loader=UniqueLoader)
     require(old["steps"].keys() <= manifest["steps"].keys(), "STABLE_STEP_REMOVED")
+    validate_transitions(old, manifest)
+
+
+def validate_transitions(old, manifest):
+    """Shared by read-only history checks and prospective checkpoint staging."""
+    require(old["steps"].keys() <= manifest["steps"].keys(), "STABLE_STEP_REMOVED")
     transitions = {"PLANNED": {"PLANNED", "IN_PROGRESS", "BLOCKED", "SUPERSEDED"},
                    "IN_PROGRESS": {"IN_PROGRESS", "BLOCKED", "VERIFIED", "SUPERSEDED"},
                    "BLOCKED": {"BLOCKED", "IN_PROGRESS", "SUPERSEDED"},
