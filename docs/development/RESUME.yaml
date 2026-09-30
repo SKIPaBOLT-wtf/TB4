@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
 work_item: "RP-004"
-check: "RP-004.C1"
+check: "RP-004.C3"
 attempt: "A001"
-phase: "SOURCE"
+phase: "MERGE"
 source_branch: "work/rp-004-a001"
-source_commit: "5834f9cb154bb1d0e57e501c7b3129c0b2f9c837"
+source_commit: "daac7245a46862eae214ce2e02ae80ab2808231e"
 journal: "docs/development/journal/RP-004/A001/events.jsonl"
-last_verified_event: "RP-004-A001-0001"
+last_verified_event: "RP-004-A001-0008"
 last_completed: "RP-001 through RP-003 VERIFIED and merged; main Progress passed. DEF-001/DEF-002 remain historical OPEN defects."
-next_action: "Publish source outcome; then run targeted security/desktop/development tests and required cross-platform desktop CI."
+next_action: "Read merge result back and publish atomic acceptance transition; await main Progress."
 verification: "Synthetic canary non-disclosure assertions, telemetry/process regressions, public scanner, Windows/Linux CI and artifact policy tests."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-004-A001-0001"]
+unsettled_intents: ["RP-004-A001-0008"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-009"]
 rollback: "Keep the stricter publication block and required pre-upload review; revert implementation with recorded correction only, never republish unreviewed data."
 next_implementation_step: "RP-004"
 next_implementation_check: "RP-004.C1"
