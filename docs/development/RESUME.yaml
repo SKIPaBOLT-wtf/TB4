@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-004"
 check: "RP-004.C3"
 attempt: "A001"
-phase: "TEST"
+phase: "CROSS_PLATFORM_BUILD"
 source_branch: "work/rp-004-a001"
 source_commit: "daac7245a46862eae214ce2e02ae80ab2808231e"
 journal: "docs/development/journal/RP-004/A001/events.jsonl"
-last_verified_event: "RP-004-A001-0003"
+last_verified_event: "RP-004-A001-0004"
 last_completed: "RP-001 through RP-003 VERIFIED and merged; main Progress passed. DEF-001/DEF-002 remain historical OPEN defects."
-next_action: "Inspect exact local outcomes and CI runs; retain any failure before fixing and repeating the affected checks."
+next_action: "Inspect this exact Desktop run and packaged acceptance; do not repeat tests/builds or accept local skips as coverage."
 verification: "Synthetic canary non-disclosure assertions, telemetry/process regressions, public scanner, Windows/Linux CI and artifact policy tests."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-004-A001-0003"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-009"]
