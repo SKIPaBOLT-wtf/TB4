@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "item": "RP-011",
+  "check": "RP-011.C1",
+  "attempt": "A001",
+  "source_ref": "6a0fea10ef65bcd97fad777532feade02ee47b5d",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Inspect required timings, role activity, independent clock edges and declared launcher/quota assumptions; validate 69 fake-clock tests with expanded legacy runtime regressions and original exact-source Linux/Windows native workflows.",
+  "expected": "All six exact owner timing values and effective mode boundaries are encoded without changing installed defaults.",
+  "observed": "Windows 689 passed/1 POSIX skip (22.24s), exact 690 IDs; Linux CI 1150 passed/2 skipped; Linux native full 1160/GUI 67, Windows GUI 63/4 POSIX skips. Both role builds/self-tests/GUI/isolated install-uninstall passed. Final ledger/history/privacy/source equality passed. DEF-013 process-local test environment qualified without code/global-setting changes; failures retained.",
+  "exit_code": 0,
+  "platform_scope": "Windows Python 3.11 isolated synthetic subprocess/clock tests; Linux CI; native Linux/Windows GUI and isolated installers; no real clock/network/provider timing qualification.",
+  "negative_cases": [
+    "Owner cadence edits, malformed profiles and too-short lease/freshness/publication windows",
+    "Duplicate activity, missing/corrupt persistence, cumulative skew and reversed monotonic",
+    "Unfinished/unread/unknown work at idle threshold; exited worker heartbeat",
+    "Slow polling with old 120-second claim TTL; absent/stale launcher",
+    "Unknown clock with false next-check/claim promise",
+    "ACK expiry to recycle and infeasible quota populations",
+    "Unqualified child interpreter environment, then exact resolver revalidation"
+  ],
+  "unverified_scope": "Design models do not qualify real clocks/suspend, latency, queue budgets, provider bursts/contention, durable activity, real launchers or runtime/GUI integration. Those planned gates remain required.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Installed v1 unchanged. Preserve all failed environments and evidence; no system PATH/alias edit. Future runtime profile rollback only while quiescent without backdating activity or resetting epochs/deadlines.",
+  "intent_event": "RP-011-A001-0008",
+  "outcome_event": "RP-011-A001-0010",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-011/A001/reviewed-validation.md"
+  ]
+}

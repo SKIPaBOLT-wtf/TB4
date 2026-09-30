@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-011"
 check: "RP-011.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "MERGE"
 source_branch: "work/rp-011-a001"
-source_commit: "16ddca1b50bd047afd94fd1e1738bff3f463474c"
+source_commit: "6a0fea10ef65bcd97fad777532feade02ee47b5d"
 journal: "docs/development/journal/RP-011/A001/events.jsonl"
-last_verified_event: "RP-011-A001-0001"
+last_verified_event: "RP-011-A001-0013"
 last_completed: "RP-010 VERIFIED via PR18; accepted main 16ddca1b50bd047afd94fd1e1738bff3f463474c."
-next_action: "Implement timing contract/profiles and boundary fixtures, publish source outcome, then validate target and native regression gates."
+next_action: "Continue RP-012 security/failure decision gate after main readback and Progress."
 verification: "Source/model fixtures must preserve canonical owner values and same-role independence; exact-source local/CI/native tests and reviewed evidence before acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-011-A001-0001"]
+unsettled_intents: ["RP-011-A001-0013"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-013"]
 rollback: "Draft design and synthetic models only; installed defaults and live timers untouched. Runtime profile rollback requires quiescent roles and never rewrites operation time/history."
 next_implementation_step: "RP-011"
 next_implementation_check: "RP-011.C1"
