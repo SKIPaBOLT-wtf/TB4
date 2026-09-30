@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-008"
 check: "RP-008.C4"
 attempt: "A002"
-phase: "VALIDATION"
+phase: "VALIDATION_RUNNING"
 source_branch: "work/rp-008-a002"
 source_commit: "27fd1e2aa149a9df7ee57c29febfc5c0a9b1d862"
 journal: "docs/development/journal/RP-008/A002/events.jsonl"
-last_verified_event: "RP-008-A002-0003"
+last_verified_event: "RP-008-A002-0004"
 last_completed: "Owner approved RP-008 candidate 3 design and prototypes, no live migration; RP-013 inspected only and deferred without source changes."
-next_action: "Record local test outcomes and recoverable PR/CI identities before waiting; preserve any failure and repair under a new INTENT."
+next_action: "Record the local invocation/environment failure, then recheck unchanged source with an isolated new basetemp and package-module ledger invocation."
 verification: "Deterministic Doc-CAS authority and effect barrier tests plus original provider evidence; cross-platform regressions and exact-source review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-008-A002-0003"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-010"]
