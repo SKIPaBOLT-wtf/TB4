@@ -140,3 +140,43 @@ channels. That restart is not yet verified here. Effective cancellation and
 natural-exit classification in issue #7, plus the remaining pilot scenarios,
 still require separate evidence. Do not rewind the published lifecycle or
 restore an old executable request as rollback.
+
+## Fresh startup and post-recovery smoke - 2026-09-30, later checkpoint
+
+The owner supplied fresh FETCHER RUNNING / ROLE_LOOP telemetry with a successful
+metadata read, STOP_BALL_READY and no reported error. Independent authenticated
+Drive reads confirmed both channels READY, a new FETCHER heartbeat instance,
+a current WATCHDOG heartbeat and a CLEAN global fault object. This verifies the
+previously pending idle-start observation, not reliable execution completion.
+
+COACH then published one new, explicitly identified generation containing only
+a harmless literal-output PowerShell command. No cancellation request was sent.
+The request and idle-body shapes were validated locally against the connector-
+read canonical schemas pinned to `f263ffada7de0abd92827bd3f01bd8b46a12df56`.
+A separate request record was saved in BONEYARD. The supervised exact-ID
+READY -> LOADING transition was read back before the request body was written;
+body bytes and payload hash were verified before LOADING -> TOSS publication.
+No prior generation was replayed. The connector still exposes no atomic version
+precondition; this observation does not establish multi-COACH concurrency safety.
+
+The live result contained the expected literal output, empty stderr, exit code
+0, DONE / EXIT_ZERO and KNOWN effects. The result schema, preserved request
+identity, payload SHA-256 and complete-result SHA-256 were checked locally and
+passed. Nevertheless, independent reads continued to observe the canonical
+filename FETCH_BALL_RETURNING rather than FETCH_BALL_DONE, including a read more
+than one minute after the recorded finish time. A separate matching result copy
+was preserved in BONEYARD and read back with the correct parent. The observed
+FETCHER heartbeat still named that generation at its last publication.
+
+The smoke test is therefore NOT accepted as a completed round trip. The same
+incomplete-publication symptom occurred without cancellation; its exact local
+exception or cause remains unconfirmed pending fresh FETCHER GUI telemetry.
+Do not treat the earlier version-readback change or explicit recovery feature
+as proof that ordinary terminal publication is fixed. No manual terminal rename,
+result clearing, recycling, root reset, new retry or replay was performed after
+this observation. Existing cancellation-test archives were left unchanged.
+
+IP-68 remains IN_PROGRESS. The next diagnostic is the current FETCHER Status
+snapshot, before restarting or invoking recorded-return recovery again. Issue #7
+and the remaining pilot acceptance gates remain open. Installed binaries were
+not independently rehashed during this checkpoint.
