@@ -185,7 +185,8 @@ def build_expectations(
             if child_name in {"KENNEL", "PLAYGROUND"}:
                 parent_ref = child_ref
                 for nested_name, nested_spec in spec["children"].items():
-                    nested_suffix = nested_spec.get("logical_object", nested_name)
+                    nested_logical = nested_spec.get("logical_object", nested_name)
+                    nested_suffix = f"{child_name}.{nested_logical}"
                     nested_ref = park_map.device_ref(device_id, nested_suffix)
                     if nested_spec["kind"] == "stateful_object":
                         logical = nested_spec["logical_object"]
