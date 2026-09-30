@@ -6,6 +6,7 @@ import json
 import re
 import subprocess
 import sys
+from datetime import datetime
 from pathlib import Path, PurePosixPath
 
 import yaml
@@ -119,9 +120,13 @@ class PublicCommits:
 
 def validate_journal(events, item, attempt, reachable):
     by_id, pending, actions = {}, {}, set()
+    previous_time = None
     for n, event in enumerate(events, 1):
         if item.startswith("RP-"):
             shape(event, schemas.EVENT)
+            stamp = datetime.fromisoformat(event["at"].replace("Z", "+00:00"))
+            require(previous_time is None or stamp >= previous_time, "EVENT_TIME_REVERSED")
+            previous_time = stamp
         public_data(event)
         identity = f"{item}-{attempt}-{n:04d}"
         require(event.get("event_id") == identity and event.get("sequence") == n,
@@ -134,6 +139,9 @@ def validate_journal(events, item, attempt, reachable):
             require(reachable(source), "PUBLIC_COMMIT_MISSING")
         kind, related = event.get("event"), event.get("related_event")
         if kind == "INTENT":
+            if item.startswith("RP-"):
+                require(related is None and event["outcome"] == "PENDING" and event["observed"] is None,
+                        "INTENT_PHASE_INVALID")
             action = event.get("action_id", identity)
             require(action not in actions, "ACTION_ID_REUSED")
             actions.add(action)
@@ -214,6 +222,7 @@ def validate(root, reachable=None, base=None):
     shape(cursor, schemas.CURSOR)
     public_data(manifest)
     public_data(cursor)
+    require(manifest["status_authority"] == current["manifest"], "AUTHORITY_PATH_MISMATCH")
     require(reachable(manifest["baseline_commit"]) and reachable(cursor["source_commit"]), "PUBLIC_COMMIT_MISSING")
     require(current.get("authorization") == manifest["authorization"], "AUTHORIZATION_MISMATCH")
     started = manifest["execution_started"]
@@ -231,6 +240,10 @@ def validate(root, reachable=None, base=None):
                 "CURSOR_STEP_MISMATCH")
     steps = manifest["steps"]
     require(manifest["current_step"] in steps, "CURRENT_STEP_MISSING")
+    if cursor["work_item"].startswith("RP-"):
+        require(cursor["attempt"] == steps[cursor["work_item"]]["active_attempt"] and
+                cursor["journal"] == f"{JOURNAL}/{cursor['work_item']}/{cursor['attempt']}/events.jsonl",
+                "CURSOR_ATTEMPT_MISMATCH")
     requirements = load(root, PLAN + "/requirements.yaml")["requirements"]
     visiting, visited = set(), set()
 
@@ -256,6 +269,8 @@ def validate(root, reachable=None, base=None):
         checks = [check for _, check in rows]
         require(checks and len(checks) == len(set(checks)) and all(c.startswith(key + ".") for c in checks),
                 "CHECK_DEFINITION_INVALID")
+        require(all(e.get("check") in checks for e in events.values() if e["item"] == key),
+                "EVENT_CHECK_NOT_DEFINED")
         completed = set(step["completed_checks"])
         require(completed <= set(checks) and completed == {c for mark, c in rows if mark == "x"}, "CHECK_PROJECTION_MISMATCH")
         require(set(step["check_evidence"]) == completed, "CHECK_EVIDENCE_MISMATCH")

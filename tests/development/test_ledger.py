@@ -111,7 +111,7 @@ def test_complete_reviewed_evidence_is_accepted(ledger):
 
 @pytest.mark.parametrize("mutation,code", [
     (lambda m: m["steps"]["RP-001"].update(completed_checks=["RP-001.C1"]), "CHECK_PROJECTION_MISMATCH"),
-    (lambda m: m["steps"]["RP-001"].update(active_attempt=None), "ACTIVE_ATTEMPT_MISSING"),
+    (lambda m: m["steps"]["RP-001"].update(active_attempt=None), "CURSOR_ATTEMPT_MISMATCH"),
     (lambda m: m["steps"]["RP-001"].update(depends_on=["RP-001"]), "DEPENDENCY_MISSING_OR_CYCLE"),
     (lambda m: m["steps"]["RP-001"].update(depends_on=["RP-999"]), "DEPENDENCY_MISSING_OR_CYCLE"),
     (lambda m: m.update(authorization="PLANNING_ONLY"), "AUTHORIZATION_MISMATCH"),
@@ -205,6 +205,42 @@ def test_unknown_commit_and_unallowlisted_fields():
     row["raw_config"] = "synthetic canary"
     with pytest.raises(LedgerError, match="RECORD_SCHEMA_INVALID"):
         validate_journal([row], "RP-001", "A001", lambda _: True)
+
+
+@pytest.mark.parametrize("changes", [dict(outcome="PASS"), dict(related_event="unrelated"), dict(observed="invented")])
+def test_intent_cannot_invent_observation(changes):
+    row = event()
+    row.update(changes)
+    with pytest.raises(LedgerError, match="INTENT_PHASE_INVALID"):
+        validate_journal([row], "RP-001", "A001", lambda _: True)
+
+
+def test_event_timestamp_reversal_rejected():
+    outcome = event(2, "OUTCOME", "RP-001-A001-0001", "PASS")
+    outcome["at"] = "2026-09-29T18:00:00Z"
+    with pytest.raises(LedgerError, match="EVENT_TIME_REVERSED"):
+        validate_journal([event(), outcome], "RP-001", "A001", lambda _: True)
+
+
+def test_cursor_active_attempt_must_match(ledger):
+    update(ledger, PLAN + "/manifest.yaml", lambda m: m["steps"]["RP-001"].update(active_attempt="A002"))
+    with pytest.raises(LedgerError, match="CURSOR_ATTEMPT_MISMATCH"):
+        check(ledger)
+
+
+def test_event_check_must_exist_in_definition(ledger):
+    row = event()
+    row["check"] = "RP-001.C99"
+    save(ledger, JOURNAL + "/RP-001/A001/events.jsonl", [row])
+    update(ledger, RESUME, lambda c: c.update(check="RP-001.C99"))
+    with pytest.raises(LedgerError, match="EVENT_CHECK_NOT_DEFINED"):
+        check(ledger)
+
+
+def test_status_authority_must_match_current(ledger):
+    update(ledger, PLAN + "/manifest.yaml", lambda m: m.update(status_authority="docs/other.yaml"))
+    with pytest.raises(LedgerError, match="AUTHORITY_PATH_MISMATCH"):
+        check(ledger)
 
 
 def test_public_data_canary_not_echoed():
