@@ -283,7 +283,7 @@ defects:
       preparation did not bind local documents to declared public parent"}'
   DEF-008:
     title: New repair entries could omit dependent rechecks or claim a legacy exemption
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-003.C3
     suspected_origin:
       work_item: RP-003
@@ -295,7 +295,7 @@ defects:
       procedure: Append a hand-edited repair entry without the transitive dependent recheck, or add a
         new record with a forged legacy snapshot.
       failing_source: 065b56939b2761d73f7b12698995f6bb6379ad5f
-      passing_source: null
+      passing_source: dd24ce579220b60a58fb2bc036b6c3658cc409de
       evidence:
       - docs/development/journal/RP-003/A001/events.jsonl
     repair_steps:
@@ -329,7 +329,8 @@ defects:
           - RP-003.C4
     issue: null
     regression_test: tests/development/test_defects.py::test_new_repair_cannot_omit_transitive_rechecks
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-003/A001/reviewed-validation.md
     notes: Discovered by source review after initially passing tests; no accepted RP-003 build exists
       to reopen.
     legacy_record: null

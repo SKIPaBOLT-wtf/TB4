@@ -3,19 +3,21 @@ revision: "R2"
 work_item: "RP-003"
 check: "RP-003.C4"
 attempt: "A001"
-phase: "MERGE"
-source_branch: "work/rp-003-a001"
+phase: "VERIFIED"
+source_branch: "main"
 source_commit: "dd24ce579220b60a58fb2bc036b6c3658cc409de"
 journal: "docs/development/journal/RP-003/A001/events.jsonl"
-last_verified_event: "RP-003-A001-0013"
-last_completed: "RP-001 and RP-002 VERIFIED and merged; main Progress passed. Legacy DEF-001/DEF-002 and issue 7 remain open."
-next_action: "Inspect exact merge result and publish coordinated main acceptance; then check main Progress before RP-004."
+last_verified_event: "RP-003-A001-0014"
+last_completed: "RP-001, RP-002 and RP-003 VERIFIED and merged; historical pilot DEF-001/002 remain OPEN."
+next_action: "Check main Progress for this coordinated acceptance commit; then claim RP-004/A001 and implement privacy classification/safe report schemas under its own INTENT."
 verification: "Typed defect/schema validation, synthetic interruption/repair chain and prior ledger regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-003-A001-0013"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-008"]
+known_open_defects: ["DEF-001","DEF-002"]
 rollback: "Revert helper/schema wiring through a correction preserving defect and acceptance history; never clear holds merely to restore a green status."
+next_implementation_step: "RP-004"
+next_implementation_check: "RP-004.C1"
