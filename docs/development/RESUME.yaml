@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-009"
 check: "RP-009.C1"
 attempt: "A001"
-phase: "MERGE"
-source_branch: "work/rp-009-a001"
+phase: "VERIFIED"
+source_branch: "main"
 source_commit: "25aecb2586f82525a1ca506ae50b5f532072ba6b"
 journal: "docs/development/journal/RP-009/A001/events.jsonl"
-last_verified_event: "RP-009-A001-0008"
-last_completed: "RP-001 through RP-008 VERIFIED, owner-directed stale/forced takeover amendment merged; main Progress passed. RP-013 A001 remains safely deferred with no pending action."
-next_action: "Record merge outcome/acceptance; verify main Progress then claim RP-010 command/status/ownership protocol contract."
+last_verified_event: "RP-009-A001-0009"
+last_completed: "RP-001 through RP-009 VERIFIED. Current takeover policy follows owner correction; fixed exchange contract accepted with runtime/provisioning/throughput limits explicit. RP-013 A001 retained for later numerical-order resumption."
+next_action: "Verify main Progress/ledger, then begin RP-010 schema/ownership contract using the accepted layout and current owner takeover amendment."
 verification: "Minimum/default/maximum and cross-capacity bounds, exact lookup IDs, saturation with cancel/ACK availability, interrupted setup/expansion/duplicate identities and retained unknown/unread results; Windows/Linux regression and privacy/history checks."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-009-A001-0008"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
 rollback: "Only synthetic local source/tests. Preserve legacy blueprint and unknown/unread records; no authority/root creation and no epoch/generation rollback."
-next_implementation_step: "RP-009"
-next_implementation_check: "RP-009.C1"
+next_implementation_step: "RP-010"
+next_implementation_check: "RP-010.C1"
