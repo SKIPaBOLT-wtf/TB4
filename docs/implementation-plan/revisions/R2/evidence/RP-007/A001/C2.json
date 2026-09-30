@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "item": "RP-007",
+  "check": "RP-007.C2",
+  "attempt": "A001",
+  "source_ref": "d1af5328d05f1dda9cf36a662df06f158c0252e5",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Run targeted Windows tests, both skill metadata validators, public scanner/diff/ledger; inspect exact-head CI/Progress/Desktop jobs, artifacts and behavioral trust/update cases.",
+  "expected": "New workflow resolves fresh source and pins complete immutable reference closure.",
+  "observed": "All C1-C4 design invariants reviewed against behavioral tests. Windows 230 passed; CI 860 passed/2 optional skips; native Linux full 870 passed; both platform/role packaged acceptance passed. No eligible R2 release or live integration claimed.",
+  "exit_code": 0,
+  "platform_scope": "Windows local Python 3.11; GitHub Linux CI and Ubuntu-22.04/windows-latest native desktop jobs; synthetic source adapters only.",
+  "negative_cases": [
+    "stale/offline/foreign source and malformed runtime facts",
+    "missing/hash-corrupt/oversized content and duplicate/unknown catalog fields",
+    "path traversal/foreign URLs and undeclared result references",
+    "incompatible/ambiguous/unreleased/revoked profile",
+    "mid-fetch branch advance, in-flight policy or runtime change"
+  ],
+  "unverified_scope": "No production loader adapter, durable pin store, live runtime attestation, native ARM qualification or released R2 operational profile. Later RP-024/051/052/061 gates remain.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Withdraw faulty repository entry/profile; preserve accepted pins for inspection; do not downgrade live protocol or replay effects.",
+  "intent_event": "RP-007-A001-0003",
+  "outcome_event": "RP-007-A001-0005",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-007/A001/reviewed-validation.md"
+  ]
+}
