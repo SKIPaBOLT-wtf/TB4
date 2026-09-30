@@ -17,6 +17,8 @@ def packaged_self_test(role: str) -> dict:
     from tb4.core.state_machine import load_state_machines
     from tb4.runtime_support import load_public_defaults
     from tb4.core.protocol_names import LogicalObject
+    from tb4.fetcher.return_recovery import recover_returning
+    assert callable(recover_returning)
     load_schema_store().validator("fetch-ball.schema.json")
     assert load_state_machines().machine(LogicalObject.FETCH_BALL) is not None
     assert load_public_defaults()["job"]
@@ -47,7 +49,7 @@ def packaged_self_test(role: str) -> dict:
 def main(fixed_role: str | None = None, argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="TB4 role desktop application")
     parser.add_argument("--role", choices=("watchdog", "fetcher"), default=fixed_role, required=fixed_role is None)
-    parser.add_argument("--action", choices=("gui", "run", "validate", "check", "authorize", "bootstrap", "save", "probe-lock", "self-test", "gui-smoke"), default="gui")
+    parser.add_argument("--action", choices=("gui", "run", "validate", "check", "authorize", "bootstrap", "save", "recover-return", "probe-lock", "self-test", "gui-smoke"), default="gui")
     parser.add_argument("--profile-root", type=Path)
     parser.add_argument("--report", type=Path)
     args = parser.parse_args(argv)
@@ -64,7 +66,7 @@ def main(fixed_role: str | None = None, argv: list[str] | None = None) -> int:
         try:
             report = packaged_self_test(args.role)
         except Exception as exc:
-            report = {"role": args.role, "self_test": "FAIL", "error_class": type(exc).__name__}
+            report = {"role": role, "self_test": "FAIL", "error_class": type(exc).__name__}
         if args.report:
             args.report.write_text(json.dumps(report), encoding="utf-8")
         elif sys.stdout is not None:
