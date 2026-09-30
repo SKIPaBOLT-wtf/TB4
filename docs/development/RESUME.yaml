@@ -3,18 +3,18 @@ revision: R2
 work_item: RP-001
 check: RP-001.C2
 attempt: A001
-phase: SOURCE_CHECKPOINT
+phase: CI_RETEST
 source_branch: work/rp-001-a001
 source_commit: 88f7850895a7f5ed664818538b5c9308cb7aac8f
 journal: docs/development/journal/RP-001/A001/events.jsonl
-last_verified_event: RP-001-A001-0013
+last_verified_event: RP-001-A001-0014
 last_completed: Implementation authorization published and read back.
-next_action: Publish final CI retest INTENT on the corrected invocation; keep observing older Desktop run.
+next_action: Inspect new CI runs for invocation correction and reconcile prior Desktop run without replay.
 verification: Exact branch ownership, source/diff inspection, then separately journaled targeted tests and full-plan validation.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: [RP-001-A001-0009]
+unsettled_intents: [RP-001-A001-0009, RP-001-A001-0014]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: [DEF-001, DEF-002]
