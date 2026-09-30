@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-005"
 check: "RP-005.C3"
 attempt: "A001"
-phase: "CHECKS_REVIEWED"
+phase: "FINAL_REVIEW"
 source_branch: "work/rp-005-a001"
 source_commit: "d3ac272140e6a583777dccb891c7d2aef0e1d4e7"
 journal: "docs/development/journal/RP-005/A001/events.jsonl"
-last_verified_event: "RP-005-A001-0005"
+last_verified_event: "RP-005-A001-0006"
 last_completed: "RP-001 through RP-004 VERIFIED and merged; main Progress passed; DEF-001/DEF-002 remain OPEN."
-next_action: "Validate final acceptance candidate and unchanged tested source; then publish exact-head merge INTENT."
+next_action: "Record final outcome, then separately publish exact-head merge INTENT."
 verification: "Closed schema and semantic checks; varied synthetic topology/observation fixtures; private projection and revision/authority negative tests."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-005-A001-0006"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
