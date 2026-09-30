@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-014"
 check: "RP-014.C1"
 attempt: "A001"
-phase: "FINAL_REVIEW"
+phase: "MERGE"
 source_branch: "work/rp-014-a001"
 source_commit: "b22cc63fc4424ba3cd21c664a8a1de3cf59b2e58"
 journal: "docs/development/journal/RP-014/A001/events.jsonl"
-last_verified_event: "RP-014-A001-0010"
+last_verified_event: "RP-014-A001-0011"
 last_completed: "RP-013 VERIFIED via PR21; accepted main 07c66402026af82bcb4a331042027f57f0d5166d."
-next_action: "Publish exact-head merge intent and merge diagnostic PR22 after checking current refs."
+next_action: "Merge PR22 using expected-head guard; reconcile actual main."
 verification: "Review actual source loop under deterministic blocking-provider schedules, independent ACK/signal/exit facts and strict failing native-supervision oracles."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-014-A001-0011"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
