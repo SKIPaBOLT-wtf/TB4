@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "item": "RP-013",
+  "check": "RP-013.C2",
+  "attempt": "A001",
+  "source_ref": "0e10234a58ec993e9c0fb0d4893fb1f80ee2ee0e",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Run fixed synthetic CLI and source-linked assertion suite; inspect version/media traces, wire call counts, hash/identity and normalized reports. Review historical evidence separately, expected-failure boundary and downstream repair obligations.",
+  "expected": "Controlled version/media/provider and benign/foreign changes reproduce actual adapter paths with bounded synthetic traces.",
+  "observed": "All11 bounded synthetic schedules inspected; every case executes exactly once with valid original exit0/result evidence. Benign/stale version mismatch strands same generation before any terminal wire write; fresh foreign generation is STALE; post-precheck foreign generation exposes unsafe success; media delay/lost reply controls recover. Windows868 pass+2 skip+1 strict expected failure; Linux1285+2+1; ledger/scanner/source review pass. Historical cause UNKNOWN, DEF-001 OPEN.",
+  "exit_code": 0,
+  "platform_scope": "Isolated Windows synthetic development and Linux CI; no live Google request/process, native package changes or prior workload replay.",
+  "negative_cases": [
+    "benign/stale metadata version",
+    "foreign generation before/after precheck",
+    "synthetic HTTP409/412/429",
+    "lost mutation reply",
+    "post-apply receipt-version drift",
+    "stale result media",
+    "CLI rejects real-target options"
+  ],
+  "unverified_scope": "No original matching provider trace or independently verified installed binary; cannot prove historical cause. No R2 atomic authority implementation/repair or live runtime acceptance. Strict xfail remains unresolved handoff, not a passing feature.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Synthetic fixtures/docs only; preserve original live result and historical evidence, no clear/rename/replay.",
+  "intent_event": "RP-013-A001-0005",
+  "outcome_event": "RP-013-A001-0007",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-013/A001/reviewed-validation.md"
+  ]
+}

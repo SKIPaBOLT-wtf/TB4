@@ -1,0 +1,3004 @@
+[
+  {
+    "body_result": "DONE",
+    "body_writes": 2,
+    "execution_calls": 1,
+    "final_generation": 7,
+    "final_state": "FETCH_BALL_DONE",
+    "original_result_unchanged": true,
+    "pipeline_outcome": "RETURNED",
+    "recorded_exit_code": 0,
+    "recorded_result_hash_valid": true,
+    "scenario": "baseline",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "synthetic_elapsed_s": 0,
+    "terminal_attempts": 1,
+    "terminal_wire_calls": 1,
+    "trace": [
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "terminal_attempt",
+        "expected_version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "terminal_wire",
+        "fields": [
+          "body",
+          "fields",
+          "fileId",
+          "supportsAllDrives"
+        ]
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_DONE",
+        "version": "6"
+      },
+      {
+        "event": "normalized_terminal",
+        "outcome": "SUCCESS"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_DONE",
+        "version": "6"
+      },
+      {
+        "event": "terminal_report",
+        "mutations": 1,
+        "outcome": "NEW_SUCCESS",
+        "probes": 1
+      }
+    ]
+  },
+  {
+    "body_result": "DONE",
+    "body_writes": 2,
+    "execution_calls": 1,
+    "final_generation": 7,
+    "final_state": "FETCH_BALL_RETURNING",
+    "original_result_unchanged": true,
+    "pipeline_outcome": "PUBLICATION_ERROR",
+    "recorded_exit_code": 0,
+    "recorded_result_hash_valid": true,
+    "scenario": "benign-version",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "synthetic_elapsed_s": 0,
+    "terminal_attempts": 1,
+    "terminal_wire_calls": 0,
+    "trace": [
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "terminal_attempt",
+        "expected_version": "5"
+      },
+      {
+        "event": "benign_version",
+        "version": "6"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "6"
+      },
+      {
+        "event": "normalized_terminal",
+        "outcome": "CONFLICT"
+      },
+      {
+        "event": "terminal_report",
+        "mutations": 1,
+        "outcome": "STATE_CONFLICT",
+        "probes": 0
+      }
+    ]
+  },
+  {
+    "body_result": "DONE",
+    "body_writes": 2,
+    "execution_calls": 1,
+    "final_generation": 7,
+    "final_state": "FETCH_BALL_RETURNING",
+    "original_result_unchanged": true,
+    "pipeline_outcome": "PUBLICATION_ERROR",
+    "recorded_exit_code": 0,
+    "recorded_result_hash_valid": true,
+    "scenario": "stale-precheck",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "synthetic_elapsed_s": 0,
+    "terminal_attempts": 1,
+    "terminal_wire_calls": 0,
+    "trace": [
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "terminal_attempt",
+        "expected_version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "normalized_terminal",
+        "outcome": "CONFLICT"
+      },
+      {
+        "event": "terminal_report",
+        "mutations": 1,
+        "outcome": "STATE_CONFLICT",
+        "probes": 0
+      }
+    ]
+  },
+  {
+    "body_result": "DONE",
+    "body_writes": 2,
+    "execution_calls": 1,
+    "final_generation": 8,
+    "final_state": "FETCH_BALL_RETURNING",
+    "original_result_unchanged": false,
+    "pipeline_outcome": "STALE",
+    "recorded_exit_code": 0,
+    "recorded_result_hash_valid": true,
+    "scenario": "foreign-before-fence",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "synthetic_elapsed_s": 0,
+    "terminal_attempts": 0,
+    "terminal_wire_calls": 0,
+    "trace": [
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "foreign_generation",
+        "version": "6"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "6"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "6"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "6"
+      },
+      {
+        "event": "media",
+        "generation": 8,
+        "sha256": "24a668631e3cc5b27b20da5466397219e2ec95bf4f9386f487c6b8f453c23deb"
+      },
+      {
+        "event": "terminal_report",
+        "mutations": 0,
+        "outcome": "STALE_FENCE",
+        "probes": 0
+      }
+    ]
+  },
+  {
+    "body_result": "DONE",
+    "body_writes": 2,
+    "execution_calls": 1,
+    "final_generation": 8,
+    "final_state": "FETCH_BALL_DONE",
+    "original_result_unchanged": false,
+    "pipeline_outcome": "RETURNED",
+    "recorded_exit_code": 0,
+    "recorded_result_hash_valid": true,
+    "scenario": "foreign-after-precheck",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "synthetic_elapsed_s": 0,
+    "terminal_attempts": 1,
+    "terminal_wire_calls": 1,
+    "trace": [
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "terminal_attempt",
+        "expected_version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "terminal_wire",
+        "fields": [
+          "body",
+          "fields",
+          "fileId",
+          "supportsAllDrives"
+        ]
+      },
+      {
+        "event": "foreign_generation",
+        "version": "6"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_DONE",
+        "version": "7"
+      },
+      {
+        "event": "normalized_terminal",
+        "outcome": "SUCCESS"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_DONE",
+        "version": "7"
+      },
+      {
+        "event": "terminal_report",
+        "mutations": 1,
+        "outcome": "NEW_SUCCESS",
+        "probes": 1
+      }
+    ]
+  },
+  {
+    "body_result": "DONE",
+    "body_writes": 2,
+    "execution_calls": 1,
+    "final_generation": 7,
+    "final_state": "FETCH_BALL_RETURNING",
+    "original_result_unchanged": true,
+    "pipeline_outcome": "PUBLICATION_ERROR",
+    "recorded_exit_code": 0,
+    "recorded_result_hash_valid": true,
+    "scenario": "http-409",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "synthetic_elapsed_s": 0,
+    "terminal_attempts": 1,
+    "terminal_wire_calls": 1,
+    "trace": [
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "terminal_attempt",
+        "expected_version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "terminal_wire",
+        "fields": [
+          "body",
+          "fields",
+          "fileId",
+          "supportsAllDrives"
+        ]
+      },
+      {
+        "event": "provider_rejected",
+        "status": 409
+      },
+      {
+        "event": "normalized_terminal",
+        "outcome": "CONFLICT"
+      },
+      {
+        "event": "terminal_report",
+        "mutations": 1,
+        "outcome": "STATE_CONFLICT",
+        "probes": 0
+      }
+    ]
+  },
+  {
+    "body_result": "DONE",
+    "body_writes": 2,
+    "execution_calls": 1,
+    "final_generation": 7,
+    "final_state": "FETCH_BALL_RETURNING",
+    "original_result_unchanged": true,
+    "pipeline_outcome": "PUBLICATION_ERROR",
+    "recorded_exit_code": 0,
+    "recorded_result_hash_valid": true,
+    "scenario": "http-412",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "synthetic_elapsed_s": 0.07,
+    "terminal_attempts": 1,
+    "terminal_wire_calls": 1,
+    "trace": [
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "terminal_attempt",
+        "expected_version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "terminal_wire",
+        "fields": [
+          "body",
+          "fields",
+          "fileId",
+          "supportsAllDrives"
+        ]
+      },
+      {
+        "event": "provider_rejected",
+        "status": 412
+      },
+      {
+        "event": "normalized_terminal",
+        "outcome": "AMBIGUOUS"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "terminal_report",
+        "mutations": 1,
+        "outcome": "UNCONFIRMED",
+        "probes": 4
+      }
+    ]
+  },
+  {
+    "body_result": "DONE",
+    "body_writes": 2,
+    "execution_calls": 1,
+    "final_generation": 7,
+    "final_state": "FETCH_BALL_DONE",
+    "original_result_unchanged": true,
+    "pipeline_outcome": "RETURNED",
+    "recorded_exit_code": 0,
+    "recorded_result_hash_valid": true,
+    "scenario": "http-429",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "synthetic_elapsed_s": 0.01,
+    "terminal_attempts": 2,
+    "terminal_wire_calls": 2,
+    "trace": [
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "terminal_attempt",
+        "expected_version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "terminal_wire",
+        "fields": [
+          "body",
+          "fields",
+          "fileId",
+          "supportsAllDrives"
+        ]
+      },
+      {
+        "event": "provider_rejected",
+        "status": 429
+      },
+      {
+        "event": "normalized_terminal",
+        "outcome": "TRANSIENT_ERROR"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "terminal_attempt",
+        "expected_version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "terminal_wire",
+        "fields": [
+          "body",
+          "fields",
+          "fileId",
+          "supportsAllDrives"
+        ]
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_DONE",
+        "version": "6"
+      },
+      {
+        "event": "normalized_terminal",
+        "outcome": "SUCCESS"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_DONE",
+        "version": "6"
+      },
+      {
+        "event": "terminal_report",
+        "mutations": 2,
+        "outcome": "NEW_SUCCESS",
+        "probes": 1
+      }
+    ]
+  },
+  {
+    "body_result": "DONE",
+    "body_writes": 2,
+    "execution_calls": 1,
+    "final_generation": 7,
+    "final_state": "FETCH_BALL_DONE",
+    "original_result_unchanged": true,
+    "pipeline_outcome": "RETURNED",
+    "recorded_exit_code": 0,
+    "recorded_result_hash_valid": true,
+    "scenario": "lost-reply",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "synthetic_elapsed_s": 0,
+    "terminal_attempts": 1,
+    "terminal_wire_calls": 1,
+    "trace": [
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "terminal_attempt",
+        "expected_version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "terminal_wire",
+        "fields": [
+          "body",
+          "fields",
+          "fileId",
+          "supportsAllDrives"
+        ]
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_DONE",
+        "version": "6"
+      },
+      {
+        "event": "normalized_terminal",
+        "outcome": "AMBIGUOUS"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_DONE",
+        "version": "6"
+      },
+      {
+        "event": "terminal_report",
+        "mutations": 1,
+        "outcome": "NEW_SUCCESS",
+        "probes": 1
+      }
+    ]
+  },
+  {
+    "body_result": "DONE",
+    "body_writes": 2,
+    "execution_calls": 1,
+    "final_generation": 7,
+    "final_state": "FETCH_BALL_DONE",
+    "original_result_unchanged": true,
+    "pipeline_outcome": "PUBLICATION_ERROR",
+    "recorded_exit_code": 0,
+    "recorded_result_hash_valid": true,
+    "scenario": "post-apply-version-drift",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "synthetic_elapsed_s": 0.07,
+    "terminal_attempts": 1,
+    "terminal_wire_calls": 1,
+    "trace": [
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "terminal_attempt",
+        "expected_version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "terminal_wire",
+        "fields": [
+          "body",
+          "fields",
+          "fileId",
+          "supportsAllDrives"
+        ]
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_DONE",
+        "version": "6"
+      },
+      {
+        "event": "normalized_terminal",
+        "outcome": "SUCCESS"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_DONE",
+        "version": "7"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_DONE",
+        "version": "7"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_DONE",
+        "version": "7"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_DONE",
+        "version": "7"
+      },
+      {
+        "event": "terminal_report",
+        "mutations": 1,
+        "outcome": "UNCONFIRMED",
+        "probes": 4
+      }
+    ]
+  },
+  {
+    "body_result": "DONE",
+    "body_writes": 2,
+    "execution_calls": 1,
+    "final_generation": 7,
+    "final_state": "FETCH_BALL_DONE",
+    "original_result_unchanged": true,
+    "pipeline_outcome": "RETURNED",
+    "recorded_exit_code": 0,
+    "recorded_result_hash_valid": true,
+    "scenario": "stale-result-media",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "synthetic_elapsed_s": 0.01,
+    "terminal_attempts": 1,
+    "terminal_wire_calls": 1,
+    "trace": [
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_TOSS",
+        "version": "1"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "88937208063227cbe8284488d68af1faab5322bd077bdcfc71c4f6799cd7b357"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "2"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_CHEW",
+        "version": "3"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "4"
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "d75ee8e4e9b07f61785e031460b9d44ee2c6b8c6e9ddf0f6ef3eba273d983244"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "media",
+        "generation": 7,
+        "sha256": "68de92618e4af811b98cbc93b5404034684748889ef1227a662c1f86b1473555"
+      },
+      {
+        "event": "terminal_attempt",
+        "expected_version": "5"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_RETURNING",
+        "version": "5"
+      },
+      {
+        "event": "terminal_wire",
+        "fields": [
+          "body",
+          "fields",
+          "fileId",
+          "supportsAllDrives"
+        ]
+      },
+      {
+        "event": "applied",
+        "state": "FETCH_BALL_DONE",
+        "version": "6"
+      },
+      {
+        "event": "normalized_terminal",
+        "outcome": "SUCCESS"
+      },
+      {
+        "event": "metadata",
+        "state": "FETCH_BALL_DONE",
+        "version": "6"
+      },
+      {
+        "event": "terminal_report",
+        "mutations": 1,
+        "outcome": "NEW_SUCCESS",
+        "probes": 1
+      }
+    ]
+  }
+]

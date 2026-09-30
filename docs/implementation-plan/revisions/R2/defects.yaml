@@ -1,58 +1,6 @@
 schema_version: 2
 defects:
-  DEF-001:
-    title: Ordinary terminal publication remains in RETURNING after rename conflict
-    status: OPEN
-    detected_in: IP-68
-    suspected_origin: null
-    proven_origin: null
-    reproduction:
-      procedure: A successful manual recovery or DONE body is not proof that ordinary publication is fixed.
-      failing_source: null
-      passing_source: null
-      evidence:
-      - docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md
-    repair_steps:
-    - RP-015
-    - RP-047
-    - RP-048
-    affected_acceptance:
-    - RP-058
-    - RP-062
-    - RP-064
-    affected_requirements:
-    - R01
-    - R02
-    - R03
-    - R04
-    - R05
-    - R06
-    - R07
-    - R08
-    - R09
-    - R10
-    - R11
-    - R12
-    - R13
-    - R14
-    - R15
-    - R16
-    - R17
-    - R18
-    - R19
-    - R20
-    - R21
-    - R22
-    hypotheses: []
-    repairs: []
-    issue: null
-    regression_test: null
-    resolution_evidence: []
-    notes: Historical v1 migration; omitted proof remains unknown. Original fields retained in legacy_record.
-    legacy_record: '{"detected_in":"IP-68","evidence_source":"docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md","observation_kind":"Historical
-      evidence plus owner-submitted FAILED telemetry; not a new live read.","proven_origin":null,"repair_steps":["RP-015","RP-047","RP-048"],"reproduction_step":"RP-013","required_acceptance":["RP-058","RP-062","RP-064"],"rule":"A
-      successful manual recovery or DONE body is not proof that ordinary publication is fixed.","status":"OPEN","suspected_origin":null,"title":"Ordinary
-      terminal publication remains in RETURNING after rename conflict"}'
+  DEF-001: {"title":"Ordinary terminal publication remains in RETURNING after rename conflict","status":"OPEN","detected_in":"IP-68","suspected_origin":null,"proven_origin":null,"reproduction":{"procedure":"A successful manual recovery or DONE body is not proof that ordinary publication is fixed. RP-013 A001 now supplies 11 deterministic current-source schedules and a strict expected-failure benign-version invariant; exact observed paths and historical UNKNOWN distinction are in reviewed evidence.","failing_source":"0e10234a58ec993e9c0fb0d4893fb1f80ee2ee0e","passing_source":null,"evidence":["docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md","docs/implementation-plan/revisions/R2/evidence/RP-013/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-013/A001/synthetic-scenario-traces.json"]},"repair_steps":["RP-015","RP-047","RP-048"],"affected_acceptance":["RP-058","RP-062","RP-064"],"affected_requirements":["R01","R02","R03","R04","R05","R06","R07","R08","R09","R10","R11","R12","R13","R14","R15","R16","R17","R18","R19","R20","R21","R22"],"hypotheses":[{"id":"rp013-version","claim":"Benign or stale precheck version difference aborts terminal publication despite unchanged verified result and generation; proved only for controlled current-source schedules.","result":"SUPPORTED","evidence":["docs/implementation-plan/revisions/R2/evidence/RP-013/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-013/A001/synthetic-scenario-traces.json"]},{"id":"rp013-media-only","claim":"In the tested schedule, one stale result-media read necessarily causes the ordinary publication failure.","result":"FAILED","evidence":["docs/implementation-plan/revisions/R2/evidence/RP-013/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-013/A001/synthetic-scenario-traces.json"]},{"id":"rp013-lost-reply","claim":"In the tested schedule, one lost successful rename reply necessarily requires another write.","result":"FAILED","evidence":["docs/implementation-plan/revisions/R2/evidence/RP-013/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-013/A001/synthetic-scenario-traces.json"]},{"id":"rp013-fence","claim":"A foreign generation before fence is rejected, but the same change after non-atomic precheck can be renamed terminal; native atomic exclusion and full identity readback remain necessary.","result":"SUPPORTED","evidence":["docs/implementation-plan/revisions/R2/evidence/RP-013/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-013/A001/synthetic-scenario-traces.json"]},{"id":"rp013-normalization","claim":"Synthetic 409 normalizes CONFLICT, 412 AMBIGUOUS, and later benign receipt-version drift can remain UNCONFIRMED; these are distinct paths.","result":"SUPPORTED","evidence":["docs/implementation-plan/revisions/R2/evidence/RP-013/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-013/A001/synthetic-scenario-traces.json"]},{"id":"rp013-historical","claim":"One of the synthetic schedules caused the original E-002 deployment event; original matching provider/local trace and binary identity are unavailable.","result":"UNTESTED","evidence":["docs/implementation-plan/revisions/R2/evidence/RP-013/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-013/A001/synthetic-scenario-traces.json"]}],"repairs":[],"issue":null,"regression_test":"tests/integration/test_result_publication_reproduction.py::test_required_invariant_same_owner_benign_metadata_change_does_not_strand_result","resolution_evidence":[],"notes":"Historical v1 migration; omitted proof remains unknown. Original fields retained in legacy_record. RP-013 reproduction accepted only as a diagnostic handoff; no fix or real-provider observation. Historical proven_origin remains null; DEF-001 and later repair/end-to-end gates remain OPEN.","legacy_record":"{\"detected_in\":\"IP-68\",\"evidence_source\":\"docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md\",\"observation_kind\":\"Historical evidence plus owner-submitted FAILED telemetry; not a new live read.\",\"proven_origin\":null,\"repair_steps\":[\"RP-015\",\"RP-047\",\"RP-048\"],\"reproduction_step\":\"RP-013\",\"required_acceptance\":[\"RP-058\",\"RP-062\",\"RP-064\"],\"rule\":\"A successful manual recovery or DONE body is not proof that ordinary publication is fixed.\",\"status\":\"OPEN\",\"suspected_origin\":null,\"title\":\"Ordinary terminal publication remains in RETURNING after rename conflict\"}"}
   DEF-002:
     title: Cancellation acknowledgement/classification may outlive natural completion
     status: OPEN
