@@ -157,7 +157,12 @@ The scanner is a backstop, not a complete secret-detection oracle. Human review 
 
 ## Logging and error policy
 
-Infrastructure errors must prefer:
+For public artifacts, the stricter [RP-004 privacy policy](development/PRIVACY_POLICY.md)
+and closed `tb4.privacy` contracts apply. Private deployment data is not made
+public by redaction. Public desktop exports use diagnostic schema v2 with fixed
+codes; local telemetry remains v1 and is revalidated at the log boundary.
+
+Private infrastructure errors must prefer:
 
 ```text
 operation category
@@ -166,7 +171,9 @@ exception class
 bounded redacted message
 ```
 
-over raw credential-bearing provider objects.
+over raw credential-bearing provider objects. Such messages remain private;
+public reports use only explicitly allowlisted codes, never arbitrary exception
+class names or bounded raw messages.
 
 Google authentication errors intentionally return normalized categories and exception class names.
 

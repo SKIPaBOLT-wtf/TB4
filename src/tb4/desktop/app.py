@@ -13,6 +13,7 @@ from .process import WorkerProcess, worker_command
 from .profile import (Profile, ProfileLock, content_digest, default_config,
                       drive_root_id, read_config)
 from .telemetry import append_event, diagnostic_report, observation_state
+from tb4.privacy import public_artifact
 
 
 HELP = {
@@ -315,7 +316,8 @@ class RoleWindow(QtWidgets.QMainWindow):
         if name:
             try:
                 report = diagnostic_report(self.profile.role, self.snapshot, time.time())
-                Path(name).write_text(json.dumps(report, indent=2), encoding="utf-8")
+                _, content = public_artifact("diagnostic", report)
+                Path(name).write_bytes(content)
                 self.message.setText("Diagnostic report saved without configuration, payloads or credential contents.")
             except Exception:
                 self.error("DIAGNOSTIC_EXPORT_FAILED")

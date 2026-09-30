@@ -12,6 +12,7 @@ from pathlib import Path
 from .profile import (Profile, ProfileError, ProfileLock, canonical_validate,
                       parse_config, read_config, save_config)
 from .telemetry import ObservedBackend, Telemetry
+from tb4.privacy import canonical_protocol_names, exception_code
 
 
 class SnapshotEmitter:
@@ -28,22 +29,6 @@ class SnapshotEmitter:
                 self.stream.flush()
             except (BrokenPipeError, OSError):
                 self.closed.set()
-
-
-def canonical_protocol_names() -> frozenset[str]:
-    from tb4.core.protocol_names import LogicalObject, state_filename
-    from tb4.core.state_machine import load_state_machines
-    registry = load_state_machines()
-    names = set()
-    for logical in LogicalObject:
-        machine = registry.machine(logical)
-        if machine is not None:
-            for state in machine.states:
-                try:
-                    names.add(state_filename(logical, state))
-                except ValueError:
-                    pass
-    return frozenset(names)
 
 
 def _listen(stream, stop: threading.Event) -> None:
@@ -211,7 +196,7 @@ def main(profile: Profile, action: str) -> int:
         if isinstance(exc, ProfileError):
             telemetry.fail(str(exc))
         else:
-            telemetry.fail("ERROR_" + type(exc).__name__.upper())
+            telemetry.fail(exception_code(exc))
         return 1
     finally:
         finished.set()

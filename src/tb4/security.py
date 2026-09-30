@@ -70,6 +70,7 @@ _TEXT_SUFFIXES = {
     ".yaml",
     ".yml",
     ".json",
+    ".jsonl",
     ".ps1",
     ".service",
     ".sh",
