@@ -66,7 +66,7 @@ def main(fixed_role: str | None = None, argv: list[str] | None = None) -> int:
         try:
             report = packaged_self_test(args.role)
         except Exception as exc:
-            report = {"role": role, "self_test": "FAIL", "error_class": type(exc).__name__}
+            report = {"role": args.role, "self_test": "FAIL", "error_class": type(exc).__name__}
         if args.report:
             args.report.write_text(json.dumps(report), encoding="utf-8")
         elif sys.stdout is not None:
