@@ -237,6 +237,13 @@ class StateWalker:
 
             unexpected_name: list[str] = []
             read_failure: list[BackendOutcome] = []
+            last_remote_version: list[str | None] = []
+            rename_version = (
+                rename_result.value.version_token
+                if rename_result.outcome is BackendOutcome.SUCCESS
+                and rename_result.value is not None
+                else None
+            )
 
             def probe() -> ProbeDisposition:
                 observed = self.backend.get_metadata(object_id)
@@ -249,6 +256,12 @@ class StateWalker:
                 value = observed.value
                 assert value is not None
                 if value.name == target_name:
+                    if (
+                        rename_version is not None
+                        and value.version_token != rename_version
+                    ):
+                        last_remote_version[:] = [value.version_token]
+                        return ProbeDisposition.NOT_VISIBLE
                     return ProbeDisposition.CONFIRMED
                 if value.name == expected_name:
                     return ProbeDisposition.NOT_VISIBLE
@@ -294,6 +307,22 @@ class StateWalker:
                     expected_name,
                     target_name,
                     message=f"confirmation read ended with {read_failure[-1].value}",
+                    mutation_attempts=attempt,
+                    confirmation_probes=confirmation.probe_count,
+                )
+
+            if last_remote_version:
+                return self._report(
+                    StateWalkOutcome.UNCONFIRMED,
+                    object_id,
+                    expected_name,
+                    target_name,
+                    observed_name=target_name,
+                    message=(
+                        "rename target became visible but provider version did not "
+                        f"stabilize at mutation receipt {rename_version!r}; "
+                        f"observed {last_remote_version[-1]!r}"
+                    ),
                     mutation_attempts=attempt,
                     confirmation_probes=confirmation.probe_count,
                 )

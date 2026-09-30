@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 from tb4.core.fencing import FenceToken
@@ -9,6 +9,7 @@ from tb4.core.models import Generation, ObjectStateRef, OperationId
 from tb4.core.protocol_names import LogicalObject, Role
 from tb4.core.retry import RetryPolicy
 from tb4.core.schemas import canonical_json_text
+from tb4.drive.backend import TextObject
 from tb4.drive.body_keeper import BodyKeeper, BodyWriteOutcome
 from tb4.drive.errors import BackendOutcome, BackendResult
 from tb4.drive.memory_backend import InMemoryDriveBackend
@@ -128,6 +129,39 @@ def test_delayed_visibility_retries_readback_not_write() -> None:
 
     assert report.outcome is BodyWriteOutcome.VERIFIED_SUCCESS
     assert report.confirmation_probes == 3
+    assert backend.operation_counts["replace_text"] == 1
+
+
+def test_matching_body_waits_for_mutation_receipt_version() -> None:
+    backend, object_id, clock = _setup()
+    original_read = backend.read_text
+    lag_once = True
+
+    def lagged_read(target_id: str):
+        nonlocal lag_once
+        result = original_read(target_id)
+        if lag_once and result.ok and result.value is not None:
+            lag_once = False
+            return BackendResult.success(
+                TextObject(
+                    replace(result.value.metadata, version_token="stale-version"),
+                    result.value.text,
+                )
+            )
+        return result
+
+    backend.read_text = lagged_read
+    report = _keeper(backend, clock).replace_verified(
+        object_id=object_id,
+        logical_object=LogicalObject.FETCH_BALL,
+        state="LOADING",
+        actor=Role.COACH,
+        schema_name="fetch-ball.schema.json",
+        body=_body(),
+    )
+
+    assert report.outcome is BodyWriteOutcome.VERIFIED_SUCCESS
+    assert report.confirmation_probes == 2
     assert backend.operation_counts["replace_text"] == 1
 
 

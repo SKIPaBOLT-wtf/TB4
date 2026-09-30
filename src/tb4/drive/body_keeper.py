@@ -269,8 +269,14 @@ class BodyKeeper:
                 )
 
             last_remote_hash: list[str] = []
+            last_remote_version: list[str | None] = []
             last_schema_error: list[str] = []
             read_failure: list[BackendOutcome] = []
+            write_version = (
+                write.value.version_token
+                if write.outcome is BackendOutcome.SUCCESS and write.value is not None
+                else None
+            )
 
             def probe() -> ProbeDisposition:
                 remote = self.backend.read_text(object_id)
@@ -294,6 +300,18 @@ class BodyKeeper:
                 remote_hash = hashlib.sha256(value.text.encode("utf-8")).hexdigest()
                 if remote_hash != body_hash:
                     last_remote_hash[:] = [remote_hash]
+                    return ProbeDisposition.NOT_VISIBLE
+
+                # Google Drive may expose the new media bytes before files.get
+                # has caught up to the version returned by files.update. Do not
+                # release the caller to a version-guarded follow-up mutation
+                # until both the body and the provider version identify the
+                # mutation we just verified.
+                if (
+                    write_version is not None
+                    and value.metadata.version_token != write_version
+                ):
+                    last_remote_version[:] = [value.metadata.version_token]
                     return ProbeDisposition.NOT_VISIBLE
 
                 return ProbeDisposition.CONFIRMED
@@ -362,6 +380,20 @@ class BodyKeeper:
                     object_id,
                     body_hash,
                     message=f"remote hash remained {last_remote_hash[-1]}",
+                    mutation_attempts=attempt,
+                    confirmation_probes=confirmation.probe_count,
+                )
+
+            if last_remote_version:
+                return self._report(
+                    BodyWriteOutcome.UNCONFIRMED,
+                    object_id,
+                    body_hash,
+                    message=(
+                        "remote body matched but Drive version did not stabilize "
+                        f"at mutation receipt {write_version!r}; observed "
+                        f"{last_remote_version[-1]!r}"
+                    ),
                     mutation_attempts=attempt,
                     confirmation_probes=confirmation.probe_count,
                 )
