@@ -1,5 +1,10 @@
 # RP-008 amendment A-001: one native Docs control authority
 
+**Later owner correction:** [A-002](A-002-available-owner-takeover.md) supersedes
+the all-sink activation barrier and zero-overlap external-effect requirement below.
+The native-document authority remains selected. This text retains the earlier
+design reasoning; follow A-002 for current takeover semantics.
+
 Date: 2026-09-30. Approval: owner explicitly approved candidate 3 in the active
 session; recorded in RP-008-A001-0016. Design/prototype authorization only.
 Review/acceptance: RP-008 A002 evidence and manifest, not this approval sentence.

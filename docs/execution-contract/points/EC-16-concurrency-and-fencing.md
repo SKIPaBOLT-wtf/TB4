@@ -10,6 +10,12 @@ Reusable execution channels therefore require fencing. A state-changing operatio
 
 A stale participant must detect that it no longer owns the operation and stop without modifying the current generation. This behavior requires explicit tests.
 
+Apply [A-001](../amendments/EC-16/A-001-available-watchdog-takeover.md) for the
+owner-directed WATCHDOG policy: stale ownership permits immediate conditional
+takeover without old-host/all-sink acknowledgement. Shared writes remain fenced;
+already dispatched external effects retain separate uncertainty and do not block
+the entire role. Cooperative pre-dispatch checks do not imply atomic revocation.
+
 ## Why this exists
 
 This point is part of the persistent TB4 execution contract. Future agents must apply it without relying on prior conversation context.

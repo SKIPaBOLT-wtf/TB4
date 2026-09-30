@@ -1,5 +1,9 @@
 # EC-12 A-001: authoritative state and body in one native Docs transaction
 
+Later owner correction: [EC-16 A-001](../EC-16/A-001-available-watchdog-takeover.md)
+removes the all-sink takeover barrier mentioned below; strict shared-record
+transactions and readback remain required.
+
 Date: 2026-09-30. Point: EC-12; EC-16 and EC-30 remain binding.
 Approval: owner approved RP-008 candidate 3 design/prototypes, recorded in
 RP-008-A001-0016. Review/qualification state: active R2 manifest and A002 evidence.

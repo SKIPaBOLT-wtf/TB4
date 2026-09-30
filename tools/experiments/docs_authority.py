@@ -1,4 +1,7 @@
-"""RP-008 A002 executable design model. Not a production transport or gateway.
+"""Historical RP-008 A002 barrier model, superseded by the owner's A003 policy.
+
+Current takeover design is available_takeover.py. Keep this comparison and its
+tests as evidence of why a mandatory global barrier can withhold activation.
 
 One CAS object and durable, authenticated sink gates are explicit assumptions.
 No server clock, numeric Docs revision, remote shell or provider access is used.
