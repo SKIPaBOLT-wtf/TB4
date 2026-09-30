@@ -7,14 +7,14 @@ phase: "FINAL_REVIEW"
 source_branch: "work/rp-013-a001"
 source_commit: "0e10234a58ec993e9c0fb0d4893fb1f80ee2ee0e"
 journal: "docs/development/journal/RP-013/A001/events.jsonl"
-last_verified_event: "RP-013-A001-0008"
+last_verified_event: "RP-013-A001-0009"
 last_completed: "RP-012 VERIFIED via PR20; accepted main fbfa1436fdf7a2bd974d18bb9a56150f0f3ef1eb."
-next_action: "Publish review outcome, then exact-head merge INTENT."
+next_action: "Publish exact-head merge INTENT, merge PR21, then mark diagnostic step VERIFIED and require main Progress before RP-014."
 verification: "Reproduce exact ordinary terminal-publication paths with controlled synthetic provider scheduling; keep historical causality unknown without original trace. Review smallest failing invariant for RP-015."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-013-A001-0008"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
