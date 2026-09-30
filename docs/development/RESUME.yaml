@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-009"
 check: "RP-009.C1"
 attempt: "A001"
-phase: "CHECKS_REVIEWED"
+phase: "FINAL_REVIEW"
 source_branch: "work/rp-009-a001"
 source_commit: "25aecb2586f82525a1ca506ae50b5f532072ba6b"
 journal: "docs/development/journal/RP-009/A001/events.jsonl"
-last_verified_event: "RP-009-A001-0005"
+last_verified_event: "RP-009-A001-0006"
 last_completed: "RP-001 through RP-008 VERIFIED, owner-directed stale/forced takeover amendment merged; main Progress passed. RP-013 A001 remains safely deferred with no pending action."
-next_action: "Validate final acceptance candidate and unchanged tested source; then publish exact-head merge INTENT."
+next_action: "Publish review outcome then expected-head merge INTENT; merge and publish coordinated VERIFIED checkpoint."
 verification: "Minimum/default/maximum and cross-capacity bounds, exact lookup IDs, saturation with cancel/ACK availability, interrupted setup/expansion/duplicate identities and retained unknown/unread results; Windows/Linux regression and privacy/history checks."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-009-A001-0006"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
