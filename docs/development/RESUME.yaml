@@ -7,14 +7,14 @@ phase: "FINAL_REVIEW"
 source_branch: "work/rp-012-a001"
 source_commit: "f57c88138e35130379b9a040714836ac8de702a3"
 journal: "docs/development/journal/RP-012/A001/events.jsonl"
-last_verified_event: "RP-012-A001-0016"
+last_verified_event: "RP-012-A001-0017"
 last_completed: "RP-011 VERIFIED via PR19; accepted main e52be7a3883e3b259fdf38b5a49d0295e540ac53."
-next_action: "Complete final candidate review, publish outcome then exact-head merge INTENT."
+next_action: "Publish exact-head merge INTENT and merge PR20; then atomically mark design VERIFIED, close scoped DEF-014 and confirm main Progress before RP-013."
 verification: "Review exact actor/action ownership, fault scope, canonical input/reference bounds and every declared mode/blocker; validate source-linked synthetic/CI evidence before design acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-012-A001-0016"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-014"]
