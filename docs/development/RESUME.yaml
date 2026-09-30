@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-008"
 check: "RP-008.C4"
 attempt: "A003"
-phase: "VALIDATION"
+phase: "VALIDATION_RUNNING"
 source_branch: "work/rp-008-a002"
 source_commit: "bf148dd888824e32dc58958bc96e7b5f03b6b252"
 journal: "docs/development/journal/RP-008/A003/events.jsonl"
-last_verified_event: "RP-008-A003-0003"
+last_verified_event: "RP-008-A003-0004"
 last_completed: "RP-001 through RP-007 VERIFIED. Owner corrected RP-008 takeover policy before PR 16 merge; A002 evidence retained as historical rejected global barrier design."
-next_action: "Record local outcome and CI identities; preserve failures before any repair or acceptance."
+next_action: "Inspect the same running local validation and CI runs; review guarantees against the corrected owner policy."
 verification: "Immediate stale-record conditional takeover, bounded forced-request flag, old-owner write rejection and independent unknown-effect retention; no all-sink activation barrier."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-008-A003-0003"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-010","DEF-011"]
