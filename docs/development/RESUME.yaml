@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-009"
 check: "RP-009.C1"
 attempt: "A001"
-phase: "VALIDATION"
+phase: "VALIDATION_RUNNING"
 source_branch: "work/rp-009-a001"
 source_commit: "25aecb2586f82525a1ca506ae50b5f532072ba6b"
 journal: "docs/development/journal/RP-009/A001/events.jsonl"
-last_verified_event: "RP-009-A001-0003"
+last_verified_event: "RP-009-A001-0004"
 last_completed: "RP-001 through RP-008 VERIFIED, owner-directed stale/forced takeover amendment merged; main Progress passed. RP-013 A001 remains safely deferred with no pending action."
-next_action: "Record local outcome and running job identities before waiting; preserve failures and correct scoped causes if found."
+next_action: "Collect exact node IDs and review maximum filled-layout/retention assertions; inspect the same Desktop run through GUI/full Linux, role builds and installer acceptance."
 verification: "Minimum/default/maximum and cross-capacity bounds, exact lookup IDs, saturation with cancel/ACK availability, interrupted setup/expansion/duplicate identities and retained unknown/unread results; Windows/Linux regression and privacy/history checks."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-009-A001-0003"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
