@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-012"
 check: "RP-012.C1"
 attempt: "A001"
-phase: "DEBUG"
+phase: "SOURCE"
 source_branch: "work/rp-012-a001"
 source_commit: "d31bfe687bda0944307ca82f279d2a2296c4bacc"
 journal: "docs/development/journal/RP-012/A001/events.jsonl"
-last_verified_event: "RP-012-A001-0006"
+last_verified_event: "RP-012-A001-0007"
 last_completed: "RP-011 VERIFIED via PR19; accepted main e52be7a3883e3b259fdf38b5a49d0295e540ac53."
-next_action: "Execute compact diagnostic, inspect observed traceback and patch only parameter IDs."
+next_action: "Publish validation INTENT for same 988-node Windows scope and full Linux CI; qualify prior native packaging only if exact src/protocol/package equality holds, otherwise rerun required workflows."
 verification: "Review exact actor/action ownership, fault scope, canonical input/reference bounds and every declared mode/blocker; validate source-linked synthetic/CI evidence before design acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-012-A001-0006"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]

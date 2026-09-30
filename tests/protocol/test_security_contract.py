@@ -154,7 +154,11 @@ def test_unknown_modes_and_forged_gate_names_fail_closed(selection, gates):
     b'{"x":NaN}', b'{"x":Infinity}', b'{"x":1e999}', b'{"x":-1e999}',
     b'{"x":"\xff"}', b'{}trailing', b'[]', b'null', b'{', b'"text"',
     b'{"x":"\\ud800"}', b'{"\\udfff":0}', b'{"x":'+b'9'*5000+b'}',
-    b'{"x":'+b'['*40+b'0'+b']'*40+b'}', b'{"x":['+b'0,'*50000+b'0]}'])
+    b'{"x":'+b'['*40+b'0'+b']'*40+b'}', b'{"x":['+b'0,'*50000+b'0]}'],
+    ids=["duplicate", "nested-duplicate", "nan", "infinity", "exponent-overflow",
+         "negative-overflow", "invalid-utf8", "trailing", "list-root", "null-root",
+         "unclosed", "string-root", "surrogate-value", "surrogate-key", "integer-limit",
+         "depth-limit", "node-limit"])
 def test_hostile_control_parser_input_has_bounded_rejection(raw):
     with pytest.raises(PolicyError): parse_control(raw)
 
