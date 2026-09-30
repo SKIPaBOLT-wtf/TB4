@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-008"
 check: "RP-008.C4"
 attempt: "A003"
-phase: "MERGE"
-source_branch: "work/rp-008-a002"
+phase: "VERIFIED"
+source_branch: "main"
 source_commit: "bf148dd888824e32dc58958bc96e7b5f03b6b252"
 journal: "docs/development/journal/RP-008/A003/events.jsonl"
-last_verified_event: "RP-008-A003-0008"
-last_completed: "RP-001 through RP-007 VERIFIED. Owner corrected RP-008 takeover policy before PR 16 merge; A002 evidence retained as historical rejected global barrier design."
-next_action: "Read merged journal; publish acceptance and verify main Progress; then continue RP-009 fixed capacity/layout contract."
+last_verified_event: "RP-008-A003-0009"
+last_completed: "RP-001 through RP-008 VERIFIED. RP-008 A003 follows owner correction: immediate stale/forced takeover, no global sink ACK; runtime/UI remain future gates. RP-013 A001 retained after read-only deferral."
+next_action: "Verify main Progress and UTF-8 ledger checkpoint, then claim RP-009 fixed native-document exchange layout/capacity contract under the current owner amendment."
 verification: "Immediate stale-record conditional takeover, bounded forced-request flag, old-owner write rejection and independent unknown-effect retention; no all-sink activation barrier."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-008-A003-0008"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-010","DEF-011"]
+known_open_defects: ["DEF-001","DEF-002"]
 rollback: "Discard only synthetic experiment state; retain histories and fixed authority identity. No live migration authorized."
-next_implementation_step: "RP-008"
-next_implementation_check: "RP-008.C4"
+next_implementation_step: "RP-009"
+next_implementation_check: "RP-009.C1"

@@ -13,7 +13,7 @@ This is a projection of `manifest.yaml`. Mark a step/check complete only through
 - [x] [RP-005 - Topology-neutral BALLPARK and capability schema](steps/RP-005.md) - prerequisites: RP-004.
 - [x] [RP-006 - Credential-reference resolver contract](steps/RP-006.md) - prerequisites: RP-004, RP-005.
 - [x] [RP-007 - Repository instruction-version and trust contract](steps/RP-007.md) - prerequisites: RP-004, RP-005.
-- [ ] [RP-008 - Storage exclusion and failover feasibility gate](steps/RP-008.md) - prerequisites: RP-004, RP-005.
+- [x] [RP-008 - Storage exclusion and failover feasibility gate](steps/RP-008.md) - prerequisites: RP-004, RP-005.
 - [ ] [RP-009 - Fixed exchange layout and capacity contract](steps/RP-009.md) - prerequisites: RP-005, RP-008.
 - [ ] [RP-010 - Command status and ownership protocol contract](steps/RP-010.md) - prerequisites: RP-007, RP-008, RP-009.
 - [ ] [RP-011 - Timing semantics and relationship validation](steps/RP-011.md) - prerequisites: RP-005, RP-010.
