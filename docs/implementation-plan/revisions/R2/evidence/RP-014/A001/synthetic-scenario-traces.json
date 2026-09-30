@@ -1,0 +1,1164 @@
+[
+  {
+    "ack_code": null,
+    "actual_exit_code": 0,
+    "child_still_active": false,
+    "classification": "DONE",
+    "finished_s": 0.3,
+    "independent_heartbeat_model_ticks": 1,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "windows",
+    "report_disposition": "EXITED",
+    "reported_exit_code": 0,
+    "requested_cancel": false,
+    "scenario": "natural-control",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": null,
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.05,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.05,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.1,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.1,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.15,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.15,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.2,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.2,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.25,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.25,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.3,
+        "event": "natural_exit",
+        "exit_code": 0,
+        "occurred_at": 0.3
+      }
+    ]
+  },
+  {
+    "ack_code": null,
+    "actual_exit_code": 0,
+    "child_still_active": false,
+    "classification": "DONE",
+    "finished_s": 0.3,
+    "independent_heartbeat_model_ticks": 1,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "posix",
+    "report_disposition": "EXITED",
+    "reported_exit_code": 0,
+    "requested_cancel": false,
+    "scenario": "natural-control",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": null,
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.05,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.05,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.1,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.1,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.15,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.15,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.2,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.2,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.25,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.25,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.3,
+        "event": "natural_exit",
+        "exit_code": 0,
+        "occurred_at": 0.3
+      }
+    ]
+  },
+  {
+    "ack_code": "CANCEL_SIGNALLED",
+    "actual_exit_code": 0,
+    "child_still_active": false,
+    "classification": "CANCELLED",
+    "finished_s": 2,
+    "independent_heartbeat_model_ticks": 8,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "windows",
+    "report_disposition": "CANCELLED",
+    "reported_exit_code": null,
+    "requested_cancel": true,
+    "scenario": "late-cancel-zero",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": "STOP_BALL_ACKNOWLEDGED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "at": 2,
+        "event": "natural_exit",
+        "exit_code": 0,
+        "occurred_at": 1
+      },
+      {
+        "ack_code": "CANCEL_SIGNALLED",
+        "at": 2,
+        "cancel_requested": true,
+        "event": "provider_check_end"
+      },
+      {
+        "already_exited": true,
+        "at": 2,
+        "event": "termination_enter",
+        "requested": "CANCELLED"
+      }
+    ]
+  },
+  {
+    "ack_code": "CANCEL_SIGNALLED",
+    "actual_exit_code": 0,
+    "child_still_active": false,
+    "classification": "CANCELLED",
+    "finished_s": 2,
+    "independent_heartbeat_model_ticks": 8,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "posix",
+    "report_disposition": "CANCELLED",
+    "reported_exit_code": null,
+    "requested_cancel": true,
+    "scenario": "late-cancel-zero",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": "STOP_BALL_ACKNOWLEDGED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "at": 2,
+        "event": "natural_exit",
+        "exit_code": 0,
+        "occurred_at": 1
+      },
+      {
+        "ack_code": "CANCEL_SIGNALLED",
+        "at": 2,
+        "cancel_requested": true,
+        "event": "provider_check_end"
+      },
+      {
+        "already_exited": true,
+        "at": 2,
+        "event": "termination_enter",
+        "requested": "CANCELLED"
+      }
+    ]
+  },
+  {
+    "ack_code": "CANCEL_SIGNALLED",
+    "actual_exit_code": 7,
+    "child_still_active": false,
+    "classification": "CANCELLED",
+    "finished_s": 2,
+    "independent_heartbeat_model_ticks": 8,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "windows",
+    "report_disposition": "CANCELLED",
+    "reported_exit_code": null,
+    "requested_cancel": true,
+    "scenario": "late-cancel-nonzero",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": "STOP_BALL_ACKNOWLEDGED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "at": 2,
+        "event": "natural_exit",
+        "exit_code": 7,
+        "occurred_at": 1
+      },
+      {
+        "ack_code": "CANCEL_SIGNALLED",
+        "at": 2,
+        "cancel_requested": true,
+        "event": "provider_check_end"
+      },
+      {
+        "already_exited": true,
+        "at": 2,
+        "event": "termination_enter",
+        "requested": "CANCELLED"
+      }
+    ]
+  },
+  {
+    "ack_code": "CANCEL_SIGNALLED",
+    "actual_exit_code": 7,
+    "child_still_active": false,
+    "classification": "CANCELLED",
+    "finished_s": 2,
+    "independent_heartbeat_model_ticks": 8,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "posix",
+    "report_disposition": "CANCELLED",
+    "reported_exit_code": null,
+    "requested_cancel": true,
+    "scenario": "late-cancel-nonzero",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": "STOP_BALL_ACKNOWLEDGED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "at": 2,
+        "event": "natural_exit",
+        "exit_code": 7,
+        "occurred_at": 1
+      },
+      {
+        "ack_code": "CANCEL_SIGNALLED",
+        "at": 2,
+        "cancel_requested": true,
+        "event": "provider_check_end"
+      },
+      {
+        "already_exited": true,
+        "at": 2,
+        "event": "termination_enter",
+        "requested": "CANCELLED"
+      }
+    ]
+  },
+  {
+    "ack_code": "CANCEL_SIGNALLED",
+    "actual_exit_code": -15,
+    "child_still_active": false,
+    "classification": "CANCELLED",
+    "finished_s": 0.25,
+    "independent_heartbeat_model_ticks": 1,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT"
+    ],
+    "platform_model": "windows",
+    "report_disposition": "CANCELLED",
+    "reported_exit_code": null,
+    "requested_cancel": true,
+    "scenario": "timely-cancel",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 1,
+    "stop_state": "STOP_BALL_ACKNOWLEDGED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": "CANCEL_SIGNALLED",
+        "at": 0.25,
+        "cancel_requested": true,
+        "event": "provider_check_end"
+      },
+      {
+        "already_exited": false,
+        "at": 0.25,
+        "event": "termination_enter",
+        "requested": "CANCELLED"
+      },
+      {
+        "alive": true,
+        "at": 0.25,
+        "event": "signal_attempt",
+        "signal": 15
+      },
+      {
+        "at": 0.25,
+        "event": "signal_exit",
+        "exit_code": -15
+      }
+    ]
+  },
+  {
+    "ack_code": "CANCEL_SIGNALLED",
+    "actual_exit_code": -15,
+    "child_still_active": false,
+    "classification": "CANCELLED",
+    "finished_s": 0.25,
+    "independent_heartbeat_model_ticks": 1,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT"
+    ],
+    "platform_model": "posix",
+    "report_disposition": "CANCELLED",
+    "reported_exit_code": null,
+    "requested_cancel": true,
+    "scenario": "timely-cancel",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 1,
+    "stop_state": "STOP_BALL_ACKNOWLEDGED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": "CANCEL_SIGNALLED",
+        "at": 0.25,
+        "cancel_requested": true,
+        "event": "provider_check_end"
+      },
+      {
+        "already_exited": false,
+        "at": 0.25,
+        "event": "termination_enter",
+        "requested": "CANCELLED"
+      },
+      {
+        "alive": true,
+        "at": 0.25,
+        "event": "signal_attempt",
+        "signal": 15
+      },
+      {
+        "at": 0.25,
+        "event": "signal_exit",
+        "exit_code": -15
+      }
+    ]
+  },
+  {
+    "ack_code": "NO_MATCH",
+    "actual_exit_code": 0,
+    "child_still_active": false,
+    "classification": "DONE",
+    "finished_s": 0.3,
+    "independent_heartbeat_model_ticks": 1,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "windows",
+    "report_disposition": "EXITED",
+    "reported_exit_code": 0,
+    "requested_cancel": true,
+    "scenario": "stale-cancel",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": "STOP_BALL_ACKNOWLEDGED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": "NO_MATCH",
+        "at": 0.1,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.15,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.15,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.2,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.2,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.25,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.25,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.3,
+        "event": "natural_exit",
+        "exit_code": 0,
+        "occurred_at": 0.3
+      }
+    ]
+  },
+  {
+    "ack_code": "NO_MATCH",
+    "actual_exit_code": 0,
+    "child_still_active": false,
+    "classification": "DONE",
+    "finished_s": 0.3,
+    "independent_heartbeat_model_ticks": 1,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "posix",
+    "report_disposition": "EXITED",
+    "reported_exit_code": 0,
+    "requested_cancel": true,
+    "scenario": "stale-cancel",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": "STOP_BALL_ACKNOWLEDGED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": "NO_MATCH",
+        "at": 0.1,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.15,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.15,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.2,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.2,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.25,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 0.25,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 0.3,
+        "event": "natural_exit",
+        "exit_code": 0,
+        "occurred_at": 0.3
+      }
+    ]
+  },
+  {
+    "ack_code": null,
+    "actual_exit_code": -15,
+    "child_still_active": false,
+    "classification": "FAILED",
+    "finished_s": 2.05,
+    "independent_heartbeat_model_ticks": 8,
+    "local_runtime_limit_s": 1,
+    "markers": [
+      "PRE_WAIT"
+    ],
+    "platform_model": "windows",
+    "report_disposition": "TIMED_OUT",
+    "reported_exit_code": null,
+    "requested_cancel": false,
+    "scenario": "runtime-blocked",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 1,
+    "stop_state": null,
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 2,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 2.05,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 2.05,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "already_exited": false,
+        "at": 2.05,
+        "event": "termination_enter",
+        "requested": "TIMED_OUT"
+      },
+      {
+        "alive": true,
+        "at": 2.05,
+        "event": "signal_attempt",
+        "signal": 15
+      },
+      {
+        "at": 2.05,
+        "event": "signal_exit",
+        "exit_code": -15
+      }
+    ]
+  },
+  {
+    "ack_code": null,
+    "actual_exit_code": -15,
+    "child_still_active": false,
+    "classification": "FAILED",
+    "finished_s": 2.05,
+    "independent_heartbeat_model_ticks": 8,
+    "local_runtime_limit_s": 1,
+    "markers": [
+      "PRE_WAIT"
+    ],
+    "platform_model": "posix",
+    "report_disposition": "TIMED_OUT",
+    "reported_exit_code": null,
+    "requested_cancel": false,
+    "scenario": "runtime-blocked",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 1,
+    "stop_state": null,
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 2,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 2.05,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": null,
+        "at": 2.05,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      },
+      {
+        "already_exited": false,
+        "at": 2.05,
+        "event": "termination_enter",
+        "requested": "TIMED_OUT"
+      },
+      {
+        "alive": true,
+        "at": 2.05,
+        "event": "signal_attempt",
+        "signal": 15
+      },
+      {
+        "at": 2.05,
+        "event": "signal_exit",
+        "exit_code": -15
+      }
+    ]
+  },
+  {
+    "ack_code": null,
+    "actual_exit_code": 0,
+    "child_still_active": false,
+    "classification": "DONE",
+    "finished_s": 2.05,
+    "independent_heartbeat_model_ticks": 8,
+    "local_runtime_limit_s": 1,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "windows",
+    "report_disposition": "EXITED",
+    "reported_exit_code": 0,
+    "requested_cancel": false,
+    "scenario": "runtime-natural-during-wait",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": null,
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "at": 2,
+        "event": "natural_exit",
+        "exit_code": 0,
+        "occurred_at": 1.5
+      },
+      {
+        "ack_code": null,
+        "at": 2,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      }
+    ]
+  },
+  {
+    "ack_code": null,
+    "actual_exit_code": 0,
+    "child_still_active": false,
+    "classification": "DONE",
+    "finished_s": 2.05,
+    "independent_heartbeat_model_ticks": 8,
+    "local_runtime_limit_s": 1,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "posix",
+    "report_disposition": "EXITED",
+    "reported_exit_code": 0,
+    "requested_cancel": false,
+    "scenario": "runtime-natural-during-wait",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": null,
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "at": 2,
+        "event": "natural_exit",
+        "exit_code": 0,
+        "occurred_at": 1.5
+      },
+      {
+        "ack_code": null,
+        "at": 2,
+        "cancel_requested": false,
+        "event": "provider_check_end"
+      }
+    ]
+  },
+  {
+    "ack_code": null,
+    "actual_exit_code": 0,
+    "child_still_active": false,
+    "classification": "DONE",
+    "finished_s": 0,
+    "independent_heartbeat_model_ticks": 0,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "windows",
+    "report_disposition": "EXITED",
+    "reported_exit_code": 0,
+    "requested_cancel": true,
+    "scenario": "exit-before-first-check",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": "STOP_BALL_REQUESTED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "natural_exit",
+        "exit_code": 0,
+        "occurred_at": 0
+      }
+    ]
+  },
+  {
+    "ack_code": null,
+    "actual_exit_code": 0,
+    "child_still_active": false,
+    "classification": "DONE",
+    "finished_s": 0,
+    "independent_heartbeat_model_ticks": 0,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "posix",
+    "report_disposition": "EXITED",
+    "reported_exit_code": 0,
+    "requested_cancel": true,
+    "scenario": "exit-before-first-check",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": "STOP_BALL_REQUESTED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "natural_exit",
+        "exit_code": 0,
+        "occurred_at": 0
+      }
+    ]
+  },
+  {
+    "ack_code": "CANCEL_SIGNALLED",
+    "actual_exit_code": 0,
+    "child_still_active": false,
+    "classification": "CANCELLED",
+    "finished_s": 1.25,
+    "independent_heartbeat_model_ticks": 5,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "windows",
+    "report_disposition": "CANCELLED",
+    "reported_exit_code": null,
+    "requested_cancel": true,
+    "scenario": "exit-before-signal",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": "STOP_BALL_ACKNOWLEDGED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": "CANCEL_SIGNALLED",
+        "at": 0.25,
+        "cancel_requested": true,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 1.25,
+        "event": "natural_exit",
+        "exit_code": 0,
+        "occurred_at": 1
+      },
+      {
+        "already_exited": true,
+        "at": 1.25,
+        "event": "termination_enter",
+        "requested": "CANCELLED"
+      }
+    ]
+  },
+  {
+    "ack_code": "CANCEL_SIGNALLED",
+    "actual_exit_code": 0,
+    "child_still_active": false,
+    "classification": "CANCELLED",
+    "finished_s": 1.25,
+    "independent_heartbeat_model_ticks": 5,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT",
+      "POST_WAIT"
+    ],
+    "platform_model": "posix",
+    "report_disposition": "CANCELLED",
+    "reported_exit_code": null,
+    "requested_cancel": true,
+    "scenario": "exit-before-signal",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 0,
+    "stop_state": "STOP_BALL_ACKNOWLEDGED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": "CANCEL_SIGNALLED",
+        "at": 0.25,
+        "cancel_requested": true,
+        "event": "provider_check_end"
+      },
+      {
+        "at": 1.25,
+        "event": "natural_exit",
+        "exit_code": 0,
+        "occurred_at": 1
+      },
+      {
+        "already_exited": true,
+        "at": 1.25,
+        "event": "termination_enter",
+        "requested": "CANCELLED"
+      }
+    ]
+  },
+  {
+    "ack_code": "CANCEL_SIGNALLED",
+    "actual_exit_code": null,
+    "child_still_active": true,
+    "classification": "UNTRUSTWORTHY_TERMINATION",
+    "finished_s": 0.25,
+    "independent_heartbeat_model_ticks": 1,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT"
+    ],
+    "platform_model": "windows",
+    "report_disposition": "TERMINATION_FAILED",
+    "reported_exit_code": null,
+    "requested_cancel": true,
+    "scenario": "termination-fails",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 2,
+    "stop_state": "STOP_BALL_ACKNOWLEDGED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": "CANCEL_SIGNALLED",
+        "at": 0.25,
+        "cancel_requested": true,
+        "event": "provider_check_end"
+      },
+      {
+        "already_exited": false,
+        "at": 0.25,
+        "event": "termination_enter",
+        "requested": "CANCELLED"
+      },
+      {
+        "alive": true,
+        "at": 0.25,
+        "event": "signal_attempt",
+        "signal": 15
+      },
+      {
+        "already_exited": false,
+        "at": 0.25,
+        "event": "termination_enter",
+        "requested": "TERMINATION_FAILED"
+      },
+      {
+        "alive": true,
+        "at": 0.25,
+        "event": "signal_attempt",
+        "signal": 15
+      }
+    ]
+  },
+  {
+    "ack_code": "CANCEL_SIGNALLED",
+    "actual_exit_code": null,
+    "child_still_active": true,
+    "classification": "UNTRUSTWORTHY_TERMINATION",
+    "finished_s": 0.25,
+    "independent_heartbeat_model_ticks": 1,
+    "local_runtime_limit_s": 10,
+    "markers": [
+      "PRE_WAIT"
+    ],
+    "platform_model": "posix",
+    "report_disposition": "TERMINATION_FAILED",
+    "reported_exit_code": null,
+    "requested_cancel": true,
+    "scenario": "termination-fails",
+    "scope": "SYNTHETIC_ONLY_NO_PROCESS_OR_NETWORK",
+    "signal_attempts": 4,
+    "stop_state": "STOP_BALL_ACKNOWLEDGED",
+    "trace": [
+      {
+        "at": 0,
+        "event": "started",
+        "marker": "PRE_WAIT"
+      },
+      {
+        "at": 0,
+        "event": "provider_check_begin"
+      },
+      {
+        "ack_code": "CANCEL_SIGNALLED",
+        "at": 0.25,
+        "cancel_requested": true,
+        "event": "provider_check_end"
+      },
+      {
+        "already_exited": false,
+        "at": 0.25,
+        "event": "termination_enter",
+        "requested": "CANCELLED"
+      },
+      {
+        "alive": true,
+        "at": 0.25,
+        "event": "signal_attempt",
+        "signal": 15
+      },
+      {
+        "alive": true,
+        "at": 0.25,
+        "event": "signal_attempt",
+        "signal": 9
+      },
+      {
+        "already_exited": false,
+        "at": 0.25,
+        "event": "termination_enter",
+        "requested": "TERMINATION_FAILED"
+      },
+      {
+        "alive": true,
+        "at": 0.25,
+        "event": "signal_attempt",
+        "signal": 15
+      },
+      {
+        "alive": true,
+        "at": 0.25,
+        "event": "signal_attempt",
+        "signal": 9
+      }
+    ]
+  }
+]
