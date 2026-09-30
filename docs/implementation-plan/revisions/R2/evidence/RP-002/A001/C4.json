@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "item": "RP-002",
+  "check": "RP-002.C4",
+  "attempt": "A001",
+  "source_ref": "25539e6b0cda63aeb8db544710602fbaa9ca98ca",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Review named fault assertions, guarded native Git behavior, immutable source provenance and complete real connector readback.",
+  "procedure": "Run python -m pytest tests/development tests/security tests/desktop/test_plan.py -ra --basetemp .venv/pytest-rp002-guarded; run full current ledger/history and public scan/diff; inspect exact PR 9 CI/Progress runs. Prepare a new real outcome checkpoint from the synchronized clean document base through the guarded helper and verify its complete connector publication.",
+  "expected": "Publication outage preserves safe pending state and denies dependent mutation.",
+  "observed": "Guarded source passed Windows 72 tests in 7.31 seconds and exact PR checkpoint fd0e03f92d1d54c3018f6b396cd62ee872b1c110 passed general CI 36760355814 plus Progress 36760355787/36760349139. Real guarded helper prepared checkpoint 3036b1ecb6dd44eb8149590234f0cda7f9738e46; journal and cursor contents and final branch ref were all remotely verified. Native synthetic Git tests preserve unrelated dirty data/index; fault cases never authorize replay. DEF-007 regression covers wrong base, edited documents and untracked documents.",
+  "exit_code": 0,
+  "platform_scope": "Windows Python 3.11, Linux GitHub CI, synthetic failure injection, native isolated bare Git, actual public connector checkpoint.",
+  "negative_cases": [
+    "Publication failures before/after write",
+    "Concurrent ref conflict and wrong readback",
+    "Duplicate pending and corrupt digest",
+    "History rewrite and stale document base",
+    "Uncertain workload effects never replayed"
+  ],
+  "unverified_scope": "Real authenticated local GitHub push not tested because local Git credentials are absent; the equivalent authorized connector transaction was tested. No live workload/deployment claims.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Disable helper; preserve pending/journal/evidence; manual checkpoint contract remains mandatory.",
+  "intent_event": "RP-002-A001-0009",
+  "outcome_event": "RP-002-A001-0011",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-002/A001/reviewed-validation.md"
+  ]
+}
