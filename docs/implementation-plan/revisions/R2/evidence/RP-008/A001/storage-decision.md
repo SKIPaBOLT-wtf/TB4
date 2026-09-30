@@ -1,11 +1,5 @@
 # RP-008 storage exclusion decision — review candidate
 
-**Historical A001 decision checkpoint.** The owner subsequently approved candidate
-3 for design/prototypes (RP-008-A001-0016). Current design qualification continues
-in A002 under [amendment A-001](../../../amendments/RP-008/A-001-native-docs-authority.md).
-The blocked conclusion below records the earlier state; use the manifest for
-current acceptance. No live migration was authorized.
-
 Date: 2026-09-30. Authority: R07/R08/R10/R18, RP-008, EC-16 and the realignment
 single-domain requirement. This record proposes a decision boundary; step status
 and accepted checks remain in the manifest. Prototype validation is recorded
