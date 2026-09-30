@@ -1,0 +1,679 @@
+{
+  "compatibility_status": "UNRELEASED",
+  "runtime_activation": false,
+  "rights": {
+    "read_summary": {
+      "actors": [
+        "COACH_HELPER",
+        "LLM",
+        "STANDBY",
+        "WATCHDOG"
+      ],
+      "required_facts": [
+        "compatible_instructions",
+        "principal_enrolled",
+        "scope_matches"
+      ]
+    },
+    "read_result": {
+      "actors": [
+        "COACH_HELPER",
+        "LLM"
+      ],
+      "required_facts": [
+        "binding_matches",
+        "compatible_instructions",
+        "principal_enrolled",
+        "result_verified",
+        "scope_matches"
+      ]
+    },
+    "submit_ingress": {
+      "actors": [
+        "COACH_HELPER"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "capacity_reserved",
+        "compatible_instructions",
+        "conditional_revision",
+        "payload_verified",
+        "principal_enrolled",
+        "scope_matches",
+        "user_authorized"
+      ]
+    },
+    "cancel_request": {
+      "actors": [
+        "COACH_HELPER"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "compatible_instructions",
+        "conditional_revision",
+        "principal_enrolled",
+        "scope_matches",
+        "user_authorized"
+      ]
+    },
+    "consume_result": {
+      "actors": [
+        "COACH_HELPER"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "compatible_instructions",
+        "conditional_revision",
+        "explicit_consumption",
+        "principal_enrolled",
+        "result_verified",
+        "scope_matches"
+      ]
+    },
+    "request_takeover": {
+      "actors": [
+        "GUI_HELPER"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "compatible_instructions",
+        "conditional_revision",
+        "principal_enrolled",
+        "scope_matches",
+        "user_authorized"
+      ]
+    },
+    "claim_stale_owner": {
+      "actors": [
+        "STANDBY"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "compatible_instructions",
+        "conditional_revision",
+        "local_identity_unique",
+        "principal_enrolled",
+        "scope_matches",
+        "staleness_proven"
+      ]
+    },
+    "claim_requested_owner": {
+      "actors": [
+        "STANDBY"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "compatible_instructions",
+        "conditional_revision",
+        "local_identity_unique",
+        "principal_enrolled",
+        "request_matches_candidate",
+        "scope_matches"
+      ]
+    },
+    "renew_owner": {
+      "actors": [
+        "WATCHDOG"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "compatible_instructions",
+        "conditional_revision",
+        "current_owner",
+        "no_pending_takeover",
+        "principal_enrolled",
+        "scope_matches"
+      ]
+    },
+    "route_work": {
+      "actors": [
+        "WATCHDOG"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "capacity_reserved",
+        "compatible_instructions",
+        "conditional_revision",
+        "current_owner",
+        "no_pending_takeover",
+        "payload_verified",
+        "principal_enrolled",
+        "scope_matches"
+      ]
+    },
+    "network_observe": {
+      "actors": [
+        "WATCHDOG"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "compatible_instructions",
+        "current_owner",
+        "no_pending_takeover",
+        "principal_enrolled",
+        "scope_matches"
+      ]
+    },
+    "fixed_launch": {
+      "actors": [
+        "WATCHDOG"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "compatible_instructions",
+        "current_owner",
+        "host_identity_verified",
+        "launcher_commissioned",
+        "no_pending_takeover",
+        "principal_enrolled",
+        "scope_matches"
+      ]
+    },
+    "manage_network": {
+      "actors": [
+        "WATCHDOG"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "compatible_instructions",
+        "current_owner",
+        "network_capability_qualified",
+        "no_pending_takeover",
+        "principal_enrolled",
+        "scope_matches",
+        "typed_broker_only",
+        "user_authorized"
+      ]
+    },
+    "recycle_consumed": {
+      "actors": [
+        "WATCHDOG"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "compatible_instructions",
+        "conditional_revision",
+        "current_owner",
+        "explicit_consumption",
+        "no_pending_takeover",
+        "principal_enrolled",
+        "result_verified",
+        "scope_matches"
+      ]
+    },
+    "read_own_work": {
+      "actors": [
+        "FETCHER"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "compatible_instructions",
+        "principal_enrolled",
+        "scope_matches"
+      ]
+    },
+    "claim_own_work": {
+      "actors": [
+        "FETCHER"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "compatible_instructions",
+        "conditional_revision",
+        "deadline_valid",
+        "durable_execution_identity",
+        "local_identity_unique",
+        "payload_verified",
+        "principal_enrolled",
+        "scope_matches"
+      ]
+    },
+    "publish_result": {
+      "actors": [
+        "FETCHER"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "compatible_instructions",
+        "conditional_revision",
+        "durable_result",
+        "principal_enrolled",
+        "result_verified",
+        "scope_matches"
+      ]
+    },
+    "publish_heartbeat": {
+      "actors": [
+        "FETCHER"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "compatible_instructions",
+        "conditional_revision",
+        "local_identity_unique",
+        "principal_enrolled",
+        "scope_matches"
+      ]
+    },
+    "execute_payload": {
+      "actors": [
+        "RUNNER"
+      ],
+      "required_facts": [
+        "binding_matches",
+        "compatible_instructions",
+        "deadline_valid",
+        "durable_execution_identity",
+        "least_privileged",
+        "local_identity_unique",
+        "payload_verified",
+        "principal_enrolled",
+        "scope_matches",
+        "user_authorized"
+      ]
+    },
+    "terminate_owned_process": {
+      "actors": [
+        "RUNNER"
+      ],
+      "required_facts": [
+        "binding_matches",
+        "compatible_instructions",
+        "owned_process_identity",
+        "principal_enrolled",
+        "scope_matches",
+        "termination_authorized"
+      ]
+    },
+    "prepare_artifact": {
+      "actors": [
+        "LOCAL_HELPER"
+      ],
+      "required_facts": [
+        "binding_matches",
+        "capacity_reserved",
+        "compatible_instructions",
+        "payload_verified",
+        "principal_enrolled",
+        "private_temp_verified",
+        "scope_matches"
+      ]
+    },
+    "resolve_credential": {
+      "actors": [
+        "CREDENTIAL_RESOLVER"
+      ],
+      "required_facts": [
+        "compatible_instructions",
+        "local_identity_unique",
+        "local_store_verified",
+        "principal_enrolled",
+        "purpose_authorized",
+        "scope_matches"
+      ]
+    },
+    "reset_deployment": {
+      "actors": [
+        "SETUP_HELPER"
+      ],
+      "required_facts": [
+        "authority_fresh",
+        "binding_matches",
+        "compatible_instructions",
+        "conditional_revision",
+        "principal_enrolled",
+        "quiescence_proven",
+        "reset_scope_verified",
+        "scope_matches",
+        "user_authorized"
+      ]
+    }
+  },
+  "failure": {
+    "COMMAND_NONZERO": {
+      "scope": "OPERATION",
+      "action": "PUBLISH_EXECUTION_EVIDENCE",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "PARTIAL_EFFECTS": {
+      "scope": "OPERATION",
+      "action": "PRESERVE_AND_REVIEW_EFFECTS",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "CANCEL_REQUESTED": {
+      "scope": "OPERATION",
+      "action": "WAIT_FOR_ACTUAL_EXECUTION_EVIDENCE",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "UNKNOWN_EXECUTION": {
+      "scope": "OPERATION",
+      "action": "RECONCILE_SAME_EXECUTION",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "STALE_RESULT": {
+      "scope": "OPERATION",
+      "action": "REJECT_STALE_GENERATION",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "MALFORMED_INGRESS": {
+      "scope": "OPERATION",
+      "action": "CORRELATED_REJECTION",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "OUTPUT_LIMIT": {
+      "scope": "OPERATION",
+      "action": "PRESERVE_CAPTURE_COMPLETENESS",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "HOST_OFFLINE": {
+      "scope": "TARGET",
+      "action": "WAIT_FOR_COMMISSIONED_ROUTE",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "SSH_UNAVAILABLE": {
+      "scope": "TARGET",
+      "action": "KEEP_VALID_POLLING_ROUTE",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "SSH_IDENTITY_CHANGED": {
+      "scope": "TARGET",
+      "action": "BLOCK_TARGET_LAUNCH",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "CREDENTIAL_UNAVAILABLE": {
+      "scope": "TARGET",
+      "action": "BLOCK_REQUIRED_CAPABILITY",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "AUTHORITY_CREDENTIAL_UNAVAILABLE": {
+      "scope": "TRANSPORT",
+      "action": "RETAIN_LOCAL_OUTBOX_STOP_SHARED_MUTATION",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "RUNNER_PERMISSION": {
+      "scope": "TARGET",
+      "action": "REPORT_NO_IMPLICIT_ELEVATION",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "WRITE_REPLY_LOST": {
+      "scope": "TRANSPORT",
+      "action": "INSPECT_SAME_TRANSITION",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "PROVIDER_UNAVAILABLE": {
+      "scope": "TRANSPORT",
+      "action": "RETAIN_LOCAL_OUTBOX_STOP_SHARED_MUTATION",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "RATE_LIMIT": {
+      "scope": "TRANSPORT",
+      "action": "BOUNDED_RECONCILIATION_WITH_CONTROL_RESERVE",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "CLOCK_UNQUALIFIED": {
+      "scope": "CAPABILITY",
+      "action": "BLOCK_UNQUALIFIED_TIME_DECISION",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "OWNER_SUPERSEDED": {
+      "scope": "COORDINATOR",
+      "action": "DEMOTE_BEFORE_NEW_DISPATCH",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "AUTHORITY_IDENTITY_AMBIGUOUS": {
+      "scope": "DOMAIN",
+      "action": "BLOCK_MUTATION_NO_REPLACEMENT_ROOT",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "AUTHORITY_BODY_CORRUPT": {
+      "scope": "DOMAIN",
+      "action": "PRESERVE_INVALID_AUTHORITY",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    },
+    "AUTHORITY_ACCESS_COMPROMISED": {
+      "scope": "DOMAIN",
+      "action": "STOP_MUTATION_REQUIRE_ACCESS_REVIEW",
+      "preserve_evidence": true,
+      "automatic_replay": false,
+      "automatic_clear": false,
+      "waits_for_all_sink_ack": false
+    }
+  },
+  "dimensions": {
+    "backend": [
+      "MEMORY_TEST",
+      "NATIVE_DOCS",
+      "RAW_DRIVE_V1",
+      "SYNCED_FILES"
+    ],
+    "platform": [
+      "LINUX",
+      "OTHER",
+      "WINDOWS"
+    ],
+    "topology": [
+      "SAME_HOST",
+      "SEPARATE_HOSTS"
+    ],
+    "launcher": [
+      "EXTERNAL_FIXED",
+      "NONE",
+      "OS_FIXED",
+      "SSH_FIXED"
+    ],
+    "session": [
+      "DESKTOP",
+      "HEADLESS",
+      "SERVICE"
+    ],
+    "editor_trust": [
+      "AUTHORIZED_COOPERATIVE",
+      "UNTRUSTED_EDITOR"
+    ],
+    "workload_trust": [
+      "HOSTILE_SANDBOX_REQUIRED",
+      "OWNER_AUTHORIZED"
+    ],
+    "wake": [
+      "COMMISSIONED",
+      "NONE"
+    ],
+    "network_change": [
+      "NONE",
+      "SCOPED_AUTHORIZED"
+    ]
+  },
+  "evidence_gates": {
+    "authority_cas": [
+      "RP-015",
+      "RP-016"
+    ],
+    "cooperative_role_enforcement": [
+      "RP-017",
+      "RP-018",
+      "RP-031",
+      "RP-043"
+    ],
+    "private_principal_acl": [
+      "RP-022",
+      "RP-024",
+      "RP-059"
+    ],
+    "protected_credentials_windows": [
+      "RP-020"
+    ],
+    "protected_credentials_linux": [
+      "RP-021"
+    ],
+    "native_windows_identity": [
+      "RP-018",
+      "RP-044",
+      "RP-055"
+    ],
+    "native_linux_identity": [
+      "RP-018",
+      "RP-045",
+      "RP-056"
+    ],
+    "durable_unknown_and_output": [
+      "RP-039",
+      "RP-046",
+      "RP-047",
+      "RP-048",
+      "RP-049",
+      "RP-050"
+    ],
+    "bounded_parser_media_rate": [
+      "RP-031",
+      "RP-049",
+      "RP-058",
+      "RP-059"
+    ],
+    "instruction_result_boundary": [
+      "RP-051",
+      "RP-052",
+      "RP-059"
+    ],
+    "same_host_roles": [
+      "RP-060",
+      "RP-062"
+    ],
+    "separate_hosts": [
+      "RP-060",
+      "RP-063"
+    ],
+    "windows_fixed_launch": [
+      "RP-036",
+      "RP-042",
+      "RP-060"
+    ],
+    "linux_fixed_launch": [
+      "RP-037",
+      "RP-042",
+      "RP-060"
+    ],
+    "no_launcher_idle": [
+      "RP-038",
+      "RP-041",
+      "RP-042",
+      "RP-060"
+    ],
+    "wake_topology": [
+      "RP-038",
+      "RP-060",
+      "RP-063"
+    ],
+    "network_change_capability": [
+      "RP-026",
+      "RP-060",
+      "RP-063"
+    ],
+    "headless_session": [
+      "RP-020",
+      "RP-021",
+      "RP-030",
+      "RP-036",
+      "RP-037",
+      "RP-060"
+    ],
+    "package_release_and_live_authority": [
+      "RP-055",
+      "RP-056",
+      "RP-057",
+      "RP-059",
+      "RP-061",
+      "RP-062",
+      "RP-063",
+      "RP-064"
+    ]
+  },
+  "common_gates": [
+    "authority_cas",
+    "bounded_parser_media_rate",
+    "cooperative_role_enforcement",
+    "durable_unknown_and_output",
+    "instruction_result_boundary",
+    "package_release_and_live_authority",
+    "private_principal_acl"
+  ],
+  "bounds": {
+    "control_bytes": 524288,
+    "control_depth": 32,
+    "control_nodes": 50000,
+    "artifact_bytes": 8388608,
+    "result_view_bytes": 512
+  }
+}

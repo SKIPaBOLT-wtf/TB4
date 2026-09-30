@@ -1,5 +1,9 @@
 # TB4 Security Model
 
+R2 development: [security and failure decision gate](SECURITY_FAILURE_CONTRACT.md)
+defines the unreleased native Docs role/trust matrix and mandatory qualification
+blockers. The installed contract below remains applicable until reviewed migration.
+
 TB4 is a remote-execution control system. Its Google Drive control tree is therefore a security boundary, not merely a synchronization folder.
 
 Humorous protocol names provide memorability only. They provide **no security**.

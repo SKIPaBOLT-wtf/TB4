@@ -1,5 +1,9 @@
 # TB4 Failure Recovery
 
+R2 development: [security and failure decision gate](SECURITY_FAILURE_CONTRACT.md)
+defines scoped failure handling and available takeover without all-target ACKs.
+It is an unreleased contract; existing installed recovery behavior is not migrated.
+
 This document maps deliberate failure-injection scenarios to the expected deterministic TB4 outcome.
 
 The rule is simple:

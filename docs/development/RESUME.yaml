@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-012"
 check: "RP-012.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "MERGE"
 source_branch: "work/rp-012-a001"
-source_commit: "e52be7a3883e3b259fdf38b5a49d0295e540ac53"
+source_commit: "f57c88138e35130379b9a040714836ac8de702a3"
 journal: "docs/development/journal/RP-012/A001/events.jsonl"
-last_verified_event: "RP-012-A001-0001"
+last_verified_event: "RP-012-A001-0018"
 last_completed: "RP-011 VERIFIED via PR19; accepted main e52be7a3883e3b259fdf38b5a49d0295e540ac53."
-next_action: "Implement the decision matrix and executable negative fixtures; publish source outcome before targeted and native validation."
+next_action: "Merge PR20 at exact current head and inspect main outcome."
 verification: "Review exact actor/action ownership, fault scope, canonical input/reference bounds and every declared mode/blocker; validate source-linked synthetic/CI evidence before design acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-012-A001-0001"]
+unsettled_intents: ["RP-012-A001-0018"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-014"]
 rollback: "Deny by default. Public design-only change leaves v1 installed behavior untouched; unsupported capabilities stay visibly unavailable and rollback cannot widen authority or replay unknown work."
 next_implementation_step: "RP-012"
 next_implementation_check: "RP-012.C1"

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "item": "RP-012",
+  "check": "RP-012.C3",
+  "attempt": "A001",
+  "source_ref": "f57c88138e35130379b9a040714836ac8de702a3",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Inspect security_contract.py and exact export, contract/amendment and negative fixture assertions. Execute recorded synthetic commands, inspect source-equal native jobs/logs/artifact metadata and all four check obligations; no test-count-only acceptance.",
+  "expected": "Bounded hostile control/media input and untrusted result handling define actual downstream rate/log/capture proof obligations.",
+  "observed": "Reviewed 23 actions/10 actors/21 fault reasons and 4608 mode combinations. Final Windows 985 passed+2 explicit platform skips (987 collected), Linux CI 1259+2, Linux Desktop full1269/GUI67, Windows GUI63+4; both role builds/package/self-test/GUI/install-uninstall isolation pass. Current ledger/scanner/diff/source equality pass. DEF-014 fixture-name and repair-projection failures retained and scoped rechecks passed; all real security capability gates remain unqualified.",
+  "exit_code": 0,
+  "platform_scope": "Isolated Windows Python3.11 synthetic suite; GitHub Linux full CI and native Windows/Linux credential-free GUI/packaging. No real deployment.",
+  "negative_cases": [
+    "role confusion and missing predicates",
+    "stale owner claim without ACK barrier; missing CAS rejected",
+    "target versus authority outage",
+    "duplicate/nonfinite/invalid Unicode/depth/node/size JSON",
+    "foreign slot/generation/hash/path/URL/interpreter",
+    "untrusted result cannot grant authority",
+    "all unsupported/missing-proof combinations",
+    "Windows oversized test-name regression"
+  ],
+  "unverified_scope": "Pure specification does not authenticate principals or prove provider/OS ACL, streaming/capture, live takeover, native credentials, launch topology or hostile-code sandbox. Mandatory gate inventory and explicit owner live authorization remain required.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "No installed behavior or live state changed. Keep deny-by-default and unknown work; remove draft integration only, never broaden permissions or replay.",
+  "intent_event": "RP-012-A001-0013",
+  "outcome_event": "RP-012-A001-0015",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-012/A001/reviewed-validation.md"
+  ]
+}
