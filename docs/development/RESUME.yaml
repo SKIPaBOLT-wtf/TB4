@@ -1,21 +1,21 @@
 schema_version: 1
 revision: R2
-work_item: RP-001
-check: RP-001.C4
+work_item: RP-002
+check: RP-002.C1
 attempt: A001
-phase: VERIFIED
-source_branch: main
-source_commit: 66b7de7b782ba2f4fa58e4fd8556857d0092634d
-journal: docs/development/journal/RP-001/A001/events.jsonl
-last_verified_event: RP-001-A001-0021
-last_completed: RP-001 VERIFIED; four reviewed checks, Windows/Linux validation and merged PR 8.
-next_action: Read RP-002 specification; publish its A001 implementation INTENT and verify remote readback before editing.
-verification: Exact branch ownership, source/diff inspection, then separately journaled targeted tests and full-plan validation.
+phase: IMPLEMENT
+source_branch: work/rp-002-a001
+source_commit: 8e444d85d0989a1a4dea9b170a51e4b4b7ec2fcd
+journal: docs/development/journal/RP-002/A001/events.jsonl
+last_verified_event: RP-002-A001-0001
+last_completed: RP-001 VERIFIED, merged PR 8, main Progress 36758213874 passed.
+next_action: Implement CHECKPOINT-PUBLISHER source unit and checkpoint outcome before tests.
+verification: RP-001 validates candidate ledgers; new tests exercise publication interruption and no-replay resume.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: [RP-002-A001-0001]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: [DEF-001, DEF-002]
-rollback: Revert development validator and CI wiring; preserve journal/evidence; use manual enforcement.
+rollback: Disable development helper; preserve pending/journal records; use manual checkpoints.
