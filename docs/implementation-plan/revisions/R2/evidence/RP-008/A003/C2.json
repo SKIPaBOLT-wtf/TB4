@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "item": "RP-008",
+  "check": "RP-008.C2",
+  "attempt": "A003",
+  "source_ref": "bf148dd888824e32dc58958bc96e7b5f03b6b252",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Review A001 verified provider evidence, A-002 owner amendment, 28 A003 case assertions and explicit external-effect counterexample; run targeted Windows/full Linux regression, immutable history and public-data checks. See reviewed-validation.md and matching CI logs.",
+  "expected": "Powered-off owner and no sink acknowledgements allow immediate safe shared-state claim; concurrent/forced/old-writer cases are falsifiable.",
+  "observed": "A003 corrected design passed Windows 326 tests/1 POSIX skip in 14.37s and Linux full CI 36778251106; Progress 36778250863, local UTF-8 history/scanner/diff passed. 28 new owner-policy cases reviewed and 327 collected nodes preserved. Historical evidence unchanged. No actual adapter/UI/live deployment acceptance claimed.",
+  "exit_code": 0,
+  "platform_scope": "Windows/Linux Python 3.11 synthetic tests and previous isolated Docs CAS evidence; no real multi-host runtime/UI test.",
+  "negative_cases": [
+    "Simultaneous stale-record contenders",
+    "Renewed incumbent and old-owner fresh-read spoofing",
+    "Force request concurrency, crash, expiry and wrong epoch",
+    "Shared authority partition and clock uncertainty",
+    "Unknown external effects preserved; check/dispatch suspension overlap explicit"
+  ],
+  "unverified_scope": "Design only. Actual conditional adapter/runtime/GUI and cross-host tests remain later gates; no zero-overlap external effect guarantee. Missing shared authority differs from missing old host/sink.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "No live change. Preserve immutable evidence, one authority identity, increasing epochs and unknown/unread work; no migration or rollback replay.",
+  "intent_event": "RP-008-A003-0003",
+  "outcome_event": "RP-008-A003-0005",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-008/A003/reviewed-validation.md"
+  ]
+}
