@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-011"
 check: "RP-011.C1"
 attempt: "A001"
-phase: "MERGE"
-source_branch: "work/rp-011-a001"
+phase: "VERIFIED"
+source_branch: "main"
 source_commit: "6a0fea10ef65bcd97fad777532feade02ee47b5d"
 journal: "docs/development/journal/RP-011/A001/events.jsonl"
-last_verified_event: "RP-011-A001-0013"
-last_completed: "RP-010 VERIFIED via PR18; accepted main 16ddca1b50bd047afd94fd1e1738bff3f463474c."
-next_action: "Continue RP-012 security/failure decision gate after main readback and Progress."
-verification: "Source/model fixtures must preserve canonical owner values and same-role independence; exact-source local/CI/native tests and reviewed evidence before acceptance."
+last_verified_event: "RP-011-A001-0014"
+last_completed: "RP-011 VERIFIED via PR19; source 6a0fea10ef65bcd97fad777532feade02ee47b5d; merge 11bfdda424c9f1443e0702d428e6b726aed828cb"
+next_action: "Verify main Progress and ledger, then claim RP-012 A001 to map authorization/trust, failure scopes and supported-mode acceptance blockers."
+verification: "Main Progress and current UTF-8 ledger must pass before RP-012 source ownership."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-011-A001-0013"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-013"]
+known_open_defects: ["DEF-001","DEF-002"]
 rollback: "Draft design and synthetic models only; installed defaults and live timers untouched. Runtime profile rollback requires quiescent roles and never rewrites operation time/history."
-next_implementation_step: "RP-011"
-next_implementation_check: "RP-011.C1"
+next_implementation_step: "RP-012"
+next_implementation_check: "RP-012.C1"
