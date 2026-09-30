@@ -1,5 +1,9 @@
 # TB4 COACH Interface
 
+> Historical v1 runtime reference. New instruction selection starts at
+> `skill/tb4/SKILL.md` and its pinned compatibility catalog. This manual is not
+> an R2 operational profile or a fallback when no compatible release exists.
+
 COACH is the AI-side decision layer. It turns a user goal into a small number of deterministic TB4 control-plane operations.
 
 COACH does **not** replace WATCHDOG, FETCHER, RUNNER, or the protocol validators.
