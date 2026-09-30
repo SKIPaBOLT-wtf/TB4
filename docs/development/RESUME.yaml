@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-013"
 check: "RP-013.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "MERGE"
 source_branch: "work/rp-013-a001"
-source_commit: "fbfa1436fdf7a2bd974d18bb9a56150f0f3ef1eb"
+source_commit: "0e10234a58ec993e9c0fb0d4893fb1f80ee2ee0e"
 journal: "docs/development/journal/RP-013/A001/events.jsonl"
-last_verified_event: "RP-013-A001-0003"
+last_verified_event: "RP-013-A001-0010"
 last_completed: "RP-012 VERIFIED via PR20; accepted main fbfa1436fdf7a2bd974d18bb9a56150f0f3ef1eb."
-next_action: "Fast-forward existing unchanged RP-013 branch, author minimal source-linked reproductions and handoff, then publish outcome before validation."
+next_action: "Merge PR21 and verify resulting main checkpoint."
 verification: "Reproduce exact ordinary terminal-publication paths with controlled synthetic provider scheduling; keep historical causality unknown without original trace. Review smallest failing invariant for RP-015."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-013-A001-0003"]
+unsettled_intents: ["RP-013-A001-0010"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
