@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "item": "RP-008",
+  "check": "RP-008.C3",
+  "attempt": "A001",
+  "source_ref": "061587a5a9fa3ed8b4081c6b967a077cd9700d4d",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect actual source and connector request boundaries, primary provider references and named deterministic counterexample assertions; distinguish assumptions from qualified mechanisms.",
+  "procedure": "Windows feasibility/drive/development tests; Linux exact-head CI; isolated single-document strict revision experiment and verified cleanup; inspect commissioning/fencing constraints.",
+  "expected": "Owner commissioning, incumbent priority, takeover fencing and one-domain constraints specified.",
+  "observed": "C1-C3 evidence reviewed; 17 feasibility cases passed; corrected Windows 223 passed/1 POSIX skip and Linux 878 passed/2 optional GUI skips. Real Docs stale revision rejected and fixture removed. No C4 safe mechanism or release claimed.",
+  "exit_code": 0,
+  "platform_scope": "Windows Python 3.11 local synthetic; Linux CI; current Google Docs connector/principal on one disposable fixture only.",
+  "negative_cases": [
+    "precheck/write overlap and split metadata/body version",
+    "six contender orders; delayed/partition/suspended/expired/clock-uncertain and wrong-domain",
+    "lease-only unfenced effect and independent sync replicas",
+    "actual Docs stale requiredRevisionId rejection"
+  ],
+  "unverified_scope": "C4 owner-approved complete storage/effect-fencing mechanism; shared-folder and multi-principal/provider qualification; Windows ACL, native ARM and live deployment.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Only new disposable fixture deleted; no real roots/leases/network changed; preserve history and no replay.",
+  "intent_event": "RP-008-A001-0007",
+  "outcome_event": "RP-008-A001-0008",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-008/A001/reviewed-validation.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-008/A001/storage-decision.md"
+  ]
+}

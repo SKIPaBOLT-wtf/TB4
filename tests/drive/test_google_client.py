@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import os
 from pathlib import Path
 
 import pytest
@@ -71,18 +72,18 @@ def config(tmp_path: Path, *, interactive=False, scopes=(GOOGLE_DRIVE_CONTROL_SC
     )
 
 
-def test_environment_config_requires_private_file_paths():
+def test_environment_config_requires_private_file_paths(tmp_path):
     with pytest.raises(ValueError):
         GoogleAuthConfig.from_environment({})
 
     cfg = GoogleAuthConfig.from_environment(
         {
-            "TB4_GOOGLE_CLIENT_SECRETS": "/private/client.json",
-            "TB4_GOOGLE_TOKEN": "/private/token.json",
+            "TB4_GOOGLE_CLIENT_SECRETS": str(tmp_path / "client.json"),
+            "TB4_GOOGLE_TOKEN": str(tmp_path / "token.json"),
         }
     )
-    assert str(cfg.client_secrets_path) == "/private/client.json"
-    assert str(cfg.token_path) == "/private/token.json"
+    assert cfg.client_secrets_path == tmp_path / "client.json"
+    assert cfg.token_path == tmp_path / "token.json"
 
 
 def test_missing_credentials_is_normalized_without_interactive_side_effect(tmp_path):
@@ -118,7 +119,12 @@ def test_existing_valid_token_builds_drive_v3_client(tmp_path):
     assert calls[0][3] is False
 
 
-def test_expired_refreshable_token_refreshes_and_rewrites_private_cache(tmp_path):
+@pytest.mark.parametrize("check_posix_mode", [
+    False,
+    pytest.param(True, marks=pytest.mark.skipif(
+        os.name != "posix", reason="POSIX mode assertion; Windows ACL qualification remains RP-020")),
+])
+def test_expired_refreshable_token_refreshes_and_rewrites_private_cache(tmp_path, check_posix_mode):
     cfg = config(tmp_path)
     cfg.token_path.write_text("old", encoding="utf-8")
     FakeCredentials.loaded = FakeCredentials(
@@ -139,7 +145,7 @@ def test_expired_refreshable_token_refreshes_and_rewrites_private_cache(tmp_path
     assert report.outcome is GoogleAuthOutcome.READY
     assert report.token_written is True
     assert cfg.token_path.read_text(encoding="utf-8") == '{"refreshed":true}'
-    if hasattr(cfg.token_path.stat(), "st_mode"):
+    if check_posix_mode:
         assert cfg.token_path.stat().st_mode & 0o077 == 0
 
 
