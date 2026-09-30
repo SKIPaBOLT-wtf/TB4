@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "repository": "SKIPaBOLT-wtf/TB4",
+  "repository_id": 1387734416,
+  "entry": "skill/tb4/SKILL.md",
+  "entry_sha256": "187672b48fa04cb7a408200175d5b133879ab9b98e9ae1d88d535e2dee17363e",
+  "profiles": [
+    {
+      "id": "r2-development",
+      "status": "UNRELEASED",
+      "builds": [],
+      "protocol": 2,
+      "requires": [
+        "goal-status-v2"
+      ],
+      "instructions": "skill/tb4/operations/r2.md",
+      "files": {
+        "skill/tb4/operations/r2.md": "4303178a28423c1591c9288b45250bbc951b223a6414060b6ca4a11700252803"
+      }
+    }
+  ]
+}

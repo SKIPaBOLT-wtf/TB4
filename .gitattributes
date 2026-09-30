@@ -1,0 +1,4 @@
+# Catalog hashes describe Git blob bytes, independent of host checkout defaults.
+skill/tb4/SKILL.md text eol=lf
+skill/tb4/compatibility.json text eol=lf
+skill/tb4/operations/*.md text eol=lf

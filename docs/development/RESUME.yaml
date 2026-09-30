@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-007"
 check: "RP-007.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "MERGE"
 source_branch: "work/rp-007-a001"
-source_commit: "9c633e62f4f1572de293ef75782788f7da6b5146"
+source_commit: "d1af5328d05f1dda9cf36a662df06f158c0252e5"
 journal: "docs/development/journal/RP-007/A001/events.jsonl"
-last_verified_event: "RP-007-A001-0001"
+last_verified_event: "RP-007-A001-0008"
 last_completed: "RP-001 through RP-006 VERIFIED and merged; main Progress 36770389600 passed; DEF-001/DEF-002 remain OPEN."
-next_action: "Implement source and synthetic tests; publish source OUTCOME then separate validation INTENT."
+next_action: "Inspect merged journal and record acceptance; verify main Progress before RP-008."
 verification: "Fresh resolution, immutable reference closure, compatibility boundaries, missing/cache/revocation/update failures, untrusted-data isolation and pointer-only package review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-007-A001-0001"]
+unsettled_intents: ["RP-007-A001-0008"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]

@@ -10,6 +10,7 @@ from tb4.security import scan_text
 
 ROOT = Path(__file__).resolve().parents[2]
 SKILL = ROOT / "skill" / "tb4" / "SKILL.md"
+LEGACY = ROOT / "skill/tb4/references/legacy-v1.md"
 
 
 def _state_spec() -> dict:
@@ -26,10 +27,10 @@ def test_skill_has_valid_minimal_metadata_and_required_agent_metadata() -> None:
     frontmatter = yaml.safe_load(text.split("---", 2)[1])
     assert frontmatter["name"] == "tb4"
     description = frontmatter["description"]
-    assert "Drive-native terminal bridge" in description
+    assert "repository-owned instructions" in description
     assert "wake" in description
     assert "cancel" in description
-    assert "recover" in description
+    assert "recovery" in description
 
     agent = yaml.safe_load(
         (ROOT / "skill/tb4/agents/openai.yaml").read_text(encoding="utf-8")
@@ -45,16 +46,14 @@ def test_skill_is_compact_and_progressively_loads_canonical_sources() -> None:
     )
 
     assert len(text.splitlines()) < 220
-    assert "docs/START_HERE.md" in text
-    assert "docs/COACH.md" in text
-    assert "protocol/state-machines.yaml" in text
-    assert "PARK_MAP" in text
+    assert "skill/tb4/compatibility.json" in text
+    assert "docs/INSTRUCTION_CONTRACT.md" in text
     assert "protocol/state-machines.yaml" in source_map
     assert "config/defaults.toml" in source_map
 
 
-def test_skill_fetch_ball_state_names_are_canonical() -> None:
-    text = SKILL.read_text(encoding="utf-8")
+def test_preserved_v1_manual_fetch_ball_state_names_are_canonical() -> None:
+    text = LEGACY.read_text(encoding="utf-8")
     canonical = set(_state_spec()["state_machines"]["FETCH_BALL"]["states"])
     referenced = set(re.findall(r"FETCH_BALL_([A-Z]+)", text))
 
@@ -109,8 +108,8 @@ def test_representative_workflows_encode_required_safety_branches() -> None:
     assert "require_watchdog_revalidation_before_clean" in blocked
 
 
-def test_skill_forbids_ssh_payload_transport_and_busy_polling() -> None:
-    text = SKILL.read_text(encoding="utf-8")
+def test_preserved_v1_manual_retains_transport_and_wait_boundaries() -> None:
+    text = LEGACY.read_text(encoding="utf-8")
     lowered = text.lower()
 
     assert "ssh is a fixed service-bootstrap mechanism only" in lowered
