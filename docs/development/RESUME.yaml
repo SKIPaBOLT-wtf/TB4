@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-010"
 check: "RP-010.C1"
 attempt: "A001"
-phase: "REVIEW_REPAIR"
+phase: "SOURCE"
 source_branch: "work/rp-010-a001"
-source_commit: "45c6452a4d3006015a1a27778e7578d7f0239338"
+source_commit: "55e617d77f4490f83e3454a650c8875280af1e61"
 journal: "docs/development/journal/RP-010/A001/events.jsonl"
-last_verified_event: "RP-010-A001-0013"
+last_verified_event: "RP-010-A001-0014"
 last_completed: "RP-001 through RP-009 VERIFIED; all relevant Windows/Linux/native checks passed and RP-009 merged. Current RP-008 amendment requires takeover without global old-host/sink ACK."
-next_action: "Publish bounded repair intent for schema-first correction prepass, malformed-record regression cases and original LF source endings; no command-contract behavior changes."
+next_action: "Implement input guard and regressions, publish source outcome, then rerun current targeted and required CI gates."
 verification: "Positive/negative schema and slot-budget fixtures, malformed/different-payload duplicates, busy targets, claim-versus-timeout orderings, correlated cancel/result/ACK, stale-generation and actor restrictions; prior regressions and exact-source CI/build review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-010-A001-0014"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-012"]
