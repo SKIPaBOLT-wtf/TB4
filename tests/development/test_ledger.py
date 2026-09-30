@@ -177,6 +177,74 @@ def test_duplicate_and_out_of_order_events():
             validate_journal(rows, "RP-001", "A001", lambda _: True)
 
 
+def corrected_started():
+    intent = event()
+    started = event(2, "STARTED", "RP-001-A001-0002")
+    started["run_id"] = "synthetic-run-1"
+    correction = event(3, "CORRECTION", started["event_id"], "RECORDED")
+    correction.update(run_id=started["run_id"], reference_correction={
+        "field":"related_event", "old_value":started["related_event"], "new_value":intent["event_id"]})
+    return [intent, started, correction]
+
+
+def test_started_reference_correction_preserves_original_and_pending_intent():
+    rows = corrected_started(); original = copy.deepcopy(rows)
+    with pytest.raises(LedgerError, match="STARTED_WITHOUT_RUN_OR_INTENT"):
+        validate_journal(rows[:2], "RP-001", "A001", lambda _: True)
+    by_id, pending = validate_journal(rows, "RP-001", "A001", lambda _: True)
+    assert rows == original
+    assert by_id[rows[1]["event_id"]]["related_event"] == rows[1]["event_id"]
+    assert list(pending) == [rows[0]["event_id"]]
+    rows.append(event(4, "OUTCOME", rows[0]["event_id"], "FAIL"))
+    assert validate_journal(rows, "RP-001", "A001", lambda _: True)[1] == {}
+
+
+@pytest.mark.parametrize("fault", ["outcome", "target", "old", "new", "field", "run", "action", "check", "source", "no-justification", "not-correction", "extra-field"])
+def test_reference_correction_cannot_rewrite_execution_or_invent_authorization(fault):
+    rows = corrected_started(); c = rows[-1]; patch = c["reference_correction"]
+    if fault == "outcome": c["outcome"] = "PASS"
+    elif fault == "target": c["related_event"] = rows[0]["event_id"]
+    elif fault == "old": patch["old_value"] = "different"
+    elif fault == "new": patch["new_value"] = "RP-001-A001-9999"
+    elif fault == "field": patch["field"] = "source_ref"
+    elif fault == "run": c["run_id"] = "different"
+    elif fault == "action": c["action_id"] = "DIFFERENT"
+    elif fault == "check": c["check"] = "RP-001.C2"
+    elif fault == "source": c["source_ref"] = "b" * 40
+    elif fault == "no-justification": c["observed"] = None
+    elif fault == "not-correction": c["event"] = "OBSERVATION"
+    elif fault == "extra-field": patch["authorization"] = True
+    with pytest.raises(LedgerError):
+        validate_journal(rows, "RP-001", "A001", lambda _: True)
+
+
+def test_duplicate_reference_correction_fails_even_when_same_value():
+    rows = corrected_started(); duplicate = copy.deepcopy(rows[-1])
+    duplicate.update(sequence=4, event_id="RP-001-A001-0004")
+    with pytest.raises(LedgerError,match="REFERENCE_CORRECTION_CONFLICT"):
+        validate_journal(rows+[duplicate], "RP-001", "A001", lambda _: True)
+
+
+def test_correction_cannot_reopen_an_intent_closed_before_the_original_start():
+    rows = corrected_started()
+    outcome = event(2, "OUTCOME", rows[0]["event_id"], "FAIL")
+    rows[1].update(sequence=3,event_id="RP-001-A001-0003",related_event="RP-001-A001-0003")
+    rows[2].update(sequence=4,event_id="RP-001-A001-0004",related_event=rows[1]["event_id"])
+    rows[2]["reference_correction"]["old_value"] = rows[1]["event_id"]
+    with pytest.raises(LedgerError,match="STARTED_WITHOUT_RUN_OR_INTENT"):
+        validate_journal([rows[0],outcome,*rows[1:]], "RP-001", "A001", lambda _: True)
+
+
+def test_later_intent_cannot_retroactively_authorize_started():
+    rows = corrected_started()
+    rows[0].update(sequence=2,event_id="RP-001-A001-0002")
+    rows[1].update(sequence=1,event_id="RP-001-A001-0001",related_event=None)
+    rows[2].update(related_event=rows[1]["event_id"])
+    rows[2]["reference_correction"].update(old_value=None,new_value=rows[0]["event_id"])
+    with pytest.raises(LedgerError,match="REFERENCE_CORRECTION_TARGET_INVALID"):
+        validate_journal([rows[1],rows[0],rows[2]], "RP-001", "A001", lambda _: True)
+
+
 def test_failed_outcome_preserved_with_correction():
     rows = [event(), event(2, "OUTCOME", "RP-001-A001-0001", "FAIL"),
             event(3, "CORRECTION", "RP-001-A001-0002", "RECORDED")]
