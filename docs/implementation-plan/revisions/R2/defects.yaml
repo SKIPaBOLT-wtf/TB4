@@ -1,82 +1,335 @@
-schema_version: 1
+schema_version: 2
 defects:
   DEF-001:
     title: Ordinary terminal publication remains in RETURNING after rename conflict
     status: OPEN
-    evidence_source: docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md
-    observation_kind: Historical evidence plus owner-submitted FAILED telemetry; not a new live read.
     detected_in: IP-68
     suspected_origin: null
     proven_origin: null
-    reproduction_step: RP-013
-    repair_steps: [RP-015, RP-047, RP-048]
-    required_acceptance: [RP-058, RP-062, RP-064]
-    rule: A successful manual recovery or DONE body is not proof that ordinary publication is fixed.
+    reproduction:
+      procedure: A successful manual recovery or DONE body is not proof that ordinary publication is fixed.
+      failing_source: null
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md
+    repair_steps:
+    - RP-015
+    - RP-047
+    - RP-048
+    affected_acceptance:
+    - RP-058
+    - RP-062
+    - RP-064
+    affected_requirements:
+    - R01
+    - R02
+    - R03
+    - R04
+    - R05
+    - R06
+    - R07
+    - R08
+    - R09
+    - R10
+    - R11
+    - R12
+    - R13
+    - R14
+    - R15
+    - R16
+    - R17
+    - R18
+    - R19
+    - R20
+    - R21
+    - R22
+    hypotheses: []
+    repairs: []
+    issue: null
+    regression_test: null
+    resolution_evidence: []
+    notes: Historical v1 migration; omitted proof remains unknown. Original fields retained in legacy_record.
+    legacy_record: '{"detected_in":"IP-68","evidence_source":"docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md","observation_kind":"Historical
+      evidence plus owner-submitted FAILED telemetry; not a new live read.","proven_origin":null,"repair_steps":["RP-015","RP-047","RP-048"],"reproduction_step":"RP-013","required_acceptance":["RP-058","RP-062","RP-064"],"rule":"A
+      successful manual recovery or DONE body is not proof that ordinary publication is fixed.","status":"OPEN","suspected_origin":null,"title":"Ordinary
+      terminal publication remains in RETURNING after rename conflict"}'
   DEF-002:
     title: Cancellation acknowledgement/classification may outlive natural completion
     status: OPEN
-    issue: https://github.com/SKIPaBOLT-wtf/TB4/issues/7
-    evidence_source: docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md
     detected_in: IP-68
     suspected_origin: null
     proven_origin: null
-    reproduction_step: RP-014
-    repair_steps: [RP-044, RP-045, RP-046]
-    required_acceptance: [RP-058, RP-062, RP-064]
-    rule: Preserve output and actual termination evidence; publication-only recovery cannot close this defect.
+    reproduction:
+      procedure: Preserve output and actual termination evidence; publication-only recovery cannot close
+        this defect.
+      failing_source: null
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md
+    repair_steps:
+    - RP-044
+    - RP-045
+    - RP-046
+    affected_acceptance:
+    - RP-058
+    - RP-062
+    - RP-064
+    affected_requirements:
+    - R01
+    - R02
+    - R03
+    - R04
+    - R05
+    - R06
+    - R07
+    - R08
+    - R09
+    - R10
+    - R11
+    - R12
+    - R13
+    - R14
+    - R15
+    - R16
+    - R17
+    - R18
+    - R19
+    - R20
+    - R21
+    - R22
+    hypotheses: []
+    repairs: []
+    issue: https://github.com/SKIPaBOLT-wtf/TB4/issues/7
+    regression_test: null
+    resolution_evidence: []
+    notes: Historical v1 migration; omitted proof remains unknown. Original fields retained in legacy_record.
+    legacy_record: '{"detected_in":"IP-68","evidence_source":"docs/implementation-plan/evidence/IP-68/E-002-recorded-return-recovery.md","issue":"https://github.com/SKIPaBOLT-wtf/TB4/issues/7","proven_origin":null,"repair_steps":["RP-044","RP-045","RP-046"],"reproduction_step":"RP-014","required_acceptance":["RP-058","RP-062","RP-064"],"rule":"Preserve
+      output and actual termination evidence; publication-only recovery cannot close this defect.","status":"OPEN","suspected_origin":null,"title":"Cancellation
+      acknowledgement/classification may outlive natural completion"}'
   DEF-003:
     title: Authorization navigation retained stale planning-only paragraphs
     status: RESOLVED
     detected_in: RP-001.C1
-    suspected_origin: 33d616e65216373bfe8f964390946bd86c3c54b3
-    proven_origin: 33d616e65216373bfe8f964390946bd86c3c54b3
-    evidence_source: docs/development/journal/PLAN-R2/A001/events.jsonl
-    reproduction: Read AGENTS, START_HERE and WORK_INSTRUCTION at origin; compare with CURRENT and implementation authorization.
-    repair_steps: [RP-001]
-    required_acceptance: [RP-001.C1]
-    resolution: PLAN-R2-A001-0009; exact current paragraphs compared with recorded grant; prior defective source preserved.
+    suspected_origin:
+      work_item: null
+      source_ref: 33d616e65216373bfe8f964390946bd86c3c54b3
+      evidence: &id001
+      - docs/development/journal/PLAN-R2/A001/events.jsonl
+    proven_origin:
+      work_item: null
+      source_ref: 33d616e65216373bfe8f964390946bd86c3c54b3
+      evidence: *id001
+    reproduction:
+      procedure: Read AGENTS, START_HERE and WORK_INSTRUCTION at origin; compare with CURRENT and implementation
+        authorization.
+      failing_source: null
+      passing_source: null
+      evidence: *id001
+    repair_steps:
+    - RP-001
+    affected_acceptance:
+    - RP-001.C1
+    affected_requirements:
+    - R19
+    - R20
+    - R21
+    hypotheses: []
+    repairs: []
+    issue: null
+    regression_test: null
+    resolution_evidence: *id001
+    notes: Historical v1 migration; omitted proof remains unknown. Original fields retained in legacy_record.
+    legacy_record: '{"detected_in":"RP-001.C1","evidence_source":"docs/development/journal/PLAN-R2/A001/events.jsonl","proven_origin":"33d616e65216373bfe8f964390946bd86c3c54b3","repair_steps":["RP-001"],"reproduction":"Read
+      AGENTS, START_HERE and WORK_INSTRUCTION at origin; compare with CURRENT and implementation authorization.","required_acceptance":["RP-001.C1"],"resolution":"PLAN-R2-A001-0009;
+      exact current paragraphs compared with recorded grant; prior defective source preserved.","status":"RESOLVED","suspected_origin":"33d616e65216373bfe8f964390946bd86c3c54b3","title":"Authorization
+      navigation retained stale planning-only paragraphs"}'
   DEF-004:
     title: Windows test runner exits in unrelated stale temporary-directory cleanup
     status: RESOLVED
     detected_in: RP-001.C1
-    suspected_origin: Test environment outside the development checkout
+    suspected_origin: null
     proven_origin: null
-    evidence_source: docs/implementation-plan/revisions/R2/evidence/RP-001/A001/initial-validation.md
-    reproduction: Initial targeted pytest process ended with WinError 5 during temporary-root cleanup.
-    repair_steps: [RP-001]
-    required_acceptance: [RP-001.C1]
-    proposed_resolution: Use a dedicated new workspace temporary root; preserve unrelated old directory.
-
-    resolution: Isolated workspace temporary root completed 45 tests with exit 0; unrelated old directory left intact; original environment cause not further investigated.
+    reproduction:
+      procedure: Initial targeted pytest process ended with WinError 5 during temporary-root cleanup.
+      failing_source: null
+      passing_source: null
+      evidence: &id002
+      - docs/implementation-plan/revisions/R2/evidence/RP-001/A001/initial-validation.md
+    repair_steps:
+    - RP-001
+    affected_acceptance:
+    - RP-001.C1
+    affected_requirements:
+    - R19
+    - R20
+    - R21
+    hypotheses:
+    - id: legacy-suspicion
+      claim: Test environment outside the development checkout
+      result: UNTESTED
+      evidence: *id002
+    repairs: []
+    issue: null
+    regression_test: null
+    resolution_evidence: *id002
+    notes: Historical v1 migration; omitted proof remains unknown. Original fields retained in legacy_record.
+    legacy_record: '{"detected_in":"RP-001.C1","evidence_source":"docs/implementation-plan/revisions/R2/evidence/RP-001/A001/initial-validation.md","proposed_resolution":"Use
+      a dedicated new workspace temporary root; preserve unrelated old directory.","proven_origin":null,"repair_steps":["RP-001"],"reproduction":"Initial
+      targeted pytest process ended with WinError 5 during temporary-root cleanup.","required_acceptance":["RP-001.C1"],"resolution":"Isolated
+      workspace temporary root completed 45 tests with exit 0; unrelated old directory left intact; original
+      environment cause not further investigated.","status":"RESOLVED","suspected_origin":"Test environment
+      outside the development checkout","title":"Windows test runner exits in unrelated stale temporary-directory
+      cleanup"}'
   DEF-005:
     title: Ledger review found incomplete event phase and active attempt consistency guards
     status: RESOLVED
     detected_in: RP-001.C2
-    suspected_origin: 82f8977d8f8b84d9e2ba067f4c0c5df332be5455
+    suspected_origin:
+      work_item: null
+      source_ref: 82f8977d8f8b84d9e2ba067f4c0c5df332be5455
+      evidence: &id003
+      - docs/development/journal/RP-001/A001/events.jsonl
     proven_origin: null
-    evidence_source: docs/development/journal/RP-001/A001/events.jsonl
-    repair_steps: [RP-001]
-    required_acceptance: [RP-001.C1, RP-001.C2, RP-001.C3]
-
+    reproduction:
+      procedure: See retained source review journal.
+      failing_source: null
+      passing_source: null
+      evidence: *id003
+    repair_steps:
+    - RP-001
+    affected_acceptance:
+    - RP-001.C1
+    - RP-001.C2
+    - RP-001.C3
+    affected_requirements:
+    - R19
+    - R20
+    - R21
+    hypotheses: []
+    repairs: []
+    issue: null
+    regression_test: null
+    resolution_evidence: *id003
+    notes: Historical v1 migration; omitted proof remains unknown. Original fields retained in legacy_record.
+    legacy_record: '{"detected_in":"RP-001.C2","evidence_source":"docs/development/journal/RP-001/A001/events.jsonl","proven_origin":null,"repair_steps":["RP-001"],"required_acceptance":["RP-001.C1","RP-001.C2","RP-001.C3"],"status":"RESOLVED","suspected_origin":"82f8977d8f8b84d9e2ba067f4c0c5df332be5455","title":"Ledger
+      review found incomplete event phase and active attempt consistency guards"}'
   DEF-006:
     title: General CI cannot import repository development tools under console pytest
     status: RESOLVED
     detected_in: RP-001.C4
-    suspected_origin: 82f8977d8f8b84d9e2ba067f4c0c5df332be5455
+    suspected_origin:
+      work_item: null
+      source_ref: 82f8977d8f8b84d9e2ba067f4c0c5df332be5455
+      evidence: &id004 []
     proven_origin: null
-    first_bad_source: 9f475a743e8b712694a00d7bce66116cecf7dd99
-    reproduction: CI run 36756514149 job 110028025655, test collection exit 2, tools module unavailable.
-    repair_steps: [RP-001]
-    required_acceptance: [RP-001.C4]
-    proposed_resolution: Use python -m pytest consistently with Progress and Desktop workflows.
+    reproduction:
+      procedure: CI run 36756514149 job 110028025655, test collection exit 2, tools module unavailable.
+      failing_source: 9f475a743e8b712694a00d7bce66116cecf7dd99
+      passing_source: null
+      evidence: *id004
+    repair_steps:
+    - RP-001
+    affected_acceptance:
+    - RP-001.C4
+    affected_requirements:
+    - R19
+    - R20
+    - R21
+    hypotheses: []
+    repairs: []
+    issue: null
+    regression_test: null
+    resolution_evidence: *id004
+    notes: Historical v1 migration; omitted proof remains unknown. Original fields retained in legacy_record.
+    legacy_record: '{"detected_in":"RP-001.C4","first_bad_source":"9f475a743e8b712694a00d7bce66116cecf7dd99","proposed_resolution":"Use
+      python -m pytest consistently with Progress and Desktop workflows.","proven_origin":null,"repair_steps":["RP-001"],"reproduction":"CI
+      run 36756514149 job 110028025655, test collection exit 2, tools module unavailable.","required_acceptance":["RP-001.C4"],"status":"RESOLVED","suspected_origin":"82f8977d8f8b84d9e2ba067f4c0c5df332be5455","title":"General
+      CI cannot import repository development tools under console pytest"}'
   DEF-007:
     title: Checkpoint preparation did not bind local documents to declared public parent
     status: RESOLVED
     detected_in: RP-002.C2
-    suspected_origin: 467ac1033c5795fe88fd7765bbd1ad1142db26c7
+    suspected_origin:
+      work_item: null
+      source_ref: 467ac1033c5795fe88fd7765bbd1ad1142db26c7
+      evidence: &id005
+      - docs/development/journal/RP-002/A001/events.jsonl
     proven_origin: null
-    evidence_source: docs/development/journal/RP-002/A001/events.jsonl
-    reproduction: Supply a current remote expected head with stale local ledger documents; candidate validation lacked an explicit base identity guard.
-    repair_steps: [RP-002]
-    required_acceptance: [RP-002.C1, RP-002.C2, RP-002.C4]
-    resolution_evidence: [docs/implementation-plan/revisions/R2/evidence/RP-002/A001/reviewed-validation.md]
+    reproduction:
+      procedure: Supply a current remote expected head with stale local ledger documents; candidate validation
+        lacked an explicit base identity guard.
+      failing_source: null
+      passing_source: null
+      evidence: *id005
+    repair_steps:
+    - RP-002
+    affected_acceptance:
+    - RP-002.C1
+    - RP-002.C2
+    - RP-002.C4
+    affected_requirements:
+    - R19
+    - R21
+    hypotheses: []
+    repairs: []
+    issue: null
+    regression_test: null
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-002/A001/reviewed-validation.md
+    notes: Historical v1 migration; omitted proof remains unknown. Original fields retained in legacy_record.
+    legacy_record: '{"detected_in":"RP-002.C2","evidence_source":"docs/development/journal/RP-002/A001/events.jsonl","proven_origin":null,"repair_steps":["RP-002"],"reproduction":"Supply
+      a current remote expected head with stale local ledger documents; candidate validation lacked an
+      explicit base identity guard.","required_acceptance":["RP-002.C1","RP-002.C2","RP-002.C4"],"resolution_evidence":["docs/implementation-plan/revisions/R2/evidence/RP-002/A001/reviewed-validation.md"],"status":"RESOLVED","suspected_origin":"467ac1033c5795fe88fd7765bbd1ad1142db26c7","title":"Checkpoint
+      preparation did not bind local documents to declared public parent"}'
+  DEF-008:
+    title: New repair entries could omit dependent rechecks or claim a legacy exemption
+    status: OPEN
+    detected_in: RP-003.C3
+    suspected_origin:
+      work_item: RP-003
+      source_ref: 065b56939b2761d73f7b12698995f6bb6379ad5f
+      evidence:
+      - docs/development/journal/RP-003/A001/events.jsonl
+    proven_origin: null
+    reproduction:
+      procedure: Append a hand-edited repair entry without the transitive dependent recheck, or add a
+        new record with a forged legacy snapshot.
+      failing_source: 065b56939b2761d73f7b12698995f6bb6379ad5f
+      passing_source: null
+      evidence:
+      - docs/development/journal/RP-003/A001/events.jsonl
+    repair_steps:
+    - RP-003
+    affected_acceptance:
+    - RP-003.C1
+    - RP-003.C2
+    - RP-003.C3
+    - RP-003.C4
+    affected_requirements:
+    - R19
+    - R20
+    hypotheses:
+    - id: review-001
+      claim: Helper-generated candidates are correct but hand-edited initial repair records need transition-level
+        impact validation.
+      result: SUPPORTED
+      evidence:
+      - docs/development/journal/RP-003/A001/events.jsonl
+    repairs:
+    - item: RP-003
+      attempt: A001
+      intent_event: RP-003-A001-0006
+      rechecks:
+        RP-003:
+          attempt: A001
+          checks:
+          - RP-003.C1
+          - RP-003.C2
+          - RP-003.C3
+          - RP-003.C4
+    issue: null
+    regression_test: tests/development/test_defects.py::test_new_repair_cannot_omit_transitive_rechecks
+    resolution_evidence: []
+    notes: Discovered by source review after initially passing tests; no accepted RP-003 build exists
+      to reopen.
+    legacy_record: null
