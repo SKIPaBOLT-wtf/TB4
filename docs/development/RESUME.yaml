@@ -7,14 +7,14 @@ phase: "REVIEW"
 source_branch: "work/rp-011-a001"
 source_commit: "6a0fea10ef65bcd97fad777532feade02ee47b5d"
 journal: "docs/development/journal/RP-011/A001/events.jsonl"
-last_verified_event: "RP-011-A001-0011"
+last_verified_event: "RP-011-A001-0012"
 last_completed: "RP-010 VERIFIED via PR18; accepted main 16ddca1b50bd047afd94fd1e1738bff3f463474c."
-next_action: "Publish review result and exact-head merge INTENT; merge only after checks pass."
+next_action: "Publish merge intent and merge PR19 at exact head, then atomically accept RP-011 and close only DEF-013's qualified development-environment scope."
 verification: "Source/model fixtures must preserve canonical owner values and same-role independence; exact-source local/CI/native tests and reviewed evidence before acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-011-A001-0011"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-013"]
