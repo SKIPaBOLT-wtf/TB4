@@ -1,6 +1,6 @@
 # TB4 Agent Entry Point
 
-## Current development direction - R2 planning checkpoint, 2026-09-30
+## Current development direction - R2 implementation authorized, 2026-09-30
 
 The owner authorized the detailed realignment plan and durable work instruction.
 That planning checkpoint is complete; implementation is NOT yet authorized.

@@ -3,7 +3,7 @@
 TB4 is a deterministic remote-work control system with explicit logical objects,
 verified transitions, bounded helpers and canonical dog/ball vocabulary.
 
-## Current checkpoint - detailed R2 plan, 2026-09-30
+## Current checkpoint - R2 implementation authorized, 2026-09-30
 
 [CURRENT.yaml](implementation-plan/CURRENT.yaml) selects the active development
 revision. The [R2 checklist](implementation-plan/revisions/R2/CHECKLIST.md) has
@@ -14,7 +14,8 @@ PLANNED; only planning/documentation has been authorized at this checkpoint.
 The [realignment baseline](DEVELOPMENT_REALIGNMENT_PROMPT.md) records the corrected
 product target and source audit. Its earlier pause before planning was fulfilled
 by the owner's later request, recorded in the [R2 addendum](implementation-plan/revisions/R2/OWNER_ADDENDUM.md).
-That does not authorize implementation, a new pilot, live repair or migration.
+The later authorization permits implementation; a new live pilot, repair or migration
+still needs its specifically documented scope.
 
 ## Minimum read order
 

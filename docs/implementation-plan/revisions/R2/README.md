@@ -1,7 +1,9 @@
 # R2 - TB4 realignment implementation plan
 
 Planning checkpoint: 2026-09-30. Baseline: `3d3e6e0dc0eee51e694e83b37547c047cea8e355`.
-**64 executable steps, 256 independently identified checks; implementation has not started.**
+**64 executable steps, 256 independently identified checks.**
+Current authority: [implementation authorization](IMPLEMENTATION_AUTHORIZATION.md).
+The manifest records accepted progress; the original planning checkpoint remains historical.
 R2 is a planning revision, not a claim that software/protocol version 2 is released.
 
 ## Start here
@@ -26,7 +28,8 @@ without evidence. Original IP-68 failures remain unresolved acceptance input.
 The earlier instruction to stop before detailed planning was satisfied and is
 superseded only by the owner's new authorization to plan. Planning completion
 is not authorization to start implementation, a live pilot, new installation,
-network configuration or shared-state recovery. Await that next instruction.
+network configuration or shared-state recovery. The later explicit [implementation authorization](IMPLEMENTATION_AUTHORIZATION.md)
+supersedes that wait for ordinary public development only.
 
 ## Work and status rules
 

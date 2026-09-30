@@ -2,24 +2,21 @@ schema_version: 1
 revision: R2
 work_item: PLAN-R2
 attempt: A001
-phase: AUTHORIZATION_INTENT
+phase: AUTHORIZED
 source_branch: main
-source_commit: 4c353ed7e2ab7ea234ceb667755f65683b266842
+source_commit: 1d39ea3ee5234c664d3c0afa9ec3c6aee23f5058
 journal: docs/development/journal/PLAN-R2/A001/events.jsonl
-last_verified_event: PLAN-R2-A001-0005
-last_completed: Detailed R2 plan, work instruction, templates and navigation published and verified; 64 steps, 256 checks, 22 requirements.
-validation: docs/implementation-plan/revisions/R2/PLANNING_VALIDATION.md
-next_action: Read back PLAN-R2-A001-0006, then register the newly granted implementation scope consistently.
-verification: RP-001 dependencies, authorization and current source confirmed; no earlier unresolved planning intent.
-execution_authorization: DOCUMENTATION_AND_PLANNING_ONLY
+last_verified_event: PLAN-R2-A001-0007
+last_completed: Owner authorization recorded; planning history preserved; no implementation acceptance yet.
+next_action: Publish RP-001.C1/A001 implementation INTENT on a dedicated branch and remotely verify it before source edits.
+verification: RP-001 has no dependencies; no unsettled planning intents or competing RP executor were observed.
+execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: false
 next_implementation_step: RP-001
 next_implementation_check: RP-001.C1
-unsettled_intents: [PLAN-R2-A001-0006]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects:
-- DEF-001
-- DEF-002
-rollback: Documentation-only correction/revert preserving append-only journal and legacy evidence.
+known_open_defects: [DEF-001, DEF-002]
+rollback: Documentation-only correction/revert preserving append-only history and legacy evidence.

@@ -7,4 +7,4 @@ work_instruction: docs/development/WORK_INSTRUCTION.md
 resume: docs/development/RESUME.yaml
 legacy_manifest: docs/implementation-plan/manifest.yaml
 legacy_scope: Historical IP-01 through IP-70; not R2 completion authority.
-authorization: PLANNING_ONLY
+authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED

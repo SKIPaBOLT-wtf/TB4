@@ -2,7 +2,7 @@ schema_version: 1
 revision: R2
 status_authority: docs/implementation-plan/revisions/R2/manifest.yaml
 baseline_commit: 3d3e6e0dc0eee51e694e83b37547c047cea8e355
-authorization: PLANNING_ONLY
+authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 current_step: RP-001
 execution_started: false
 statuses:
