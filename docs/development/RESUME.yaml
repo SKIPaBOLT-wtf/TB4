@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-008"
 check: "RP-008.C4"
 attempt: "A002"
-phase: "FINAL_REVIEW"
+phase: "OWNER_CORRECTION_RECEIVED"
 source_branch: "work/rp-008-a002"
 source_commit: "f576f0815669af5708f238c1fb34d7e3942ef70a"
 journal: "docs/development/journal/RP-008/A002/events.jsonl"
-last_verified_event: "RP-008-A002-0012"
+last_verified_event: "RP-008-A002-0013"
 last_completed: "Owner approved RP-008 candidate 3 design and prototypes, no live migration; RP-013 inspected only and deferred without source changes."
-next_action: "Publish review outcome, then exact-head merge INTENT and merge only after successful review."
+next_action: "Continue existing PR/work branch under A003; record owner amendment, withdraw A002 current checks and implement immediate stale-record CAS takeover plus GUI request contract without a global sink barrier."
 verification: "Deterministic Doc-CAS authority and effect barrier tests plus original provider evidence; cross-platform regressions and exact-source review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-008-A002-0012"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-010","DEF-011"]
