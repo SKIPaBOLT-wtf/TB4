@@ -7,9 +7,9 @@ phase: "VALIDATION"
 source_branch: "work/rp-012-a001"
 source_commit: "d31bfe687bda0944307ca82f279d2a2296c4bacc"
 journal: "docs/development/journal/RP-012/A001/events.jsonl"
-last_verified_event: "RP-012-A001-0003"
+last_verified_event: "RP-012-A001-0004"
 last_completed: "RP-011 VERIFIED via PR19; accepted main e52be7a3883e3b259fdf38b5a49d0295e540ac53."
-next_action: "Sync exact published source and run bounded validation; record any failure before repair. Review required native workflow jobs and preserve evidence."
+next_action: "Run bounded local suite and inspect the same required workflow runs."
 verification: "Review exact actor/action ownership, fault scope, canonical input/reference bounds and every declared mode/blocker; validate source-linked synthetic/CI evidence before design acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
@@ -21,3 +21,4 @@ known_open_defects: ["DEF-001","DEF-002"]
 rollback: "Deny by default. Public design-only change leaves v1 installed behavior untouched; unsupported capabilities stay visibly unavailable and rollback cannot widen authority or replay unknown work."
 next_implementation_step: "RP-012"
 next_implementation_check: "RP-012.C1"
+pr: 20
