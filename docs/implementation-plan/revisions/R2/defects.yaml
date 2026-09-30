@@ -57,3 +57,15 @@ defects:
     evidence_source: docs/development/journal/RP-001/A001/events.jsonl
     repair_steps: [RP-001]
     required_acceptance: [RP-001.C1, RP-001.C2, RP-001.C3]
+
+  DEF-006:
+    title: General CI cannot import repository development tools under console pytest
+    status: OPEN
+    detected_in: RP-001.C4
+    suspected_origin: 82f8977d8f8b84d9e2ba067f4c0c5df332be5455
+    proven_origin: null
+    first_bad_source: 9f475a743e8b712694a00d7bce66116cecf7dd99
+    reproduction: CI run 36756514149 job 110028025655, test collection exit 2, tools module unavailable.
+    repair_steps: [RP-001]
+    required_acceptance: [RP-001.C4]
+    proposed_resolution: Use python -m pytest consistently with Progress and Desktop workflows.
