@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-011"
 check: "RP-011.C1"
 attempt: "A001"
-phase: "VALIDATION"
+phase: "VALIDATION_ENVIRONMENT"
 source_branch: "work/rp-011-a001"
 source_commit: "6a0fea10ef65bcd97fad777532feade02ee47b5d"
 journal: "docs/development/journal/RP-011/A001/events.jsonl"
-last_verified_event: "RP-011-A001-0004"
+last_verified_event: "RP-011-A001-0005"
 last_completed: "RP-010 VERIFIED via PR18; accepted main 16ddca1b50bd047afd94fd1e1738bff3f463474c."
-next_action: "Collect all test results, review C1-C4 invariants and declared clock/quota limits; repair any demonstrated failure before acceptance."
+next_action: "Record scoped environment defect and intent, prepend only the existing virtualenv Scripts directory to this test process PATH, verify child interpreter identity, then rerun identical source with a new temp directory. Do not alter machine aliases or global PATH."
 verification: "Source/model fixtures must preserve canonical owner values and same-role independence; exact-source local/CI/native tests and reviewed evidence before acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-011-A001-0003"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
