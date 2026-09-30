@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-011"
 check: "RP-011.C1"
 attempt: "A001"
-phase: "VALIDATION"
+phase: "VALIDATION_ENVIRONMENT"
 source_branch: "work/rp-011-a001"
 source_commit: "6a0fea10ef65bcd97fad777532feade02ee47b5d"
 journal: "docs/development/journal/RP-011/A001/events.jsonl"
-last_verified_event: "RP-011-A001-0006"
+last_verified_event: "RP-011-A001-0007"
 last_completed: "RP-010 VERIFIED via PR18; accepted main 16ddca1b50bd047afd94fd1e1738bff3f463474c."
-next_action: "Run checked environment preflight and synthetic regression, then review C1-C4 and DEF-013 without skipping failed cases."
+next_action: "Use exact resolved shutil.which equality as the child-interpreter preflight, then rerun the same source and 690 cases with process-local UTF-8 and the still-unused verified temp target."
 verification: "Source/model fixtures must preserve canonical owner values and same-role independence; exact-source local/CI/native tests and reviewed evidence before acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-011-A001-0006"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-013"]
