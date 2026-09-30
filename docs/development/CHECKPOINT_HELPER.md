@@ -10,6 +10,10 @@ step/index checkboxes in one candidate. It stages only public documentation and
 uses RP-001 validation before returning a plan. Existing evidence is immutable;
 new attempts use new paths. Source commits remain separate and must already be
 public before their outcomes claim them. The current worktree is not modified.
+The checkout HEAD must equal the declared public parent, with no tracked or
+untracked document changes. This guard is repeated before publication: validating
+stale local documents against a newer supplied ref is never sufficient. Unrelated
+uncommitted source/index changes are preserved.
 
 The CLI supports the common event-only transaction:
 

@@ -87,9 +87,10 @@ def project(root, manifest):
 
 
 def prepare(root, event, branch, expected_head, *, manifest=None, evidence=None,
-            cursor_updates=None, reachable=None):
+            cursor_updates=None, reachable=None, base_verifier=None):
     root = Path(root).resolve()
     reachable = reachable or PublicCommits(root)
+    (base_verifier or verify_checkout_base)(root, expected_head)
     validate(root, reachable=reachable)
     shape(event, schemas.EVENT)
     public_data(event)
@@ -145,10 +146,11 @@ class Backend(Protocol):
     def read_files(self, commit: str, paths: list[str]) -> dict[str, str]: ...
 
 
-def validate_plan(root, plan, reachable=None):
+def validate_plan(root, plan, reachable=None, base_verifier=None):
     """Revalidate a serialized plan immediately before publication."""
     root = Path(root).resolve()
     plan.check()
+    (base_verifier or verify_checkout_base)(root, plan.expected_head)
     reachable = reachable or PublicCommits(root)
     validate(root, reachable=reachable)
     require(reachable(plan.expected_head), "PUBLIC_COMMIT_MISSING")
@@ -293,6 +295,16 @@ class GitBackend:
         shape(commit, schemas.SHA)
         self.run("fetch", "origin", commit)
         return {p: self.run("show", commit + ":" + p) for p in paths}
+
+
+def verify_checkout_base(root, expected_head):
+    """A supplied ref must describe the actual local validation inputs."""
+    backend = GitBackend(root)
+    require(backend.run("rev-parse", "HEAD").strip() == expected_head, "CHECKOUT_BASE_MISMATCH")
+    require(not backend.run("diff", "--name-only", expected_head, "--", "docs").strip(),
+            "DOCUMENT_BASE_DIRTY")
+    require(not backend.run("ls-files", "--others", "--exclude-standard", "--", "docs").strip(),
+            "DOCUMENT_BASE_UNTRACKED")
 
 
 def main(argv=None):

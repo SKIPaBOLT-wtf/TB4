@@ -7,9 +7,25 @@ import shutil
 import pytest
 
 from tests.development.test_ledger import SHA, accept, event, git_fixture, ledger, save
-from tools.development.checkpoint import (GitBackend, Plan, cold_resume, main, prepare,
-                                          publish, reconcile, validate_plan)
+from tools.development.checkpoint import (GitBackend, Plan, cold_resume, main, prepare as real_prepare,
+                                          publish, reconcile, validate_plan as real_validate_plan,
+                                          verify_checkout_base)
 from tools.development.ledger import JOURNAL, PLAN, RESUME, LedgerError, load, validate
+
+
+def fixture_base(root, expected):
+    # Pure ledger fixtures deliberately have no Git history. The native adapter
+    # tests below exercise the real checkout identity guard.
+    if (root / ".git").exists():
+        verify_checkout_base(root, expected)
+
+
+def prepare(*args, **kwargs):
+    return real_prepare(*args, base_verifier=fixture_base, **kwargs)
+
+
+def validate_plan(*args, **kwargs):
+    return real_validate_plan(*args, base_verifier=fixture_base, **kwargs)
 
 
 def outcome():
@@ -208,3 +224,22 @@ def test_cli_reports_safe_failure_without_raw_provider_or_paths(tmp_path, capsys
     assert main(["--root", str(tmp_path), "resume"]) == 1
     result = json.loads(capsys.readouterr().out)
     assert result["state"] == "BLOCKED" and str(tmp_path) not in json.dumps(result)
+
+
+def test_native_checkout_guard_rejects_wrong_parent_and_changed_documents(ledger):
+    git_fixture(ledger, "init", "-b", "main")
+    git_fixture(ledger, "add", ".")
+    git_fixture(ledger, "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid", "commit", "-m", "fixture")
+    head = git_fixture(ledger, "rev-parse", "HEAD")
+    verify_checkout_base(ledger, head)
+    with pytest.raises(LedgerError, match="CHECKOUT_BASE_MISMATCH"):
+        verify_checkout_base(ledger, "b" * 40)
+    path = ledger / RESUME
+    original = path.read_text()
+    path.write_text(original + "# uncommitted document change\n")
+    with pytest.raises(LedgerError, match="DOCUMENT_BASE_DIRTY"):
+        verify_checkout_base(ledger, head)
+    path.write_text(original)
+    save(ledger, "docs/untracked.md", "not part of public base\n")
+    with pytest.raises(LedgerError, match="DOCUMENT_BASE_UNTRACKED"):
+        verify_checkout_base(ledger, head)
