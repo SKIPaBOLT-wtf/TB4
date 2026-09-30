@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-011"
 check: "RP-011.C1"
 attempt: "A001"
-phase: "VALIDATION_ENVIRONMENT"
+phase: "VALIDATION"
 source_branch: "work/rp-011-a001"
 source_commit: "6a0fea10ef65bcd97fad777532feade02ee47b5d"
 journal: "docs/development/journal/RP-011/A001/events.jsonl"
-last_verified_event: "RP-011-A001-0005"
+last_verified_event: "RP-011-A001-0006"
 last_completed: "RP-010 VERIFIED via PR18; accepted main 16ddca1b50bd047afd94fd1e1738bff3f463474c."
-next_action: "Record scoped environment defect and intent, prepend only the existing virtualenv Scripts directory to this test process PATH, verify child interpreter identity, then rerun identical source with a new temp directory. Do not alter machine aliases or global PATH."
+next_action: "Run checked environment preflight and synthetic regression, then review C1-C4 and DEF-013 without skipping failed cases."
 verification: "Source/model fixtures must preserve canonical owner values and same-role independence; exact-source local/CI/native tests and reviewed evidence before acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-011-A001-0006"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-013"]
 rollback: "Draft design and synthetic models only; installed defaults and live timers untouched. Runtime profile rollback requires quiescent roles and never rewrites operation time/history."
 next_implementation_step: "RP-011"
 next_implementation_check: "RP-011.C1"
