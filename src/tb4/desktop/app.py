@@ -27,6 +27,9 @@ HELP = {
     "CONFIG_CHANGED_RELOAD_REQUIRED": "The configuration changed on disk. Reload before saving; your edit was not written over it.",
     "CONFIG_UNREADABLE": "Save a configuration before starting or checking the role.",
     "OPTIONAL_LOCAL_MOUNT_UNAVAILABLE": "The optional local Drive folder is not visible to this user. This is separate from API authorization.",
+    "RETURN_RECOVERY_TICKET_INVALID": "Provide the reviewed operation_id, generation, result_sha256, archive_id and reviewed=true. Do not paste credentials or an entire configuration.",
+    "RETURN_RECOVERY_PULSE_FRESH": "A FETCHER heartbeat is still fresh or future-dated. Confirm every FETCHER for this target is stopped and wait for the configured stale/grace interval. Nothing was published.",
+    "RETURN_RECOVERY_PUBLICATION_UNCONFIRMED": "The same recorded return needs inspection. Do not clear the channel, submit a new generation, or replay the payload.",
 }
 
 
@@ -75,6 +78,9 @@ class RoleWindow(QtWidgets.QMainWindow):
         self.message.setWordWrap(True)
         status_layout.addWidget(self.message)
         self._button("Export safe diagnostics", self.export_diagnostics, status_layout)
+        self.recovery_button = None
+        if profile.role == "fetcher":
+            self.recovery_button = self._button("Recover recorded return", self.recover_return, status_layout)
         tabs.addTab(status_page, "Status")
 
         config_page = QtWidgets.QWidget()
@@ -241,6 +247,33 @@ class RoleWindow(QtWidgets.QMainWindow):
         if answer == QtWidgets.QMessageBox.StandardButton.Yes:
             self.start_action("bootstrap")
 
+    def recover_return(self):
+        if self.profile.role != "fetcher" or self.client.active:
+            self.error("STOP_FETCHER_BEFORE_RETURN_RECOVERY")
+            return
+        text, accepted = QtWidgets.QInputDialog.getMultiLineText(
+            self, "Recover a reviewed recorded return",
+            "Stop all FETCHER instances for this target first. Paste a reviewed JSON ticket with operation_id, generation, result_sha256, archive_id and reviewed=true. The archive must be a separate matching BONEYARD copy. No credentials:", "",
+        )
+        if not accepted:
+            return
+        from tb4.fetcher.return_recovery import ReturnRecoveryError, validate_ticket
+        try:
+            if len(text) > 4096:
+                raise ValueError("ticket too large")
+            ticket = validate_ticket(json.loads(text))
+        except (ValueError, ReturnRecoveryError):
+            self.error("RETURN_RECOVERY_TICKET_INVALID")
+            return
+        answer = QtWidgets.QMessageBox.question(
+            self, "Finalize recorded result without replay",
+            f"Publish the already-recorded result for {ticket['operation_id']} (generation {ticket['generation']})?\n\nThis verifies the reviewed report and archive, not whether the result achieved your goal. It does not run the payload, change the report, clear STOP_BALL, or make the channel READY. Confirm the previous execution is no longer running.",
+            QtWidgets.QMessageBox.StandardButton.Yes | QtWidgets.QMessageBox.StandardButton.No,
+            QtWidgets.QMessageBox.StandardButton.No,
+        )
+        if answer == QtWidgets.QMessageBox.StandardButton.Yes:
+            self.start_action("recover-return", ticket)
+
     def start_action(self, action: str, payload: dict | None = None):
         if self.client.active:
             self.error("WORKER_ALREADY_RUNNING")
@@ -329,6 +362,8 @@ class RoleWindow(QtWidgets.QMainWindow):
         self.start_button.setEnabled(not active)
         self.stop_button.setEnabled(active and self.stop_requested_at is None)
         self.restart_button.setEnabled(self.client.action in {None, "run"} and self.stop_requested_at is None)
+        if self.recovery_button is not None:
+            self.recovery_button.setEnabled(not active)
         remote = observation_state(self.snapshot, time.time())
         process = self.snapshot.get("process_state", "STARTING") if self.snapshot else ("STARTING" if active else "STOPPED")
         if not active and process in {"STARTING", "RUNNING", "STOPPING"}:
