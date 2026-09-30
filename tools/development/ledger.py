@@ -126,6 +126,8 @@ def _started_reference_corrections(events):
     """
     earlier, resolved = {}, {}
     for event in events:
+        require(isinstance(event, dict) and isinstance(event.get("event_id"), str),
+                "RECORD_SCHEMA_INVALID")
         if "reference_correction" in event:
             shape(event, schemas.EVENT)
             patch = event["reference_correction"]
@@ -149,12 +151,14 @@ def _started_reference_corrections(events):
 
 
 def validate_journal(events, item, attempt, reachable):
+    if item.startswith("RP-"):
+        for event in events:
+            shape(event, schemas.EVENT)
     corrections = _started_reference_corrections(events)
     by_id, pending, actions = {}, {}, set()
     previous_time = None
     for n, event in enumerate(events, 1):
         if item.startswith("RP-"):
-            shape(event, schemas.EVENT)
             stamp = datetime.fromisoformat(event["at"].replace("Z", "+00:00"))
             require(previous_time is None or stamp >= previous_time, "EVENT_TIME_REVERSED")
             previous_time = stamp

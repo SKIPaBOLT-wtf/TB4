@@ -199,6 +199,12 @@ def test_started_reference_correction_preserves_original_and_pending_intent():
     assert validate_journal(rows, "RP-001", "A001", lambda _: True)[1] == {}
 
 
+@pytest.mark.parametrize("malformed", [None, [], "invalid", 1, {"event_id":{}}, {"event_id":[]}])
+def test_correction_prepass_uses_schema_diagnostics_for_malformed_records(malformed):
+    with pytest.raises(LedgerError,match="RECORD_SCHEMA_INVALID"):
+        validate_journal([malformed], "RP-001", "A001", lambda _: True)
+
+
 @pytest.mark.parametrize("fault", ["outcome", "target", "old", "new", "field", "run", "action", "check", "source", "no-justification", "not-correction", "extra-field"])
 def test_reference_correction_cannot_rewrite_execution_or_invent_authorization(fault):
     rows = corrected_started(); c = rows[-1]; patch = c["reference_correction"]
