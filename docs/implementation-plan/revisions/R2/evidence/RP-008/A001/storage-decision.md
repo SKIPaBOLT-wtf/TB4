@@ -139,3 +139,21 @@ Until resolved, preserve C1-C3 evidence, leave C4 and RP-008 unaccepted, and do 
 start dependent RP-009/010/015/016/018. Check other ready steps against their actual
 dependencies before any recorded schedule exception; do not bypass this gate.
 No real root, lease, service, network, credential or installed profile is changed.
+
+## Confirmed investigation outcome
+
+All 17 candidate/counterexample tests passed on Windows and Linux. The actual
+adapter race and split metadata/body read were reproduced; stronger model success
+remains conditional on its stated assumptions. One isolated native Docs fixture
+also verified current-revision success, stale-revision HTTP 400 rejection, no
+stale marker in readback, and fresh-revision success. The exact new fixture was
+removed and absence verified (404); its identity/revisions are not public data.
+See `reviewed-validation.md` for commits, failed/repaired regression and CI.
+
+C1-C3 are reviewed design evidence. C4 remains BLOCKED on an owner decision:
+allow the proposed single-native-document authority amendment and explicit
+protected-effect fencing design, revise the fallback requirement, or select a
+different single storage authority. No candidate is silently adopted. The two
+independent reproductions RP-013/014 have only RP-001/003/004 prerequisites;
+the recorded scheduling exception permits those synthetic investigations while
+this decision is pending, without any dependent runtime correction or pilot.
