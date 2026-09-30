@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-010"
 check: "RP-010.C1"
 attempt: "A001"
-phase: "REVIEW"
+phase: "MERGE"
 source_branch: "work/rp-010-a001"
 source_commit: "179c76be7071692a36b4d6bfbecb02aee08dedbb"
 journal: "docs/development/journal/RP-010/A001/events.jsonl"
-last_verified_event: "RP-010-A001-0022"
+last_verified_event: "RP-010-A001-0023"
 last_completed: "RP-001 through RP-009 VERIFIED; all relevant Windows/Linux/native checks passed and RP-009 merged. Current RP-008 amendment requires takeover without global old-host/sink ACK."
-next_action: "Publish exact-head merge intent; merge PR18, read main journal, then atomically mark RP-010 VERIFIED and close the scoped administrative defect."
+next_action: "After main readback and Progress pass, continue dependency-ready RP-011 timing semantics."
 verification: "Positive/negative schema and slot-budget fixtures, malformed/different-payload duplicates, busy targets, claim-versus-timeout orderings, correlated cancel/result/ACK, stale-generation and actor restrictions; prior regressions and exact-source CI/build review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-010-A001-0023"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-012"]
