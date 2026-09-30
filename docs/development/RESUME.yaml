@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-008"
 check: "RP-008.C1"
 attempt: "A001"
-phase: "REPAIR_SOURCE_RECORDED"
+phase: "VALIDATION"
 source_branch: "work/rp-008-a001"
 source_commit: "061587a5a9fa3ed8b4081c6b967a077cd9700d4d"
 journal: "docs/development/journal/RP-008/A001/events.jsonl"
-last_verified_event: "RP-008-A001-0006"
+last_verified_event: "RP-008-A001-0007"
 last_completed: "RP-001 through RP-007 VERIFIED and merged; main Progress 36772652989 job 110082655253 passed; DEF-001/DEF-002 remain OPEN."
-next_action: "Publish rerun INTENT; rerun same Windows subset and exact-head CI/Progress."
+next_action: "Record rerun results/run IDs and review remaining C4 architecture decision."
 verification: "Reproducible schedules against actual adapter request shape and bounded candidate models; primary provider API guarantees; connector capability inventory; explicit limits and owner decision if architecture needs amendment."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-008-A001-0007"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-010"]
