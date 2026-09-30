@@ -3,7 +3,7 @@ revision: R2
 status_authority: docs/implementation-plan/revisions/R2/manifest.yaml
 baseline_commit: 3d3e6e0dc0eee51e694e83b37547c047cea8e355
 authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
-current_step: RP-008
+current_step: RP-013
 execution_started: true
 statuses:
 - PLANNED
@@ -24,7 +24,7 @@ steps:
   RP-010: {"title": "Command status and ownership protocol contract", "status": "PLANNED", "definition": "steps/RP-010.md", "depends_on": ["RP-007", "RP-008", "RP-009"], "requirements": ["R01", "R02", "R03", "R09", "R10"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
   RP-011: {"title": "Timing semantics and relationship validation", "status": "PLANNED", "definition": "steps/RP-011.md", "depends_on": ["RP-005", "RP-010"], "requirements": ["R04", "R05", "R06", "R10"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
   RP-012: {"title": "Security and failure semantics decision gate", "status": "PLANNED", "definition": "steps/RP-012.md", "depends_on": ["RP-004", "RP-006", "RP-010", "RP-011"], "requirements": ["R10", "R12", "R18", "R21"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-013: {"title": "Reproduce ordinary result-publication conflict", "status": "PLANNED", "definition": "steps/RP-013.md", "depends_on": ["RP-001", "RP-003", "RP-004"], "requirements": ["R11", "R20"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
+  RP-013: {"title":"Reproduce ordinary result-publication conflict","status":"IN_PROGRESS","definition":"steps/RP-013.md","depends_on":["RP-001","RP-003","RP-004"],"requirements":["R11","R20"],"completed_checks":[],"evidence":[],"amendments":[],"active_attempt":"A001","check_evidence":{},"revalidation_required":[]}
   RP-014: {"title": "Reproduce cancellation versus natural-exit race", "status": "PLANNED", "definition": "steps/RP-014.md", "depends_on": ["RP-001", "RP-003", "RP-004"], "requirements": ["R10", "R20"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
   RP-015: {"title": "Race-safe exact-object mutation and verification", "status": "PLANNED", "definition": "steps/RP-015.md", "depends_on": ["RP-008", "RP-010", "RP-012", "RP-013"], "requirements": ["R07", "R08", "R10", "R11"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
   RP-016: {"title": "Shared leadership lease and fencing primitive", "status": "PLANNED", "definition": "steps/RP-016.md", "depends_on": ["RP-008", "RP-010", "RP-012", "RP-015"], "requirements": ["R07", "R10", "R18"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
