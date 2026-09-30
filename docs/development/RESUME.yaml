@@ -1,22 +1,21 @@
 schema_version: 1
 revision: R2
-work_item: PLAN-R2
+work_item: RP-001
+check: RP-001.C1
 attempt: A001
-phase: AUTHORIZED
-source_branch: main
-source_commit: 1d39ea3ee5234c664d3c0afa9ec3c6aee23f5058
-journal: docs/development/journal/PLAN-R2/A001/events.jsonl
-last_verified_event: PLAN-R2-A001-0007
-last_completed: Owner authorization recorded; planning history preserved; no implementation acceptance yet.
-next_action: Publish RP-001.C1/A001 implementation INTENT on a dedicated branch and remotely verify it before source edits.
-verification: RP-001 has no dependencies; no unsettled planning intents or competing RP executor were observed.
+phase: IMPLEMENT
+source_branch: work/rp-001-a001
+source_commit: 33d616e65216373bfe8f964390946bd86c3c54b3
+journal: docs/development/journal/RP-001/A001/events.jsonl
+last_verified_event: RP-001-A001-0001
+last_completed: Implementation authorization published and read back.
+next_action: Implement the bounded validator source unit described by RP-001-A001-0001, then checkpoint its source and outcome before tests.
+verification: Exact branch ownership, source/diff inspection, then separately journaled targeted tests and full-plan validation.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
-implementation_started: false
-next_implementation_step: RP-001
-next_implementation_check: RP-001.C1
-unsettled_intents: []
+implementation_started: true
+unsettled_intents: [RP-001-A001-0001]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: [DEF-001, DEF-002]
-rollback: Documentation-only correction/revert preserving append-only history and legacy evidence.
+rollback: Revert development validator and CI wiring; preserve journal/evidence; use manual enforcement.
