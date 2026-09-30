@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-008"
-check: "RP-008.C4"
-attempt: "A003"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "bf148dd888824e32dc58958bc96e7b5f03b6b252"
-journal: "docs/development/journal/RP-008/A003/events.jsonl"
-last_verified_event: "RP-008-A003-0009"
-last_completed: "RP-001 through RP-008 VERIFIED. RP-008 A003 follows owner correction: immediate stale/forced takeover, no global sink ACK; runtime/UI remain future gates. RP-013 A001 retained after read-only deferral."
-next_action: "Verify main Progress and UTF-8 ledger checkpoint, then claim RP-009 fixed native-document exchange layout/capacity contract under the current owner amendment."
-verification: "Immediate stale-record conditional takeover, bounded forced-request flag, old-owner write rejection and independent unknown-effect retention; no all-sink activation barrier."
+work_item: "RP-009"
+check: "RP-009.C1"
+attempt: "A001"
+phase: "SOURCE"
+source_branch: "work/rp-009-a001"
+source_commit: "ece5d27e8a11d66ad1b41f15467a1f31f4ec4e77"
+journal: "docs/development/journal/RP-009/A001/events.jsonl"
+last_verified_event: "RP-009-A001-0001"
+last_completed: "RP-001 through RP-008 VERIFIED, owner-directed stale/forced takeover amendment merged; main Progress passed. RP-013 A001 remains safely deferred with no pending action."
+next_action: "Implement compact layout specification, pure capacity/identity/transition validation and meaningful negative tests; publish source checkpoint before validation."
+verification: "Minimum/default/maximum and cross-capacity bounds, exact lookup IDs, saturation with cancel/ACK availability, interrupted setup/expansion/duplicate identities and retained unknown/unread results; Windows/Linux regression and privacy/history checks."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-009-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Discard only synthetic experiment state; retain histories and fixed authority identity. No live migration authorized."
+rollback: "Only synthetic local source/tests. Preserve legacy blueprint and unknown/unread records; no authority/root creation and no epoch/generation rollback."
 next_implementation_step: "RP-009"
 next_implementation_check: "RP-009.C1"
