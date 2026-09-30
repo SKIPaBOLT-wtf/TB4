@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-007"
-check: "RP-007.C1"
+work_item: "RP-008"
+check: "RP-008.C1"
 attempt: "A001"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "d1af5328d05f1dda9cf36a662df06f158c0252e5"
-journal: "docs/development/journal/RP-007/A001/events.jsonl"
-last_verified_event: "RP-007-A001-0009"
-last_completed: "RP-001 through RP-007 VERIFIED and merged; DEF-001/DEF-002 remain OPEN."
-next_action: "Verify main Progress and ledger/history; then claim RP-008 storage exclusion/failover feasibility."
-verification: "Fresh resolution, immutable reference closure, compatibility boundaries, missing/cache/revocation/update failures, untrusted-data isolation and pointer-only package review."
+phase: "SOURCE"
+source_branch: "work/rp-008-a001"
+source_commit: "d15f1abdd6a3a0beb5fd0ab56049640bf2b14750"
+journal: "docs/development/journal/RP-008/A001/events.jsonl"
+last_verified_event: "RP-008-A001-0001"
+last_completed: "RP-001 through RP-007 VERIFIED and merged; main Progress 36772652989 job 110082655253 passed; DEF-001/DEF-002 remain OPEN."
+next_action: "Read official guarantees, implement scoped synthetic prototypes/decision record, publish source outcome, then validation INTENT."
+verification: "Reproducible schedules against actual adapter request shape and bounded candidate models; primary provider API guarantees; connector capability inventory; explicit limits and owner decision if architecture needs amendment."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-008-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Withdraw incompatible entry publication and restore last supported repository entry; never downgrade live protocol state or silently replay operations."
+rollback: "Discard only isolated synthetic fixtures; preserve published evidence and leave real roots, leases and network services untouched."
 next_implementation_step: "RP-008"
 next_implementation_check: "RP-008.C1"
