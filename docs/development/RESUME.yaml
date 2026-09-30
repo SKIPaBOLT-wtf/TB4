@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-008"
 check: "RP-008.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "SOURCE_RECORDED"
 source_branch: "work/rp-008-a001"
-source_commit: "d15f1abdd6a3a0beb5fd0ab56049640bf2b14750"
+source_commit: "6fab63170346c17c6501887165f3aea753616846"
 journal: "docs/development/journal/RP-008/A001/events.jsonl"
-last_verified_event: "RP-008-A001-0001"
+last_verified_event: "RP-008-A001-0002"
 last_completed: "RP-001 through RP-007 VERIFIED and merged; main Progress 36772652989 job 110082655253 passed; DEF-001/DEF-002 remain OPEN."
-next_action: "Read official guarantees, implement scoped synthetic prototypes/decision record, publish source outcome, then validation INTENT."
+next_action: "Publish validation INTENT, run synthetic counterexamples and regressions, then inspect CI."
 verification: "Reproducible schedules against actual adapter request shape and bounded candidate models; primary provider API guarantees; connector capability inventory; explicit limits and owner decision if architecture needs amendment."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-008-A001-0001"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
