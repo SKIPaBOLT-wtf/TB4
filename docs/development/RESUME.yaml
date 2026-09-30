@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-002"
 check: "RP-002.C1"
 attempt: "A001"
-phase: "REVIEW_HOLD"
+phase: "BASE_GUARD"
 source_branch: "work/rp-002-a001"
 source_commit: "467ac1033c5795fe88fd7765bbd1ad1142db26c7"
 journal: "docs/development/journal/RP-002/A001/events.jsonl"
-last_verified_event: "RP-002-A001-0006"
+last_verified_event: "RP-002-A001-0007"
 last_completed: "RP-001 VERIFIED, merged PR 8, main Progress 36758213874 passed."
-next_action: "Add and test an explicit clean-document checkout/base guard before preparation and publication, preserving unrelated user work."
+next_action: "Publish guarded source/outcome, then execute new negative cases and prior regressions."
 verification: "RP-001 validates candidate ledgers; new tests exercise publication interruption and no-replay resume."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-002-A001-0007"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
