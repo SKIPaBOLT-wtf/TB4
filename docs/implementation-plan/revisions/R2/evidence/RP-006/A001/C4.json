@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "item": "RP-006",
+  "check": "RP-006.C4",
+  "attempt": "A001",
+  "source_ref": "643a99063aa0c8bcb94ae0a1838852c04766f6e2",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Targeted security/development/legacy SSH/plan suite, ledger/history/public scan/diff and exact CI/Progress/Desktop packaged runs listed in reviewed-validation.md.",
+  "expected": "A standby reports its own local capability and rejects copied incumbent binding/store identity.",
+  "observed": "Windows 183 passed. CI 809 passed/2 optional GUI skips. Desktop Linux GUI 67/full 819 and Windows GUI 63/4 POSIX-only skips passed; both role builds and packaged installer/profile-isolation checks passed. Local-only fixture guards, lifecycle, fault disclosure and independent standby assertions satisfy C1-C4 contract scope.",
+  "exit_code": 0,
+  "platform_scope": "Windows local Python 3.11 and Windows/Linux CI; synthetic in-memory store only.",
+  "negative_cases": [
+    "Absent/locked/expired/revoked binding",
+    "Target trust/purpose/installation mismatch",
+    "Unapproved store or unverified permissions",
+    "Permission/version/expiry race at use",
+    "Raw result and provider exception",
+    "Failed rotation preserving old/unrelated bindings",
+    "Copied standby identity"
+  ],
+  "unverified_scope": "No actual key/credential/OS store/SSH operation; platform ACL adapters and durable execution tracking remain later gates.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Revoke/remove only new binding metadata, retain unrelated keys and records, report capability unavailable.",
+  "intent_event": "RP-006-A001-0003",
+  "outcome_event": "RP-006-A001-0005",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-006/A001/reviewed-validation.md"
+  ]
+}
