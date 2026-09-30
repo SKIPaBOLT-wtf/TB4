@@ -4,6 +4,7 @@ import json
 
 from tb4.core.schemas import canonical_json_text
 from tb4.drive.bootstrap import bootstrap_tree
+from tb4.drive.device_registration import DeviceProfile, DeviceRegistrar
 from tb4.drive.memory_backend import InMemoryDriveBackend
 from tb4.drive.tree_audit import TreeAuditor, TreeIssueKind
 from tb4.drive.tree_healer import RepairOutcome, TreeHealer
@@ -38,6 +39,33 @@ def test_fresh_bootstrap_audits_clean() -> None:
 
     assert audit.clean
     assert audit.scanned_parent_count >= 2
+
+
+def test_registered_device_tree_audits_clean_after_restart() -> None:
+    backend = InMemoryDriveBackend()
+    boot = bootstrap_tree(backend, root_id=backend.root_id)
+    registered = DeviceRegistrar(backend).register(
+        boot.park_map,
+        DeviceProfile(
+            device_id="main-pc",
+            device_key="main-pc",
+            hostname=None,
+            os_family="WINDOWS",
+            wake_on_lan=False,
+            ssh_bootstrap=False,
+        ),
+    )
+
+    audit = TreeAuditor(backend).audit(
+        root_id=backend.root_id,
+        park_map=registered.park_map,
+    )
+
+    assert audit.clean
+    assert registered.park_map.lookup_device(
+        "main-pc",
+        "PLAYGROUND.FETCH_BALL",
+    )
 
 
 def test_unknown_control_child_is_quarantined_with_provenance() -> None:
