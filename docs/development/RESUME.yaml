@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-012"
 check: "RP-012.C1"
 attempt: "A001"
-phase: "VALIDATION"
+phase: "DEBUG"
 source_branch: "work/rp-012-a001"
 source_commit: "f57c88138e35130379b9a040714836ac8de702a3"
 journal: "docs/development/journal/RP-012/A001/events.jsonl"
-last_verified_event: "RP-012-A001-0009"
+last_verified_event: "RP-012-A001-0010"
 last_completed: "RP-011 VERIFIED via PR19; accepted main e52be7a3883e3b259fdf38b5a49d0295e540ac53."
-next_action: "Run same suite, collect exact IDs and inspect final CI/native provenance."
+next_action: "Inspect typed ledger failure on public-only repository data, correct the RP-012 repair hold/projection without changing history or validators, persist bounded command output before guards, and rerun ledger plus missing exact local evidence."
 verification: "Review exact actor/action ownership, fault scope, canonical input/reference bounds and every declared mode/blocker; validate source-linked synthetic/CI evidence before design acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-012-A001-0008"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-014"]
