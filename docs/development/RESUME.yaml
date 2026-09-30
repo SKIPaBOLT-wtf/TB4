@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-010"
-check: "RP-010.C1"
+work_item: "RP-011"
+check: "RP-011.C1"
 attempt: "A001"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "179c76be7071692a36b4d6bfbecb02aee08dedbb"
-journal: "docs/development/journal/RP-010/A001/events.jsonl"
-last_verified_event: "RP-010-A001-0024"
-last_completed: "RP-010 VERIFIED via PR18; source 179c76be7071692a36b4d6bfbecb02aee08dedbb; merge 209801a01cafa0147a42f00c70af129724c9c348"
-next_action: "Verify main Progress and ledger at this acceptance checkpoint, then claim RP-011 A001 and define owner timing values and independent deadline relationships."
-verification: "Main Progress and UTF-8 ledger must pass before RP-011 ownership/source INTENT."
+phase: "SOURCE"
+source_branch: "work/rp-011-a001"
+source_commit: "16ddca1b50bd047afd94fd1e1738bff3f463474c"
+journal: "docs/development/journal/RP-011/A001/events.jsonl"
+last_verified_event: "RP-011-A001-0001"
+last_completed: "RP-010 VERIFIED via PR18; accepted main 16ddca1b50bd047afd94fd1e1738bff3f463474c."
+next_action: "Implement timing contract/profiles and boundary fixtures, publish source outcome, then validate target and native regression gates."
+verification: "Source/model fixtures must preserve canonical owner values and same-role independence; exact-source local/CI/native tests and reviewed evidence before acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-011-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Public draft specification only; preserve current v1 runtime and immutable evidence. No operation is retried or removed, no real control authority changed."
+rollback: "Draft design and synthetic models only; installed defaults and live timers untouched. Runtime profile rollback requires quiescent roles and never rewrites operation time/history."
 next_implementation_step: "RP-011"
 next_implementation_check: "RP-011.C1"
