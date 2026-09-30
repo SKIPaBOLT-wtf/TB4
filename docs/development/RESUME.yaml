@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-008"
 check: "RP-008.C4"
 attempt: "A002"
-phase: "HISTORY_GATE_FAILED"
+phase: "REPAIR"
 source_branch: "work/rp-008-a002"
 source_commit: "27fd1e2aa149a9df7ee57c29febfc5c0a9b1d862"
 journal: "docs/development/journal/RP-008/A002/events.jsonl"
-last_verified_event: "RP-008-A002-0006"
+last_verified_event: "RP-008-A002-0007"
 last_completed: "Owner approved RP-008 candidate 3 design and prototypes, no live migration; RP-013 inspected only and deferred without source changes."
-next_action: "Record DEF-011 and repair by restoring exact historical evidence; retain new status only in current canonical navigation and A002 records. Then repeat history gate and local harness recheck."
+next_action: "Publish corrected source outcome, then separate validation INTENT for same-source tests and repaired history."
 verification: "Deterministic Doc-CAS authority and effect barrier tests plus original provider evidence; cross-platform regressions and exact-source review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-008-A002-0007"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-010"]
+known_open_defects: ["DEF-001","DEF-002","DEF-010","DEF-011"]
 rollback: "Discard only synthetic experiment state; retain histories and fixed authority identity. No live migration authorized."
 next_implementation_step: "RP-008"
 next_implementation_check: "RP-008.C4"
