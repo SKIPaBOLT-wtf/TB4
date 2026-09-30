@@ -9,7 +9,7 @@ This is a projection of `manifest.yaml`. Mark a step/check complete only through
 - [x] [RP-001 - Enforced development-ledger contract](steps/RP-001.md) - prerequisites: none.
 - [x] [RP-002 - Checkpoint publication and cold-resume helper](steps/RP-002.md) - prerequisites: RP-001.
 - [x] [RP-003 - Defect provenance and re-openable verification](steps/RP-003.md) - prerequisites: RP-001, RP-002.
-- [ ] [RP-004 - Privacy classification and safe evidence policy](steps/RP-004.md) - prerequisites: RP-001.
+- [x] [RP-004 - Privacy classification and safe evidence policy](steps/RP-004.md) - prerequisites: RP-001.
 - [ ] [RP-005 - Topology-neutral BALLPARK and capability schema](steps/RP-005.md) - prerequisites: RP-004.
 - [ ] [RP-006 - Credential-reference resolver contract](steps/RP-006.md) - prerequisites: RP-004, RP-005.
 - [ ] [RP-007 - Repository instruction-version and trust contract](steps/RP-007.md) - prerequisites: RP-004, RP-005.
