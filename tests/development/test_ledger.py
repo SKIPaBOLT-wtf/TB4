@@ -43,6 +43,7 @@ def save(root, name, value):
 
 @pytest.fixture
 def ledger(tmp_path):
+    save(tmp_path, PLAN + "/defects.yaml", {"schema_version": 2, "defects": {}})
     step = dict(title="Fixture", status="IN_PROGRESS", definition="steps/RP-001.md",
                 depends_on=[], requirements=["R19"], completed_checks=[], evidence=[],
                 amendments=[], active_attempt="A001", check_evidence={}, revalidation_required=[])

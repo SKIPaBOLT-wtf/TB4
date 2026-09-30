@@ -45,6 +45,13 @@ EVENT = closed({
     "scope", "procedure", "expected", "observed", "outcome", "evidence",
     "rollback", "next_action", "uncertainty"])
 
+ACCEPTANCE = closed({
+    "attempt": ATTEMPT, "completed_checks": array(CHECK),
+    "check_evidence": {"type": "object", "propertyNames": CHECK,
+                       "additionalProperties": array(PATH)},
+    "evidence": array(PATH), "defect": {"type": "string", "pattern": "^DEF-[0-9]{3}$"},
+})
+
 STEP_RECORD = closed({
     "title": TEXT, "status": {"enum": STATUSES}, "definition": TEXT,
     "depends_on": array(STEP), "requirements": array({"type": "string", "pattern": "^R[0-9]{2}$"}),
@@ -54,6 +61,7 @@ STEP_RECORD = closed({
                        "additionalProperties": array(PATH)},
     "revalidation_required": array(TEXT),
 })
+STEP_RECORD["properties"]["acceptance_history"] = array(ACCEPTANCE)
 
 MANIFEST = closed({
     "schema_version": {"const": 1}, "revision": {"const": "R2"},

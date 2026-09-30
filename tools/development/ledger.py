@@ -198,6 +198,12 @@ def validate_history(root, base, manifest):
     old = yaml.load(git(root, "show", base + ":" + PLAN + "/manifest.yaml"), Loader=UniqueLoader)
     require(old["steps"].keys() <= manifest["steps"].keys(), "STABLE_STEP_REMOVED")
     validate_transitions(old, manifest)
+    from .defects import REGISTRY, validate_registry_history
+    previous_registry = yaml.load(git(root, "show", base + ":" + REGISTRY), Loader=UniqueLoader)
+    validate_registry_history(previous_registry, load(root, REGISTRY), old)
+    for relative in git(root, "ls-tree", "-r", "--name-only", base, PLAN + "/evidence").splitlines():
+        previous = git(root, "show", base + ":" + relative).replace("\r\n", "\n")
+        require(public_path(root, relative).read_text(encoding="utf-8") == previous, "EVIDENCE_IMMUTABLE")
 
 
 def validate_transitions(old, manifest):
@@ -210,10 +216,17 @@ def validate_transitions(old, manifest):
                    "SUPERSEDED": {"SUPERSEDED"}}
     for key, previous in old["steps"].items():
         current = manifest["steps"][key]
+        history = previous.get("acceptance_history", [])
+        require(current.get("acceptance_history", [])[:len(history)] == history, "ACCEPTANCE_HISTORY_REWRITTEN")
         require(current["status"] in transitions[previous["status"]], "STATUS_TRANSITION_INVALID")
         if previous["status"] == "VERIFIED" and current["status"] not in {"VERIFIED", "SUPERSEDED"}:
             require(current["active_attempt"] > previous["active_attempt"]
                     and current["revalidation_required"], "REOPEN_REQUIRES_NEW_ATTEMPT")
+            snapshots = current.get("acceptance_history", [])
+            require(any(h["attempt"] == previous["active_attempt"]
+                        and h["completed_checks"] == previous["completed_checks"]
+                        and h["check_evidence"] == previous["check_evidence"]
+                        and h["evidence"] == previous["evidence"] for h in snapshots), "ACCEPTANCE_SNAPSHOT_MISSING")
 
 
 def validate(root, reachable=None, base=None):
@@ -320,6 +333,8 @@ def validate(root, reachable=None, base=None):
             accepted += 1
     if base:
         validate_history(root, base, manifest)
+    from .defects import REGISTRY, validate_registry
+    validate_registry(root, load(root, REGISTRY), manifest, reachable, events)
     return {"revision": "R2", "steps": len(steps), "verified": accepted,
             "unsettled_intents": sorted(pending), "result": "PASS"}
 
