@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "item": "RP-005",
+  "check": "RP-005.C3",
+  "attempt": "A001",
+  "source_ref": "d3ac272140e6a583777dccb891c7d2aef0e1d4e7",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Targeted Windows security/development/plan tests, ledger/history/public scan/diff; exact PR CI/Progress/Desktop runs and packaged results listed in reviewed-validation.md.",
+  "expected": "Synthetic varied networks, changing addresses and missing capabilities validate without identity or readiness conflation.",
+  "observed": "Windows targeted 152 passed. CI 788 passed/2 optional GUI skips; Desktop Linux GUI 67/full 798 and Windows GUI 63/4 POSIX-only skips passed. Both platform role builds, packaged self-tests, GUI and installation/profile-isolation acceptance passed. Schema privacy, topology, provenance, identity and revision/authority negative assertions pass.",
+  "exit_code": 0,
+  "platform_scope": "Windows local Python 3.11 and Windows/Linux CI; synthetic topology/platform declarations. Native ARM not claimed.",
+  "negative_cases": [
+    "Secret or unknown fields",
+    "Duplicate identities/aliases/segment addresses",
+    "Missing source or freshness",
+    "Cross-fact readiness inference",
+    "Stale revision and silent identity replacement",
+    "Unauthorized or foreign-installation publisher",
+    "Private projection offered to public exporter"
+  ],
+  "unverified_scope": "No real commissioning, storage fencing, live descriptor commit or network probing. Publication policy gate is pure; later steps supply authenticated authority and storage guarantees.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Retain previous revision/mapping; source rollback cannot reinterpret live identities or pinned operations.",
+  "intent_event": "RP-005-A001-0003",
+  "outcome_event": "RP-005-A001-0005",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-005/A001/reviewed-validation.md"
+  ]
+}
