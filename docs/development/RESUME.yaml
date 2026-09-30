@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-003"
 check: "RP-003.C4"
 attempt: "A001"
-phase: "READY_TO_MERGE"
+phase: "MERGE"
 source_branch: "work/rp-003-a001"
 source_commit: "dd24ce579220b60a58fb2bc036b6c3658cc409de"
 journal: "docs/development/journal/RP-003/A001/events.jsonl"
-last_verified_event: "RP-003-A001-0012"
+last_verified_event: "RP-003-A001-0013"
 last_completed: "RP-001 and RP-002 VERIFIED and merged; main Progress passed. Legacy DEF-001/DEF-002 and issue 7 remain open."
-next_action: "Publish exact-head merge INTENT and merge PR 10; then atomically record merge outcome, VERIFIED projection and DEF-008 resolution."
+next_action: "Inspect exact merge result and publish coordinated main acceptance; then check main Progress before RP-004."
 verification: "Typed defect/schema validation, synthetic interruption/repair chain and prior ledger regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-003-A001-0013"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-008"]
