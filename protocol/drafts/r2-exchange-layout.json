@@ -1,0 +1,22 @@
+{
+  "layout_version": 1,
+  "compatibility_status": "UNRELEASED",
+  "mode": "ONE_NATIVE_DOCS_AUTHORITY",
+  "defaults": {"devices": 8, "ingress": 4, "history": 32, "quarantine": 8},
+  "capacity_limits": {"devices": [1, 64], "ingress": [1, 16], "history": [1, 128], "quarantine": [1, 32]},
+  "max_document_bytes": 524288,
+  "global_reserve_bytes": 32768,
+  "global_slot_bytes": {"leadership": 2048, "force_request": 1024, "commissioning": 4096, "settings": 4096, "summary": 8192, "registry": 4096},
+  "target_slot_bytes": {"catalogue": 1024, "work": 1536, "result": 1536, "cancel": 384, "ack": 384, "status": 512},
+  "pool_slot_bytes": {"ingress": 1024, "history": 384, "quarantine": 512},
+  "artifact_descriptor_bytes": 512,
+  "artifact_slots_per_target": ["input", "output"],
+  "max_raw_artifact_bytes": 8388608,
+  "slot_id_policy": "Fixed zero-padded provisioned indices; never computer names or operation IDs",
+  "normal_operation_create_count": 0,
+  "work_lanes_per_target": 1,
+  "status_query": "Read-only authoritative snapshot; no queue slot consumed",
+  "control_capacity": "Dedicated cancel and acknowledgement records per provisioned target, independent of work ingress saturation",
+  "provider_requests": "One strict requiredRevisionId document batch plus authoritative readback; no unconditional authority mutation",
+  "release_gate": "Later protocol, adapter, timing, commissioning, GUI and real-provider acceptance required"
+}

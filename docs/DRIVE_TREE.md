@@ -2,6 +2,9 @@
 
 This document describes the protocol-v1 persistent tree. The machine-readable authority is `protocol/tree-blueprint.yaml`.
 
+The unreleased R2 design uses a separately versioned [fixed native-document
+layout](EXCHANGE_LAYOUT_CONTRACT.md). It does not silently migrate this v1 tree.
+
 ## Top-level tree
 
 ```text
