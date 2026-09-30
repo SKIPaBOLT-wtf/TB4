@@ -1,0 +1,833 @@
+{
+  "compatibility_status": "UNRELEASED",
+  "installed_protocol_major": 1,
+  "protocol_major": 2,
+  "protocol_minor": 0,
+  "schemas": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "domain_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "target_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "operation_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "protocol_major": {
+          "const": 2,
+          "type": "integer"
+        },
+        "protocol_minor": {
+          "const": 0,
+          "type": "integer"
+        },
+        "payload_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "kind": {
+          "const": "SUBMIT"
+        },
+        "given_at": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000000
+        },
+        "claim_deadline": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000000
+        },
+        "run_limit_s": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 86400
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "INLINE"
+                },
+                "interpreter": {
+                  "enum": [
+                    "python",
+                    "python3",
+                    "pwsh",
+                    "powershell",
+                    "bash",
+                    "sh"
+                  ]
+                },
+                "size_bytes": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 256
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256
+                }
+              },
+              "required": [
+                "kind",
+                "interpreter",
+                "size_bytes",
+                "text"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "ARTIFACT"
+                },
+                "interpreter": {
+                  "enum": [
+                    "python",
+                    "python3",
+                    "pwsh",
+                    "powershell",
+                    "bash",
+                    "sh"
+                  ]
+                },
+                "size_bytes": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 8388608
+                },
+                "slot": {
+                  "type": "string",
+                  "pattern": "^artifact\\.[0-9]{3}\\.input$"
+                },
+                "artifact_generation": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9223372036854775807
+                }
+              },
+              "required": [
+                "kind",
+                "interpreter",
+                "size_bytes",
+                "slot",
+                "artifact_generation"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "domain_id",
+        "target_id",
+        "operation_id",
+        "generation",
+        "protocol_major",
+        "protocol_minor",
+        "payload_sha256",
+        "kind",
+        "given_at",
+        "claim_deadline",
+        "run_limit_s",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    "binding": {
+      "type": "object",
+      "properties": {
+        "domain_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "target_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "operation_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "protocol_major": {
+          "const": 2,
+          "type": "integer"
+        },
+        "protocol_minor": {
+          "const": 0,
+          "type": "integer"
+        },
+        "payload_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "domain_id",
+        "target_id",
+        "operation_id",
+        "generation",
+        "protocol_major",
+        "protocol_minor",
+        "payload_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "result": {
+      "type": "object",
+      "properties": {
+        "binding": {
+          "type": "object",
+          "properties": {
+            "domain_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "target_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "operation_id": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "generation": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9223372036854775807
+            },
+            "protocol_major": {
+              "const": 2,
+              "type": "integer"
+            },
+            "protocol_minor": {
+              "const": 0,
+              "type": "integer"
+            },
+            "payload_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "domain_id",
+            "target_id",
+            "operation_id",
+            "generation",
+            "protocol_major",
+            "protocol_minor",
+            "payload_sha256"
+          ],
+          "additionalProperties": false
+        },
+        "outcome": {
+          "enum": [
+            "DONE",
+            "PARTIAL",
+            "FAILED",
+            "CANCELLED"
+          ]
+        },
+        "execution": {
+          "enum": [
+            "EXITED",
+            "INTERRUPTED",
+            "NOT_EXECUTED"
+          ]
+        },
+        "exit_code": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "interruption_proven": {
+          "type": "boolean"
+        },
+        "effects": {
+          "enum": [
+            "NONE",
+            "KNOWN",
+            "UNKNOWN"
+          ]
+        },
+        "reason": {
+          "enum": [
+            "EXIT_ZERO",
+            "EXIT_NONZERO",
+            "INTERRUPTED",
+            "CLAIM_EXPIRED",
+            "WITHDRAWN"
+          ]
+        },
+        "stdout_tail": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "stderr_tail": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "artifact_output": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "slot": {
+                  "type": "string",
+                  "pattern": "^artifact\\.[0-9]{3}\\.output$"
+                },
+                "generation": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9223372036854775807
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "size_bytes": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 8388608
+                }
+              },
+              "required": [
+                "slot",
+                "generation",
+                "sha256",
+                "size_bytes"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "result_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "binding",
+        "outcome",
+        "execution",
+        "exit_code",
+        "interruption_proven",
+        "effects",
+        "reason",
+        "stdout_tail",
+        "stderr_tail",
+        "artifact_output",
+        "result_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "cancel": {
+      "type": "object",
+      "properties": {
+        "binding": {
+          "type": "object",
+          "properties": {
+            "domain_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "target_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "operation_id": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "generation": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9223372036854775807
+            },
+            "protocol_major": {
+              "const": 2,
+              "type": "integer"
+            },
+            "protocol_minor": {
+              "const": 0,
+              "type": "integer"
+            },
+            "payload_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "domain_id",
+            "target_id",
+            "operation_id",
+            "generation",
+            "protocol_major",
+            "protocol_minor",
+            "payload_sha256"
+          ],
+          "additionalProperties": false
+        },
+        "request_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "requested_at": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000000
+        },
+        "state": {
+          "enum": [
+            "REQUESTED",
+            "ACKNOWLEDGED",
+            "SIGNALLED",
+            "ALREADY_FINISHED",
+            "UNKNOWN"
+          ]
+        }
+      },
+      "required": [
+        "binding",
+        "request_id",
+        "requested_at",
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "ack": {
+      "type": "object",
+      "properties": {
+        "binding": {
+          "type": "object",
+          "properties": {
+            "domain_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "target_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "operation_id": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "generation": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9223372036854775807
+            },
+            "protocol_major": {
+              "const": 2,
+              "type": "integer"
+            },
+            "protocol_minor": {
+              "const": 0,
+              "type": "integer"
+            },
+            "payload_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "domain_id",
+            "target_id",
+            "operation_id",
+            "generation",
+            "protocol_major",
+            "protocol_minor",
+            "payload_sha256"
+          ],
+          "additionalProperties": false
+        },
+        "result_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "consumed_at": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000000
+        }
+      },
+      "required": [
+        "binding",
+        "result_sha256",
+        "consumed_at"
+      ],
+      "additionalProperties": false
+    },
+    "status_projection": {
+      "type": "object",
+      "properties": {
+        "binding": {
+          "type": "object",
+          "properties": {
+            "domain_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "target_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "operation_id": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "generation": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9223372036854775807
+            },
+            "protocol_major": {
+              "const": 2,
+              "type": "integer"
+            },
+            "protocol_minor": {
+              "const": 0,
+              "type": "integer"
+            },
+            "payload_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "domain_id",
+            "target_id",
+            "operation_id",
+            "generation",
+            "protocol_major",
+            "protocol_minor",
+            "payload_sha256"
+          ],
+          "additionalProperties": false
+        },
+        "receipt": {
+          "enum": [
+            "ADMITTED",
+            "REJECTED"
+          ]
+        },
+        "execution": {
+          "enum": [
+            "NOT_STARTED",
+            "CLAIMED",
+            "RUNNING",
+            "EXITED",
+            "INTERRUPTED",
+            "NOT_EXECUTED",
+            "UNKNOWN"
+          ]
+        },
+        "publication": {
+          "enum": [
+            "NONE",
+            "PENDING",
+            "CONFIRMED"
+          ]
+        },
+        "consumption": {
+          "enum": [
+            "NOT_READY",
+            "PENDING",
+            "ACKNOWLEDGED"
+          ]
+        },
+        "stage": {
+          "enum": [
+            "WAITING_HOST",
+            "WAITING_FETCHER",
+            "QUEUED",
+            "CLAIMED",
+            "EXECUTING",
+            "RETURNING",
+            "WAITING_RESULT",
+            "AWAITING_CONSUMPTION",
+            "RECYCLING",
+            "READY"
+          ]
+        },
+        "responsible": {
+          "enum": [
+            "WATCHDOG",
+            "FETCHER",
+            "COACH"
+          ]
+        },
+        "stage_at": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000000
+        },
+        "last_progress_at": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000000
+        },
+        "wait_reason": {
+          "enum": [
+            "NONE",
+            "HOST",
+            "FETCHER",
+            "EXECUTION",
+            "EXECUTION_UNKNOWN",
+            "PUBLICATION",
+            "RESULT_ACK",
+            "RECYCLE"
+          ]
+        },
+        "next_check_at": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000000000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "deadline_at": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000000000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "terminal": {
+          "type": "boolean"
+        },
+        "result_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "binding",
+        "receipt",
+        "execution",
+        "publication",
+        "consumption",
+        "stage",
+        "responsible",
+        "stage_at",
+        "last_progress_at",
+        "wait_reason",
+        "next_check_at",
+        "deadline_at",
+        "terminal",
+        "result_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "receipt": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "INGRESS_RECEIPT"
+        },
+        "disposition": {
+          "enum": [
+            "ADMITTED",
+            "DUPLICATE",
+            "REJECTED"
+          ]
+        },
+        "reason": {
+          "enum": [
+            "ACCEPTED",
+            "EXISTING",
+            "MALFORMED",
+            "SCHEMA",
+            "WRONG_DOMAIN",
+            "UNKNOWN_TARGET",
+            "IDENTITY",
+            "PAYLOAD_INTEGRITY",
+            "ARTIFACT_UNVERIFIED",
+            "TIME_RANGE",
+            "EXPIRED",
+            "FUTURE_REQUEST",
+            "TOO_LARGE",
+            "ID_CONFLICT",
+            "BUSY",
+            "STALE_GENERATION",
+            "GENERATION_GAP",
+            "CAPACITY"
+          ]
+        },
+        "operation_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "request_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "ingress_slot": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 15
+        },
+        "ingress_generation": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "ingress_revision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "kind",
+        "disposition",
+        "reason",
+        "operation_id",
+        "request_sha256",
+        "ingress_slot",
+        "ingress_generation",
+        "ingress_revision"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "transitions": {
+    "wait_host": {
+      "actor": "WATCHDOG",
+      "from": [
+        "QUEUED",
+        "WAITING_FETCHER",
+        "WAITING_HOST"
+      ]
+    },
+    "wait_fetcher": {
+      "actor": "WATCHDOG",
+      "from": [
+        "QUEUED",
+        "WAITING_FETCHER",
+        "WAITING_HOST"
+      ]
+    },
+    "claim": {
+      "actor": "FETCHER",
+      "from": [
+        "QUEUED",
+        "WAITING_FETCHER",
+        "WAITING_HOST"
+      ]
+    },
+    "start": {
+      "actor": "FETCHER",
+      "from": [
+        "CLAIMED"
+      ]
+    },
+    "expire": {
+      "actor": "WATCHDOG",
+      "from": [
+        "QUEUED",
+        "WAITING_FETCHER",
+        "WAITING_HOST"
+      ]
+    },
+    "withdraw": {
+      "actor": "WATCHDOG",
+      "from": [
+        "QUEUED",
+        "WAITING_FETCHER",
+        "WAITING_HOST"
+      ]
+    },
+    "unknown": {
+      "actor": "WATCHDOG",
+      "from": [
+        "CLAIMED",
+        "EXECUTING"
+      ]
+    },
+    "result": {
+      "actor": "FETCHER",
+      "from": [
+        "CLAIMED",
+        "EXECUTING",
+        "WAITING_RESULT"
+      ]
+    },
+    "publish": {
+      "actor": "FETCHER",
+      "from": [
+        "RETURNING"
+      ]
+    },
+    "publish_expiry": {
+      "actor": "WATCHDOG",
+      "from": [
+        "RETURNING"
+      ]
+    },
+    "ack": {
+      "actor": "COACH",
+      "from": [
+        "AWAITING_CONSUMPTION"
+      ]
+    },
+    "recycle": {
+      "actor": "WATCHDOG",
+      "from": [
+        "RECYCLING"
+      ]
+    }
+  }
+}

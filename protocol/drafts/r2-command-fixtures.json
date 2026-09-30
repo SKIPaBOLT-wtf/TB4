@@ -1,0 +1,180 @@
+{
+  "compatibility_status": "UNRELEASED",
+  "positive": [
+    {
+      "schema": "request",
+      "value": {
+        "domain_id": "00000000-0000-4000-8000-000000000001",
+        "target_id": "00000000-0000-4000-8000-000000000002",
+        "operation_id": "98560b24d6523f74fcfe4159564a2999db0df8e24738694d8b1b0a8fcfeded13",
+        "generation": 1,
+        "protocol_major": 2,
+        "protocol_minor": 0,
+        "payload_sha256": "e809c9fe331e7223e246ec227a4612dfa8afeefc9b556a03c63470a6ca82b7c5",
+        "kind": "SUBMIT",
+        "given_at": 100,
+        "claim_deadline": 200,
+        "run_limit_s": 30,
+        "payload": {
+          "kind": "INLINE",
+          "interpreter": "python",
+          "size_bytes": 18,
+          "text": "print('synthetic')"
+        }
+      }
+    },
+    {
+      "schema": "result",
+      "value": {
+        "binding": {
+          "domain_id": "00000000-0000-4000-8000-000000000001",
+          "target_id": "00000000-0000-4000-8000-000000000002",
+          "operation_id": "98560b24d6523f74fcfe4159564a2999db0df8e24738694d8b1b0a8fcfeded13",
+          "generation": 1,
+          "protocol_major": 2,
+          "protocol_minor": 0,
+          "payload_sha256": "e809c9fe331e7223e246ec227a4612dfa8afeefc9b556a03c63470a6ca82b7c5"
+        },
+        "outcome": "DONE",
+        "execution": "EXITED",
+        "exit_code": 0,
+        "interruption_proven": false,
+        "effects": "NONE",
+        "reason": "EXIT_ZERO",
+        "stdout_tail": "",
+        "stderr_tail": "",
+        "artifact_output": null,
+        "result_sha256": "6a66bb0f62d1838432c4705d1234288404333e96d59c8436a310f7302951944c"
+      }
+    },
+    {
+      "schema": "cancel",
+      "value": {
+        "binding": {
+          "domain_id": "00000000-0000-4000-8000-000000000001",
+          "target_id": "00000000-0000-4000-8000-000000000002",
+          "operation_id": "98560b24d6523f74fcfe4159564a2999db0df8e24738694d8b1b0a8fcfeded13",
+          "generation": 1,
+          "protocol_major": 2,
+          "protocol_minor": 0,
+          "payload_sha256": "e809c9fe331e7223e246ec227a4612dfa8afeefc9b556a03c63470a6ca82b7c5"
+        },
+        "request_id": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "requested_at": 101,
+        "state": "REQUESTED"
+      }
+    },
+    {
+      "schema": "ack",
+      "value": {
+        "binding": {
+          "domain_id": "00000000-0000-4000-8000-000000000001",
+          "target_id": "00000000-0000-4000-8000-000000000002",
+          "operation_id": "98560b24d6523f74fcfe4159564a2999db0df8e24738694d8b1b0a8fcfeded13",
+          "generation": 1,
+          "protocol_major": 2,
+          "protocol_minor": 0,
+          "payload_sha256": "e809c9fe331e7223e246ec227a4612dfa8afeefc9b556a03c63470a6ca82b7c5"
+        },
+        "result_sha256": "6a66bb0f62d1838432c4705d1234288404333e96d59c8436a310f7302951944c",
+        "consumed_at": 105
+      }
+    }
+  ],
+  "negative": [
+    {
+      "schema": "request",
+      "value": {
+        "domain_id": "00000000-0000-4000-8000-000000000001",
+        "target_id": "00000000-0000-4000-8000-000000000002",
+        "operation_id": "98560b24d6523f74fcfe4159564a2999db0df8e24738694d8b1b0a8fcfeded13",
+        "generation": 1,
+        "protocol_major": 1,
+        "protocol_minor": 0,
+        "payload_sha256": "e809c9fe331e7223e246ec227a4612dfa8afeefc9b556a03c63470a6ca82b7c5",
+        "kind": "SUBMIT",
+        "given_at": 100,
+        "claim_deadline": 200,
+        "run_limit_s": 30,
+        "payload": {
+          "kind": "INLINE",
+          "interpreter": "python",
+          "size_bytes": 18,
+          "text": "print('synthetic')"
+        }
+      }
+    },
+    {
+      "schema": "request",
+      "value": {
+        "domain_id": "00000000-0000-4000-8000-000000000001",
+        "target_id": "00000000-0000-4000-8000-000000000002",
+        "operation_id": "98560b24d6523f74fcfe4159564a2999db0df8e24738694d8b1b0a8fcfeded13",
+        "generation": true,
+        "protocol_major": 2,
+        "protocol_minor": 0,
+        "payload_sha256": "e809c9fe331e7223e246ec227a4612dfa8afeefc9b556a03c63470a6ca82b7c5",
+        "kind": "SUBMIT",
+        "given_at": 100,
+        "claim_deadline": 200,
+        "run_limit_s": 30,
+        "payload": {
+          "kind": "INLINE",
+          "interpreter": "python",
+          "size_bytes": 18,
+          "text": "print('synthetic')"
+        }
+      }
+    },
+    {
+      "schema": "ack",
+      "value": {
+        "binding": {
+          "domain_id": "00000000-0000-4000-8000-000000000001",
+          "target_id": "00000000-0000-4000-8000-000000000002",
+          "operation_id": "98560b24d6523f74fcfe4159564a2999db0df8e24738694d8b1b0a8fcfeded13",
+          "generation": 1,
+          "protocol_major": 2,
+          "protocol_minor": 0,
+          "payload_sha256": "e809c9fe331e7223e246ec227a4612dfa8afeefc9b556a03c63470a6ca82b7c5"
+        },
+        "result_sha256": "6a66bb0f62d1838432c4705d1234288404333e96d59c8436a310f7302951944c",
+        "consumed_at": 105,
+        "unexpected": "rejected"
+      }
+    },
+    {
+      "schema": "cancel",
+      "value": {
+        "binding": {
+          "domain_id": "00000000-0000-4000-8000-000000000001",
+          "target_id": "00000000-0000-4000-8000-000000000002",
+          "operation_id": "98560b24d6523f74fcfe4159564a2999db0df8e24738694d8b1b0a8fcfeded13",
+          "generation": 1,
+          "protocol_major": 2,
+          "protocol_minor": 0,
+          "payload_sha256": "e809c9fe331e7223e246ec227a4612dfa8afeefc9b556a03c63470a6ca82b7c5"
+        },
+        "request_id": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "requested_at": 101,
+        "state": "INTERRUPTED"
+      }
+    }
+  ],
+  "legacy_mapping": {
+    "FETCH_BALL": {
+      "LOADING": "ingress preparation",
+      "TOSS": "QUEUED",
+      "CHEW": "CLAIMED or EXECUTING",
+      "RETURNING": "RETURNING; publication pending",
+      "DONE/PARTIAL/FAILED/CANCELLED": "published result outcome",
+      "GONE": "UNKNOWN / WAITING_RESULT; effect review required",
+      "RECYCLING": "exact ACK accepted; WATCHDOG recycle",
+      "READY": "free channel; high-water generation retained"
+    },
+    "STOP_BALL": "operation-bound cancellation; cancellation ACK is not interruption or consumption ACK",
+    "WAKE_BONE": "WATCHDOG host wake/bootstrap, separate from execution proof",
+    "DOG_PULSE": "liveness, never result proof",
+    "WATCHDOG": "coordination; immediate stale-record role takeover per RP-008 A-002"
+  }
+}

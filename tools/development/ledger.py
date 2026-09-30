@@ -118,12 +118,47 @@ class PublicCommits:
         return self.cache[sha]
 
 
+def _started_reference_corrections(events):
+    """Resolve only clerical STARTED links, retaining original event objects.
+
+    This cannot introduce an INTENT or alter the execution/outcome ledger. Full
+    chronological validation below still requires the real intent to be pending.
+    """
+    earlier, resolved = {}, {}
+    for event in events:
+        require(isinstance(event, dict) and isinstance(event.get("event_id"), str),
+                "RECORD_SCHEMA_INVALID")
+        if "reference_correction" in event:
+            shape(event, schemas.EVENT)
+            patch = event["reference_correction"]
+            target = earlier.get(event.get("related_event"), {})
+            intent = earlier.get(patch["new_value"], {})
+            require(event["event"] == "CORRECTION" and event["outcome"] == "RECORDED"
+                    and event["observed"], "REFERENCE_CORRECTION_INVALID")
+            require(target.get("event") == "STARTED" and intent.get("event") == "INTENT"
+                    and intent["sequence"] < target["sequence"] < event["sequence"],
+                    "REFERENCE_CORRECTION_TARGET_INVALID")
+            require(target.get("related_event") == patch["old_value"]
+                    and patch["old_value"] != patch["new_value"]
+                    and target["event_id"] not in resolved, "REFERENCE_CORRECTION_CONFLICT")
+            require(target.get("run_id") and target["run_id"] == event.get("run_id")
+                    and all(target.get(k) == event.get(k) == intent.get(k)
+                            for k in ("item", "attempt", "action_id", "check", "source_ref")),
+                    "REFERENCE_CORRECTION_IDENTITY")
+            resolved[target["event_id"]] = patch["new_value"]
+        earlier[event.get("event_id")] = event
+    return resolved
+
+
 def validate_journal(events, item, attempt, reachable):
+    if item.startswith("RP-"):
+        for event in events:
+            shape(event, schemas.EVENT)
+    corrections = _started_reference_corrections(events)
     by_id, pending, actions = {}, {}, set()
     previous_time = None
     for n, event in enumerate(events, 1):
         if item.startswith("RP-"):
-            shape(event, schemas.EVENT)
             stamp = datetime.fromisoformat(event["at"].replace("Z", "+00:00"))
             require(previous_time is None or stamp >= previous_time, "EVENT_TIME_REVERSED")
             previous_time = stamp
@@ -158,6 +193,7 @@ def validate_journal(events, item, attempt, reachable):
             if event.get("outcome") not in {"UNKNOWN", "BLOCKED"}:
                 del pending[related]
         elif kind == "STARTED":
+            related = corrections.get(identity, related)
             require(related in pending and event.get("run_id"), "STARTED_WITHOUT_RUN_OR_INTENT")
         elif kind == "CORRECTION":
             require(related in by_id and event.get("observed"), "CORRECTION_TARGET_MISSING")

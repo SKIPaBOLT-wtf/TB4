@@ -40,6 +40,11 @@ EVENT = closed({
     "uncertainty": TEXT,
     "exit_code": {"type": ["integer", "null"]},
     "run_id": TEXT,
+    "reference_correction": closed({
+        "field": {"const": "related_event"},
+        "old_value": {"type": ["string", "null"]},
+        "new_value": TEXT,
+    }),
 }, ["schema_version", "event_id", "sequence", "at", "item", "check",
     "attempt", "phase", "event", "action_id", "related_event", "source_ref",
     "scope", "procedure", "expected", "observed", "outcome", "evidence",

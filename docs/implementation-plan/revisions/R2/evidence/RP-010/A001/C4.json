@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "item": "RP-010",
+  "check": "RP-010.C4",
+  "attempt": "A001",
+  "source_ref": "179c76be7071692a36b4d6bfbecb02aee08dedbb",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Review schema/model/docs/matrix and named negative assertions; run the recorded Windows target suite, UTF-8 ledger/history/scanner and exact-head Linux CI/Progress/Desktop, then inspect both native acceptance outputs.",
+  "expected": "Positive/negative machine fixtures, reviewed v1 vocabulary mapping, unreleased compatibility boundary and mandatory append-only development-record gates.",
+  "observed": "Final Windows 472 passed (17.53s); Linux CI 1081 passed/2 skipped (16.86s); Linux native full 1091, GUI 67; Windows GUI 63/4 POSIX skips. Both role builds/self-tests/GUI/install-uninstall isolation passed. Exact-node and artifact provenance recorded. DEF-012 administrative correction and input-shape regressions passed; original failures/events immutable. No live protocol or runtime migration.",
+  "exit_code": 0,
+  "platform_scope": "Windows Python 3.11 synthetic contract/ledger; Linux CI; native Linux/Windows GUI and isolated installers; no live topology/provider migration.",
+  "negative_cases": [
+    "Malformed/duplicate-key/invalid UTF-8/nonfinite/version/target ingress",
+    "Payload/result/ACK and compact-generation mismatches",
+    "Busy target, changed duplicate, stale generation after history eviction",
+    "Claim/expiry/withdrawal CAS races and postclaim uncertainty",
+    "Cancel ACK/signal without interruption and natural completion",
+    "Unconfirmed publication/unconsumed recycle",
+    "Late/settled/mismatched or duplicate administrative corrections",
+    "Malformed correction input uses allowlisted diagnostic"
+  ],
+  "unverified_scope": "Pure contract models assume atomic trusted authority and role authorization. Real Doc adapter/epoch enforcement, media IO, trusted clocks, process supervision/cancel, GUI/helper wiring, durable recovery and deployment remain future gates.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Draft-only change; installed v1 untouched. Preserve original ledger/evidence and all failed attempts; never delete unread/unknown work or reset live generations.",
+  "intent_event": "RP-010-A001-0016",
+  "outcome_event": "RP-010-A001-0020",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-010/A001/reviewed-validation.md"
+  ]
+}
