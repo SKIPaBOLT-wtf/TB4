@@ -33,4 +33,4 @@ jobs:
         run: python tools/scan_public_repo.py
 
       - name: Test
-        run: pytest
+        run: python -m pytest
