@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-005"
-check: "RP-005.C3"
+work_item: "RP-006"
+check: "RP-006.C1"
 attempt: "A001"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "d3ac272140e6a583777dccb891c7d2aef0e1d4e7"
-journal: "docs/development/journal/RP-005/A001/events.jsonl"
-last_verified_event: "RP-005-A001-0009"
-last_completed: "RP-001 through RP-005 VERIFIED and merged. Historical pilot DEF-001/DEF-002 remain OPEN."
-next_action: "Verify main Progress and history from ownership checkpoint; then claim RP-006/A001 for local credential-reference resolver contract."
-verification: "Closed schema and semantic checks; varied synthetic topology/observation fixtures; private projection and revision/authority negative tests."
+phase: "SOURCE"
+source_branch: "work/rp-006-a001"
+source_commit: "8656f2d5c000c046a96a8249bd1a21006ce6bce3"
+journal: "docs/development/journal/RP-006/A001/events.jsonl"
+last_verified_event: "RP-006-A001-0001"
+last_completed: "RP-001 through RP-005 VERIFIED and merged; main Progress passed; DEF-001/DEF-002 remain OPEN."
+next_action: "Publish source outcome then run resolver/privacy/security/ledger regressions and required CI."
+verification: "Purpose/installation/trust and per-use permission negative tests, rotation/revocation/expiry/fault fixtures, no disclosure and independent standby capability."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-006-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Retain previous descriptor revision and mappings; schema/source rollback cannot reinterpret existing device identities or mutate a live root."
+rollback: "Revoke/remove only a new binding, preserve unrelated keys and old evidence, and report the affected capability unavailable. No real keys changed."
 next_implementation_step: "RP-006"
 next_implementation_check: "RP-006.C1"
