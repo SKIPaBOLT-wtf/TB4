@@ -1,0 +1,37 @@
+{
+  "compatibility_status": "UNRELEASED",
+  "protocol_major": 2,
+  "owner_intervals": {
+    "watchdog_network_fast_s": 60,
+    "watchdog_network_slow_s": 600,
+    "watchdog_idle_after_s": 3600,
+    "fetcher_fast_s": 20,
+    "fetcher_slow_s": 1200,
+    "fetcher_idle_after_s": 1200
+  },
+  "default_profile": {
+    "watchdog_network_fast_s": 60,
+    "watchdog_network_slow_s": 600,
+    "watchdog_idle_after_s": 3600,
+    "fetcher_fast_s": 20,
+    "fetcher_slow_s": 1200,
+    "fetcher_idle_after_s": 1200,
+    "inbox_s": 5,
+    "control_s": 5,
+    "watchdog_heartbeat_s": 30,
+    "fetcher_heartbeat_s": 120,
+    "fetcher_fresh_s": 300,
+    "lease_renew_s": 20,
+    "lease_stale_s": 120,
+    "standby_s": 10,
+    "local_supervision_s": 0.25,
+    "visibility_s": 10,
+    "transport_queue_s": 30,
+    "skew_s": 10,
+    "publication_wait_s": 120,
+    "idle_policy": "SLOW",
+    "launcher_kind": null,
+    "launcher_bound_s": null
+  },
+  "runtime_wired": false
+}
