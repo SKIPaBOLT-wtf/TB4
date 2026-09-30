@@ -7,14 +7,14 @@ phase: "FINAL_REVIEW"
 source_branch: "work/rp-007-a001"
 source_commit: "d1af5328d05f1dda9cf36a662df06f158c0252e5"
 journal: "docs/development/journal/RP-007/A001/events.jsonl"
-last_verified_event: "RP-007-A001-0006"
+last_verified_event: "RP-007-A001-0007"
 last_completed: "RP-001 through RP-006 VERIFIED and merged; main Progress 36770389600 passed; DEF-001/DEF-002 remain OPEN."
-next_action: "Record final review result then exact-head merge INTENT."
+next_action: "Publish exact-head merge INTENT and merge PR 14, then record acceptance."
 verification: "Fresh resolution, immutable reference closure, compatibility boundaries, missing/cache/revocation/update failures, untrusted-data isolation and pointer-only package review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-007-A001-0006"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
