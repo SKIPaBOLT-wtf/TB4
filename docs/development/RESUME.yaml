@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-010"
 check: "RP-010.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "SOURCE_EXPORT"
 source_branch: "work/rp-010-a001"
-source_commit: "6bea04e86f0f74efedb366eb39c66cdb393dd535"
+source_commit: "881a8d0136b2ebb6d747c057b5328df71929f172"
 journal: "docs/development/journal/RP-010/A001/events.jsonl"
-last_verified_event: "RP-010-A001-0001"
+last_verified_event: "RP-010-A001-0002"
 last_completed: "RP-001 through RP-009 VERIFIED; all relevant Windows/Linux/native checks passed and RP-009 merged. Current RP-008 amendment requires takeover without global old-host/sink ACK."
-next_action: "Implement compact schemas, correlated lifecycle/admission model and boundary fixtures; publish exact source outcome before targeted and native validation."
+next_action: "Correct the local exporter closing delimiter, produce the two unreleased machine artifacts and privacy-review/publish them before any test run."
 verification: "Positive/negative schema and slot-budget fixtures, malformed/different-payload duplicates, busy targets, claim-versus-timeout orderings, correlated cancel/result/ACK, stale-generation and actor restrictions; prior regressions and exact-source CI/build review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-010-A001-0001"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
