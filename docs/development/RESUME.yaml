@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-006"
-check: "RP-006.C4"
+work_item: "RP-007"
+check: "RP-007.C1"
 attempt: "A001"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "643a99063aa0c8bcb94ae0a1838852c04766f6e2"
-journal: "docs/development/journal/RP-006/A001/events.jsonl"
-last_verified_event: "RP-006-A001-0009"
-last_completed: "RP-001 through RP-006 VERIFIED and merged; DEF-001/DEF-002 remain OPEN."
-next_action: "Verify main Progress and ledger/history acceptance, then claim RP-007 with a published source INTENT."
-verification: "Purpose/installation/trust and per-use permission negative tests, rotation/revocation/expiry/fault fixtures, no disclosure and independent standby capability."
+phase: "SOURCE"
+source_branch: "work/rp-007-a001"
+source_commit: "9c633e62f4f1572de293ef75782788f7da6b5146"
+journal: "docs/development/journal/RP-007/A001/events.jsonl"
+last_verified_event: "RP-007-A001-0001"
+last_completed: "RP-001 through RP-006 VERIFIED and merged; main Progress 36770389600 passed; DEF-001/DEF-002 remain OPEN."
+next_action: "Implement source and synthetic tests; publish source OUTCOME then separate validation INTENT."
+verification: "Fresh resolution, immutable reference closure, compatibility boundaries, missing/cache/revocation/update failures, untrusted-data isolation and pointer-only package review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-007-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Revoke/remove only a new binding, preserve unrelated keys and old evidence, and report the affected capability unavailable. No real keys changed."
+rollback: "Withdraw incompatible entry publication and restore last supported repository entry; never downgrade live protocol state or silently replay operations."
 next_implementation_step: "RP-007"
 next_implementation_check: "RP-007.C1"
