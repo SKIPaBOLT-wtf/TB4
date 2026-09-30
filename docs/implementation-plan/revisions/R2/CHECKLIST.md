@@ -18,7 +18,7 @@ This is a projection of `manifest.yaml`. Mark a step/check complete only through
 - [x] [RP-010 - Command status and ownership protocol contract](steps/RP-010.md) - prerequisites: RP-007, RP-008, RP-009.
 - [x] [RP-011 - Timing semantics and relationship validation](steps/RP-011.md) - prerequisites: RP-005, RP-010.
 - [x] [RP-012 - Security and failure semantics decision gate](steps/RP-012.md) - prerequisites: RP-004, RP-006, RP-010, RP-011.
-- [ ] [RP-013 - Reproduce ordinary result-publication conflict](steps/RP-013.md) - prerequisites: RP-001, RP-003, RP-004.
+- [x] [RP-013 - Reproduce ordinary result-publication conflict](steps/RP-013.md) - prerequisites: RP-001, RP-003, RP-004.
 - [ ] [RP-014 - Reproduce cancellation versus natural-exit race](steps/RP-014.md) - prerequisites: RP-001, RP-003, RP-004.
 
 ## Storage, ownership, commissioning primitives and credentials
