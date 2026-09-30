@@ -6,6 +6,7 @@ import os
 import subprocess
 import sys
 import threading
+import time
 from pathlib import Path
 
 from .profile import (Profile, ProfileError, ProfileLock, canonical_validate,
@@ -124,6 +125,20 @@ def run_action(profile: Profile, action: str, telemetry: Telemetry, stop: thread
             raise ProfileError("CONFIG_SAVE_MESSAGE_INVALID")
         save_config(profile, message["text"], expected_digest=message.get("expected_digest"))
         return 0
+    recovery_ticket = None
+    if action == "recover-return":
+        if profile.role != "fetcher":
+            raise ProfileError("RETURN_RECOVERY_REQUIRES_FETCHER")
+        from tb4.fetcher.return_recovery import ReturnRecoveryError, validate_ticket
+        try:
+            message = sys.stdin.readline(4097)
+            if len(message) > 4096:
+                raise ValueError("bounded recovery ticket required")
+            recovery_ticket = validate_ticket(json.loads(message))
+        except (ValueError, ReturnRecoveryError) as exc:
+            raise ProfileError("RETURN_RECOVERY_TICKET_INVALID") from exc
+        # The action payload must be consumed before the stop listener starts.
+        threading.Thread(target=_listen, args=(sys.stdin, stop), daemon=True).start()
     with ProfileLock(profile):
         if action == "run":
             return run_production(profile, telemetry, stop)
@@ -131,6 +146,8 @@ def run_action(profile: Profile, action: str, telemetry: Telemetry, stop: thread
         canonical_validate(profile.role, profile.config)
         if action == "validate":
             return 0
+        if action == "recover-return":
+            refuse_legacy_service(profile.role)
         from .provider import google_backend
         telemetry.set_state("STARTING", "AUTHORIZATION")
         backend = ObservedBackend(google_backend(config, interactive=action == "authorize"), telemetry)
@@ -153,6 +170,17 @@ def run_action(profile: Profile, action: str, telemetry: Telemetry, stop: thread
             if mount and not Path(mount).is_dir():
                 raise ProfileError("OPTIONAL_LOCAL_MOUNT_UNAVAILABLE")
             return 0
+        if action == "recover-return":
+            from tb4.runtime_support import build_context
+            from tb4.fetcher.return_recovery import ReturnRecoveryError, recover_returning
+            context = build_context(profile.config, backend=backend)
+            telemetry.set_state("STARTING", "ROLE_STARTUP")
+            try:
+                recover_returning(context, recovery_ticket, now_epoch_s=int(time.time()),
+                                  stop_requested=stop.is_set)
+            except ReturnRecoveryError as exc:
+                raise ProfileError(str(exc)) from exc
+            return 0
         raise ProfileError("ACTION_INVALID")
 
 
@@ -161,7 +189,7 @@ def main(profile: Profile, action: str) -> int:
     finished = threading.Event()
     telemetry = Telemetry(profile.role)
     emitter = SnapshotEmitter(telemetry)
-    if action != "save":
+    if action not in {"save", "recover-return"}:
         threading.Thread(target=_listen, args=(sys.stdin, stop), daemon=True).start()
 
     def pulse():
