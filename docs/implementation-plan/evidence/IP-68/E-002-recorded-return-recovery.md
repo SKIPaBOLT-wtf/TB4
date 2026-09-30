@@ -72,7 +72,7 @@ working WATCHDOG need not be reinstalled merely to add a FETCHER repair action.
 Version 0.0.1 alone does not distinguish these pilot builds; use the hashes and
 source/build provenance above.
 
-## Remaining gate and rollback
+## Remaining gate and rollback (pre-installation checkpoint)
 
 At this evidence checkpoint the new FETCHER build has NOT yet been confirmed
 installed on the owner workstation, and real recorded-return recovery has NOT
@@ -87,3 +87,56 @@ Drive lifecycle state or replay an old generation as rollback.
 
 Private object IDs, host paths, identity details, actual request bodies and OAuth
 material are intentionally omitted from this public progress record.
+
+## Live publication and supervised recycling update - 2026-09-30
+
+This later checkpoint supersedes only the pending installation/publication/
+recycling observations above; it does not erase their chronology or complete IP-68.
+
+The owner reported installing the handed-off FETCHER update and seeing the new
+Recover recorded return button. After submitting the reviewed recovery ticket,
+the owner supplied EXITED / ACTION_FINISHED telemetry with FETCH_BALL_CANCELLED,
+a successful metadata read and no reported error. Independent authenticated
+Drive readback confirmed the same canonical object in FETCH_BALL_CANCELLED with
+the original report unchanged. No new execution-start or finish evidence was
+created. The delivered installer was verified as recorded above; its installed
+host binary was not independently rehashed at this checkpoint.
+
+Before recycling, COACH reread the current PARK_MAP, live terminal report,
+STOP_BALL acknowledgement, and both separate BONEYARD copies. The recorded
+FETCH_BALL and STOP_BALL result hashes and the inline payload hash were recomputed
+and matched. The original report still contains the post-wait marker; this was
+consumed as unresolved cancellation-test evidence, not a passed interruption.
+The observed global fault object was CLEAN. The target heartbeat was unchanged
+from the stopped FETCHER instance; no role loop was started during this action.
+
+With the owner-confirmed FETCHER stopped, supervised exact-ID connector calls
+performed these separate canonical COACH paths:
+
+- STOP_BALL_ACKNOWLEDGED -> STOP_BALL_RECYCLING -> STOP_BALL_READY.
+- FETCH_BALL_CANCELLED -> FETCH_BALL_RECYCLING -> FETCH_BALL_READY.
+
+Each RECYCLING filename and retained operation/generation was read back before
+clearing its body. Prepared idle bodies were checked against the connector-read
+schema constraints. Each replacement was read back before READY publication and
+matched the prepared bytes. Final independent reads confirmed both READY names
+and their idle bodies. Stable control object IDs, parents and the existing
+channel generation were preserved; no new generation or executable payload was
+published. Archived original reports were not modified.
+
+FETCH_BALL uses the idle-body shape exercised by simulation.recycle_job.
+STOP_BALL retains only the previous target/job linkage strings required by its
+current schema; operation_id, request/acknowledgement data, hashes and timestamps
+are cleared. Its READY filename and null operation_id do not represent a live
+cancellation request. No placeholder target or invented job identity was used.
+
+These were supervised COACH connector operations, not an automatic recycler or
+a test of concurrent writers. The connector mutation arguments used do not
+expose an atomic version precondition. No retry was needed, and this checkpoint
+does not establish provider-level compare-and-swap safety.
+
+The next local gate is a fresh FETCHER role-loop start observing the idle
+channels. That restart is not yet verified here. Effective cancellation and
+natural-exit classification in issue #7, plus the remaining pilot scenarios,
+still require separate evidence. Do not rewind the published lifecycle or
+restore an old executable request as rollback.
