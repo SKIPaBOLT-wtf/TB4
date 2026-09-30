@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-010"
 check: "RP-010.C1"
 attempt: "A001"
-phase: "SOURCE_EXPORT"
+phase: "SOURCE"
 source_branch: "work/rp-010-a001"
-source_commit: "881a8d0136b2ebb6d747c057b5328df71929f172"
+source_commit: "45fa966038797b7b9a7f706bd70ea7dca7f49117"
 journal: "docs/development/journal/RP-010/A001/events.jsonl"
-last_verified_event: "RP-010-A001-0002"
+last_verified_event: "RP-010-A001-0003"
 last_completed: "RP-001 through RP-009 VERIFIED; all relevant Windows/Linux/native checks passed and RP-009 merged. Current RP-008 amendment requires takeover without global old-host/sink ACK."
-next_action: "Correct the local exporter closing delimiter, produce the two unreleased machine artifacts and privacy-review/publish them before any test run."
+next_action: "Export and publish exact machine schema/fixture source, then request CI through a validation INTENT."
 verification: "Positive/negative schema and slot-budget fixtures, malformed/different-payload duplicates, busy targets, claim-versus-timeout orderings, correlated cancel/result/ACK, stale-generation and actor restrictions; prior regressions and exact-source CI/build review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-010-A001-0003"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
