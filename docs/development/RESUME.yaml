@@ -5,16 +5,16 @@ check: "RP-011.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-011-a001"
-source_commit: "16ddca1b50bd047afd94fd1e1738bff3f463474c"
+source_commit: "6a0fea10ef65bcd97fad777532feade02ee47b5d"
 journal: "docs/development/journal/RP-011/A001/events.jsonl"
-last_verified_event: "RP-011-A001-0001"
+last_verified_event: "RP-011-A001-0002"
 last_completed: "RP-010 VERIFIED via PR18; accepted main 16ddca1b50bd047afd94fd1e1738bff3f463474c."
-next_action: "Implement timing contract/profiles and boundary fixtures, publish source outcome, then validate target and native regression gates."
+next_action: "Publish validation intent and run targeted timing/protocol/deadline/scheduler/idle/development regressions plus required CI/native checks."
 verification: "Source/model fixtures must preserve canonical owner values and same-role independence; exact-source local/CI/native tests and reviewed evidence before acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-011-A001-0001"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
