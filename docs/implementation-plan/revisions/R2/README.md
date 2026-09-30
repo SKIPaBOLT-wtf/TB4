@@ -17,6 +17,12 @@ cross-system/privacy acceptance axes. Use the current [resume cursor](../../../d
 
 ## Relationship to existing work
 
+The latest owner-approved [RP-008 takeover amendment](amendments/RP-008/A-002-available-owner-takeover.md)
+selects immediate conditional takeover of stale ownership and a forced GUI request,
+without waiting for all execution sinks. It supersedes the earlier global barrier
+while retaining one native Docs authority. Acceptance remains in the manifest;
+live migration remains separately gated.
+
 The original IP manifest and evidence are retained unchanged as historical scope.
 New RP IDs deliberately do not overwrite, renumber or falsely re-VERIFY those
 steps. CURRENT.yaml selects this active revision. Each RP has an isolated

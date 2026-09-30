@@ -8,6 +8,10 @@ Any persistent dependent operation must follow: read authoritative current state
 
 Example: rename state -> confirm remotely -> write body.
 
+For the future native Docs mode, apply [A-001](../amendments/EC-12/A-001-native-docs-authority.md):
+authoritative logical state and body commit in one strict-revision transaction;
+the example above remains historical v1 behavior. The same readback rule applies.
+
 Never rename, immediately write, and assume synchronization succeeded.
 
 ## Why this exists

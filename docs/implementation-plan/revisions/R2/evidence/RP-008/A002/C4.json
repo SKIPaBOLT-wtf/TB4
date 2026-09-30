@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "item": "RP-008",
+  "check": "RP-008.C4",
+  "attempt": "A002",
+  "source_ref": "f576f0815669af5708f238c1fb34d7e3942ef70a",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Review A001 capability/provider evidence, A002 amendment and 24 new model assertions; run targeted Windows tests with isolated basetemp, full Linux CI/Progress, UTF-8 ledger history check and public scan. See reviewed-validation.md for exact heads/runs and preserved failures.",
+  "expected": "Owner-approved mechanism selected as a qualified design; production and live acceptance remain separate.",
+  "observed": "Owner-approved A002 design selected; Windows 298 passed/1 POSIX skip, Linux 902 passed/2 skipped; history and public scan passed with restored immutable evidence and UTF-8 local invocation. 24 new model cases plus 17 earlier feasibility cases reviewed by invariant. No production deployment or sink qualification claim.",
+  "exit_code": 0,
+  "platform_scope": "Windows Python 3.11 synthetic/targeted tests; Linux Python 3.11 full CI; previous isolated Docs CAS provider test. No live gateway qualification.",
+  "negative_cases": [
+    "Stale revisions/epochs and wrong domains",
+    "Concurrent contenders and delayed heartbeat observations",
+    "Partition and uncertain observation clock",
+    "Old effects during ACTIVATING, unknown drain and incomplete receipts",
+    "Interrupted activation, lost reply and duplicate operation identity"
+  ],
+  "unverified_scope": "Design acceptance only under stated atomic document/durable authenticated exclusive gateway assumptions; actual adapter/gateway implementation, OS persistence/containment, same-domain alternate storage and real multi-host acceptance remain pending.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "No live change; discard synthetic state only. Preserve epochs, immutable evidence and old unknown operations; migration requires separate authorization.",
+  "intent_event": "RP-008-A002-0009",
+  "outcome_event": "RP-008-A002-0011",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-008/A002/reviewed-validation.md"
+  ]
+}

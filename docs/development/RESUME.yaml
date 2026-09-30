@@ -2,22 +2,22 @@ schema_version: 1
 revision: "R2"
 work_item: "RP-008"
 check: "RP-008.C4"
-attempt: "A002"
-phase: "SOURCE"
+attempt: "A003"
+phase: "MERGE"
 source_branch: "work/rp-008-a002"
-source_commit: "bef416b4f59e6f2815c613faf5783e5d5226baaa"
-journal: "docs/development/journal/RP-008/A002/events.jsonl"
-last_verified_event: "RP-008-A002-0001"
-last_completed: "Owner approved RP-008 candidate 3 design and prototypes, no live migration; RP-013 inspected only and deferred without source changes."
-next_action: "Implement amendment and bounded authority/sink model, then publish source outcome and separate validation INTENT."
-verification: "Deterministic Doc-CAS authority and effect barrier tests plus original provider evidence; cross-platform regressions and exact-source review."
+source_commit: "bf148dd888824e32dc58958bc96e7b5f03b6b252"
+journal: "docs/development/journal/RP-008/A003/events.jsonl"
+last_verified_event: "RP-008-A003-0008"
+last_completed: "RP-001 through RP-007 VERIFIED. Owner corrected RP-008 takeover policy before PR 16 merge; A002 evidence retained as historical rejected global barrier design."
+next_action: "Read merged journal; publish acceptance and verify main Progress; then continue RP-009 fixed capacity/layout contract."
+verification: "Immediate stale-record conditional takeover, bounded forced-request flag, old-owner write rejection and independent unknown-effect retention; no all-sink activation barrier."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-008-A002-0001"]
+unsettled_intents: ["RP-008-A003-0008"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-010"]
+known_open_defects: ["DEF-001","DEF-002","DEF-010","DEF-011"]
 rollback: "Discard only synthetic experiment state; retain histories and fixed authority identity. No live migration authorized."
 next_implementation_step: "RP-008"
 next_implementation_check: "RP-008.C4"
