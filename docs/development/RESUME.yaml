@@ -1,14 +1,25 @@
 schema_version: 1
+revision: R2
 work_item: PLAN-R2
-phase: PLANNING
 attempt: A001
-base_commit: 3d3e6e0dc0eee51e694e83b37547c047cea8e355
+phase: PUBLICATION_PENDING
 source_branch: docs/r2-plan-20260930
+base_commit: 3d3e6e0dc0eee51e694e83b37547c047cea8e355
+step_definitions_commit: cbd385a7f3d110c746b12a70c2b3ae02d6738f7d
 journal: docs/development/journal/PLAN-R2/A001/events.jsonl
-last_completed: Local draft contains 64 isolated steps and 256 checks; publication and validation pending.
-next_action: Inspect the named work branch for partial checkpoints, validate all definitions and publish the complete documentation plan.
+last_completed: Planning snapshot passed structural and local/remote hash validation; no RP implementation started.
+next_action: Compare final documentation diff, fast-forward main non-force, verify publication and append outcome.
+verification: Main ref and CURRENT/R2/checklist/work-instruction/cursor readback match reviewed documentation.
 execution_authorization: DOCUMENTATION_AND_PLANNING_ONLY
 runtime_actions_allowed: false
-unresolved_actions: []
+implementation_started: false
+next_implementation_step: RP-001
+next_implementation_check: RP-001.C1
+unsettled_intents:
+- PLAN-R2-A001-0004
 blocking_decisions: []
-privacy: Public-safe metadata only; no deployment identifiers or credential references.
+known_open_defects:
+- DEF-001
+- DEF-002
+rollback: Documentation-only revert; preserve planning journal and legacy evidence.
+source_commit: 56110d29b5c808bf74903f1484b603d7cbfec911

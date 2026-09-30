@@ -1,28 +1,44 @@
 # TB4 Agent Entry Point
 
-## Current development direction - 2026-09-30
+## Current development direction - R2 planning checkpoint, 2026-09-30
 
-Read `docs/DEVELOPMENT_REALIGNMENT_PROMPT.md` before selecting further development
-work. It records the owner's corrected target, the source audit, necessary logical
-corrections and open decisions. This is a documentation-only checkpoint: do not
-resume the old pilot/fix loop or create a detailed implementation plan until the
-owner explicitly requests the next phase. Existing protocol files still govern
-installed software; the realignment prompt does not authorize live state changes.
-Historical plan statuses and evidence are unchanged.
+The owner authorized the detailed realignment plan and durable work instruction.
+That planning checkpoint is complete; implementation is NOT yet authorized.
+Read these exact repository records before choosing any further work:
 
-Then read these files in order:
+1. `docs/implementation-plan/CURRENT.yaml` - active revision and authority paths.
+2. `docs/implementation-plan/revisions/R2/README.md` and `OWNER_ADDENDUM.md`.
+3. `docs/development/WORK_INSTRUCTION.md` - mandatory intent/outcome/debug rules.
+4. `docs/implementation-plan/revisions/R2/manifest.yaml`.
+5. `docs/development/RESUME.yaml` - exact next action and unresolved operations.
+6. The indicated step, latest attempt journal/evidence and relevant defect record.
 
-1. `docs/START_HERE.md`
-2. `docs/execution-contract/README.md`
-3. `docs/implementation-plan/README.md`
-4. the current implementation-plan step named by `docs/implementation-plan/manifest.yaml`
+Load `docs/DEVELOPMENT_REALIGNMENT_PROMPT.md`, `docs/START_HERE.md` and
+`docs/execution-contract/README.md` when their current guidance is not already
+loaded. Inspect only code/protocol/config needed for the selected step.
 
-Rules:
+## Non-negotiable development rules
 
-- The repository is authoritative project memory.
+- The repository is authoritative project memory; a chat summary is not evidence.
+- Publish and remotely verify INTENT before a bounded action, and its actual
+  OUTCOME/next action before dependent work. Unknown effects require inspection,
+  not replay. Follow the same method for debugging and rollback.
+- Keep failed attempts, hypotheses and accepted-build evidence. Never erase a
+  defect or mark a check complete without source-linked reviewed evidence.
+- CURRENT selects the active manifest. RP status belongs only to the R2 manifest;
+  the original IP-01..IP-70 manifest/evidence remains historical and unchanged.
+- Do not skip dependencies or restart the legacy pilot/fix loop automatically.
+- Keep public materials and all debug logs free of secret values; deployment
+  facts/credential bindings are protected setup data, not product instructions.
 - Do not invent protocol states or rename canonical dog/ball vocabulary casually.
-- Normal control paths must prefer exact stable object identities over folder scans.
-- Repeated mechanical behavior belongs in deterministic helpers.
-- Keep public source free of private deployment details and secrets.
-- Do not skip ahead in the implementation plan.
-- Do not mark a step complete without its required evidence.
+  Existing machine-readable protocol still governs installed software until an
+  explicitly reviewed migration; a future planning label is not a live state.
+- Repeated mechanical behavior belongs in deterministic helpers. Normal control
+  paths prefer exact stable object identities over folder scans.
+- The future installed SKILL is only a repository pointer; operational guidance
+  stays in the repository. This planning change does not install or update it.
+
+After later implementation authorization, start from the cursor and update the
+authorization gate before RP-001. Live testing, network changes and destructive
+reset still require their own scoped authorization. No private root, topology,
+credential or host identity belongs in these public records.

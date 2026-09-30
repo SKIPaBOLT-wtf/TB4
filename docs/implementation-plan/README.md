@@ -1,38 +1,40 @@
 # TB4 Implementation Plan
 
-This directory is the authoritative chronological engineering plan.
+## Active revision
 
-## Status authority
+Read [CURRENT.yaml](CURRENT.yaml) first. It selects the current development plan,
+status authority, checklist, work instruction and resume cursor.
 
-Only `manifest.yaml` contains authoritative step status.
+The active realignment plan is [R2](revisions/R2/README.md). Its RP-001..RP-064
+steps have their own manifest, checks, evidence, attempts and amendments. R2 is a
+planning revision, not a released software/protocol version. The latest owner
+request authorized planning only; do not start implementation from a checkbox.
 
-Allowed states:
+## Historical IP plan
 
-```text
-PLANNED -> IN_PROGRESS -> VERIFIED
-              |
-              +-> BLOCKED
-PLANNED/IN_PROGRESS -> SUPERSEDED
-```
+The existing `manifest.yaml` and `steps/IP-XX-*.md` retain the chronological
+IP-01..IP-70 history unchanged. Only that manifest is status authority for IP IDs.
+Do not copy its VERIFIED statuses to RP IDs or treat old acceptance as proof of
+new realignment requirements. Its current_step is historical, not the active
+work selector when CURRENT.yaml points to R2.
 
-A step becomes `VERIFIED` only after objective evidence is stored under its own evidence directory and reviewed.
+## Shared status and isolation rules
 
-## Isolation
+Allowed step statuses remain PLANNED, IN_PROGRESS, VERIFIED, BLOCKED and
+SUPERSEDED. VERIFIED requires objective reviewed evidence for the exact scope;
+BLOCKED is not completion, and a defect can reopen accepted work for revalidation.
+Do not silently rewrite accepted meanings; use isolated amendments.
 
-For step `IP-XX`:
+Legacy records use `steps/IP-XX-*`, `amendments/IP-XX/`, `evidence/IP-XX/`.
+R2 records use `revisions/R2/steps/RP-XXX.md`, `revisions/R2/amendments/RP-XXX/`,
+`revisions/R2/evidence/RP-XXX/Axxx/` and the mandatory development journal.
 
-```text
-steps/IP-XX-*.md
-amendments/IP-XX/
-evidence/IP-XX/
-```
+Follow [WORK_INSTRUCTION.md](../development/WORK_INSTRUCTION.md). Complete work
+in numeric order subject to explicit dependencies and recorded scheduling
+exceptions for truly independent work. Publish pre-action intent and verified
+outcome checkpoints; do not rely on conversational memory for interrupted work.
 
-Do not place evidence for one step under another step. Do not silently rewrite an accepted step; use an amendment when meaning or scope changes.
+## Historical step 1
 
-## Execution rule
-
-Complete steps in numeric order unless the plan itself explicitly marks a step as parallel-safe. A later step may depend only on earlier VERIFIED steps and repository state explicitly listed in its preconditions.
-
-## Step 1
-
-IP-01 records the already-completed creation of the TB4 execution contract. Engineering implementation starts at IP-02.
+IP-01 records creation of the TB4 execution contract; original engineering work
+started at IP-02. Preserve this history rather than renumbering it during R2.
