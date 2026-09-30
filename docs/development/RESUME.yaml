@@ -3,18 +3,18 @@ revision: R2
 work_item: RP-001
 check: RP-001.C2
 attempt: A001
-phase: PARTIAL_CI
+phase: CI_REPAIR
 source_branch: work/rp-001-a001
 source_commit: 9f475a743e8b712694a00d7bce66116cecf7dd99
 journal: docs/development/journal/RP-001/A001/events.jsonl
-last_verified_event: RP-001-A001-0011
+last_verified_event: RP-001-A001-0012
 last_completed: Implementation authorization published and read back.
-next_action: Repair proven CI test invocation independently of pinned Desktop run 36756514139; preserve the unsettled run.
+next_action: Correct the single CI invocation line; retain the independent older Desktop run for inspection.
 verification: Exact branch ownership, source/diff inspection, then separately journaled targeted tests and full-plan validation.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: [RP-001-A001-0009]
+unsettled_intents: [RP-001-A001-0009, RP-001-A001-0012]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: [DEF-001, DEF-002]
