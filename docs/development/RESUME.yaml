@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-013"
-check: "RP-013.C1"
+work_item: "RP-014"
+check: "RP-014.C1"
 attempt: "A001"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "0e10234a58ec993e9c0fb0d4893fb1f80ee2ee0e"
-journal: "docs/development/journal/RP-013/A001/events.jsonl"
-last_verified_event: "RP-013-A001-0011"
-last_completed: "RP-013 VERIFIED via PR21; merged e43855e147c045344ebceb0fbf9812194ee0543a."
-next_action: "Confirm main Progress/ledger and start RP-014 cancellation-versus-natural-exit synthetic reproduction with its own INTENT."
-verification: "Reproduce exact ordinary terminal-publication paths with controlled synthetic provider scheduling; keep historical causality unknown without original trace. Review smallest failing invariant for RP-015."
+phase: "SOURCE"
+source_branch: "work/rp-014-a001"
+source_commit: "07c66402026af82bcb4a331042027f57f0d5166d"
+journal: "docs/development/journal/RP-014/A001/events.jsonl"
+last_verified_event: "RP-014-A001-0001"
+last_completed: "RP-013 VERIFIED via PR21; accepted main 07c66402026af82bcb4a331042027f57f0d5166d."
+next_action: "Author controlled timing fixtures and source-linked handoff; publish source outcome before diagnostics/tests."
+verification: "Review actual source loop under deterministic blocking-provider schedules, independent ACK/signal/exit facts and strict failing native-supervision oracles."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-014-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Deny by default. Public design-only change leaves v1 installed behavior untouched; unsupported capabilities stay visibly unavailable and rollback cannot widen authority or replay unknown work."
+rollback: "Synthetic-only additions; no real process group exists to terminate, no old generation rerun or archive mutation."
 next_implementation_step: "RP-014"
 next_implementation_check: "RP-014.C1"
