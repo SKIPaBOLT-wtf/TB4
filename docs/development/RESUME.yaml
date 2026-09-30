@@ -3,18 +3,18 @@ revision: R2
 work_item: RP-001
 check: RP-001.C1
 attempt: A001
-phase: TEST
+phase: TEST_FAILED
 source_branch: work/rp-001-a001
 source_commit: 82f8977d8f8b84d9e2ba067f4c0c5df332be5455
 journal: docs/development/journal/RP-001/A001/events.jsonl
-last_verified_event: RP-001-A001-0003
+last_verified_event: RP-001-A001-0004
 last_completed: Implementation authorization published and read back.
-next_action: Execute VALIDATE-LEDGER-INITIAL against the published source, inspect the same CI run, and record observed results.
+next_action: Publish a retest INTENT using a fresh workspace test temporary root; do not alter unrelated temporary directories.
 verification: Exact branch ownership, source/diff inspection, then separately journaled targeted tests and full-plan validation.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: [RP-001-A001-0003]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: [DEF-001, DEF-002]
