@@ -200,7 +200,7 @@ def validate_history(root, base, manifest):
     validate_transitions(old, manifest)
     from .defects import REGISTRY, validate_registry_history
     previous_registry = yaml.load(git(root, "show", base + ":" + REGISTRY), Loader=UniqueLoader)
-    validate_registry_history(previous_registry, load(root, REGISTRY), old)
+    validate_registry_history(previous_registry, load(root, REGISTRY), old, manifest)
     for relative in git(root, "ls-tree", "-r", "--name-only", base, PLAN + "/evidence").splitlines():
         previous = git(root, "show", base + ":" + relative).replace("\r\n", "\n")
         require(public_path(root, relative).read_text(encoding="utf-8") == previous, "EVIDENCE_IMMUTABLE")

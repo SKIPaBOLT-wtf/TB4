@@ -123,6 +123,9 @@ def validate_registry(root, registry, manifest, reachable, events):
                 checks = target["checks"]
                 require(item in steps and checks, "REPAIR_RECHECK_MISSING")
                 step = steps[item]
+                definition = public_path(root, PLAN + "/" + step["definition"]).read_text(encoding="utf-8")
+                defined = set(re.findall(r"^- \[[ x]\] \*\*(RP-\d{3}\.C\d+)\*\*", definition, re.M))
+                require(set(checks) == defined, "REPAIR_RECHECK_INCOMPLETE")
                 require(step["active_attempt"] is not None and step["active_attempt"] >= target["attempt"],
                         "REPAIR_ACCEPTANCE_STALE")
                 if step["status"] == "VERIFIED":
@@ -137,11 +140,16 @@ def validate_registry(root, registry, manifest, reachable, events):
                     "DEFECT_RESOLUTION_UNPROVEN")
 
 
-def validate_registry_history(old, new, old_manifest):
+def validate_registry_history(old, new, old_manifest, new_manifest=None):
+    new_manifest = old_manifest if new_manifest is None else new_manifest
     if old["schema_version"] == 1:
-        require(new == migrate(old, old_manifest), "DEFECT_MIGRATION_CHANGED_MEANING")
-        return
+        migrated = migrate(old, old_manifest)
+        require(all(new["defects"].get(key) == record for key, record in migrated["defects"].items()),
+                "DEFECT_MIGRATION_CHANGED_MEANING")
+        old = migrated
     require(old["defects"].keys() <= new["defects"].keys(), "DEFECT_HISTORY_REMOVED")
+    for key in new["defects"].keys() - old["defects"].keys():
+        require(new["defects"][key]["legacy_record"] is None, "DEFECT_LEGACY_EXEMPTION_FORGED")
     for key, before in old["defects"].items():
         after = new["defects"][key]
         require(before["legacy_record"] == after["legacy_record"], "DEFECT_HISTORY_REWRITTEN")
@@ -150,6 +158,29 @@ def validate_registry_history(old, new, old_manifest):
         if before["status"] == "OPEN" and after["status"] == "RESOLVED":
             require(len(after["repairs"]) > 0 and after["reproduction"]["passing_source"]
                     and after["resolution_evidence"] and after["regression_test"], "DEFECT_RESOLUTION_UNPROVEN")
+    for key, after in new["defects"].items():
+        previous_repairs = old["defects"].get(key, {}).get("repairs", [])
+        for repair in after["repairs"][len(previous_repairs):]:
+            item = repair["item"]
+            require(item in old_manifest["steps"], "DEFECT_STEP_MISSING")
+            previous_step = old_manifest["steps"][item]
+            if previous_step["status"] == "VERIFIED":
+                candidate_registry = copy.deepcopy(old)
+                candidate_registry["defects"][key] = copy.deepcopy(after)
+                candidate_registry["defects"][key]["repairs"] = copy.deepcopy(previous_repairs)
+                expected_manifest, expected_registry = open_repair(old_manifest, candidate_registry, key, item, repair["intent_event"])
+                require(repair == expected_registry["defects"][key]["repairs"][-1], "REPAIR_IMPACT_INCOMPLETE")
+                for target in repair["rechecks"]:
+                    snapshot = expected_manifest["steps"][target]["acceptance_history"][-1]
+                    require(snapshot in new_manifest["steps"][target].get("acceptance_history", []),
+                            "ACCEPTANCE_SNAPSHOT_MISSING")
+            else:
+                # A bug found before acceptance is repaired in the active attempt;
+                # no previously accepted build exists to reopen or fabricate.
+                expected_attempt = "A001" if previous_step["status"] == "PLANNED" else previous_step["active_attempt"]
+                require(previous_step["status"] in {"PLANNED", "IN_PROGRESS", "BLOCKED"}
+                        and repair["attempt"] == expected_attempt
+                        and set(repair["rechecks"]) == {item}, "REPAIR_ATTEMPT_INVALID")
 
 
 def open_repair(manifest, registry, defect_id, responsible, intent_event):

@@ -108,7 +108,7 @@ def prepare(root, event, branch, expected_head, *, manifest=None, evidence=None,
         files[MANIFEST] = yaml.safe_dump(manifest, sort_keys=False)
     from .defects import REGISTRY, validate_registry_history
     if defects is not None:
-        validate_registry_history(load(root, REGISTRY), defects, old_manifest)
+        validate_registry_history(load(root, REGISTRY), defects, old_manifest, manifest)
         files[REGISTRY] = yaml.safe_dump(defects, sort_keys=False)
     files.update(project(root, manifest))
     for path, content in (evidence or {}).items():
@@ -174,7 +174,7 @@ def validate_plan(root, plan, reachable=None, base_verifier=None):
             target.write_text(content, encoding="utf-8", newline="\n")
         validate_transitions(load(root, MANIFEST), load(staging, MANIFEST))
         from .defects import REGISTRY, validate_registry_history
-        validate_registry_history(load(root, REGISTRY), load(staging, REGISTRY), load(root, MANIFEST))
+        validate_registry_history(load(root, REGISTRY), load(staging, REGISTRY), load(root, MANIFEST), load(staging, MANIFEST))
         validate(staging, reachable=reachable)
 
 

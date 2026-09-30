@@ -203,3 +203,38 @@ def test_no_raw_provider_or_private_fields(accepted):
     update(accepted, REGISTRY, lambda r: r["defects"]["DEF-001"].update(raw_provider="canary"))
     with pytest.raises(LedgerError, match="RECORD_SCHEMA_INVALID"):
         validate(accepted, reachable=lambda _: True)
+
+
+def test_new_repair_cannot_omit_transitive_rechecks(accepted):
+    old_manifest, old_registry = load(accepted, MANIFEST), load(accepted, REGISTRY)
+    manifest, registry = repair(accepted)
+    del registry["defects"]["DEF-001"]["repairs"][0]["rechecks"]["RP-003"]
+    with pytest.raises(LedgerError, match="REPAIR_IMPACT_INCOMPLETE"):
+        validate_registry_history(old_registry, registry, old_manifest, manifest)
+    with pytest.raises(LedgerError, match="REPAIR_IMPACT_INCOMPLETE"):
+        prepare(accepted, repair_event(), "work/repair", SHA, manifest=manifest, defects=registry, reachable=lambda _: True)
+
+
+def test_serialized_repair_cannot_bypass_impact_review(accepted):
+    manifest, registry = repair(accepted)
+    plan = prepare(accepted, repair_event(), "work/repair", SHA, manifest=manifest, defects=registry, reachable=lambda _: True)
+    del registry["defects"]["DEF-001"]["repairs"][0]["rechecks"]["RP-003"]
+    plan.files[REGISTRY] = json.dumps(registry)
+    with pytest.raises(LedgerError, match="REPAIR_IMPACT_INCOMPLETE"):
+        validate_plan(accepted, plan, reachable=lambda _: True)
+
+
+def test_new_defect_cannot_claim_legacy_resolution_exemption(accepted):
+    before = load(accepted, REGISTRY)
+    after = copy.deepcopy(before)
+    after["defects"]["DEF-002"] = defect()
+    after["defects"]["DEF-002"].update(status="RESOLVED", legacy_record='{"invented":"history"}')
+    with pytest.raises(LedgerError, match="DEFECT_LEGACY_EXEMPTION_FORGED"):
+        validate_registry_history(before, after, load(accepted, MANIFEST))
+
+
+def test_repair_rechecks_must_cover_defined_checks(accepted):
+    start_repair(accepted)
+    update(accepted, REGISTRY, lambda r: r["defects"]["DEF-001"]["repairs"][0]["rechecks"]["RP-003"].update(checks=["RP-003.C1"]))
+    with pytest.raises(LedgerError, match="REPAIR_RECHECK_INCOMPLETE"):
+        validate(accepted, reachable=lambda _: True)

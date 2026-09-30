@@ -281,3 +281,55 @@ defects:
       a current remote expected head with stale local ledger documents; candidate validation lacked an
       explicit base identity guard.","required_acceptance":["RP-002.C1","RP-002.C2","RP-002.C4"],"resolution_evidence":["docs/implementation-plan/revisions/R2/evidence/RP-002/A001/reviewed-validation.md"],"status":"RESOLVED","suspected_origin":"467ac1033c5795fe88fd7765bbd1ad1142db26c7","title":"Checkpoint
       preparation did not bind local documents to declared public parent"}'
+  DEF-008:
+    title: New repair entries could omit dependent rechecks or claim a legacy exemption
+    status: OPEN
+    detected_in: RP-003.C3
+    suspected_origin:
+      work_item: RP-003
+      source_ref: 065b56939b2761d73f7b12698995f6bb6379ad5f
+      evidence:
+      - docs/development/journal/RP-003/A001/events.jsonl
+    proven_origin: null
+    reproduction:
+      procedure: Append a hand-edited repair entry without the transitive dependent recheck, or add a
+        new record with a forged legacy snapshot.
+      failing_source: 065b56939b2761d73f7b12698995f6bb6379ad5f
+      passing_source: null
+      evidence:
+      - docs/development/journal/RP-003/A001/events.jsonl
+    repair_steps:
+    - RP-003
+    affected_acceptance:
+    - RP-003.C1
+    - RP-003.C2
+    - RP-003.C3
+    - RP-003.C4
+    affected_requirements:
+    - R19
+    - R20
+    hypotheses:
+    - id: review-001
+      claim: Helper-generated candidates are correct but hand-edited initial repair records need transition-level
+        impact validation.
+      result: SUPPORTED
+      evidence:
+      - docs/development/journal/RP-003/A001/events.jsonl
+    repairs:
+    - item: RP-003
+      attempt: A001
+      intent_event: RP-003-A001-0006
+      rechecks:
+        RP-003:
+          attempt: A001
+          checks:
+          - RP-003.C1
+          - RP-003.C2
+          - RP-003.C3
+          - RP-003.C4
+    issue: null
+    regression_test: tests/development/test_defects.py::test_new_repair_cannot_omit_transitive_rechecks
+    resolution_evidence: []
+    notes: Discovered by source review after initially passing tests; no accepted RP-003 build exists
+      to reopen.
+    legacy_record: null
