@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-002"
 check: "RP-002.C4"
 attempt: "A001"
-phase: "MERGE"
-source_branch: "work/rp-002-a001"
-source_commit: "25539e6b0cda63aeb8db544710602fbaa9ca98ca"
+phase: "VERIFIED"
+source_branch: "main"
+source_commit: "3ce8535ae5e1e8aabf86f1c7325c1022b2ba83ee"
 journal: "docs/development/journal/RP-002/A001/events.jsonl"
-last_verified_event: "RP-002-A001-0016"
-last_completed: "RP-002 checks reviewed; guarded Windows/Linux tests and real checkpoint readback passed; acceptance validation and merge remain."
-next_action: "Record verified merge outcome, mark RP-002 VERIFIED and move to RP-003."
+last_verified_event: "RP-002-A001-0017"
+last_completed: "RP-002 VERIFIED and merged PR 9; guarded atomic publication, Windows/Linux tests and actual connector readback accepted."
+next_action: "Read RP-003 and relevant defect evidence; publish its A001 INTENT before implementation."
 verification: "RP-001 validates candidate ledgers; new tests exercise publication interruption and no-replay resume."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-002-A001-0016"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
