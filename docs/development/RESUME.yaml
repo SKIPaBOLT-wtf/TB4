@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-010"
 check: "RP-010.C1"
 attempt: "A001"
-phase: "VALIDATION_METADATA_REPAIR"
+phase: "SOURCE"
 source_branch: "work/rp-010-a001"
-source_commit: "6d3ffdae313abff62629522f2f6e611d20e10505"
+source_commit: "224f2eb1d9b497227e9fa1bd1aa6b0855d939d4c"
 journal: "docs/development/journal/RP-010/A001/events.jsonl"
-last_verified_event: "RP-010-A001-0007"
+last_verified_event: "RP-010-A001-0008"
 last_completed: "RP-001 through RP-009 VERIFIED; all relevant Windows/Linux/native checks passed and RP-009 merged. Current RP-008 amendment requires takeover without global old-host/sink ACK."
-next_action: "Publish DEF-012 and an amendment/repair INTENT for correcting a STARTED related_event only, without fabricating an INTENT, changing outcomes, closing pending actions or altering execution facts. Correct event cursor bookkeeping; inspect same native run."
+next_action: "Implement bounded correction and regression fixtures, inspect original Desktop run, publish source outcome and separate validation intent."
 verification: "Positive/negative schema and slot-budget fixtures, malformed/different-payload duplicates, busy targets, claim-versus-timeout orderings, correlated cancel/result/ACK, stale-generation and actor restrictions; prior regressions and exact-source CI/build review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-010-A001-0008"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-012"]
 rollback: "Public draft specification only; preserve current v1 runtime and immutable evidence. No operation is retried or removed, no real control authority changed."
 next_implementation_step: "RP-010"
 next_implementation_check: "RP-010.C1"
