@@ -1,6 +1,16 @@
 # TB4 Agent Entry Point
 
-Read these files in order:
+## Current development direction - 2026-09-30
+
+Read `docs/DEVELOPMENT_REALIGNMENT_PROMPT.md` before selecting further development
+work. It records the owner's corrected target, the source audit, necessary logical
+corrections and open decisions. This is a documentation-only checkpoint: do not
+resume the old pilot/fix loop or create a detailed implementation plan until the
+owner explicitly requests the next phase. Existing protocol files still govern
+installed software; the realignment prompt does not authorize live state changes.
+Historical plan statuses and evidence are unchanged.
+
+Then read these files in order:
 
 1. `docs/START_HERE.md`
 2. `docs/execution-contract/README.md`

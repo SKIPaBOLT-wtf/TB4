@@ -2,10 +2,26 @@
 
 TB4 is developed as a deterministic remote-work control system with explicit logical objects, verified state transitions, bounded helpers, and memorable dog/ball vocabulary.
 
+## Development realignment checkpoint - 2026-09-30
+
+The current development baseline is [DEVELOPMENT_REALIGNMENT_PROMPT.md](DEVELOPMENT_REALIGNMENT_PROMPT.md).
+Read it before continuing the old implementation plan or pilot. It distinguishes
+verified existing behavior from the owner's corrected target: WATCHDOG-owned
+common ingress and situation summary, FETCHER execution, and helper-owned routine
+mechanics. It also records timing, fixed-file, fallback and safety constraints.
+Only the prompt and navigation were changed at this checkpoint; detailed planning,
+code, installers, installed SKILL behavior and live state were not changed.
+The old plan/evidence remains historical; existing machine-readable protocol
+still governs deployed software until a reviewed migration. Await the owner's
+next explicit planning/development instruction rather than silently continuing.
+
 ## Read order
 
 ```text
 AGENTS.md
+   |
+   v
+docs/DEVELOPMENT_REALIGNMENT_PROMPT.md
    |
    v
 this file
