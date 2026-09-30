@@ -3,18 +3,18 @@ revision: R2
 work_item: RP-001
 check: RP-001.C4
 attempt: A001
-phase: MERGE
-source_branch: work/rp-001-a001
-source_commit: 88f7850895a7f5ed664818538b5c9308cb7aac8f
+phase: VERIFIED
+source_branch: main
+source_commit: 66b7de7b782ba2f4fa58e4fd8556857d0092634d
 journal: docs/development/journal/RP-001/A001/events.jsonl
-last_verified_event: RP-001-A001-0020
-last_completed: All four RP-001 checks have reviewed evidence; final checkpoint validation and merge remain.
-next_action: Merge PR 8 with exact-head protection after current-ref review; read back main before acceptance.
+last_verified_event: RP-001-A001-0021
+last_completed: RP-001 VERIFIED; four reviewed checks, Windows/Linux validation and merged PR 8.
+next_action: Read RP-002 specification; publish its A001 implementation INTENT and verify remote readback before editing.
 verification: Exact branch ownership, source/diff inspection, then separately journaled targeted tests and full-plan validation.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: [RP-001-A001-0020]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: [DEF-001, DEF-002]

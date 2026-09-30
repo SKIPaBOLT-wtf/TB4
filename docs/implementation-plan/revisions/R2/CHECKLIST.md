@@ -6,7 +6,7 @@ This is a projection of `manifest.yaml`. Mark a step/check complete only through
 
 ## Contracts, privacy, continuation and defect reproduction
 
-- [ ] [RP-001 - Enforced development-ledger contract](steps/RP-001.md) - prerequisites: none.
+- [x] [RP-001 - Enforced development-ledger contract](steps/RP-001.md) - prerequisites: none.
 - [ ] [RP-002 - Checkpoint publication and cold-resume helper](steps/RP-002.md) - prerequisites: RP-001.
 - [ ] [RP-003 - Defect provenance and re-openable verification](steps/RP-003.md) - prerequisites: RP-001, RP-002.
 - [ ] [RP-004 - Privacy classification and safe evidence policy](steps/RP-004.md) - prerequisites: RP-001.
@@ -88,4 +88,5 @@ This is a projection of `manifest.yaml`. Mark a step/check complete only through
 - [ ] [RP-062 - Authorized same-host real-provider pilot](steps/RP-062.md) - prerequisites: RP-030, RP-055, RP-056, RP-057, RP-058, RP-059, RP-060, RP-061.
 - [ ] [RP-063 - Independent-machine fallback and lifecycle pilot](steps/RP-063.md) - prerequisites: RP-017, RP-018, RP-026, RP-028, RP-057, RP-058, RP-059, RP-060, RP-061, RP-062.
 - [ ] [RP-064 - Final traceable acceptance and operational handoff](steps/RP-064.md) - prerequisites: RP-001, RP-002, RP-003, RP-058, RP-059, RP-060, RP-061, RP-062, RP-063.
+
 
