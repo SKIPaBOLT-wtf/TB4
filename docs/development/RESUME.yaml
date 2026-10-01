@@ -5,19 +5,19 @@ check: "RP-015.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-015-a001"
-source_commit: "8e478f13eafca2b6f049b15b45ba3aa3cd16951d"
+source_commit: "5ed368e0e18806b091ba435fa5fb259bf2842c94"
 journal: "docs/development/journal/RP-015/A001/events.jsonl"
-last_verified_event: "RP-015-A001-0006"
+last_verified_event: "RP-015-A001-0007"
 last_completed: "RP-014"
-next_action: "Rename colliding test and publish exact source before rerun."
+next_action: "Publish fresh validation intent and rerun original suite and all CI/native gates."
 verification: "Pin published source and test backend request bodies, UTF16/newline/tab identity, strict revision conflicts and complete binding/hash readback; no duplicate payload execution."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-015-A001-0006"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-015"]
 rollback: "Unreleased adapter is opt-in/unwired; revert additions without touching installed v1 authority, generations, or work. No deployment migration occurs."
 next_implementation_step: "RP-015"
 next_implementation_check: "RP-015.C1"
