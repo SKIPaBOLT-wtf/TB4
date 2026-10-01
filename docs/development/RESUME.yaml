@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-019"
 check: "RP-019.C1"
 attempt: "A001"
-phase: "TEST"
+phase: "SOURCE"
 source_branch: "work/rp-019-a001"
 source_commit: "97c7868e6682abbeeea0b58ddd57cd29d9e5f2bd"
 journal: "docs/development/journal/RP-019/A001/events.jsonl"
-last_verified_event: "RP-019-A001-0015"
+last_verified_event: "RP-019-A001-0016"
 last_completed: "RP-018"
-next_action: "Repair only development STARTED metadata via a narrow explicit append-only correction mechanism and negative tests; keep inspecting same product test runs."
+next_action: "Implement bounded correction and regression cases, publish source and correction, then validate ledger and complete product gates."
 verification: "Source-linked tests must prove exact ID reuse, durable pre-send uncertainty and same-operation inspection, current-owner CAS readiness, fixed allocation bounds and no normal create/delete. Test synthetic native request construction plus real isolated local folder provisioning without claiming a deployed configuration."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-019-A001-0012"]
+unsettled_intents: ["RP-019-A001-0012","RP-019-A001-0016"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-022","DEF-023"]
