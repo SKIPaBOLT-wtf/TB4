@@ -13,6 +13,7 @@ from tb4.instructions import InstructionError
 from tb4.private_settings import PrivateSettings, SettingsError
 from tests.coach.test_instruction_selection import SourceFixture, FACTS, FIRST, SECOND, digest
 from test_discovery_workflow import build, observation, CANARY
+from test_native_leadership import clock
 
 
 def source():
@@ -168,7 +169,10 @@ def test_unreleased_or_missing_guidance_has_no_fallback():
 def test_discovery_change_requires_new_proposal_before_confirmation(system):
     guide, discovery, setup, *_ = system
     guide.propose(proposal(guide))
+    before = setup._payload["discovery"]["image"]["revision"]
+    discovery.clock = lambda: clock(221)
     discovery.observe((observation(observed_at=221),))
+    assert setup._payload["discovery"]["image"]["revision"] > before
     with pytest.raises(BallparkError, match="DISCOVERY_CHANGED"):
         guide.confirm(topology="FLAT", at=221, owner_authorized=True)
     guide.propose(proposal(guide))
