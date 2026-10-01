@@ -2,8 +2,9 @@
 
 RP024 adds an unreleased guided draft, protected owner decision, compact shared
 codec, atomic publisher and local Qt owner review. The default desktop continues
-to deny runtime activation. Trusted RP029 composition and accepted RP061 release
-eligibility must supply live adapters; no saved boolean or UI selection does so.
+to deny runtime activation. Trusted production composition must supply live adapters; RP053 integrates the
+WATCHDOG UI and RP061 qualifies coordinated release eligibility. RP029 covers
+ongoing descriptor evolution. No saved boolean or UI selection supplies authority.
 
 `GuidedBallpark` uses the actual RP007 selector and a verified closure containing
 `skill/tb4/operations/setup-r2.md`. A new draft resolves fresh instructions; restart
