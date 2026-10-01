@@ -1,9 +1,9 @@
-# R2 scoped discovery foundation
+# R2 scoped discovery
 
-This unreleased RP023 model operates on protected local observations. It does not
-scan a network, enroll devices, publish a shared record or change an installed v1
-profile. Native collection, durable settings and fixed-authority publication must
-be qualified before RP023 acceptance.
+This unreleased RP023 composition collects bounded observations into protected
+setup state and publishes a minimal projection into existing catalogue records.
+It does not enroll devices or change an installed v1 profile. Default first-run
+activation remains denied; release, enrollment and deployment are later gates.
 
 Commissioning selects exact interfaces (name and native index), canonical subnets
 and permitted methods. Interface and subnet must both match. Empty scope means
@@ -88,3 +88,46 @@ API references: [Get-NetNeighbor](https://learn.microsoft.com/en-us/powershell/m
 [ip-neighbour](https://man7.org/linux/man-pages/man8/ip-neighbour.8.html) and
 [ip JSON output](https://man7.org/linux/man-pages/man8/ip.8.html). These document
 selectors and cache semantics; actual platform qualification still requires tests.
+
+## Durable identity and fixed publication
+
+Discovery.configure requires explicit local scope authorization and actual RP019
+storage verification. Selected interface subnets must be contained in the owner's
+setup network scope. The optional closed discovery package lives inside the same
+RP022 protected settings frame. Legacy frames remain valid. General setup edits
+cannot rebind its role/root/network scope, and rollback cannot erase mappings or
+a pending publication. Cancel/resume preserves both. RP027 owns reconfiguration.
+
+Discovery.observe adopts pre-existing shared IDs/aliases without importing trust,
+then saves observations and newly minted identities before sharing them. A local
+mapping conflicting with an occupied shared slot is retained and blocked; this
+code never silently reassigns a slot or decides which device deserves its identity.
+
+The RP019 catalogue body already holds artifact IDs/seals and enrollment seed.
+Publication preserves these fields exactly and adds a nested discovery projection.
+First assignment protects the existing work/result/cancel/ack/status and artifact
+descriptors, requiring them free. Refresh of the same identity preserves retained
+jobs. Unknown/foreign catalogue schemas are blocked for explicit integration.
+The informational discovery trust field is never an execution/enrollment grant.
+
+Ambiguities stay in the bounded protected quarantine. Shared quarantine uses only
+closed reason summaries, coalesced by reason in pre-existing slots. It never
+replaces foreign/UNREAD/retained entries; full capacity blocks publication while
+retaining private evidence. No observation address, interface, host name or hardware
+hint enters the shared projection. RPCs inspect exact commissioned object IDs;
+normal discovery never creates, deletes or lists runtime objects.
+
+RP016 current owner/force-request checks precede each collection helper and each
+publication boundary; RP015 strict CAS also guards ownership and exact changed
+records. A protected exact mutation plan is saved before START. After interruption
+only INSPECT is allowed, including after cancellation. Absent readback is UNKNOWN,
+not permission to send again. Confirmation/supersession clears the pending plan;
+an ambiguous conflicting reply remains pending. This is cooperative exclusion:
+an already admitted external observation may complete during takeover. New role
+acquisition never waits for old-owner or all-device acknowledgements.
+
+Trusted composition must supply fresh enrollment, capability and clock views.
+These code ports are not deserialized grants or protection from hostile local code.
+Production selection of routed helper credentials and full scheduler/enrollment
+composition is not claimed here. Qualification records distinguish model tests,
+fresh native private-file tests, hosted loopback reads and later deployment tests.

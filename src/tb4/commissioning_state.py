@@ -91,7 +91,8 @@ def validate_choices(choices, installation):
 def validated(payload):
     try:
         fields = {"schema_version", "installation_id", "setup_nonce", "state", "reason", "choices", "operations"}
-        require(type(payload) is dict and set(payload) in (fields, fields | {"credential_image"}),
+        require(type(payload) is dict and fields <= set(payload)
+                and set(payload) <= fields | {"credential_image", "discovery"},
             "SETUP_SCHEMA")
         require(type(payload["schema_version"]) is int and payload["schema_version"] == 1
                 and identity(payload["installation_id"])
@@ -99,6 +100,12 @@ def validated(payload):
         require(type(payload["state"]) is str and payload["state"] in STATES
                 and type(payload["reason"]) is str and payload["reason"] in REASONS, "SETUP_STATE")
         validate_choices(payload["choices"], payload["installation_id"])
+        if payload.get("discovery") is not None:
+            from .discovery_state import validated_package
+            spec, authority = storage_spec(payload["choices"]["storage"])
+            require(payload["choices"]["role"] == "watchdog", "SETUP_DISCOVERY_BINDING")
+            validated_package(payload["discovery"], installation=payload["installation_id"],
+                              spec=spec, authority=authority, networks=payload["choices"]["network_scope"])
         image = payload.get("credential_image")
         if image is not None:
             image = validate_image(image, payload["installation_id"])
@@ -192,6 +199,10 @@ class Setup:
         self._fresh()
         require(type(patch) is dict and set(patch) <= CHOICES, "SETUP_CHOICES_SHAPE")
         value = copy.deepcopy(self._payload)
+        if value.get("discovery") is not None:
+            require(all(patch[k] == value["choices"].get(k)
+                        for k in set(patch) & {"role", "storage", "storage_request", "network_scope"}),
+                    "SETUP_DISCOVERY_BINDING_FROZEN")
         # Once any external operation is recorded the exact domain/root remains
         # fixed, even when its result is confirmed. This is not a migration API.
         if value["operations"] and "storage" in patch:
@@ -343,6 +354,7 @@ class Setup:
                 and previous["setup_nonce"] == self._payload["setup_nonce"]
                 and previous["operations"] == self._payload["operations"]
                 and previous.get("credential_image") == self._payload.get("credential_image")
+                and previous.get("discovery") == self._payload.get("discovery")
                 and previous["choices"]["storage"] == self._payload["choices"]["storage"],
                 "SETUP_ROLLBACK_UNSAFE")
         self._save({**previous, "state": "INCOMPLETE", "reason": "REVALIDATION_REQUIRED"})
