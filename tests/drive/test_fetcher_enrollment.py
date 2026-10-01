@@ -29,7 +29,7 @@ from tb4.timing_contract import ActivityClock, TimingProfile
 from tests.security.test_private_settings import MemoryNative
 from tests.security.test_credential_contract import FixtureStore, TRUST
 from test_ballpark_setup import source, confirm, proposal, FACTS, FIRST, digest as file_digest
-from test_discovery_workflow import build, observation, CANARY
+from test_discovery_workflow import build, observation, CANARY, SCOPE
 from test_native_leadership import ACTORS, ENROLLMENT, clock, tid
 from test_fetcher_profile import snapshot
 
@@ -99,8 +99,8 @@ def two_device_discovery():
     return discovery,setup,provider,native,kwargs
 
 
-def ready(watch_store=None, fetch_store=None, *, two=False):
-    discovery, watch, provider, native, kwargs = two_device_discovery() if two else build(watch_store)
+def ready(watch_store=None, fetch_store=None, *, two=False, scope=SCOPE):
+    discovery, watch, provider, native, kwargs = two_device_discovery() if two else build(watch_store,scope=scope)
     observations = [observation()]
     if two: observations.append(observation(address="192.0.2.9", hardware_hint="second-hint"))
     discovery.observe(tuple(observations))
@@ -470,12 +470,13 @@ def test_all64_preallocated_targets_keep_complete_profiles_within_existing_budge
     for key,budget in slots(capacity).items(): assert len(encoded({key:document["records"][key]})) <= budget
 
 
-def test_discovery_refresh_preserves_enrollment_and_effective_profile(system):
+def test_discovery_refresh_preserves_enrollment_and_effective_profile():
+    system = ready(scope=replace(SCOPE,methods=frozenset({"NEIGHBOR_CACHE","ICMP"})))
     manager, client, provider, *_ = system
     enroll(system)
     prior = copy.deepcopy(provider.store.document["records"]["target.000.catalogue"]["body"])
     manager.discovery.clock = lambda:clock(221)
-    manager.discovery.observe((observation(source="ICMP",observed_at=221),))
+    assert manager.discovery.observe((observation(source="ICMP",observed_at=221,online=True),)) == ("OBSERVED",)
     assert manager.discovery.publish() == "CONFIRMED"
     body = provider.store.document["records"]["target.000.catalogue"]["body"]
     assert body["enrollment"] == prior["enrollment"] and body["fetcher"] == prior["fetcher"]
