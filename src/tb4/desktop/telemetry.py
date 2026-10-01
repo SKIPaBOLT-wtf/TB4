@@ -12,7 +12,7 @@ from tb4.privacy import (ERROR_CODES, OUTCOMES, STAGES, allowed, canonical_proto
                          public_diagnostic)
 
 OPERATIONS = frozenset({"get_metadata", "read_text", "replace_text", "rename", "move", "create_folder", "create_text", "delete", "list_children"})
-PROCESS_STATES = frozenset({"STOPPED", "STARTING", "RUNNING", "STOPPING", "EXITED", "FAILED"})
+PROCESS_STATES = frozenset({"STOPPED", "STARTING", "RUNNING", "PAUSED", "STOPPING", "EXITED", "FAILED"})
 MAX_EVENT_BYTES = 8192
 
 

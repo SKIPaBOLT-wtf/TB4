@@ -259,6 +259,11 @@ def validate_config(config_path: Path) -> None:
 
 
 def create_runtime_from_context(context: RuntimeContext) -> WatchdogRuntime:
+    # A native context must never fall through to legacy repair/registration.
+    # Commissioning supplies it explicitly; existing v1 profiles are not migrated.
+    from .leadership_runtime import NativeWatchdogContext, NativeWatchdogRuntime
+    if type(context) is NativeWatchdogContext:
+        return NativeWatchdogRuntime(context)
     config = context.config
     watchdog_cfg = require_table(config, "watchdog")
     service_cfg = require_table(config, "service")
