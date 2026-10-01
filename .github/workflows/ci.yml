@@ -38,6 +38,9 @@ jobs:
           sudo apt-get install -y openssh-server
           sudo mkdir -p /run/sshd
 
+      - name: Native Linux credential boundary qualification
+        run: python -m pytest tests/security/test_linux_key_native.py -ra
+
       - name: Test
         env:
           TB4_REQUIRE_FOLDER_SSH: '1'

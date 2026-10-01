@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
 work_item: "RP-021"
-check: "RP-021.C1"
+check: "RP-021.C4"
 attempt: "A001"
-phase: "SOURCE"
+phase: "MERGE"
 source_branch: "work/rp-021-a001"
-source_commit: "9fdba01926095ac99ae0e1f4af9d9ea49ed1cabb"
+source_commit: "16e403e7b76b1e9bc2e4e8946d140ddb8778db3c"
 journal: "docs/development/journal/RP-021/A001/events.jsonl"
-last_verified_event: "RP-021-A001-0001"
+last_verified_event: "RP-021-A001-0016"
 last_completed: "RP-020"
-next_action: "Implement bounded Linux adapter/shared policy/native tests/docs and publish exact source; then authorize focused Windows regression and hosted native Linux qualification."
+next_action: "Confirm exact head/base/readiness then merge once; inspect returned main before acceptance projection."
 verification: "Require native Linux tests to execute (only non-Linux skip), both desktop/headless policy tests, unsupported-mode/canary/race tests, unchanged Windows86-case regression, full platform CI/Desktop packages and ledger/privacy/source review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-021-A001-0001"]
+unsettled_intents: ["RP-021-A001-0016"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-027","DEF-028"]
 rollback: "Revoke/remove only new process-local references and close owned descriptors; retain external files/permissions/configuration. No live enrollment or migration."
 next_implementation_step: "RP-021"
 next_implementation_check: "RP-021.C1"
