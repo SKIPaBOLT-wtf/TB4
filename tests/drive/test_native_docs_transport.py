@@ -1,4 +1,4 @@
-"""Synthetic service/request conformance. No credentials, network or processes."""
+"""RP-015 synthetic service/request conformance. No credentials, network or processes."""
 import copy
 import hashlib
 import json

@@ -83,7 +83,7 @@ def test_successful_rename_with_later_benign_version_is_unconfirmed_not_replayed
 
 
 def test_legacy_benign_metadata_counterexample_requires_selected_r2_authority():
-    # RP-015 ports the required invariant to tests/drive/test_docs_authority.py.
+    # RP-015 ports the required invariant to tests/drive/test_native_docs_transport.py.
     # Keep the legacy counterexample; it is not a qualified R2 fallback backend.
     value = run_scenario("benign-version")
     assert value["original_result_unchanged"] and value["execution_calls"] == 1
