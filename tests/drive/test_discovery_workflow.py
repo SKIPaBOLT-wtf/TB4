@@ -296,6 +296,59 @@ def test_scope_round_trip_is_closed_and_not_an_expansion():
         parse_scope(value)
 
 
+@pytest.mark.parametrize("now,remote_at,expected_value,expected_freshness", [
+    (230, 225, "ONLINE", "FRESH"), (300, 225, "UNKNOWN", "STALE"),
+    (230, 400, "UNKNOWN", "CLOCK_UNCERTAIN")], ids=["newer", "expired", "future"])
+def test_older_local_projection_preserves_newer_shared_network_evidence(
+        system, now, remote_at, expected_value, expected_freshness):
+    flow, setup, provider, *_ = system
+    flow.observe((observation(),)); flow.publish()
+    body = provider.store.document["records"]["target.000.catalogue"]["body"]
+    body["discovery"]["network"] = dict(value="ONLINE", source="NETWORK_PROBE",
+        observed_at=remote_at, valid_for_s=60, freshness="FRESH")
+    provider.store.bump()
+    flow.clock = lambda: clock(now)
+    assert flow.publish() in {"NO_CHANGE", "CONFIRMED"}
+    actual = provider.store.document["records"]["target.000.catalogue"]["body"]["discovery"]["network"]
+    assert actual == dict(value=expected_value, source="NETWORK_PROBE", observed_at=remote_at,
+                          valid_for_s=60, freshness=expected_freshness)
+
+
+@pytest.mark.parametrize("mutation", ["owner", "authority", "generation", "slot", "artifact"])
+def test_restored_pending_plan_cannot_expand_scope_or_rebind(system, mutation):
+    import base64
+    from tb4.exchange_layout import encoded
+    flow, setup, provider, *_ = system
+    flow.observe((observation(),))
+    save = flow._save
+    def interrupted(value):
+        save(value)
+        if value["pending"] is not None:
+            raise RuntimeError("synthetic interruption before START")
+    flow._save = interrupted
+    with pytest.raises(RuntimeError):
+        flow.publish()
+    value = copy.deepcopy(setup._payload)
+    assert validated(value) == value
+    pending = value["discovery"]["pending"]
+    plan = pending["plan"]
+    if mutation == "owner": plan["owner"] = ACTORS[2]
+    elif mutation == "authority": pending["authority"]["object_id"] = "synthetic-other"
+    else:
+        after = json.loads(base64.b64decode(plan["after"]))
+        key = "target.000.catalogue"
+        if mutation == "generation": after[key]["generation"] += 1
+        elif mutation == "artifact": after[key]["body"]["artifacts"]["input"]["id"] = "synthetic-other"
+        else:
+            after["global.settings"] = after.pop(key)
+            before = json.loads(base64.b64decode(plan["before"]))
+            before["global.settings"] = before.pop(key)
+            plan["before"] = base64.b64encode(encoded(before)).decode()
+        plan["after"] = base64.b64encode(encoded(after)).decode()
+    with pytest.raises(SettingsError, match="SETUP_SCHEMA"):
+        validated(value)
+
+
 @pytest.mark.skipif(os.name != "nt" and not __import__("sys").platform.startswith("linux"), reason="native settings OS")
 def test_actual_native_settings_restart_keeps_discovery_without_per_device_files(tmp_path):
     parent = tmp_path / "fresh-protected-parent"
