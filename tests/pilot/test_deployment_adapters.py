@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import subprocess
 
+import pytest
+
 from tb4.watchdog.openssh_transport import OpenSshBootstrapTransport
 from tb4.watchdog.ssh_bootstrap import (
     BootstrapPlatform,
@@ -20,8 +22,10 @@ def test_system_ping_probe_reports_unknown_without_ping(monkeypatch) -> None:
     assert report.reachability is Reachability.UNKNOWN
 
 
-def test_system_ping_probe_uses_no_shell(monkeypatch) -> None:
+@pytest.mark.parametrize("system,flag", [("Windows", "-n"), ("Linux", "-c")])
+def test_system_ping_probe_uses_no_shell(monkeypatch, system, flag) -> None:
     observed = {}
+    monkeypatch.setattr("tb4.watchdog.system_probe.platform.system", lambda: system)
 
     class Result:
         returncode = 0
@@ -39,6 +43,7 @@ def test_system_ping_probe_uses_no_shell(monkeypatch) -> None:
     )
     assert report.reachability is Reachability.ONLINE
     assert observed["kwargs"]["shell"] is False
+    assert observed["argv"][1:3] == [flag, "1"]
     assert observed["argv"][-1] == "example.invalid"
 
 
