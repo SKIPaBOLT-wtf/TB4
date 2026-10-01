@@ -80,7 +80,15 @@ def view(document, setup, resolver, *, now, start=0, limit=4):
     require(integer(now) and integer(start, 0, 63) and integer(limit, 1, 8), "ENROLLMENT_SUMMARY_PAGE")
     from .ballpark_records import shared
     approved = shared(document)
-    slots = document["records"]["global.registry"]["body"]["slots"]
+    from .discovery_state import catalogue_record
+    selected = document["records"]["global.registry"]["body"]["slots"]
+    slots = []
+    for index, device in zip(selected,approved["devices"]):
+        if "fetcher" in device["roles"]:
+            slots.append(index)
+        else:
+            body = catalogue_record(document["records"][f"target.{index:03d}.catalogue"])
+            require(enrollment(body["enrollment"]) is None,"ENROLLMENT_DEVICE_NOT_APPROVED")
     require(start <= len(slots), "ENROLLMENT_SUMMARY_PAGE")
     targets = []
     for index in slots[start:start+limit]:

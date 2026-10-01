@@ -51,3 +51,8 @@ availability. Installation UUIDs, credential handles/trust/path/material and
 endpoint/topology/hints are absent. A fallback uses its own resolver, and another
 installation's resolver is rejected. Native tests use fresh synthetic private
 files, not the owner's installed state or real network credentials.
+
+Only owner-approved devices with FETCHER role enter these summary pages; cursor
+offsets refer to that eligible sequence. WATCHDOG-only devices remain outside the
+projection. A non-FETCHER role carrying a FETCHER binding is inconsistent and
+still fails closed, and registration never accepts an unapproved role.
