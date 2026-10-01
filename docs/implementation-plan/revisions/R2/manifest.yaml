@@ -984,6 +984,7 @@ steps:
     evidence: []
     amendments:
     - docs/implementation-plan/revisions/R2/amendments/RP-025/A-001-unaccepted-dependent-reconciliation.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-025/A-002-source-aware-checkpoint-staging.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:

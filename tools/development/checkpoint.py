@@ -86,6 +86,37 @@ def project(root, manifest):
     return files
 
 
+def _stage_public_inputs(root, staging, expected_head, reachable):
+    """Retain original source references without staging private/untracked inputs."""
+    shutil.copytree(root / "docs", staging / "docs", symlinks=True)
+    events, _, _ = _journals(root, reachable)
+    references = sorted({path for event in events.values() for path in event.get("evidence", [])
+                         if path.startswith(("src/", "tests/", "tools/"))})
+    backend = GitBackend(root)
+    total = 0
+    for path in references:
+        local = public_path(root, path)
+        entries = backend.run("ls-tree", "-z", expected_head, "--", path).split("\0")
+        require(len(entries) == 2 and not entries[1] and "\t" in entries[0],
+                "SOURCE_REFERENCE_NOT_PUBLIC_FILE")
+        header, name = entries[0].split("\t", 1)
+        fields = header.split()
+        require(name == path and len(fields) == 3 and fields[0] in {"100644", "100755"}
+                and fields[1] == "blob", "SOURCE_REFERENCE_NOT_PUBLIC_FILE")
+        size = int(backend.run("cat-file", "-s", fields[2]))
+        total += size
+        require(0 <= size and total <= 2_000_000, "SOURCE_REFERENCE_INPUT_TOO_LARGE")
+        try:
+            blob = backend.run("cat-file", "blob", fields[2]).encode("utf-8")
+        except UnicodeError:
+            raise LedgerError("SOURCE_REFERENCE_UNSUPPORTED") from None
+        require(local.read_bytes().replace(b"\r\n", b"\n") == blob.replace(b"\r\n", b"\n"),
+                "SOURCE_REFERENCE_DIRTY")
+        target = staging / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(blob)
+
+
 def prepare(root, event, branch, expected_head, *, manifest=None, evidence=None, defects=None,
             cursor_updates=None, reachable=None, base_verifier=None):
     root = Path(root).resolve()
@@ -127,7 +158,7 @@ def prepare(root, event, branch, expected_head, *, manifest=None, evidence=None,
     # Candidate validation uses only public documentation, never installed state.
     with tempfile.TemporaryDirectory(prefix="tb4-ledger-") as tmp:
         staging = Path(tmp)
-        shutil.copytree(root / "docs", staging / "docs", symlinks=True)
+        _stage_public_inputs(root, staging, expected_head, reachable)
         for path, content in files.items():
             target = staging / path
             require(target.resolve().is_relative_to(staging.resolve()), "CHECKPOINT_PATH_INVALID")
@@ -160,7 +191,7 @@ def validate_plan(root, plan, reachable=None, base_verifier=None):
     require(reachable(plan.expected_head), "PUBLIC_COMMIT_MISSING")
     with tempfile.TemporaryDirectory(prefix="tb4-candidate-") as tmp:
         staging = Path(tmp)
-        shutil.copytree(root / "docs", staging / "docs", symlinks=True)
+        _stage_public_inputs(root, staging, plan.expected_head, reachable)
         for path, content in plan.files.items():
             target = staging / path
             require(target.resolve().is_relative_to(staging.resolve()), "CHECKPOINT_PATH_INVALID")
