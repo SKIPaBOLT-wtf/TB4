@@ -55,3 +55,43 @@ binding is frozen after any external operation; UNKNOWN also freezes changed
 choices. Rollback creates a new local revision while stopped and refuses to erase
 identity, root binding or operation history. It never rolls back external effects
 or recreates an unknown deployment.
+
+## Local desktop entry
+
+An explicit `--action setup` opens the R2 local setup flow. A fresh default GUI
+without an installed v1 config enters the same flow; an existing config continues
+to open the v1 role window. Nothing migrates that profile. `--setup-root` selects
+an explicit private R2 location. Otherwise the application proposes a role-local
+standard user location, creating no directory until the owner clicks Create/Open.
+Windows requires an already-private parent; refusal never repairs existing ACLs.
+
+The UI persists the requested root separately from its verified storage binding.
+A folder selection and network scope are choices, not proof of access. Reopening
+keeps those choices so they are not requested again. A trusted RP019 connection
+context supplies the selected storage adapter. ConnectedDocsSelection resolves an
+existing domain by bounded inspection of the owner-selected root, then pins exact
+document/tab/domain/spec identities and uses exact reads on later checks.
+BoundFolderSelection checks the installer-selected qualified Linux mount and its
+existing domain. Neither creates a replacement root or changes network settings.
+Preparing a new domain remains the separately authorized RP019 commissioning
+helper's responsibility; this selection flow only adopts verified existing work.
+
+The current standalone unreleased entry has no automatic provider login, target
+enrollment, descriptor discovery or production release authority. It saves owner
+choices and explicitly blocks missing connection context. Programmatic installer
+or commissioning composition supplies already authorized adapters; it cannot
+supply a public READY boolean. This is the RP022 workflow handoff, not a claim
+that RP023/024/025 discovery, descriptor collection or enrollment has shipped.
+The default entry always uses DenyActivation. No Start Role control bypasses it.
+
+Checks run in a Qt worker while editing is disabled; close waits for that bounded
+check. Cancel/resume persist through the same protected model. Local selected
+paths may be shown only in the local setup UI; errors and status use fixed text.
+There is no raw credential editor, protocol JSON form or private-data exporter.
+Optional local key selection is shown only for already approved target entries.
+
+Package acceptance imports these modules and opens the actual frozen first-run
+location window for both roles. This smoke intentionally creates no settings and
+starts no runtime. Separate native tests qualify actual protected files and
+credential restoration on each supported OS; those tests are not inferred from
+the GUI smoke result.

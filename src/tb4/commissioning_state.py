@@ -23,7 +23,7 @@ REASONS = {"MISSING_CHOICES", "REVALIDATION_REQUIRED", "CANCELLED", "UNKNOWN_OPE
            "ENVIRONMENT_UNAVAILABLE", "STORAGE_UNAVAILABLE", "CREDENTIAL_UNAVAILABLE",
            "DESCRIPTOR_REQUIRED", "DESCRIPTOR_INVALID", "INSTRUCTIONS_UNAVAILABLE",
            "SETTINGS_VALIDATED", "ACTIVATION_NOT_AUTHORIZED", "ACTIVATION_UNKNOWN"}
-CHOICES = {"role", "storage", "network_scope", "credentials", "descriptor", "timing"}
+CHOICES = {"role", "storage", "storage_request", "network_scope", "credentials", "descriptor", "timing"}
 
 
 def match(pattern, value):
@@ -41,7 +41,15 @@ def storage_spec(value):
 
 
 def validate_choices(choices, installation):
-    require(type(choices) is dict and set(choices) == CHOICES, "SETUP_CHOICES_SHAPE")
+    require(type(choices) is dict and set(choices) in (CHOICES, CHOICES - {"storage_request"}),
+            "SETUP_CHOICES_SHAPE")
+    request = choices.get("storage_request")
+    if request is not None:
+        require(type(request) is dict and set(request) == {"mode", "location"}
+                and type(request["mode"]) is str and request["mode"] in {"NATIVE_DOCS", "FOLDER_SQLITE_V1"}
+                and type(request["location"]) is str and 0 < len(request["location"]) <= 4096
+                and request["location"] == request["location"].strip()
+                and not any(ord(c) < 32 for c in request["location"]), "SETUP_STORAGE_REQUEST")
     require(choices["role"] is None or type(choices["role"]) is str and
             choices["role"] in {"watchdog", "fetcher"}, "SETUP_ROLE")
     if choices["storage"] is not None:
@@ -134,7 +142,7 @@ class Setup:
             require(create, "SETUP_NOT_CREATED")
             payload = dict(schema_version=1, installation_id=str(uuid4()),
                            setup_nonce=secrets.token_hex(32), state="INCOMPLETE", reason="MISSING_CHOICES",
-                           choices=dict(role=None, storage=None, network_scope=None, credentials=[],
+                           choices=dict(role=None, storage=None, storage_request=None, network_scope=None, credentials=[],
                                         descriptor=None, timing=asdict(TimingProfile())), operations={},
                            credential_image=None)
             snapshot = store.save(validated(payload), expected_revision=0)
@@ -163,7 +171,8 @@ class Setup:
 
     def missing_choices(self):
         choices = self._payload["choices"]
-        return tuple(key for key in ("role", "storage", "network_scope") if choices[key] is None)
+        return tuple(key for key in ("role", "storage", "network_scope") if choices[key] is None
+                     and not (key == "storage" and choices.get("storage_request") is not None))
 
     def status(self):
         state, reason = self._payload["state"], self._payload["reason"]
@@ -187,12 +196,14 @@ class Setup:
         # fixed, even when its result is confirmed. This is not a migration API.
         if value["operations"] and "storage" in patch:
             require(patch["storage"] == value["choices"]["storage"], "SETUP_BINDING_FROZEN")
+        if "storage_request" in patch and patch["storage_request"] != value["choices"].get("storage_request"):
+            require(not value["operations"], "SETUP_BINDING_FROZEN")
+            require("storage" not in patch, "SETUP_BINDING_UNVERIFIED")
+            value["choices"]["storage"] = None
         value["choices"].update(copy.deepcopy(patch))
         require("UNKNOWN" not in value["operations"].values()
                 or value["choices"] == self._payload["choices"], "SETUP_INSPECT_REQUIRED")
-        value.update(state="INCOMPLETE", reason="MISSING_CHOICES" if
-                     any(value["choices"][x] is None for x in ("role", "storage", "network_scope"))
-                     else "REVALIDATION_REQUIRED")
+        value.update(state="INCOMPLETE", reason="REVALIDATION_REQUIRED")
         self._save(value)
         return self.status()
 
@@ -233,6 +244,13 @@ class Setup:
     def resume(self):
         self._fresh()
         self._save({**self._payload, "state": "INCOMPLETE", "reason": "REVALIDATION_REQUIRED"})
+        return self.status()
+
+    def block(self, reason):
+        self._fresh()
+        require(type(reason) is str and reason in REASONS, "SETUP_STATE")
+        if self._payload["state"] != "CANCELLED":
+            self._save({**self._payload, "state":"BLOCKED", "reason":reason})
         return self.status()
 
     def review(self, checker):

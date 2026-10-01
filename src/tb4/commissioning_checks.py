@@ -105,6 +105,7 @@ class Prerequisites:
                     "ENVIRONMENT_UNAVAILABLE")
         except Exception:
             raise SettingsError("ENVIRONMENT_UNAVAILABLE") from None
+        require(choices["storage"] is not None, "STORAGE_UNAVAILABLE")
         self.storage.verify(choices["storage"])
         try:
             for record in choices["credentials"]:
