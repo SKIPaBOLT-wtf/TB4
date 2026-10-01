@@ -5,16 +5,16 @@ check: "RP-022.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-022-a001"
-source_commit: "7e016dd0ff555ecf3bf79f2033bae7b292715ef2"
+source_commit: "a3309d8606c22126481f18ae200481f823be2003"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0019"
+last_verified_event: "RP-022-A001-0020"
 last_completed: "RP-021"
-next_action: "Publish integration source/OUTCOME and focused test INTENT; run integration/native tests, then implement local UI and exact trusted adapter construction."
+next_action: "Publish focused integration validation INTENT and execute model/codec/native composition regressions; inspect results before local UI construction."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0019"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
