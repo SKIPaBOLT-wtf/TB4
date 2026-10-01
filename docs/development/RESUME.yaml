@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-022"
 check: "RP-022.C1"
 attempt: "A001"
-phase: "CI"
+phase: "SOURCE"
 source_branch: "work/rp-022-a001"
 source_commit: "f9d2a74102a462c9f8aee35a763ff257306d7118"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0033"
+last_verified_event: "RP-022-A001-0034"
 last_completed: "RP-021"
-next_action: "Publish a repair source INTENT for exact pending-frame recovery on reopening plus actual-native/UI regression, without replay/new identity; continue inspecting original CI runs separately."
+next_action: "Publish repaired source and focused test INTENT; execute native reopening/model/UI tests, then require fresh full hosted platform/package CI while preserving earlier runs."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0031"]
+unsettled_intents: ["RP-022-A001-0031","RP-022-A001-0034"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029"]
