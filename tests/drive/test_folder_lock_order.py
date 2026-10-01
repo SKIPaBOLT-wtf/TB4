@@ -9,8 +9,9 @@ import sqlite3
 import sys
 import threading
 import time
+import pytest
 
-from tb4.drive.docs_authority import WriteResult, document_bytes
+from tb4.drive.docs_authority import AuthorityError, WriteResult, document_bytes
 from tb4.drive.folder_authority import DB, JOURNAL, SCHEMA, FolderConfig, FolderStore, identity
 from tb4.exchange_layout import Capacity, empty_document
 from folder_fixtures import BINDING, DOMAIN, provision, inventory
@@ -78,3 +79,17 @@ def test_preflight_read_contention_does_not_leave_both_cas_without_winner(tmp_pa
     assert store.read() == (revision + 1, desired)
     assert store.compare_replace(revision, desired) is WriteResult.REJECTED
     assert inventory(config) == before
+
+
+def test_read_connection_excludes_competitors_then_releases_without_mutation(tmp_path, monkeypatch):
+    config = sql_fixture(tmp_path, monkeypatch)
+    store = FolderStore(config)
+    before = store.read()
+    objects = inventory(config)
+    with store.connection() as held:
+        assert store._row(held) == before
+        with pytest.raises(AuthorityError, match="READ_UNAVAILABLE"):
+            FolderStore(config).read()
+        assert FolderStore(config).compare_replace(*before) is WriteResult.UNAVAILABLE
+    assert FolderStore(config).read() == before
+    assert inventory(config) == objects

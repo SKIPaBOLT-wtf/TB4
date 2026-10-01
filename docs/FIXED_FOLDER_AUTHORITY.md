@@ -46,6 +46,15 @@ PERSIST journaling, FULL synchronous writes, memory-only temporary storage and a
 512-page ceiling at 4096 bytes/page. Schema, root/domain and canonical contents
 are checked. Only one row exists.
 
+EXCLUSIVE mode is selected before an empty BEGIN EXCLUSIVE/COMMIT acquires the
+connection's exclusive database lock. This happens before metadata/schema reads;
+otherwise two preflight readers can retain shared locks and block each other's
+write upgrade. The acquired lock remains held through validation and READ/CAS
+until connection close. A competing helper times out as unavailable before its
+CAS begins. The empty acquisition transaction changes no authority row/revision
+and creates no additional lock file. Native identity and permissions are still
+verified before opening and again before accepting the result.
+
 CAS obtains a database transaction and compares the revision there. A successful
 commit increments it exactly once. A concurrent busy lock is unavailable, not
 evidence of a revision conflict. A stale revision after the winner releases is
@@ -116,4 +125,3 @@ credential/host bindings; later integration/topology/release gates qualify real
 installations and the actual LLM connector. No installed runtime, home network,
 NAS, credential store or live shared root was changed for RP-018. Until these
 gates pass, this is a tested adapter primitive, not a released deployment mode.
-

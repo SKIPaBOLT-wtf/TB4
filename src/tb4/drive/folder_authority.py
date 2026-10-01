@@ -120,6 +120,12 @@ class FolderStore:
             conn.execute("PRAGMA trusted_schema=OFF")
             conn.execute("PRAGMA temp_store=MEMORY")
             conn.execute("PRAGMA locking_mode=EXCLUSIVE")
+            # The mode alone retains SHARED locks from preflight reads. Two
+            # readers could then block each other's CAS lock upgrade. Acquire
+            # exclusive ownership before any metadata read; EXCLUSIVE mode
+            # keeps it after this empty transaction until connection close.
+            conn.execute("BEGIN EXCLUSIVE")
+            conn.execute("COMMIT")
             require(conn.execute("PRAGMA journal_mode=PERSIST").fetchone() == ("persist",), "JOURNAL_MODE")
             conn.execute("PRAGMA synchronous=FULL")
             conn.execute("PRAGMA cache_size=1")
@@ -173,4 +179,3 @@ class FolderStore:
                 return WriteResult.ACCEPTED  # Client must still read back the intended transition.
         except (OSError, sqlite3.Error, AuthorityError):
             return WriteResult.UNKNOWN if begun else WriteResult.UNAVAILABLE
-
