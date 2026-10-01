@@ -5,16 +5,16 @@ check: "RP-018.C1"
 attempt: "A002"
 phase: "SOURCE"
 source_branch: "work/rp-022-a001"
-source_commit: "603743d601179341ee4b235db1884afa6ec59940"
+source_commit: "393280bcaa5c72b3c1f882b4a3dfdf11a0b5453d"
 journal: "docs/development/journal/RP-018/A002/events.jsonl"
-last_verified_event: "RP-018-A002-0022"
+last_verified_event: "RP-018-A002-0023"
 last_completed: "RP-021"
-next_action: "Publish helper/regression source and validate development/ledger/privacy; then finish native folder-lock repair."
+next_action: "Run helper regressions and full ledger/history; then finish native lock repair."
 verification: "Deterministic regression plus native Linux/SSH/full CI and all reopened RP018 checks; resume RP022 after repair qualification."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-018-A002-0020","RP-018-A002-0022"]
+unsettled_intents: ["RP-018-A002-0020"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030","DEF-031"]
