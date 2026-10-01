@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-021"
 check: "RP-021.C1"
 attempt: "A001"
-phase: "REGRESSION"
+phase: "CHECKS_REVIEWED"
 source_branch: "work/rp-021-a001"
 source_commit: "16e403e7b76b1e9bc2e4e8946d140ddb8778db3c"
 journal: "docs/development/journal/RP-021/A001/events.jsonl"
-last_verified_event: "RP-021-A001-0012"
+last_verified_event: "RP-021-A001-0013"
 last_completed: "RP-020"
-next_action: "Inspect the same Desktop36818084633 platform jobs through actual bundle/installer acceptance; retain CI source/count evidence."
+next_action: "Validate final acceptance candidate and unchanged tested source; then publish exact-head merge INTENT."
 verification: "Require native Linux tests to execute (only non-Linux skip), both desktop/headless policy tests, unsupported-mode/canary/race tests, unchanged Windows86-case regression, full platform CI/Desktop packages and ledger/privacy/source review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-021-A001-0009"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-027","DEF-028"]

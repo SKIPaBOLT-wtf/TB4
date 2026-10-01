@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "item": "RP-021",
+  "check": "RP-021.C3",
+  "attempt": "A001",
+  "source_ref": "16e403e7b76b1e9bc2e4e8946d140ddb8778db3c",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Run focused five-module Windows qualification with a fresh synthetic root, actual early native Linux and Windows CI gates, complete platform regressions and both-role package lifecycle checks. Inspect exact source, native failure assertions, canary reports and completed workflow logs identified in reviewed-validation.md.",
+  "expected": "Actual Linux permissions/ACL/file identity/seals and portable missing/locked/rotated/revoked/wrong-account/trust/provider failures remain closed and canary-free.",
+  "observed": "Actual Linux33 native cases pass in both CI and Desktop. Local focused156 pass/33 Linux skips; full CI1893 pass/17 skips/4 known xfails, Linux Desktop1904 pass/15 skips/4 xfails, Windows Desktop1847 pass/72 skips/4 xfails. Existing nativeWindows15 and shared-policy regression pass. Both-role bundle/GUI/install/uninstall/profile checks pass on both OSs. Progress172 and source/history/privacy gates pass with documented limits.",
+  "exit_code": 0,
+  "platform_scope": "Windows x64 local/hosted and Ubuntu Linux x64 hosted. Explicit 15 Windows or33 Linux native skips on other OS; no ARM64/XFS field or live home topology qualification claimed.",
+  "negative_cases": [
+    "Unsupported SSH agent, SecretService, auto, interactive-unlock or invalid modes refuse before any native key access.",
+    "Wrong UID/GID/groups/session/namespaces, changed filesystem credentials, missing trust, purpose or expiry deny helper admission.",
+    "Missing/exclusively locked store, broad or inaccessible modes, masked extended/default ACLs, hard links and unsafe path components refuse.",
+    "Real symlink/parent alias/FIFO/directory/empty/oversized/tmpfs sources refuse; no blocking FIFO open or external ACL repair occurs.",
+    "Source replacement, missing path, parent/file permission change, content rotation with restored timestamp and held-handle changes invalidate admission.",
+    "Sealed memory rejects write/grow/shrink; edits to original cannot change already-admitted snapshot; borrowed handle is invalid after use.",
+    "Real fork/setsid cannot use parent-session binding; unavailable memfd closes all owned descriptors and preserves external files.",
+    "Lost/raw/malformed helper acknowledgement maps UNKNOWN without replay; public reports/repr/captured output exclude synthetic canary and protected key path.",
+    "Exact mount parser rejects ext2/ext3 shared magic, unsupported type, mismatch, missing/duplicate/malformed/oversized tables.",
+    "Bounded fixture IDs preserve65537-byte negative input without exceeding Windows environment limits; existing Windows and RP006 regressions remain required."
+  ],
+  "unverified_scope": "Durable protected bindings, passphrase/key parsing, actual authenticated remote helper integration and live deployment remain later gates. Existing key mode excludes agents/SecretService/unlock prompts. No forensic memory erasure, mandatory Linux file locking or retrospective cancellation of admitted effects.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Revoke only installation-local references and close owned descriptors; retain external keys/permissions/profiles and installed legacy runtime.",
+  "intent_event": "RP-021-A001-0009",
+  "outcome_event": "RP-021-A001-0013",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A001/reviewed-validation.md"
+  ]
+}
