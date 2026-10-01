@@ -125,6 +125,8 @@ def probe(root, *, exclusive=True):
     finally:
         for child in clients: kill_owned(child)
     committed = read(root,exclusive)
+    stale_recheck = cas(root,exclusive,1,"X")
+    stale_preserved = read(root,exclusive) == committed
     before_bytes = (root/DB).read_bytes()
     writer = subprocess.Popen(child_args(root,exclusive,"uncommitted"),
                stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
@@ -153,6 +155,7 @@ def probe(root, *, exclusive=True):
         os.rename(root/"held-journal",root/JOURNAL)
     return dict(schema_version=1,mode="PERSIST_EXCLUSIVE" if exclusive else "PERSIST_NORMAL",
         initial_revision=first[0],concurrent_outcomes=sorted(outcomes),committed_revision=committed[0],
+        stale_revision_after_release=stale_recheck,stale_recheck_preserved_commit=stale_preserved,
         uncommitted_database_pages_changed=changed_before_crash,journal_bytes_before_crash=journal_hot_bytes,
         reopened_matches_last_committed=restored == committed,
         same_fixed_names=set(after_recovery) == set(initial),same_file_identities=after_recovery == initial,

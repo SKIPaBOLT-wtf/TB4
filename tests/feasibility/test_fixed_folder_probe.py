@@ -5,7 +5,9 @@ from tools.experiments.folder_journal import probe
 def test_persistent_exclusive_journal_keeps_fixed_objects_and_rolls_back_crashed_writer(tmp_path):
     result=probe(tmp_path/"fixed-folder-probe")
     assert result["initial_revision"] == 1 and result["committed_revision"] == 2
-    assert result["concurrent_outcomes"] == ["ACCEPTED","REJECTED"]
+    assert result["concurrent_outcomes"] in (["ACCEPTED","REJECTED"],["ACCEPTED","BUSY"])
+    assert result["stale_revision_after_release"] == "REJECTED"
+    assert result["stale_recheck_preserved_commit"]
     assert result["uncommitted_database_pages_changed"]
     assert result["reopened_matches_last_committed"]
     assert result["same_fixed_names"] and result["same_file_identities"]

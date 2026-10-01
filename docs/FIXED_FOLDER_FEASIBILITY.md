@@ -25,6 +25,12 @@ committed revision/content plus the fixed file names and identities. A missing
 journal must be refused before SQLite can create a replacement. Public output
 contains only synthetic outcomes, sizes and identity-equality booleans.
 
+Lock contention and revision conflict are distinct: the concurrent loser may
+receive BUSY before comparing a revision. Exactly one client may commit. Once
+both clients exit and release their locks, the probe separately submits the
+original revision and requires REJECTED plus unchanged committed content. BUSY
+alone is never counted as proof of the version precondition.
+
 This is not a production adapter. No real SSH endpoint, network share, native
 filesystem power failure, permissions model, installation, or LLM connector is
 qualified by a local probe. If the fixed-object invariant passes, RP-018 must
