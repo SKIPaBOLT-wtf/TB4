@@ -7,17 +7,17 @@ phase: "TEST"
 source_branch: "work/rp-020-a001"
 source_commit: "bc3b5a42c66defebda12255b407b76b6b9e404e6"
 journal: "docs/development/journal/RP-020/A001/events.jsonl"
-last_verified_event: "RP-020-A001-0005"
+last_verified_event: "RP-020-A001-0006"
 last_completed: "RP-019"
-next_action: "Verify the five local source files equal the remotely read-back source, stage only them, finish non-destructive sync and execute the same not-yet-started focused validation once."
+next_action: "Publish a narrow metadata repair INTENT: preserve original records, add validated case-only action identity correction, guard future publication and add negative regression tests before retesting."
 verification: "Require native Windows token/DACL/file-sharing tests plus portable failure/race/canary coverage, required platform CI, complete regression and packaged install/uninstall checks. Validate ledger, public scanner and base-to-head diff before merge."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-020-A001-0004"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-025"]
 rollback: "Remove/revoke only new installation-local resolver metadata. Never rewrite ACLs or delete external selected keys. Tests may create and alter only fresh synthetic task-owned files; no live setup or migration."
 next_implementation_step: "RP-020"
 next_implementation_check: "RP-020.C1"
