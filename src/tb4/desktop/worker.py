@@ -103,6 +103,26 @@ def run_production(profile: Profile, telemetry: Telemetry, stop: threading.Event
     return ServiceHost(runtime, stop_event=stop).run()
 
 
+def run_native_watchdog(context, telemetry: Telemetry, stop: threading.Event) -> int:
+    """Trusted R2 commissioning entry; no legacy discovery or eager startup.
+
+    The installed v1 configuration parser does not manufacture this context.
+    Later commissioning must bind the single authority, local checkpoint store,
+    capabilities and qualified work adapters before calling this entry.
+    """
+    from dataclasses import replace
+    from tb4.service_host import ServiceHost
+    from tb4.watchdog.leadership_runtime import NativeWatchdogContext
+    from tb4.watchdog.runtime import create_runtime_from_context
+    if type(context) is not NativeWatchdogContext or telemetry.role != "watchdog":
+        raise ProfileError("ROLE_INVALID")
+    if stop.is_set():
+        return 0
+    runtime = create_runtime_from_context(replace(context, status=telemetry.set_state))
+    # RUNNING is emitted by the runtime only after confirmed ownership.
+    return ServiceHost(runtime, stop_event=stop).run()
+
+
 def run_action(profile: Profile, action: str, telemetry: Telemetry, stop: threading.Event) -> int:
     if action == "save":
         message = json.loads(sys.stdin.readline(2 * 1024 * 1024 + 1))
@@ -179,7 +199,7 @@ def main(profile: Profile, action: str) -> int:
 
     def pulse():
         while not finished.is_set():
-            if stop.is_set() and telemetry.state == "RUNNING":
+            if stop.is_set() and telemetry.state in {"RUNNING", "PAUSED"}:
                 telemetry.set_state("STOPPING", "COOPERATIVE_STOP")
             emitter.emit()
             if emitter.closed.is_set():

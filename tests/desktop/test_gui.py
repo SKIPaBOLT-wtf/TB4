@@ -35,6 +35,31 @@ def test_two_role_windows_are_independent_and_do_not_start_workers(application, 
         application.processEvents()
 
 
+def test_native_standby_reason_is_visible_and_exited_worker_is_not_paused(application, tmp_path):
+    from types import SimpleNamespace
+    from tb4.desktop.telemetry import Telemetry
+    window = RoleWindow(profile_for('watchdog', tmp_path), smoke=True)
+    telemetry = Telemetry('watchdog')
+    telemetry.set_state('PAUSED', 'OLDER_DOG_DETECTED')
+    try:
+        window.snapshot = telemetry.snapshot()
+        window.client.process = SimpleNamespace(poll=lambda:None)
+        window.client.action = 'run'
+        window.refresh()
+        assert 'PAUSED' in window.summary.text()
+        assert 'OLDER_DOG_DETECTED' in window.summary.text()
+        window.client.process = None
+        window.refresh()
+        assert 'EXITED_UNCONFIRMED' in window.summary.text()
+        assert 'PAUSED' not in window.summary.text()
+    finally:
+        window.client.process = None
+        window.timer.stop()
+        window.tray.hide()
+        window.deleteLater()
+        application.processEvents()
+
+
 def test_gui_save_uses_real_worker_and_failed_save_preserves_config(application, tmp_path):
     import time
     window = RoleWindow(profile_for('fetcher', tmp_path), smoke=True)

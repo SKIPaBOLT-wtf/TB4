@@ -11,9 +11,11 @@ from functools import lru_cache
 from jsonschema import Draft202012Validator
 
 ROLES = frozenset({"watchdog", "fetcher"})
-STATES = frozenset({"STOPPED", "STARTING", "RUNNING", "STOPPING", "EXITED", "FAILED"})
+STATES = frozenset({"STOPPED", "STARTING", "RUNNING", "PAUSED", "STOPPING", "EXITED", "FAILED"})
 STAGES = frozenset({"STARTUP", "CONFIGURATION", "AUTHORIZATION", "ROOT_AND_MAP", "ROLE_STARTUP",
-                    "ROLE_LOOP", "COOPERATIVE_STOP", "ACTION_FINISHED", "UNKNOWN"})
+                    "ROLE_LOOP", "COOPERATIVE_STOP", "ACTION_FINISHED", "UNKNOWN",
+                    "OLDER_DOG_DETECTED", "AUTHORITY_UNAVAILABLE", "LEADERSHIP_UNKNOWN",
+                    "COMMISSIONING_REQUIRED", "CLOCK_UNCERTAIN"})
 OUTCOMES = frozenset({"OK", "SUCCESS", "NOT_FOUND", "PERMISSION_DENIED", "CONFLICT",
                       "TRANSIENT_ERROR", "AMBIGUOUS", "EXCEPTION", "UNKNOWN"})
 OBSERVATIONS = frozenset({"UNKNOWN", "RECENT_RESPONSE", "STALE", "CLOCK_UNCERTAIN"})

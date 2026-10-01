@@ -368,9 +368,10 @@ class RoleWindow(QtWidgets.QMainWindow):
             self.recovery_button.setEnabled(not active)
         remote = observation_state(self.snapshot, time.time())
         process = self.snapshot.get("process_state", "STARTING") if self.snapshot else ("STARTING" if active else "STOPPED")
-        if not active and process in {"STARTING", "RUNNING", "STOPPING"}:
+        if not active and process in {"STARTING", "RUNNING", "PAUSED", "STOPPING"}:
             process = "EXITED_UNCONFIRMED"
-        self.summary.setText(f"Process: {process} | Last API observation: {remote}")
+        reason = f" | {self.snapshot.get('stage', 'UNKNOWN')}" if process == "PAUSED" and self.snapshot else ""
+        self.summary.setText(f"Process: {process}{reason} | Last API observation: {remote}")
         self.tray.setToolTip(f"TB4 {self.profile.role.upper()}: {process}; API {remote}")
         detail = dict(self.snapshot or {})
         if detail.get("last_drive_at") is not None:
