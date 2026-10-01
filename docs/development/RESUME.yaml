@@ -7,14 +7,14 @@ phase: "TEST"
 source_branch: "work/rp-022-a001"
 source_commit: "5627090c724d95e4bcd97fd352bef7ff9c7e2cae"
 journal: "docs/development/journal/RP-018/A002/events.jsonl"
-last_verified_event: "RP-018-A002-0033"
+last_verified_event: "RP-018-A002-0034"
 last_completed: "RP-021"
-next_action: "Inspect local-exec18143 completion and sanitize native evidence; do not repeat or assume prior temporary path persists."
+next_action: "Publish both RP018 and RP022 final source CI intents, trigger required CI/Progress/Desktop Windows/Linux with SSH installed by CI; record same run IDs and inspect to completion."
 verification: "Deterministic regression plus native Linux/SSH/full CI and all reopened RP018 checks; resume RP022 after repair qualification."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-018-A002-0032"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030","DEF-031"]
