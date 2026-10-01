@@ -110,6 +110,15 @@ outcome, authority, launch fact or result changes; no mixed or repeated correcti
 The ledger validates a normalized read view while retaining the original bytes.
 New STARTED entries must carry a real run ID and valid pending/started outcome.
 
+If an action group was published with lowercase ASCII action IDs, an explicit
+`action_case_correction` CORRECTION may project only those prior IDs to their
+exact uppercase form. Reference the original INTENT and preserve its item,
+attempt, check, source, scope, procedure, expected result and rollback. The old
+group and the projected name must not collide with another action. No rename,
+mixed/repeated correction or normalization of future malformed rows is allowed.
+Original bytes and actual outcomes remain unchanged; ordinary chronological
+validation still applies. New records must use uppercase IDs before publication.
+
 The early RP-001/RP-002 helpers will automate schema validation/projection/publication.
 Until they pass, perform the same transaction manually. Their future existence is
 not grounds to omit checkpoints now. A lightweight progress validation gate must

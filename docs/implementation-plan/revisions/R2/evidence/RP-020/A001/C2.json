@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "item": "RP-020",
+  "check": "RP-020.C2",
+  "attempt": "A001",
+  "source_ref": "46632bdf2648feacb3b17641e9b09811ad37ca1c",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Run focused Windows credential suites, complete pytest regression on Windows and Linux, required isolated Linux SSH gate, actual both-role packaging/installer workflows, then inspect exact-source logs, owner booleans, negative assertions and immutable history. Exact run/job IDs and counts in reviewed-validation.md.",
+  "expected": "Actual Windows user/session/logon, owner/DACL, held file identity/content version, local volume and fixed-purpose/target checks gate use without elevation.",
+  "observed": "Final Windows native15 PASS, hosted owner diagnostic false/true; local focused86 PASS. CI1790/17skip/4xfail, Linux Desktop1801/15skip/4xfail and Windows Desktop1777/39skip/4xfail PASS; both-role bundle/GUI/install/uninstall/profile preservation PASS on both platforms. Progress172 tests/ledger/history/scanner PASS; invariant and privacy/rollback review accepted with stated limits.",
+  "exit_code": 0,
+  "platform_scope": "Windows10+ x64 local and hosted native APIs; Ubuntu22.04 Desktop plus Ubuntu CI. Synthetic files only; platform-specific skips retained.",
+  "negative_cases": [
+    "Missing/exclusively locked provider; broad or NULL DACL; wrong owner/user/session/logon; thread impersonation.",
+    "Unavailable interactive session, missing or changed target trust, denied or arbitrary purpose, expired or revoked selection.",
+    "Changed content even with restored timestamp; replaced/missing/empty/oversized file; multiple hard links; device/UNC/relative/stream/path aliases.",
+    "Permission, identity, expiry, revocation and version changes after an earlier READY observation or while acquiring the held key.",
+    "Closed exception and malformed/raw callback results; one attempted fixed call with UNKNOWN and no automatic retry after lost acknowledgement.",
+    "Opaque references, hidden private repr and closed capability reports exclude synthetic canary, path, SID, target and material.",
+    "Rotation/revocation preserve selected and unrelated synthetic key files; no installer credential import or deletion.",
+    "Explicit synthetic file ownership under differing hosted/local defaults; production exact-owner validation stays unchanged.",
+    "Journal capitalization correction rejects renames/collisions/mixed/duplicate/future malformed rows and preserves original outcomes and bytes.",
+    "Existing cancellation-race and supervision defects remain four strict expected failures; they are not claimed fixed by RP020."
+  ],
+  "unverified_scope": "No deployed enrollment, protected durable bindings, real endpoint authentication/fixed SSH helper integration, live migration, encrypted key parsing or native key-use selftest inside the bundle. These remain later commissioning/transport/platform gates.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Revoke/remove only new process-local references; preserve selected and unrelated external key files, profiles and existing runtime.",
+  "intent_event": "RP-020-A001-0032",
+  "outcome_event": "RP-020-A001-0035",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-020/A001/reviewed-validation.md"
+  ]
+}

@@ -40,6 +40,10 @@ EVENT = closed({
     "uncertainty": TEXT,
     "exit_code": {"type": ["integer", "null"]},
     "run_id": TEXT,
+    "action_case_correction": closed({
+        "old_value": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "new_value": {"type": "string", "pattern": "^[A-Z0-9-]+$"},
+    }),
     "reference_correction": closed({
         "field": {"const": "related_event"},
         "old_value": {"type": ["string", "null"]},
