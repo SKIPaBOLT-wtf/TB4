@@ -86,16 +86,15 @@ def package(value, payload):
             require(all(encoded(v) == getattr(plan, k) for k,v in parts.items()), "BALLPARK_PENDING")
             document = empty_document(spec.domain_id, spec.capacity)
             require(parts["header"] == {k:v for k,v in document.items() if k != "records"}
-                    and type(parts["protected"]) is dict and set(parts["protected"]) == {"global.commissioning"}
+                    and type(parts["protected"]) is dict
                     and type(parts["before"]) is dict and type(parts["after"]) is dict
                     and set(parts["before"]) == set(parts["after"]), "BALLPARK_PENDING")
-            # Reconstruct only touched rows and the fixed commissioning guard.
-            # The prior selected device set is a subset of the new revision.
+            catalogues = {f"target.{i:03d}.catalogue" for i in range(spec.capacity.devices)}
+            require(set(parts["protected"]) == {"global.commissioning"} | (catalogues - set(parts["before"])),
+                    "BALLPARK_PENDING")
             document["records"].update(parts["before"])
             document["records"].update(parts["protected"])
-            # Unselected catalogues have no valid allocation in empty_document;
-            # matching selected IDs uses only the exact recorded touched rows.
-            expected = _pending_changes(document, draft, choices, parts["before"])
+            expected = changes(document, draft, choices)
             require(parts["after"] == expected, "BALLPARK_PENDING")
             validate_document(document)
             document["records"].update(parts["after"])
@@ -106,41 +105,6 @@ def package(value, payload):
         raise
     except Exception:
         raise BallparkError("BALLPARK_PUBLICATION") from None
-
-
-def _pending_changes(document, draft, choices, before):
-    """Validate an exact frozen plan without inventing absent remote bindings."""
-    from .exchange_layout import empty_record
-    spec, _ = storage_spec(choices["storage"])
-    records = document["records"]
-    require(records["global.commissioning"] == dict(generation=0, operation_id=spec.setup_id,
-        retention="RETAINED", body=spec.marker("STORAGE_READY")), "BALLPARK_PENDING")
-    if draft["base_revision"] == 0:
-        require(records["global.registry"] == empty_record()
-                and records["global.settings"] == dict(generation=0, operation_id=spec.setup_id,
-                    retention="RETAINED", body={"descriptor_state": "UNCONFIGURED"}), "BALLPARK_PENDING")
-    else:
-        require(shared(document) == catalogue(choices["descriptor"]), "BALLPARK_PENDING")
-    op, revision = draft["decision"]["id"], draft["candidate"]["revision"]
-    expected, slots = {}, []
-    for device in draft["candidate"]["devices"]:
-        matches = [(k,r) for k,r in before.items() if k.startswith("target.")]
-        matches = [(k,r) for k,r in matches if catalogue_record(r).get("discovery", {}).get("device_id") == device["device_id"]]
-        require(len(matches) == 1, "BALLPARK_PENDING")
-        key, row = matches[0]
-        index = int(key.split(".")[1])
-        require(key == f"target.{index:03d}.catalogue" and 0 <= index < spec.capacity.devices,
-                "BALLPARK_PENDING")
-        require(row["body"]["discovery"]["alias"] == device["alias"], "BALLPARK_PENDING")
-        slots.append(index)
-        expected[key] = dict(generation=row["generation"]+1, operation_id=op, retention="RETAINED",
-                             body={**row["body"], "ballpark": compact(device, revision)})
-    expected["global.registry"] = dict(generation=revision, operation_id=op, retention="RETAINED",
-                                      body=header(draft, slots))
-    expected["global.settings"] = dict(generation=revision, operation_id=op, retention="RETAINED",
-        body=dict(descriptor_state="VALIDATED", revision=revision, timing=copy.deepcopy(choices["timing"])))
-    require(set(expected) == set(before), "BALLPARK_PENDING")
-    return expected
 
 
 class Publisher:
@@ -167,9 +131,12 @@ class Publisher:
         self.discovery._current(Action.REGISTER)
         snapshot = self.discovery._snapshot()
         updates = changes(snapshot.document(), draft, self.setup.private_choices())
+        spec, _ = storage_spec(self.setup.private_choices()["storage"])
+        guard = {"global.commissioning"} | {
+            f"target.{i:03d}.catalogue" for i in range(spec.capacity.devices)} - set(updates)
         plan = RecordMutation.prepare(snapshot,
             owner=OwnerGuard(self.discovery.grant.owner, self.discovery.grant.epoch),
-            changes=updates, protect={"global.commissioning"})
+            changes=updates, protect=guard)
         state["pending"] = dict(authority=draft["authority"], draft_sha256=digest(encoded(draft)),
                                 plan=frozen_plan(plan))
         check_boundary(self.guide.source, self.guide.pin, self.guide.runtime)

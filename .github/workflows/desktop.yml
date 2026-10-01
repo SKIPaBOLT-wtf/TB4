@@ -52,6 +52,8 @@ jobs:
         env:
           TB4_REQUIRE_NATIVE_DISCOVERY: '1'
         run: python -m pytest tests/discovery/test_native_loopback.py -ra
+      - name: Private BALLPARK and local owner review qualification
+        run: python -m pytest tests/drive/test_ballpark_setup.py tests/drive/test_ballpark_publication.py -ra
       - name: Complete platform regression suite
         run: python -m pytest
       - name: Build WATCHDOG

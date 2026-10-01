@@ -161,3 +161,17 @@ def test_untrusted_environment_or_provider_text_never_reaches_status(application
     finally:
         window.close()
         window.deleteLater()
+
+
+def test_default_setup_cannot_manufacture_ballpark_publication_context(application):
+    _, control = controller()
+    window = SetupWindow(control)
+    try:
+        assert not window.ballpark.isEnabled()
+        from tb4.private_settings import SettingsError
+        with pytest.raises(SettingsError, match="DESCRIPTOR_REQUIRED"):
+            control.ballpark_session()
+        assert not control.setup.status()["runtime_active"]
+    finally:
+        window.close()
+        window.deleteLater()

@@ -291,3 +291,146 @@ def test_discovery_pending_plan_cannot_change_ballpark_selection(system):
     from dataclasses import replace
     value["discovery"]["pending"]["plan"] = frozen_plan(replace(plan, after=encoded(after)))
     with pytest.raises(SettingsError): validated(value)
+
+
+def test_takeover_between_local_intent_and_write_keeps_pending_inspection(system):
+    pub, guide, discovery, setup, provider, *_ = system
+    save = pub._save
+    def takeover(state):
+        save(state)
+        if state["pending"]:
+            leader = Leadership(discovery.leader.backend, actor=ACTORS[1], enrollment={
+                **ENROLLMENT, setup.installation_id: "synthetic-discoverer"})
+            plan = leader.acquire(leader.observe(clock(340)), transition=tid("after-ballpark-intent"))
+            assert leader.commit(plan, mode="START").outcome == "CONFIRMED"
+    pub._save = takeover
+    before = copy.deepcopy(provider.store.document["records"]["global.registry"])
+    with pytest.raises(DiscoveryError, match="SUPERSEDED"): pub.publish()
+    resumed = restart(system)
+    count = provider.store.commits
+    assert resumed.inspect() == "UNKNOWN" and provider.store.commits == count
+    assert provider.store.document["records"]["global.registry"] == before
+
+
+def test_all_64_slots_roundtrip_with_maximum_catalogue_fields_within_fixed_budgets(system):
+    from dataclasses import replace, asdict
+    from uuid import UUID
+    from tb4.ballpark_publication import changes
+    from tb4.commissioning_state import storage_spec
+    from tb4.exchange_layout import Capacity, empty_document, slots, validate_document
+    pub, guide, discovery, setup, provider, *_ = system
+    choices = setup.private_choices()
+    old_spec, _ = storage_spec(choices["storage"])
+    spec = replace(old_spec, capacity=Capacity(64, 1, 1, 1))
+    choices["storage"]["spec"] = asdict(spec)
+    document = empty_document(spec.domain_id, spec.capacity)
+    document["records"]["global.settings"] = dict(generation=0, operation_id=spec.setup_id,
+        retention="RETAINED", body={"descriptor_state": "UNCONFIGURED"})
+    document["records"]["global.commissioning"] = dict(generation=0, operation_id=spec.setup_id,
+        retention="RETAINED", body=spec.marker("STORAGE_READY"))
+    draft = copy.deepcopy(setup._payload["ballpark_draft"])
+    template = draft["candidate"]["devices"][0]
+    draft["candidate"]["devices"] = []
+    for i in range(64):
+        device = copy.deepcopy(template)
+        device.update(device_id=str(UUID(int=i+1)), alias=f"target-{i:03d}" + "x"*22,
+                      roles=["fetcher", "watchdog"], launch_mode={"fetcher": "DESKTOP_SESSION", "watchdog": "EXTERNAL"},
+                      transports=["WOL", "SSH", "DRIVE_API", "SHARED_FOLDER"])
+        device["display_name"] = device["alias"]
+        draft["candidate"]["devices"].append(device)
+        body = copy.deepcopy(provider.store.document["records"]["target.000.catalogue"]["body"])
+        for kind in ("input", "output"):
+            body["artifacts"][kind]["id"] = (kind + str(i)).ljust(128, "x")
+        body["discovery"].update(device_id=device["device_id"], alias=device["alias"])
+        body["discovery"]["network"] = dict(value="UNKNOWN", source="NETWORK_PROBE", observed_at=10**12,
+                                            valid_for_s=86400, freshness="CLOCK_UNCERTAIN")
+        document["records"][f"target.{i:03d}.catalogue"] = dict(generation=2**63-2, operation_id="e"*64,
+                                                                 retention="RETAINED", body=body)
+    validate_document(document)
+    updates = changes(document, draft, choices)
+    document["records"].update(updates)
+    assert shared(document) == catalogue(draft["candidate"])
+    for key, budget in slots(spec.capacity).items():
+        assert len(encoded({key: document["records"][key]})) <= budget
+
+
+@pytest.mark.parametrize("value", [None, [], [True, 1, [0], 0, 0, [0], []],
+    [1, True, [0], 0, 0, [0], []], [1, 1, [0, 0], 0, 0, [0, 0], []],
+    [1, 1, [0], -1, 0, [0], []], [1, 1, [0], 0, 0, [True], []],
+    [1, 1, [0], 0, 0, [0], [0, 0]]], ids=["none", "empty", "bool-version", "bool-revision", "duplicate-role", "negative-os", "bool-launch", "duplicate-transport"])
+def test_compact_codec_rejects_ambiguous_or_unrecognized_values(value):
+    from tb4.ballpark_records import expand
+    with pytest.raises(BallparkError): expand(value, {"device_id": ACTORS[0], "alias": "target"})
+
+
+def qt_application():
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    pytest.importorskip("PySide6")
+    from PySide6 import QtWidgets
+    return QtWidgets.QApplication.instance() or QtWidgets.QApplication([])
+
+
+def finish_dialog(app, dialog):
+    import time
+    deadline = time.monotonic() + 10
+    while dialog.job is not None and time.monotonic() < deadline:
+        app.processEvents()
+        time.sleep(.01)
+    assert dialog.job is None
+
+
+def test_real_qt_owner_review_approval_is_separate_from_publication(system):
+    app = qt_application()
+    from tb4.desktop.ballpark_dialog import BallparkDialog
+    pub, guide, discovery, setup, provider, *_ = system
+    # Start at partial local choices to exercise actual owner controls.
+    payload = copy.deepcopy(setup._payload)
+    payload["ballpark_draft"].update(candidate=None, decision=None)
+    payload["ballpark_draft"]["proposal"]["devices"] = []
+    setup._save(payload)
+    dialog = BallparkDialog(pub)
+    try:
+        dialog.show()
+        app.processEvents()
+        assert len(dialog.rows) == 1 and not dialog.publish.isEnabled()
+        _, selected, roles, *_ = dialog.rows[0]
+        selected.setChecked(True)
+        roles["fetcher"].setChecked(True)
+        dialog.topology.setCurrentIndex(dialog.topology.findData("FLAT"))
+        writes = provider.store.commits
+        dialog.confirm.click()
+        assert not dialog.confirm.isEnabled() and not dialog.publish.isEnabled()
+        finish_dialog(app, dialog)
+        assert dialog.publish.isEnabled() and setup.private_choices()["descriptor"] is None
+        assert provider.store.commits == writes
+        dialog.publish.click()
+        finish_dialog(app, dialog)
+        assert setup.private_choices()["descriptor"]["revision"] == 1
+        assert provider.store.commits == writes+1
+        assert "published" in dialog.message.text()
+        assert not dialog.publish.isEnabled() and dialog.prepare.isEnabled()
+    finally:
+        finish_dialog(app, dialog)
+        dialog.close()
+        dialog.deleteLater()
+        app.processEvents()
+
+
+def test_real_qt_restart_unknown_exposes_only_inspection(system):
+    app = qt_application()
+    from tb4.desktop.ballpark_dialog import BallparkDialog
+    lose_reply(system)
+    pub = restart(system)
+    dialog = BallparkDialog(pub)
+    try:
+        assert dialog.inspect.isEnabled()
+        assert not any(b.isEnabled() for b in (dialog.prepare, dialog.confirm, dialog.publish))
+        count = system[4].store.commits
+        dialog.inspect.click()
+        finish_dialog(app, dialog)
+        assert pub.view(now=220)["status"] == "ACTIVE" and system[4].store.commits == count
+    finally:
+        finish_dialog(app, dialog)
+        dialog.close()
+        dialog.deleteLater()
+        app.processEvents()

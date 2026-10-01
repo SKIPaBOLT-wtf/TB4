@@ -108,6 +108,11 @@ class SetupWindow(QtWidgets.QWidget):
             self.credential.hide()
         self.message = plain_label("")
         layout.addWidget(self.message)
+        self.ballpark = QtWidgets.QPushButton("Review environment")
+        self.ballpark.setEnabled(controller.role == "watchdog" and callable(controller.ballpark_factory))
+        self.ballpark.setToolTip("Available after discovery and compatible setup guidance are connected.")
+        self.ballpark.clicked.connect(self.review_ballpark)
+        layout.addWidget(self.ballpark)
         buttons = QtWidgets.QHBoxLayout()
         self.save = QtWidgets.QPushButton("Save choices")
         self.check = QtWidgets.QPushButton("Check setup")
@@ -156,12 +161,24 @@ class SetupWindow(QtWidgets.QWidget):
         except Exception:
             self.message.setText(ERROR_MESSAGE)
 
+    def review_ballpark(self):
+        if self.job is not None:
+            return
+        try:
+            from .ballpark_dialog import BallparkDialog
+            dialog = BallparkDialog(self.controller.ballpark_session(), self)
+            dialog.exec()
+            dialog.deleteLater()
+            self.show_status(self.controller.view())
+        except Exception:
+            self.message.setText(MESSAGES["DESCRIPTOR_REQUIRED"])
+
     def start_check(self, action):
         if self.job is not None:
             return
         self.job = CheckJob(self.controller,action,self)
         for widget in (self.mode,self.location,self.scope,self.isolated,self.targets,self.credential,
-                       self.save,self.check,self.cancel,self.resume):
+                       self.save,self.check,self.cancel,self.resume,self.ballpark):
             widget.setEnabled(False)
         self.message.setText("Checking the saved setup…")
         self.job.result.connect(self.show_status)
@@ -175,6 +192,7 @@ class SetupWindow(QtWidgets.QWidget):
                        self.save,self.cancel):
             widget.setEnabled(True)
         self._scope_enabled(self.isolated.isChecked())
+        self.ballpark.setEnabled(self.controller.role == "watchdog" and callable(self.controller.ballpark_factory))
         self.show_status(self.controller.view())
 
     def closeEvent(self, event):
