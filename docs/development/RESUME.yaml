@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-015"
 check: "RP-015.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "VALIDATION"
 source_branch: "work/rp-015-a001"
 source_commit: "5ed368e0e18806b091ba435fa5fb259bf2842c94"
 journal: "docs/development/journal/RP-015/A001/events.jsonl"
-last_verified_event: "RP-015-A001-0007"
+last_verified_event: "RP-015-A001-0008"
 last_completed: "RP-014"
-next_action: "Publish fresh validation intent and rerun original suite and all CI/native gates."
+next_action: "Sync repaired source, record run identity and run exact tests."
 verification: "Pin published source and test backend request bodies, UTF16/newline/tab identity, strict revision conflicts and complete binding/hash readback; no duplicate payload execution."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-015-A001-0008"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-015"]
