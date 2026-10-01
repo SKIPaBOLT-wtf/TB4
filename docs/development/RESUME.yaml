@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-017"
 check: "RP-017.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "VALIDATION"
 source_branch: "work/rp-017-a001"
 source_commit: "0b2f89a637e95895202de5822c259e121ee6fe41"
 journal: "docs/development/journal/RP-017/A001/events.jsonl"
-last_verified_event: "RP-017-A001-0002"
+last_verified_event: "RP-017-A001-0003"
 last_completed: "RP-016"
-next_action: "Publish validation INTENT, open PR and run isolated affected regressions plus CI/Progress/native desktop checks."
+next_action: "Open PR, checkpoint recoverable validation run and execute local/CI checks."
 verification: "Actual RP016/RP015 wire adapter plus deterministic fake-clock/action/checkpoint ports; no effect on fresh-incumbent startup; exact owner/epoch readback and per-installation capability checks; code integration via factory/worker and no raw-v1 fallthrough."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-017-A001-0003"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
