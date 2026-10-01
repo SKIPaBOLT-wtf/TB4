@@ -5,16 +5,16 @@ check: "RP-023.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-023-a001"
-source_commit: "236d03a0eebbbda6513e65a167e39de40df9cc78"
+source_commit: "8e934adcfd719af981b7595eeaa5c8bfb6e0b875"
 journal: "docs/development/journal/RP-023/A001/events.jsonl"
-last_verified_event: "RP-023-A001-0006"
+last_verified_event: "RP-023-A001-0007"
 last_completed: "RP-022"
-next_action: "Implement and publish the native collection source/checkpoint; then record focused synthetic validation before executing it."
+next_action: "Publish native adapter focused validation INTENT; run synthetic discovery/model/process tests locally with native loopback opt-in absent, plus scanner and complete branch diff check."
 verification: "Review exact source and named scope/duplicate-name/address-reassignment/multi-interface/unstable-identifier/routed-VPN cases; add native Windows/Linux and protected fixed-slot integration before final acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-023-A001-0006"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
