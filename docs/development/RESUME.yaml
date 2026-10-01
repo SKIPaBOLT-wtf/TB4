@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-018"
-check: "RP-018.C1"
+work_item: "RP-019"
+check: "RP-019.C1"
 attempt: "A001"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "b04b4747ab4261b57d04840cbb8535cd020e8195"
-journal: "docs/development/journal/RP-018/A001/events.jsonl"
-last_verified_event: "RP-018-A001-0030"
+phase: "SOURCE"
+source_branch: "work/rp-019-a001"
+source_commit: "db5bda2168a053999451d23ac8970da9642cc6f1"
+journal: "docs/development/journal/RP-019/A001/events.jsonl"
+last_verified_event: "RP-019-A001-0001"
 last_completed: "RP-018"
-next_action: "Validate main ledger and lightweight Progress run, then claim RP019/A001 and implement idempotent fixed-slot commissioning under its prerequisites."
-verification: "Compare pre/post object inventory and identities, strict revision-CAS winner, observed rollback after killed writer, independently reopened result, closed capacity and permission/rename failures. Later remote helper conformance must use the same operation model; no invented NAS access or real-machine result."
+next_action: "Implement and publish the bounded RP019 provisioner/source tests and contract, then validate exact source on Windows/Linux and native provider request fixtures before acceptance."
+verification: "Source-linked tests must prove exact ID reuse, durable pre-send uncertainty and same-operation inspection, current-owner CAS readiness, fixed allocation bounds and no normal create/delete. Test synthetic native request construction plus real isolated local folder provisioning without claiming a deployed configuration."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-019-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Only new task-owned synthetic probe directories. Never touch or reset deployed authority, shared archive content, credentials or existing root. Native Docs remains selected unless a later explicitly commissioned single-mode change is authorized."
+rollback: "Only new synthetic task-owned fixtures during tests. Interrupted commissioning remains INCOMPLETE/UNKNOWN; no cleanup of existing root or unknown/unread data. Removal of proved unreferenced live objects requires its own explicit owner scope. Installed selection unchanged."
 next_implementation_step: "RP-019"
 next_implementation_check: "RP-019.C1"
