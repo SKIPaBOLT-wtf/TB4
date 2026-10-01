@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-015"
 check: "RP-015.C1"
 attempt: "A001"
-phase: "CHECKS_REVIEWED"
+phase: "FINAL_REVIEW"
 source_branch: "work/rp-015-a001"
 source_commit: "564207f3094cd7b9a5b16b61d2f82ea1d7bcc332"
 journal: "docs/development/journal/RP-015/A001/events.jsonl"
-last_verified_event: "RP-015-A001-0025"
+last_verified_event: "RP-015-A001-0026"
 last_completed: "RP-014"
-next_action: "Validate final acceptance candidate and unchanged tested source; then publish exact-head merge INTENT."
+next_action: "Run final review and wait only for the additional already-running same-code native build if needed."
 verification: "Pin published source and test backend request bodies, UTF16/newline/tab identity, strict revision conflicts and complete binding/hash readback; no duplicate payload execution."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-015-A001-0026"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-015","DEF-016"]
