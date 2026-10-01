@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-022"
 check: "RP-022.C1"
 attempt: "A001"
-phase: "CHECKS_REVIEWED"
+phase: "REVIEW"
 source_branch: "work/rp-022-a001"
 source_commit: "5627090c724d95e4bcd97fd352bef7ff9c7e2cae"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0047"
+last_verified_event: "RP-022-A001-0048"
 last_completed: "RP-021"
-next_action: "Validate final acceptance candidate and unchanged tested source; then publish exact-head merge INTENT."
+next_action: "Launch bounded local final verification, record its session and Progress snapshot run identities, then inspect the same jobs and PR before exact-head merge intent."
 verification: "Separate RP018A002 and RP022A001 reviewed checks plus final local/hosted ledger/source/privacy before one coherent merge."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-022-A001-0048"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030","DEF-031"]
