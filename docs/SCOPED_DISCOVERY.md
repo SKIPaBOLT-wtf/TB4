@@ -109,6 +109,10 @@ First assignment protects the existing work/result/cancel/ack/status and artifac
 descriptors, requiring them free. Refresh of the same identity preserves retained
 jobs. Unknown/foreign catalogue schemas are blocked for explicit integration.
 The informational discovery trust field is never an execution/enrollment grant.
+An absent/older local positive probe cannot erase a newer shared positive fact.
+Its original source/time/validity survive; expired/future evidence becomes UNKNOWN
+with STALE/CLOCK_UNCERTAIN. A genuinely newer local positive observation can update
+the same identity. Cached presence alone does not remove a newer probe's evidence.
 
 Ambiguities stay in the bounded protected quarantine. Shared quarantine uses only
 closed reason summaries, coalesced by reason in pre-existing slots. It never

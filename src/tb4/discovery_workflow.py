@@ -181,6 +181,18 @@ class Discovery:
             existing = catalogue_record(old)
             body = {**existing, "discovery": {"schema_version": 1, "kind": "DISCOVERY",
                                             **{k:v for k,v in row.items() if k != "slot"}}}
+            previous_network = existing.get("discovery", {}).get("network")
+            network = body["discovery"]["network"]
+            if (previous_network is not None and previous_network["source"] == "NETWORK_PROBE"
+                    and (network["source"] != "NETWORK_PROBE"
+                         or previous_network["observed_at"] > network["observed_at"])):
+                network = dict(previous_network)
+                age = now - network["observed_at"]
+                network["freshness"] = ("CLOCK_UNCERTAIN" if age < 0 else "FRESH"
+                                        if age < network["valid_for_s"] else "STALE")
+                if network["freshness"] != "FRESH":
+                    network["value"] = "UNKNOWN"
+                body["discovery"]["network"] = network
             if "discovery" not in existing:
                 related = related_slots(index)
                 require(all(records[k]["retention"] == "FREE" for k in related), "DISCOVERY_SLOT_RETAINED")

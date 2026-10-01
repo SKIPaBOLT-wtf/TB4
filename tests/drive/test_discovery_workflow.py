@@ -27,7 +27,7 @@ def observation(**patch):
                                name_hint=CANARY) | patch))
 
 
-def build(store=None):
+def build(store=None, *, scope=SCOPE):
     native = MemoryNative() if store is None else None
     setup = Setup(store or PrivateSettings(native), create=True)
     spec, provider, port, record = prepared()
@@ -42,7 +42,7 @@ def build(store=None):
     kwargs = dict(storage_port=port, leadership=leader, grant=grant, clock=lambda: clock(220),
                   capabilities=lambda: caps)
     workflow = Discovery(setup, **kwargs)
-    workflow.configure(SCOPE, owner_authorized=True)
+    workflow.configure(scope, owner_authorized=True)
     provider.calls.clear()
     return workflow, setup, provider, native, kwargs
 
@@ -312,6 +312,23 @@ def test_older_local_projection_preserves_newer_shared_network_evidence(
     actual = provider.store.document["records"]["target.000.catalogue"]["body"]["discovery"]["network"]
     assert actual == dict(value=expected_value, source="NETWORK_PROBE", observed_at=remote_at,
                           valid_for_s=60, freshness=expected_freshness)
+
+
+def test_newer_qualified_local_probe_updates_same_identity_without_enrollment():
+    scope = Scope(SCOPE.interfaces, frozenset({"ICMP"}))
+    flow, setup, provider, *_ = build(scope=scope)
+    flow.observe((observation(source="ICMP", online=True),))
+    assert flow.publish() == "CONFIRMED"
+    previous = copy.deepcopy(provider.store.document["records"]["target.000.catalogue"]["body"])
+    flow.clock = lambda: clock(230)
+    flow.observe((observation(source="ICMP", online=True, observed_at=230),))
+    assert flow.publish() == "CONFIRMED"
+    current = provider.store.document["records"]["target.000.catalogue"]["body"]
+    assert all(current[k] == previous[k] for k in ("artifacts", "enrollment"))
+    assert current["discovery"]["device_id"] == previous["discovery"]["device_id"]
+    assert current["discovery"]["trust"] == "UNTRUSTED"
+    assert current["discovery"]["network"] == dict(value="ONLINE", source="NETWORK_PROBE",
+                                                 observed_at=230, valid_for_s=60, freshness="FRESH")
 
 
 @pytest.mark.parametrize("mutation", ["owner", "authority", "generation", "slot", "artifact"])
