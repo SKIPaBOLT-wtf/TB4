@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-023"
-check: "RP-023.C1"
+work_item: "RP-024"
+check: "RP-024.C1"
 attempt: "A001"
-phase: "MERGED_VERIFIED"
-source_branch: "main"
-source_commit: "a423b69e03bd43c756cfb1077a5920fed93b42de"
-journal: "docs/development/journal/RP-023/A001/events.jsonl"
-last_verified_event: "RP-023-A001-0052"
+phase: "SOURCE"
+source_branch: "work/rp-024-a001"
+source_commit: "66c3c0b0103a7cccd30df44f55e9e6394189304c"
+journal: "docs/development/journal/RP-024/A001/events.jsonl"
+last_verified_event: "RP-024-A001-0001"
 last_completed: "RP-023"
-next_action: "Inspect this main acceptance Progress run for23 VERIFIED, no unsettled intents, preserved history and scanner pass; then inspect RP024 dependencies/ownership and claim private BALLPARK commissioning."
-verification: "Main acceptance Progress must report23 VERIFIED/no pending/history/scanner PASS; then RP024 dependencies/current ownership and only relevant descriptor/setup instruction source are inspected."
+next_action: "Implement/publish the bounded pinned-guidance/proposal/staged-state foundation and tests, then record focused test INTENT; follow with guarded fixed-record publication and native/UI handoff qualification."
+verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-024-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Preserve opaque identity mappings, protected setup history, artifact/enrollment bindings and retained/UNKNOWN work. Never reassign identity or replay unknown publication during rollback."
+rollback: "Preserve the prior validated descriptor, stable catalogue identities, protected settings/operation history and pending work. Discard only unpublished synthetic source under a new INTENT; no reset, rebinding, enrollment or unknown-operation replay."
 next_implementation_step: "RP-024"
 next_implementation_check: "RP-024.C1"
