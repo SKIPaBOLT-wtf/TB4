@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-022"
 check: "RP-022.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "TEST"
 source_branch: "work/rp-022-a001"
 source_commit: "da3075e02f1cb013489766763b39d847728df9a3"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0011"
+last_verified_event: "RP-022-A001-0012"
 last_completed: "RP-021"
-next_action: "Run independent focused credential-persistence fixtures under a new validation INTENT while inspecting the original model run; integrate only after both outcomes are known."
+next_action: "Record exact credential fixture results and inspect same model run; integrate validated metadata with first-run storage and GUI only under a subsequent source INTENT."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0008"]
+unsettled_intents: ["RP-022-A001-0008","RP-022-A001-0012"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
