@@ -5,16 +5,16 @@ check: "RP-024.C2"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-024-a001"
-source_commit: "6c341da01ddf2e01b45a6aa078e47a9a64754cee"
+source_commit: "c5b7e7500c2cc6583b4deff03708d8d2cf388474"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0009"
+last_verified_event: "RP-024-A001-0010"
 last_completed: "RP-023"
-next_action: "Publish source checkpoint and outcome, then run focused publication/regression tests under a new verified-absent local base."
+next_action: "Run focused RP024 publication and predecessor regressions, scanner and fullbranch diff checks; record any failures before repair."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-024-A001-0009"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
