@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-023"
 check: "RP-023.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "TEST"
 source_branch: "work/rp-023-a001"
 source_commit: "6e17e4bcf3773b85feb54e348ee70958c9e569c3"
 journal: "docs/development/journal/RP-023/A001/events.jsonl"
-last_verified_event: "RP-023-A001-0021"
+last_verified_event: "RP-023-A001-0022"
 last_completed: "RP-022"
-next_action: "Publish targeted validation INTENT, safely synchronize the exact published source, then execute discovery and first-run/storage regression tests plus public-data and full-branch whitespace checks."
+next_action: "Inspect exact test results, publish OUTCOME and evidence; repair any failure under the same attempt before hosted gates."
 verification: "Review exact source and named scope/duplicate-name/address-reassignment/multi-interface/unstable-identifier/routed-VPN cases; add native Windows/Linux and protected fixed-slot integration before final acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-023-A001-0022"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-032","DEF-033"]
