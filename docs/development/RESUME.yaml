@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-022"
 check: "RP-022.C1"
 attempt: "A001"
-phase: "TEST"
+phase: "SOURCE"
 source_branch: "work/rp-022-a001"
 source_commit: "a28f755a8e8e2f6794bf3694df153f325378d419"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0009"
+last_verified_event: "RP-022-A001-0010"
 last_completed: "RP-021"
-next_action: "Inspect this same running session/log; do not start a duplicate test run."
+next_action: "Publish standalone codec source/WIP, inspect same model test session65190, then integrate only after its completed outcome."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0008"]
+unsettled_intents: ["RP-022-A001-0008","RP-022-A001-0010"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
