@@ -99,7 +99,7 @@ def two_device_discovery():
     return discovery,setup,provider,native,kwargs
 
 
-def ready(watch_store=None, fetch_store=None, *, two=False, scope=SCOPE):
+def ready(watch_store=None, fetch_store=None, *, two=False, scope=SCOPE, role_sets=None):
     discovery, watch, provider, native, kwargs = two_device_discovery() if two else build(watch_store,scope=scope)
     observations = [observation()]
     if two: observations.append(observation(address="192.0.2.9", hardware_hint="second-hint"))
@@ -115,6 +115,11 @@ def ready(watch_store=None, fetch_store=None, *, two=False, scope=SCOPE):
         choices = proposal(guide)
         choices["devices"] = [{**choices["devices"][0], "device_id": q["device_id"]}
                               for q in guide.questions()["targets"]]
+        if role_sets is not None:
+            assert len(role_sets) == len(choices["devices"])
+            for item, roles in zip(choices["devices"],role_sets):
+                item["roles"] = list(roles)
+                item["launch_mode"] = {role:"UNSUPPORTED" for role in roles}
         guide.propose(choices)
         guide.confirm(topology="FLAT", at=220, owner_authorized=True)
     else: confirm(guide)
@@ -124,8 +129,12 @@ def ready(watch_store=None, fetch_store=None, *, two=False, scope=SCOPE):
     client.choose(dict(role="fetcher", storage=watch.private_choices()["storage"]))
     activity = ActivityClock(220,220,new_installation=True)
     fetcher = FetcherEnrollment(client, discovery.port, runtime=lambda:snapshot(), activity=activity)
-    device = target(provider.store.document, 0)[2]["device_id"]
-    fetcher.select(0, device_id=device, owner_authorized=True)
+    approved = shared(provider.store.document)
+    eligible = [(i,d) for i,d in zip(provider.store.document["records"]["global.registry"]["body"]["slots"],
+                                    approved["devices"]) if "fetcher" in d["roles"]]
+    device = None if not eligible else eligible[0][1]["device_id"]
+    if eligible:
+        fetcher.select(eligible[0][0],device_id=device,owner_authorized=True)
     def verify(request):
         assert request == client._payload["fetcher_enrollment"]["last_report"]
         return VerifiedPeer(client.installation_id, device, request["nonce"], digest(request["profile"]),
@@ -541,3 +550,52 @@ def test_general_setup_or_rollback_cannot_erase_registration(system, field):
     with pytest.raises(SettingsError,match="BINDING_FROZEN"): manager.setup.choose({field:patch[field]})
     with pytest.raises(SettingsError,match="ROLLBACK_UNSAFE"): manager.setup.rollback_choices(stopped=True)
     assert manager.setup._payload == before
+
+
+@pytest.mark.parametrize("role_sets", [
+    (("fetcher",),("watchdog",)), (("watchdog",),("fetcher",)),
+    (("watchdog",),("watchdog",)), (("watchdog","fetcher"),("watchdog",)),
+    (("fetcher",),("fetcher",)),
+])
+def test_summary_pages_only_initially_approved_fetcher_roles(role_sets):
+    system = ready(two=True,role_sets=role_sets)
+    manager, client, provider, *_ = system
+    if any("fetcher" in roles for roles in role_sets): enroll(system)
+    approved = shared(provider.store.document)
+    expected = [d["device_id"] for d in approved["devices"] if "fetcher" in d["roles"]]
+    before, writes = copy.deepcopy(provider.store.document),provider.store.commits
+    page = manager.summary(now=220,limit=1)
+    assert [d["device_id"] for d in page["targets"]] == expected[:1]
+    assert page["next_start"] == (1 if len(expected)>1 else None)
+    if len(expected)>1:
+        second = manager.summary(now=220,start=1,limit=1)
+        assert [d["device_id"] for d in second["targets"]] == expected[1:]
+        assert second["next_start"] is None
+    assert not any(d["execution_authorized"] for d in page["targets"])
+    assert provider.store.document == before and provider.store.commits == writes
+
+
+def test_watchdog_only_role_still_cannot_register_fetcher():
+    system = ready(two=True,role_sets=(("watchdog",),("fetcher",)))
+    manager, client, provider, *_ = system
+    request = client.capture(observed_at=220)
+    device = shared(provider.store.document)["devices"][0]["device_id"]
+    request.update(slot=0,device_id=device)
+    before = copy.deepcopy(provider.store.document)
+    with pytest.raises(EnrollmentError,match="DEVICE_NOT_APPROVED"):
+        manager.register(request,owner_authorized=True)
+    assert provider.store.document == before
+
+
+def test_summary_cannot_hide_bound_fetcher_on_unapproved_role():
+    system = ready(two=True,role_sets=(("watchdog",),("fetcher",)))
+    manager, client, provider, *_ = system
+    enroll(system)
+    records = provider.store.document["records"]
+    for field in ("enrollment","fetcher"):
+        records["target.000.catalogue"]["body"][field] = copy.deepcopy(records["target.001.catalogue"]["body"][field])
+    assert shared(provider.store.document)
+    before = copy.deepcopy(provider.store.document)
+    with pytest.raises(EnrollmentError,match="DEVICE_NOT_APPROVED"):
+        manager.summary(now=220)
+    assert provider.store.document == before
