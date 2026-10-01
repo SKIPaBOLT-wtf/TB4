@@ -5,16 +5,16 @@ check: "RP-025.C4"
 attempt: "A001"
 phase: "REPAIR"
 source_branch: "work/rp-025-a001"
-source_commit: "098fa945dde8b43cd9ce98feb651b237817afe70"
+source_commit: "6a9da65c39716052df61e4181741cb850d03379f"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0036"
+last_verified_event: "RP-025-A001-0037"
 last_completed: "RP-024"
-next_action: "Publish recorded exact-source correction outcome, then focused mixed-role/dedicated/related qualification on new bases09/10/11."
+next_action: "Publish exact-source regression/dedicated/related qualification INTENT."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-025-A001-0036"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045"]
