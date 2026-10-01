@@ -158,12 +158,26 @@ def validate_registry_history(old, new, old_manifest, new_manifest=None):
         if before["status"] == "OPEN" and after["status"] == "RESOLVED":
             require(len(after["repairs"]) > 0 and after["reproduction"]["passing_source"]
                     and after["resolution_evidence"] and after["regression_test"], "DEFECT_RESOLUTION_UNPROVEN")
+    additions = []
     for key, after in new["defects"].items():
         previous_repairs = old["defects"].get(key, {}).get("repairs", [])
         for repair in after["repairs"][len(previous_repairs):]:
+            additions.append((repair["item"], repair["attempt"], repair["intent_event"], key, repair))
+    opened = {}
+    for _, _, _, key, repair in sorted(additions):
+            after = new["defects"][key]
+            previous_repairs = old["defects"].get(key, {}).get("repairs", [])
             item = repair["item"]
             require(item in old_manifest["steps"], "DEFECT_STEP_MISSING")
             previous_step = old_manifest["steps"][item]
+            opening = opened.get((item, repair["attempt"]))
+            if opening is not None:
+                # The first repair already proved the accepted-build snapshot
+                # and transitive impact. A later defect belongs to that active
+                # attempt; it must not fabricate a second historical acceptance.
+                require(repair["intent_event"] > opening, "REPAIR_ATTEMPT_INVALID")
+                previous_step = {**previous_step, "status":"IN_PROGRESS",
+                                 "active_attempt":repair["attempt"]}
             if previous_step["status"] == "VERIFIED":
                 candidate_registry = copy.deepcopy(old)
                 candidate_registry["defects"][key] = copy.deepcopy(after)
@@ -174,6 +188,7 @@ def validate_registry_history(old, new, old_manifest, new_manifest=None):
                     snapshot = expected_manifest["steps"][target]["acceptance_history"][-1]
                     require(snapshot in new_manifest["steps"][target].get("acceptance_history", []),
                             "ACCEPTANCE_SNAPSHOT_MISSING")
+                opened[(item, repair["attempt"])] = repair["intent_event"]
             else:
                 # A bug found before acceptance is repaired in the active attempt;
                 # no previously accepted build exists to reopen or fabricate.

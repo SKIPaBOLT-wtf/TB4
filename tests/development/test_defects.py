@@ -238,3 +238,34 @@ def test_repair_rechecks_must_cover_defined_checks(accepted):
     update(accepted, REGISTRY, lambda r: r["defects"]["DEF-001"]["repairs"][0]["rechecks"]["RP-003"].update(checks=["RP-003.C1"]))
     with pytest.raises(LedgerError, match="REPAIR_RECHECK_INCOMPLETE"):
         validate(accepted, reachable=lambda _: True)
+
+
+def repeated_defect_history(accepted):
+    old_manifest, old_registry = load(accepted, MANIFEST), load(accepted, REGISTRY)
+    manifest, registry = repair(accepted)
+    later = copy.deepcopy(registry['defects']['DEF-001'])
+    later['repairs'] = [dict(item='RP-001',attempt='A002',intent_event='RP-001-A002-0005',
+                           rechecks={'RP-001':dict(attempt='A002',checks=[f'RP-001.C{i}' for i in range(1,5)])})]
+    registry['defects']['DEF-002'] = later
+    return old_manifest, old_registry, manifest, registry
+
+
+def test_later_defect_in_reopened_attempt_preserves_single_acceptance_snapshot(accepted):
+    old_manifest, old_registry, manifest, registry = repeated_defect_history(accepted)
+    # Dictionary order does not determine journal chronology.
+    registry['defects'] = dict(reversed(list(registry['defects'].items())))
+    before = copy.deepcopy(manifest)
+    validate_registry_history(old_registry, registry, old_manifest, manifest)
+    assert manifest == before and len(manifest['steps']['RP-001']['acceptance_history']) == 1
+
+
+@pytest.mark.parametrize('case',['missing-opening','missing-snapshot','different-attempt','same-intent','dependent'])
+def test_later_defect_cannot_bypass_reopening_or_impact(accepted,case):
+    old_manifest, old_registry, manifest, registry = repeated_defect_history(accepted)
+    later=registry['defects']['DEF-002']['repairs'][0]
+    if case=='missing-opening':registry['defects']['DEF-001']['repairs']=[]
+    elif case=='missing-snapshot':manifest['steps']['RP-001']['acceptance_history']=[]
+    elif case=='different-attempt':later.update(attempt='A003',intent_event='RP-001-A003-0001')
+    elif case=='same-intent':later['intent_event']='RP-001-A002-0001'
+    elif case=='dependent':later['rechecks']['RP-002']=copy.deepcopy(later['rechecks']['RP-001'])
+    with pytest.raises(LedgerError):validate_registry_history(old_registry,registry,old_manifest,manifest)
