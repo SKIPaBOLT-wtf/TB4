@@ -7,17 +7,17 @@ phase: "VALIDATION"
 source_branch: "work/rp-025-a001"
 source_commit: "86d4d32598616b935a7b8b2623d0c3a28e65767d"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0023"
+last_verified_event: "RP-025-A001-0024"
 last_completed: "RP-024"
-next_action: "Inspect this exact local session and source review before creating the authorized single draftPR."
+next_action: "Publish bounded current-input schema/location diagnosis INTENT before correction; preserve runtime/focused passes and prior history."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-025-A001-0022"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043"]
+known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044"]
 rollback: "Revoke only a specifically confirmed new enrollment; retain slot generation/history, prior approved bindings and UNKNOWN operations. Do not copy another installation credential/profile, reset authority or replay an uncertain write."
 next_implementation_step: "RP-025"
 next_implementation_check: "RP-025.C1"
