@@ -297,6 +297,74 @@ def test_event_timestamp_reversal_rejected():
         validate_journal([event(), outcome], "RP-001", "A001", lambda _: True)
 
 
+def relocated_intent_note():
+    intent = event()
+    intent["observed"] = "Prior diagnostic fact; this action has not run."
+    correction = event(2, "CORRECTION", intent["event_id"], "RECORDED")
+    correction.update(observed=intent["observed"], intent_note_correction={
+        "field": "observed", "old_value": intent["observed"], "new_value": None})
+    return [intent, correction]
+
+
+def test_intent_note_relocation_preserves_bytes_and_unsettled_action():
+    rows = relocated_intent_note(); before = copy.deepcopy(rows)
+    found, pending = validate_journal(rows, "RP-001", "A001", lambda _: True)
+    assert rows == before and found[rows[0]["event_id"]] is rows[0]
+    assert list(pending) == [rows[0]["event_id"]]
+    assert found[rows[0]["event_id"]]["observed"] == rows[-1]["observed"]
+
+
+@pytest.mark.parametrize("fault", ["old-text", "new-text", "field", "extra-field",
+    "missing-note", "changed-note", "wrong-kind", "success", "target-outcome",
+    "target-related", "target-kind", "missing-target", "action", "check", "source",
+    "attempt", "item", "duplicate", "later-target", "mixed-correction"])
+def test_note_correction_cannot_rewrite_facts_or_authorization(fault):
+    rows = relocated_intent_note(); first, last = rows
+    patch = last["intent_note_correction"]
+    if fault == "old-text": patch["old_value"] = "Different fact"
+    elif fault == "new-text": patch["new_value"] = "Approved"
+    elif fault == "field": patch["field"] = "outcome"
+    elif fault == "extra-field": patch["approval"] = True
+    elif fault == "missing-note": first["observed"] = None
+    elif fault == "changed-note": last["observed"] = "Different fact"
+    elif fault == "wrong-kind": last["event"] = "OBSERVATION"
+    elif fault == "success": last["outcome"] = "PASS"
+    elif fault == "target-outcome": first["outcome"] = "PASS"
+    elif fault == "target-related": first["related_event"] = "unrelated"
+    elif fault == "target-kind": first["event"] = "OBSERVATION"
+    elif fault == "missing-target": last["related_event"] = "missing"
+    elif fault == "action": last["action_id"] = "OTHER-ACTION"
+    elif fault == "check": last["check"] = "RP-001.C2"
+    elif fault == "source": last["source_ref"] = "b" * 40
+    elif fault == "attempt": last["attempt"] = "A002"
+    elif fault == "item": last["item"] = "RP-002"
+    elif fault == "duplicate":
+        duplicate = copy.deepcopy(last)
+        duplicate.update(sequence=3, event_id="RP-001-A001-0003")
+        rows.append(duplicate)
+    elif fault == "later-target": rows.reverse()
+    elif fault == "mixed-correction":
+        last["reference_correction"] = dict(field="related_event", old_value=None, new_value=first["event_id"])
+    with pytest.raises(LedgerError):
+        validate_journal(rows, "RP-001", "A001", lambda _: True)
+
+
+@pytest.mark.parametrize("outcome", ["FAIL", "UNKNOWN"])
+def test_note_correction_does_not_change_actual_outcome(outcome):
+    rows = relocated_intent_note()
+    actual = event(2, "OUTCOME", rows[0]["event_id"], outcome)
+    rows[-1].update(sequence=3, event_id="RP-001-A001-0003")
+    rows.insert(1, actual)
+    found, pending = validate_journal(rows, "RP-001", "A001", lambda _: True)
+    assert found[actual["event_id"]]["outcome"] == outcome
+    assert bool(pending) == (outcome == "UNKNOWN")
+
+
+def test_note_correction_still_requires_public_original_source():
+    with pytest.raises(LedgerError, match="PUBLIC_COMMIT_MISSING"):
+        validate_journal(relocated_intent_note(), "RP-001", "A001", lambda _: False)
+
+
 def test_cursor_active_attempt_must_match(ledger):
     update(ledger, PLAN + "/manifest.yaml", lambda m: m["steps"]["RP-001"].update(active_attempt="A002"))
     with pytest.raises(LedgerError, match="CURSOR_ATTEMPT_MISMATCH"):

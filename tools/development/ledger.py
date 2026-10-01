@@ -150,11 +150,43 @@ def _started_reference_corrections(events):
     return resolved
 
 
+def _intent_note_corrections(events):
+    """Relocate premature notes without changing original facts or authority.
+
+    The later correction must carry the exact original note. Only the phase
+    placement is corrected; outcomes, pending actions and source identities are
+    still validated normally. Stored event objects remain untouched.
+    """
+    earlier, relocated = {}, set()
+    for event in events:
+        require(isinstance(event, dict) and isinstance(event.get("event_id"), str),
+                "RECORD_SCHEMA_INVALID")
+        if "intent_note_correction" in event:
+            shape(event, schemas.EVENT)
+            patch = event["intent_note_correction"]
+            target = earlier.get(event.get("related_event"), {})
+            require(event["event"] == "CORRECTION" and event["outcome"] == "RECORDED"
+                    and "reference_correction" not in event,
+                    "INTENT_NOTE_CORRECTION_INVALID")
+            require(target.get("event") == "INTENT" and target.get("outcome") == "PENDING"
+                    and target.get("related_event") is None
+                    and target["sequence"] < event["sequence"], "INTENT_NOTE_TARGET_INVALID")
+            require(target.get("observed") == patch["old_value"] == event["observed"]
+                    and target["event_id"] not in relocated, "INTENT_NOTE_CORRECTION_CONFLICT")
+            require(all(target.get(k) == event.get(k) for k in
+                        ("item", "attempt", "action_id", "check", "source_ref")),
+                    "INTENT_NOTE_CORRECTION_IDENTITY")
+            relocated.add(target["event_id"])
+        earlier[event["event_id"]] = event
+    return relocated
+
+
 def validate_journal(events, item, attempt, reachable):
     if item.startswith("RP-"):
         for event in events:
             shape(event, schemas.EVENT)
     corrections = _started_reference_corrections(events)
+    relocated_notes = _intent_note_corrections(events)
     by_id, pending, actions = {}, {}, set()
     previous_time = None
     for n, event in enumerate(events, 1):
@@ -175,7 +207,8 @@ def validate_journal(events, item, attempt, reachable):
         kind, related = event.get("event"), event.get("related_event")
         if kind == "INTENT":
             if item.startswith("RP-"):
-                require(related is None and event["outcome"] == "PENDING" and event["observed"] is None,
+                require(related is None and event["outcome"] == "PENDING"
+                        and (event["observed"] is None or identity in relocated_notes),
                         "INTENT_PHASE_INVALID")
             action = event.get("action_id", identity)
             require(action not in actions, "ACTION_ID_REUSED")
