@@ -5,16 +5,16 @@ check: "RP-023.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-023-a001"
-source_commit: "91d701fd481cc39c474bdd25adbff1c6f99e3a7e"
+source_commit: "236d03a0eebbbda6513e65a167e39de40df9cc78"
 journal: "docs/development/journal/RP-023/A001/events.jsonl"
-last_verified_event: "RP-023-A001-0001"
+last_verified_event: "RP-023-A001-0002"
 last_completed: "RP-022"
-next_action: "Implement the scoped observation/catalogue foundation and focused synthetic tests, publish source checkpoint/outcome, then record its validation INTENT before executing tests."
+next_action: "Publish focused foundation validation INTENT, then run synthetic discovery tests with privacy/diff checks before native collection/persistence/publication work."
 verification: "Review exact source and named scope/duplicate-name/address-reassignment/multi-interface/unstable-identifier/routed-VPN cases; add native Windows/Linux and protected fixed-slot integration before final acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-023-A001-0001"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
