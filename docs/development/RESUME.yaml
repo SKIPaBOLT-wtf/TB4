@@ -3,13 +3,13 @@ revision: "R2"
 work_item: "RP-022"
 check: "RP-022.C1"
 attempt: "A001"
-phase: "REVIEW"
+phase: "DIAGNOSIS"
 source_branch: "work/rp-022-a001"
 source_commit: "5e3617a42ac732cb3d0d1ff7b5521fa354e0c3a5"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0041"
+last_verified_event: "RP-022-A001-0042"
 last_completed: "RP-021"
-next_action: "Inspect exact original and repaired CI/Progress/Desktop logs, verify their checkout source equivalence and artifacts; only then prepare acceptance evidence."
+next_action: "Reopen RP018/A002 with preserved acceptance and scoped diagnosis INTENT, reproduce lock interleaving, then repair and revalidate; inspect remaining exact RP022 jobs separately."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
@@ -17,7 +17,7 @@ implementation_started: true
 unsettled_intents: ["RP-022-A001-0031","RP-022-A001-0038"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-029"]
+known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030"]
 rollback: "Disable/remove only new synthetic/R2 setup references while stopped; retain preceding protected snapshot and external keys/profiles/shared authority. Never reset a provisioned root or replay UNKNOWN allocation."
 next_implementation_step: "RP-022"
 next_implementation_check: "RP-022.C1"
