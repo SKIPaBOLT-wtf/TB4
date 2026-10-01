@@ -1,23 +1,38 @@
 schema_version: 1
-revision: "R2"
-work_item: "RP-021"
-check: "RP-021.C4"
-attempt: "A002"
-phase: "VALIDATION"
-source_branch: "work/rp-025-a001"
-source_commit: "cc0abf1e53b350e8885a2826a0f8549dae0e9269"
-journal: "docs/development/journal/RP-021/A002/events.jsonl"
-last_verified_event: "RP-021-A002-0009"
-last_completed: "RP-020"
-next_action: "Record bounded independent administrative DEF047 helper integration under blocked RP025/A001 using only verified ledger/publication dependencies; preserve native21-24holds. Qualify that extension, then trigger one final combined-source CI/Progress/Desktop platform/frozen matrix before all impacted reacceptance."
-verification: "Qualify native held source-content revocation and all transitive affected checks on exact repaired source; preserve immutable snapshot and private/native trust boundaries."
-execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
+revision: R2
+work_item: RP-025
+check: RP-025.C4
+attempt: A001
+phase: IMPLEMENTATION
+source_branch: work/rp-025-a001
+source_commit: 31ec3a36d88e4ac713a7e5dd908381b8a8565612
+journal: docs/development/journal/RP-025/A001/events.jsonl
+last_verified_event: RP-025-A001-0064
+last_completed: RP-020
+next_action: Publish bounded source-aware checkpoint helper/test/amendment source,
+  validate and record exact results, then restore RP021/A002 cursor and launch complete
+  final combined platform qualification.
+verification: Qualify native held source-content revocation and all transitive affected
+  checks on exact repaired source; preserve immutable snapshot and private/native
+  trust boundaries.
+execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-025-A001-0064
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046","DEF-047"]
-rollback: "Revoke only a specifically confirmed new enrollment; retain slot generation/history, prior approved bindings and UNKNOWN operations. Do not copy another installation credential/profile, reset authority or replay an uncertain write."
-next_implementation_step: "RP-021"
-next_implementation_check: "RP-021.C1"
+known_open_defects:
+- DEF-001
+- DEF-002
+- DEF-042
+- DEF-043
+- DEF-044
+- DEF-045
+- DEF-046
+- DEF-047
+rollback: Revoke only a specifically confirmed new enrollment; retain slot generation/history,
+  prior approved bindings and UNKNOWN operations. Do not copy another installation
+  credential/profile, reset authority or replay an uncertain write.
+next_implementation_step: RP-025
+next_implementation_check: RP-025.C4
