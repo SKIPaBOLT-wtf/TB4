@@ -89,4 +89,3 @@ def test_protection_revocation_and_unheld_lock_refuse_before_write(tmp_path):
         with pytest.raises(AuthorityError):j.save({"phase":"NEW"})
     allowed[0]=True
     with j:assert j.read()=={"phase":"OLD"}
-

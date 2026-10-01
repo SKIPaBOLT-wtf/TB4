@@ -246,4 +246,3 @@ Planning validation is not runtime testing. Public progress entries for this pla
 session live under PLAN-R2, never as fabricated RP implementation acceptance.
 Use [templates](templates) as the field contract. All future tools must implement
 this discipline; tools are aids, not substitutes for verified records.
-

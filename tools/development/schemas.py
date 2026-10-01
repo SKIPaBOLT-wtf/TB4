@@ -119,4 +119,3 @@ CURSOR = closed({
     "source_commit", "journal", "last_verified_event", "next_action", "verification",
     "execution_authorization", "runtime_actions_allowed", "implementation_started",
     "unsettled_intents", "expected_user_action", "rollback"])
-

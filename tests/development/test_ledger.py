@@ -499,4 +499,3 @@ def test_started_metadata_correction_cannot_invent_execution_or_success(fault):
     elif fault=="later":rows.reverse()
     elif fault=="closed":first.update(event="OUTCOME",related_event="missing",outcome="PASS")
     with pytest.raises(LedgerError):validate_journal(rows,"RP-001","A001",lambda _:True)
-
