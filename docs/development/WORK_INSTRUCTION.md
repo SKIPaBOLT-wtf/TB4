@@ -92,6 +92,15 @@ A local file, successful upload request or PR opened without readback is not the
 required durable checkpoint. Do not force-push, truncate journals or amend away
 failed attempts. Corrections append an event referring to the superseded claim.
 
+If diagnostic prose was mistakenly placed in an INTENT's `observed` field,
+preserve that event verbatim. A later `CORRECTION` may use the closed
+`intent_note_correction` record to relocate exactly that text into its own
+`observed` field. It must reference the earlier PENDING INTENT and match its
+source, action, check, item and attempt. Only a null replacement is allowed,
+once per target. This changes metadata placement, never authorization, action
+scope, execution history, an actual outcome or the pending-action state.
+New INTENT records must still have `observed: null`; use OBSERVATION for facts.
+
 The early RP-001/RP-002 helpers will automate schema validation/projection/publication.
 Until they pass, perform the same transaction manually. Their future existence is
 not grounds to omit checkpoints now. A lightweight progress validation gate must

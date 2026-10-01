@@ -45,6 +45,11 @@ EVENT = closed({
         "old_value": {"type": ["string", "null"]},
         "new_value": TEXT,
     }),
+    "intent_note_correction": closed({
+        "field": {"const": "observed"},
+        "old_value": TEXT,
+        "new_value": {"const": None},
+    }),
 }, ["schema_version", "event_id", "sequence", "at", "item", "check",
     "attempt", "phase", "event", "action_id", "related_event", "source_ref",
     "scope", "procedure", "expected", "observed", "outcome", "evidence",
