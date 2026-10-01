@@ -184,7 +184,7 @@ def test_fresh_retry_preserves_unrelated_updates_and_same_owner(system,change):
     if change=="unrelated-record": assert rows["global.summary"]["body"]=={"value":"keep"}
 
 
-@pytest.mark.parametrize("change",["owner","epoch","force-request","work","result","status"])
+@pytest.mark.parametrize("change",["owner","epoch","force-request","work","typed-work","result","status"])
 def test_changes_between_check_and_atomic_write_are_never_overwritten(system,change):
     store,backend,plan,_=system
     def competing(count):
@@ -194,6 +194,7 @@ def test_changes_between_check_and_atomic_write_are_never_overwritten(system,cha
         elif change=="epoch": rows["global.leadership"]["generation"]=4; rows["global.leadership"]["body"]["epoch"]=4
         elif change=="force-request": rows["global.force_request"]=dict(generation=1,operation_id="request",retention="BUSY",body={"requester":"other"})
         elif change=="work": rows["target.000.work"]["generation"]=8
+        elif change=="typed-work": rows["target.000.work"]["body"]["run_limit_s"]=10.0
         elif change=="result": rows["target.000.result"]["body"]["stdout_tail"]="foreign result"
         else: rows["target.000.status"]["body"]["stage"]="READY"
         store.bump()
@@ -401,7 +402,7 @@ def artifact_fixture():
     return document,command,result
 
 
-@pytest.mark.parametrize("bad",[None,"slot","generation","operation","target","size","hash","incomplete"])
+@pytest.mark.parametrize("bad",[None,"slot","generation","operation","target","size","hash","incomplete","float-size","numeric-complete"])
 def test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload(bad):
     document,command,result=artifact_fixture();rows=document["records"];artifact=rows["artifact.000.input"]
     if bad=="slot":rows["target.000.work"]["body"]["payload"]["slot"]="artifact.001.input"
@@ -411,6 +412,8 @@ def test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload(b
     elif bad=="size":artifact["body"]["size_bytes"]+=1
     elif bad=="hash":artifact["body"]["sha256"]="f"*64
     elif bad=="incomplete":artifact["body"]["complete"]=False
+    elif bad=="float-size":artifact["body"]["size_bytes"]=17.0
+    elif bad=="numeric-complete":artifact["body"]["complete"]=1
     store=WireStore(document);backend=NativeDocsAuthority(store.client(),BINDING)
     def prepare():return terminal_publication(backend.read(),target_index=0,expected_binding=binding(command),
         result_sha256=result["result_sha256"],owner=OWNER,now=111)
@@ -432,6 +435,14 @@ def test_artifact_descriptor_changes_after_plan_are_protected_from_reconciliatio
     store.before_write=alter
     outcome=reconcile(backend,plan,mode="START")
     assert outcome.outcome=="CONFLICT" and outcome.writes==1 and store.commits==0
+
+
+def test_typed_desired_record_cannot_be_mistaken_for_confirmed_result(system):
+    store,backend,plan,_=system
+    assert reconcile(backend,plan,mode="START").outcome=="CONFIRMED"
+    store.document["records"]["target.000.status"]["body"]["stage_at"]=111.0
+    outcome=reconcile(backend,plan,mode="INSPECT")
+    assert outcome.outcome=="CONFLICT" and outcome.inspect_required and outcome.writes==0
 
 
 @pytest.mark.parametrize("status",[429,500,503])

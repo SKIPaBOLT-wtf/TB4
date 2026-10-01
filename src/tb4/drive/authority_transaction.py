@@ -53,7 +53,7 @@ class RecordMutation:
         proposed = copy.deepcopy(document)
         proposed["records"].update(copy.deepcopy(changes))
         validate_document(proposed)
-        require(any(changes[k] != records[k] for k in changes), "NO_CHANGE")
+        require(any(encoded(changes[k]) != encoded(records[k]) for k in changes), "NO_CHANGE")
         return cls(snapshot.binding, owner,
                    encoded({k:v for k,v in document.items() if k != "records"}),
                    encoded({k:records[k] for k in protect}),
@@ -70,11 +70,11 @@ class RecordMutation:
             return "CONFLICT", None
         records = document["records"]
         protected, before, after = (json.loads(v) for v in (self.protected, self.before, self.after))
-        if any(records[k] != value for k,value in protected.items()):
+        if any(encoded(records[k]) != encoded(value) for k,value in protected.items()):
             return "CONFLICT", None
-        if all(records[k] == value for k,value in after.items()):
+        if all(encoded(records[k]) == encoded(value) for k,value in after.items()):
             return "CONFIRMED", None
-        if any(records[k] != value for k,value in before.items()):
+        if any(encoded(records[k]) != encoded(value) for k,value in before.items()):
             return "CONFLICT", None
         document["records"].update(after)
         validate_document(document)
@@ -156,6 +156,9 @@ RP-017/043/047/048 must provide role grants and durable runtime integration.
             descriptor = artifact["body"]
             require(type(descriptor) is dict and set(descriptor) == {
                 "target_id", "size_bytes", "sha256", "complete"}, "ARTIFACT_BINDING")
+            require(descriptor["complete"] is True and type(descriptor["size_bytes"]) is int
+                    and type(descriptor["target_id"]) is str and type(descriptor["sha256"]) is str,
+                    "ARTIFACT_BINDING")
             artifacts[slot] = {"generation":artifact["generation"], **descriptor}
             protected.add(slot)
         validate_request(request, domain_id=document["domain_id"],

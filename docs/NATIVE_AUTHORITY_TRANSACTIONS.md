@@ -38,8 +38,10 @@ Reads use the explicit tab representation described in [the tabs guide](https://
 ## Application boundary
 
 A record mutation freezes its domain/header, caller-pinned owner and epoch,
-protected records, and exact before/after records. Leadership heartbeat changes
-and unrelated slots may change without invalidating that business operation.
+protected records, and exact before/after records. Record equality uses canonical
+JSON bytes, so float/integer/boolean aliases do not turn a malformed or changed
+record into an identical operation. Leadership heartbeat changes and unrelated
+slots may change without invalidating that business operation.
 Current ACTIVE owner/epoch and absence of a pending forced request are checked on
 every fresh observation. Old actors do not adopt a newly observed owner identity.
 Generic record updates cannot change leadership or forced requests; election is
