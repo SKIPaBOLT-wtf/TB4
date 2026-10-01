@@ -5,16 +5,16 @@ check: "RP-018.C1"
 attempt: "A002"
 phase: "SOURCE"
 source_branch: "work/rp-022-a001"
-source_commit: "a387217bd4df6baf79b84ff1bf397e9bafb863ab"
+source_commit: "d55998cb068bff97fae33170b78650d63ce4f074"
 journal: "docs/development/journal/RP-018/A002/events.jsonl"
-last_verified_event: "RP-018-A002-0016"
+last_verified_event: "RP-018-A002-0017"
 last_completed: "RP-021"
-next_action: "Publish small history-helper repair and tests, run development/ledger/scanner checks, then proceed with separately authorized native lock fix."
+next_action: "Run development tests and main-base ledger/history/scanner before native lock repair."
 verification: "Deterministic regression plus native Linux/SSH/full CI and all reopened RP018 checks; resume RP022 after repair qualification."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-018-A002-0016"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030","DEF-031"]
