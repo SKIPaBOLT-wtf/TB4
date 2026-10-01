@@ -112,20 +112,27 @@ class FolderStore:
     @contextmanager
     def connection(self):
         self.config.verify()
-        conn = None
+        conn = lock = None
         try:
+            # Every qualified Linux helper locks the existing database inode
+            # before SQLite can retain preflight read locks. No extra file and
+            # no retry: a competing helper is unavailable before CAS starts.
+            import fcntl
+            lock = os.open(self.config.root / DB, os.O_RDONLY | os.O_NOFOLLOW |
+                           os.O_CLOEXEC | os.O_NONBLOCK)
+            info = os.fstat(lock)
+            require((info.st_dev, info.st_ino) == self.config.db_identity
+                    and stat.S_ISREG(info.st_mode) and info.st_uid == os.geteuid()
+                    and stat.S_IMODE(info.st_mode) == 0o600 and info.st_nlink == 1
+                    and info.st_size <= MAX_FILE, "FIXED_IDENTITY")
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            self.config.verify()
             conn = sqlite3.connect((self.config.root / DB).as_uri() + "?mode=rw",
                                    uri=True, timeout=0.2, isolation_level=None)
             conn.setlimit(sqlite3.SQLITE_LIMIT_LENGTH, MAX_DOCUMENT_BYTES + 4096)
             conn.execute("PRAGMA trusted_schema=OFF")
             conn.execute("PRAGMA temp_store=MEMORY")
             conn.execute("PRAGMA locking_mode=EXCLUSIVE")
-            # The mode alone retains SHARED locks from preflight reads. Two
-            # readers could then block each other's CAS lock upgrade. Acquire
-            # exclusive ownership before any metadata read; EXCLUSIVE mode
-            # keeps it after this empty transaction until connection close.
-            conn.execute("BEGIN EXCLUSIVE")
-            conn.execute("COMMIT")
             require(conn.execute("PRAGMA journal_mode=PERSIST").fetchone() == ("persist",), "JOURNAL_MODE")
             conn.execute("PRAGMA synchronous=FULL")
             conn.execute("PRAGMA cache_size=1")
@@ -137,8 +144,12 @@ class FolderStore:
             self.config.verify()
             yield conn
         finally:
-            if conn is not None:
-                conn.close()  # Rolls back an uncommitted transaction; PERSIST keeps the same journal.
+            try:
+                if conn is not None:
+                    conn.close()  # Roll back; PERSIST keeps the same journal.
+            finally:
+                if lock is not None:
+                    os.close(lock)
 
     def _row(self, conn):
         row = conn.execute("SELECT root,domain,revision,body FROM authority WHERE id=1").fetchone()

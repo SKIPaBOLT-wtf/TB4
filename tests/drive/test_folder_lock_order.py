@@ -1,4 +1,4 @@
-"""Deterministic SQLite contention; Windows covers SQL only, not a folder server.
+"""Deterministic native Linux contention on the existing pinned database inode.
 
 Two ordinary preflight readers can both retain SHARED locks in EXCLUSIVE mode.
 Pausing the rejected writer models descheduling before its connection closes.
@@ -12,29 +12,15 @@ import time
 import pytest
 
 from tb4.drive.docs_authority import AuthorityError, WriteResult, document_bytes
-from tb4.drive.folder_authority import DB, JOURNAL, SCHEMA, FolderConfig, FolderStore, identity
+from tb4.drive.folder_authority import FolderStore
 from tb4.exchange_layout import Capacity, empty_document
-from folder_fixtures import BINDING, DOMAIN, provision, inventory
+from folder_fixtures import DOMAIN, provision, inventory
+
+pytestmark = pytest.mark.skipif(sys.platform != 'linux', reason='Native Linux folder-server inode lock')
 
 
 def sql_fixture(tmp_path, monkeypatch):
-    if sys.platform == "linux":
-        return provision(tmp_path)[0]  # Actual native identity/permission checks.
-    # Portable SQLite policy regression only. Never qualify Windows as a server.
-    root = tmp_path / "synthetic-sql-policy"
-    root.mkdir()
-    with sqlite3.connect(root / DB, isolation_level=None) as conn:
-        conn.execute("PRAGMA locking_mode=EXCLUSIVE")
-        conn.execute("PRAGMA journal_mode=PERSIST")
-        conn.execute("BEGIN IMMEDIATE")
-        conn.execute(SCHEMA)
-        conn.execute("INSERT INTO authority VALUES (1,?,?,1,?)",
-                     (BINDING.root_id, DOMAIN, document_bytes(empty_document(DOMAIN, Capacity(1,1,1,1)))))
-        conn.execute("COMMIT")
-    conn.close()
-    config = FolderConfig(root, BINDING, identity(root), identity(root / DB), identity(root / JOURNAL))
-    monkeypatch.setattr(FolderConfig, "verify", lambda self: None)
-    return config
+    return provision(tmp_path)[0]  # Actual native identity/permission checks.
 
 
 def test_preflight_read_contention_does_not_leave_both_cas_without_winner(tmp_path, monkeypatch):
