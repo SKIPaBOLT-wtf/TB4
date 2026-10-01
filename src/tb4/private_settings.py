@@ -81,8 +81,8 @@ class PrivateSettings:
         try:
             with self.native.locked() as port:
                 raw = port.read("settings.json")
+                require(port.read("settings.pending") is None, "SETTINGS_RECOVERY_REQUIRED")
                 if raw is None:
-                    require(port.read("settings.pending") is None, "SETTINGS_RECOVERY_REQUIRED")
                     return None
                 return self._decode(raw, port.binding)
         except SettingsError:
@@ -100,6 +100,7 @@ class PrivateSettings:
                 require((current.revision if current else 0) == expected_revision,
                         "SETTINGS_CHANGED_RELOAD_REQUIRED")
                 require(port.read("settings.pending") is None, "SETTINGS_RECOVERY_REQUIRED")
+                require(expected_revision < 2**63 - 1, "SETTINGS_REVISION_EXHAUSTED")
                 frame = dict(schema_version=1, binding=port.binding,
                              revision=expected_revision + 1, payload=payload,
                              previous=None if current is None else current.payload)

@@ -168,6 +168,7 @@ class LinuxSettingsPort:
                 offset += written
             os.fsync(fd)
             self.native._regular(fd)
+            os.fsync(self.fd)
         finally:
             os.close(fd)
 
