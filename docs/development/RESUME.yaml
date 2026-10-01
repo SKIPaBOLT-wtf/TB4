@@ -7,14 +7,14 @@ phase: "RECONCILIATION"
 source_branch: "work/rp-025-a001"
 source_commit: "3ac27c148339ff959c15211622711777329ec40e"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0058"
+last_verified_event: "RP-025-A001-0059"
 last_completed: "RP-024"
-next_action: "Publish settled RP025 suspension and exact preserved snapshot; prepare/validate/readback RP021/A002 plus accepted dependency snapshots and explicit unaccepted RP025 reconciliation before native repair."
+next_action: "Prepare and validate RP021/A002 opening with accepted A001 snapshots of21-24 and exact neveraccepted RP025/A001 frozen snapshot linked to this suspension; publish/readback before the native content-recheck patch."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-025-A001-0058"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046"]
