@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-021"
 check: "RP-021.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "FOCUSED_TEST"
 source_branch: "work/rp-021-a001"
 source_commit: "a39427c4a104e0f61e3ea3231b1a06866848eefd"
 journal: "docs/development/journal/RP-021/A001/events.jsonl"
-last_verified_event: "RP-021-A001-0002"
+last_verified_event: "RP-021-A001-0003"
 last_completed: "RP-020"
-next_action: "Publish focused-validation INTENT; run portable Linux policy plus existing Windows/RP006 regressions on isolated Windows, then actual native Linux CI."
+next_action: "Inspect focused output; record actual results and repair any proven failure before hosted native Linux/full workflows."
 verification: "Require native Linux tests to execute (only non-Linux skip), both desktop/headless policy tests, unsupported-mode/canary/race tests, unchanged Windows86-case regression, full platform CI/Desktop packages and ledger/privacy/source review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-021-A001-0003"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
