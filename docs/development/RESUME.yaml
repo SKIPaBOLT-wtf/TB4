@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-024"
 check: "RP-024.C4"
 attempt: "A001"
-phase: "VALIDATION"
+phase: "DOCUMENTATION"
 source_branch: "work/rp-024-a001"
 source_commit: "87cf87f7fddf39ad53f5d41b5af5fadac8d84c5e"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0038"
+last_verified_event: "RP-024-A001-0039"
 last_completed: "RP-023"
-next_action: "Inspect real jobs/logs and exact checkout equality before acceptance; preserve any failed gate and do not rerun unknown external effects."
+next_action: "Publish corrected documentation/readback, then continue exact-source hosted run review."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-024-A001-0037"]
+unsettled_intents: ["RP-024-A001-0037","RP-024-A001-0039"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-038","DEF-039","DEF-040","DEF-041"]
