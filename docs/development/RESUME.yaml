@@ -7,14 +7,14 @@ phase: "VALIDATION"
 source_branch: "work/rp-015-a001"
 source_commit: "8e478f13eafca2b6f049b15b45ba3aa3cd16951d"
 journal: "docs/development/journal/RP-015/A001/events.jsonl"
-last_verified_event: "RP-015-A001-0004"
+last_verified_event: "RP-015-A001-0005"
 last_completed: "RP-014"
-next_action: "Run local suite and review same-head CI/Progress/Desktop jobs."
+next_action: "Register DEF-015 for this attempt's colliding test filename; rename only the new test file to a unique basename, preserve all assertions, revalidate same suite and CI."
 verification: "Pin published source and test backend request bodies, UTF16/newline/tab identity, strict revision conflicts and complete binding/hash readback; no duplicate payload execution."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-015-A001-0003"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
