@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-016"
-check: "RP-016.C1"
-attempt: "A002"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "bde4f0f4eeec21594574b80c884b06202d55f44f"
-journal: "docs/development/journal/RP-016/A002/events.jsonl"
-last_verified_event: "RP-016-A002-0015"
+work_item: "RP-017"
+check: "RP-017.C1"
+attempt: "A001"
+phase: "SOURCE"
+source_branch: "work/rp-017-a001"
+source_commit: "a57d811f733196a2341f2f7cab2f5bc4f92c987c"
+journal: "docs/development/journal/RP-017/A001/events.jsonl"
+last_verified_event: "RP-017-A001-0001"
 last_completed: "RP-016"
-next_action: "Validate main acceptance ledger/Progress, then claim RP017 startup and standby integration."
-verification: "Strict requiredRevisionId readback and complete owner/request/transition binding; default timing profile and deterministic trusted/uncertain clock samples; unchanged operation/result records; no all-sink activation state."
+next_action: "Implement native role boundary and synthetic startup/standby/demotion tests, then publish source."
+verification: "Actual RP016/RP015 wire adapter plus deterministic fake-clock/action/checkpoint ports; no effect on fresh-incumbent startup; exact owner/epoch readback and per-installation capability checks; code integration via factory/worker and no raw-v1 fallthrough."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-017-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Unreleased helper remains unwired until later role/runtime/GUI integration; revert additions only. Never rewind a live epoch or clear another valid owner/unknown work."
+rollback: "Unreleased opt-in native context only. Keep prior supported deployment unchanged; never clear owner, rewind epoch or copy another installation profile/credentials. Stop only local coordinator admission; retain pending plans/unknown effects."
 next_implementation_step: "RP-017"
 next_implementation_check: "RP-017.C1"
