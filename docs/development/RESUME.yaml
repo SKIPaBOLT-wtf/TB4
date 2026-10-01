@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-021"
-check: "RP-021.C4"
+work_item: "RP-022"
+check: "RP-022.C1"
 attempt: "A001"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "16e403e7b76b1e9bc2e4e8946d140ddb8778db3c"
-journal: "docs/development/journal/RP-021/A001/events.jsonl"
-last_verified_event: "RP-021-A001-0017"
+phase: "SOURCE"
+source_branch: "work/rp-022-a001"
+source_commit: "902d8c2243f37d468ab4a20e8c2447207c84e57d"
+journal: "docs/development/journal/RP-022/A001/events.jsonl"
+last_verified_event: "RP-022-A001-0001"
 last_completed: "RP-021"
-next_action: "Inspect automatically triggered accepted-main Progress; if passing, claim RP022 first-run commissioning from current main, preserving explicit live-action limits."
-verification: "Require native Linux tests to execute (only non-Linux skip), both desktop/headless policy tests, unsupported-mode/canary/race tests, unchanged Windows86-case regression, full platform CI/Desktop packages and ledger/privacy/source review."
+next_action: "Implement protected settings and first-run model with focused native/privacy/resume tests, publish source, then qualify on actual Windows/Linux before local setup UI integration."
+verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-022-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Revoke/remove only new process-local references and close owned descriptors; retain external files/permissions/configuration. No live enrollment or migration."
+rollback: "Disable/remove only new synthetic/R2 setup references while stopped; retain preceding protected snapshot and external keys/profiles/shared authority. Never reset a provisioned root or replay UNKNOWN allocation."
 next_implementation_step: "RP-022"
 next_implementation_check: "RP-022.C1"
