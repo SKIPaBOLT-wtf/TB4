@@ -7,14 +7,14 @@ phase: "TEST"
 source_branch: "work/rp-022-a001"
 source_commit: "7e016dd0ff555ecf3bf79f2033bae7b292715ef2"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0016"
+last_verified_event: "RP-022-A001-0017"
 last_completed: "RP-021"
-next_action: "Record native restore result and inspect original model session65190 to completion; integrate after both passing results."
+next_action: "Inspect original model session65190 to completion; record its outcome before changing its model/commissioning inputs or integrating the local setup UI."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0008","RP-022-A001-0016"]
+unsettled_intents: ["RP-022-A001-0008"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
