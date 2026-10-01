@@ -1,20 +1,20 @@
 schema_version: 1
 revision: "R2"
 work_item: "RP-021"
-check: "RP-021.C1"
+check: "RP-021.C4"
 attempt: "A001"
-phase: "CHECKS_REVIEWED"
+phase: "FINAL_REVIEW"
 source_branch: "work/rp-021-a001"
 source_commit: "16e403e7b76b1e9bc2e4e8946d140ddb8778db3c"
 journal: "docs/development/journal/RP-021/A001/events.jsonl"
-last_verified_event: "RP-021-A001-0013"
+last_verified_event: "RP-021-A001-0014"
 last_completed: "RP-020"
-next_action: "Validate final acceptance candidate and unchanged tested source; then publish exact-head merge INTENT."
+next_action: "Run final receipt validation and inspect exact-tree Progress before merge intent."
 verification: "Require native Linux tests to execute (only non-Linux skip), both desktop/headless policy tests, unsupported-mode/canary/race tests, unchanged Windows86-case regression, full platform CI/Desktop packages and ledger/privacy/source review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-021-A001-0014"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-027","DEF-028"]
