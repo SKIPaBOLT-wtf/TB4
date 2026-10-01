@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-016"
 check: "RP-016.C1"
 attempt: "A002"
-phase: "CHECKS_REVIEWED"
+phase: "FINAL_REVIEW"
 source_branch: "work/rp-016-a002"
 source_commit: "bde4f0f4eeec21594574b80c884b06202d55f44f"
 journal: "docs/development/journal/RP-016/A002/events.jsonl"
-last_verified_event: "RP-016-A002-0011"
+last_verified_event: "RP-016-A002-0012"
 last_completed: "RP-015"
-next_action: "Validate final acceptance candidate and unchanged tested source; then publish exact-head merge INTENT."
+next_action: "Run final review of corrected acceptance candidate."
 verification: "Strict requiredRevisionId readback and complete owner/request/transition binding; default timing profile and deterministic trusted/uncertain clock samples; unchanged operation/result records; no all-sink activation state."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-016-A002-0012"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-017"]
