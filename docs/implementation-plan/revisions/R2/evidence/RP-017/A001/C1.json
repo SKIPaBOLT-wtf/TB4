@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "item": "RP-017",
+  "check": "RP-017.C1",
+  "attempt": "A001",
+  "source_ref": "0b2f89a637e95895202de5822c259e121ee6fe41",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Run affected drive, WATCHDOG, FETCHER, feasibility, protocol, development, desktop, security and three integration regression modules with process-local venv/UTF8 and a fresh test directory. Collect exact test nodes; inspect all startup/admission/unknown-result assertions and native factory/worker/GUI integration. Validate ownership-base ledger/privacy/diff. Inspect exact-head CI, Progress and Windows/Linux Desktop packaging; preserve each failure without replaying live work.",
+  "expected": "Native role acquisition/admission precedes repair/registration/identity/routing/retention and all external action ports; no legacy fallthrough.",
+  "observed": "50 new native boundary cases and one real GUI assertion pass. Local1380/8skip/4knownxfail; CI1572/2skip/4knownxfail; nativeLinux1583/4knownxfail. Both platforms' GUI/build/self-test/install-uninstall PASS. No new defect.",
+  "exit_code": 0,
+  "platform_scope": "Windows local Python3.11; Linux CI; Windows and Ubuntu22.04 native GUI/packaging. Synthetic installed-identity/capability/checkpoint/action ports through actual native request adapter.",
+  "negative_cases": [
+    "Standby never calls scheduler/effects",
+    "Copied foreign grant/capability/store refused",
+    "Resumed old owner blocked for all nine actions",
+    "Owner change during shared preparation/external intent fenced",
+    "Unknown external effect never replayed after restart",
+    "Shared unknown survives unrelated external receipt",
+    "Missing commissioning/clock/read permission blocks admission"
+  ],
+  "unverified_scope": "R2 commissioned context/provider/OS-store assembly and full action implementations belong to later steps. This step qualifies orchestration and admission, not live v1 migration, native secret storage, full network/process behavior or global revocation of already-admitted effects.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Unreleased opt-in native context only. Keep prior supported deployment unchanged; never clear owner, rewind epoch or copy another installation profile/credentials. Stop only local coordinator admission; retain pending plans/unknown effects.",
+  "intent_event": "RP-017-A001-0003",
+  "outcome_event": "RP-017-A001-0005",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-017/A001/reviewed-validation.md"
+  ]
+}
