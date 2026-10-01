@@ -7,17 +7,17 @@ phase: "TEST"
 source_branch: "work/rp-019-a001"
 source_commit: "78e4f580af1d412fdb7e3dea9ccb345ca36a0564"
 journal: "docs/development/journal/RP-019/A001/events.jsonl"
-last_verified_event: "RP-019-A001-0008"
+last_verified_event: "RP-019-A001-0009"
 last_completed: "RP-018"
-next_action: "Run the same focused source-linked Windows suite once with file-backed output and exit receipt in a new task-owned test root, then inspect the retained result; do not infer success from missing output."
+next_action: "Publish narrow DEF022 repair INTENT, initialize forced-takeover empty record at the seeded acquisition generation, then retest the unchanged failing cases and complete required broader gates."
 verification: "Source-linked tests must prove exact ID reuse, durable pre-send uncertainty and same-operation inspection, current-owner CAS readiness, fixed allocation bounds and no normal create/delete. Test synthetic native request construction plus real isolated local folder provisioning without claiming a deployed configuration."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-019-A001-0007"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-022"]
 rollback: "Only new synthetic task-owned fixtures during tests. Interrupted commissioning remains INCOMPLETE/UNKNOWN; no cleanup of existing root or unknown/unread data. Removal of proved unreferenced live objects requires its own explicit owner scope. Installed selection unchanged."
 next_implementation_step: "RP-019"
 next_implementation_check: "RP-019.C1"
