@@ -210,4 +210,3 @@ def test_foreign_installation_or_domain_cannot_restore_private_image():
         validate_image(image,installation_id=OTHER)
     with pytest.raises(DiscoveryError):
         validate_image(image,domain_id=OTHER)
-

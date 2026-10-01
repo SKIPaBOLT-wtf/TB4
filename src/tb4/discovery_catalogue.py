@@ -97,8 +97,13 @@ class Scope:
         if type(observation) is not Observation or observation.source not in self.methods:
             return False
         ip = address(observation.address)
+        if ip.is_unspecified or ip.is_multicast or str(ip) == "255.255.255.255":
+            return False
         return any(i.index == observation.interface_index
-                   and any(ip in ipaddress.ip_network(n) for n in i.networks)
+                   and any(ip in (network := ipaddress.ip_network(n))
+                           and not (network.version == 4 and network.prefixlen < 31
+                                    and ip == network.broadcast_address)
+                           for n in i.networks)
                    for i in self.interfaces)
 
 
@@ -348,4 +353,3 @@ class Catalogue:
                     quarantined=sum(e is not None for e in self._image["quarantine"]),
                     quarantine_capacity=len(self._image["quarantine"]),
                     overflow=self._image["overflow"], automatic_enrollment=False)
-

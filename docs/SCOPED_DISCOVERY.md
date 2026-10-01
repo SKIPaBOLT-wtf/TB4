@@ -48,3 +48,43 @@ Rollback keeps prior mappings. A new scan cannot reconstruct or overwrite a lost
 trusted mapping; ambiguous observations remain inspectable within fixed capacity.
 No home-device or network access is performed to implement or test this model.
 
+## Native read-only collection
+
+NativeNeighbors uses a fixed, bounded process with discarded stderr and no shell.
+Linux selects one interface with ip JSON link/neighbour show dev. Windows selects
+one native index using Get-NetIPInterface/Get-NetNeighbor; only that validated
+integer is interpolated into a fixed encoded script. Owner/device strings are
+never evaluated. The configured name/index must match fresh OS data both before
+and after cache collection. A changed interface discards its observations.
+Reading cached metadata does not send probes. Returned addresses are filtered by
+scope before persistence; broadcast/multicast/unspecified rows cannot mint devices.
+
+Only the local default network namespace/compartment is qualified. A changed or
+unavailable interface requires fresh commissioning; no automatic interface-name
+repair or broader query is attempted. Name/index checks are not protection from
+a hostile local administrator replacing an interface with identical metadata.
+The approved exact subnet policy still constrains every returned observation.
+
+Cache collection has a 15-second total deadline, bounded per-command output and
+row counts, and a global observation cap. Deadline, missing command, denied access
+or malformed provider data yields a closed unavailable/partial result. Global
+overflow returns no partial candidate. No failed observation means OFFLINE.
+
+collect_fixed composes an already qualified bounded helper port with explicit
+authorized interface/address targets. The port must enforce its actual route,
+endpoint, credential and deadline; this adapter creates none of those authorities.
+It rejects a mismatched response and never enumerates subnets or retries. Actual
+enrollment/routed fixed-helper composition remains a later integration boundary.
+NativeNeighbors itself offers cache reading only; requesting ICMP-only collection
+returns METHOD_UNQUALIFIED. There is no automatic ICMP sweep or broadcast fallback.
+
+The dedicated native CI gate opts into only loopback cache/identity reads on
+Windows/Linux. Local ordinary tests use synthetic OS ports and fresh Python child
+processes to verify output/timeout handling. A loopback read cannot qualify a live
+home interface, remote network, endpoint credential or deployment topology.
+
+API references: [Get-NetNeighbor](https://learn.microsoft.com/en-us/powershell/module/nettcpip/get-netneighbor),
+[Get-NetIPInterface](https://learn.microsoft.com/en-us/powershell/module/nettcpip/get-netipinterface),
+[ip-neighbour](https://man7.org/linux/man-pages/man8/ip-neighbour.8.html) and
+[ip JSON output](https://man7.org/linux/man-pages/man8/ip.8.html). These document
+selectors and cache semantics; actual platform qualification still requires tests.
