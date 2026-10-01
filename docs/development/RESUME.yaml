@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-024"
 check: "RP-024.C3"
 attempt: "A001"
-phase: "DOCUMENTATION"
+phase: "VALIDATION"
 source_branch: "work/rp-024-a001"
 source_commit: "e39444ffbd4a2661716cd80a7271e4b6ea8cd494"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0020"
+last_verified_event: "RP-024-A001-0021"
 last_completed: "RP-023"
-next_action: "Run required development/current/main-base history/scanner/fullbranch gates on this corrected checkpoint."
+next_action: "Record actual results then publish PR/hosted validation INTENT."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-024-A001-0021"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-038","DEF-039"]
