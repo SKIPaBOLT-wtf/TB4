@@ -5,16 +5,16 @@ check: "RP-024.C3"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-024-a001"
-source_commit: "c5b7e7500c2cc6583b4deff03708d8d2cf388474"
+source_commit: "e39444ffbd4a2661716cd80a7271e4b6ea8cd494"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0013"
+last_verified_event: "RP-024-A001-0014"
 last_completed: "RP-023"
-next_action: "Publish source outcome, run targeted real Qt/native/codec/race and regression gates, then create draft PR for complete hosted qualification."
+next_action: "Run targeted actual Qt/native/race/codec/predecessor tests and current/history/scanner checks; inspect exact failure output before hosted qualification."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-024-A001-0013"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
