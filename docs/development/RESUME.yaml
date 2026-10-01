@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-016"
 check: "RP-016.C1"
 attempt: "A001"
-phase: "VERIFIED"
+phase: "CORRECTION"
 source_branch: "main"
 source_commit: "dfa260eae0675db46a2c56424cc4b5adbf348400"
 journal: "docs/development/journal/RP-016/A001/events.jsonl"
-last_verified_event: "RP-016-A001-0009"
+last_verified_event: "RP-016-A001-0010"
 last_completed: "RP-016"
-next_action: "Verify main Progress and ownership-base ledger, then inspect and claim RP017 startup/standby integration."
+next_action: "Correct the single linked checklist row and publish the observed correction."
 verification: "Strict requiredRevisionId readback and complete owner/request/transition binding; default timing profile and deterministic trusted/uncertain clock samples; unchanged operation/result records; no all-sink activation state."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-016-A001-0010"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
