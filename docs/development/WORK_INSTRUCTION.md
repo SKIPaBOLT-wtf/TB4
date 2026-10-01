@@ -119,6 +119,15 @@ mixed/repeated correction or normalization of future malformed rows is allowed.
 Original bytes and actual outcomes remain unchanged; ordinary chronological
 validation still applies. New records must use uppercase IDs before publication.
 
+A prior OUTCOME/RECORDED source checkpoint may relocate supplementary source
+references into a documentation receipt through a closed `source_evidence_correction`.
+It must preserve the exact original evidence list and item/check/attempt/action/
+source/observation, target only one uncorrected source checkpoint, and supply
+nonempty docs-only replacement references matching its own evidence. It cannot
+change PASS/FAIL results, INTENT, STARTED or authorization, or mix corrections.
+Original bytes and source-path existence remain checked; acceptance receipts
+still require actual PASS evidence. New records should use docs receipts directly.
+
 The early RP-001/RP-002 helpers will automate schema validation/projection/publication.
 Until they pass, perform the same transaction manually. Their future existence is
 not grounds to omit checkpoints now. A lightweight progress validation gate must

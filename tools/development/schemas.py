@@ -40,6 +40,10 @@ EVENT = closed({
     "uncertainty": TEXT,
     "exit_code": {"type": ["integer", "null"]},
     "run_id": TEXT,
+    "source_evidence_correction": closed({
+        "old_value": array({"type":"string", "pattern":r"^(docs|src|tests|tools)/[A-Za-z0-9_./-]+$"}),
+        "new_value": array(PATH),
+    }),
     "action_case_correction": closed({
         "old_value": {"type": "string", "pattern": "^[a-z0-9-]+$"},
         "new_value": {"type": "string", "pattern": "^[A-Z0-9-]+$"},

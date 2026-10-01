@@ -254,14 +254,45 @@ def _action_case_corrections(events):
     return normalized
 
 
+def _source_evidence_corrections(events):
+    """Relocate source checkpoint links into docs receipts, without changing facts."""
+    earlier, corrected = {}, {}
+    fields = {"action_case_correction", "reference_correction", "intent_note_correction",
+              "started_metadata_correction", "source_evidence_correction"}
+    for event in events:
+        require(isinstance(event, dict) and isinstance(event.get("event_id"), str), "RECORD_SCHEMA_INVALID")
+        if "source_evidence_correction" in event:
+            shape(event, schemas.EVENT)
+            target = earlier.get(event.get("related_event"), {})
+            patch = event["source_evidence_correction"]
+            require(event["event"] == "CORRECTION" and event["outcome"] == "RECORDED"
+                    and fields.intersection(event) == {"source_evidence_correction"}, "SOURCE_EVIDENCE_INVALID")
+            require(target.get("event") == "OUTCOME" and target.get("outcome") == "RECORDED"
+                    and not fields.intersection(target) and target["event_id"] not in corrected,
+                    "SOURCE_EVIDENCE_TARGET")
+            require(target.get("evidence") == patch["old_value"]
+                    and any(not p.startswith("docs/") for p in patch["old_value"])
+                    and patch["new_value"] and event["evidence"] == patch["new_value"],
+                    "SOURCE_EVIDENCE_REFERENCES")
+            require(all(target.get(k) == event.get(k) for k in
+                        ("item","attempt","check","action_id","source_ref","observed")),
+                    "SOURCE_EVIDENCE_IDENTITY")
+            corrected[target["event_id"]] = patch["new_value"]
+        earlier[event["event_id"]] = event
+    return corrected
+
+
 def validate_journal(events, item, attempt, reachable):
     action_cases = _action_case_corrections(events)
     started_metadata = _started_metadata_corrections(events)
+    source_evidence = _source_evidence_corrections(events)
     if item.startswith("RP-"):
         for event in events:
             view = started_metadata.get(event["event_id"], event)
             if event["event_id"] in action_cases:
                 view = {**view, "action_id": action_cases[event["event_id"]]}
+            if event["event_id"] in source_evidence:
+                view = {**view, "evidence": source_evidence[event["event_id"]]}
             shape(view, schemas.EVENT)
     corrections = _started_reference_corrections(events)
     relocated_notes = _intent_note_corrections(events)
