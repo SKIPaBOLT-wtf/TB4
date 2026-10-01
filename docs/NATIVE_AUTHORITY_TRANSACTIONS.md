@@ -71,6 +71,12 @@ request SDK's retries, not every possible lower transport action.
 RETURNING result and matching work/status become UNREAD/AWAITING_CONSUMPTION
 together. It checks domain, target, operation, generation, protocol, payload hash,
 result hash/semantics and expected stage. It never runs work or obtains a result.
+INLINE work also revalidates actual bytes, declared length and payload digest.
+For ARTIFACT work, the exact target input slot record is protected through CAS and
+readback. Its envelope binds operation/artifact generation and BUSY retention;
+the closed body holds target_id, size_bytes, sha256 and complete. The descriptor
+must match the request. These facts represent prior verified upload; publication
+does not fetch bytes or substitute this descriptor for artifact verification.
 Its caller must have role authorization and durable result proof. The pinned
 owner guard is a cooperative current-epoch guard, not a FETCHER credential;
 RP-017/043/047/048 must bind the actual writer and durable outbox. In-flight work

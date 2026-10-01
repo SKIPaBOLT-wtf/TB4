@@ -9,7 +9,7 @@ import copy
 from dataclasses import dataclass
 
 from tb4.command_contract import (binding, compact_record, expand_leaf, operation_id,
-                                  validate_result, validate_shape, ContractError)
+                                  validate_request, validate_result, validate_shape, ContractError)
 from tb4.exchange_layout import MAX_GENERATION, encoded, validate_document
 from .docs_authority import AuthorityError, WriteResult, require
 
@@ -144,6 +144,22 @@ RP-017/043/047/048 must provide role grants and durable runtime integration.
         validate_shape("binding", expected_binding)
         request = {**work["body"], "operation_id":work["operation_id"], "generation":work["generation"]}
         validate_shape("request", request)
+        protected = {prefix+"work"}
+        artifacts = {}
+        if request["payload"]["kind"] == "ARTIFACT":
+            slot = f"artifact.{target_index:03d}.input"
+            require(request["payload"]["slot"] == slot, "ARTIFACT_BINDING")
+            artifact = records[slot]
+            require(artifact["operation_id"] == expected_binding["operation_id"]
+                    and artifact["generation"] == request["payload"]["artifact_generation"]
+                    and artifact["retention"] == "BUSY", "ARTIFACT_BINDING")
+            descriptor = artifact["body"]
+            require(type(descriptor) is dict and set(descriptor) == {
+                "target_id", "size_bytes", "sha256", "complete"}, "ARTIFACT_BINDING")
+            artifacts[slot] = {"generation":artifact["generation"], **descriptor}
+            protected.add(slot)
+        validate_request(request, domain_id=document["domain_id"],
+                         targets={expected_binding["target_id"]}, now=now, artifacts=artifacts)
         require(binding(request) == expected_binding and document["domain_id"] == expected_binding["domain_id"]
                 and work["retention"] == "BUSY"
                 and expected_binding["operation_id"] == operation_id(document["domain_id"],
@@ -169,6 +185,6 @@ RP-017/043/047/048 must provide role grants and durable runtime integration.
         new_result = copy.deepcopy(result_row)
         new_result["retention"] = "UNREAD"
         return RecordMutation.prepare(snapshot, owner=owner,
-            changes={prefix+"status":new_status, prefix+"result":new_result}, protect={prefix+"work"})
+            changes={prefix+"status":new_status, prefix+"result":new_result}, protect=protected)
     except (KeyError, TypeError, ContractError):
         raise AuthorityError("PUBLICATION_INVALID") from None

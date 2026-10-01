@@ -375,6 +375,84 @@ def test_private_use_characters_survive_docs_insertion_without_hash_or_data_loss
     assert backend.read().document()==desired
 
 
+@pytest.mark.parametrize("field,value",[("text","altered"),("size_bytes",1)])
+def test_changed_inline_bytes_are_rejected_before_any_publication_write(field,value):
+    document,command,result=fixture_document()
+    document["records"]["target.000.work"]["body"]["payload"][field]=value
+    store=WireStore(document);backend=NativeDocsAuthority(store.client(),BINDING)
+    with pytest.raises(AuthorityError,match="PUBLICATION_INVALID"):
+        terminal_publication(backend.read(),target_index=0,expected_binding=binding(command),
+            result_sha256=result["result_sha256"],owner=OWNER,now=111)
+    assert not store.calls
+
+
+def artifact_fixture():
+    document,command,_=fixture_document()
+    # This fixture models a previously verified input slot; no artifact IO occurs.
+    command["payload"] = dict(kind="ARTIFACT",interpreter="python",size_bytes=17,
+                              slot="artifact.000.input",artifact_generation=9)
+    command["payload_sha256"] = hashlib.sha256(b"synthetic-artifact").hexdigest()
+    result=make_result(command,stdout_tail="verified synthetic artifact result")
+    rows=document["records"]
+    rows["target.000.work"]=pack_record("target.000.work",command)
+    rows["target.000.result"]=compact_record("result",result,binding(command),0)
+    rows["artifact.000.input"]=dict(generation=9,operation_id=command["operation_id"],retention="BUSY",
+        body=dict(target_id=TARGET,size_bytes=17,sha256=command["payload_sha256"],complete=True))
+    return document,command,result
+
+
+@pytest.mark.parametrize("bad",[None,"slot","generation","operation","target","size","hash","incomplete"])
+def test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload(bad):
+    document,command,result=artifact_fixture();rows=document["records"];artifact=rows["artifact.000.input"]
+    if bad=="slot":rows["target.000.work"]["body"]["payload"]["slot"]="artifact.001.input"
+    elif bad=="generation":artifact["generation"]+=1
+    elif bad=="operation":artifact["operation_id"]="f"*64
+    elif bad=="target":artifact["body"]["target_id"]=DOMAIN
+    elif bad=="size":artifact["body"]["size_bytes"]+=1
+    elif bad=="hash":artifact["body"]["sha256"]="f"*64
+    elif bad=="incomplete":artifact["body"]["complete"]=False
+    store=WireStore(document);backend=NativeDocsAuthority(store.client(),BINDING)
+    def prepare():return terminal_publication(backend.read(),target_index=0,expected_binding=binding(command),
+        result_sha256=result["result_sha256"],owner=OWNER,now=111)
+    if bad is not None:
+        with pytest.raises(AuthorityError):prepare()
+        assert not store.calls
+    else:
+        plan=prepare()
+        assert reconcile(backend,plan,mode="START").outcome=="CONFIRMED"
+        assert store.document["records"]["artifact.000.input"]==artifact
+
+
+def test_artifact_descriptor_changes_after_plan_are_protected_from_reconciliation():
+    document,command,result=artifact_fixture();store=WireStore(document);backend=NativeDocsAuthority(store.client(),BINDING)
+    plan=terminal_publication(backend.read(),target_index=0,expected_binding=binding(command),result_sha256=result["result_sha256"],owner=OWNER,now=111)
+    def alter(_):
+        store.document["records"]["artifact.000.input"]["body"]["sha256"]="f"*64
+        store.bump()
+    store.before_write=alter
+    outcome=reconcile(backend,plan,mode="START")
+    assert outcome.outcome=="CONFLICT" and outcome.writes==1 and store.commits==0
+
+
+@pytest.mark.parametrize("status",[429,500,503])
+def test_unknown_without_visible_apply_does_not_repeat_the_mutation(status):
+    document,command,result=fixture_document();store=WireStore(document);backend=NativeDocsAuthority(store.client(),BINDING)
+    plan=terminal_publication(backend.read(),target_index=0,expected_binding=binding(command),result_sha256=result["result_sha256"],owner=OWNER,now=111)
+    store.raise_write=status
+    outcome=reconcile(backend,plan,mode="START",max_reads=3)
+    assert outcome.outcome=="UNKNOWN" and outcome.inspect_required and outcome.writes==1
+    assert store.document==document and store.commits==0
+
+
+@pytest.mark.parametrize("receipt",[None,{}, {"documentId":"wrong"}])
+def test_malformed_receipt_is_recovered_only_by_complete_same_operation_readback(receipt):
+    document,command,result=fixture_document();store=WireStore(document);backend=NativeDocsAuthority(store.client(),BINDING)
+    plan=terminal_publication(backend.read(),target_index=0,expected_binding=binding(command),result_sha256=result["result_sha256"],owner=OWNER,now=111)
+    store.response_filter=lambda _:receipt
+    outcome=reconcile(backend,plan,mode="START")
+    assert outcome.outcome=="CONFIRMED" and outcome.writes==1 and store.commits==1
+
+
 @pytest.mark.parametrize("mode,reads,writes",[("RETRY",6,3),("START",1,3),("START",13,3),("START",6,5),("START",True,3)])
 def test_reconciliation_rejects_unsupported_mode_or_unbounded_budget(system,mode,reads,writes):
     store,backend,plan,_=system
