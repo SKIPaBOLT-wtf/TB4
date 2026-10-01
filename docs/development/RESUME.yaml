@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-020"
 check: "RP-020.C4"
 attempt: "A001"
-phase: "REGRESSION"
+phase: "ARCHIVE"
 source_branch: "work/rp-020-a001"
 source_commit: "5cf22faf6c009435e8c25343afcf9493f721904d"
 journal: "docs/development/journal/RP-020/A001/events.jsonl"
-last_verified_event: "RP-020-A001-0020"
+last_verified_event: "RP-020-A001-0021"
 last_completed: "RP-019"
-next_action: "Inspect existing local session19406 and CI/Progress/Desktop runs for PR29; collect exact public test identities and review source boundary while they run."
+next_action: "Publish only a sanitized archive verification outcome, then resume inspection of the already-running full regression/CI jobs without relaunching them."
 verification: "Require native Windows token/DACL/file-sharing tests plus portable failure/race/canary coverage, required platform CI, complete regression and packaged install/uninstall checks. Validate ledger, public scanner and base-to-head diff before merge."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-020-A001-0019"]
+unsettled_intents: ["RP-020-A001-0019","RP-020-A001-0021"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-025"]
