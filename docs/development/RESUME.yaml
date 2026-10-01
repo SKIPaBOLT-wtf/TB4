@@ -5,16 +5,16 @@ check: "RP-021.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-021-a001"
-source_commit: "9fdba01926095ac99ae0e1f4af9d9ea49ed1cabb"
+source_commit: "a39427c4a104e0f61e3ea3231b1a06866848eefd"
 journal: "docs/development/journal/RP-021/A001/events.jsonl"
-last_verified_event: "RP-021-A001-0001"
+last_verified_event: "RP-021-A001-0002"
 last_completed: "RP-020"
-next_action: "Implement bounded Linux adapter/shared policy/native tests/docs and publish exact source; then authorize focused Windows regression and hosted native Linux qualification."
+next_action: "Publish focused-validation INTENT; run portable Linux policy plus existing Windows/RP006 regressions on isolated Windows, then actual native Linux CI."
 verification: "Require native Linux tests to execute (only non-Linux skip), both desktop/headless policy tests, unsupported-mode/canary/race tests, unchanged Windows86-case regression, full platform CI/Desktop packages and ledger/privacy/source review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-021-A001-0001"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
