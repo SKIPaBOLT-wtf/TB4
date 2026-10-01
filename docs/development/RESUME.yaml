@@ -7,14 +7,14 @@ phase: "IMPLEMENTATION"
 source_branch: "work/rp-025-a001"
 source_commit: "71b8eac7aa8e6df58e32db46094a57a3b60598a0"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0002"
+last_verified_event: "RP-025-A001-0003"
 last_completed: "RP-024"
-next_action: "Publish bounded source-edit INTENT for distinct local FETCHER announcement, approved slot enrollment, effective report codec/summary and protected inspect-only owner publication; add named negative/native/restart tests."
+next_action: "Review bounded diff and publish exact source checkpoint/OUTCOME; then targeted tests/native cases under separate INTENT."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-025-A001-0003"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
