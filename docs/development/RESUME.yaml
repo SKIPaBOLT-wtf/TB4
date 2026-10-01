@@ -5,11 +5,11 @@ check: "RP-025.C4"
 attempt: "A001"
 phase: "RECONCILIATION"
 source_branch: "work/rp-025-a001"
-source_commit: "3ac27c148339ff959c15211622711777329ec40e"
+source_commit: "6162dea493900e64b916ced098889d75849dc43f"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0059"
+last_verified_event: "RP-025-A001-0060"
 last_completed: "RP-024"
-next_action: "Prepare and validate RP021/A002 opening with accepted A001 snapshots of21-24 and exact neveraccepted RP025/A001 frozen snapshot linked to this suspension; publish/readback before the native content-recheck patch."
+next_action: "Publish bounded full-reference prospective validation INTENT; settle that preparation outcome atomically with correctly validated RP021/A002 INTENT and all progress projections, then proceed native repair."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
@@ -17,7 +17,7 @@ implementation_started: true
 unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046"]
+known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046","DEF-047"]
 rollback: "Revoke only a specifically confirmed new enrollment; retain slot generation/history, prior approved bindings and UNKNOWN operations. Do not copy another installation credential/profile, reset authority or replay an uncertain write."
 next_implementation_step: "RP-025"
 next_implementation_check: "RP-025.C1"
