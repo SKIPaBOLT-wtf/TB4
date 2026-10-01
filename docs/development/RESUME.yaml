@@ -1,20 +1,20 @@
 schema_version: 1
 revision: "R2"
 work_item: "RP-024"
-check: "RP-024.C2"
+check: "RP-024.C3"
 attempt: "A001"
-phase: "VALIDATION"
+phase: "SOURCE"
 source_branch: "work/rp-024-a001"
 source_commit: "c5b7e7500c2cc6583b4deff03708d8d2cf388474"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0012"
+last_verified_event: "RP-024-A001-0013"
 last_completed: "RP-023"
-next_action: "Complete source review and trusted desktop handoff, add any missing boundary tests/codec capacity coverage, then run required native/full/frozen hosted qualification."
+next_action: "Publish source outcome, run targeted real Qt/native/codec/race and regression gates, then create draft PR for complete hosted qualification."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-024-A001-0013"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
