@@ -154,6 +154,8 @@ class GuidedBallpark:
                 and self.setup._payload.get("discovery") is not None, "BALLPARK_NOT_CONFIGURED")
         require("UNKNOWN" not in self.setup._payload["operations"].values()
                 and self.setup._payload["discovery"]["pending"] is None, "BALLPARK_INSPECT_REQUIRED")
+        require(not (self.setup._payload.get("ballpark_publication") or {}).get("pending"),
+                "BALLPARK_INSPECT_REQUIRED")
         return choices, self.setup._payload["discovery"]["image"]
 
     def begin(self):

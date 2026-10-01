@@ -92,7 +92,7 @@ def validated(payload):
     try:
         fields = {"schema_version", "installation_id", "setup_nonce", "state", "reason", "choices", "operations"}
         require(type(payload) is dict and fields <= set(payload)
-                and set(payload) <= fields | {"credential_image", "discovery", "ballpark_draft"},
+                and set(payload) <= fields | {"credential_image", "discovery", "ballpark_draft", "ballpark_publication"},
             "SETUP_SCHEMA")
         require(type(payload["schema_version"]) is int and payload["schema_version"] == 1
                 and identity(payload["installation_id"])
@@ -109,6 +109,9 @@ def validated(payload):
         if payload.get("ballpark_draft") is not None:
             from .ballpark_setup import package
             package(payload["ballpark_draft"], payload)
+        if payload.get("ballpark_publication") is not None:
+            from .ballpark_publication import package
+            package(payload["ballpark_publication"], payload)
         image = payload.get("credential_image")
         if image is not None:
             image = validate_image(image, payload["installation_id"])
@@ -202,7 +205,7 @@ class Setup:
         self._fresh()
         require(type(patch) is dict and set(patch) <= CHOICES, "SETUP_CHOICES_SHAPE")
         value = copy.deepcopy(self._payload)
-        if value.get("ballpark_draft") is not None:
+        if value.get("ballpark_draft") is not None or value.get("ballpark_publication") is not None:
             require(all(patch[k] == value["choices"].get(k) for k in set(patch) & {
                 "role", "storage", "storage_request", "network_scope", "descriptor", "timing"}),
                     "SETUP_BALLPARK_BINDING_FROZEN")
@@ -363,6 +366,7 @@ class Setup:
                 and previous.get("credential_image") == self._payload.get("credential_image")
                 and previous.get("discovery") == self._payload.get("discovery")
                 and previous.get("ballpark_draft") == self._payload.get("ballpark_draft")
+                and previous.get("ballpark_publication") == self._payload.get("ballpark_publication")
                 and previous["choices"]["storage"] == self._payload["choices"]["storage"],
                 "SETUP_ROLLBACK_UNSAFE")
         self._save({**previous, "state": "INCOMPLETE", "reason": "REVALIDATION_REQUIRED"})
