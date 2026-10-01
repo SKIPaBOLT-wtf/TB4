@@ -83,3 +83,9 @@ No real-provider experiment is needed to accept this bounded reproduction. If a
 later exact observation is necessary, publish its separate scoped access/consent
 and synthetic fixture INTENT; never reuse the old live job as a probe. Rollback
 removes synthetic additions only and preserves all original failure evidence.
+
+RP-015 implementation follow-up: [native authority transactions](NATIVE_AUTHORITY_TRANSACTIONS.md)
+ports the positive invariant to the selected R2 adapter. The historical v1 failure
+remains a negative counterexample; retiring its expected-failure marker does not
+fix or qualify that raw-file backend. Source-linked RP-015 acceptance evidence is
+required before calling the new invariant verified. DEF-001 remains open.
