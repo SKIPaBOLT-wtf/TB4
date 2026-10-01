@@ -26,14 +26,14 @@ This is a projection of `manifest.yaml`. Mark a step/check complete only through
 - [x] [RP-015 - Race-safe exact-object mutation and verification](steps/RP-015.md) - prerequisites: RP-008, RP-010, RP-012, RP-013.
 - [x] [RP-016 - Shared leadership lease and fencing primitive](steps/RP-016.md) - prerequisites: RP-008, RP-010, RP-012, RP-015.
 - [x] [RP-017 - WATCHDOG incumbent-first startup and standby](steps/RP-017.md) - prerequisites: RP-011, RP-016.
-- [ ] [RP-018 - Shared-folder transport conformance adapter](steps/RP-018.md) - prerequisites: RP-008, RP-009, RP-010, RP-012, RP-015.
+- [x] [RP-018 - Shared-folder transport conformance adapter](steps/RP-018.md) - prerequisites: RP-008, RP-009, RP-010, RP-012, RP-015.
 - [x] [RP-019 - Idempotent fixed-slot commissioning](steps/RP-019.md) - prerequisites: RP-009, RP-015, RP-016.
 - [x] [RP-020 - Windows protected credential resolver](steps/RP-020.md) - prerequisites: RP-006, RP-012.
 - [x] [RP-021 - Linux protected credential resolver](steps/RP-021.md) - prerequisites: RP-006, RP-012.
 
 ## First run, BALLPARK, enrollment and reconfiguration
 
-- [ ] [RP-022 - First-run commissioning state machine](steps/RP-022.md) - prerequisites: RP-005, RP-007, RP-011, RP-012, RP-017, RP-019, RP-020, RP-021.
+- [x] [RP-022 - First-run commissioning state machine](steps/RP-022.md) - prerequisites: RP-005, RP-007, RP-011, RP-012, RP-017, RP-019, RP-020, RP-021.
 - [ ] [RP-023 - Scoped discovery and persistent catalogue identity](steps/RP-023.md) - prerequisites: RP-005, RP-012, RP-017, RP-022.
 - [ ] [RP-024 - Private BALLPARK creation with SKILL assistance](steps/RP-024.md) - prerequisites: RP-005, RP-007, RP-019, RP-022, RP-023.
 - [ ] [RP-025 - FETCHER enrollment and effective profile publication](steps/RP-025.md) - prerequisites: RP-005, RP-006, RP-019, RP-022, RP-024.
