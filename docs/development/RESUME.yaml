@@ -5,16 +5,16 @@ check: "RP-016.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-016-a001"
-source_commit: "0b2bb86b47037f1a569a1e47d6d10f364d3aa4bc"
+source_commit: "dfa260eae0675db46a2c56424cc4b5adbf348400"
 journal: "docs/development/journal/RP-016/A001/events.jsonl"
-last_verified_event: "RP-016-A001-0001"
+last_verified_event: "RP-016-A001-0002"
 last_completed: "RP-015"
-next_action: "Implement typed native leadership transitions and shared conformance suite against the actual RP015 adapter; publish source before tests."
+next_action: "Publish validation intent; run complete native leadership conformance and affected regressions, full CI/Progress/Windows-Linux package gates."
 verification: "Strict requiredRevisionId readback and complete owner/request/transition binding; default timing profile and deterministic trusted/uncertain clock samples; unchanged operation/result records; no all-sink activation state."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-016-A001-0001"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
