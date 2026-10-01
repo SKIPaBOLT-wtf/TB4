@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-018"
 check: "RP-018.C1"
 attempt: "A002"
-phase: "CI"
+phase: "REVIEW"
 source_branch: "work/rp-022-a001"
 source_commit: "5627090c724d95e4bcd97fd352bef7ff9c7e2cae"
 journal: "docs/development/journal/RP-018/A002/events.jsonl"
-last_verified_event: "RP-018-A002-0036"
+last_verified_event: "RP-018-A002-0037"
 last_completed: "RP-021"
-next_action: "Inspect same CI/Progress/Desktop runs to completion, exact checkout/source equality, native SSH and frozen artifacts; prepare separate RP018/RP022 receipts."
+next_action: "Publish inventory/result, then continue same running CI jobs and source review."
 verification: "Deterministic regression plus native Linux/SSH/full CI and all reopened RP018 checks; resume RP022 after repair qualification."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0045","RP-018-A002-0035"]
+unsettled_intents: ["RP-022-A001-0045","RP-018-A002-0035","RP-018-A002-0037"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030","DEF-031"]
