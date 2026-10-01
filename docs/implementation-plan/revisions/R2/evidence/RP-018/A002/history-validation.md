@@ -1,0 +1,3 @@
+# RP-018/A002 same-attempt history validation
+
+Source d55998cb068bff97fae33170b78650d63ce4f074; INTENT0018; local exec93397 completed. Development190passed11.78s, exit0; scanner/diff pass. CLI still returned LEDGER_INPUT_INVALID; direct diagnostic exec2018 identifies closed LedgerError DEFECT_RESOLUTION_UNPROVEN at defects.py139. Its all-current-steps-VERIFIED rule rejects previously RESOLVED DEF018/019/020/021 after RP018 is correctly reopened for unrelated DEF030. A001 acceptance snapshots and actual PASS receipts/events are preserved. Validation must recognize that historical proof without marking A002 accepted or reopening an already resolved old symptom. Current A002 holds and new DEF030/031 stay open.
