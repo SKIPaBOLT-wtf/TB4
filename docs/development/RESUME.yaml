@@ -7,14 +7,14 @@ phase: "PROGRESS_REPAIR"
 source_branch: "main"
 source_commit: "dfa260eae0675db46a2c56424cc4b5adbf348400"
 journal: "docs/development/journal/RP-016/A002/events.jsonl"
-last_verified_event: "RP-016-A002-0001"
+last_verified_event: "RP-016-A002-0002"
 last_completed: "RP-015"
-next_action: "Remove unsupported mutable manifest field and publish repair outcome before validation."
+next_action: "Validate repaired projection/history, existing evidence mapping and source equality, then inspect main Progress."
 verification: "Strict requiredRevisionId readback and complete owner/request/transition binding; default timing profile and deterministic trusted/uncertain clock samples; unchanged operation/result records; no all-sink activation state."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-016-A002-0001"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-017"]
