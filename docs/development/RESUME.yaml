@@ -7,14 +7,14 @@ phase: "FINAL_REVIEW"
 source_branch: "work/rp-016-a001"
 source_commit: "dfa260eae0675db46a2c56424cc4b5adbf348400"
 journal: "docs/development/journal/RP-016/A001/events.jsonl"
-last_verified_event: "RP-016-A001-0006"
+last_verified_event: "RP-016-A001-0007"
 last_completed: "RP-015"
-next_action: "Run final review and publish result before merge intent."
+next_action: "Publish exact-head PR24 merge INTENT, merge, verify main and coordinated VERIFIED projection."
 verification: "Strict requiredRevisionId readback and complete owner/request/transition binding; default timing profile and deterministic trusted/uncertain clock samples; unchanged operation/result records; no all-sink activation state."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-016-A001-0006"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
