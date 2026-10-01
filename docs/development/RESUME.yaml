@@ -7,14 +7,14 @@ phase: "TEST"
 source_branch: "work/rp-022-a001"
 source_commit: "5e3617a42ac732cb3d0d1ff7b5521fa354e0c3a5"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0036"
+last_verified_event: "RP-022-A001-0037"
 last_completed: "RP-021"
-next_action: "Record exact repair results, then publish a new full CI trigger and inspect both original and corrected workflow runs; resolve DEF029 only with reviewed complete acceptance."
+next_action: "Publish a non-skip repaired-source full CI qualification INTENT on PR31, record new run IDs and inspect final native/full/frozen package evidence. Preserve original-source workflow outcomes separately."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0031","RP-022-A001-0036"]
+unsettled_intents: ["RP-022-A001-0031"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029"]
