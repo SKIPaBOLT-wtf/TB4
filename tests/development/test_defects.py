@@ -269,3 +269,38 @@ def test_later_defect_cannot_bypass_reopening_or_impact(accepted,case):
     elif case=='same-intent':later['intent_event']='RP-001-A002-0001'
     elif case=='dependent':later['rechecks']['RP-002']=copy.deepcopy(later['rechecks']['RP-001'])
     with pytest.raises(LedgerError):validate_registry_history(old_registry,registry,old_manifest,manifest)
+
+
+def reopen_after_old_resolution(root):
+    manifest=load(root,MANIFEST);registry=load(root,REGISTRY)
+    old=registry['defects']['DEF-001']
+    old.update(status='RESOLVED',regression_test='tests/synthetic.py',
+        resolution_evidence=[PLAN+'/evidence/RP-001/A001/C1.json'],
+        repairs=[dict(item='RP-001',attempt='A001',intent_event='RP-001-A001-0001',
+                      rechecks={'RP-001':dict(attempt='A001',checks=manifest['steps']['RP-001']['completed_checks'])})])
+    old['reproduction']['passing_source']=SHA
+    registry['defects']['DEF-002']=defect()
+    save(root,REGISTRY,registry)
+    assert validate(root,reachable=lambda _:True)['verified']==3
+    manifest,registry=open_repair(manifest,registry,'DEF-002','RP-001','RP-001-A002-0001')
+    apply(root,prepare(root,repair_event(),'work/repair',SHA,manifest=manifest,defects=registry,reachable=lambda _:True))
+
+
+def test_old_proven_resolution_survives_a_new_repair_without_accepting_new_attempt(accepted):
+    reopen_after_old_resolution(accepted)
+    assert validate(accepted,reachable=lambda _:True)['verified']==0
+    assert load(accepted,REGISTRY)['defects']['DEF-001']['status']=='RESOLVED'
+    assert load(accepted,REGISTRY)['defects']['DEF-002']['status']=='OPEN'
+    assert load(accepted,MANIFEST)['steps']['RP-001']['revalidation_required']
+
+
+@pytest.mark.parametrize('case',['unreviewed','wrong-source','wrong-attempt','no-receipt','missing-artifact'])
+def test_historical_resolution_cannot_use_forged_or_missing_proof(accepted,case):
+    reopen_after_old_resolution(accepted)
+    path=PLAN+'/evidence/RP-001/A001/C1.json'
+    if case=='unreviewed':update(accepted,path,lambda r:r.update(reviewed=False))
+    elif case=='wrong-source':update(accepted,path,lambda r:r.update(source_ref='b'*40))
+    elif case=='wrong-attempt':update(accepted,path,lambda r:r.update(attempt='A002'))
+    elif case=='missing-artifact':update(accepted,path,lambda r:r.update(artifacts=['docs/absent.md']))
+    elif case=='no-receipt':update(accepted,MANIFEST,lambda m:m['steps']['RP-001']['acceptance_history'][0]['check_evidence'].update({'RP-001.C1':[]}))
+    with pytest.raises(LedgerError):validate(accepted,reachable=lambda _:True)

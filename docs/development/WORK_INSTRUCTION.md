@@ -264,3 +264,10 @@ Planning validation is not runtime testing. Public progress entries for this pla
 session live under PLAN-R2, never as fabricated RP implementation acceptance.
 Use [templates](templates) as the field contract. All future tools must implement
 this discipline; tools are aids, not substitutes for verified records.
+
+When a new defect reopens an accepted step, an older resolved defect remains
+historically resolved only if its exact accepted attempt survives in acceptance_history
+with all reviewed PASS receipts, original matching INTENT/OUTCOME and artifacts.
+That historical proof does not accept the new attempt or remove its holds. A
+later separate defect in the same reopened attempt uses its own later INTENT;
+the first reopening still establishes all historical snapshots and impact.

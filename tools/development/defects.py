@@ -10,7 +10,7 @@ import json
 import re
 
 from . import schemas as s
-from .ledger import PLAN, public_data, public_path, require, shape
+from .ledger import PLAN, load, public_data, public_path, require, shape
 
 REGISTRY = PLAN + "/defects.yaml"
 WORK = {"type": "string", "pattern": r"^(RP-\d{3}(\.C\d+)?|IP-\d+|PLAN-R2)$"}
@@ -77,6 +77,35 @@ def migrate(old, manifest):
     return result
 
 
+def historical_acceptance(root, item, target, step, reachable, events):
+    """A past resolution may survive reopening, but only with original PASS proof."""
+    require(step['active_attempt'] > target['attempt'], 'DEFECT_RESOLUTION_UNPROVEN')
+    histories = [h for h in step.get('acceptance_history', []) if h['attempt'] == target['attempt']]
+    require(len(histories) == 1, 'DEFECT_RESOLUTION_UNPROVEN')
+    history = histories[0]
+    require(set(target['checks']) <= set(history['completed_checks']), 'DEFECT_RESOLUTION_UNPROVEN')
+    for check in target['checks']:
+        references = history['check_evidence'].get(check, [])
+        require(references and set(references) <= set(history['evidence']), 'DEFECT_RESOLUTION_UNPROVEN')
+        for reference in references:
+            require(reference.startswith(f"{PLAN}/evidence/{item}/{target['attempt']}/")
+                    and reference.endswith('.json'), 'DEFECT_RESOLUTION_UNPROVEN')
+            receipt = load(root, reference)
+            shape(receipt, s.EVIDENCE)
+            require((receipt['item'],receipt['check'],receipt['attempt']) == (item,check,target['attempt'])
+                    and receipt['result'] == 'PASS' and receipt['reviewed'] and receipt['exit_code'] == 0
+                    and reachable(receipt['source_ref']), 'DEFECT_RESOLUTION_UNPROVEN')
+            intent, outcome = events.get(receipt['intent_event'], {}), events.get(receipt['outcome_event'], {})
+            require(intent.get('event') == 'INTENT' and outcome.get('event') in {'OUTCOME','RECONCILED'}
+                    and outcome.get('related_event') == intent.get('event_id') and outcome.get('outcome') == 'PASS'
+                    and outcome.get('source_ref') == receipt['source_ref']
+                    and all(row.get('item') == item and row.get('attempt') == target['attempt']
+                            for row in (intent,outcome)), 'DEFECT_RESOLUTION_UNPROVEN')
+            public_data(receipt)
+            for artifact in receipt['artifacts']:
+                public_path(root, artifact)
+
+
 def validate_registry(root, registry, manifest, reachable, events):
     shape(registry, REGISTRY_SCHEMA)
     public_data(registry)
@@ -136,8 +165,10 @@ def validate_registry(root, registry, manifest, reachable, events):
             require(defect["repairs"] and defect["resolution_evidence"]
                     and defect["reproduction"]["passing_source"] and defect["regression_test"],
                     "DEFECT_RESOLUTION_UNPROVEN")
-            require(all(steps[item]["status"] == "VERIFIED" for repair in defect["repairs"] for item in repair["rechecks"]),
-                    "DEFECT_RESOLUTION_UNPROVEN")
+            for repair in defect['repairs']:
+                for item, target in repair['rechecks'].items():
+                    if steps[item]['status'] != 'VERIFIED':
+                        historical_acceptance(root, item, target, steps[item], reachable, events)
 
 
 def validate_registry_history(old, new, old_manifest, new_manifest=None):
