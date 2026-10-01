@@ -117,7 +117,8 @@ def test_total_deadline_refuses_remaining_queries():
 
 
 @pytest.mark.parametrize("raw",[b'{}',b'[{"a":1,"a":2}]',b'[NaN]',b'[',
-                                b'X'*(MAX_OUTPUT+1),json.dumps([{}]*257).encode()])
+                                b'X'*(MAX_OUTPUT+1),json.dumps([{}]*257).encode()],
+                         ids=["wrong-shape","duplicate-key","nonfinite","truncated","too-large","too-many-rows"])
 def test_closed_bounded_provider_json(raw):
     with pytest.raises(DiscoveryError):
         decoded(raw)
