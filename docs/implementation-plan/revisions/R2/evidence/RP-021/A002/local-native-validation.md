@@ -1,0 +1,13 @@
+# RP-021/A002 — local native repair validation
+
+Exact source `cc0abf1e53b350e8885a2826a0f8549dae0e9269`; INTENT `RP-021-A002-0006`; actual sessions3738 (Linux) and28600 (Windows/ledger). All test subprocess/gate exits 0. First [harness bootstrap failure](native-harness-bootstrap-failure.md) remains.
+
+Actual Ubuntu WSL Linux x86_64 CPython3.12.3 with new native /tmp fixtures and isolated pure pytest9.1.1 harness: **156 passed, no skips**,1.60s (JUnit1.582s). Distribution's py.py shim verified; unrelated plugin auto-loading disabled; existing Linux yaml/jsonschema and real native APIs retained. Modules: nativeLinux43, Linuxpolicy70, credentialcontract21, nativeprivate18, nativecredentialpersistence4. No system packages, live key or network/runtime changed.
+
+The original held-mutation test is unchanged and passes. Deterministic equal-timestamp observations preserve real UID/mode/ACL/mount/path checks while changed actual bytes revoke before helper admission; fresh content version changes; sealed snapshot remains original. Success/partial/failed/short/oversized/metadata-racing/content-revoked reads all enforce bounds, zero mutable buffers on every exit, preserve both offsets and suppress provider/path/canary errors. Missing preadv refuses safely.
+
+Windows x64 CPython3.11.9 with fresh owned basetemp and actual native security/protected/enrollment modules: **265 passed,47 platform skips**,14.05s; skips are43Linux fd/ACL/seal cases and4Linux private-file cases. Complete development: **226 passed**,22.30s. Current and full-base history against `71b8eac7aa8e6df58e32db46094a57a3b60598a0`:64steps,20VERIFIED, only `RP-021-A002-0006` unsettled at checked snapshot. Public scanner clean; whitespace diff0.
+
+Public evidence uses allowlisted test names/counts/outcomes; raw framework XML/host metadata is not published. Preserved current acceptance holds: native RP021/A002, accepted consumers RP022-024/A002 and neveraccepted RP025/A001. No count alone accepts a check; exact-source full CI/Progress/LinuxWindows native/Qt/frozen both-role build/install/uninstall matrix and per-invariant review remain required.
+
+Before the combined qualification, record a bounded scheduling decision for DEF047's source-aware checkpoint integration under the still-blocked RP025/A001. It consumes only alreadyverified RP001-003 public ledger/publication invariants and preserves every native/product/dependency hold; it cannot qualify or change FETCHER runtime while prerequisites remain unaccepted. Then one final combined-source platform matrix supplies shared proof for native and dependent revalidation.
