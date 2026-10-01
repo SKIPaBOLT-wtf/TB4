@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-016"
 check: "RP-016.C1"
 attempt: "A002"
-phase: "VALIDATION"
+phase: "SOURCE"
 source_branch: "main"
 source_commit: "dfa260eae0675db46a2c56424cc4b5adbf348400"
 journal: "docs/development/journal/RP-016/A002/events.jsonl"
-last_verified_event: "RP-016-A002-0005"
+last_verified_event: "RP-016-A002-0006"
 last_completed: "RP-015"
-next_action: "Publish bounded source intent for exact INTENT-note relocation with strict negative tests and immutable correction records."
+next_action: "Implement narrow correction support and tests on isolated RP016 A002 branch, then publish source checkpoint."
 verification: "Strict requiredRevisionId readback and complete owner/request/transition binding; default timing profile and deterministic trusted/uncertain clock samples; unchanged operation/result records; no all-sink activation state."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-016-A002-0006"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-017"]
