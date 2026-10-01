@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-018"
 check: "RP-018.C1"
 attempt: "A001"
-phase: "SOURCE_REPAIR"
+phase: "VALIDATION"
 source_branch: "work/rp-018-a001"
 source_commit: "b04b4747ab4261b57d04840cbb8535cd020e8195"
 journal: "docs/development/journal/RP-018/A001/events.jsonl"
-last_verified_event: "RP-018-A001-0022"
+last_verified_event: "RP-018-A001-0023"
 last_completed: "RP-017"
-next_action: "Validate complete final candidate on both platforms and retain exact run/source evidence."
+next_action: "Record run IDs/local outcomes; prepare check receipts and source/privacy/rollback review after completion."
 verification: "Compare pre/post object inventory and identities, strict revision-CAS winner, observed rollback after killed writer, independently reopened result, closed capacity and permission/rename failures. Later remote helper conformance must use the same operation model; no invented NAS access or real-machine result."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-018-A001-0023"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-018","DEF-019","DEF-020","DEF-021"]
