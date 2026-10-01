@@ -5,16 +5,16 @@ check: "RP-022.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-022-a001"
-source_commit: "f9d2a74102a462c9f8aee35a763ff257306d7118"
+source_commit: "5e3617a42ac732cb3d0d1ff7b5521fa354e0c3a5"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0034"
+last_verified_event: "RP-022-A001-0035"
 last_completed: "RP-021"
-next_action: "Publish repaired source and focused test INTENT; execute native reopening/model/UI tests, then require fresh full hosted platform/package CI while preserving earlier runs."
+next_action: "Publish repaired native/UI validation INTENT; execute focused regressions, then trigger new full platform/package runs on repaired source."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0031","RP-022-A001-0034"]
+unsettled_intents: ["RP-022-A001-0031"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029"]
