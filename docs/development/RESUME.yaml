@@ -7,14 +7,14 @@ phase: "VALIDATION"
 source_branch: "work/rp-019-a001"
 source_commit: "52d2a9b77f68cf884668c61d3ff90d68f77d807b"
 journal: "docs/development/journal/RP-019/A001/events.jsonl"
-last_verified_event: "RP-019-A001-0032"
+last_verified_event: "RP-019-A001-0033"
 last_completed: "RP-018"
-next_action: "Run local proof and current ledger checks; then exact-snapshot remote Progress and final review."
+next_action: "Repeat final acceptance review with typed receipts and format-equivalence proof, update PR28 ready, then publish exact-head merge INTENT."
 verification: "Source-linked tests must prove exact ID reuse, durable pre-send uncertainty and same-operation inspection, current-owner CAS readiness, fixed allocation bounds and no normal create/delete. Test synthetic native request construction plus real isolated local folder provisioning without claiming a deployed configuration."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-019-A001-0032"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-022","DEF-023","DEF-024"]
