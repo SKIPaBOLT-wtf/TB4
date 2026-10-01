@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-022"
 check: "RP-022.C1"
 attempt: "A001"
-phase: "TEST"
+phase: "CI"
 source_branch: "work/rp-022-a001"
 source_commit: "5e3617a42ac732cb3d0d1ff7b5521fa354e0c3a5"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0037"
+last_verified_event: "RP-022-A001-0038"
 last_completed: "RP-021"
-next_action: "Publish a non-skip repaired-source full CI qualification INTENT on PR31, record new run IDs and inspect final native/full/frozen package evidence. Preserve original-source workflow outcomes separately."
+next_action: "Record new workflow run IDs STARTED, inspect same jobs and logs/artifacts, preserve original-run outcome, then prepare reviewed evidence/check acceptance and exact-source final review."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0031"]
+unsettled_intents: ["RP-022-A001-0031","RP-022-A001-0038"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029"]
