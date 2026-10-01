@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-015"
 check: "RP-015.C1"
 attempt: "A001"
-phase: "MERGE"
-source_branch: "work/rp-015-a001"
+phase: "VERIFIED"
+source_branch: "main"
 source_commit: "564207f3094cd7b9a5b16b61d2f82ea1d7bcc332"
 journal: "docs/development/journal/RP-015/A001/events.jsonl"
-last_verified_event: "RP-015-A001-0028"
-last_completed: "RP-014"
-next_action: "Guarded merge exact PR23 head, verify published main and acceptance checkpoint."
-verification: "Pin published source and test backend request bodies, UTF16/newline/tab identity, strict revision conflicts and complete binding/hash readback; no duplicate payload execution."
+last_verified_event: "RP-015-A001-0029"
+last_completed: "RP-015"
+next_action: "Verify accepted main Progress/ledger, then RP016 typed stale/forced ownership transitions using strict document CAS, immediate takeover without sink acknowledgements."
+verification: "Main Progress/ledger then RP016 acquisition/renewal/current-owner and forced takeover conformance on selected native authority; preserve UNKNOWN old jobs."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-015-A001-0028"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-015","DEF-016"]
+known_open_defects: ["DEF-001","DEF-002"]
 rollback: "Unreleased adapter is opt-in/unwired; revert additions without touching installed v1 authority, generations, or work. No deployment migration occurs."
-next_implementation_step: "RP-015"
-next_implementation_check: "RP-015.C1"
+next_implementation_step: "RP-016"
+next_implementation_check: "RP-016.C1"
