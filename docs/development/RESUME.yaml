@@ -7,14 +7,14 @@ phase: "REVIEW"
 source_branch: "work/rp-022-a001"
 source_commit: "5627090c724d95e4bcd97fd352bef7ff9c7e2cae"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0050"
+last_verified_event: "RP-022-A001-0051"
 last_completed: "RP-021"
-next_action: "Inspect exact Progress36832061277, then update/read back PR31 metadata and ready state; publish final review result before separate merge INTENT."
+next_action: "Publish separate exact-head PR31 merge INTENT; freshly verify head/base/mergeability, merge once and confirm returned main SHA before coordinating both acceptance states."
 verification: "Separate RP018A002 and RP022A001 reviewed checks plus final local/hosted ledger/source/privacy before one coherent merge."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0048"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030","DEF-031"]
