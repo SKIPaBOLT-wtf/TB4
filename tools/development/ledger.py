@@ -217,11 +217,52 @@ def _started_metadata_corrections(events):
     return corrected
 
 
+def _action_case_corrections(events):
+    """Only explicitly corrected past lowercase action groups get a read view.
+
+    Return a projection, never mutate evidence or bypass chronological validation.
+    A case collision or another malformed field still fails closed.
+    """
+    earlier, normalized, groups = {}, {}, set()
+    correction_fields = {"reference_correction", "intent_note_correction", "started_metadata_correction"}
+    for event in events:
+        require(isinstance(event, dict) and isinstance(event.get("event_id"), str),
+                "RECORD_SCHEMA_INVALID")
+        if "action_case_correction" in event:
+            shape(event, schemas.EVENT)
+            patch = event["action_case_correction"]
+            old, new = patch["old_value"], patch["new_value"]
+            target = earlier.get(event.get("related_event"), {})
+            require(event["event"] == "CORRECTION" and event["outcome"] == "RECORDED"
+                    and event["observed"] and not correction_fields.intersection(event),
+                    "ACTION_CASE_INVALID")
+            require(old != new and old.upper() == new and event["action_id"] == new
+                    and target.get("event") == "INTENT" and target.get("action_id") == old
+                    and old not in groups, "ACTION_CASE_TARGET")
+            require(all(event.get(k) == target.get(k) for k in
+                        ("item", "attempt", "check", "source_ref", "scope", "procedure", "expected", "rollback")),
+                    "ACTION_CASE_IDENTITY")
+            require(not any(row.get("action_id") == new for row in earlier.values()),
+                    "ACTION_CASE_COLLISION")
+            for row in earlier.values():
+                if row.get("action_id") == old:
+                    require(all(row.get(k) == target.get(k) for k in ("item", "attempt"))
+                            and not correction_fields.intersection(row), "ACTION_CASE_GROUP")
+                    normalized[row["event_id"]] = new
+            groups.add(old)
+        earlier[event["event_id"]] = event
+    return normalized
+
+
 def validate_journal(events, item, attempt, reachable):
+    action_cases = _action_case_corrections(events)
     started_metadata = _started_metadata_corrections(events)
     if item.startswith("RP-"):
         for event in events:
-            shape(started_metadata.get(event["event_id"], event), schemas.EVENT)
+            view = started_metadata.get(event["event_id"], event)
+            if event["event_id"] in action_cases:
+                view = {**view, "action_id": action_cases[event["event_id"]]}
+            shape(view, schemas.EVENT)
     corrections = _started_reference_corrections(events)
     relocated_notes = _intent_note_corrections(events)
     by_id, pending, actions = {}, {}, set()
@@ -247,14 +288,15 @@ def validate_journal(events, item, attempt, reachable):
                 require(related is None and event["outcome"] == "PENDING"
                         and (event["observed"] is None or identity in relocated_notes),
                         "INTENT_PHASE_INVALID")
-            action = event.get("action_id", identity)
+            action = action_cases.get(identity, event.get("action_id", identity))
             require(action not in actions, "ACTION_ID_REUSED")
             actions.add(action)
             pending[identity] = event
         elif kind in {"OUTCOME", "RECONCILED", "BLOCKED"}:
             require(related in pending, "OUTCOME_WITHOUT_PENDING_INTENT")
             original = pending[related]
-            require(event.get("action_id") == original.get("action_id"), "ACTION_ID_MISMATCH")
+            require(action_cases.get(identity, event.get("action_id")) ==
+                    action_cases.get(original["event_id"], original.get("action_id")), "ACTION_ID_MISMATCH")
             if item.startswith("RP-"):
                 require(event["check"] == original["check"], "CHECK_OWNER_MISMATCH")
                 require(event["outcome"] not in {"PENDING", "STARTED"}

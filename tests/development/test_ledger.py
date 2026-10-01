@@ -499,3 +499,70 @@ def test_started_metadata_correction_cannot_invent_execution_or_success(fault):
     elif fault=="later":rows.reverse()
     elif fault=="closed":first.update(event="OUTCOME",related_event="missing",outcome="PASS")
     with pytest.raises(LedgerError):validate_journal(rows,"RP-001","A001",lambda _:True)
+
+def corrected_action_case(outcome="FAIL"):
+    first = event()
+    first["action_id"] = "check-ledger"
+    actual = event(2, "OUTCOME", first["event_id"], outcome)
+    actual["action_id"] = first["action_id"]
+    correction = event(3, "CORRECTION", first["event_id"], "RECORDED")
+    correction["action_case_correction"] = dict(old_value="check-ledger", new_value="CHECK-LEDGER")
+    return [first, actual, correction]
+
+
+@pytest.mark.parametrize("outcome", ["PASS", "FAIL", "UNKNOWN", "BLOCKED"])
+def test_action_case_correction_preserves_original_bytes_and_outcomes(outcome):
+    rows = corrected_action_case(outcome)
+    before = copy.deepcopy(rows)
+    found, pending = validate_journal(rows, "RP-001", "A001", lambda _: True)
+    assert rows == before and all(found[r["event_id"]] is r for r in rows)
+    assert found[rows[1]["event_id"]]["outcome"] == outcome
+    assert bool(pending) == (outcome in {"UNKNOWN", "BLOCKED"})
+
+
+@pytest.mark.parametrize("fault", ["rename", "already-upper", "unicode", "target-kind",
+    "target-missing", "source", "check", "scope", "item", "attempt", "action", "success",
+    "extra", "mixed", "duplicate", "collision", "future-lowercase", "group-owner",
+    "other-invalid-field", "case-mismatch"])
+def test_action_case_correction_cannot_change_identity_or_authority(fault):
+    rows = corrected_action_case()
+    first, actual, last = rows
+    patch = last["action_case_correction"]
+    if fault == "rename": patch["new_value"] = "NEW-ACTION"
+    elif fault == "already-upper": patch["old_value"] = "CHECK-LEDGER"
+    elif fault == "unicode": patch["old_value"] = "café"
+    elif fault == "target-kind": first["event"] = "OBSERVATION"
+    elif fault == "target-missing": last["related_event"] = "missing"
+    elif fault in {"source", "check", "scope", "item", "attempt", "action"}:
+        key, value = {"source": ("source_ref", "b" * 40), "check": ("check", "RP-001.C2"),
+            "scope": ("scope", "Wider scope"), "item": ("item", "RP-002"),
+            "attempt": ("attempt", "A002"), "action": ("action_id", "OTHER")}[fault]
+        last[key] = value
+    elif fault == "success": last["outcome"] = "PASS"
+    elif fault == "extra": patch["authorized"] = True
+    elif fault == "mixed":
+        last["intent_note_correction"] = dict(field="observed", old_value="invented", new_value=None)
+    elif fault == "duplicate":
+        duplicate = copy.deepcopy(last)
+        duplicate.update(sequence=4, event_id="RP-001-A001-0004")
+        rows.append(duplicate)
+    elif fault == "collision": actual["action_id"] = "CHECK-LEDGER"
+    elif fault == "future-lowercase":
+        future = event(4, "OBSERVATION", first["event_id"], "RECORDED")
+        future["action_id"] = "check-ledger"
+        rows.append(future)
+    elif fault == "group-owner": actual["item"] = "RP-002"
+    elif fault == "other-invalid-field": actual["outcome"] = "INVENTED"
+    elif fault == "case-mismatch": actual["action_id"] = "another-action"
+    with pytest.raises(LedgerError):
+        validate_journal(rows, "RP-001", "A001", lambda _: True)
+
+
+def test_lowercase_action_still_invalid_without_explicit_correction():
+    with pytest.raises(LedgerError, match="RECORD_SCHEMA_INVALID"):
+        validate_journal(corrected_action_case()[:-1], "RP-001", "A001", lambda _: True)
+
+
+def test_action_case_correction_requires_reachable_original_source():
+    with pytest.raises(LedgerError, match="PUBLIC_COMMIT_MISSING"):
+        validate_journal(corrected_action_case(), "RP-001", "A001", lambda _: False)
