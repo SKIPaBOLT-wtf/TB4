@@ -242,3 +242,18 @@ def test_repository_profile_remains_unreleased_and_hashes_include_setup_guidance
     assert GUIDANCE in profile["files"]
     for path, expected in profile["files"].items():
         assert hashlib.sha256((root / path).read_bytes().replace(b"\r\n", b"\n")).hexdigest() == expected
+
+
+@pytest.mark.parametrize("mutation", ["entry", "closure", "hash"])
+def test_restored_pin_must_match_original_repository_catalogue(system, mutation):
+    guide, discovery, setup, provider, native, origin = system
+    from tb4.ballpark_setup import restore_pin
+    from tests.coach.test_instruction_selection import SCHEMA
+    pin = copy.deepcopy(setup._payload["ballpark_draft"]["pin"])
+    if mutation == "entry": pin["instructions"] = GUIDANCE
+    elif mutation == "closure": del pin["files"][SCHEMA]
+    else:
+        origin.files[FIRST][GUIDANCE] = b"synthetic mismatched original catalogue bytes"
+        pin["files"][GUIDANCE] = digest(origin.files[FIRST][GUIDANCE])
+    with pytest.raises(BallparkError, match="PIN_CATALOGUE"):
+        restore_pin(origin, pin, FACTS)
