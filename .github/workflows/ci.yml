@@ -35,7 +35,7 @@ jobs:
       - name: Isolated folder helper prerequisites
         run: |
           sudo apt-get update
-          sudo apt-get install -y openssh-server
+          sudo apt-get install -y openssh-server iproute2
           sudo mkdir -p /run/sshd
 
       - name: Native Linux credential boundary qualification
@@ -43,6 +43,11 @@ jobs:
 
       - name: Native protected first-run qualification
         run: python -m pytest tests/security/test_private_settings_native.py tests/security/test_first_run_native.py tests/security/test_credential_persistence_native.py tests/security/test_setup_credentials_native.py -ra
+
+      - name: Native scoped discovery qualification
+        env:
+          TB4_REQUIRE_NATIVE_DISCOVERY: '1'
+        run: python -m pytest tests/discovery/test_native_loopback.py -ra
 
       - name: Test
         env:

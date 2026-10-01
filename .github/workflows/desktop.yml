@@ -35,7 +35,7 @@ jobs:
           python-version: '3.11'
       - name: Linux Qt dependencies
         if: runner.os == 'Linux'
-        run: sudo apt-get update && sudo apt-get install -y libegl1 libopengl0 libxkbcommon0 libxcb-cursor0
+        run: sudo apt-get update && sudo apt-get install -y libegl1 libopengl0 libxkbcommon0 libxcb-cursor0 iproute2
       - name: Install development and desktop dependencies
         run: python -m pip install -e ".[dev,google,desktop]" "pyinstaller>=6.11,<7"
       - name: Desktop tests with real GUI and core imports
@@ -48,6 +48,10 @@ jobs:
         run: python -m pytest tests/security/test_linux_key_native.py -ra
       - name: Native protected first-run qualification
         run: python -m pytest tests/security/test_private_settings_native.py tests/security/test_first_run_native.py tests/security/test_credential_persistence_native.py tests/security/test_setup_credentials_native.py -ra
+      - name: Native scoped discovery qualification
+        env:
+          TB4_REQUIRE_NATIVE_DISCOVERY: '1'
+        run: python -m pytest tests/discovery/test_native_loopback.py -ra
       - name: Complete platform regression suite
         run: python -m pytest
       - name: Build WATCHDOG
