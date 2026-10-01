@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-022"
 check: "RP-022.C1"
 attempt: "A001"
-phase: "TEST"
+phase: "SOURCE"
 source_branch: "work/rp-022-a001"
 source_commit: "a3309d8606c22126481f18ae200481f823be2003"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0022"
+last_verified_event: "RP-022-A001-0023"
 last_completed: "RP-021"
-next_action: "Implement the local first-run UI/controller and entrypoint integration under a new source INTENT, using trusted selected storage/credential adapters and preserving unreleased activation gates."
+next_action: "Publish concrete UI/controller/entrypoint source and tests; declare focused GUI/native validation, then create draft PR and run required Linux/Windows CI/package gates after all source units settle."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-022-A001-0023"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
