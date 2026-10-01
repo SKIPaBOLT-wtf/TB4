@@ -5,16 +5,16 @@ check: "RP-024.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-024-a001"
-source_commit: "fd9dad3fb7a07e1f6126dd5c1f53ec0409edb406"
+source_commit: "6c341da01ddf2e01b45a6aa078e47a9a64754cee"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0005"
+last_verified_event: "RP-024-A001-0006"
 last_completed: "RP-023"
-next_action: "Apply and publish test-only stimulus repair, then repeat focused validation."
+next_action: "Repeat the same five-file focused suite with a new task-local base and inspect actual outcome."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-024-A001-0005"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
