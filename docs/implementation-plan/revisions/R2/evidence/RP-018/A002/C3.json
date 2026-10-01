@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "item": "RP-018",
+  "check": "RP-018.C3",
+  "attempt": "A002",
+  "source_ref": "5627090c724d95e4bcd97fd352bef7ff9c7e2cae",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Inspect exact combined-source hosted workflow logs and native local regression; review named assertions and call paths against each C1-C4 invariant, privacy, compatibility and stopped rollback.",
+  "expected": "No activation or IO without authorized role/LLM access to the same selected exchange and qualified storage semantics.",
+  "observed": "Combined repaired source passed CI36829852714 (2033 passed), Linux Desktop110263725765 (2050 passed), Windows Desktop110263726033 (1986 passed), native key/setup gates and both-role frozen GUI/setup/import/install-uninstall isolation. Progress36829852706 passed196 tests plus ordinary/main-base history/scanner. All counts, skips, durations, artifact metadata and source equivalence are in hosted-validation.md. Original one-winner and killed-writer tests and mandatory isolated SSH executed on Linux; four DEF002 strict expected failures remain. Separate reviewed invariant mapping is in reviewed-validation.md; step holds/status remain pending final coherent merge.",
+  "exit_code": 0,
+  "platform_scope": "Actual Linux x64 ext4 and isolated loopback OpenSSH; actual Windows x64 client/model/native first-run regression; both-role frozen packages on Ubuntu22.04 and Windows hosted runners.",
+  "negative_cases": [
+    "Competing preflight readers and separate helpers cannot both prevent a winner",
+    "Killed dirty-page writer recovers same existing database and journal",
+    "Wrong root/domain/nonce or LLM access refuses before IO",
+    "Missing or renamed journal is never recreated",
+    "Permission loss, disconnect and lost response preserve inspect-only UNKNOWN",
+    "Unsupported network/sync filesystems cannot activate",
+    "Old owner stops checked writes after stale or forced takeover without sink ACK",
+    "Append-only metadata and historical proof tampering are rejected"
+  ],
+  "unverified_scope": "No live migration, home endpoint, XFS/ARM64 server or hardware power-loss qualification; old helpers ignoring advisory flock require separately authorized stopped/version coordination; historical DEF002 remains open.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Stop before any source/adapter rollback; preserve exact database/journal/root and UNKNOWN operations. Never reset revisions, recreate missing identities or replay mutations.",
+  "intent_event": "RP-018-A002-0035",
+  "outcome_event": "RP-018-A002-0041",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-018/A002/reviewed-validation.md"
+  ]
+}
