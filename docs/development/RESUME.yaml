@@ -7,14 +7,14 @@ phase: "VALIDATION"
 source_branch: "work/rp-025-a001"
 source_commit: "098fa945dde8b43cd9ce98feb651b237817afe70"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0034"
+last_verified_event: "RP-025-A001-0035"
 last_completed: "RP-024"
-next_action: "Publish actual reproduction OUTCOME, then narrow runtime/doc correction INTENT and complete focused revalidation."
+next_action: "Publish minimal runtime/doc correction INTENT, then retest the same seven cases and complete focused suites."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-025-A001-0034"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045"]
