@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-018"
 check: "RP-018.C1"
 attempt: "A001"
-phase: "FEASIBILITY_VALIDATION"
+phase: "SOURCE_REPAIR"
 source_branch: "work/rp-018-a001"
 source_commit: "a7e2c9206e51546d939a41c0babecbdc99764227"
 journal: "docs/development/journal/RP-018/A001/events.jsonl"
-last_verified_event: "RP-018-A001-0005"
+last_verified_event: "RP-018-A001-0006"
 last_completed: "RP-017"
-next_action: "Refine the probe to retain transient BUSY and independently prove lock-free stale-revision rejection with unchanged committed state; rerun only after repair intent."
+next_action: "Implement and publish bounded probe correction before a new validation run."
 verification: "Compare pre/post object inventory and identities, strict revision-CAS winner, observed rollback after killed writer, independently reopened result, closed capacity and permission/rename failures. Later remote helper conformance must use the same operation model; no invented NAS access or real-machine result."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-018-A001-0006"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-018"]
