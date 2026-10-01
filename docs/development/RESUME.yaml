@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-023"
 check: "RP-023.C1"
 attempt: "A001"
-phase: "FINAL_REVIEW"
+phase: "MERGE"
 source_branch: "work/rp-023-a001"
 source_commit: "a423b69e03bd43c756cfb1077a5920fed93b42de"
 journal: "docs/development/journal/RP-023/A001/events.jsonl"
-last_verified_event: "RP-023-A001-0050"
+last_verified_event: "RP-023-A001-0051"
 last_completed: "RP-022"
-next_action: "Publish exact-head merge INTENT, recheck ready PR/head/base and unchanged tested source, merge once, then publish coherent VERIFIED/DEF-resolution/RESUME checkpoint on main."
+next_action: "Execute exact-head merge after fresh checks; publish/read back coherent main acceptance and inspect its Progress result."
 verification: "Review exact source and named scope/duplicate-name/address-reassignment/multi-interface/unstable-identifier/routed-VPN cases; add native Windows/Linux and protected fixed-slot integration before final acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-023-A001-0051"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-032","DEF-033","DEF-034","DEF-035","DEF-036","DEF-037"]
