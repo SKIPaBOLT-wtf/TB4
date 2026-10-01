@@ -7,14 +7,14 @@ phase: "FINAL_REVIEW"
 source_branch: "work/rp-020-a001"
 source_commit: "46632bdf2648feacb3b17641e9b09811ad37ca1c"
 journal: "docs/development/journal/RP-020/A001/events.jsonl"
-last_verified_event: "RP-020-A001-0037"
+last_verified_event: "RP-020-A001-0038"
 last_completed: "RP-019"
-next_action: "Inspect the same Progress run; mark PR29 ready and record final-review outcome if it passes."
+next_action: "Publish exact-head PR29 merge INTENT, confirm current head/base/readiness, merge once without force, then inspect the returned main commit."
 verification: "Require native Windows token/DACL/file-sharing tests plus portable failure/race/canary coverage, required platform CI, complete regression and packaged install/uninstall checks. Validate ledger, public scanner and base-to-head diff before merge."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-020-A001-0036"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-025","DEF-026"]
