@@ -1,0 +1,5 @@
+# RP-018 amendment A002: source checkpoint evidence placement
+
+RP018/A002/0004 incorrectly placed two source paths in a docs-only journal evidence array. Its source publication observation and actual source remain unchanged. A later CORRECTION may carry a closed source_evidence_correction: exact old evidence array and nonempty replacement docs receipt paths. This applies only once to a prior OUTCOME/RECORDED checkpoint with at least one source reference. It must preserve item/check/attempt/action/source/observation and cannot mix correction types. PASS/FAIL acceptance results, INTENT and STARTED cannot be changed through this mechanism.
+
+The ledger validates only the evidence placement in a read view and returns the original event. Original public paths must still exist, all history bytes remain, and normal chronological/pending rules apply. Per-check acceptance still requires independent reviewed docs JSON receipts tied to actual PASS outcomes. No runtime authority or product contract changes. New source checkpoints should link a documentation receipt from the outset.

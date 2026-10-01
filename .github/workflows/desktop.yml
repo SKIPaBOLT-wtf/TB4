@@ -46,6 +46,8 @@ jobs:
       - name: Native Linux credential boundary qualification
         if: runner.os == 'Linux'
         run: python -m pytest tests/security/test_linux_key_native.py -ra
+      - name: Native protected first-run qualification
+        run: python -m pytest tests/security/test_private_settings_native.py tests/security/test_first_run_native.py tests/security/test_credential_persistence_native.py tests/security/test_setup_credentials_native.py -ra
       - name: Complete platform regression suite
         run: python -m pytest
       - name: Build WATCHDOG

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "item": "RP-022",
+  "check": "RP-022.C4",
+  "attempt": "A001",
+  "source_ref": "5627090c724d95e4bcd97fd352bef7ff9c7e2cae",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Review named state/native/Qt/storage/credential assertions and exact combined-source hosted logs, public artifacts, compatibility and rollback; accept each C1-C4 separately through its source-linked receipt.",
+  "expected": "Revalidate settings, storage/capabilities, compatible instructions and descriptor projections before any independently authorized runtime activation.",
+  "observed": "Final combined source passed all required CI/Progress/Desktop jobs: Linux full2050, Windows full1986, CI2033; native setup34 Linux and30 Windows (4 Linux-only skips), native keys33 Linux/15 Windows, actual Qt74 Linux/70 Windows (4 POSIX skips). Both-role actual frozen setup/legacy GUI/import/install-uninstall isolation PASS on both OS. Separate RP018A002 reviewed proof qualifies the folder contention repair; same source contains DEF029 desktop pending-candidate recovery and196-test DEF031 ledger repair. Named per-invariant review and scoped limits are recorded; no released/runtime deployment acceptance is claimed.",
+  "exit_code": 0,
+  "platform_scope": "Actual hosted Windows x64 CPython3.11.9 and Ubuntu Linux x64 CPython3.11.16 native files and credentials; Qt6.11.2 and frozen both-role installer checks. Local Windows focused and separate Linux folder regressions supplement hosted proof.",
+  "negative_cases": [
+    "Stale private settings writer and copied identity rejected",
+    "Interrupted first identity or cancel plus UNKNOWN resumes same candidate once",
+    "Partial/corrupt staging and empty existing identity remain untouched",
+    "UNKNOWN provider action cannot replay after cancellation or restart",
+    "Changed/revoked/expired external key does not regain authority on restore",
+    "Wrong or ambiguous root/domain/authority/artifact cannot qualify",
+    "Forged saved readiness or revoked instruction pin cannot activate",
+    "Status and errors omit private synthetic canaries",
+    "Stopped rollback cannot erase operations or revive credentials"
+  ],
+  "unverified_scope": "Standalone unreleased UI requires trusted provider/descriptor/enrollment/release composition from later steps and defaults to DenyActivation. No live root, network, deployment, ARM64/XFS/ReFS-specific qualification or hardware power-loss claim. Four historical DEF002 expected failures remain open.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Use stopped rollback to append preceding protected choices only with unchanged identity/root/operation/credential history; preserve external keys/profiles and never reset or replay UNKNOWN work.",
+  "intent_event": "RP-022-A001-0045",
+  "outcome_event": "RP-022-A001-0047",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-022/A001/reviewed-validation.md"
+  ]
+}

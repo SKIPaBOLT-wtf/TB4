@@ -46,6 +46,20 @@ PERSIST journaling, FULL synchronous writes, memory-only temporary storage and a
 512-page ceiling at 4096 bytes/page. Schema, root/domain and canonical contents
 are checked. Only one row exists.
 
+Before opening SQLite, each helper takes a nonblocking Linux flock on the
+existing pinned database inode. The independent no-follow descriptor is checked
+for exact identity, owner/mode, regular single-link type and bounded size. This
+prevents two preflight readers from retaining shared SQLite locks and blocking
+each other's write upgrade. The lock remains held through validation and READ/CAS
+until SQLite closes, then its descriptor closes. A competing helper is unavailable
+before CAS begins; it does not wait for peer acknowledgements or retry a mutation.
+No authority row/revision or additional lock file is created by lock acquisition.
+Native identity and permissions are still verified before and after operations.
+All helpers must use this protocol; advisory locking does not restrict arbitrary
+same-account native code or an older helper that ignores it. Upgrading a deployed
+folder helper requires stopped-work version coordination at the later migration
+gate. No live helper upgrade is performed by this development repair.
+
 CAS obtains a database transaction and compares the revision there. A successful
 commit increments it exactly once. A concurrent busy lock is unavailable, not
 evidence of a revision conflict. A stale revision after the winner releases is
@@ -116,4 +130,3 @@ credential/host bindings; later integration/topology/release gates qualify real
 installations and the actual LLM connector. No installed runtime, home network,
 NAS, credential store or live shared root was changed for RP-018. Until these
 gates pass, this is a tested adapter primitive, not a released deployment mode.
-

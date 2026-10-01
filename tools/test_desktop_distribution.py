@@ -45,10 +45,16 @@ def main():
             run([gui, "--action", "gui-smoke", "--report", gui_report], env=env)
             observed = json.loads(gui_report.read_text())
             assert observed["gui_smoke"] == "PASS" and observed["worker_started"] is False
+            setup_report = home / f"{role}-setup-gui.json"
+            run([gui, "--action", "setup-smoke", "--report", setup_report], env=env)
+            setup_observed = json.loads(setup_report.read_text())
+            assert setup_observed["setup_gui_smoke"] == "PASS"
+            assert setup_observed["settings_created"] is False and setup_observed["runtime_started"] is False
             profile = profiles / role
             profile.mkdir(parents=True, exist_ok=True)
             (profile / "preserve-marker.txt").write_text("private-profile-preservation-test")
-            results.append({"role": role, "bundle_self_test": "PASS", "gui_smoke": "PASS"})
+            results.append({"role": role, "bundle_self_test": "PASS", "gui_smoke": "PASS",
+                            "setup_gui_smoke": "PASS"})
 
         installed = {}
         for role in ROLES:

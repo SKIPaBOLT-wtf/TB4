@@ -238,3 +238,69 @@ def test_repair_rechecks_must_cover_defined_checks(accepted):
     update(accepted, REGISTRY, lambda r: r["defects"]["DEF-001"]["repairs"][0]["rechecks"]["RP-003"].update(checks=["RP-003.C1"]))
     with pytest.raises(LedgerError, match="REPAIR_RECHECK_INCOMPLETE"):
         validate(accepted, reachable=lambda _: True)
+
+
+def repeated_defect_history(accepted):
+    old_manifest, old_registry = load(accepted, MANIFEST), load(accepted, REGISTRY)
+    manifest, registry = repair(accepted)
+    later = copy.deepcopy(registry['defects']['DEF-001'])
+    later['repairs'] = [dict(item='RP-001',attempt='A002',intent_event='RP-001-A002-0005',
+                           rechecks={'RP-001':dict(attempt='A002',checks=[f'RP-001.C{i}' for i in range(1,5)])})]
+    registry['defects']['DEF-002'] = later
+    return old_manifest, old_registry, manifest, registry
+
+
+def test_later_defect_in_reopened_attempt_preserves_single_acceptance_snapshot(accepted):
+    old_manifest, old_registry, manifest, registry = repeated_defect_history(accepted)
+    # Dictionary order does not determine journal chronology.
+    registry['defects'] = dict(reversed(list(registry['defects'].items())))
+    before = copy.deepcopy(manifest)
+    validate_registry_history(old_registry, registry, old_manifest, manifest)
+    assert manifest == before and len(manifest['steps']['RP-001']['acceptance_history']) == 1
+
+
+@pytest.mark.parametrize('case',['missing-opening','missing-snapshot','different-attempt','same-intent','dependent'])
+def test_later_defect_cannot_bypass_reopening_or_impact(accepted,case):
+    old_manifest, old_registry, manifest, registry = repeated_defect_history(accepted)
+    later=registry['defects']['DEF-002']['repairs'][0]
+    if case=='missing-opening':registry['defects']['DEF-001']['repairs']=[]
+    elif case=='missing-snapshot':manifest['steps']['RP-001']['acceptance_history']=[]
+    elif case=='different-attempt':later.update(attempt='A003',intent_event='RP-001-A003-0001')
+    elif case=='same-intent':later['intent_event']='RP-001-A002-0001'
+    elif case=='dependent':later['rechecks']['RP-002']=copy.deepcopy(later['rechecks']['RP-001'])
+    with pytest.raises(LedgerError):validate_registry_history(old_registry,registry,old_manifest,manifest)
+
+
+def reopen_after_old_resolution(root):
+    manifest=load(root,MANIFEST);registry=load(root,REGISTRY)
+    old=registry['defects']['DEF-001']
+    old.update(status='RESOLVED',regression_test='tests/synthetic.py',
+        resolution_evidence=[PLAN+'/evidence/RP-001/A001/C1.json'],
+        repairs=[dict(item='RP-001',attempt='A001',intent_event='RP-001-A001-0001',
+                      rechecks={'RP-001':dict(attempt='A001',checks=manifest['steps']['RP-001']['completed_checks'])})])
+    old['reproduction']['passing_source']=SHA
+    registry['defects']['DEF-002']=defect()
+    save(root,REGISTRY,registry)
+    assert validate(root,reachable=lambda _:True)['verified']==3
+    manifest,registry=open_repair(manifest,registry,'DEF-002','RP-001','RP-001-A002-0001')
+    apply(root,prepare(root,repair_event(),'work/repair',SHA,manifest=manifest,defects=registry,reachable=lambda _:True))
+
+
+def test_old_proven_resolution_survives_a_new_repair_without_accepting_new_attempt(accepted):
+    reopen_after_old_resolution(accepted)
+    assert validate(accepted,reachable=lambda _:True)['verified']==0
+    assert load(accepted,REGISTRY)['defects']['DEF-001']['status']=='RESOLVED'
+    assert load(accepted,REGISTRY)['defects']['DEF-002']['status']=='OPEN'
+    assert load(accepted,MANIFEST)['steps']['RP-001']['revalidation_required']
+
+
+@pytest.mark.parametrize('case',['unreviewed','wrong-source','wrong-attempt','no-receipt','missing-artifact'])
+def test_historical_resolution_cannot_use_forged_or_missing_proof(accepted,case):
+    reopen_after_old_resolution(accepted)
+    path=PLAN+'/evidence/RP-001/A001/C1.json'
+    if case=='unreviewed':update(accepted,path,lambda r:r.update(reviewed=False))
+    elif case=='wrong-source':update(accepted,path,lambda r:r.update(source_ref='b'*40))
+    elif case=='wrong-attempt':update(accepted,path,lambda r:r.update(attempt='A002'))
+    elif case=='missing-artifact':update(accepted,path,lambda r:r.update(artifacts=['docs/absent.md']))
+    elif case=='no-receipt':update(accepted,MANIFEST,lambda m:m['steps']['RP-001']['acceptance_history'][0]['check_evidence'].update({'RP-001.C1':[]}))
+    with pytest.raises(LedgerError):validate(accepted,reachable=lambda _:True)

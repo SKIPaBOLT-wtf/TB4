@@ -28,6 +28,12 @@ def packaged_self_test(role: str) -> dict:
     assert get_static_doc("drive", "v3")
     from PySide6 import QtCore, QtWidgets
     assert QtCore.qVersion() and QtWidgets.QSystemTrayIcon
+    from .setup_app import SetupStart, SetupWindow
+    from .setup_storage import ConnectedDocsSelection, BoundFolderSelection
+    from tb4.commissioning_state import Setup
+    from tb4.credential_persistence import restore_private
+    assert SetupStart and SetupWindow and Setup and callable(restore_private)
+    assert ConnectedDocsSelection and BoundFolderSelection
     import os
     import subprocess
     import tempfile
@@ -49,13 +55,18 @@ def packaged_self_test(role: str) -> dict:
 def main(fixed_role: str | None = None, argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="TB4 role desktop application")
     parser.add_argument("--role", choices=("watchdog", "fetcher"), default=fixed_role, required=fixed_role is None)
-    parser.add_argument("--action", choices=("gui", "run", "validate", "check", "authorize", "bootstrap", "save", "recover-return", "probe-lock", "self-test", "gui-smoke"), default="gui")
+    parser.add_argument("--action", choices=("gui", "setup", "setup-smoke", "run", "validate", "check", "authorize", "bootstrap", "save", "recover-return", "probe-lock", "self-test", "gui-smoke"), default="gui")
     parser.add_argument("--profile-root", type=Path)
+    parser.add_argument("--setup-root", type=Path)
     parser.add_argument("--report", type=Path)
     args = parser.parse_args(argv)
     if fixed_role is not None and args.role != fixed_role:
         parser.error("this executable belongs to the other role")
     profile = profile_for(args.role, args.profile_root)
+    if args.action in {"setup", "setup-smoke"} or (args.action == "gui" and not profile.config.exists()):
+        from .setup_app import run_setup
+        return run_setup(args.role, root=args.setup_root, smoke=args.action == "setup-smoke",
+                         smoke_report=args.report if args.action == "setup-smoke" else None)
     if args.action == "probe-lock":
         try:
             with ProfileLock(profile, "gui"), ProfileLock(profile, "worker"):
