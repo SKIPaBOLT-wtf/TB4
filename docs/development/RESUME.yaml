@@ -5,16 +5,16 @@ check: "RP-023.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-023-a001"
-source_commit: "6e17e4bcf3773b85feb54e348ee70958c9e569c3"
+source_commit: "5f085bfd39384f2ed115d52cffd3a0a7dba6e7df"
 journal: "docs/development/journal/RP-023/A001/events.jsonl"
-last_verified_event: "RP-023-A001-0025"
+last_verified_event: "RP-023-A001-0026"
 last_completed: "RP-022"
-next_action: "Publish tests and source OUTCOME, then targeted diagnostic INTENT and execute exact focused cases with fresh basetemp."
+next_action: "Run the eight new cases under a fresh verified-absent task basetemp after diagnostic INTENT."
 verification: "Review exact source and named scope/duplicate-name/address-reassignment/multi-interface/unstable-identifier/routed-VPN cases; add native Windows/Linux and protected fixed-slot integration before final acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-023-A001-0025"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-032","DEF-033","DEF-034"]
