@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-018"
 check: "RP-018.C1"
 attempt: "A002"
-phase: "DIAGNOSIS"
+phase: "SOURCE"
 source_branch: "work/rp-022-a001"
-source_commit: "2af8bf80715fbf1ec89bef822d5ecb96b48aad51"
+source_commit: "e0edc059023e37a29f6fe311f892b95b28396f0f"
 journal: "docs/development/journal/RP-018/A002/events.jsonl"
-last_verified_event: "RP-018-A002-0009"
+last_verified_event: "RP-018-A002-0010"
 last_completed: "RP-021"
-next_action: "Preserve failed empty-transaction approach. Add narrowly scoped append-only source-evidence metadata correction, then replace the contention repair with a Linux native nonblocking lock of the existing pinned database inode before opening SQLite; qualify real Linux behavior."
+next_action: "Implement correction helper/schema/regressions and documentation, publish exact source, append correction and record outcome before tests."
 verification: "Deterministic regression plus native Linux/SSH/full CI and all reopened RP018 checks; resume RP022 after repair qualification."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0031","RP-022-A001-0038"]
+unsettled_intents: ["RP-022-A001-0031","RP-022-A001-0038","RP-018-A002-0010"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030"]
