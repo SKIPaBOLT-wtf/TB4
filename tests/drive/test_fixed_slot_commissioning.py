@@ -50,6 +50,8 @@ class Objects:
 def setup(capacity=Capacity(1,1,1,1)):
     spec=SetupSpec("synthetic-root",DOMAIN,tid("setup"),ACTORS[0],"NATIVE_DOCS",capacity)
     document=json.loads(seed_document(spec,ENROLLMENT[ACTORS[0]],clock()))
+    assert document["records"]["global.force_request"] == dict(
+        generation=1,operation_id=None,retention="FREE",body=None)
     store=WireStore(document)
     backend=NativeDocsAuthority(store.client(),BINDING)
     leader=Leadership(backend,actor=ACTORS[0],enrollment=ENROLLMENT)
@@ -202,3 +204,4 @@ def test_changed_blueprint_or_allocation_never_silently_expands_or_replaces(bad)
     with pytest.raises((AuthorityError,AssertionError)):
         finish(c)
     assert store.document["records"]["global.commissioning"]["body"]["state"]=="PREPARING"
+

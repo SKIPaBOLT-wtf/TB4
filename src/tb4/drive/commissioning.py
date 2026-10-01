@@ -76,6 +76,7 @@ def seed_document(spec, computer_name, clock):
         body=dict(owner=spec.bootstrap_actor, computer_name=computer_name, epoch=1, phase="ACTIVE",
                   heartbeat_at=clock.utc if clock.wall_trusted else None, heartbeat_sequence=0,
                   acquisition_id=op, transition_id=op))
+    document["records"]["global.force_request"] = empty_record(1)
     document["records"][COMMISSIONING] = dict(generation=0, operation_id=spec.setup_id,
                                              retention="RETAINED", body=spec.marker("PREPARING"))
     # Descriptor capacity exists; real BALLPARK collection/publication is RP022+.
@@ -271,4 +272,5 @@ class Commissioner:
                 require(allocation.seal is not None and allocation.object_id not in identities
                         and self.port.inspect(key,allocation)==allocation,"ALLOCATION_UNVERIFIED")
                 identities.add(allocation.object_id)
+
 
