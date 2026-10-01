@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-022"
 check: "RP-022.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "TEST"
 source_branch: "work/rp-022-a001"
 source_commit: "5aa29c4fe64e45aa580534135c880d35fe36bc52"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0003"
+last_verified_event: "RP-022-A001-0004"
 last_completed: "RP-021"
-next_action: "Publish and verify a foundation-only validation INTENT; run actual Windows native and portable transaction/key regressions, inspect failures, then implement the dependent first-run model/UI in a new bounded source unit."
+next_action: "Inspect exact local foundation test outcome and publish evidence/defects; repair within a separate recorded source unit when needed, otherwise continue first-run model/UI source."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-022-A001-0004"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
