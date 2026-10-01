@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-018"
 check: "RP-018.C1"
 attempt: "A002"
-phase: "SOURCE"
+phase: "TEST"
 source_branch: "work/rp-022-a001"
 source_commit: "d55998cb068bff97fae33170b78650d63ce4f074"
 journal: "docs/development/journal/RP-018/A002/events.jsonl"
-last_verified_event: "RP-018-A002-0017"
+last_verified_event: "RP-018-A002-0018"
 last_completed: "RP-021"
-next_action: "Run development tests and main-base ledger/history/scanner before native lock repair."
+next_action: "Record pass/fail then continue scoped Linux inode-lock repair."
 verification: "Deterministic regression plus native Linux/SSH/full CI and all reopened RP018 checks; resume RP022 after repair qualification."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-018-A002-0018"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030","DEF-031"]
