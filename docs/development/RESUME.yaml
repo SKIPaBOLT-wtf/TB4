@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-020"
 check: "RP-020.C4"
 attempt: "A001"
-phase: "CHECKS_REVIEWED"
+phase: "FINAL_REVIEW"
 source_branch: "work/rp-020-a001"
 source_commit: "46632bdf2648feacb3b17641e9b09811ad37ca1c"
 journal: "docs/development/journal/RP-020/A001/events.jsonl"
-last_verified_event: "RP-020-A001-0035"
+last_verified_event: "RP-020-A001-0036"
 last_completed: "RP-019"
-next_action: "Validate final acceptance candidate and unchanged tested source; then publish exact-head merge INTENT."
+next_action: "Run final receipt/source gates, inspect matching Progress-only run, then record outcome before exact-head merge intent."
 verification: "Require native Windows token/DACL/file-sharing tests plus portable failure/race/canary coverage, required platform CI, complete regression and packaged install/uninstall checks. Validate ledger, public scanner and base-to-head diff before merge."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-020-A001-0036"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-025","DEF-026"]
