@@ -7,14 +7,14 @@ phase: "TEST"
 source_branch: "work/rp-022-a001"
 source_commit: "a3309d8606c22126481f18ae200481f823be2003"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0021"
+last_verified_event: "RP-022-A001-0022"
 last_completed: "RP-021"
-next_action: "Record exact integration results and any defects; continue local setup UI/entrypoint work only after passing integration outcome."
+next_action: "Implement the local first-run UI/controller and entrypoint integration under a new source INTENT, using trusted selected storage/credential adapters and preserving unreleased activation gates."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0021"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
