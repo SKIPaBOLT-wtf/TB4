@@ -3,7 +3,7 @@ revision: R2
 status_authority: docs/implementation-plan/revisions/R2/manifest.yaml
 baseline_commit: 3d3e6e0dc0eee51e694e83b37547c047cea8e355
 authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
-current_step: RP-025
+current_step: RP-021
 execution_started: true
 statuses:
 - PLANNED
@@ -12,67 +12,1979 @@ statuses:
 - VERIFIED
 - SUPERSEDED
 steps:
-  RP-001: {"title":"Enforced development-ledger contract","status":"VERIFIED","definition":"steps/RP-001.md","depends_on":[],"requirements":["R19","R20","R21"],"completed_checks":["RP-001.C1","RP-001.C2","RP-001.C3","RP-001.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C4.json"],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-010/A-001-started-reference-correction.md"],"active_attempt":"A001","check_evidence":{"RP-001.C1":["docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C1.json"],"RP-001.C2":["docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C2.json"],"RP-001.C3":["docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C3.json"],"RP-001.C4":["docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C4.json"]},"revalidation_required":[]}
-  RP-002: {"title":"Checkpoint publication and cold-resume helper","status":"VERIFIED","definition":"steps/RP-002.md","depends_on":["RP-001"],"requirements":["R19","R21"],"completed_checks":["RP-002.C1","RP-002.C2","RP-002.C3","RP-002.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C4.json"],"amendments":[],"active_attempt":"A001","check_evidence":{"RP-002.C1":["docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C1.json"],"RP-002.C2":["docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C2.json"],"RP-002.C3":["docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C3.json"],"RP-002.C4":["docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C4.json"]},"revalidation_required":[]}
-  RP-003: {"title":"Defect provenance and re-openable verification","status":"VERIFIED","definition":"steps/RP-003.md","depends_on":["RP-001","RP-002"],"requirements":["R19","R20"],"completed_checks":["RP-003.C1","RP-003.C2","RP-003.C3","RP-003.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C4.json"],"amendments":[],"active_attempt":"A001","check_evidence":{"RP-003.C1":["docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C1.json"],"RP-003.C2":["docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C2.json"],"RP-003.C3":["docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C3.json"],"RP-003.C4":["docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C4.json"]},"revalidation_required":[]}
-  RP-004: {"title":"Privacy classification and safe evidence policy","status":"VERIFIED","definition":"steps/RP-004.md","depends_on":["RP-001"],"requirements":["R12","R14","R19","R21"],"completed_checks":["RP-004.C1","RP-004.C2","RP-004.C3","RP-004.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C4.json"],"amendments":[],"active_attempt":"A001","check_evidence":{"RP-004.C1":["docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C1.json"],"RP-004.C2":["docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C2.json"],"RP-004.C3":["docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C3.json"],"RP-004.C4":["docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C4.json"]},"revalidation_required":[]}
-  RP-005: {"title":"Topology-neutral BALLPARK and capability schema","status":"VERIFIED","definition":"steps/RP-005.md","depends_on":["RP-004"],"requirements":["R05","R13","R15","R18"],"completed_checks":["RP-005.C1","RP-005.C2","RP-005.C3","RP-005.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C4.json"],"amendments":[],"active_attempt":"A001","check_evidence":{"RP-005.C1":["docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C1.json"],"RP-005.C2":["docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C2.json"],"RP-005.C3":["docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C3.json"],"RP-005.C4":["docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C4.json"]},"revalidation_required":[]}
-  RP-006: {"title":"Credential-reference resolver contract","status":"VERIFIED","definition":"steps/RP-006.md","depends_on":["RP-004","RP-005"],"requirements":["R12","R14","R18"],"completed_checks":["RP-006.C1","RP-006.C2","RP-006.C3","RP-006.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C4.json"],"amendments":[],"active_attempt":"A001","check_evidence":{"RP-006.C1":["docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C1.json"],"RP-006.C2":["docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C2.json"],"RP-006.C3":["docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C3.json"],"RP-006.C4":["docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C4.json"]},"revalidation_required":[]}
-  RP-007: {"title":"Repository instruction-version and trust contract","status":"VERIFIED","definition":"steps/RP-007.md","depends_on":["RP-004","RP-005"],"requirements":["R17","R22"],"completed_checks":["RP-007.C1","RP-007.C2","RP-007.C3","RP-007.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C4.json"],"amendments":[],"active_attempt":"A001","check_evidence":{"RP-007.C1":["docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C1.json"],"RP-007.C2":["docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C2.json"],"RP-007.C3":["docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C3.json"],"RP-007.C4":["docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C4.json"]},"revalidation_required":[]}
-  RP-008: {"title":"Storage exclusion and failover feasibility gate","status":"VERIFIED","definition":"steps/RP-008.md","depends_on":["RP-004","RP-005"],"requirements":["R07","R08","R10","R18"],"completed_checks":["RP-008.C1","RP-008.C2","RP-008.C3","RP-008.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C4.json"],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":"A003","check_evidence":{"RP-008.C1":["docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C1.json"],"RP-008.C2":["docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C2.json"],"RP-008.C3":["docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C3.json"],"RP-008.C4":["docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C4.json"]},"revalidation_required":[]}
-  RP-009: {"title":"Fixed exchange layout and capacity contract","status":"VERIFIED","definition":"steps/RP-009.md","depends_on":["RP-005","RP-008"],"requirements":["R02","R08","R09","R13"],"completed_checks":["RP-009.C1","RP-009.C2","RP-009.C3","RP-009.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C4.json"],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":"A001","check_evidence":{"RP-009.C1":["docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C1.json"],"RP-009.C2":["docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C2.json"],"RP-009.C3":["docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C3.json"],"RP-009.C4":["docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C4.json"]},"revalidation_required":[]}
-  RP-010: {"title":"Command status and ownership protocol contract","status":"VERIFIED","definition":"steps/RP-010.md","depends_on":["RP-007","RP-008","RP-009"],"requirements":["R01","R02","R03","R09","R10"],"completed_checks":["RP-010.C1","RP-010.C2","RP-010.C3","RP-010.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C4.json"],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md","docs/implementation-plan/revisions/R2/amendments/RP-010/A-001-started-reference-correction.md"],"active_attempt":"A001","check_evidence":{"RP-010.C1":["docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C1.json"],"RP-010.C2":["docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C2.json"],"RP-010.C3":["docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C3.json"],"RP-010.C4":["docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C4.json"]},"revalidation_required":[]}
-  RP-011: {"title":"Timing semantics and relationship validation","status":"VERIFIED","definition":"steps/RP-011.md","depends_on":["RP-005","RP-010"],"requirements":["R04","R05","R06","R10"],"completed_checks":["RP-011.C1","RP-011.C2","RP-011.C3","RP-011.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C4.json"],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":"A001","check_evidence":{"RP-011.C1":["docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C1.json"],"RP-011.C2":["docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C2.json"],"RP-011.C3":["docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C3.json"],"RP-011.C4":["docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C4.json"]},"revalidation_required":[]}
-  RP-012: {"title":"Security and failure semantics decision gate","status":"VERIFIED","definition":"steps/RP-012.md","depends_on":["RP-004","RP-006","RP-010","RP-011"],"requirements":["R10","R12","R18","R21"],"completed_checks":["RP-012.C1","RP-012.C2","RP-012.C3","RP-012.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C4.json"],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md","docs/implementation-plan/revisions/R2/amendments/RP-012/A-001-mandatory-security-qualification.md"],"active_attempt":"A001","check_evidence":{"RP-012.C1":["docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C1.json"],"RP-012.C2":["docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C2.json"],"RP-012.C3":["docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C3.json"],"RP-012.C4":["docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C4.json"]},"revalidation_required":[]}
-  RP-013: {"title":"Reproduce ordinary result-publication conflict","status":"VERIFIED","definition":"steps/RP-013.md","depends_on":["RP-001","RP-003","RP-004"],"requirements":["R11","R20"],"completed_checks":["RP-013.C1","RP-013.C2","RP-013.C3","RP-013.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C4.json"],"amendments":[],"active_attempt":"A001","check_evidence":{"RP-013.C1":["docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C1.json"],"RP-013.C2":["docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C2.json"],"RP-013.C3":["docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C3.json"],"RP-013.C4":["docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C4.json"]},"revalidation_required":[]}
-  RP-014: {"title":"Reproduce cancellation versus natural-exit race","status":"VERIFIED","definition":"steps/RP-014.md","depends_on":["RP-001","RP-003","RP-004"],"requirements":["R10","R20"],"completed_checks":["RP-014.C1","RP-014.C2","RP-014.C3","RP-014.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C4.json"],"amendments":[],"active_attempt":"A001","check_evidence":{"RP-014.C1":["docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C1.json"],"RP-014.C2":["docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C2.json"],"RP-014.C3":["docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C3.json"],"RP-014.C4":["docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C4.json"]},"revalidation_required":[]}
-  RP-015: {"title":"Race-safe exact-object mutation and verification","status":"VERIFIED","definition":"steps/RP-015.md","depends_on":["RP-008","RP-010","RP-012","RP-013"],"requirements":["R07","R08","R10","R11"],"completed_checks":["RP-015.C1","RP-015.C2","RP-015.C3","RP-015.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C4.json"],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":"A001","check_evidence":{"RP-015.C1":["docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C1.json"],"RP-015.C2":["docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C2.json"],"RP-015.C3":["docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C3.json"],"RP-015.C4":["docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C4.json"]},"revalidation_required":[]}
-  RP-016: {"title":"Shared leadership lease and fencing primitive","status":"VERIFIED","definition":"steps/RP-016.md","depends_on":["RP-008","RP-010","RP-012","RP-015"],"requirements":["R07","R10","R18"],"completed_checks":["RP-016.C1","RP-016.C2","RP-016.C3","RP-016.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C4.json"],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":"A002","check_evidence":{"RP-016.C1":["docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C1.json"],"RP-016.C2":["docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C2.json"],"RP-016.C3":["docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C3.json"],"RP-016.C4":["docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C4.json"]},"revalidation_required":[],"acceptance_history":[{"attempt":"A001","completed_checks":["RP-016.C1","RP-016.C2","RP-016.C3","RP-016.C4"],"check_evidence":{"RP-016.C1":["docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C1.json"],"RP-016.C2":["docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C2.json"],"RP-016.C3":["docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C3.json"],"RP-016.C4":["docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C4.json"]},"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C4.json"],"defect":"DEF-017"}]}
-  RP-017: {"title":"WATCHDOG incumbent-first startup and standby","status":"VERIFIED","definition":"steps/RP-017.md","depends_on":["RP-011","RP-016"],"requirements":["R01","R07","R18"],"completed_checks":["RP-017.C1","RP-017.C2","RP-017.C3","RP-017.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C4.json"],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":"A001","check_evidence":{"RP-017.C1":["docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C1.json"],"RP-017.C2":["docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C2.json"],"RP-017.C3":["docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C3.json"],"RP-017.C4":["docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C4.json"]},"revalidation_required":[]}
-  RP-018: {"title":"Shared-folder transport conformance adapter","status":"VERIFIED","definition":"steps/RP-018.md","depends_on":["RP-008","RP-009","RP-010","RP-012","RP-015"],"requirements":["R08","R13","R18"],"completed_checks":["RP-018.C1","RP-018.C2","RP-018.C3","RP-018.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C4.json"],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md","docs/implementation-plan/revisions/R2/amendments/RP-018/A-002-source-evidence-receipt.md"],"active_attempt":"A002","check_evidence":{"RP-018.C1":["docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C1.json"],"RP-018.C2":["docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C2.json"],"RP-018.C3":["docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C3.json"],"RP-018.C4":["docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C4.json"]},"revalidation_required":[],"acceptance_history":[{"attempt":"A001","completed_checks":["RP-018.C1","RP-018.C2","RP-018.C3","RP-018.C4"],"check_evidence":{"RP-018.C1":["docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C1.json"],"RP-018.C2":["docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C2.json"],"RP-018.C3":["docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C3.json"],"RP-018.C4":["docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C4.json"]},"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C4.json"],"defect":"DEF-030"}]}
-  RP-019: {"title":"Idempotent fixed-slot commissioning","status":"VERIFIED","definition":"steps/RP-019.md","depends_on":["RP-009","RP-015","RP-016"],"requirements":["R07","R08","R13"],"completed_checks":["RP-019.C1","RP-019.C2","RP-019.C3","RP-019.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C1-format-corrected.json","docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C2-format-corrected.json","docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C3-format-corrected.json","docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C4-format-corrected.json","docs/implementation-plan/revisions/R2/evidence/RP-019/A001/receipt-format-correction.md","docs/implementation-plan/revisions/R2/evidence/RP-019/A001/format-validation.md"],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":"A001","check_evidence":{"RP-019.C1":["docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C1-format-corrected.json"],"RP-019.C2":["docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C2-format-corrected.json"],"RP-019.C3":["docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C3-format-corrected.json"],"RP-019.C4":["docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C4-format-corrected.json"]},"revalidation_required":[]}
-  RP-020: {"title":"Windows protected credential resolver","status":"VERIFIED","definition":"steps/RP-020.md","depends_on":["RP-006","RP-012"],"requirements":["R12","R14","R18"],"completed_checks":["RP-020.C1","RP-020.C2","RP-020.C3","RP-020.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C4.json"],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-020/A-001-action-case-metadata.md"],"active_attempt":"A001","check_evidence":{"RP-020.C1":["docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C1.json"],"RP-020.C2":["docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C2.json"],"RP-020.C3":["docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C3.json"],"RP-020.C4":["docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C4.json"]},"revalidation_required":[]}
-  RP-021: {"title":"Linux protected credential resolver","status":"VERIFIED","definition":"steps/RP-021.md","depends_on":["RP-006","RP-012"],"requirements":["R12","R14","R18"],"completed_checks":["RP-021.C1","RP-021.C2","RP-021.C3","RP-021.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C4.json"],"amendments":[],"active_attempt":"A001","check_evidence":{"RP-021.C1":["docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C1.json"],"RP-021.C2":["docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C2.json"],"RP-021.C3":["docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C3.json"],"RP-021.C4":["docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C4.json"]},"revalidation_required":[]}
-  RP-022: {"title":"First-run commissioning state machine","status":"VERIFIED","definition":"steps/RP-022.md","depends_on":["RP-005","RP-007","RP-011","RP-012","RP-017","RP-019","RP-020","RP-021"],"requirements":["R13","R14","R15","R18"],"completed_checks":["RP-022.C1","RP-022.C2","RP-022.C3","RP-022.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C4.json"],"amendments":[],"active_attempt":"A001","check_evidence":{"RP-022.C1":["docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C1.json"],"RP-022.C2":["docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C2.json"],"RP-022.C3":["docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C3.json"],"RP-022.C4":["docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C4.json"]},"revalidation_required":[]}
-  RP-023: {"title":"Scoped discovery and persistent catalogue identity","status":"VERIFIED","definition":"steps/RP-023.md","depends_on":["RP-005","RP-012","RP-017","RP-022"],"requirements":["R05","R13","R15","R18"],"completed_checks":["RP-023.C1","RP-023.C2","RP-023.C3","RP-023.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C4.json"],"amendments":[],"active_attempt":"A001","check_evidence":{"RP-023.C1":["docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C1.json"],"RP-023.C2":["docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C2.json"],"RP-023.C3":["docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C3.json"],"RP-023.C4":["docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C4.json"]},"revalidation_required":[]}
-  RP-024: {"title":"Private BALLPARK creation with SKILL assistance","status":"VERIFIED","definition":"steps/RP-024.md","depends_on":["RP-005","RP-007","RP-019","RP-022","RP-023"],"requirements":["R05","R12","R13","R15","R17"],"completed_checks":["RP-024.C1","RP-024.C2","RP-024.C3","RP-024.C4"],"evidence":["docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C1.json","docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C2.json","docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C3.json","docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C4.json","docs/implementation-plan/revisions/R2/evidence/RP-024/A001/reviewed-validation.md","docs/implementation-plan/revisions/R2/evidence/RP-024/A001/final-review.md","docs/implementation-plan/revisions/R2/evidence/RP-024/A001/main-acceptance.md"],"amendments":[],"active_attempt":"A001","check_evidence":{"RP-024.C1":["docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C1.json"],"RP-024.C2":["docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C2.json"],"RP-024.C3":["docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C3.json"],"RP-024.C4":["docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C4.json"]},"revalidation_required":[]}
-  RP-025: {"title":"FETCHER enrollment and effective profile publication","status":"BLOCKED","definition":"steps/RP-025.md","depends_on":["RP-005","RP-006","RP-019","RP-022","RP-024"],"requirements":["R05","R09","R13","R14","R15"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-025/A-001-unaccepted-dependent-reconciliation.md"],"active_attempt":"A001","check_evidence":{},"revalidation_required":["RP-025.C1","RP-025.C2","RP-025.C3","RP-025.C4"]}
-  RP-026: {"title":"Authorized stable-IP provisioning adapter","status":"PLANNED","definition":"steps/RP-026.md","depends_on":["RP-006","RP-012","RP-020","RP-021","RP-023","RP-024"],"requirements":["R05","R13","R14","R15","R18"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-027: {"title": "Reconfiguration of an existing deployment", "status": "PLANNED", "definition": "steps/RP-027.md", "depends_on": ["RP-011", "RP-017", "RP-022", "RP-024", "RP-025"], "requirements": ["R09", "R13", "R15", "R16"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-028: {"title":"Explicit full reset and re-enrollment","status":"PLANNED","definition":"steps/RP-028.md","depends_on":["RP-006","RP-012","RP-019","RP-025","RP-027"],"requirements":["R12","R13","R14","R16"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-029: {"title": "Ongoing BALLPARK evolution and stale-view handling", "status": "PLANNED", "definition": "steps/RP-029.md", "depends_on": ["RP-007", "RP-023", "RP-024", "RP-025", "RP-027"], "requirements": ["R05", "R13", "R15", "R17"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-030: {"title":"Interrupted commissioning and maintenance acceptance","status":"PLANNED","definition":"steps/RP-030.md","depends_on":["RP-019","RP-022","RP-024","RP-025","RP-027","RP-028","RP-029"],"requirements":["R07","R08","R13","R15","R16","R18"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-031: {"title": "AUTO-SNIFF admission validator", "status": "PLANNED", "definition": "steps/RP-031.md", "depends_on": ["RP-010", "RP-012", "RP-015", "RP-025"], "requirements": ["R02", "R03", "R09", "R10"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-032: {"title": "Common ingress reservation and durable receipts", "status": "PLANNED", "definition": "steps/RP-032.md", "depends_on": ["RP-009", "RP-010", "RP-015", "RP-016", "RP-031"], "requirements": ["R02", "R03", "R08", "R09"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-033: {"title": "Deterministic routing and target busy exclusion", "status": "PLANNED", "definition": "steps/RP-033.md", "depends_on": ["RP-025", "RP-029", "RP-031", "RP-032"], "requirements": ["R01", "R02", "R09", "R10"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-034: {"title": "Unified command and device status projection", "status": "PLANNED", "definition": "steps/RP-034.md", "depends_on": ["RP-005", "RP-010", "RP-025", "RP-029", "RP-032", "RP-033"], "requirements": ["R01", "R05", "R09", "R15"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-035: {"title": "WATCHDOG activity-aware network scheduler", "status": "PLANNED", "definition": "steps/RP-035.md", "depends_on": ["RP-011", "RP-017", "RP-023", "RP-034"], "requirements": ["R01", "R04", "R05"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-036: {"title":"Windows deterministic SSH status/start helper","status":"PLANNED","definition":"steps/RP-036.md","depends_on":["RP-006","RP-012","RP-020","RP-022","RP-025"],"requirements":["R05","R06","R14","R18"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-037: {"title":"Linux deterministic SSH status/start helper","status":"PLANNED","definition":"steps/RP-037.md","depends_on":["RP-006","RP-012","RP-021","RP-022","RP-025"],"requirements":["R05","R06","R14","R18"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-038: {"title":"Nonblocking readiness and wake coordination","status":"PLANNED","definition":"steps/RP-038.md","depends_on":["RP-011","RP-017","RP-025","RP-033","RP-034","RP-036","RP-037"],"requirements":["R01","R05","R06","R10","R18"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-039: {"title": "Delivery expiry and late-claim reconciliation", "status": "PLANNED", "definition": "steps/RP-039.md", "depends_on": ["RP-010", "RP-011", "RP-015", "RP-016", "RP-033", "RP-038"], "requirements": ["R09", "R10", "R11"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-040: {"title": "Result-consumption acknowledgement and recycling", "status": "PLANNED", "definition": "steps/RP-040.md", "depends_on": ["RP-009", "RP-010", "RP-015", "RP-032", "RP-033", "RP-039"], "requirements": ["R02", "R08", "R09", "R10"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-041: {"title": "FETCHER fast and slow polling lifecycle", "status": "PLANNED", "definition": "steps/RP-041.md", "depends_on": ["RP-011", "RP-025", "RP-034", "RP-040"], "requirements": ["R04", "R05", "R09"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-042: {"title": "FETCHER exit mode and wake launch integration", "status": "PLANNED", "definition": "steps/RP-042.md", "depends_on": ["RP-011", "RP-025", "RP-036", "RP-037", "RP-038", "RP-041"], "requirements": ["R04", "R05", "R06", "R18"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-043: {"title":"FETCHER claim and durable execution identity","status":"PLANNED","definition":"steps/RP-043.md","depends_on":["RP-010","RP-012","RP-015","RP-025","RP-033","RP-039","RP-041"],"requirements":["R01","R09","R10","R11"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-044: {"title":"Windows RUNNER supervision and termination","status":"PLANNED","definition":"steps/RP-044.md","depends_on":["RP-012","RP-014","RP-043"],"requirements":["R01","R10","R18","R20"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-045: {"title": "Linux RUNNER supervision and termination", "status": "PLANNED", "definition": "steps/RP-045.md", "depends_on": ["RP-012", "RP-014", "RP-043"], "requirements": ["R01", "R10", "R18", "R20"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-046: {"title": "Cancellation transport and execution reconciliation", "status": "PLANNED", "definition": "steps/RP-046.md", "depends_on": ["RP-010", "RP-012", "RP-014", "RP-032", "RP-038", "RP-043", "RP-044", "RP-045"], "requirements": ["R02", "R09", "R10", "R20"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-047: {"title":"Durable result outbox and restart recovery","status":"PLANNED","definition":"steps/RP-047.md","depends_on":["RP-012","RP-015","RP-043","RP-044","RP-045","RP-046"],"requirements":["R09","R10","R11"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-048: {"title":"Reliable ordinary terminal publication","status":"PLANNED","definition":"steps/RP-048.md","depends_on":["RP-010","RP-015","RP-034","RP-040","RP-047"],"requirements":["R09","R10","R11","R20"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-049: {"title":"Reusable script and output artifact slots","status":"PLANNED","definition":"steps/RP-049.md","depends_on":["RP-009","RP-012","RP-019","RP-043","RP-047","RP-048"],"requirements":["R08","R09","R11","R12"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-050: {"title":"Bounded history retention and quarantine","status":"PLANNED","definition":"steps/RP-050.md","depends_on":["RP-009","RP-012","RP-019","RP-040","RP-047","RP-049"],"requirements":["R08","R09","R10","R12"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-051: {"title":"Repository-owned operational SKILL and helper interface","status":"PLANNED","definition":"steps/RP-051.md","depends_on":["RP-007","RP-024","RP-029","RP-032","RP-034","RP-038","RP-040","RP-046","RP-048","RP-049"],"requirements":["R01","R02","R15","R17"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-052: {"title":"Pointer-only installed SKILL package","status":"PLANNED","definition":"steps/RP-052.md","depends_on":["RP-007","RP-051"],"requirements":["R12","R13","R17","R18"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-053: {"title":"WATCHDOG GUI catalogue leadership and configuration","status":"PLANNED","definition":"steps/RP-053.md","depends_on":["RP-017","RP-022","RP-024","RP-027","RP-028","RP-029","RP-034","RP-035","RP-038"],"requirements":["R01","R05","R07","R13","R16","R18"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-054: {"title": "FETCHER GUI execution and idle-policy monitoring", "status": "PLANNED", "definition": "steps/RP-054.md", "depends_on": ["RP-022", "RP-025", "RP-027", "RP-028", "RP-034", "RP-041", "RP-042", "RP-043", "RP-046", "RP-047", "RP-048"], "requirements": ["R01", "R04", "R09", "R11", "R13", "R16", "R18"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-055: {"title": "Independent Windows installers and upgrade checks", "status": "PLANNED", "definition": "steps/RP-055.md", "depends_on": ["RP-020", "RP-022", "RP-030", "RP-036", "RP-042", "RP-049", "RP-050", "RP-053", "RP-054"], "requirements": ["R13", "R16", "R18", "R22"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-056: {"title": "Independent Linux installers and upgrade checks", "status": "PLANNED", "definition": "steps/RP-056.md", "depends_on": ["RP-021", "RP-022", "RP-030", "RP-037", "RP-042", "RP-049", "RP-050", "RP-053", "RP-054"], "requirements": ["R13", "R16", "R18", "R22"], "completed_checks": [], "evidence": [], "amendments": [], "active_attempt": null, "check_evidence": {}, "revalidation_required": []}
-  RP-057: {"title":"Legacy pilot-state migration and failure preservation","status":"PLANNED","definition":"steps/RP-057.md","depends_on":["RP-010","RP-015","RP-019","RP-027","RP-028","RP-040","RP-047","RP-048","RP-050","RP-055","RP-056"],"requirements":["R08","R09","R10","R11","R16","R22"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-058: {"title":"Integrated interruption concurrency and rate suite","status":"PLANNED","definition":"steps/RP-058.md","depends_on":["RP-015","RP-017","RP-018","RP-019","RP-030","RP-033","RP-035","RP-038","RP-039","RP-040","RP-042","RP-043","RP-046","RP-048","RP-049","RP-050"],"requirements":["R02","R04","R07","R08","R09","R10","R11","R19","R20"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-059: {"title":"End-to-end privacy and supply-chain acceptance","status":"PLANNED","definition":"steps/RP-059.md","depends_on":["RP-004","RP-006","RP-012","RP-020","RP-021","RP-024","RP-026","RP-027","RP-028","RP-049","RP-050","RP-051","RP-052","RP-055","RP-056"],"requirements":["R12","R13","R14","R17","R21","R22"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-012/A-001-mandatory-security-qualification.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-060: {"title":"Portability and topology compatibility acceptance","status":"PLANNED","definition":"steps/RP-060.md","depends_on":["RP-018","RP-023","RP-024","RP-025","RP-026","RP-029","RP-030","RP-035","RP-036","RP-037","RP-038","RP-041","RP-042","RP-055","RP-056","RP-058","RP-059"],"requirements":["R05","R06","R07","R13","R15","R16","R18"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md","docs/implementation-plan/revisions/R2/amendments/RP-012/A-001-mandatory-security-qualification.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-061: {"title":"Coordinated release and repository instruction publication","status":"PLANNED","definition":"steps/RP-061.md","depends_on":["RP-007","RP-051","RP-052","RP-055","RP-056","RP-057","RP-058","RP-059","RP-060"],"requirements":["R17","R18","R22"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md","docs/implementation-plan/revisions/R2/amendments/RP-012/A-001-mandatory-security-qualification.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-062: {"title":"Authorized same-host real-provider pilot","status":"PLANNED","definition":"steps/RP-062.md","depends_on":["RP-030","RP-055","RP-056","RP-057","RP-058","RP-059","RP-060","RP-061"],"requirements":["R01","R02","R04","R08","R09","R10","R11","R13","R15","R16","R17","R22"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-063: {"title":"Independent-machine fallback and lifecycle pilot","status":"PLANNED","definition":"steps/RP-063.md","depends_on":["RP-017","RP-018","RP-026","RP-028","RP-057","RP-058","RP-059","RP-060","RP-061","RP-062"],"requirements":["R05","R06","R07","R13","R14","R15","R16","R18","R22"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
-  RP-064: {"title":"Final traceable acceptance and operational handoff","status":"PLANNED","definition":"steps/RP-064.md","depends_on":["RP-001","RP-002","RP-003","RP-058","RP-059","RP-060","RP-061","RP-062","RP-063"],"requirements":["R01","R02","R03","R04","R05","R06","R07","R08","R09","R10","R11","R12","R13","R14","R15","R16","R17","R18","R19","R20","R21","R22"],"completed_checks":[],"evidence":[],"amendments":["docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md","docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md","docs/implementation-plan/revisions/R2/amendments/RP-012/A-001-mandatory-security-qualification.md"],"active_attempt":null,"check_evidence":{},"revalidation_required":[]}
+  RP-001:
+    title: Enforced development-ledger contract
+    status: VERIFIED
+    definition: steps/RP-001.md
+    depends_on: []
+    requirements:
+    - R19
+    - R20
+    - R21
+    completed_checks:
+    - RP-001.C1
+    - RP-001.C2
+    - RP-001.C3
+    - RP-001.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C4.json
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-010/A-001-started-reference-correction.md
+    active_attempt: A001
+    check_evidence:
+      RP-001.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C1.json
+      RP-001.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C2.json
+      RP-001.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C3.json
+      RP-001.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-001/A001/C4.json
+    revalidation_required: []
+  RP-002:
+    title: Checkpoint publication and cold-resume helper
+    status: VERIFIED
+    definition: steps/RP-002.md
+    depends_on:
+    - RP-001
+    requirements:
+    - R19
+    - R21
+    completed_checks:
+    - RP-002.C1
+    - RP-002.C2
+    - RP-002.C3
+    - RP-002.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C4.json
+    amendments: []
+    active_attempt: A001
+    check_evidence:
+      RP-002.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C1.json
+      RP-002.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C2.json
+      RP-002.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C3.json
+      RP-002.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-002/A001/C4.json
+    revalidation_required: []
+  RP-003:
+    title: Defect provenance and re-openable verification
+    status: VERIFIED
+    definition: steps/RP-003.md
+    depends_on:
+    - RP-001
+    - RP-002
+    requirements:
+    - R19
+    - R20
+    completed_checks:
+    - RP-003.C1
+    - RP-003.C2
+    - RP-003.C3
+    - RP-003.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C4.json
+    amendments: []
+    active_attempt: A001
+    check_evidence:
+      RP-003.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C1.json
+      RP-003.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C2.json
+      RP-003.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C3.json
+      RP-003.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-003/A001/C4.json
+    revalidation_required: []
+  RP-004:
+    title: Privacy classification and safe evidence policy
+    status: VERIFIED
+    definition: steps/RP-004.md
+    depends_on:
+    - RP-001
+    requirements:
+    - R12
+    - R14
+    - R19
+    - R21
+    completed_checks:
+    - RP-004.C1
+    - RP-004.C2
+    - RP-004.C3
+    - RP-004.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C4.json
+    amendments: []
+    active_attempt: A001
+    check_evidence:
+      RP-004.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C1.json
+      RP-004.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C2.json
+      RP-004.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C3.json
+      RP-004.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-004/A001/C4.json
+    revalidation_required: []
+  RP-005:
+    title: Topology-neutral BALLPARK and capability schema
+    status: VERIFIED
+    definition: steps/RP-005.md
+    depends_on:
+    - RP-004
+    requirements:
+    - R05
+    - R13
+    - R15
+    - R18
+    completed_checks:
+    - RP-005.C1
+    - RP-005.C2
+    - RP-005.C3
+    - RP-005.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C4.json
+    amendments: []
+    active_attempt: A001
+    check_evidence:
+      RP-005.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C1.json
+      RP-005.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C2.json
+      RP-005.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C3.json
+      RP-005.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-005/A001/C4.json
+    revalidation_required: []
+  RP-006:
+    title: Credential-reference resolver contract
+    status: VERIFIED
+    definition: steps/RP-006.md
+    depends_on:
+    - RP-004
+    - RP-005
+    requirements:
+    - R12
+    - R14
+    - R18
+    completed_checks:
+    - RP-006.C1
+    - RP-006.C2
+    - RP-006.C3
+    - RP-006.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C4.json
+    amendments: []
+    active_attempt: A001
+    check_evidence:
+      RP-006.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C1.json
+      RP-006.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C2.json
+      RP-006.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C3.json
+      RP-006.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-006/A001/C4.json
+    revalidation_required: []
+  RP-007:
+    title: Repository instruction-version and trust contract
+    status: VERIFIED
+    definition: steps/RP-007.md
+    depends_on:
+    - RP-004
+    - RP-005
+    requirements:
+    - R17
+    - R22
+    completed_checks:
+    - RP-007.C1
+    - RP-007.C2
+    - RP-007.C3
+    - RP-007.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C4.json
+    amendments: []
+    active_attempt: A001
+    check_evidence:
+      RP-007.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C1.json
+      RP-007.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C2.json
+      RP-007.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C3.json
+      RP-007.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-007/A001/C4.json
+    revalidation_required: []
+  RP-008:
+    title: Storage exclusion and failover feasibility gate
+    status: VERIFIED
+    definition: steps/RP-008.md
+    depends_on:
+    - RP-004
+    - RP-005
+    requirements:
+    - R07
+    - R08
+    - R10
+    - R18
+    completed_checks:
+    - RP-008.C1
+    - RP-008.C2
+    - RP-008.C3
+    - RP-008.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C4.json
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: A003
+    check_evidence:
+      RP-008.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C1.json
+      RP-008.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C2.json
+      RP-008.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C3.json
+      RP-008.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-008/A003/C4.json
+    revalidation_required: []
+  RP-009:
+    title: Fixed exchange layout and capacity contract
+    status: VERIFIED
+    definition: steps/RP-009.md
+    depends_on:
+    - RP-005
+    - RP-008
+    requirements:
+    - R02
+    - R08
+    - R09
+    - R13
+    completed_checks:
+    - RP-009.C1
+    - RP-009.C2
+    - RP-009.C3
+    - RP-009.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C4.json
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: A001
+    check_evidence:
+      RP-009.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C1.json
+      RP-009.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C2.json
+      RP-009.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C3.json
+      RP-009.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-009/A001/C4.json
+    revalidation_required: []
+  RP-010:
+    title: Command status and ownership protocol contract
+    status: VERIFIED
+    definition: steps/RP-010.md
+    depends_on:
+    - RP-007
+    - RP-008
+    - RP-009
+    requirements:
+    - R01
+    - R02
+    - R03
+    - R09
+    - R10
+    completed_checks:
+    - RP-010.C1
+    - RP-010.C2
+    - RP-010.C3
+    - RP-010.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C4.json
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-010/A-001-started-reference-correction.md
+    active_attempt: A001
+    check_evidence:
+      RP-010.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C1.json
+      RP-010.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C2.json
+      RP-010.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C3.json
+      RP-010.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-010/A001/C4.json
+    revalidation_required: []
+  RP-011:
+    title: Timing semantics and relationship validation
+    status: VERIFIED
+    definition: steps/RP-011.md
+    depends_on:
+    - RP-005
+    - RP-010
+    requirements:
+    - R04
+    - R05
+    - R06
+    - R10
+    completed_checks:
+    - RP-011.C1
+    - RP-011.C2
+    - RP-011.C3
+    - RP-011.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C4.json
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: A001
+    check_evidence:
+      RP-011.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C1.json
+      RP-011.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C2.json
+      RP-011.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C3.json
+      RP-011.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-011/A001/C4.json
+    revalidation_required: []
+  RP-012:
+    title: Security and failure semantics decision gate
+    status: VERIFIED
+    definition: steps/RP-012.md
+    depends_on:
+    - RP-004
+    - RP-006
+    - RP-010
+    - RP-011
+    requirements:
+    - R10
+    - R12
+    - R18
+    - R21
+    completed_checks:
+    - RP-012.C1
+    - RP-012.C2
+    - RP-012.C3
+    - RP-012.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C4.json
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-012/A-001-mandatory-security-qualification.md
+    active_attempt: A001
+    check_evidence:
+      RP-012.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C1.json
+      RP-012.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C2.json
+      RP-012.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C3.json
+      RP-012.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-012/A001/C4.json
+    revalidation_required: []
+  RP-013:
+    title: Reproduce ordinary result-publication conflict
+    status: VERIFIED
+    definition: steps/RP-013.md
+    depends_on:
+    - RP-001
+    - RP-003
+    - RP-004
+    requirements:
+    - R11
+    - R20
+    completed_checks:
+    - RP-013.C1
+    - RP-013.C2
+    - RP-013.C3
+    - RP-013.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C4.json
+    amendments: []
+    active_attempt: A001
+    check_evidence:
+      RP-013.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C1.json
+      RP-013.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C2.json
+      RP-013.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C3.json
+      RP-013.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-013/A001/C4.json
+    revalidation_required: []
+  RP-014:
+    title: Reproduce cancellation versus natural-exit race
+    status: VERIFIED
+    definition: steps/RP-014.md
+    depends_on:
+    - RP-001
+    - RP-003
+    - RP-004
+    requirements:
+    - R10
+    - R20
+    completed_checks:
+    - RP-014.C1
+    - RP-014.C2
+    - RP-014.C3
+    - RP-014.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C4.json
+    amendments: []
+    active_attempt: A001
+    check_evidence:
+      RP-014.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C1.json
+      RP-014.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C2.json
+      RP-014.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C3.json
+      RP-014.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-014/A001/C4.json
+    revalidation_required: []
+  RP-015:
+    title: Race-safe exact-object mutation and verification
+    status: VERIFIED
+    definition: steps/RP-015.md
+    depends_on:
+    - RP-008
+    - RP-010
+    - RP-012
+    - RP-013
+    requirements:
+    - R07
+    - R08
+    - R10
+    - R11
+    completed_checks:
+    - RP-015.C1
+    - RP-015.C2
+    - RP-015.C3
+    - RP-015.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C4.json
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: A001
+    check_evidence:
+      RP-015.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C1.json
+      RP-015.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C2.json
+      RP-015.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C3.json
+      RP-015.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-015/A001/C4.json
+    revalidation_required: []
+  RP-016:
+    title: Shared leadership lease and fencing primitive
+    status: VERIFIED
+    definition: steps/RP-016.md
+    depends_on:
+    - RP-008
+    - RP-010
+    - RP-012
+    - RP-015
+    requirements:
+    - R07
+    - R10
+    - R18
+    completed_checks:
+    - RP-016.C1
+    - RP-016.C2
+    - RP-016.C3
+    - RP-016.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C4.json
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: A002
+    check_evidence:
+      RP-016.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C1.json
+      RP-016.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C2.json
+      RP-016.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C3.json
+      RP-016.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-016/A002/C4.json
+    revalidation_required: []
+    acceptance_history:
+    - attempt: A001
+      completed_checks:
+      - RP-016.C1
+      - RP-016.C2
+      - RP-016.C3
+      - RP-016.C4
+      check_evidence:
+        RP-016.C1:
+        - docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C1.json
+        RP-016.C2:
+        - docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C2.json
+        RP-016.C3:
+        - docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C3.json
+        RP-016.C4:
+        - docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C4.json
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C1.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C2.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C3.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-016/A001/C4.json
+      defect: DEF-017
+  RP-017:
+    title: WATCHDOG incumbent-first startup and standby
+    status: VERIFIED
+    definition: steps/RP-017.md
+    depends_on:
+    - RP-011
+    - RP-016
+    requirements:
+    - R01
+    - R07
+    - R18
+    completed_checks:
+    - RP-017.C1
+    - RP-017.C2
+    - RP-017.C3
+    - RP-017.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C4.json
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: A001
+    check_evidence:
+      RP-017.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C1.json
+      RP-017.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C2.json
+      RP-017.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C3.json
+      RP-017.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-017/A001/C4.json
+    revalidation_required: []
+  RP-018:
+    title: Shared-folder transport conformance adapter
+    status: VERIFIED
+    definition: steps/RP-018.md
+    depends_on:
+    - RP-008
+    - RP-009
+    - RP-010
+    - RP-012
+    - RP-015
+    requirements:
+    - R08
+    - R13
+    - R18
+    completed_checks:
+    - RP-018.C1
+    - RP-018.C2
+    - RP-018.C3
+    - RP-018.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C4.json
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-018/A-002-source-evidence-receipt.md
+    active_attempt: A002
+    check_evidence:
+      RP-018.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C1.json
+      RP-018.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C2.json
+      RP-018.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C3.json
+      RP-018.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-018/A002/C4.json
+    revalidation_required: []
+    acceptance_history:
+    - attempt: A001
+      completed_checks:
+      - RP-018.C1
+      - RP-018.C2
+      - RP-018.C3
+      - RP-018.C4
+      check_evidence:
+        RP-018.C1:
+        - docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C1.json
+        RP-018.C2:
+        - docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C2.json
+        RP-018.C3:
+        - docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C3.json
+        RP-018.C4:
+        - docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C4.json
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C1.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C2.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C3.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-018/A001/C4.json
+      defect: DEF-030
+  RP-019:
+    title: Idempotent fixed-slot commissioning
+    status: VERIFIED
+    definition: steps/RP-019.md
+    depends_on:
+    - RP-009
+    - RP-015
+    - RP-016
+    requirements:
+    - R07
+    - R08
+    - R13
+    completed_checks:
+    - RP-019.C1
+    - RP-019.C2
+    - RP-019.C3
+    - RP-019.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C1-format-corrected.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C2-format-corrected.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C3-format-corrected.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C4-format-corrected.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-019/A001/receipt-format-correction.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-019/A001/format-validation.md
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: A001
+    check_evidence:
+      RP-019.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C1-format-corrected.json
+      RP-019.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C2-format-corrected.json
+      RP-019.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C3-format-corrected.json
+      RP-019.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-019/A001/C4-format-corrected.json
+    revalidation_required: []
+  RP-020:
+    title: Windows protected credential resolver
+    status: VERIFIED
+    definition: steps/RP-020.md
+    depends_on:
+    - RP-006
+    - RP-012
+    requirements:
+    - R12
+    - R14
+    - R18
+    completed_checks:
+    - RP-020.C1
+    - RP-020.C2
+    - RP-020.C3
+    - RP-020.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C4.json
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-020/A-001-action-case-metadata.md
+    active_attempt: A001
+    check_evidence:
+      RP-020.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C1.json
+      RP-020.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C2.json
+      RP-020.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C3.json
+      RP-020.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-020/A001/C4.json
+    revalidation_required: []
+  RP-021:
+    title: Linux protected credential resolver
+    status: IN_PROGRESS
+    definition: steps/RP-021.md
+    depends_on:
+    - RP-006
+    - RP-012
+    requirements:
+    - R12
+    - R14
+    - R18
+    completed_checks: []
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C4.json
+    amendments: []
+    active_attempt: A002
+    check_evidence: {}
+    revalidation_required:
+    - RP-021.C1
+    - RP-021.C2
+    - RP-021.C3
+    - RP-021.C4
+    acceptance_history:
+    - attempt: A001
+      completed_checks:
+      - RP-021.C1
+      - RP-021.C2
+      - RP-021.C3
+      - RP-021.C4
+      check_evidence:
+        RP-021.C1:
+        - docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C1.json
+        RP-021.C2:
+        - docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C2.json
+        RP-021.C3:
+        - docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C3.json
+        RP-021.C4:
+        - docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C4.json
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C1.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C2.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C3.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-021/A001/C4.json
+      defect: DEF-046
+  RP-022:
+    title: First-run commissioning state machine
+    status: BLOCKED
+    definition: steps/RP-022.md
+    depends_on:
+    - RP-005
+    - RP-007
+    - RP-011
+    - RP-012
+    - RP-017
+    - RP-019
+    - RP-020
+    - RP-021
+    requirements:
+    - R13
+    - R14
+    - R15
+    - R18
+    completed_checks: []
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C4.json
+    amendments: []
+    active_attempt: A002
+    check_evidence: {}
+    revalidation_required:
+    - RP-022.C1
+    - RP-022.C2
+    - RP-022.C3
+    - RP-022.C4
+    acceptance_history:
+    - attempt: A001
+      completed_checks:
+      - RP-022.C1
+      - RP-022.C2
+      - RP-022.C3
+      - RP-022.C4
+      check_evidence:
+        RP-022.C1:
+        - docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C1.json
+        RP-022.C2:
+        - docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C2.json
+        RP-022.C3:
+        - docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C3.json
+        RP-022.C4:
+        - docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C4.json
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C1.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C2.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C3.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-022/A001/C4.json
+      defect: DEF-046
+  RP-023:
+    title: Scoped discovery and persistent catalogue identity
+    status: BLOCKED
+    definition: steps/RP-023.md
+    depends_on:
+    - RP-005
+    - RP-012
+    - RP-017
+    - RP-022
+    requirements:
+    - R05
+    - R13
+    - R15
+    - R18
+    completed_checks: []
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C4.json
+    amendments: []
+    active_attempt: A002
+    check_evidence: {}
+    revalidation_required:
+    - RP-023.C1
+    - RP-023.C2
+    - RP-023.C3
+    - RP-023.C4
+    acceptance_history:
+    - attempt: A001
+      completed_checks:
+      - RP-023.C1
+      - RP-023.C2
+      - RP-023.C3
+      - RP-023.C4
+      check_evidence:
+        RP-023.C1:
+        - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C1.json
+        RP-023.C2:
+        - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C2.json
+        RP-023.C3:
+        - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C3.json
+        RP-023.C4:
+        - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C4.json
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C1.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C2.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C3.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C4.json
+      defect: DEF-046
+  RP-024:
+    title: Private BALLPARK creation with SKILL assistance
+    status: BLOCKED
+    definition: steps/RP-024.md
+    depends_on:
+    - RP-005
+    - RP-007
+    - RP-019
+    - RP-022
+    - RP-023
+    requirements:
+    - R05
+    - R12
+    - R13
+    - R15
+    - R17
+    completed_checks: []
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/reviewed-validation.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/final-review.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/main-acceptance.md
+    amendments: []
+    active_attempt: A002
+    check_evidence: {}
+    revalidation_required:
+    - RP-024.C1
+    - RP-024.C2
+    - RP-024.C3
+    - RP-024.C4
+    acceptance_history:
+    - attempt: A001
+      completed_checks:
+      - RP-024.C1
+      - RP-024.C2
+      - RP-024.C3
+      - RP-024.C4
+      check_evidence:
+        RP-024.C1:
+        - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C1.json
+        RP-024.C2:
+        - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C2.json
+        RP-024.C3:
+        - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C3.json
+        RP-024.C4:
+        - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C4.json
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C1.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C2.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C3.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/C4.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/reviewed-validation.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/final-review.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-024/A001/main-acceptance.md
+      defect: DEF-046
+  RP-025:
+    title: FETCHER enrollment and effective profile publication
+    status: BLOCKED
+    definition: steps/RP-025.md
+    depends_on:
+    - RP-005
+    - RP-006
+    - RP-019
+    - RP-022
+    - RP-024
+    requirements:
+    - R05
+    - R09
+    - R13
+    - R14
+    - R15
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-025/A-001-unaccepted-dependent-reconciliation.md
+    active_attempt: A001
+    check_evidence: {}
+    revalidation_required:
+    - RP-025.C1
+    - RP-025.C2
+    - RP-025.C3
+    - RP-025.C4
+  RP-026:
+    title: Authorized stable-IP provisioning adapter
+    status: PLANNED
+    definition: steps/RP-026.md
+    depends_on:
+    - RP-006
+    - RP-012
+    - RP-020
+    - RP-021
+    - RP-023
+    - RP-024
+    requirements:
+    - R05
+    - R13
+    - R14
+    - R15
+    - R18
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-027:
+    title: Reconfiguration of an existing deployment
+    status: PLANNED
+    definition: steps/RP-027.md
+    depends_on:
+    - RP-011
+    - RP-017
+    - RP-022
+    - RP-024
+    - RP-025
+    requirements:
+    - R09
+    - R13
+    - R15
+    - R16
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-028:
+    title: Explicit full reset and re-enrollment
+    status: PLANNED
+    definition: steps/RP-028.md
+    depends_on:
+    - RP-006
+    - RP-012
+    - RP-019
+    - RP-025
+    - RP-027
+    requirements:
+    - R12
+    - R13
+    - R14
+    - R16
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-029:
+    title: Ongoing BALLPARK evolution and stale-view handling
+    status: PLANNED
+    definition: steps/RP-029.md
+    depends_on:
+    - RP-007
+    - RP-023
+    - RP-024
+    - RP-025
+    - RP-027
+    requirements:
+    - R05
+    - R13
+    - R15
+    - R17
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-030:
+    title: Interrupted commissioning and maintenance acceptance
+    status: PLANNED
+    definition: steps/RP-030.md
+    depends_on:
+    - RP-019
+    - RP-022
+    - RP-024
+    - RP-025
+    - RP-027
+    - RP-028
+    - RP-029
+    requirements:
+    - R07
+    - R08
+    - R13
+    - R15
+    - R16
+    - R18
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-031:
+    title: AUTO-SNIFF admission validator
+    status: PLANNED
+    definition: steps/RP-031.md
+    depends_on:
+    - RP-010
+    - RP-012
+    - RP-015
+    - RP-025
+    requirements:
+    - R02
+    - R03
+    - R09
+    - R10
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-032:
+    title: Common ingress reservation and durable receipts
+    status: PLANNED
+    definition: steps/RP-032.md
+    depends_on:
+    - RP-009
+    - RP-010
+    - RP-015
+    - RP-016
+    - RP-031
+    requirements:
+    - R02
+    - R03
+    - R08
+    - R09
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-033:
+    title: Deterministic routing and target busy exclusion
+    status: PLANNED
+    definition: steps/RP-033.md
+    depends_on:
+    - RP-025
+    - RP-029
+    - RP-031
+    - RP-032
+    requirements:
+    - R01
+    - R02
+    - R09
+    - R10
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-034:
+    title: Unified command and device status projection
+    status: PLANNED
+    definition: steps/RP-034.md
+    depends_on:
+    - RP-005
+    - RP-010
+    - RP-025
+    - RP-029
+    - RP-032
+    - RP-033
+    requirements:
+    - R01
+    - R05
+    - R09
+    - R15
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-035:
+    title: WATCHDOG activity-aware network scheduler
+    status: PLANNED
+    definition: steps/RP-035.md
+    depends_on:
+    - RP-011
+    - RP-017
+    - RP-023
+    - RP-034
+    requirements:
+    - R01
+    - R04
+    - R05
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-036:
+    title: Windows deterministic SSH status/start helper
+    status: PLANNED
+    definition: steps/RP-036.md
+    depends_on:
+    - RP-006
+    - RP-012
+    - RP-020
+    - RP-022
+    - RP-025
+    requirements:
+    - R05
+    - R06
+    - R14
+    - R18
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-037:
+    title: Linux deterministic SSH status/start helper
+    status: PLANNED
+    definition: steps/RP-037.md
+    depends_on:
+    - RP-006
+    - RP-012
+    - RP-021
+    - RP-022
+    - RP-025
+    requirements:
+    - R05
+    - R06
+    - R14
+    - R18
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-038:
+    title: Nonblocking readiness and wake coordination
+    status: PLANNED
+    definition: steps/RP-038.md
+    depends_on:
+    - RP-011
+    - RP-017
+    - RP-025
+    - RP-033
+    - RP-034
+    - RP-036
+    - RP-037
+    requirements:
+    - R01
+    - R05
+    - R06
+    - R10
+    - R18
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-039:
+    title: Delivery expiry and late-claim reconciliation
+    status: PLANNED
+    definition: steps/RP-039.md
+    depends_on:
+    - RP-010
+    - RP-011
+    - RP-015
+    - RP-016
+    - RP-033
+    - RP-038
+    requirements:
+    - R09
+    - R10
+    - R11
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-040:
+    title: Result-consumption acknowledgement and recycling
+    status: PLANNED
+    definition: steps/RP-040.md
+    depends_on:
+    - RP-009
+    - RP-010
+    - RP-015
+    - RP-032
+    - RP-033
+    - RP-039
+    requirements:
+    - R02
+    - R08
+    - R09
+    - R10
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-041:
+    title: FETCHER fast and slow polling lifecycle
+    status: PLANNED
+    definition: steps/RP-041.md
+    depends_on:
+    - RP-011
+    - RP-025
+    - RP-034
+    - RP-040
+    requirements:
+    - R04
+    - R05
+    - R09
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-042:
+    title: FETCHER exit mode and wake launch integration
+    status: PLANNED
+    definition: steps/RP-042.md
+    depends_on:
+    - RP-011
+    - RP-025
+    - RP-036
+    - RP-037
+    - RP-038
+    - RP-041
+    requirements:
+    - R04
+    - R05
+    - R06
+    - R18
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-043:
+    title: FETCHER claim and durable execution identity
+    status: PLANNED
+    definition: steps/RP-043.md
+    depends_on:
+    - RP-010
+    - RP-012
+    - RP-015
+    - RP-025
+    - RP-033
+    - RP-039
+    - RP-041
+    requirements:
+    - R01
+    - R09
+    - R10
+    - R11
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-044:
+    title: Windows RUNNER supervision and termination
+    status: PLANNED
+    definition: steps/RP-044.md
+    depends_on:
+    - RP-012
+    - RP-014
+    - RP-043
+    requirements:
+    - R01
+    - R10
+    - R18
+    - R20
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-045:
+    title: Linux RUNNER supervision and termination
+    status: PLANNED
+    definition: steps/RP-045.md
+    depends_on:
+    - RP-012
+    - RP-014
+    - RP-043
+    requirements:
+    - R01
+    - R10
+    - R18
+    - R20
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-046:
+    title: Cancellation transport and execution reconciliation
+    status: PLANNED
+    definition: steps/RP-046.md
+    depends_on:
+    - RP-010
+    - RP-012
+    - RP-014
+    - RP-032
+    - RP-038
+    - RP-043
+    - RP-044
+    - RP-045
+    requirements:
+    - R02
+    - R09
+    - R10
+    - R20
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-047:
+    title: Durable result outbox and restart recovery
+    status: PLANNED
+    definition: steps/RP-047.md
+    depends_on:
+    - RP-012
+    - RP-015
+    - RP-043
+    - RP-044
+    - RP-045
+    - RP-046
+    requirements:
+    - R09
+    - R10
+    - R11
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-048:
+    title: Reliable ordinary terminal publication
+    status: PLANNED
+    definition: steps/RP-048.md
+    depends_on:
+    - RP-010
+    - RP-015
+    - RP-034
+    - RP-040
+    - RP-047
+    requirements:
+    - R09
+    - R10
+    - R11
+    - R20
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-049:
+    title: Reusable script and output artifact slots
+    status: PLANNED
+    definition: steps/RP-049.md
+    depends_on:
+    - RP-009
+    - RP-012
+    - RP-019
+    - RP-043
+    - RP-047
+    - RP-048
+    requirements:
+    - R08
+    - R09
+    - R11
+    - R12
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-050:
+    title: Bounded history retention and quarantine
+    status: PLANNED
+    definition: steps/RP-050.md
+    depends_on:
+    - RP-009
+    - RP-012
+    - RP-019
+    - RP-040
+    - RP-047
+    - RP-049
+    requirements:
+    - R08
+    - R09
+    - R10
+    - R12
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-051:
+    title: Repository-owned operational SKILL and helper interface
+    status: PLANNED
+    definition: steps/RP-051.md
+    depends_on:
+    - RP-007
+    - RP-024
+    - RP-029
+    - RP-032
+    - RP-034
+    - RP-038
+    - RP-040
+    - RP-046
+    - RP-048
+    - RP-049
+    requirements:
+    - R01
+    - R02
+    - R15
+    - R17
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-052:
+    title: Pointer-only installed SKILL package
+    status: PLANNED
+    definition: steps/RP-052.md
+    depends_on:
+    - RP-007
+    - RP-051
+    requirements:
+    - R12
+    - R13
+    - R17
+    - R18
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-053:
+    title: WATCHDOG GUI catalogue leadership and configuration
+    status: PLANNED
+    definition: steps/RP-053.md
+    depends_on:
+    - RP-017
+    - RP-022
+    - RP-024
+    - RP-027
+    - RP-028
+    - RP-029
+    - RP-034
+    - RP-035
+    - RP-038
+    requirements:
+    - R01
+    - R05
+    - R07
+    - R13
+    - R16
+    - R18
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-054:
+    title: FETCHER GUI execution and idle-policy monitoring
+    status: PLANNED
+    definition: steps/RP-054.md
+    depends_on:
+    - RP-022
+    - RP-025
+    - RP-027
+    - RP-028
+    - RP-034
+    - RP-041
+    - RP-042
+    - RP-043
+    - RP-046
+    - RP-047
+    - RP-048
+    requirements:
+    - R01
+    - R04
+    - R09
+    - R11
+    - R13
+    - R16
+    - R18
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-055:
+    title: Independent Windows installers and upgrade checks
+    status: PLANNED
+    definition: steps/RP-055.md
+    depends_on:
+    - RP-020
+    - RP-022
+    - RP-030
+    - RP-036
+    - RP-042
+    - RP-049
+    - RP-050
+    - RP-053
+    - RP-054
+    requirements:
+    - R13
+    - R16
+    - R18
+    - R22
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-056:
+    title: Independent Linux installers and upgrade checks
+    status: PLANNED
+    definition: steps/RP-056.md
+    depends_on:
+    - RP-021
+    - RP-022
+    - RP-030
+    - RP-037
+    - RP-042
+    - RP-049
+    - RP-050
+    - RP-053
+    - RP-054
+    requirements:
+    - R13
+    - R16
+    - R18
+    - R22
+    completed_checks: []
+    evidence: []
+    amendments: []
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-057:
+    title: Legacy pilot-state migration and failure preservation
+    status: PLANNED
+    definition: steps/RP-057.md
+    depends_on:
+    - RP-010
+    - RP-015
+    - RP-019
+    - RP-027
+    - RP-028
+    - RP-040
+    - RP-047
+    - RP-048
+    - RP-050
+    - RP-055
+    - RP-056
+    requirements:
+    - R08
+    - R09
+    - R10
+    - R11
+    - R16
+    - R22
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-058:
+    title: Integrated interruption concurrency and rate suite
+    status: PLANNED
+    definition: steps/RP-058.md
+    depends_on:
+    - RP-015
+    - RP-017
+    - RP-018
+    - RP-019
+    - RP-030
+    - RP-033
+    - RP-035
+    - RP-038
+    - RP-039
+    - RP-040
+    - RP-042
+    - RP-043
+    - RP-046
+    - RP-048
+    - RP-049
+    - RP-050
+    requirements:
+    - R02
+    - R04
+    - R07
+    - R08
+    - R09
+    - R10
+    - R11
+    - R19
+    - R20
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-059:
+    title: End-to-end privacy and supply-chain acceptance
+    status: PLANNED
+    definition: steps/RP-059.md
+    depends_on:
+    - RP-004
+    - RP-006
+    - RP-012
+    - RP-020
+    - RP-021
+    - RP-024
+    - RP-026
+    - RP-027
+    - RP-028
+    - RP-049
+    - RP-050
+    - RP-051
+    - RP-052
+    - RP-055
+    - RP-056
+    requirements:
+    - R12
+    - R13
+    - R14
+    - R17
+    - R21
+    - R22
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-012/A-001-mandatory-security-qualification.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-060:
+    title: Portability and topology compatibility acceptance
+    status: PLANNED
+    definition: steps/RP-060.md
+    depends_on:
+    - RP-018
+    - RP-023
+    - RP-024
+    - RP-025
+    - RP-026
+    - RP-029
+    - RP-030
+    - RP-035
+    - RP-036
+    - RP-037
+    - RP-038
+    - RP-041
+    - RP-042
+    - RP-055
+    - RP-056
+    - RP-058
+    - RP-059
+    requirements:
+    - R05
+    - R06
+    - R07
+    - R13
+    - R15
+    - R16
+    - R18
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-012/A-001-mandatory-security-qualification.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-061:
+    title: Coordinated release and repository instruction publication
+    status: PLANNED
+    definition: steps/RP-061.md
+    depends_on:
+    - RP-007
+    - RP-051
+    - RP-052
+    - RP-055
+    - RP-056
+    - RP-057
+    - RP-058
+    - RP-059
+    - RP-060
+    requirements:
+    - R17
+    - R18
+    - R22
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-012/A-001-mandatory-security-qualification.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-062:
+    title: Authorized same-host real-provider pilot
+    status: PLANNED
+    definition: steps/RP-062.md
+    depends_on:
+    - RP-030
+    - RP-055
+    - RP-056
+    - RP-057
+    - RP-058
+    - RP-059
+    - RP-060
+    - RP-061
+    requirements:
+    - R01
+    - R02
+    - R04
+    - R08
+    - R09
+    - R10
+    - R11
+    - R13
+    - R15
+    - R16
+    - R17
+    - R22
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-063:
+    title: Independent-machine fallback and lifecycle pilot
+    status: PLANNED
+    definition: steps/RP-063.md
+    depends_on:
+    - RP-017
+    - RP-018
+    - RP-026
+    - RP-028
+    - RP-057
+    - RP-058
+    - RP-059
+    - RP-060
+    - RP-061
+    - RP-062
+    requirements:
+    - R05
+    - R06
+    - R07
+    - R13
+    - R14
+    - R15
+    - R16
+    - R18
+    - R22
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
+  RP-064:
+    title: Final traceable acceptance and operational handoff
+    status: PLANNED
+    definition: steps/RP-064.md
+    depends_on:
+    - RP-001
+    - RP-002
+    - RP-003
+    - RP-058
+    - RP-059
+    - RP-060
+    - RP-061
+    - RP-062
+    - RP-063
+    requirements:
+    - R01
+    - R02
+    - R03
+    - R04
+    - R05
+    - R06
+    - R07
+    - R08
+    - R09
+    - R10
+    - R11
+    - R12
+    - R13
+    - R14
+    - R15
+    - R16
+    - R17
+    - R18
+    - R19
+    - R20
+    - R21
+    - R22
+    completed_checks: []
+    evidence: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-012/A-001-mandatory-security-qualification.md
+    active_attempt: null
+    check_evidence: {}
+    revalidation_required: []
