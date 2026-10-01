@@ -181,10 +181,47 @@ def _intent_note_corrections(events):
     return relocated
 
 
+def _started_metadata_corrections(events):
+    """Normalize only malformed nonterminal STARTED metadata in a read view.
+
+    Original records remain immutable and are returned unchanged. The run must
+    already occur verbatim in the original observation; this cannot invent a
+    launch, completion, success, source identity or authorization.
+    """
+    earlier, corrected = {}, {}
+    for event in events:
+        require(isinstance(event, dict) and isinstance(event.get("event_id"), str),
+                "RECORD_SCHEMA_INVALID")
+        if "started_metadata_correction" in event:
+            shape(event, schemas.EVENT)
+            patch = event["started_metadata_correction"]
+            target = earlier.get(event.get("related_event"), {})
+            intent = earlier.get(target.get("related_event"), {})
+            require(event["event"] == "CORRECTION" and event["outcome"] == "RECORDED"
+                    and not ({"reference_correction", "intent_note_correction"} & event.keys()),
+                    "STARTED_METADATA_INVALID")
+            require(target.get("event") == "STARTED" and target.get("outcome") == patch["old_outcome"]
+                    and "run_id" not in target and target["event_id"] not in corrected
+                    and intent.get("event") == "INTENT"
+                    and intent["sequence"] < target["sequence"] < event["sequence"],
+                    "STARTED_METADATA_TARGET")
+            require(type(target.get("observed")) is str
+                    and event["observed"] == target["observed"]
+                    and patch["new_run_id"] in target["observed"]
+                    and all(target.get(k) == event.get(k) == intent.get(k)
+                            for k in ("item", "attempt", "action_id", "check", "source_ref")),
+                    "STARTED_METADATA_IDENTITY")
+            corrected[target["event_id"]] = {**target, "outcome": patch["new_outcome"],
+                                              "run_id": patch["new_run_id"]}
+        earlier[event["event_id"]] = event
+    return corrected
+
+
 def validate_journal(events, item, attempt, reachable):
+    started_metadata = _started_metadata_corrections(events)
     if item.startswith("RP-"):
         for event in events:
-            shape(event, schemas.EVENT)
+            shape(started_metadata.get(event["event_id"], event), schemas.EVENT)
     corrections = _started_reference_corrections(events)
     relocated_notes = _intent_note_corrections(events)
     by_id, pending, actions = {}, {}, set()
@@ -227,7 +264,8 @@ def validate_journal(events, item, attempt, reachable):
                 del pending[related]
         elif kind == "STARTED":
             related = corrections.get(identity, related)
-            require(related in pending and event.get("run_id"), "STARTED_WITHOUT_RUN_OR_INTENT")
+            run = started_metadata.get(identity, event).get("run_id")
+            require(related in pending and run, "STARTED_WITHOUT_RUN_OR_INTENT")
         elif kind == "CORRECTION":
             require(related in by_id and event.get("observed"), "CORRECTION_TARGET_MISSING")
         elif kind != "OBSERVATION":
@@ -424,3 +462,4 @@ def main(argv=None):
 
 if __name__ == "__main__":
     sys.exit(main())
+

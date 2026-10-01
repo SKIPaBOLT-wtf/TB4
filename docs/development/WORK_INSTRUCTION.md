@@ -101,6 +101,15 @@ once per target. This changes metadata placement, never authorization, action
 scope, execution history, an actual outcome or the pending-action state.
 New INTENT records must still have `observed: null`; use OBSERVATION for facts.
 
+If an immutable STARTED record incorrectly used `RUNNING` and omitted `run_id`,
+append a CORRECTION with the closed `started_metadata_correction` record. Only
+`RUNNING` to `PENDING` and an absent run ID to a reference already present verbatim
+in its original observation are allowed. Copy that observation exactly and match
+item/check/attempt/action/source to the original pending INTENT. No terminal
+outcome, authority, launch fact or result changes; no mixed or repeated correction.
+The ledger validates a normalized read view while retaining the original bytes.
+New STARTED entries must carry a real run ID and valid pending/started outcome.
+
 The early RP-001/RP-002 helpers will automate schema validation/projection/publication.
 Until they pass, perform the same transaction manually. Their future existence is
 not grounds to omit checkpoints now. A lightweight progress validation gate must
@@ -237,3 +246,4 @@ Planning validation is not runtime testing. Public progress entries for this pla
 session live under PLAN-R2, never as fabricated RP implementation acceptance.
 Use [templates](templates) as the field contract. All future tools must implement
 this discipline; tools are aids, not substitutes for verified records.
+
