@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-025"
 check: "RP-025.C4"
 attempt: "A001"
-phase: "VALIDATION"
+phase: "RECONCILIATION"
 source_branch: "work/rp-025-a001"
-source_commit: "6162dea493900e64b916ced098889d75849dc43f"
+source_commit: "3ac27c148339ff959c15211622711777329ec40e"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0057"
+last_verified_event: "RP-025-A001-0058"
 last_completed: "RP-024"
-next_action: "Publish RP025/A001 suspension INTENT, settle its journal and preserve source/PR/attempt/fullholds as BLOCKED; then publish coordinated RP021/A002 reopening with exact accepted snapshots21-24 and reconciled unaccepted25."
+next_action: "Publish settled RP025 suspension and exact preserved snapshot; prepare/validate/readback RP021/A002 plus accepted dependency snapshots and explicit unaccepted RP025 reconciliation before native repair."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-025-A001-0058"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046"]
