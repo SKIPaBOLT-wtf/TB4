@@ -1,0 +1,9 @@
+# RP-025 mixed-role summary review failure
+
+Exact reviewed source `86d4d32598616b935a7b8b2623d0c3a28e65767d`; corrected progress checkpoint `34b29d27ace64f36315148f609c98286c8910b87`. Actual current and complete history validators against accepted71b8eac both **PASS, exit0:24VERIFIED,64steps, only qualificationINTENT0029 pending**. This revalidates the DEF-044 bookkeeping correction; no defect is finally resolved yet.
+
+Read-only synthetic review built a fresh two-device commissioned authority through the existing real request adapters and enrolled the first FETCHER. A coherent validated mixed-role catalogue then retained that FETCHER and one unbound WATCHDOG-only device, with exact codec/digest. Both validate_document and shared decoding passed. Actual manager.summary(now=220) raised closed **ENROLLMENT_DEVICE_NOT_APPROVED**; the bounded diagnostic itself exited0 after catching the expected reviewed failure.
+
+Source cause: enrollment_records.view iterates all selected BALLPARK slots and calls target(), which correctly demands FETCHER role for enrollment. BALLPARK permits WATCHDOG-only and combined roles. The summary therefore rejects a legitimate unrelated role. Registration's role check must remain strict; the FETCHER projection must select only approved FETCHER-role slots before bounded pagination. A non-FETCHER slot carrying an actual FETCHER binding remains inconsistent and must fail closed rather than be hidden.
+
+DEF-045 tracks this unaccepted runtime boundary introduced by the new enrollment_records module. Current/historical progress and the previous72/221 focused tests remain measured passes, but no draftPR/hostedrun or C1-C4 acceptance occurred. Next: separate minimal summary-selection repair INTENT, real initial owner-proposal mixed-role fixtures, registration-denial and pagination tests; then focused/current/history and required hosted native/frozen qualification.
