@@ -27,13 +27,39 @@ from tb4.private_settings import PrivateSettings, native_settings, SettingsError
 from tb4.exchange_layout import LayoutError, encoded, slots, validate_document
 from tb4.timing_contract import ActivityClock, TimingProfile
 from tests.security.test_private_settings import MemoryNative
-from tests.security.test_private_settings_native import fixture, protect_fixture
 from tests.security.test_credential_contract import FixtureStore, TRUST
-from tests.security.test_credential_persistence_native import Runner, CANARY as KEY_CANARY
 from test_ballpark_setup import source, confirm, proposal, FACTS, FIRST, digest as file_digest
 from test_discovery_workflow import build, observation, CANARY
 from test_native_leadership import ACTORS, ENROLLMENT, clock, tid
 from test_fetcher_profile import snapshot
+
+KEY_CANARY = b"synthetic-external-key-material-never-copied"
+
+
+def protect_fixture(path):
+    # TEST ONLY, called only for newly created task-owned synthetic files.
+    if os.name == "nt":
+        from tests.security.test_windows_key_native import protect
+        from tb4.windows_key_native import WindowsKeyNative
+        protect(WindowsKeyNative(),path)
+    else:
+        path.chmod(0o700 if path.is_dir() else 0o600)
+
+
+@pytest.fixture
+def fixture(tmp_path):
+    parent = tmp_path/"enrollment-native-parent"
+    parent.mkdir(mode=0o700)
+    protect_fixture(parent)
+    root = parent/"watchdog-settings"
+    return root,native_settings(root,create=True,owner_authorized=True)
+
+
+class LocalCredentialProbe:
+    def __init__(self, device): self.device = device
+    def verify_target(self, target, trust): return target == self.device and trust == TRUST
+    def fetcher_status(self, *args): raise AssertionError("credential-use callback must never run")
+    fetcher_start = fetcher_status
 
 
 def ready(watch_store=None, fetch_store=None, *, two=False):
@@ -338,7 +364,7 @@ def test_native_own_credentials_availability_is_not_copied_or_exposed(fixture):
     path = root.parent/"synthetic-enrollment-key"
     path.write_bytes(KEY_CANARY)
     protect_fixture(path)
-    key_store, resolver = native_credential_pair(manager.setup.installation_id,runner=Runner(),clock=lambda:220)
+    key_store, resolver = native_credential_pair(manager.setup.installation_id,runner=LocalCredentialProbe(device),clock=lambda:220)
     extra = dict(interactive_required=False) if os.name == "nt" else dict(access_mode="existing_key",launch_mode="headless")
     ref = key_store.select(path=str(path),target_id=device,target_trust=TRUST,purposes=frozenset(Purpose),expires_at=500,owner_authorized=True,**extra)
     handle = resolver.enroll(target_id=device,target_trust=TRUST,store_locator=ref,purposes=frozenset(Purpose),expires_at=500,owner_authorized=True)
