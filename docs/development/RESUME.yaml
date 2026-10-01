@@ -5,16 +5,16 @@ check: "RP-024.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-024-a001"
-source_commit: "a47213a90c478b5525a08c12479096baca112fa3"
+source_commit: "87cf87f7fddf39ad53f5d41b5af5fadac8d84c5e"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0033"
+last_verified_event: "RP-024-A001-0034"
 last_completed: "RP-023"
-next_action: "Apply/readback source repair then run full focused230 product/native/Qt regression set plus current/history/scanner gates."
+next_action: "Retest all focused230 boundary/native/Qt/regression cases and progress/source gates before draft PR."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-024-A001-0033"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-038","DEF-039","DEF-040","DEF-041"]
