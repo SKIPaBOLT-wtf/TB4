@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-015"
 check: "RP-015.C1"
 attempt: "A001"
-phase: "VALIDATION"
+phase: "SOURCE"
 source_branch: "work/rp-015-a001"
 source_commit: "5ed368e0e18806b091ba435fa5fb259bf2842c94"
 journal: "docs/development/journal/RP-015/A001/events.jsonl"
-last_verified_event: "RP-015-A001-0010"
+last_verified_event: "RP-015-A001-0011"
 last_completed: "RP-014"
-next_action: "Record scoped DEF016; validate full request integrity and artifact descriptor identity from same snapshot, preserve all dependencies, add negative regression and rerun affected suite/native gates."
+next_action: "Implement smallest verified request-integrity repair and publish exact source."
 verification: "Pin published source and test backend request bodies, UTF16/newline/tab identity, strict revision conflicts and complete binding/hash readback; no duplicate payload execution."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-015-A001-0011"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-015"]
