@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-023"
 check: "RP-023.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "TEST"
 source_branch: "work/rp-023-a001"
 source_commit: "a29c486a6a91e815f8edcde3a8db697ddbc63517"
 journal: "docs/development/journal/RP-023/A001/events.jsonl"
-last_verified_event: "RP-023-A001-0017"
+last_verified_event: "RP-023-A001-0018"
 last_completed: "RP-022"
-next_action: "Record newline-only validation INTENT, compare new/old blobs exactly after CRLF normalization and rerun scanner/complete branch diff."
+next_action: "Publish precise formatting validation outcome, then proceed to protected persistence and fixed-authority integration under a new intent."
 verification: "Review exact source and named scope/duplicate-name/address-reassignment/multi-interface/unstable-identifier/routed-VPN cases; add native Windows/Linux and protected fixed-slot integration before final acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-023-A001-0018"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-032","DEF-033"]
