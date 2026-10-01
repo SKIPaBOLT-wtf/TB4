@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-022"
-check: "RP-022.C1"
+work_item: "RP-023"
+check: "RP-023.C1"
 attempt: "A001"
-phase: "MERGED_VERIFIED"
-source_branch: "main"
-source_commit: "5627090c724d95e4bcd97fd352bef7ff9c7e2cae"
-journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0053"
+phase: "SOURCE"
+source_branch: "work/rp-023-a001"
+source_commit: "91d701fd481cc39c474bdd25adbff1c6f99e3a7e"
+journal: "docs/development/journal/RP-023/A001/events.jsonl"
+last_verified_event: "RP-023-A001-0001"
 last_completed: "RP-022"
-next_action: "Inspect the Progress run on this main acceptance checkpoint for22 VERIFIED, no unsettled intents, preserved history and clean public scan; then claim RP023/A001 scoped discovery in dependency order."
-verification: "Main acceptance Progress must report22 VERIFIED and no pending intents, then RP023 dependencies and current ownership are checked."
+next_action: "Implement the scoped observation/catalogue foundation and focused synthetic tests, publish source checkpoint/outcome, then record its validation INTENT before executing tests."
+verification: "Review exact source and named scope/duplicate-name/address-reassignment/multi-interface/unstable-identifier/routed-VPN cases; add native Windows/Linux and protected fixed-slot integration before final acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-023-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Retain protected settings, external keys and fixed exchange identities; source rollback only under a new intent while stopped, with no unknown-operation replay."
+rollback: "Discard only unreleased synthetic source/model changes under a new recorded action; keep all previous identity mappings, profiles, retained/UNKNOWN work and existing exchange records. Never replace a trusted identity from discovery evidence."
 next_implementation_step: "RP-023"
 next_implementation_check: "RP-023.C1"
