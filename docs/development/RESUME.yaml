@@ -5,16 +5,16 @@ check: "RP-025.C4"
 attempt: "A001"
 phase: "REPAIR"
 source_branch: "work/rp-025-a001"
-source_commit: "86d4d32598616b935a7b8b2623d0c3a28e65767d"
+source_commit: "098fa945dde8b43cd9ce98feb651b237817afe70"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0032"
+last_verified_event: "RP-025-A001-0033"
 last_completed: "RP-024"
-next_action: "Publish exact source repair and recorded outcome, then run new regression first and complete focused/current/history/platform gates."
+next_action: "Publish prior-runtime mixed-role regression INTENT; measure expected role-summary failures before runtime correction."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-025-A001-0032"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045"]
