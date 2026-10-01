@@ -7,17 +7,17 @@ phase: "REGRESSION"
 source_branch: "work/rp-020-a001"
 source_commit: "5cf22faf6c009435e8c25343afcf9493f721904d"
 journal: "docs/development/journal/RP-020/A001/events.jsonl"
-last_verified_event: "RP-020-A001-0024"
+last_verified_event: "RP-020-A001-0025"
 last_completed: "RP-019"
-next_action: "Inspect the remaining Windows Desktop job110213473380, exact-source final logs and provider artifact metadata; preserve Linux-only/GUI availability limits before accepting checks."
+next_action: "Publish a scoped synthetic fixture/fast native gate repair INTENT. Explicitly assign only fresh fixture ownership to current token user and measure before/after identity equality; revalidate native/full Windows and packages."
 verification: "Require native Windows token/DACL/file-sharing tests plus portable failure/race/canary coverage, required platform CI, complete regression and packaged install/uninstall checks. Validate ledger, public scanner and base-to-head diff before merge."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-020-A001-0019"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-025"]
+known_open_defects: ["DEF-001","DEF-002","DEF-025","DEF-026"]
 rollback: "Remove/revoke only new installation-local resolver metadata. Never rewrite ACLs or delete external selected keys. Tests may create and alter only fresh synthetic task-owned files; no live setup or migration."
 next_implementation_step: "RP-020"
 next_implementation_check: "RP-020.C1"
