@@ -151,4 +151,8 @@ def open_setup(root, *, role, create=False, **adapters):
     """Explicit private path from installer/owner, not imported from public input."""
     require(isinstance(root,Path) and root.is_absolute(), "SETTINGS_PATH_INVALID")
     store = native_settings(root,create=create,owner_authorized=create)
+    if not create:
+        # Inspect/promote only the same complete staged next revision. Missing,
+        # partial or contradictory data cannot create a replacement identity.
+        store.recover_pending()
     return SetupController(Setup(store,create=create),role=role,**adapters)

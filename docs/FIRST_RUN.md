@@ -64,6 +64,11 @@ to open the v1 role window. Nothing migrates that profile. `--setup-root` select
 an explicit private R2 location. Otherwise the application proposes a role-local
 standard user location, creating no directory until the owner clicks Create/Open.
 Windows requires an already-private parent; refusal never repairs existing ACLs.
+Reopening first reconciles the same complete staged next-revision frame through
+the qualified private-store recovery method. An interrupted first identity or
+cancel/update therefore resumes through the ordinary UI. Partial/corrupt or
+contradictory staging remains blocked and untouched; an existing empty directory
+does not authorize minting a replacement identity.
 
 The UI persists the requested root separately from its verified storage binding.
 A folder selection and network scope are choices, not proof of access. Reopening
