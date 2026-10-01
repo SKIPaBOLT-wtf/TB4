@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-020"
-check: "RP-020.C4"
+work_item: "RP-021"
+check: "RP-021.C1"
 attempt: "A001"
-phase: "POST_MERGE"
-source_branch: "main"
-source_commit: "46632bdf2648feacb3b17641e9b09811ad37ca1c"
-journal: "docs/development/journal/RP-020/A001/events.jsonl"
-last_verified_event: "RP-020-A001-0044"
+phase: "SOURCE"
+source_branch: "work/rp-021-a001"
+source_commit: "9fdba01926095ac99ae0e1f4af9d9ea49ed1cabb"
+journal: "docs/development/journal/RP-021/A001/events.jsonl"
+last_verified_event: "RP-021-A001-0001"
 last_completed: "RP-020"
-next_action: "Inspect Progress for this settled journal publication, then claim RP021. Do not rerun packages or change accepted source."
-verification: "Require native Windows token/DACL/file-sharing tests plus portable failure/race/canary coverage, required platform CI, complete regression and packaged install/uninstall checks. Validate ledger, public scanner and base-to-head diff before merge."
+next_action: "Implement bounded Linux adapter/shared policy/native tests/docs and publish exact source; then authorize focused Windows regression and hosted native Linux qualification."
+verification: "Require native Linux tests to execute (only non-Linux skip), both desktop/headless policy tests, unsupported-mode/canary/race tests, unchanged Windows86-case regression, full platform CI/Desktop packages and ledger/privacy/source review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-021-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Remove/revoke only new installation-local resolver metadata. Never rewrite ACLs or delete external selected keys. Tests may create and alter only fresh synthetic task-owned files; no live setup or migration."
+rollback: "Revoke/remove only new process-local references and close owned descriptors; retain external files/permissions/configuration. No live enrollment or migration."
 next_implementation_step: "RP-021"
 next_implementation_check: "RP-021.C1"
