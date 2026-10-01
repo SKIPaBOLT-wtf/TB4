@@ -223,3 +223,42 @@ def test_non_linux_native_mode_explicit():
         with pytest.raises(KeyAccessError) as error:
             LinuxKeyNative()
         assert str(error.value) == "STORE_UNAVAILABLE"
+
+MOUNT = "29 1 8:1 / /synthetic rw - ext4 synthetic rw"
+
+
+@pytest.mark.parametrize("fstype,magic", [("ext4", 0xEF53), ("xfs", 0x58465342)])
+def test_exact_descriptor_mount_type_and_magic_agree(fstype, magic):
+    from tb4.linux_key_native import qualified_mount
+    assert qualified_mount("pos: 0\nmnt_id: 29\n", MOUNT.replace("ext4", fstype), magic) == fstype
+
+
+@pytest.mark.parametrize("fdinfo,mountinfo,magic", [
+    ("mnt_id: 29", MOUNT.replace("ext4", "ext2"), 0xEF53),
+    ("mnt_id: 29", MOUNT.replace("ext4", "ext3"), 0xEF53),
+    ("mnt_id: 29", MOUNT.replace("ext4", "nfs"), 0xEF53),
+    ("mnt_id: 29", MOUNT.replace("ext4", "overlay"), 0xEF53),
+    ("mnt_id: 29", MOUNT, 0x58465342),
+    ("mnt_id: 29", MOUNT, True),
+    ("mnt_id: 29\nmnt_id: 29", MOUNT, 0xEF53),
+    ("mnt_id: -29", MOUNT, 0xEF53),
+    ("pos: 0", MOUNT, 0xEF53),
+    ("mnt_id: 30", MOUNT, 0xEF53),
+    ("mnt_id: 29", MOUNT + "\n" + MOUNT, 0xEF53),
+    ("mnt_id: 29", "29 malformed", 0xEF53),
+    ("mnt_id: 29", MOUNT.replace("8:1", "invalid"), 0xEF53),
+    ("mnt_id: 29", MOUNT + " - duplicated", 0xEF53),
+])
+def test_unknown_ambiguous_or_different_filesystem_is_denied(fdinfo, mountinfo, magic):
+    from tb4.linux_key_native import qualified_mount
+    with pytest.raises(KeyAccessError):
+        qualified_mount(fdinfo, mountinfo, magic)
+
+
+@pytest.mark.parametrize("which", ["fdinfo", "mountinfo"])
+def test_kernel_table_reads_are_bounded(which):
+    from tb4.linux_key_native import qualified_mount
+    args = dict(fdinfo="mnt_id: 29", mountinfo=MOUNT, magic=0xEF53)
+    args[which] = "x" * (8193 if which == "fdinfo" else 2 * 1024 * 1024 + 1)
+    with pytest.raises(KeyAccessError):
+        qualified_mount(**args)

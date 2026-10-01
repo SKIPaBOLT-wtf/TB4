@@ -7,6 +7,7 @@ import errno
 import hashlib
 import os
 import platform
+import re
 import stat
 import sys
 
@@ -25,6 +26,30 @@ def local_path(path):
     if not 1 <= len(parts) <= 128 or any(not p or p in {".", ".."} for p in parts):
         raise KeyAccessError(Outcome.DENIED)
     return parts
+
+
+def qualified_mount(fdinfo, mountinfo, magic):
+    """Pure bounded parser of kernel descriptor identity, never a path-prefix match."""
+    if (type(fdinfo) is not str or type(mountinfo) is not str or
+            len(fdinfo) > 8192 or len(mountinfo) > 2 * 1024 * 1024 or type(magic) is not int):
+        raise KeyAccessError(Outcome.DENIED)
+    ids = [line.split(":", 1)[1].strip() for line in fdinfo.splitlines()
+           if line.startswith("mnt_id:")]
+    if len(ids) != 1 or not re.fullmatch(r"[1-9][0-9]{0,19}", ids[0]):
+        raise KeyAccessError(Outcome.DENIED)
+    matches = [line for line in mountinfo.splitlines()
+               if line.split(" ", 1)[0] == ids[0]]
+    if len(matches) != 1 or matches[0].count(" - ") != 1:
+        raise KeyAccessError(Outcome.DENIED)
+    left, right = matches[0].split(" - ")
+    fields, mounted = left.split(), right.split()
+    if (len(fields) < 6 or len(mounted) < 3 or
+            not re.fullmatch(r"[0-9]+:[0-9]+", fields[2])):
+        raise KeyAccessError(Outcome.DENIED)
+    expected = {"ext4": 0xEF53, "xfs": 0x58465342}.get(mounted[0])
+    if expected is None or magic != expected:
+        raise KeyAccessError(Outcome.DENIED)
+    return mounted[0]
 
 
 def _closed_os(error):
@@ -143,8 +168,13 @@ class LinuxKeyNative:
         data = (ctypes.c_long * 64)()
         if self._libc.fstatfs(fd, ctypes.byref(data)) != 0:
             raise KeyAccessError()
-        if data[0] not in {0xEF53, 0x58465342}:  # ext4 / XFS
-            raise KeyAccessError(Outcome.DENIED)
+        # ext2/ext3 share the ext4 magic. Confirm the same held descriptor's
+        # mount ID against the current thread's exact mount table entry.
+        with open('/proc/thread-self/fdinfo/' + str(fd), encoding='ascii') as source:
+            fdinfo = source.read(8193)
+        with open('/proc/thread-self/mountinfo', encoding='utf-8') as source:
+            mountinfo = source.read(2 * 1024 * 1024 + 1)
+        qualified_mount(fdinfo, mountinfo, data[0])
         return (info.st_dev, info.st_ino, info.st_uid, info.st_gid, info.st_mode,
                 info.st_nlink, info.st_size, info.st_mtime_ns, info.st_ctime_ns)
 

@@ -150,7 +150,7 @@ def test_nonregular_or_aliased_files_rejected(selected, kind):
             pytest.fail("Unsupported object admitted")
 
 
-@pytest.mark.parametrize("payload", [b"", b"x" * (MAX_KEY_BYTES + 1)])
+@pytest.mark.parametrize("payload", [b"", b"x" * (MAX_KEY_BYTES + 1)], ids=["empty", "oversized"])
 def test_actual_size_bound(selected, payload):
     selected.write_bytes(payload)
     with pytest.raises(KeyAccessError):
@@ -275,3 +275,16 @@ def test_wrong_principal_and_failed_creation_leave_external_files(selected, monk
                 pytest.fail("Unavailable memory facility admitted")
         assert CANARY.decode() not in str(error.value)
     assert len(os.listdir("/proc/self/fd")) == before and selected.read_bytes() == CANARY
+
+def test_actual_tmpfs_source_is_outside_selected_filesystem_scope():
+    import tempfile
+    from pathlib import Path
+    # New disposable synthetic directory only; no mount or system modification.
+    with tempfile.TemporaryDirectory(prefix="tb4-key-fixture-", dir="/dev/shm") as directory:
+        path = Path(directory) / "key"
+        path.write_bytes(CANARY)
+        path.chmod(0o600)
+        with pytest.raises(KeyAccessError) as error:
+            with open_selected(path)[1]:
+                pytest.fail("Unqualified tmpfs key admitted")
+        assert error.value.outcome is Outcome.DENIED

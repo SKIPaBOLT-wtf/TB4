@@ -43,7 +43,9 @@ POSIX ACL entries are conservatively rejected, including masked named entries.
 O_PATH first checks the final object without opening a device/FIFO; the same
 regular inode is then opened read-only through its held procfs descriptor.
 A single-link, selected-user-owned0400/0600 file of1..65536 bytes on the qualified
-filesystem is required. Symlinks, aliases, devices, directories, hard links,
+filesystem is required. A bounded procfs lookup matches the held descriptor's
+mount ID to its exact filesystem type, because ext2/ext3/ext4 share one magic
+number. The native magic must also agree. Symlinks, devices, directories, hard links,
 extended ACLs and unsafe components fail closed. No user path is hardcoded.
 
 A nonblocking shared flock detects cooperative exclusive holders; Linux locks
