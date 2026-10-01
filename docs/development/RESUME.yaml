@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-024"
 check: "RP-024.C1"
 attempt: "A001"
-phase: "VALIDATION"
+phase: "SOURCE"
 source_branch: "work/rp-024-a001"
 source_commit: "a47213a90c478b5525a08c12479096baca112fa3"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0032"
+last_verified_event: "RP-024-A001-0033"
 last_completed: "RP-023"
-next_action: "Add exact immutable original catalogue/profile/closure comparison in RP024 restore_pin; preserve current eligibility and file hash checks, then rerun full focused boundary/UI regressions."
+next_action: "Apply/readback source repair then run full focused230 product/native/Qt regression set plus current/history/scanner gates."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-024-A001-0033"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-038","DEF-039","DEF-040","DEF-041"]
