@@ -40,8 +40,7 @@ jobs:
         run: python -m pip install -e ".[dev,google,desktop]" "pyinstaller>=6.11,<7"
       - name: Desktop tests with real GUI and core imports
         run: python -m pytest tests/desktop -ra
-      - name: Complete Linux regression suite
-        if: runner.os == 'Linux'
+      - name: Complete platform regression suite
         run: python -m pytest
       - name: Build WATCHDOG
         run: python tools/build_desktop.py --role watchdog

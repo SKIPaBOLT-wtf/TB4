@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 import pytest
 
@@ -49,8 +49,9 @@ def test_cli_defaults_are_deterministic_absolute_paths() -> None:
     fetcher = parser.parse_args(["fetcher", "--check"])
     assert watchdog.config == DEFAULT_CONFIG["watchdog"]
     assert fetcher.config == DEFAULT_CONFIG["fetcher"]
-    assert watchdog.config.is_absolute()
-    assert fetcher.config.is_absolute()
+    # These are systemd/Linux defaults even when source tests run on Windows.
+    assert PurePosixPath(watchdog.config.as_posix()).is_absolute()
+    assert PurePosixPath(fetcher.config.as_posix()).is_absolute()
 
 
 def test_service_host_cleanup_is_lifo_and_exactly_once() -> None:

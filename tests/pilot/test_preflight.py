@@ -96,8 +96,8 @@ def test_report_does_not_echo_private_values(tmp_path: Path) -> None:
         f"""
 [drive]
 root_id = "private-root-id-do-not-print"
-client_secrets_path = "{client}"
-token_path = "{token}"
+client_secrets_path = {json.dumps(str(client))}
+token_path = {json.dumps(str(token))}
 
 [watchdog]
 device_id = "watchdog-host"
