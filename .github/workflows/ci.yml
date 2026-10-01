@@ -32,5 +32,13 @@ jobs:
       - name: Public repository security scan
         run: python tools/scan_public_repo.py
 
+      - name: Isolated folder helper prerequisites
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openssh-server
+          sudo mkdir -p /run/sshd
+
       - name: Test
+        env:
+          TB4_REQUIRE_FOLDER_SSH: '1'
         run: python -m pytest
