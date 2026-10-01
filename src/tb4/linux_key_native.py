@@ -163,6 +163,11 @@ class LinuxKeyNative:
                 info.st_nlink != 1 or not 0 < info.st_size <= MAX_KEY_BYTES):
             raise KeyAccessError(Outcome.DENIED)
         self._no_acl(fd)
+        self.filesystem(fd)
+        return (info.st_dev, info.st_ino, info.st_uid, info.st_gid, info.st_mode,
+                info.st_nlink, info.st_size, info.st_mtime_ns, info.st_ctime_ns)
+
+    def filesystem(self, fd):
         # fstatfs writes the native structure into an oversized aligned buffer;
         # only the first Linux64 long (f_type) is read. No path-based mount guess.
         data = (ctypes.c_long * 64)()
@@ -174,9 +179,7 @@ class LinuxKeyNative:
             fdinfo = source.read(8193)
         with open('/proc/thread-self/mountinfo', encoding='utf-8') as source:
             mountinfo = source.read(2 * 1024 * 1024 + 1)
-        qualified_mount(fdinfo, mountinfo, data[0])
-        return (info.st_dev, info.st_ino, info.st_uid, info.st_gid, info.st_mode,
-                info.st_nlink, info.st_size, info.st_mtime_ns, info.st_ctime_ns)
+        return qualified_mount(fdinfo, mountinfo, data[0])
 
     def recheck_chain(self, chain, uid):
         for i, (fd, parent, name, identity) in enumerate(chain):
