@@ -1,0 +1,4 @@
+# Source-ending validation
+Sourcea29c486a6a91e815f8edcde3a8db697ddbc63517. Compared raw Git blobs against8e1155ae159ef30f4342b539429ed00f8f49013c. Changed paths are exactly a subset of the eight owned mutable paths; six actually changed. Every after blob equals before.replace(CRLF,LF) exactly and contains no CRLF. No other path changed in the source repair commit. Comparison exit0; full branch git diff --check origin/main...HEAD exit0; public scanner clean,exit0.
+
+This establishes unchanged normalized code/fixtures for the previous54 passing synthetic tests. No runtime retest was repeated for line endings alone. Native Windows/Linux loopback qualification, protected persistence/fixed-record integration and full step gates remain required. All original failed runs, journal bytes and immutable receipts survive. Task source-reading helper now normalizes mutable source inputs before API publication and excludes journal/evidence/amendment paths.
