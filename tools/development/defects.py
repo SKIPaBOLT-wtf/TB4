@@ -11,6 +11,7 @@ import re
 
 from . import schemas as s
 from .ledger import PLAN, load, public_data, public_path, require, shape
+from .ledger import validate_journal
 
 REGISTRY = PLAN + "/defects.yaml"
 WORK = {"type": "string", "pattern": r"^(RP-\d{3}(\.C\d+)?|IP-\d+|PLAN-R2)$"}
@@ -20,9 +21,15 @@ ORIGIN = {"anyOf": [s.closed({"work_item": {"anyOf": [WORK, {"type": "null"}]},
 HYPOTHESIS = s.closed({"id": s.TEXT, "claim": s.TEXT,
                        "result": {"enum": ["UNTESTED", "FAILED", "SUPPORTED"]},
                        "evidence": s.array(s.PATH)})
+UNACCEPTED = s.closed({"attempt": s.ATTEMPT, "suspend_intent": s.TEXT,
+                       "suspend_outcome": s.TEXT, "frozen_step": s.STEP_RECORD})
+RECONCILIATION = {"type": "object", "minProperties": 1, "propertyNames": s.STEP,
+                  "additionalProperties": UNACCEPTED}
 REPAIR = s.closed({"item": s.STEP, "attempt": s.ATTEMPT, "intent_event": s.TEXT,
                   "rechecks": {"type": "object", "propertyNames": s.STEP,
-                               "additionalProperties": s.closed({"attempt": s.ATTEMPT, "checks": s.array(s.CHECK)})}})
+                               "additionalProperties": s.closed({"attempt": s.ATTEMPT, "checks": s.array(s.CHECK)})},
+                  "reconciled_unaccepted": RECONCILIATION},
+                 ["item", "attempt", "intent_event", "rechecks"])
 DEFECT = s.closed({
     "title": s.TEXT, "status": {"enum": ["OPEN", "RESOLVED"]}, "detected_in": WORK,
     "suspected_origin": ORIGIN, "proven_origin": ORIGIN,
@@ -106,6 +113,50 @@ def historical_acceptance(root, item, target, step, reachable, events):
                 public_path(root, artifact)
 
 
+def _unaccepted(item, record):
+    step = record["frozen_step"]
+    require(step["status"] in {"IN_PROGRESS", "BLOCKED"}
+            and step["active_attempt"] == record["attempt"]
+            and not step["completed_checks"] and not step["check_evidence"]
+            and not step.get("acceptance_history"), "REPAIR_RECONCILIATION_NOT_UNACCEPTED")
+    checks = step["revalidation_required"]
+    require(checks and len(checks) == len(set(checks))
+            and all(re.fullmatch(re.escape(item) + r"\.C[1-9][0-9]*", c) for c in checks),
+            "REPAIR_RECONCILIATION_HOLD_MISSING")
+    return step
+
+
+def _suspension(repair, events, reachable):
+    opening = events[repair["intent_event"]]
+    for item, record in repair.get("reconciled_unaccepted", {}).items():
+        frozen = _unaccepted(item, record)
+        require(item != repair["item"] and repair["rechecks"].get(item) == dict(
+            attempt=record["attempt"], checks=frozen["revalidation_required"]),
+            "REPAIR_RECONCILIATION_IMPACT_INVALID")
+        intent = events.get(record["suspend_intent"], {})
+        outcome = events.get(record["suspend_outcome"], {})
+        require(intent.get("event") == "INTENT" and intent.get("item") == item
+                and intent.get("attempt") == record["attempt"]
+                and intent.get("action_id") == "SUSPEND-UNACCEPTED-FOR-PREREQUISITE-REPAIR"
+                and outcome.get("event") in {"OUTCOME", "RECONCILED"}
+                and outcome.get("outcome") == "RECORDED"
+                and outcome.get("related_event") == intent.get("event_id")
+                and all(outcome.get(k) == intent.get(k) for k in
+                        ("item", "attempt", "check", "source_ref", "action_id")),
+                "REPAIR_SUSPENSION_UNPROVEN")
+        from datetime import datetime
+        timestamp = lambda row: datetime.fromisoformat(row["at"].replace("Z", "+00:00"))
+        require(timestamp(intent) <= timestamp(outcome) <= timestamp(opening)
+                and intent["sequence"] < outcome["sequence"], "REPAIR_SUSPENSION_ORDER_INVALID")
+        # Check the journal at the freeze, not its later resumed state. UNKNOWN
+        # and BLOCKED observations do not settle an earlier action.
+        prefix = sorted((e for e in events.values() if e["item"] == item
+                         and e["attempt"] == record["attempt"]
+                         and e["sequence"] <= outcome["sequence"]), key=lambda e: e["sequence"])
+        _, pending = validate_journal(prefix, item, record["attempt"], reachable)
+        require(not pending, "REPAIR_SUSPENSION_UNSETTLED")
+
+
 def validate_registry(root, registry, manifest, reachable, events):
     shape(registry, REGISTRY_SCHEMA)
     public_data(registry)
@@ -148,6 +199,7 @@ def validate_registry(root, registry, manifest, reachable, events):
             require(repair["item"] in defect["repair_steps"] and intent.get("event") == "INTENT"
                     and intent.get("item") == repair["item"] and intent.get("attempt") == repair["attempt"],
                     "REPAIR_INTENT_MISSING")
+            _suspension(repair, events, reachable)
             for item, target in repair["rechecks"].items():
                 checks = target["checks"]
                 require(item in steps and checks, "REPAIR_RECHECK_MISSING")
@@ -213,9 +265,37 @@ def validate_registry_history(old, new, old_manifest, new_manifest=None):
                 candidate_registry = copy.deepcopy(old)
                 candidate_registry["defects"][key] = copy.deepcopy(after)
                 candidate_registry["defects"][key]["repairs"] = copy.deepcopy(previous_repairs)
-                expected_manifest, expected_registry = open_repair(old_manifest, candidate_registry, key, item, repair["intent_event"])
+                reconciled = repair.get("reconciled_unaccepted")
+                baseline = copy.deepcopy(old_manifest)
+                for target, record in (reconciled or {}).items():
+                    require(target in baseline["steps"], "DEFECT_STEP_MISSING")
+                    previous = baseline["steps"][target]
+                    frozen = _unaccepted(target, record)
+                    require(previous["status"] in {"PLANNED", "IN_PROGRESS", "BLOCKED"}
+                            and not previous["completed_checks"] and not previous["check_evidence"]
+                            and not previous.get("acceptance_history")
+                            and previous["active_attempt"] in {None, record["attempt"]}
+                            and all(previous[k] == frozen[k] for k in
+                                    ("title", "definition", "depends_on", "requirements"))
+                            and set(previous["evidence"]) <= set(frozen["evidence"])
+                            and set(previous["amendments"]) <= set(frozen["amendments"]),
+                            "REPAIR_RECONCILIATION_BASE_INVALID")
+                    # A history base may predate this dependent's first start.
+                    # Its explicit never-accepted freeze, separately proved by
+                    # the journal, is not an accepted-build snapshot.
+                    baseline["steps"][target] = copy.deepcopy(frozen)
+                expected_manifest, expected_registry = open_repair(baseline, candidate_registry, key, item,
+                                                                   repair["intent_event"],
+                                                                   reconciled_unaccepted=reconciled)
                 require(repair == expected_registry["defects"][key]["repairs"][-1], "REPAIR_IMPACT_INCOMPLETE")
                 for target in repair["rechecks"]:
+                    if target in (reconciled or {}):
+                        current = new_manifest["steps"][target]
+                        require(current["active_attempt"] >= reconciled[target]["attempt"],
+                                "REPAIR_ACCEPTANCE_STALE")
+                        if current["active_attempt"] == reconciled[target]["attempt"]:
+                            require(not current.get("acceptance_history"), "REPAIR_UNACCEPTED_SNAPSHOT_FORGED")
+                        continue
                     snapshot = expected_manifest["steps"][target]["acceptance_history"][-1]
                     require(snapshot in new_manifest["steps"][target].get("acceptance_history", []),
                             "ACCEPTANCE_SNAPSHOT_MISSING")
@@ -229,11 +309,13 @@ def validate_registry_history(old, new, old_manifest, new_manifest=None):
                         and set(repair["rechecks"]) == {item}, "REPAIR_ATTEMPT_INVALID")
 
 
-def open_repair(manifest, registry, defect_id, responsible, intent_event):
+def open_repair(manifest, registry, defect_id, responsible, intent_event, *, reconciled_unaccepted=None):
     """Build an isolated attempt and hold transitive previously accepted work.
 
-    A never-started dependent stays PLANNED. Caller must publish this candidate
-    with its matching new-attempt INTENT through checkpoint.prepare/publish.
+    A never-started dependent stays PLANNED. An explicitly suspended unaccepted
+    dependent retains its attempt/WIP/full holds; default concurrent takeover
+    still fails. Caller must publish through checkpoint.prepare/publish, which
+    verifies the suspension journal and the complete impact before any action.
     """
     manifest, registry = copy.deepcopy(manifest), copy.deepcopy(registry)
     defect = registry["defects"][defect_id]
@@ -246,10 +328,28 @@ def open_repair(manifest, registry, defect_id, responsible, intent_event):
         if expanded == affected:
             break
         affected = expanded
+    reconciled = {} if reconciled_unaccepted is None else reconciled_unaccepted
+    if reconciled_unaccepted is not None:
+        shape(reconciled, RECONCILIATION)
+        active = {k for k in affected if steps[k]["status"] not in {"PLANNED", "VERIFIED"}}
+        require(set(reconciled) == active, "REPAIR_RECONCILIATION_SCOPE_INVALID")
+        dependents = {responsible}
+        while True:
+            expanded = dependents | {k for k, v in steps.items() if set(v["depends_on"]) & dependents}
+            if expanded == dependents:
+                break
+            dependents = expanded
+        require(set(reconciled) <= dependents - {responsible}, "REPAIR_RECONCILIATION_SCOPE_INVALID")
     rechecks = {}
     for item in sorted(affected):
         step = steps[item]
         if step["status"] == "PLANNED":
+            continue
+        if item in reconciled:
+            frozen = _unaccepted(item, reconciled[item])
+            require(step == frozen, "REPAIR_RECONCILIATION_SNAPSHOT_MISMATCH")
+            step["status"] = "BLOCKED"
+            rechecks[item] = dict(attempt=step["active_attempt"], checks=list(step["revalidation_required"]))
             continue
         require(step["status"] == "VERIFIED", "REPAIR_CONCURRENT_WORK_REQUIRES_RECONCILIATION")
         history = dict(attempt=step["active_attempt"], completed_checks=list(step["completed_checks"]),
@@ -264,6 +364,9 @@ def open_repair(manifest, registry, defect_id, responsible, intent_event):
     attempt = steps[responsible]["active_attempt"]
     require(intent_event == f"{responsible}-{attempt}-0001", "REPAIR_INTENT_ID_INVALID")
     defect["status"] = "OPEN"
-    defect["repairs"].append(dict(item=responsible, attempt=attempt, intent_event=intent_event, rechecks=rechecks))
+    repair = dict(item=responsible, attempt=attempt, intent_event=intent_event, rechecks=rechecks)
+    if reconciled:
+        repair["reconciled_unaccepted"] = copy.deepcopy(reconciled)
+    defect["repairs"].append(repair)
     manifest["current_step"] = responsible
     return manifest, registry
