@@ -24,7 +24,7 @@ This is a projection of `manifest.yaml`. Mark a step/check complete only through
 ## Storage, ownership, commissioning primitives and credentials
 
 - [x] [RP-015 - Race-safe exact-object mutation and verification](steps/RP-015.md) - prerequisites: RP-008, RP-010, RP-012, RP-013.
-- [ ] [RP-016 - Shared leadership lease and fencing primitive](steps/RP-016.md) - prerequisites: RP-008, RP-010, RP-012, RP-015.
+- [x] [RP-016 - Shared leadership lease and fencing primitive](steps/RP-016.md) - prerequisites: RP-008, RP-010, RP-012, RP-015.
 - [ ] [RP-017 - WATCHDOG incumbent-first startup and standby](steps/RP-017.md) - prerequisites: RP-011, RP-016.
 - [ ] [RP-018 - Shared-folder transport conformance adapter](steps/RP-018.md) - prerequisites: RP-008, RP-009, RP-010, RP-012, RP-015.
 - [ ] [RP-019 - Idempotent fixed-slot commissioning](steps/RP-019.md) - prerequisites: RP-009, RP-015, RP-016.
