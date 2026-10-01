@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "item": "RP-016",
+  "check": "RP-016.C3",
+  "attempt": "A001",
+  "source_ref": "dfa260eae0675db46a2c56424cc4b5adbf348400",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Use unique module and process-local venv/UTF8/fresh test temp. Test concurrent claim order, direct stale and forced takeover, old-writer fencing, persisted epoch/request integrity, partition/rejoin, trusted/uncertain/backward clock, lost reply/restart and preserved unknown work. Retain explicit external check/dispatch suspension counterexample. Collect exact nodes, review code/diff/scanner/ledger and exact-source CI/Progress/Desktop runs.",
+  "expected": "Concurrency, stale reads/expiry, partition/rejoin, clock uncertainty and ambiguous acquisition recover without blind writes.",
+  "observed": "63 new conformance cases; local1081 pass/2 skip/4 known xfail; CI1498 pass/2 skip/4 known xfail; both native desktop builds/self-tests/GUI/install-uninstall PASS. Complete source and count/provenance review recorded; no new defect.",
+  "exit_code": 0,
+  "platform_scope": "Windows local Python3.11; Linux CI; Windows and Ubuntu22.04 native packaging. Synthetic authority wire/model; no live deployment.",
+  "negative_cases": [
+    "Competing CAS losers",
+    "Resumed former owner",
+    "Pending force request",
+    "Lost reply and inspect-only restart",
+    "Clock reversal/untrusted time",
+    "Malformed closed records/epoch overflow",
+    "Previously admitted external effect can overlap takeover"
+  ],
+  "unverified_scope": "Real credential/clock provenance, durable local intent, enforced transport quotas, actual multi-host runtime and GUI integration remain distinct later gates. Current source accepts trusted commissioned enrollment/profile inputs, not self-issued permissions.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Unreleased helper remains unwired until later role/runtime/GUI integration; revert additions only. Never rewind a live epoch or clear another valid owner/unknown work.",
+  "intent_event": "RP-016-A001-0003",
+  "outcome_event": "RP-016-A001-0005",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-016/A001/reviewed-validation.md"
+  ]
+}
