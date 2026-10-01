@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-019"
-check: "RP-019.C1"
+work_item: "RP-020"
+check: "RP-020.C1"
 attempt: "A001"
-phase: "VERIFIED"
-source_branch: "main"
-source_commit: "f56201fbf16efedbf94b70e7a438b46f85cf35f0"
-journal: "docs/development/journal/RP-019/A001/events.jsonl"
-last_verified_event: "RP-019-A001-0037"
+phase: "SOURCE"
+source_branch: "work/rp-020-a001"
+source_commit: "12addb34390bcbbf2b6eb5498dd9b73a1819a6ad"
+journal: "docs/development/journal/RP-020/A001/events.jsonl"
+last_verified_event: "RP-020-A001-0001"
 last_completed: "RP-019"
-next_action: "Verify this main acceptance checkpoint with lightweight Progress and local ledger/history; then inspect/claim RP020 Windows protected credential resolver from accepted RP006 contract and actual available isolated Windows environment."
-verification: "Source-linked tests must prove exact ID reuse, durable pre-send uncertainty and same-operation inspection, current-owner CAS readiness, fixed allocation bounds and no normal create/delete. Test synthetic native request construction plus real isolated local folder provisioning without claiming a deployed configuration."
+next_action: "Publish the complete RP020 source unit and reviewed scope, then separately INTENT focused native Windows and portable contract tests with a fresh isolated test root."
+verification: "Require native Windows token/DACL/file-sharing tests plus portable failure/race/canary coverage, required platform CI, complete regression and packaged install/uninstall checks. Validate ledger, public scanner and base-to-head diff before merge."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-020-A001-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Only new synthetic task-owned fixtures during tests. Interrupted commissioning remains INCOMPLETE/UNKNOWN; no cleanup of existing root or unknown/unread data. Removal of proved unreferenced live objects requires its own explicit owner scope. Installed selection unchanged."
+rollback: "Remove/revoke only new installation-local resolver metadata. Never rewrite ACLs or delete external selected keys. Tests may create and alter only fresh synthetic task-owned files; no live setup or migration."
 next_implementation_step: "RP-020"
 next_implementation_check: "RP-020.C1"
