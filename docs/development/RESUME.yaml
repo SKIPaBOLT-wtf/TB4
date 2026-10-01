@@ -7,17 +7,17 @@ phase: "VALIDATION"
 source_branch: "work/rp-018-a001"
 source_commit: "0ca05f347f5a80019ae75aa6d97bf5aadba84aa6"
 journal: "docs/development/journal/RP-018/A001/events.jsonl"
-last_verified_event: "RP-018-A001-0019"
+last_verified_event: "RP-018-A001-0020"
 last_completed: "RP-017"
-next_action: "Record run/job IDs and local result, then review per-check evidence only after all required gates pass."
+next_action: "Fix only verified platform fixture assumptions and extend existing Windows desktop CI to full regression under new INTENT, then validate exact final source."
 verification: "Compare pre/post object inventory and identities, strict revision-CAS winner, observed rollback after killed writer, independently reopened result, closed capacity and permission/rename failures. Later remote helper conformance must use the same operation model; no invented NAS access or real-machine result."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-018-A001-0019"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-018","DEF-019","DEF-020"]
+known_open_defects: ["DEF-001","DEF-002","DEF-018","DEF-019","DEF-020","DEF-021"]
 rollback: "Only new task-owned synthetic probe directories. Never touch or reset deployed authority, shared archive content, credentials or existing root. Native Docs remains selected unless a later explicitly commissioned single-mode change is authorized."
 next_implementation_step: "RP-018"
 next_implementation_check: "RP-018.C1"
