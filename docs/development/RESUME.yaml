@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-019"
 check: "RP-019.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "TEST"
 source_branch: "work/rp-019-a001"
 source_commit: "78e4f580af1d412fdb7e3dea9ccb345ca36a0564"
 journal: "docs/development/journal/RP-019/A001/events.jsonl"
-last_verified_event: "RP-019-A001-0006"
+last_verified_event: "RP-019-A001-0007"
 last_completed: "RP-018"
-next_action: "Publish validation INTENT, synchronize this exact source and run focused plus full Windows tests, ledger/privacy/diff checks; create RP019 PR to run required Linux/native folder/SSH and Windows/Linux package gates."
+next_action: "Run focused Windows tests first; inspect results and checkpoint before repair or further dependent validation."
 verification: "Source-linked tests must prove exact ID reuse, durable pre-send uncertainty and same-operation inspection, current-owner CAS readiness, fixed allocation bounds and no normal create/delete. Test synthetic native request construction plus real isolated local folder provisioning without claiming a deployed configuration."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-019-A001-0007"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
