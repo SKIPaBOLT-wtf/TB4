@@ -1,0 +1,8 @@
+# RP023 foundation validation
+Source236d03a0eebbbda6513e65a167e39de40df9cc78. Isolated Windows Python3.11.9 venv; fresh pytest-owned temporary root. Command: python -m pytest tests/discovery/test_catalogue.py -ra. Exit0;30 passed0.09s, no skips. Public scanner clean; working diff check exit0. This last check covers no uncommitted diff, not the later full branch review.
+
+Assertions cover both interface/subnet authorization, isolated empty policy, method permissions, IPv6/routed VPN and non-ICMP observations, cache not being current network proof, stale/future/untrusted clock refusal, stable random IDs/opaque aliases across restart, duplicate names, address reassignment or vanished hardware hints, hint collision across interfaces, fresh verified same-peer multiple addresses, stale/ICMP proof rejection, enrolled target protection and immediate enrollment-view revocation, full catalogue/quarantine preservation/coalescing, atomic batch rejection, older observations, malformed/foreign images and private canary omission.
+
+The task-only sync helper first rejected equal bytes because its one-sided trailing-newline trimming was incorrect. Exact symmetric CRLF-normalized comparison confirmed all three files equal; helper corrected locally before any restore or test, product source unchanged. Original observation retained in journal. No code defect or failed test was inferred from this precondition failure.
+
+No real network, native collector, provider, enrollment or shared publication was used. Native Windows/Linux adapters, protected durable identity publication and fixed authority integration remain subsequent required units. No RP023 acceptance checkbox is set by this model result.

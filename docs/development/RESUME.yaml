@@ -7,14 +7,14 @@ phase: "TEST"
 source_branch: "work/rp-023-a001"
 source_commit: "236d03a0eebbbda6513e65a167e39de40df9cc78"
 journal: "docs/development/journal/RP-023/A001/events.jsonl"
-last_verified_event: "RP-023-A001-0004"
+last_verified_event: "RP-023-A001-0005"
 last_completed: "RP-022"
-next_action: "Use the verified exact-byte comparison, synchronize only these three owned published files and run the same still-unexecuted focused test action."
+next_action: "Inspect available fixed-command/native adapters and implement bounded Windows/Linux scoped collection plus focused synthetic/native qualification design; preserve foundation behavior and keep actual network use confined to isolated CI fixtures."
 verification: "Review exact source and named scope/duplicate-name/address-reassignment/multi-interface/unstable-identifier/routed-VPN cases; add native Windows/Linux and protected fixed-slot integration before final acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-023-A001-0003"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
