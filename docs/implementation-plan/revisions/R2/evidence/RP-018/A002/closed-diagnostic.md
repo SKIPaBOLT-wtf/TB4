@@ -1,0 +1,7 @@
+# RP-018/A002 closed diagnostic
+
+Source2af8bf80715fbf1ec89bef822d5ecb96b48aad51. Same isolated Windows policy test fails1case (0.55s and0.54s in bounded tracing refinements), with both replies UNAVAILABLE. Allowlisted exception tracing observes sqlite3.OperationalError numeric5(SQLITE_BUSY) at connection line127 BEGIN EXCLUSIVE and its caller; both execute the trusted-schema/temp-store/locking-mode pragmas and fail BEGIN EXCLUSIVE. No native identity/journal exception appears. Thus the first empty-transaction repair does not prove one-winner progress and is rejected. The original retained-read interleaving reproduction remains valid; this narrower acquisition attempt also needs native serialization.
+
+Ledger: RP-018-A002-0004 includes src/tb4/drive/folder_authority.py and tests/drive/test_folder_lock_order.py in its evidence array; EVENT.evidence accepts docs paths only. Preserve that event verbatim, move these supplementary source links into a documentation receipt through a narrowly checked append-only correction. Existing public source references are real files; this is metadata placement, not a fabricated success or authority change. Historical raw RP019/020 errors are covered by their existing corrections and must not be re-edited.
+
+Available local Linux development tooling was queried read-only; no Linux distro or TB4 deployment was started. Next native experiment must have its own INTENT and use a fresh isolated directory.
