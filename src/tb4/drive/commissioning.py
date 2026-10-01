@@ -260,15 +260,21 @@ class Commissioner:
         return Allocation(row["body"]["object_id"],row["operation_id"],row["body"]["max_bytes"],row["body"]["seal"])
 
     def _verify_ready(self,rows):
-        identities={getattr(self.leader.backend.binding,"document_id",None)}
-        for index in range(self.spec.capacity.devices):
-            body=rows[f"target.{index:03d}.catalogue"]["body"]
-            require(type(body) is dict and type(body.get("artifacts")) is dict
-                    and set(body["artifacts"])=={"input","output"},"SETUP_BINDINGS")
-            for kind,ref in body["artifacts"].items():
-                key=f"artifact.{index:03d}.{kind}"
-                require(type(ref) is dict and set(ref)=={"id","seal"},"SETUP_BINDINGS")
-                allocation=Allocation(ref["id"],self.spec.operation(key),seal=ref["seal"])
-                require(allocation.seal is not None and allocation.object_id not in identities
-                        and self.port.inspect(key,allocation)==allocation,"ALLOCATION_UNVERIFIED")
-                identities.add(allocation.object_id)
+        verify_allocated_bindings(self.spec, self.port, rows,
+                                 getattr(self.leader.backend.binding,"document_id",None))
+
+
+def verify_allocated_bindings(spec, port, rows, authority_id):
+    """Read-only handoff shared by commissioning and first-run validation."""
+    identities={authority_id}
+    for index in range(spec.capacity.devices):
+        body=rows[f"target.{index:03d}.catalogue"]["body"]
+        require(type(body) is dict and type(body.get("artifacts")) is dict
+                and set(body["artifacts"])=={"input","output"},"SETUP_BINDINGS")
+        for kind,ref in body["artifacts"].items():
+            key=f"artifact.{index:03d}.{kind}"
+            require(type(ref) is dict and set(ref)=={"id","seal"},"SETUP_BINDINGS")
+            allocation=Allocation(ref["id"],spec.operation(key),seal=ref["seal"])
+            require(allocation.seal is not None and allocation.object_id not in identities
+                    and port.inspect(key,allocation)==allocation,"ALLOCATION_UNVERIFIED")
+            identities.add(allocation.object_id)
