@@ -7,14 +7,14 @@ phase: "PROGRESS_REPAIR"
 source_branch: "work/rp-015-a001"
 source_commit: "564207f3094cd7b9a5b16b61d2f82ea1d7bcc332"
 journal: "docs/development/journal/RP-015/A001/events.jsonl"
-last_verified_event: "RP-015-A001-0021"
+last_verified_event: "RP-015-A001-0022"
 last_completed: "RP-014"
-next_action: "Publish preserved invalid index and correction, then validate corrected progress projection."
+next_action: "Validate corrected current ledger against canonical ownership base and collect fresh Progress; finish unchanged-source native tests."
 verification: "Pin published source and test backend request bodies, UTF16/newline/tab identity, strict revision conflicts and complete binding/hash readback; no duplicate payload execution."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-015-A001-0021"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-015","DEF-016"]
