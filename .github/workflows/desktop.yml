@@ -43,6 +43,9 @@ jobs:
       - name: Native Windows credential boundary qualification
         if: runner.os == 'Windows'
         run: python -m pytest tests/security/test_windows_key_native.py -ra -s
+      - name: Native Linux credential boundary qualification
+        if: runner.os == 'Linux'
+        run: python -m pytest tests/security/test_linux_key_native.py -ra
       - name: Complete platform regression suite
         run: python -m pytest
       - name: Build WATCHDOG
