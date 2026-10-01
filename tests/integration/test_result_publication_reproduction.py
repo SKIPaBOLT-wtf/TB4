@@ -82,11 +82,12 @@ def test_successful_rename_with_later_benign_version_is_unconfirmed_not_replayed
     assert value["terminal_wire_calls"] == 1 and events(value,"terminal_report")[0]["probes"] > 1
 
 
-@pytest.mark.xfail(strict=True, reason="RP-015 handoff: fresh same-owner benign-version reconciliation is missing; no v1 retry patch")
-def test_required_invariant_same_owner_benign_metadata_change_does_not_strand_result():
+def test_legacy_benign_metadata_counterexample_requires_selected_r2_authority():
+    # RP-015 ports the required invariant to tests/drive/test_native_docs_transport.py.
+    # Keep the legacy counterexample; it is not a qualified R2 fallback backend.
     value = run_scenario("benign-version")
     assert value["original_result_unchanged"] and value["execution_calls"] == 1
-    assert value["pipeline_outcome"] == "RETURNED"
+    assert value["pipeline_outcome"] == "PUBLICATION_ERROR"
 
 
 @pytest.mark.parametrize("argument", ["--root", "--token", "--endpoint", "--replay"])

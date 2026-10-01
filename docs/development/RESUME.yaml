@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-015"
 check: "RP-015.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "MERGE"
 source_branch: "work/rp-015-a001"
-source_commit: "9f5ff5110d89b81ccb1fdeeb9f2e854491ff035a"
+source_commit: "564207f3094cd7b9a5b16b61d2f82ea1d7bcc332"
 journal: "docs/development/journal/RP-015/A001/events.jsonl"
-last_verified_event: "RP-015-A001-0001"
+last_verified_event: "RP-015-A001-0028"
 last_completed: "RP-014"
-next_action: "Inspect exact native Docs API and current layout/contract; implement minimal adapter/reconciler plus shared wire conformance tests, then publish source before tests."
+next_action: "Guarded merge exact PR23 head, verify published main and acceptance checkpoint."
 verification: "Pin published source and test backend request bodies, UTF16/newline/tab identity, strict revision conflicts and complete binding/hash readback; no duplicate payload execution."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-015-A001-0001"]
+unsettled_intents: ["RP-015-A001-0028"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-015","DEF-016"]
 rollback: "Unreleased adapter is opt-in/unwired; revert additions without touching installed v1 authority, generations, or work. No deployment migration occurs."
 next_implementation_step: "RP-015"
 next_implementation_check: "RP-015.C1"
