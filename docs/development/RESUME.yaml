@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-018"
 check: "RP-018.C1"
 attempt: "A002"
-phase: "TEST"
+phase: "SOURCE"
 source_branch: "work/rp-022-a001"
-source_commit: "194c96cd028ad28eeea1eeb6d19970791055d94c"
+source_commit: "a387217bd4df6baf79b84ff1bf397e9bafb863ab"
 journal: "docs/development/journal/RP-018/A002/events.jsonl"
-last_verified_event: "RP-018-A002-0015"
+last_verified_event: "RP-018-A002-0016"
 last_completed: "RP-021"
-next_action: "Repair history validation to process new repair openings before later same-attempt repairs without duplicating acceptance snapshots; add strict regression. Then resume native inode-lock repair."
+next_action: "Publish small history-helper repair and tests, run development/ledger/scanner checks, then proceed with separately authorized native lock fix."
 verification: "Deterministic regression plus native Linux/SSH/full CI and all reopened RP018 checks; resume RP022 after repair qualification."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-018-A002-0016"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030","DEF-031"]
