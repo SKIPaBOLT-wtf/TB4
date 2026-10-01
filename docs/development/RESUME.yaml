@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-025"
 check: "RP-025.C4"
 attempt: "A001"
-phase: "REPAIR"
+phase: "VALIDATION"
 source_branch: "work/rp-025-a001"
 source_commit: "6a9da65c39716052df61e4181741cb850d03379f"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0037"
+last_verified_event: "RP-025-A001-0038"
 last_completed: "RP-024"
-next_action: "Publish exact-source regression/dedicated/related qualification INTENT."
+next_action: "Publish measured outcome then complete current/history and required hosted platform/frozen qualification."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-025-A001-0038"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045"]
