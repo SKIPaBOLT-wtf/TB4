@@ -5,16 +5,16 @@ check: "RP-018.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-018-a001"
-source_commit: "fbb38f4bc161f7ba659aad5590b75bcccf7a8787"
+source_commit: "a7e2c9206e51546d939a41c0babecbdc99764227"
 journal: "docs/development/journal/RP-018/A001/events.jsonl"
-last_verified_event: "RP-018-A001-0001"
+last_verified_event: "RP-018-A001-0002"
 last_completed: "RP-017"
-next_action: "Implement a bounded public synthetic folder qualification probe and design constraints, publish source, then record and execute its validation intent."
+next_action: "Publish diagnostic validation intent; run the exact local probe and independent Linux CI before selecting implementation."
 verification: "Compare pre/post object inventory and identities, strict revision-CAS winner, observed rollback after killed writer, independently reopened result, closed capacity and permission/rename failures. Later remote helper conformance must use the same operation model; no invented NAS access or real-machine result."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-018-A001-0001"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
