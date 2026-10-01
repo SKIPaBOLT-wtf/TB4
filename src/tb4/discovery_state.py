@@ -80,7 +80,8 @@ def catalogue_record(row):
     # nested projection without replacing either field or interpreting it as trust.
     body = row["body"]
     require(row["retention"] == "RETAINED" and type(body) is dict
-            and set(body) in ({"artifacts", "enrollment"}, {"artifacts", "enrollment", "discovery"})
+            and {"artifacts", "enrollment"} <= set(body)
+            and set(body) <= {"artifacts", "enrollment", "discovery", "ballpark"}
             and body["enrollment"] == "UNENROLLED" and type(body["artifacts"]) is dict
             and set(body["artifacts"]) == {"input", "output"}, "DISCOVERY_FOREIGN_CATALOGUE")
     from .drive.commissioning import Allocation
@@ -90,6 +91,10 @@ def catalogue_record(row):
         require(allocation.seal is not None, "DISCOVERY_FOREIGN_CATALOGUE")
     if "discovery" in body:
         catalogue_body(body["discovery"])
+    if "ballpark" in body:
+        from .ballpark_records import expand
+        require("discovery" in body, "DISCOVERY_FOREIGN_CATALOGUE")
+        expand(body["ballpark"], body["discovery"])
     return body
 
 
@@ -141,7 +146,8 @@ def validated_package(value, *, installation, spec, authority, networks):
                     index = int(key.split(".")[1])
                     full = catalogue_record(row)
                     old = catalogue_record(before[key])
-                    require(all(full[k] == old[k] for k in ("artifacts", "enrollment")), "DISCOVERY_PENDING")
+                    require({k:v for k,v in full.items() if k != "discovery"} ==
+                            {k:v for k,v in old.items() if k != "discovery"}, "DISCOVERY_PENDING")
                     body = catalogue_body(full["discovery"])
                     entry = image["entries"][index]
                     require(entry is not None and all(body[k] == entry[k] for k in ("device_id", "alias")),

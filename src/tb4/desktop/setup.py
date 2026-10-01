@@ -20,12 +20,13 @@ class StorageSelection:
 
 class SetupController:
     def __init__(self, setup, *, role, environment=None, storage_selector=None,
-                 checker_factory=None, credential_factory=None, credential_targets=()):
+                 checker_factory=None, credential_factory=None, credential_targets=(), ballpark_factory=None):
         require(type(setup) is Setup and role in {"watchdog","fetcher"}, "SETUP_CONTROLLER")
         self.setup, self.role = setup, role
         self.environment_probe = environment or (lambda:detect_environment(launch_mode="DESKTOP_SESSION"))
         self.storage_selector, self.checker_factory = storage_selector, checker_factory
         self.credential_factory, self.credential_targets = credential_factory, tuple(credential_targets)
+        self.ballpark_factory = ballpark_factory
         self.environment = None
         self.problem = None
         try:
@@ -44,6 +45,14 @@ class SetupController:
             result = {**result, "state":"BLOCKED", "reason":self.problem,
                       "settings_validated":False}
         return result
+
+    def ballpark_session(self):
+        # Only trusted composition can supply the current commissioned authority.
+        from tb4.ballpark_publication import Publisher
+        require(self.role == "watchdog" and callable(self.ballpark_factory), "DESCRIPTOR_REQUIRED")
+        session = self.ballpark_factory(self.setup)
+        require(type(session) is Publisher and session.setup is self.setup, "DESCRIPTOR_INVALID")
+        return session
 
     def save_owner_choices(self, *, mode, location, scope, isolated):
         require(type(isolated) is bool and type(scope) is str and type(location) is str,
