@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-018"
 check: "RP-018.C1"
 attempt: "A002"
-phase: "TEST"
+phase: "ENVIRONMENT"
 source_branch: "work/rp-022-a001"
 source_commit: "d55998cb068bff97fae33170b78650d63ce4f074"
 journal: "docs/development/journal/RP-018/A002/events.jsonl"
-last_verified_event: "RP-018-A002-0019"
+last_verified_event: "RP-018-A002-0020"
 last_completed: "RP-021"
-next_action: "Read exec93397 result and checkpoint it."
+next_action: "Read environment capability result, then either prepare the isolated test root or use hosted Linux CI; record exact bounded preparation outcome before native tests."
 verification: "Deterministic regression plus native Linux/SSH/full CI and all reopened RP018 checks; resume RP022 after repair qualification."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-018-A002-0018"]
+unsettled_intents: ["RP-018-A002-0018","RP-018-A002-0020"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030","DEF-031"]
