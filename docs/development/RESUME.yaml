@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-023"
 check: "RP-023.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "TEST"
 source_branch: "work/rp-023-a001"
 source_commit: "236d03a0eebbbda6513e65a167e39de40df9cc78"
 journal: "docs/development/journal/RP-023/A001/events.jsonl"
-last_verified_event: "RP-023-A001-0002"
+last_verified_event: "RP-023-A001-0003"
 last_completed: "RP-022"
-next_action: "Publish focused foundation validation INTENT, then run synthetic discovery tests with privacy/diff checks before native collection/persistence/publication work."
+next_action: "Record exact focused result; repair any observed model defect under a new intent, otherwise inspect and implement native bounded collection plus durable/fixed-slot adapters in subsequent units."
 verification: "Review exact source and named scope/duplicate-name/address-reassignment/multi-interface/unstable-identifier/routed-VPN cases; add native Windows/Linux and protected fixed-slot integration before final acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-023-A001-0003"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
