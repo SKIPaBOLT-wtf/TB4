@@ -1,23 +1,23 @@
 schema_version: 1
 revision: "R2"
-work_item: "RP-022"
-check: "RP-022.C1"
-attempt: "A001"
+work_item: "RP-018"
+check: "RP-018.C1"
+attempt: "A002"
 phase: "DIAGNOSIS"
 source_branch: "work/rp-022-a001"
 source_commit: "5e3617a42ac732cb3d0d1ff7b5521fa354e0c3a5"
-journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0042"
+journal: "docs/development/journal/RP-018/A002/events.jsonl"
+last_verified_event: "RP-018-A002-0001"
 last_completed: "RP-021"
-next_action: "Reopen RP018/A002 with preserved acceptance and scoped diagnosis INTENT, reproduce lock interleaving, then repair and revalidate; inspect remaining exact RP022 jobs separately."
-verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
+next_action: "Implement and run isolated deterministic regression against unchanged FolderStore; record exact source/test result and proven or rejected hypothesis."
+verification: "Deterministic regression plus native Linux/SSH/full CI and all reopened RP018 checks; resume RP022 after repair qualification."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0031","RP-022-A001-0038"]
+unsettled_intents: ["RP-022-A001-0031","RP-022-A001-0038","RP-018-A002-0001"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030"]
 rollback: "Disable/remove only new synthetic/R2 setup references while stopped; retain preceding protected snapshot and external keys/profiles/shared authority. Never reset a provisioned root or replay UNKNOWN allocation."
-next_implementation_step: "RP-022"
-next_implementation_check: "RP-022.C1"
+next_implementation_step: "RP-018"
+next_implementation_check: "RP-018.C1"
