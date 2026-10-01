@@ -1,20 +1,20 @@
 schema_version: 1
 revision: "R2"
 work_item: "RP-024"
-check: "RP-024.C1"
+check: "RP-024.C2"
 attempt: "A001"
-phase: "VALIDATION"
+phase: "SOURCE"
 source_branch: "work/rp-024-a001"
 source_commit: "6c341da01ddf2e01b45a6aa078e47a9a64754cee"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0008"
+last_verified_event: "RP-024-A001-0009"
 last_completed: "RP-023"
-next_action: "Inspect fixed-slot writer allocations and implement bounded atomic descriptor publication preserving active revision until confirmed; document schema decisions before source edits."
+next_action: "Publish source checkpoint and outcome, then run focused publication/regression tests under a new verified-absent local base."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-024-A001-0009"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
