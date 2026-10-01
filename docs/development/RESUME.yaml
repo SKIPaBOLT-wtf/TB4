@@ -9,12 +9,12 @@ source_commit: "194c96cd028ad28eeea1eeb6d19970791055d94c"
 journal: "docs/development/journal/RP-018/A002/events.jsonl"
 last_verified_event: "RP-018-A002-0014"
 last_completed: "RP-021"
-next_action: "Read local-exec95023 completion and publish actual result."
+next_action: "Inspect local metadata validation, then complete RP018 native contention repair before resuming RP022; all old RP022 CI jobs have recorded outcomes."
 verification: "Deterministic regression plus native Linux/SSH/full CI and all reopened RP018 checks; resume RP022 after repair qualification."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0031","RP-022-A001-0038","RP-018-A002-0013"]
+unsettled_intents: ["RP-018-A002-0013"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030","DEF-031"]
