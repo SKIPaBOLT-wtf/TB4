@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-018"
 check: "RP-018.C1"
 attempt: "A001"
-phase: "FEASIBILITY_VALIDATION"
+phase: "SOURCE"
 source_branch: "work/rp-018-a001"
 source_commit: "68d7f5be16cefda871bef0a45514c3d67e74ca6f"
 journal: "docs/development/journal/RP-018/A001/events.jsonl"
-last_verified_event: "RP-018-A001-0010"
+last_verified_event: "RP-018-A001-0011"
 last_completed: "RP-017"
-next_action: "Implement the optional server-local folder authority and bounded fixed-helper transport, with explicit same-exchange capability and unsupported-mode rejection; validate actual remote-helper conformance."
+next_action: "Implement and publish bounded folder authority/helper/client and conformance tests, then run source-linked isolated validation before any acceptance."
 verification: "Compare pre/post object inventory and identities, strict revision-CAS winner, observed rollback after killed writer, independently reopened result, closed capacity and permission/rename failures. Later remote helper conformance must use the same operation model; no invented NAS access or real-machine result."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-018-A001-0011"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-018"]
