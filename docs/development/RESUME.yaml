@@ -7,14 +7,14 @@ phase: "VALIDATION"
 source_branch: "work/rp-025-a001"
 source_commit: "6162dea493900e64b916ced098889d75849dc43f"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0053"
+last_verified_event: "RP-025-A001-0054"
 last_completed: "RP-024"
-next_action: "Inspect the same validation session/log; publish measured targeted/full development/current/history outcome before any suspension."
+next_action: "Publish a bounded retest INTENT using a freshly verified task-owned basetemp so pytest never inspects or removes the unrelated default temporary area; rerun targeted/full development and current/history gates."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-025-A001-0052"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046"]
