@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "item": "RP-019",
+  "check": "RP-019.C3",
+  "attempt": "A001",
+  "source_ref": "11e65c3a5d70e5a8ab8c264cf4d2477126642ef4",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Execute four focused commissioning/journal files, all pytest tests and exact collection using fresh isolated roots; inspect CI36808840543, Desktop36808840561 and exact-tree Progress36809391907 job receipts; compare tested implementation trees, review named assertions, ledger/history/privacy/diff and rollback limits.",
+  "expected": "Standby cannot allocate; immediate stale takeover resumes exact shared state; interruption and exhaustion never reset unknown/unread work.",
+  "observed": "All four invariants reviewed against final source11e65c3a5d70e5a8ab8c264cf4d2477126642ef4. Windows focused47pass11Linuxskip; full1675pass41skip4knownxfail. LinuxCI1714pass2GUIskip4knownxfail including required SSH and all new native folder cases. Desktop final Linux1725+4xfail, Windows1686+39skip4xfail, both roles' build/selftest/GUI/install-uninstall isolationPASS. Development146pass and exact-tree Progress36809391907 ledger/history/privacyPASS. 1718 exact nodes retained. DEF022/023 failed sources remain; no unobserved/running job.",
+  "exit_code": 0,
+  "platform_scope": "Local native Windows Python3.11.9; GitHub Windows-latest and Ubuntu22.04 Desktop plus Ubuntu-latest CI Python3.11; required isolated Linux ext4 and SSH plus synthetic Google SDK service.",
+  "negative_cases": "Lost creation/seed/CAS receipts, durable checkpoint failure, standby/current-owner race/stale successor, wrong root/mode/actor/access, foreign/duplicate metadata, size/identity/marker/permission/hardlink changes, corrupted/locked journal, capacity full, old grant recovery after takeover, malformed metadata correction.",
+  "unverified_scope": "No live Google commissioning, deployed root or profile, real remote provisioning, actual Windows ACL store qualification, physical power loss or actual xfs hardware acceptance. Protected-store/credential qualification remains RP020/021, endpoint/artifact/runtime integration later plan gates. Already admitted external effects may finish after takeover.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Preserve incomplete/UNKNOWN setup and exact identities; no automatic cleanup/reset/migration or unknown-job replay. Remove only proved unreferenced live objects under separate owner scope; tests use fresh synthetic roots only.",
+  "intent_event": "RP-019-A001-0019",
+  "outcome_event": "RP-019-A001-0027",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-019/A001/reviewed-validation.md"
+  ]
+}

@@ -451,3 +451,51 @@ def test_progress_ci_does_not_build_installers():
     # Selection of code paths, with no broad docs match, keeps pure ledger
     # checkpoints out of the heavyweight installer workflow.
     assert "paths:" in desktop and "'docs/**'" not in desktop
+
+def corrected_started_metadata():
+    intent=event()
+    started=event(2,"STARTED",intent["event_id"],"RUNNING")
+    started.pop("run_id",None)
+    started["observed"]="Local session 1234 is running; result remains unknown."
+    correction=event(3,"CORRECTION",started["event_id"],"RECORDED")
+    correction.update(observed=started["observed"],started_metadata_correction={
+        "old_outcome":"RUNNING","new_outcome":"PENDING","old_run_id":None,"new_run_id":"Local session 1234"})
+    return [intent,started,correction]
+
+def test_started_metadata_correction_preserves_original_bytes_and_pending():
+    rows=corrected_started_metadata();before=copy.deepcopy(rows)
+    found,pending=validate_journal(rows,"RP-001","A001",lambda _:True)
+    assert rows==before and found[rows[1]["event_id"]] is rows[1]
+    assert found[rows[1]["event_id"]]["outcome"]=="RUNNING"
+    assert list(pending)==[rows[0]["event_id"]]
+
+@pytest.mark.parametrize("fault",["target-kind","target-outcome","existing-run","invented-run",
+    "missing-observed","changed-observed","source","action","check","item","attempt",
+    "success","new-success","old-run","extra","mixed","duplicate","missing","later","closed"])
+def test_started_metadata_correction_cannot_invent_execution_or_success(fault):
+    rows=corrected_started_metadata();first,target,last=rows
+    patch=last["started_metadata_correction"]
+    if fault=="target-kind":target["event"]="OUTCOME"
+    elif fault=="target-outcome":target["outcome"]="FAIL"
+    elif fault=="existing-run":target["run_id"]="earlier"
+    elif fault=="invented-run":patch["new_run_id"]="Another session"
+    elif fault=="missing-observed":target["observed"]=None
+    elif fault=="changed-observed":last["observed"]="Invented launch"
+    elif fault=="source":last["source_ref"]="b"*40
+    elif fault=="action":last["action_id"]="OTHER"
+    elif fault=="check":last["check"]="RP-001.C2"
+    elif fault=="item":last["item"]="RP-002"
+    elif fault=="attempt":last["attempt"]="A002"
+    elif fault=="success":last["outcome"]="PASS"
+    elif fault=="new-success":patch["new_outcome"]="PASS"
+    elif fault=="old-run":patch["old_run_id"]="hidden"
+    elif fault=="extra":patch["authorized"]=True
+    elif fault=="mixed":
+        last["intent_note_correction"]=dict(field="observed",old_value="x",new_value=None)
+    elif fault=="duplicate":
+        duplicate=copy.deepcopy(last);duplicate.update(sequence=4,event_id="RP-001-A001-0004")
+        rows.append(duplicate)
+    elif fault=="missing":last["related_event"]="missing"
+    elif fault=="later":rows.reverse()
+    elif fault=="closed":first.update(event="OUTCOME",related_event="missing",outcome="PASS")
+    with pytest.raises(LedgerError):validate_journal(rows,"RP-001","A001",lambda _:True)

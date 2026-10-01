@@ -50,6 +50,12 @@ EVENT = closed({
         "old_value": TEXT,
         "new_value": {"const": None},
     }),
+    "started_metadata_correction": closed({
+        "old_outcome": {"const": "RUNNING"},
+        "new_outcome": {"const": "PENDING"},
+        "old_run_id": {"const": None},
+        "new_run_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9 ._:/-]{0,255}$"},
+    }),
 }, ["schema_version", "event_id", "sequence", "at", "item", "check",
     "attempt", "phase", "event", "action_id", "related_event", "source_ref",
     "scope", "procedure", "expected", "observed", "outcome", "evidence",

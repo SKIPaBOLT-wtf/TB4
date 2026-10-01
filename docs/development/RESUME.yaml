@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-019"
 check: "RP-019.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "MERGE"
 source_branch: "work/rp-019-a001"
-source_commit: "db5bda2168a053999451d23ac8970da9642cc6f1"
+source_commit: "52d2a9b77f68cf884668c61d3ff90d68f77d807b"
 journal: "docs/development/journal/RP-019/A001/events.jsonl"
-last_verified_event: "RP-019-A001-0001"
+last_verified_event: "RP-019-A001-0036"
 last_completed: "RP-018"
-next_action: "Implement and publish the bounded RP019 provisioner/source tests and contract, then validate exact source on Windows/Linux and native provider request fixtures before acceptance."
+next_action: "Inspect current exact PR head/base, execute one merge and verify main before acceptance update."
 verification: "Source-linked tests must prove exact ID reuse, durable pre-send uncertainty and same-operation inspection, current-owner CAS readiness, fixed allocation bounds and no normal create/delete. Test synthetic native request construction plus real isolated local folder provisioning without claiming a deployed configuration."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-019-A001-0001"]
+unsettled_intents: ["RP-019-A001-0036"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-022","DEF-023","DEF-024"]
 rollback: "Only new synthetic task-owned fixtures during tests. Interrupted commissioning remains INCOMPLETE/UNKNOWN; no cleanup of existing root or unknown/unread data. Removal of proved unreferenced live objects requires its own explicit owner scope. Installed selection unchanged."
 next_implementation_step: "RP-019"
 next_implementation_check: "RP-019.C1"
