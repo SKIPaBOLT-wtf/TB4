@@ -29,12 +29,40 @@ def protect(api, path, extra=""):
     apply = api.a.SetFileSecurityW
     apply.argtypes = [W.LPCWSTR, W.DWORD, C.c_void_p]
     apply.restype = W.BOOL
-    assert convert("D:P(A;;FA;;;" + sid + ")(A;;FA;;;SY)(A;;FA;;;BA)" + extra,
+    assert convert("O:" + sid + "D:P(A;;FA;;;" + sid + ")(A;;FA;;;SY)(A;;FA;;;BA)" + extra,
                    1, C.byref(descriptor), None), "fixture descriptor failed"
     try:
-        assert apply(str(path), 0x80000004, descriptor), "fixture DACL failed"
+        assert apply(str(path), 0x80000005, descriptor), "fixture owner/DACL failed"
     finally:
         api.k.LocalFree(descriptor)
+
+
+def owner_matches_user(api, path):
+    """Return only a boolean; never export the actual native owner/token SID."""
+    handle = api.k.CreateFileW(str(path), 0x20000, 7, None, 3, 0, None)
+    assert handle != C.c_void_p(-1).value, "fixture owner read handle failed"
+    owner, descriptor = C.c_void_p(), C.c_void_p()
+    try:
+        assert api.a.GetSecurityInfo(handle, 1, 1, C.byref(owner), None,
+                                     None, None, C.byref(descriptor)) == 0
+        return api._sid(owner) == api.identity().sid
+    finally:
+        if descriptor:
+            api.k.LocalFree(descriptor)
+        api.k.CloseHandle(handle)
+
+
+def test_fixture_explicit_owner_is_independent_of_process_default(tmp_path):
+    api = WindowsKeyNative()
+    path = tmp_path / "synthetic-owner-check"
+    path.write_bytes(CANARY)
+    before = owner_matches_user(api, path)
+    protect(api, path)
+    after = owner_matches_user(api, path)
+    print(json.dumps({"default_owner_matches_user": before, "selected_owner_matches_user": after}))
+    assert after is True
+    with api.open_key(str(path), api.identity().sid):
+        pass
 
 
 @pytest.fixture
