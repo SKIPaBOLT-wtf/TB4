@@ -5,16 +5,16 @@ check: "RP-024.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-024-a001"
-source_commit: "66c3c0b0103a7cccd30df44f55e9e6394189304c"
+source_commit: "fd9dad3fb7a07e1f6126dd5c1f53ec0409edb406"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0001"
+last_verified_event: "RP-024-A001-0002"
 last_completed: "RP-023"
-next_action: "Implement/publish the bounded pinned-guidance/proposal/staged-state foundation and tests, then record focused test INTENT; follow with guarded fixed-record publication and native/UI handoff qualification."
+next_action: "Run focused RP024 foundation and directly affected commissioning/discovery/instruction/descriptor regressions under a fresh task-only pytest base; inspect failures before dependent source changes."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-024-A001-0001"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
