@@ -204,4 +204,3 @@ def test_changed_blueprint_or_allocation_never_silently_expands_or_replaces(bad)
     with pytest.raises((AuthorityError,AssertionError)):
         finish(c)
     assert store.document["records"]["global.commissioning"]["body"]["state"]=="PREPARING"
-

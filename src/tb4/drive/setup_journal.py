@@ -142,4 +142,3 @@ class SetupJournal(AbstractContextManager):
             require(encoded(self.read())==encoded(payload),"SETUP_JOURNAL_READBACK")
         except Exception:
             raise AuthorityError("SETUP_JOURNAL_UNAVAILABLE") from None
-

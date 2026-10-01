@@ -127,4 +127,3 @@ def test_foreign_nonempty_root_is_never_initialized(context):
     b=Bootstrap(spec,port,JournalSection(j,"bootstrap"),owner_authorized=True)
     with pytest.raises(AuthorityError):b.advance(computer_name="synthetic",clock=clock())
     assert foreign.read_bytes()==b"synthetic" and not (port.root/DB).exists()
-

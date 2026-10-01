@@ -272,5 +272,3 @@ class Commissioner:
                 require(allocation.seal is not None and allocation.object_id not in identities
                         and self.port.inspect(key,allocation)==allocation,"ALLOCATION_UNVERIFIED")
                 identities.add(allocation.object_id)
-
-
