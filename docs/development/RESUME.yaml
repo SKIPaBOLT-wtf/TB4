@@ -7,14 +7,14 @@ phase: "VALIDATION"
 source_branch: "work/rp-015-a001"
 source_commit: "d429b6b4cba42bae2a0aff37399d3eed27748f58"
 journal: "docs/development/journal/RP-015/A001/events.jsonl"
-last_verified_event: "RP-015-A001-0014"
+last_verified_event: "RP-015-A001-0015"
 last_completed: "RP-014"
-next_action: "Run local suite; inspect matching CI/Progress/native workflows."
+next_action: "Keep DEF016 OPEN; require canonical-byte identity for protected/before/after records, strict artifact descriptor scalar types, and add precise negative cases before final revalidation."
 verification: "Pin published source and test backend request bodies, UTF16/newline/tab identity, strict revision conflicts and complete binding/hash readback; no duplicate payload execution."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-015-A001-0013"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-015","DEF-016"]
