@@ -2,22 +2,22 @@ schema_version: 1
 revision: "R2"
 work_item: "RP-016"
 check: "RP-016.C1"
-attempt: "A001"
-phase: "VERIFIED"
+attempt: "A002"
+phase: "PROGRESS_REPAIR"
 source_branch: "main"
 source_commit: "dfa260eae0675db46a2c56424cc4b5adbf348400"
-journal: "docs/development/journal/RP-016/A001/events.jsonl"
-last_verified_event: "RP-016-A001-0011"
-last_completed: "RP-016"
-next_action: "Validate corrected main ledger/Progress before claiming RP017."
+journal: "docs/development/journal/RP-016/A002/events.jsonl"
+last_verified_event: "RP-016-A002-0001"
+last_completed: "RP-015"
+next_action: "Remove unsupported mutable manifest field and publish repair outcome before validation."
 verification: "Strict requiredRevisionId readback and complete owner/request/transition binding; default timing profile and deterministic trusted/uncertain clock samples; unchanged operation/result records; no all-sink activation state."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-016-A002-0001"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-017"]
 rollback: "Unreleased helper remains unwired until later role/runtime/GUI integration; revert additions only. Never rewind a live epoch or clear another valid owner/unknown work."
-next_implementation_step: "RP-017"
-next_implementation_check: "RP-017.C1"
+next_implementation_step: "RP-016"
+next_implementation_check: "RP-016.C1"
