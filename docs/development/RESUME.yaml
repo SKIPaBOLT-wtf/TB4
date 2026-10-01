@@ -1,20 +1,20 @@
 schema_version: 1
 revision: "R2"
 work_item: "RP-020"
-check: "RP-020.C3"
+check: "RP-020.C4"
 attempt: "A001"
-phase: "METADATA_CORRECTION"
+phase: "REPAIR"
 source_branch: "work/rp-020-a001"
-source_commit: "bc3b5a42c66defebda12255b407b76b6b9e404e6"
+source_commit: "a79ccfd0f1ca027c30fac31aad99f3131eaa742d"
 journal: "docs/development/journal/RP-020/A001/events.jsonl"
-last_verified_event: "RP-020-A001-0010"
+last_verified_event: "RP-020-A001-0011"
 last_completed: "RP-019"
-next_action: "Finish the metadata-only repair outcome, then validate original-byte preservation, negative cases and current ledger."
+next_action: "Publish validation INTENT for developer regression, native credential regressions, immutable history, ledger, scanner and diff; then complete full CI/platform/package gates."
 verification: "Require native Windows token/DACL/file-sharing tests plus portable failure/race/canary coverage, required platform CI, complete regression and packaged install/uninstall checks. Validate ledger, public scanner and base-to-head diff before merge."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-020-A001-0007"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-025"]
