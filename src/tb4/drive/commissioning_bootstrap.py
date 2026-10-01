@@ -108,3 +108,21 @@ class Bootstrap:
         try:self.port.seed(self.spec,handle,raw)
         except Exception:return "UNKNOWN"
         return "INSPECT_REQUIRED"
+
+    def initial_grant(self,leadership,clock):
+        """Recover only the seeded acquisition after fresh shared verification.
+
+        A changed acquisition requires ordinary RP016 takeover/recovery; this
+        local COMPLETE marker cannot revive the original owner's lease.
+        """
+        from .leadership import Grant, Leadership
+        require(isinstance(leadership,Leadership) and leadership.actor==self.spec.bootstrap_actor,
+                "BOOTSTRAP_ACTOR")
+        state,_=self._state(leadership.enrollment[leadership.actor],clock)
+        require(state["phase"]=="COMPLETE","BOOTSTRAP_INCOMPLETE")
+        handle=AuthorityHandle.parse(state["handle"])
+        require(leadership.backend.binding==self.port.authority(handle).binding,
+                "BOOTSTRAP_HANDLE_CHANGED")
+        grant=Grant(self.spec.bootstrap_actor,1,self.spec.operation("authority"))
+        require(leadership.current_before_dispatch(grant,clock),"OWNER_SUPERSEDED")
+        return grant

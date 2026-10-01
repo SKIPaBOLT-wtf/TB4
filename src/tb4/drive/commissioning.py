@@ -47,7 +47,8 @@ class SetupSpec:
     def __post_init__(self):
         require(object_id(self.root_id) and uuid(self.domain_id) and uuid(self.bootstrap_actor)
                 and type(self.setup_id) is str and re.fullmatch("[a-f0-9]{64}", self.setup_id)
-                and self.mode in MODES and type(self.capacity) is Capacity, "SETUP_SPEC")
+                and type(self.mode) is str and self.mode in MODES
+                and type(self.capacity) is Capacity, "SETUP_SPEC")
 
     @property
     def fingerprint(self): return digest(asdict(self))
@@ -138,6 +139,9 @@ class Commissioner:
                 and getattr(self.journal,"protected",None) is True
                 and getattr(self.journal,"locked",None) is True, "SETUP_JOURNAL")
         state=self.journal.read()
+        if state is None:
+            state={"spec":self.spec.fingerprint,"pending":None}
+            self._save(state)
         require(type(state) is dict and set(state)=={"spec","pending"}
                 and state["spec"]==self.spec.fingerprint, "SETUP_JOURNAL")
         return state

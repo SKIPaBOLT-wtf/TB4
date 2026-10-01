@@ -64,6 +64,10 @@ class FolderCommissioning:
     def inspect_authority(self,spec,known):
         require(spec==self.spec,"SETUP_SPEC")
         self.check_root()
+        if known is None:
+            allowed={DB,JOURNAL}|{self.prepare(key,self.spec.operation(key)).object_id
+                                 for key in self.spec.artifact_keys}
+            require(all(p.name in allowed for p in self.root.iterdir()),"SETUP_ROOT_NOT_EMPTY")
         if not (self.root/DB).exists() or not (self.root/JOURNAL).exists():
             # A partial first creation is preserved. Never initialize/reset it
             # merely because one file or a creator receipt is absent.

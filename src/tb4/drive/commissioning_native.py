@@ -28,33 +28,38 @@ class NativeCommissioning:
         self.drive,self.docs,self.spec=drive,docs,spec
         self.root_id,self.llm_authorized=spec.root_id,llm_authorized
 
-    def _execute(self,request,limit=2*1024*1024):
+    def _execute(self,request,limit=2*1024*1024,*,missing_ok=False):
         try:
             result=request.execute(num_retries=0)
             require(type(result) is dict and len(encoded(result))<=limit,"SETUP_PROVIDER_RESPONSE")
             return result
-        except Exception:
+        except Exception as exc:
+            if missing_ok and getattr(getattr(exc,"resp",None),"status",None)==404:
+                return None
             raise AuthorityError("SETUP_PROVIDER_UNAVAILABLE") from None
 
     def _props(self,key,op):
         return dict(tb4Domain=self.spec.domain_id,tb4Setup=self.spec.setup_id,tb4Slot=key,tb4Operation=op)
 
-    def _metadata(self,ref):
+    def _metadata(self,ref,*,missing_ok=False):
         require(object_id(ref),"SETUP_OBJECT")
-        return self._execute(self.drive.files().get(fileId=ref,fields=FIELDS,supportsAllDrives=True))
+        return self._execute(self.drive.files().get(fileId=ref,fields=FIELDS,supportsAllDrives=True),
+                             missing_ok=missing_ok)
 
     def check_root(self):
         value=self._metadata(self.root_id)
         require(value.get("id")==self.root_id and value.get("mimeType")==FOLDER
-                and value.get("trashed") is False and value.get("capabilities",{}).get("canEdit") is True,
+                and value.get("trashed") is False and type(value.get("capabilities")) is dict
+                and value["capabilities"].get("canEdit") is True,
                 "SETUP_ROOT")
 
     def _verify(self,value,key,ref=None):
         mime=DOC if key=="authority" else BLOB
-        require(object_id(value.get("id")) and (ref is None or value["id"]==ref)
+        require(type(value) is dict and object_id(value.get("id")) and (ref is None or value["id"]==ref)
                 and value.get("mimeType")==mime and value.get("parents")==[self.root_id]
                 and value.get("trashed") is False and value.get("properties")==self._props(key,self.spec.operation(key))
-                and value.get("capabilities",{}).get("canEdit") is True,"SETUP_OBJECT_BINDING")
+                and type(value.get("capabilities")) is dict
+                and value["capabilities"].get("canEdit") is True,"SETUP_OBJECT_BINDING")
         if key!="authority":
             size=value.get("size")
             require(type(size) is str and size.isascii() and size.isdecimal()
@@ -71,14 +76,17 @@ class NativeCommissioning:
                 and len(value["tabs"])==1,"SETUP_DOCUMENT")
         tab=value["tabs"][0]
         require(type(tab) is dict and not tab.get("childTabs"),"SETUP_DOCUMENT")
-        tab_id=tab.get("tabProperties",{}).get("tabId")
+        require(type(tab.get("tabProperties")) is dict,"SETUP_DOCUMENT")
+        tab_id=tab["tabProperties"].get("tabId")
         require(object_id(tab_id),"SETUP_DOCUMENT")
         return AuthorityHandle(ref,digest([self.mode,self.root_id,self.spec.domain_id,ref,tab_id]),tab_id)
 
     def inspect_authority(self,spec,known):
         require(spec==self.spec,"SETUP_SPEC")
         if known is not None:
-            self._verify(self._metadata(known.object_id),"authority",known.object_id)
+            value=self._metadata(known.object_id,missing_ok=True)
+            if value is None:return None
+            self._verify(value,"authority",known.object_id)
             found=self._handle(known.object_id)
             require(found==known,"BOOTSTRAP_HANDLE_CHANGED")
             return found
@@ -92,10 +100,14 @@ class NativeCommissioning:
                 and type(response.get("files")) is list and len(response["files"])<=131,
                 "SETUP_ROOT_AMBIGUOUS")
         authorities=[]
+        seen_keys,seen_ids=set(),set()
         for value in response["files"]:
-            key=value.get("properties",{}).get("tb4Slot")
+            require(type(value) is dict and type(value.get("properties")) is dict,"SETUP_ROOT_FOREIGN")
+            key=value["properties"].get("tb4Slot")
             require(key in ("authority",)+self.spec.artifact_keys,"SETUP_ROOT_FOREIGN")
             ref=self._verify(value,key)
+            require(key not in seen_keys and ref not in seen_ids,"SETUP_ROOT_AMBIGUOUS")
+            seen_keys.add(key);seen_ids.add(ref)
             if key=="authority":authorities.append(ref)
         require(len(authorities)<=1,"SETUP_ROOT_AMBIGUOUS")
         require(authorities or not response["files"],"SETUP_AUTHORITY_MISSING")
@@ -192,7 +204,8 @@ class NativeCommissioning:
     def inspect(self,key,allocation):
         require(key in self.spec.artifact_keys and type(allocation) is Allocation
                 and allocation.operation_id==self.spec.operation(key),"ALLOCATION")
-        value=self._metadata(allocation.object_id)
+        value=self._metadata(allocation.object_id,missing_ok=True)
+        if value is None:return None
         self._verify(value,key,allocation.object_id)
         # A Google file ID is never reused for another object. Contents/version
         # can change in the same allocated slot during later artifact operation.
