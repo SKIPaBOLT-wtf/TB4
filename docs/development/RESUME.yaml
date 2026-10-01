@@ -7,14 +7,14 @@ phase: "VALIDATION"
 source_branch: "work/rp-025-a001"
 source_commit: "86d4d32598616b935a7b8b2623d0c3a28e65767d"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0024"
+last_verified_event: "RP-025-A001-0025"
 last_completed: "RP-024"
-next_action: "Publish bounded current-input schema/location diagnosis INTENT before correction; preserve runtime/focused passes and prior history."
+next_action: "Publish exact diagnosis outcome/evidence, then scope a minimal current-progress correction with C1-C4 rechecks if warranted."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-025-A001-0025"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044"]
