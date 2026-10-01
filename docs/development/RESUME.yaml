@@ -1,20 +1,20 @@
 schema_version: 1
 revision: "R2"
 work_item: "RP-020"
-check: "RP-020.C1"
+check: "RP-020.C3"
 attempt: "A001"
-phase: "SOURCE"
+phase: "TEST"
 source_branch: "work/rp-020-a001"
 source_commit: "bc3b5a42c66defebda12255b407b76b6b9e404e6"
 journal: "docs/development/journal/RP-020/A001/events.jsonl"
-last_verified_event: "RP-020-A001-0003"
+last_verified_event: "RP-020-A001-0004"
 last_completed: "RP-019"
-next_action: "Publish an INTENT for focused RP006/RP020 native Windows and portable policy tests, source/ledger/privacy validation and test collection with a fresh task-owned root."
+next_action: "Publish the measured focused validation OUTCOME and evidence; repair any proven defects under a separate INTENT before broader CI/package acceptance."
 verification: "Require native Windows token/DACL/file-sharing tests plus portable failure/race/canary coverage, required platform CI, complete regression and packaged install/uninstall checks. Validate ledger, public scanner and base-to-head diff before merge."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-020-A001-0004"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
