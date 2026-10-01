@@ -7,18 +7,17 @@ phase: "DOCUMENTATION"
 source_branch: "work/rp-024-a001"
 source_commit: "e39444ffbd4a2661716cd80a7271e4b6ea8cd494"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0019"
+last_verified_event: "RP-024-A001-0020"
 last_completed: "RP-023"
-next_action: "Publish corrected current cursor/outcome, then new INTENT for development196/current/history/scanner/fullbranch validation."
+next_action: "Run required development/current/main-base history/scanner/fullbranch gates on this corrected checkpoint."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-024-A001-0019"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-038","DEF-039"]
 rollback: "Preserve the prior validated descriptor, stable catalogue identities, protected settings/operation history and pending work. Discard only unpublished synthetic source under a new INTENT; no reset, rebinding, enrollment or unknown-operation replay."
 next_implementation_step: "RP-024"
 next_implementation_check: "RP-024.C1"
-known_defects: ["DEF-001","DEF-002","DEF-038"]
