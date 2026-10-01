@@ -72,6 +72,30 @@ def restore_pin(source, value, runtime):
     pin = PinnedWorkflow(value["commit"], value["profile"], runtime, value["policy_digest"],
                          value["instructions"], tuple(files))
     check_boundary(source, pin, runtime)
+    # Protected saved metadata is not itself proof of the repository's original
+    # compatible closure. Bind it back to that exact immutable catalogue too.
+    import json
+    from .instructions import CATALOG, _unique_object, _policy
+    try:
+        original = json.loads(_read(source, pin.commit, CATALOG), object_pairs_hook=_unique_object)
+        require(type(original) is dict and set(original) == {
+            "schema_version", "repository", "repository_id", "entry", "entry_sha256", "profiles"}
+            and type(original["schema_version"]) is int and original["schema_version"] == 1
+            and original["repository"] == REPOSITORY
+            and type(original["repository_id"]) is int and original["repository_id"] == REPOSITORY_ID
+            and original["entry"] == ENTRY and type(original["profiles"]) is list,
+            "BALLPARK_PIN_CATALOGUE")
+        profiles = [p for p in original["profiles"] if type(p) is dict and p.get("id") == pin.profile]
+        require(len(profiles) == 1, "BALLPARK_PIN_CATALOGUE")
+        profile = profiles[0]
+        require(profile["status"] == "RELEASED" and _policy(profile) == pin.policy_digest
+                and profile["instructions"] == pin.instructions
+                and value["files"] == {ENTRY: original["entry_sha256"], **profile["files"]},
+                "BALLPARK_PIN_CATALOGUE")
+    except BallparkError:
+        raise
+    except Exception:
+        raise BallparkError("BALLPARK_PIN_CATALOGUE") from None
     return pin
 
 
