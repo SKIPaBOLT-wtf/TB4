@@ -5,16 +5,16 @@ check: "RP-019.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-019-a001"
-source_commit: "11e65c3a5d70e5a8ab8c264cf4d2477126642ef4"
+source_commit: "52d2a9b77f68cf884668c61d3ff90d68f77d807b"
 journal: "docs/development/journal/RP-019/A001/events.jsonl"
-last_verified_event: "RP-019-A001-0030"
+last_verified_event: "RP-019-A001-0031"
 last_completed: "RP-018"
-next_action: "Publish format-only source/evidence correction, then authorize and run equivalence and ledger validation."
+next_action: "Authorize and run exact EOF-byte/Python-AST equivalence, ledger/history/privacy and base diff. Keep all actual successful runtime receipts pinned to original tested source; no expensive unchanged runtime replay."
 verification: "Source-linked tests must prove exact ID reuse, durable pre-send uncertainty and same-operation inspection, current-owner CAS readiness, fixed allocation bounds and no normal create/delete. Test synthetic native request construction plus real isolated local folder provisioning without claiming a deployed configuration."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-019-A001-0030"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-022","DEF-023","DEF-024"]
