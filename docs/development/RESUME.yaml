@@ -7,14 +7,14 @@ phase: "TEST"
 source_branch: "work/rp-022-a001"
 source_commit: "2af8bf80715fbf1ec89bef822d5ecb96b48aad51"
 journal: "docs/development/journal/RP-018/A002/events.jsonl"
-last_verified_event: "RP-018-A002-0006"
+last_verified_event: "RP-018-A002-0007"
 last_completed: "RP-021"
-next_action: "Inspect local-exec15778 completion and exact log; do not start a duplicate test."
+next_action: "Trace only closed SQLite/AuthorityError codes and failing schema path in isolated fixture; inspect the same failure without any live access, then document a new repair INTENT."
 verification: "Deterministic regression plus native Linux/SSH/full CI and all reopened RP018 checks; resume RP022 after repair qualification."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0031","RP-022-A001-0038","RP-018-A002-0005"]
+unsettled_intents: ["RP-022-A001-0031","RP-022-A001-0038"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-029","DEF-030"]
