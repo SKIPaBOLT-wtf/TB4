@@ -1,20 +1,20 @@
 schema_version: 1
 revision: "R2"
 work_item: "RP-025"
-check: "RP-025.C1"
+check: "RP-025.C4"
 attempt: "A001"
-phase: "IMPLEMENTATION"
+phase: "VALIDATION"
 source_branch: "work/rp-025-a001"
 source_commit: "9c31cf661ace178723792924455c93841e0e1ed1"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0004"
+last_verified_event: "RP-025-A001-0005"
 last_completed: "RP-024"
-next_action: "Run focused new enrollment/profile tests plus RP024/RP023/native first-run regressions, then review actual failures/privacy/diff before further changes."
+next_action: "Record measured focused outcome. Diagnose/reproduce any failure with linked DEF and repair INTENT, then repeat only required focused gates."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-025-A001-0005"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
