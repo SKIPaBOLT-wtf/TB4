@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-022"
 check: "RP-022.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "TEST"
 source_branch: "work/rp-022-a001"
 source_commit: "a28f755a8e8e2f6794bf3694df153f325378d419"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0007"
+last_verified_event: "RP-022-A001-0008"
 last_completed: "RP-021"
-next_action: "Publish model validation INTENT, run focused state/native/commissioning/instruction/credential tests; record exact outcomes before dependent UI or durable credential work."
+next_action: "Inspect exact tests, publish result and any defects, then repair or continue durable credential and local UI implementation."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-022-A001-0008"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
