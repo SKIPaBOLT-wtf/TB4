@@ -7,14 +7,14 @@ phase: "VALIDATION"
 source_branch: "work/rp-025-a001"
 source_commit: "6162dea493900e64b916ced098889d75849dc43f"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0056"
+last_verified_event: "RP-025-A001-0057"
 last_completed: "RP-024"
-next_action: "Collect same-session targeted/full development/current/history/scanner results and publish before any freeze/reopening."
+next_action: "Publish RP025/A001 suspension INTENT, settle its journal and preserve source/PR/attempt/fullholds as BLOCKED; then publish coordinated RP021/A002 reopening with exact accepted snapshots21-24 and reconciled unaccepted25."
 verification: "Require approved device/preallocated slot and distinct installation; qualify native runtime/interpreter/timing data, minimal disabled-capability/own-credential summaries, duplicate/reinstall/changed identity/alias/capacity/stale tests, durable inspect-only authority publication and all relevant regressions."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-025-A001-0055"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046"]
