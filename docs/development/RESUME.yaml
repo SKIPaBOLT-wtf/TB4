@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-017"
 check: "RP-017.C1"
 attempt: "A001"
-phase: "FINAL_REVIEW"
+phase: "MERGE"
 source_branch: "work/rp-017-a001"
 source_commit: "0b2f89a637e95895202de5822c259e121ee6fe41"
 journal: "docs/development/journal/RP-017/A001/events.jsonl"
-last_verified_event: "RP-017-A001-0007"
+last_verified_event: "RP-017-A001-0008"
 last_completed: "RP-016"
-next_action: "Publish exact-head PR26 merge intent and merge verified native startup."
+next_action: "Merge PR26 exact head and read main journal."
 verification: "Actual RP016/RP015 wire adapter plus deterministic fake-clock/action/checkpoint ports; no effect on fresh-incumbent startup; exact owner/epoch readback and per-installation capability checks; code integration via factory/worker and no raw-v1 fallthrough."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-017-A001-0008"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
