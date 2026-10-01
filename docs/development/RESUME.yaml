@@ -5,16 +5,16 @@ check: "RP-022.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-022-a001"
-source_commit: "5aa29c4fe64e45aa580534135c880d35fe36bc52"
+source_commit: "a28f755a8e8e2f6794bf3694df153f325378d419"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0006"
+last_verified_event: "RP-022-A001-0007"
 last_completed: "RP-021"
-next_action: "Publish model source and OUTCOME, then a targeted validation INTENT; resolve any failures before implementing local setup UI."
+next_action: "Publish model validation INTENT, run focused state/native/commissioning/instruction/credential tests; record exact outcomes before dependent UI or durable credential work."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-022-A001-0006"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
