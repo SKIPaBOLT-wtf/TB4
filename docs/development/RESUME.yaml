@@ -7,9 +7,9 @@ phase: "CI"
 source_branch: "work/rp-022-a001"
 source_commit: "f9d2a74102a462c9f8aee35a763ff257306d7118"
 journal: "docs/development/journal/RP-022/A001/events.jsonl"
-last_verified_event: "RP-022-A001-0032"
+last_verified_event: "RP-022-A001-0033"
 last_completed: "RP-021"
-next_action: "Inspect exact CI/Progress/Desktop jobs and logs, source equality and artifacts to completion. Record observed failures before repair or reviewed passing evidence before check acceptance."
+next_action: "Publish a repair source INTENT for exact pending-frame recovery on reopening plus actual-native/UI regression, without replay/new identity; continue inspecting original CI runs separately."
 verification: "Native Windows/Linux ownership/ACL/locking/atomic recovery, model restart/cancel/unknown/version/projection/canary tests, real Qt setup UI checks in later unit, full required platform/package regressions, source/privacy/history review."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
@@ -17,7 +17,7 @@ implementation_started: true
 unsettled_intents: ["RP-022-A001-0031"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
+known_open_defects: ["DEF-001","DEF-002","DEF-029"]
 rollback: "Disable/remove only new synthetic/R2 setup references while stopped; retain preceding protected snapshot and external keys/profiles/shared authority. Never reset a provisioned root or replay UNKNOWN allocation."
 next_implementation_step: "RP-022"
 next_implementation_check: "RP-022.C1"
