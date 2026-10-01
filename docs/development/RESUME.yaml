@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-017"
 check: "RP-017.C1"
 attempt: "A001"
-phase: "MERGE"
-source_branch: "work/rp-017-a001"
+phase: "VERIFIED"
+source_branch: "main"
 source_commit: "0b2f89a637e95895202de5822c259e121ee6fe41"
 journal: "docs/development/journal/RP-017/A001/events.jsonl"
-last_verified_event: "RP-017-A001-0008"
-last_completed: "RP-016"
-next_action: "Merge PR26 exact head and read main journal."
+last_verified_event: "RP-017-A001-0009"
+last_completed: "RP-017"
+next_action: "Validate main ledger/Progress, then inspect and claim RP018 shared-folder conformance against the actual selected-storage contract."
 verification: "Actual RP016/RP015 wire adapter plus deterministic fake-clock/action/checkpoint ports; no effect on fresh-incumbent startup; exact owner/epoch readback and per-installation capability checks; code integration via factory/worker and no raw-v1 fallthrough."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-017-A001-0008"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
 rollback: "Unreleased opt-in native context only. Keep prior supported deployment unchanged; never clear owner, rewind epoch or copy another installation profile/credentials. Stop only local coordinator admission; retain pending plans/unknown effects."
-next_implementation_step: "RP-017"
-next_implementation_check: "RP-017.C1"
+next_implementation_step: "RP-018"
+next_implementation_check: "RP-018.C1"
