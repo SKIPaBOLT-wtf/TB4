@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "item": "RP-016",
+  "check": "RP-016.C4",
+  "attempt": "A002",
+  "source_ref": "bde4f0f4eeec21594574b80c884b06202d55f44f",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Run existing development plus leadership/authority/integration regressions with process-local venv, fresh temp and exact collection; full Linux CI and Progress on PR25. Validate history against A002 branch base and repair base, privacy/diff and unchanged product source against RP016 A001 tested head. No desktop build required for tools/tests/docs-only repair.",
+  "expected": "Available stale/forced takeover without peer ACK and explicit dispatch limit remain intact; canonical progress validates.",
+  "observed": "24 new strict correction cases plus existing leadership regressions PASS; local1105/2skip/4knownxfail, CI1522/2skip/4knownxfail; Progress PASS. Original product source and all A001 evidence preserved; documentation-only DEF017 repaired.",
+  "exit_code": 0,
+  "platform_scope": "Windows local Python3.11 and Linux CI. Original unchanged native Windows/Linux package evidence reused from A001.",
+  "negative_cases": [
+    "Malformed note without correction rejected",
+    "Correction cannot modify authorization/action/source",
+    "Duplicate/mismatched correction rejected",
+    "UNKNOWN outcome stays pending",
+    "All existing ownership/fencing/clock negative cases retained"
+  ],
+  "unverified_scope": "Runtime/provider/GUI/live-pilot integration remains later scope. No deployed behavior changed. Four known cancellation expected failures and DEF001 remain unresolved.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Keep immutable records and a compatible append-only parser. No live epoch/owner reset or replay.",
+  "intent_event": "RP-016-A002-0009",
+  "outcome_event": "RP-016-A002-0011",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-016/A002/reviewed-validation.md"
+  ]
+}
