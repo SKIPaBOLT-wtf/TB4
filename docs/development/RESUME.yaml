@@ -7,14 +7,14 @@ phase: "VALIDATION"
 source_branch: "work/rp-019-a001"
 source_commit: "11e65c3a5d70e5a8ab8c264cf4d2477126642ef4"
 journal: "docs/development/journal/RP-019/A001/events.jsonl"
-last_verified_event: "RP-019-A001-0022"
+last_verified_event: "RP-019-A001-0023"
 last_completed: "RP-018"
-next_action: "Create and verify exact-tree lightweight validation branch; inspect actual Progress run alongside existing full product/package jobs."
+next_action: "Finish current full Windows session17457 and both existing Desktop runs; record exact counts/native packaging receipts and compare final tested implementation trees before accepting RP019."
 verification: "Source-linked tests must prove exact ID reuse, durable pre-send uncertainty and same-operation inspection, current-owner CAS readiness, fixed allocation bounds and no normal create/delete. Test synthetic native request construction plus real isolated local folder provisioning without claiming a deployed configuration."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-019-A001-0012","RP-019-A001-0019","RP-019-A001-0022"]
+unsettled_intents: ["RP-019-A001-0012","RP-019-A001-0019"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-022","DEF-023"]
