@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-018"
 check: "RP-018.C1"
 attempt: "A001"
-phase: "SOURCE"
+phase: "FEASIBILITY_VALIDATION"
 source_branch: "work/rp-018-a001"
 source_commit: "a7e2c9206e51546d939a41c0babecbdc99764227"
 journal: "docs/development/journal/RP-018/A001/events.jsonl"
-last_verified_event: "RP-018-A001-0002"
+last_verified_event: "RP-018-A001-0003"
 last_completed: "RP-017"
-next_action: "Publish diagnostic validation intent; run the exact local probe and independent Linux CI before selecting implementation."
+next_action: "Open prototype PR, checkpoint execution identity, then run local probe and inspect Linux workflow."
 verification: "Compare pre/post object inventory and identities, strict revision-CAS winner, observed rollback after killed writer, independently reopened result, closed capacity and permission/rename failures. Later remote helper conformance must use the same operation model; no invented NAS access or real-machine result."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-018-A001-0003"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
