@@ -7,14 +7,14 @@ phase: "VALIDATION"
 source_branch: "work/rp-024-a001"
 source_commit: "c5b7e7500c2cc6583b4deff03708d8d2cf388474"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0011"
+last_verified_event: "RP-024-A001-0012"
 last_completed: "RP-023"
-next_action: "Read measured output and publish actual outcome before repair or subsequent native/UI integration unit."
+next_action: "Complete source review and trusted desktop handoff, add any missing boundary tests/codec capacity coverage, then run required native/full/frozen hosted qualification."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-024-A001-0011"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
