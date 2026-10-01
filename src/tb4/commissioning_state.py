@@ -11,6 +11,7 @@ from uuid import uuid4
 
 from .ballpark import validate as validate_ballpark
 from .credential_contract import identity, Purpose
+from .credential_persistence import export_private, restore_private, validate_image, preserve_prior_authority
 from .drive.commissioning import SetupSpec
 from .drive.commissioning_bootstrap import AuthorityHandle
 from .exchange_layout import Capacity
@@ -81,8 +82,8 @@ def validate_choices(choices, installation):
 
 def validated(payload):
     try:
-        require(type(payload) is dict and set(payload) == {
-            "schema_version", "installation_id", "setup_nonce", "state", "reason", "choices", "operations"},
+        fields = {"schema_version", "installation_id", "setup_nonce", "state", "reason", "choices", "operations"}
+        require(type(payload) is dict and set(payload) in (fields, fields | {"credential_image"}),
             "SETUP_SCHEMA")
         require(type(payload["schema_version"]) is int and payload["schema_version"] == 1
                 and identity(payload["installation_id"])
@@ -90,6 +91,14 @@ def validated(payload):
         require(type(payload["state"]) is str and payload["state"] in STATES
                 and type(payload["reason"]) is str and payload["reason"] in REASONS, "SETUP_STATE")
         validate_choices(payload["choices"], payload["installation_id"])
+        image = payload.get("credential_image")
+        if image is not None:
+            image = validate_image(image, payload["installation_id"])
+            for selected in payload["choices"]["credentials"]:
+                binding = image["bindings"].get(selected["handle"])
+                require(binding is not None and selected["target_id"] == binding["target_id"]
+                        and selected["target_trust"] == binding["target_trust"]
+                        and set(selected["purposes"]) <= set(binding["purposes"]), "SETUP_CREDENTIALS")
         operations = payload["operations"]
         require(type(operations) is dict and len(operations) <= 64, "SETUP_OPERATIONS")
         require(all(match(r"[0-9a-f]{64}", key) and type(value) is str
@@ -126,7 +135,8 @@ class Setup:
             payload = dict(schema_version=1, installation_id=str(uuid4()),
                            setup_nonce=secrets.token_hex(32), state="INCOMPLETE", reason="MISSING_CHOICES",
                            choices=dict(role=None, storage=None, network_scope=None, credentials=[],
-                                        descriptor=None, timing=asdict(TimingProfile())), operations={})
+                                        descriptor=None, timing=asdict(TimingProfile())), operations={},
+                           credential_image=None)
             snapshot = store.save(validated(payload), expected_revision=0)
         self.snapshot = snapshot
         self._payload = validated(snapshot.payload)
@@ -190,6 +200,35 @@ class Setup:
         self._fresh()
         self._save({**self._payload, "state": "CANCELLED", "reason": "CANCELLED"})
         return self.status()
+
+    def persist_credentials(self, store, resolver, selected):
+        """Commit exact refs and protected metadata together, never key bytes."""
+        self._fresh()
+        image = export_private(store, resolver)
+        require(image["installation_id"] == self.installation_id, "SETUP_CREDENTIALS")
+        previous = self._payload.get("credential_image")
+        preserve_prior_authority(previous, image)
+        unknown = "UNKNOWN" in self._payload["operations"].values()
+        if unknown:
+            # Revocation is allowed during UNKNOWN; adding/rebinding authority
+            # or changing selected capabilities remains forbidden.
+            require(previous is not None and selected == self._payload["choices"]["credentials"]
+                    and all(set(previous[k]) == set(image[k]) for k in ("selections", "bindings")),
+                    "SETUP_INSPECT_REQUIRED")
+        value = copy.deepcopy(self._payload)
+        value["choices"]["credentials"] = copy.deepcopy(selected)
+        value.update(credential_image=image, state="BLOCKED" if unknown else "INCOMPLETE",
+                     reason="UNKNOWN_OPERATION" if unknown else "REVALIDATION_REQUIRED")
+        self._save(value)
+        return self.status()
+
+    def restore_credentials(self, store, resolver):
+        """Read the same protected frame immediately before fresh-pair restore."""
+        self._fresh()
+        image = self._payload.get("credential_image")
+        require(image is not None, "SETUP_CREDENTIAL_IMAGE_ABSENT")
+        require(store.installation_id == self.installation_id, "SETUP_CREDENTIALS")
+        restore_private(image, store, resolver)
 
     def resume(self):
         self._fresh()
@@ -285,6 +324,7 @@ class Setup:
         require(previous["installation_id"] == self.installation_id
                 and previous["setup_nonce"] == self._payload["setup_nonce"]
                 and previous["operations"] == self._payload["operations"]
+                and previous.get("credential_image") == self._payload.get("credential_image")
                 and previous["choices"]["storage"] == self._payload["choices"]["storage"],
                 "SETUP_ROLLBACK_UNSAFE")
         self._save({**previous, "state": "INCOMPLETE", "reason": "REVALIDATION_REQUIRED"})

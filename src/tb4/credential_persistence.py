@@ -88,6 +88,21 @@ def _pair(store, resolver):
             "CREDENTIAL_IMAGE_STORE_MISMATCH")
 
 
+def preserve_prior_authority(previous, candidate):
+    """Retain tombstones; existing references may only gain revocation."""
+    if previous is None:
+        return
+    require(previous["installation_id"] == candidate["installation_id"]
+            and previous["platform"] == candidate["platform"], "CREDENTIAL_IMAGE_TRANSITION")
+    for section in ("selections", "bindings"):
+        for ref, old in previous[section].items():
+            new = candidate[section].get(ref)
+            require(new is not None and (not old["revoked"] or new["revoked"])
+                    and {k:v for k,v in old.items() if k != "revoked"}
+                        == {k:v for k,v in new.items() if k != "revoked"},
+                    "CREDENTIAL_IMAGE_TRANSITION")
+
+
 def export_private(store, resolver):
     """Return protected metadata to the private settings transaction, never UI/logs."""
     _pair(store, resolver)

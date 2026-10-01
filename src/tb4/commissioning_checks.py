@@ -139,3 +139,33 @@ class Prerequisites:
         except Exception:
             raise SettingsError("INSTRUCTIONS_UNAVAILABLE") from None
         return Validation(self._pin, environment)
+
+
+def native_credential_pair(installation, *, runner, clock):
+    """Trusted local construction; runner owns commissioned fixed target pins."""
+    from .credential_contract import CredentialResolver
+    if sys.platform == "win32":
+        from .windows_credentials import WindowsKeyStore
+        from .windows_key_native import WindowsKeyNative
+        store = WindowsKeyStore(installation, native=WindowsKeyNative(), runner=runner, clock=clock)
+    elif sys.platform == "linux":
+        from .linux_credentials import LinuxKeyStore
+        from .linux_key_native import LinuxKeyNative
+        store = LinuxKeyStore(installation, native=LinuxKeyNative(), runner=runner, clock=clock)
+    else:
+        raise SettingsError("CREDENTIAL_UNAVAILABLE")
+    return store, CredentialResolver(installation, store, clock=clock)
+
+
+def restore_setup_credentials(setup, factory):
+    """Factory is trusted code. Only freshly read protected metadata can restore."""
+    try:
+        setup._fresh()
+        if setup._payload.get("credential_image") is None:
+            require(not setup.private_choices()["credentials"], "CREDENTIAL_UNAVAILABLE")
+            return None
+        store, resolver = factory(setup.installation_id)
+        setup.restore_credentials(store, resolver)
+        return resolver
+    except Exception:
+        raise SettingsError("CREDENTIAL_UNAVAILABLE") from None

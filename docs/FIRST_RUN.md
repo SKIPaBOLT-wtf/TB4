@@ -27,7 +27,13 @@ scan. Missing or replaced storage is blocked, never repaired automatically.
 Credential handles are checked through the installation's actual RP-006 resolver
 for each selected purpose; unavailable restart bindings remain unavailable.
 This model does not reconstruct a missing key binding from the handle string.
-Durable resolver metadata integration is a separate part of RP-022.
+Selection metadata and chosen opaque handles are persisted together through the
+same expected-revision transaction. Restart constructs a fresh native resolver
+from that just-read protected image; the native principal/session is checked
+again while the originally selected key version, purpose, target trust, expiry
+and revocations remain unchanged. Key bytes stay in the selected external store.
+The image is not a public JSON import or a configuration report. A stopped
+rollback cannot restore older credential metadata or erase a revocation.
 
 The local descriptor must match this installation/domain and pass RP-005 local,
 shared and LLM projection validation; private topology remains in the protected
