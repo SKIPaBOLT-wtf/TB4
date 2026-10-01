@@ -7,14 +7,14 @@ phase: "POST_MERGE"
 source_branch: "main"
 source_commit: "46632bdf2648feacb3b17641e9b09811ad37ca1c"
 journal: "docs/development/journal/RP-020/A001/events.jsonl"
-last_verified_event: "RP-020-A001-0043"
+last_verified_event: "RP-020-A001-0044"
 last_completed: "RP-020"
-next_action: "Record exact local projection result, then claim RP021 if valid."
+next_action: "Inspect Progress for this settled journal publication, then claim RP021. Do not rerun packages or change accepted source."
 verification: "Require native Windows token/DACL/file-sharing tests plus portable failure/race/canary coverage, required platform CI, complete regression and packaged install/uninstall checks. Validate ledger, public scanner and base-to-head diff before merge."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-020-A001-0043"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
