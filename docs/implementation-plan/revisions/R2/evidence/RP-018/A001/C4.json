@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "item": "RP-018",
+  "check": "RP-018.C4",
+  "attempt": "A001",
+  "source_ref": "b04b4747ab4261b57d04840cbb8535cd020e8195",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect code paths and named positive/negative assertions against each invariant, exact source provenance and declared platform evidence.",
+  "procedure": "Full local pytest and exact collection in separate fresh task-owned temp roots, required Linux OpenSSH CI, both native Desktop complete regressions/builds/self-tests, source/diff/privacy/rollback review. See reviewed-validation.md and collected-tests.txt for exact scope/provenance.",
+  "expected": "Mode-specific capabilities, one authority/no second root and explicit unsupported/later deployment limits are documented and exercised.",
+  "observed": "Sourceb04b4747ab4261b57d04840cbb8535cd020e8195/testheadf12ef57e9b0a18cb883dda7a80586aa8dbd5f72b. Windowslocal1607pass30skip4knownxfail36.14s;1639nodes.67s;ledger/scanner/diff0. CI36804072502/1101844737751635pass2skip4knownxfail40.97s including required real loopback SSH. Progress36804072485/110184473622PASS. Desktop36804072536 Linux110184473977 GUI68/full1646+4xfail;Windows110184474251 GUI64+4skip/full1618+28skip4xfail. Both WATCHDOG/FETCHER builds,self-tests,GUIsmoke,install/uninstall isolationPASS; allrunscomplete. Same tested implementation/protocol/tool/test/workflow tree confirmed before acceptance. No live operation performed.",
+  "exit_code": 0,
+  "platform_scope": "Windows local Python3.11.9 client protocol/process; GitHub ubuntu24.04 required Linux server/loopback OpenSSH; ubuntu22.04 and windows2025-vs2026 native full regressions and packages. Linux ext4/xfs eligibility enforced; no separately qualified xfs/hardware endpoint.",
+  "negative_cases": [
+    "busy versus stale CAS",
+    "dirty-page killed writer hot-journal rollback",
+    "missing/renamed/replaced root/db/journal",
+    "private permission loss",
+    "foreign schema/domain/WAL/nonce/extra fields",
+    "absent same-exchange LLM/role capability",
+    "unsupported filesystem",
+    "helper size/time bounds and private stderr",
+    "actual SSH disconnect/reconnect and host-key mismatch",
+    "lost commit response inspection without replay",
+    "stale/forced takeover without sink ACK retaining unknown work"
+  ],
+  "unverified_scope": "Unreleased control adapter; explicit provisioning/artifact IO/credential resolver/actual LLM connector and deployment wiring remain later gates. No real LAN/WAN/physical power loss/xfs hardware/Windows folder-server qualification. Trusted same-account admin and hardware flush behavior are assumptions. Existing DEF001/002 remain open.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Leave native Docs/installed v1 selection unchanged. No existing shared root or profile mutated; all interrupted writer/SSH processes and files were new synthetic fixtures. Never roll back authority revisions or erase unknown work.",
+  "intent_event": "RP-018-A001-0023",
+  "outcome_event": "RP-018-A001-0026",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-018/A001/reviewed-validation.md"
+  ]
+}
