@@ -1,6 +1,6 @@
 """Actual protected setup/CAS adapters, synthetic authenticated peers, native local facts."""
 import copy
-from dataclasses import replace
+from dataclasses import asdict, replace
 import json
 import os
 from uuid import uuid4
@@ -62,8 +62,45 @@ class LocalCredentialProbe:
     fetcher_start = fetcher_status
 
 
+def two_device_discovery():
+    # Fresh preallocation through the real adapters, before discovery/approval.
+    from test_native_commissioning import (SetupSpec, Provider, NativeCommissioning,
+        BootstrapJournal, Bootstrap, seed, Journal, finish, DOMAIN, Capacity, Commissioner)
+    from tb4.drive.commissioning_bootstrap import AuthorityHandle
+    from tb4.watchdog.leadership_runtime import Action, Capabilities
+    from test_discovery_workflow import SCOPE
+
+    spec = SetupSpec("synthetic-root", DOMAIN, tid("two-device-enrollment-setup"),
+                     ACTORS[0], "NATIVE_DOCS", Capacity(2,1,1,1))
+    provider = Provider(spec)
+    port = NativeCommissioning(provider,provider,spec,llm_authorized=True)
+    journal = BootstrapJournal(spec)
+    bootstrap = Bootstrap(spec,port,journal,owner_authorized=True)
+    seed(bootstrap)
+    handle = AuthorityHandle.parse(journal.read()["handle"])
+    initial = Leadership(port.authority(handle),actor=ACTORS[0],enrollment=ENROLLMENT)
+    grant = bootstrap.initial_grant(initial,clock())
+    finish(Commissioner(spec,initial,grant,port,Journal(spec,ACTORS[0])))
+    record = dict(spec=asdict(spec),authority=handle.record())
+    native = MemoryNative()
+    setup = Setup(PrivateSettings(native),create=True)
+    setup.choose(dict(role="watchdog",storage=record,network_scope=["192.0.2.0/24"]))
+    leader = Leadership(port.authority(handle),actor=setup.installation_id,
+                        enrollment={**ENROLLMENT,setup.installation_id:"synthetic-discoverer"})
+    plan = leader.acquire(leader.observe(clock(220)),transition=tid("discovery-takeover"))
+    result = leader.commit(plan,mode="START")
+    grant = leader.confirmed_grant(plan,result)
+    caps = Capabilities(setup.installation_id,True,True,frozenset({Action.SCAN,Action.REGISTER}))
+    kwargs = dict(storage_port=port,leadership=leader,grant=grant,clock=lambda:clock(220),
+                  capabilities=lambda:caps)
+    discovery = Discovery(setup,**kwargs)
+    discovery.configure(SCOPE,owner_authorized=True)
+    provider.calls.clear()
+    return discovery,setup,provider,native,kwargs
+
+
 def ready(watch_store=None, fetch_store=None, *, two=False):
-    discovery, watch, provider, native, kwargs = build(watch_store)
+    discovery, watch, provider, native, kwargs = two_device_discovery() if two else build(watch_store)
     observations = [observation()]
     if two: observations.append(observation(address="192.0.2.9", hardware_hint="second-hint"))
     discovery.observe(tuple(observations))
@@ -268,7 +305,7 @@ def test_lost_reply_restart_only_inspects_exact_operation_after_takeover(system)
     provider.store.after_write = lose
     assert manager.register(request, owner_authorized=True) == "UNKNOWN"
     backend.read, provider.store.after_write = read, None
-    leader = Leadership(backend, actor=ACTORS[1], enrollment={**ENROLLMENT,manager.setup.installation_id:"synthetic-owner"})
+    leader = Leadership(backend, actor=ACTORS[1], enrollment=manager.discovery.leader.enrollment)
     plan = leader.acquire(leader.observe(clock(340)),transition=tid("enrollment-takeover"))
     assert leader.commit(plan, mode="START").outcome == "CONFIRMED"
     resumed = restart(system)
@@ -438,7 +475,7 @@ def test_discovery_refresh_preserves_enrollment_and_effective_profile(system):
     enroll(system)
     prior = copy.deepcopy(provider.store.document["records"]["target.000.catalogue"]["body"])
     manager.discovery.clock = lambda:clock(221)
-    manager.discovery.observe((observation(source="NETWORK_PROBE",observed_at=221),))
+    manager.discovery.observe((observation(source="ICMP",observed_at=221),))
     assert manager.discovery.publish() == "CONFIRMED"
     body = provider.store.document["records"]["target.000.catalogue"]["body"]
     assert body["enrollment"] == prior["enrollment"] and body["fetcher"] == prior["fetcher"]
@@ -449,8 +486,8 @@ def test_discovery_refresh_preserves_enrollment_and_effective_profile(system):
 def test_new_owner_or_forced_request_stops_old_enrollment_without_ack_barrier(system, force):
     manager, client, provider, *_ = system
     request = client.capture(observed_at=220)
-    leader = Leadership(manager.discovery.leader.backend,actor=ACTORS[1],enrollment={
-        **ENROLLMENT,manager.setup.installation_id:"synthetic-owner"})
+    leader = Leadership(manager.discovery.leader.backend,actor=ACTORS[1],
+                        enrollment=manager.discovery.leader.enrollment)
     if force:
         plan = leader.request_force(leader.observe(clock(221)),request_id=tid("force-enrollment"),user_requested=True)
     else:
@@ -466,9 +503,19 @@ def test_private_intent_failure_never_reaches_authority(system, failure):
     manager, client, provider, origin, native, *_ = system
     request = client.capture(observed_at=220)
     before = copy.deepcopy(provider.store.document)
-    native.fail = failure
+    promote = native.promote
+    if failure == "readback":
+        def lost():
+            promote()
+            native.failure = "readback"
+        native.promote = lost
+    else:
+        native.failure = failure
     with pytest.raises(SettingsError): manager.register(request,owner_authorized=True)
     assert provider.store.document == before
+    native.failure, native.promote = None, promote
+    PrivateSettings(native).recover_pending()
+    assert restart(system).inspect() == "UNKNOWN" and provider.store.document == before
 
 
 def test_peer_change_after_durable_intent_is_inspection_only(system):
