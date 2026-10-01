@@ -3,21 +3,21 @@ revision: "R2"
 work_item: "RP-016"
 check: "RP-016.C1"
 attempt: "A001"
-phase: "MERGE"
-source_branch: "work/rp-016-a001"
+phase: "VERIFIED"
+source_branch: "main"
 source_commit: "dfa260eae0675db46a2c56424cc4b5adbf348400"
 journal: "docs/development/journal/RP-016/A001/events.jsonl"
-last_verified_event: "RP-016-A001-0008"
-last_completed: "RP-015"
-next_action: "Merge exact PR24 head and inspect returned main commit."
+last_verified_event: "RP-016-A001-0009"
+last_completed: "RP-016"
+next_action: "Verify main Progress and ownership-base ledger, then inspect and claim RP017 startup/standby integration."
 verification: "Strict requiredRevisionId readback and complete owner/request/transition binding; default timing profile and deterministic trusted/uncertain clock samples; unchanged operation/result records; no all-sink activation state."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-016-A001-0008"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
 rollback: "Unreleased helper remains unwired until later role/runtime/GUI integration; revert additions only. Never rewind a live epoch or clear another valid owner/unknown work."
-next_implementation_step: "RP-016"
-next_implementation_check: "RP-016.C1"
+next_implementation_step: "RP-017"
+next_implementation_check: "RP-017.C1"
