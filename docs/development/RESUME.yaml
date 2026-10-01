@@ -4,17 +4,17 @@ work_item: "RP-016"
 check: "RP-016.C1"
 attempt: "A002"
 phase: "SOURCE"
-source_branch: "main"
-source_commit: "dfa260eae0675db46a2c56424cc4b5adbf348400"
+source_branch: "work/rp-016-a002"
+source_commit: "bde4f0f4eeec21594574b80c884b06202d55f44f"
 journal: "docs/development/journal/RP-016/A002/events.jsonl"
-last_verified_event: "RP-016-A002-0006"
+last_verified_event: "RP-016-A002-0007"
 last_completed: "RP-015"
-next_action: "Implement narrow correction support and tests on isolated RP016 A002 branch, then publish source checkpoint."
+next_action: "Append exact A0020001 note relocation, then validate source and complete required CI."
 verification: "Strict requiredRevisionId readback and complete owner/request/transition binding; default timing profile and deterministic trusted/uncertain clock samples; unchanged operation/result records; no all-sink activation state."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-016-A002-0006"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-017"]
