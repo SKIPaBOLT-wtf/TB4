@@ -5,16 +5,16 @@ check: "RP-024.C1"
 attempt: "A001"
 phase: "SOURCE"
 source_branch: "work/rp-024-a001"
-source_commit: "e39444ffbd4a2661716cd80a7271e4b6ea8cd494"
+source_commit: "a47213a90c478b5525a08c12479096baca112fa3"
 journal: "docs/development/journal/RP-024/A001/events.jsonl"
-last_verified_event: "RP-024-A001-0029"
+last_verified_event: "RP-024-A001-0030"
 last_completed: "RP-023"
-next_action: "Publish test source/outcome, run bounded reproduction, and record proved result before repair."
+next_action: "Run only3 saved-pin/original-catalogue negatives to establish current behavior."
 verification: "Review closed proposal/canary and preserved-active-draft invariants; qualify fresh pin/revocation/root/domain/capacity/partial/malicious-input tests, then owner-guarded fixed-record publication, native persistence, full CI and frozen compatibility."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-024-A001-0029"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-038","DEF-039","DEF-040"]
