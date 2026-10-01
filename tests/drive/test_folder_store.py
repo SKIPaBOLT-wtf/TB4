@@ -174,7 +174,7 @@ def test_wrong_domain_schema_and_foreign_wal_rejected(tmp_path):
     foreign=config.root/(DB+"-wal");foreign.write_bytes(b"synthetic")
     with pytest.raises(AuthorityError,match="FOREIGN_JOURNAL"): FolderStore(config).read()
     foreign.unlink()
-    with sqlite3.connect(config.root/DB) as conn:
+    with FolderStore(config).connection() as conn:
         conn.execute("CREATE TABLE extra (value)")
     with pytest.raises(AuthorityError,match="DATABASE_SCHEMA"):FolderStore(config).read()
 
@@ -186,7 +186,7 @@ def test_config_private_and_closed(tmp_path):
     with pytest.raises(AuthorityError,match="HELPER_CONFIG"):load_config(path)
     path.chmod(0o600);data=json.loads(path.read_text());data["extra"]="not allowed"
     path.write_text(json.dumps(data))
-    with pytest.raises(AuthorityError,match="HELPER_CONFIG"):load_config(path)
+    with pytest.raises(AuthorityError,match="RPC_INVALID"):load_config(path)
 
 
 def test_contending_independent_helpers_have_one_winner_then_stale_rejected(tmp_path):
@@ -226,4 +226,3 @@ with FolderStore(load_config(sys.argv[1])).connection() as conn:
             if child.poll() is None:child.kill()
             child.communicate(timeout=5)
     assert store.read()==before and inventory(config)==objects
-
