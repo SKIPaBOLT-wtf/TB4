@@ -7,14 +7,14 @@ phase: "DEBUG"
 source_branch: "work/rp-023-a001"
 source_commit: "8e934adcfd719af981b7595eeaa5c8bfb6e0b875"
 journal: "docs/development/journal/RP-023/A001/events.jsonl"
-last_verified_event: "RP-023-A001-0010"
+last_verified_event: "RP-023-A001-0011"
 last_completed: "RP-022"
-next_action: "Record diagnostic results and exact cause before a separate narrowly scoped repair INTENT."
+next_action: "Publish narrow repair INTENT to give the six parser fixtures explicit short IDs; keep oversized bytes and decoder assertions unchanged, then revalidate complete discovery suite."
 verification: "Review exact source and named scope/duplicate-name/address-reassignment/multi-interface/unstable-identifier/routed-VPN cases; add native Windows/Linux and protected fixed-slot integration before final acceptance."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-023-A001-0010"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-032"]
