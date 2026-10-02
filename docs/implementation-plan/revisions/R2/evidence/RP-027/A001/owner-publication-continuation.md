@@ -1,0 +1,9 @@
+# Owner continuation and same-operation publication reconciliation
+
+The owner answered `daryk ka reikia` (do what is needed) to the concrete request to publish the prepared two-document RP-027 INTENT on main. This authorizes that documentation target and continuation within the original public-development scope. It does not authorize live installation, migration, router/network configuration, destructive reset, credential disclosure, workload replay or installed SKILL modification.
+
+Before resuming, GitHub main was freshly read as `65f3e52586be065580f96d2c033085dd958d017c`. The same previously rejected public candidate `7ca9e1576266783c2190078138893098bf4b3409` had that one parent; its journal and RESUME matched the already PASS prospective plan byte-for-byte after CRLF normalization. The proposed work branch was absent, local main clean and the only relevant active executor was this task. No possibly executed branch creation or source action was repeated.
+
+The same non-force ref update then succeeded. Main ref and both exact files were independently read back at `7ca9e1576266783c2190078138893098bf4b3409`. There is one existing pending source-inspection INTENT `RP-027-A001-0003`, not a replacement attempt. The two earlier automatic-review rejections and their verified unchanged-main/local stop record are retained; they are not rewritten as success. At that earlier stop the candidate was merely unreferenced/publicly readable; this later observation establishes its branch-reachable publication.
+
+RP-026 remains VERIFIED on the exact accepted source `2575de12ffed36a2e3e739710a9183dd0bfa437d`; RP-027 remains IN_PROGRESS/A001 with no accepted checks. Next: perform only the already recorded branch/inspection unit, then publish its actual result and exact implementation/negative-test plan before code changes. No application or real network/profile change occurred in this reconciliation.

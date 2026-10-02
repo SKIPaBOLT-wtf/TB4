@@ -3,17 +3,19 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_SOURCE_INSPECTION
+phase: PUBLICATION_TARGET_AUTHORITY_RECORDED
 source_branch: main
-source_commit: 65f3e52586be065580f96d2c033085dd958d017c
+source_commit: 7ca9e1576266783c2190078138893098bf4b3409
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0003
+last_verified_event: RP-027-A001-0004
 last_completed: RP-026
-next_action: Publish source-linked RP-027 inspection OUTCOME and concrete invariant/negative-scenario/rollback
-  plan; then publish the next narrowly scoped implementation or required design-amendment
-  INTENT.
-verification: RP-027 dependency-ready source inspection; no check acceptance or runtime
-  action.
+next_action: 'Complete the existing RP-027-A001-0003 inspection: create/read back
+  feat/rp027-staged-reconfiguration from the current verified main record, safely
+  acquire its clean tracking checkout and inspect exact commissioning/authority/work/result/revision
+  contracts; record concrete invariants and the next bounded implementation unit.'
+verification: Same rejected documentation publication reconciled with explicit owner
+  continuation; exact ref/files verified. Existing RP-027 inspection INTENT remains
+  pending; no implementation acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
@@ -24,9 +26,8 @@ blocking_decisions: []
 known_open_defects:
 - DEF-001
 - DEF-002
-rollback: Only a new owned Git branch/read-only source inspection. Preserve all branches,
-  local records and historical evidence; do not force refs, reset working copies,
-  adopt existing unrelated branches, touch native deployment state or replay an uncertain
-  operation.
+rollback: Keep the exact main/candidate/source history and previous rejection/stop
+  records. All refs remain non-force; no live configuration, authority or workload
+  changes occur.
 next_implementation_step: RP-027
 next_implementation_check: RP-027.C1
