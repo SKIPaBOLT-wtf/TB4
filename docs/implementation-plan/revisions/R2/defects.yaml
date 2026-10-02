@@ -3392,6 +3392,7 @@ defects:
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/initial-hosted-windows-catalog-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/native-owner-and-checkout-reproduction.md
     repair_steps:
     - RP-026
     affected_acceptance:
@@ -3408,6 +3409,12 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/initial-hosted-windows-catalog-failure.md
+    - id: fresh-checkout-three-input-reproduction
+      claim: Fresh actual Windows Git checkouts reproduce exactly three mismatched
+        new inputs with autoCRLF true, and all7 exact catalog inputs with false.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/native-owner-and-checkout-reproduction.md
     repairs: []
     issue: null
     regression_test: tests.coach.test_instruction_selection.test_repository_catalog_consistent_but_deliberately_not_live_eligible
@@ -3416,4 +3423,49 @@ defects:
       catalog input bytes must match Git blobs in a fresh Windows/Linux checkout,
       with no global config or digest normalization bypass. New neveraccepted RP-026
       only.
+    legacy_record: null
+  DEF-053:
+    title: Native table observation callback reenters its already-held setup lock
+    status: OPEN
+    detected_in: RP-026.C3
+    suspected_origin:
+      work_item: RP-026
+      source_ref: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/native-owner-and-checkout-reproduction.md
+    proven_origin: null
+    reproduction:
+      procedure: Actual protected native Setup plus synthetic commissioned Discovery/current-owner
+        provider; after table configure, observe one fixture endpoint and require
+        exact table update. Closed trace PASS,PASS,SETTINGS_BUSY leaves catalogue1/table0
+        and owner-required UPDATE pending.
+      failing_source: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/native-owner-and-checkout-reproduction.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    affected_requirements:
+    - R05
+    - R13
+    - R15
+    - R18
+    hypotheses:
+    - id: same-setup-lock-read-reentry
+      claim: New table's native setup lock encloses an existing Discovery._current
+        callback whose Setup._fresh reader reacquires that lock. Native exclusive
+        locking correctly refuses.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/native-owner-and-checkout-reproduction.md
+    repairs: []
+    issue: null
+    regression_test: tests.security.test_network_table_native.test_actual_discovery_owner_callback_updates_native_table_without_lock_reentry
+    resolution_evidence: []
+    notes: New neveraccepted local-table integration only; accepted native/discovery
+      locking and owner policy remains intact. Read-only held-port borrow must be
+      scoped to same thread/store and never skip full owner refresh, allow writes
+      or escape a stale reader.
     legacy_record: null
