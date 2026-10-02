@@ -1,24 +1,25 @@
 schema_version: 1
 revision: R2
-work_item: RP-021
-check: RP-021.C4
+work_item: RP-022
+check: RP-022.C4
 attempt: A002
-phase: ACCEPTANCE_REVIEW
+phase: REVALIDATION_REVIEW
 source_branch: work/rp-025-a001
 source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
-journal: docs/development/journal/RP-021/A002/events.jsonl
-last_verified_event: RP-021-A002-0034
+journal: docs/development/journal/RP-022/A002/events.jsonl
+last_verified_event: RP-022-A002-0001
 last_completed: RP-021
-next_action: Select RP022/A002 own revalidation review only after remotely verified
-  RP021 acceptance; preserve all remaining dependent/native/registration defects until
-  full affected acceptance.
-verification: "Revalidate RP022 native credential restoration/commissioning activation\
-  \ and all protected/pending/public boundaries on same completed sourcea6/checkout8f;\
-  \ preserve RP021/A001history and remaining22\u201325holds."
+next_action: Review each RP022predicate and own four receipts against completed exactsource
+  evidence; publish coherent PASS acceptance after guarded candidate/mainhistoryvalidation,
+  then unblockonlyRP023.
+verification: Own RP022native/protected/Qt/UNKNOWN/released-instruction activation
+  invariants against exact sourcea6 and completed final common qualification; no copied
+  identity/credential or live runtime.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-022-A002-0001
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
