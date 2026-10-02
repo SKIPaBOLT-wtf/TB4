@@ -3,16 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_FOUNDATION_TESTING
+phase: STAGED_RECONFIGURATION_C1_FOUNDATION_TEST_RUN
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0008
+last_verified_event: RP-027-A001-0009
 last_completed: RP-026
-next_action: Publish/read back exact focused test outcome. If any predicate fails,
-  register source-linked defect and a scoped repair INTENT; otherwise implement and
-  qualify C1 maintenance/resolution controller in a new source unit.
-verification: Foundation focused regression INTENT only; no test result or check acceptance.
+next_action: Inspect this same session/structured report. Publish actual source-linked
+  test OUTCOME and any discovered defect before repair; never launch a duplicate test
+  run based on missing completion metadata.
+verification: Exact single foundation run launched; inspect LOCAL-SESSION-45805 and
+  its private structured result, not a new test run.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
