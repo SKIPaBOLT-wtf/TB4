@@ -1126,6 +1126,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-026/A-001-local-network-table.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-001-staged-same-authority.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-002-shared-effect-evidence.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-027/A-003-protected-first-run-candidate.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:

@@ -1,0 +1,11 @@
+# RP-027.C2 protected candidate source checkpoint
+
+Source: `c323da611eb98de3966145e226679335976b3f22`, owned `feat/rp027-staged-reconfiguration`. Exactly11 recorded source/test/doc paths preserved and remotely read back. The earlier683-predicate effect repeat remains separate evidence, not a test of this source.
+
+Candidate metadata records fresh native directory bindings, original configuration/operation identity, explicit C1 resolution and pinned unreleased schema before local archive/staging. Complete original payload remains in an immutable first-revision native archive; original active profile bytes are unchanged. Separate actual Setup preserves installation/nonce/known operation history/credential metadata/network-table selection and excludes archived old derived packages. Review requires actual first-run Prerequisites/CommissionedStorage with fresh environment, purpose/trust credentials, fixed object access/readback and instruction boundary. Final validation repeats proof; saved readiness or arbitrary READY callbacks cannot activate it. Default desktop activation remains denied.
+
+Explicit interrupted-frame recovery validates exact binding/schema/current/previous/original evidence before promoting the same bytes. Cross-store proofs occur outside the selected native lock, then exact pending/current bytes and binding are rechecked under lock before promotion. Aliases to active/evidence/runtime stores and copied native frames refuse. Candidate payload384KiB/metadata64KiB leave original native1MiB limit unchanged; exact signed64-bit generation bound remains. Only unreleased catalog/schema pins changed; existing builds/installed SKILL/profile untouched.
+
+Synthetic/native tests cover actual first-run/restart, known history/no replay, readiness/credential/access/pin/alias/schema/copy/protection failures and three staging interruption positions. This source edit did not execute tests, imports, build, provider mutation or profile promotion. C3 root relocation, C4 cache rebuilding/monotonic publication/final promotion and complete acceptance/common checks remain required.
+
+Next: source-linked targeted26-plus-desktop regression/native suite, with actual outcome and failures documented before fixes.

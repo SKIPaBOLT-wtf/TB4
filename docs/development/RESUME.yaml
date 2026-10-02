@@ -3,23 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_PROTECTED_CANDIDATE_SOURCE
+phase: STAGED_RECONFIGURATION_C2_CANDIDATE_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 7d571ea43040aeb0b1eae2fff3853387093c1242
+source_commit: c323da611eb98de3966145e226679335976b3f22
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0035
+last_verified_event: RP-027-A001-0036
 last_completed: RP-026
-next_action: Publish/read back exact bounded source OUTCOME, then targeted candidate
-  plus inherited24-target/native first-run/desktop tests in a fresh owned absent fixture
-  root. Resolve failures through recorded exact reproductions; C3 root changes and
-  C4 actual monotonic promotion remain separate.
-verification: C1 targeted679PASS/4Linuxskip remotely recorded; C2 protected candidate
-  source INTENT, no accepted C1-C4.
+next_action: Publish/read back exact candidate/inherited/native/first-run/desktop
+  scoped test INTENT; run on fresh absent owned fixture root once and preserve actual
+  exit, full cases/failures before dependent changes.
+verification: C2 eleven-file protected actual-first-run candidate source remotely
+  saved; untested/unaccepted; original authority/profile untouched.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0035
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
