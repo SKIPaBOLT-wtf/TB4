@@ -23,7 +23,8 @@ METADATA = frozenset({"global.leadership", "global.force_request", "global.commi
 UNRESOLVED = frozenset({"BUSY", "UNREAD", "UNKNOWN"})
 PACKAGES = ("discovery", "ballpark_publication", "enrollments", "fetcher_enrollment", "network_table")
 KINDS = frozenset({"SHARED_BUSY", "SHARED_UNREAD", "SHARED_UNKNOWN", "LOCAL_SETUP_UNKNOWN",
-                   "LOCAL_PENDING", "LOCAL_ELECTION", "LOCAL_MUTATION", "LOCAL_EFFECT_UNKNOWN"})
+                   "LOCAL_PENDING", "LOCAL_ELECTION", "LOCAL_MUTATION", "LOCAL_EFFECT_UNKNOWN",
+                   "SHARED_EFFECT_UNKNOWN", "SHARED_EVIDENCE_REQUIRED"})
 
 
 def workload_fingerprint(document):
@@ -108,6 +109,8 @@ def inspect(snapshot, *, setup_payload, checkpoint):
             and (checkpoint.election is None or type(checkpoint.election) is ElectionMutation)
             and (checkpoint.mutation is None or type(checkpoint.mutation) is RecordMutation),
             "CONFIGURATION_LOCAL_CHECKPOINT")
+    require(checkpoint.maintenance is None or transition_id(checkpoint.maintenance),
+            "CONFIGURATION_LOCAL_CHECKPOINT")
     if checkpoint.grant is not None:
         require(checkpoint.grant.owner == payload["installation_id"], "CONFIGURATION_LOCAL_BINDING")
     for plan in (checkpoint.election, checkpoint.mutation):
@@ -124,6 +127,13 @@ def inspect(snapshot, *, setup_payload, checkpoint):
     rows = [Blocker("SHARED_" + row["retention"], key)
             for key, row in sorted(document["records"].items())
             if key not in METADATA and row["retention"] in UNRESOLVED]
+    from .reconfiguration_effects import ledger, SLOT
+    effects = ledger(document["records"][SLOT])
+    if effects is not None:
+        rows += [Blocker("SHARED_EFFECT_UNKNOWN", row["operation_id"])
+                 for _,row in sorted(effects["entries"].items()) if row["outcome"] == "UNKNOWN"]
+        if effects["barrier"] is not None and not effects["barrier"]["local_clear"]:
+            rows.append(Blocker("SHARED_EVIDENCE_REQUIRED", effects["barrier"]["transition_id"]))
     rows += [Blocker("LOCAL_SETUP_UNKNOWN", operation)
              for operation, status in sorted(payload["operations"].items()) if status == "UNKNOWN"]
     # Only schema-validated transaction packages have a pending field. A device

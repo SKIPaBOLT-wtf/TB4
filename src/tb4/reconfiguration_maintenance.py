@@ -26,9 +26,10 @@ from .private_settings import PrivateSettings
 from .reconfiguration_evidence import EvidenceReceipt, ProtectedEvidence
 from .reconfiguration_inspection import authority_image, inspect, workload_fingerprint
 from .watchdog.leadership_runtime import Action, Capabilities, Checkpoint
+from .reconfiguration_effects import Effects, ledger, barrier_row, covered, SLOT
 
 WAL_SCHEMA = "protocol/reconfiguration-maintenance-v1.schema.json"
-WAL_SCHEMA_SHA256 = "793821d4c90b41e0e15b15fa705dad8336ee41f123e3712059508f434ec11578"
+WAL_SCHEMA_SHA256 = "f8cba98bb15e544d84a2e73cc58a2e359e974f96e323f708a46107275de13d31"
 SETTINGS = "global.settings"
 PROTECTED = frozenset({"global.commissioning", "global.registry"})
 
@@ -46,7 +47,7 @@ class MaintenanceMutation(RecordMutation):
     """Closed settings-only ENTER transition; elections use their own primitive."""
 
     @classmethod
-    def enter(cls, snapshot, owner, *, transition_id):
+    def enter(cls, snapshot, owner, *, transition_id, effect_summary=None):
         document = snapshot.document()
         shared(document)
         require(type(owner) is OwnerGuard and owner.matches(document), "OWNER_SUPERSEDED")
@@ -61,11 +62,22 @@ class MaintenanceMutation(RecordMutation):
             phase="MAINTENANCE", transition_id=transition_id)
         proposed = copy.deepcopy(document)
         proposed["records"][SETTINGS] = after
+        before_rows, after_rows = {SETTINGS:before}, {SETTINGS:after}
+        protected = PROTECTED | {SLOT}
+        if effect_summary is not None:
+            value = ledger(effect_summary)
+            require(value is not None and value["barrier"] is not None
+                    and effect_summary == barrier_row(document["records"][SLOT], owner=owner,
+                        transition=transition_id, local_clear=value["barrier"]["local_clear"]),
+                    "CONFIGURATION_EFFECT_EVIDENCE_REQUIRED")
+            before_rows[SLOT], after_rows[SLOT] = document["records"][SLOT], effect_summary
+            protected = PROTECTED
+            proposed["records"][SLOT] = effect_summary
         validate_document(proposed)
         require(shared(proposed) == shared(document), "CONFIGURATION_DESCRIPTOR_CHANGED")
         return cls(snapshot.binding, owner, encoded({k:v for k,v in document.items() if k != "records"}),
-            encoded({k:document["records"][k] for k in PROTECTED}),
-            encoded({SETTINGS:before}), encoded({SETTINGS:after}))
+            encoded({k:document["records"][k] for k in protected}),
+            encoded(before_rows), encoded(after_rows))
 
     @classmethod
     def restore(cls, value, binding, *, transition_id, revision):
@@ -73,13 +85,22 @@ class MaintenanceMutation(RecordMutation):
             plan = restored_plan(value, binding)
             parts = {k:json.loads(getattr(plan,k)) for k in ("header","protected","before","after")}
             require(all(encoded(v) == getattr(plan,k) for k,v in parts.items()), "CONFIGURATION_WAL")
-            require(set(parts["protected"]) == PROTECTED
-                    and set(parts["before"]) == set(parts["after"]) == {SETTINGS}, "CONFIGURATION_WAL")
+            keys = set(parts["before"])
+            require(keys in ({SETTINGS}, {SETTINGS,SLOT}) and keys == set(parts["after"])
+                    and set(parts["protected"]) == (PROTECTED | ({SLOT} if SLOT not in keys else set())),
+                    "CONFIGURATION_WAL")
             before, after = parts["before"][SETTINGS], parts["after"][SETTINGS]
             expected = copy.deepcopy(before)
             expected["body"]["configuration"] = dict(schema_version=1, revision=revision,
                 phase="MAINTENANCE", transition_id=transition_id)
             require(after == expected, "CONFIGURATION_WAL")
+            if SLOT in keys:
+                summary = parts["after"][SLOT]
+                effects = ledger(summary)
+                require(effects is not None and effects["barrier"] is not None
+                        and summary == barrier_row(parts["before"][SLOT], owner=plan.owner,
+                            transition=transition_id, local_clear=effects["barrier"]["local_clear"]),
+                        "CONFIGURATION_WAL")
             from .exchange_layout import Capacity, empty_document
             header = parts["header"]
             require(type(header) is dict and set(header) == {"layout_version", "compatibility_status",
@@ -111,10 +132,10 @@ class MaintenanceMutation(RecordMutation):
             return "CONFLICT", None
         rows = document["records"]
         protected, before, after = (json.loads(v) for v in (self.protected,self.before,self.after))
-        if any(encoded(rows[k]) != encoded(v) for k,v in protected.items()):
-            return "CONFLICT", None
         if all(encoded(rows[k]) == encoded(v) for k,v in after.items()):
             return "CONFIRMED", None  # Exact prior effect, including after owner takeover.
+        if any(encoded(rows[k]) != encoded(v) for k,v in protected.items()):
+            return "CONFLICT", None
         if not self.owner.matches(document):
             return "SUPERSEDED", None
         if any(encoded(rows[k]) != encoded(v) for k,v in before.items()):
@@ -152,6 +173,7 @@ class MaintenanceContext:
     capabilities: object
     source: object
     runtime: object
+    effects: object = None
 
 
 class Maintenance:
@@ -164,6 +186,9 @@ class Maintenance:
         require(context.checkpoint.installation_id == context.setup.installation_id
                 and context.checkpoint.binding == context.leadership.backend.binding, "CONFIGURATION_CONTEXT")
         self.context, self._pin = context, None
+        if context.effects is not None:
+            require(type(context.effects) is Effects and context.effects.leadership is context.leadership
+                    and context.effects.checkpoint is context.checkpoint, "CONFIGURATION_EFFECT_CONTEXT")
 
     def _proof(self, state=None):
         try:
@@ -173,6 +198,12 @@ class Maintenance:
             check_boundary(self.context.source, self._pin, self.context.runtime)
             require(hashlib.sha256(self._pin.read(WAL_SCHEMA)).hexdigest() == WAL_SCHEMA_SHA256,
                     "CONFIGURATION_SCHEMA_INCOMPATIBLE")
+            if self.context.effects is not None:
+                from .reconfiguration_effects import SCHEMA, SCHEMA_SHA256
+                from .watchdog.checkpoint_store import SCHEMA as CS, SCHEMA_SHA256 as CSH
+                require(all(hashlib.sha256(self._pin.read(path)).hexdigest() == expected
+                            for path,expected in ((SCHEMA,SCHEMA_SHA256),(CS,CSH))),
+                        "CONFIGURATION_SCHEMA_INCOMPATIBLE")
             if state is not None:
                 require(pin_record(self._pin) == state["pin"], "CONFIGURATION_PIN_CHANGED")
             return self._pin
@@ -235,7 +266,8 @@ class Maintenance:
                     and receipt.transition_id == value["transition_id"] and hex64(receipt.payload_sha256),
                     "CONFIGURATION_WAL")
             require((value["pending"] is not None) == (value["phase"] == "ENTERING"), "CONFIGURATION_WAL")
-            require(not value["adopted"] or value["pending"] is None and value["resolution"] is None,
+            require(not value["adopted"] or value["pending"] is None
+                    and (value["resolution"] is None or self.context.effects is not None),
                     "CONFIGURATION_WAL")
             if value["pending"] is not None:
                 plan = MaintenanceMutation.restore(value["pending"], ctx.leadership.backend.binding,
@@ -279,10 +311,15 @@ class Maintenance:
             elif state["pending"] is not None:
                 plan = MaintenanceMutation.restore(state["pending"], self.context.leadership.backend.binding,
                     transition_id=state["transition_id"], revision=state["configuration_revision"])
+                keys,protected = json.loads(plan.before),json.loads(plan.protected)
                 require(plan.header == encoded({k:v for k,v in original.items() if k != "records"})
-                        and plan.before == encoded({SETTINGS:original["records"][SETTINGS]})
-                        and plan.protected == encoded({k:original["records"][k] for k in PROTECTED})
+                        and plan.before == encoded({k:original["records"][k] for k in keys})
+                        and plan.protected == encoded({k:original["records"][k] for k in protected})
                         and plan.owner.matches(original), "CONFIGURATION_WAL")
+                if SLOT in keys:
+                    barrier = ledger(json.loads(plan.after)[SLOT])["barrier"]
+                    require(barrier["local_clear"] == (not any(x["kind"].startswith("LOCAL_")
+                            for x in proof["inspection"]["blockers"])), "CONFIGURATION_WAL")
             return state, current.revision
         except ConfigurationError:
             raise
@@ -301,6 +338,13 @@ class Maintenance:
         require(self._state()[0] is None, "CONFIGURATION_INSPECT_REQUIRED")
         self._proof()
         snapshot, checkpoint = self._current()
+        if self.context.effects is not None:
+            self.context.checkpoint.reserve(self.context.baseline.transition_id,owner_authorized=True)
+            checkpoint = self.context.checkpoint.read()
+            existing = configuration(snapshot.document())
+            if existing is None or existing["phase"] != "MAINTENANCE":
+                self.context.effects.ensure(checkpoint)
+            snapshot, checkpoint = self._current()
         config = configuration(snapshot.document())
         ctx = self.context
         transaction = ctx.baseline.transition_id
@@ -309,8 +353,14 @@ class Maintenance:
             require(config["transition_id"] == transaction, "CONFIGURATION_TRANSITION")
             plan, revision = None, config["revision"]
         else:
+            summary = None
+            if ctx.effects is not None:
+                local = inspect(snapshot,setup_payload=ctx.setup._payload,checkpoint=checkpoint)
+                summary = barrier_row(snapshot.document()["records"][SLOT],
+                    owner=OwnerGuard(checkpoint.grant.owner,checkpoint.grant.epoch),transition=transaction,
+                    local_clear=not any(x.kind.startswith("LOCAL_") for x in local.blockers))
             plan = MaintenanceMutation.enter(snapshot, OwnerGuard(checkpoint.grant.owner, checkpoint.grant.epoch),
-                                             transition_id=transaction)
+                                             transition_id=transaction,effect_summary=summary)
             revision = json.loads(plan.after)[SETTINGS]["body"]["configuration"]["revision"]
         facts = inspect(snapshot, setup_payload=ctx.setup._payload, checkpoint=checkpoint)
         receipt = ctx.baseline.preserve(snapshot, facts, owner_authorized=True)
@@ -354,6 +404,9 @@ class Maintenance:
         require(state["pending"] is None and state["phase"] in {"MAINTENANCE","RESOLVED"},
                 "CONFIGURATION_INSPECT_REQUIRED")
         self._proof(state)
+        if self.context.effects is not None:
+            effect_state,_ = self.context.effects._state()
+            require(effect_state is None or effect_state["pending"] is None, "CONFIGURATION_EFFECT_INSPECT_REQUIRED")
         snapshot, checkpoint = self._current()
         config = configuration(snapshot.document())
         require(config is not None and config == dict(schema_version=1,
@@ -370,8 +423,10 @@ class Maintenance:
     def proposal(self):
         state, _ = self._state()
         require(state is not None, "CONFIGURATION_NOT_STARTED")
-        decision, facts, _ = self._proposal(state)
-        return decision, {**facts.public_summary(), "original_evidence_required":state["adopted"]}
+        decision, facts, snapshot = self._proposal(state)
+        inherited = state["adopted"] and (self.context.effects is None
+            or not covered(snapshot.document(),state["transition_id"]))
+        return decision, {**facts.public_summary(), "original_evidence_required":inherited}
 
     def resolve(self, approved, evidence, *, owner_authorized=False):
         require(owner_authorized is True, "CONFIGURATION_OWNER_REQUIRED")
@@ -380,8 +435,9 @@ class Maintenance:
                 and type(evidence) is ProtectedEvidence
                 and evidence.installation_id == self.context.setup.installation_id
                 and evidence.transition_id == state["transition_id"], "CONFIGURATION_RESOLUTION")
-        require(not state["adopted"], "CONFIGURATION_ORIGINAL_EVIDENCE_REQUIRED")
         decision, facts, snapshot = self._proposal(state)
+        require(not state["adopted"] or self.context.effects is not None
+                and covered(snapshot.document(),state["transition_id"]), "CONFIGURATION_ORIGINAL_EVIDENCE_REQUIRED")
         require(approved == decision, "CONFIGURATION_RESOLUTION_CHANGED")
         require(not facts.blockers, "CONFIGURATION_RESOLUTION_REQUIRED")
         receipt = evidence.preserve(snapshot, facts, owner_authorized=True)
@@ -402,6 +458,19 @@ class Maintenance:
                 and proof["inspection"]["setup_sha256"] == decision.setup_sha256,
                 "CONFIGURATION_RESOLUTION_CHANGED")
         return decision
+
+    def refresh_local_evidence(self, *, owner_authorized=False):
+        """Only the original guarded owner can certify its freshly clear local WAL.
+
+This changes evidence only; UNKNOWN shared work/effects are never cleared here.
+"""
+        require(owner_authorized is True and self.context.effects is not None, "CONFIGURATION_OWNER_REQUIRED")
+        state,_ = self._state()
+        require(state is not None and not state["adopted"], "CONFIGURATION_ORIGINAL_EVIDENCE_REQUIRED")
+        decision,facts,snapshot = self._proposal(state)
+        require(not any(x.kind.startswith("LOCAL_") for x in facts.blockers), "CONFIGURATION_RESOLUTION_REQUIRED")
+        result = self.context.effects.certify(snapshot,self.context.checkpoint.read().grant,state["transition_id"])
+        return result  # New proposal/explicit approval is still required afterwards.
 
     def recover_local(self, *, owner_authorized=False):
         """Promote only the exact schema/binding-checked existing local candidate.

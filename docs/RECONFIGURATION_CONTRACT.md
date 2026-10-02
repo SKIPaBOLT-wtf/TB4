@@ -70,9 +70,28 @@ explicit owner approval, and provider recovery remains inspect-only.
 
 Adoption gives the current role holder a local maintenance checkpoint without
 claiming access to the previous installation's missing local evidence. It cannot
-resolve routing eligibility from its own empty journal. The inherited-operation
-evidence handoff/guard and candidate/root/promotion flow still require subsequent
-qualified units; this conservative refusal is not an all-peer role-election gate.
+resolve routing eligibility from its own empty journal. The source guard extension
+is [A-002](implementation-plan/revisions/R2/amendments/RP-027/A-002-shared-effect-evidence.md):
+the existing global.summary slot retains a closed bounded effects journal, UNKNOWN
+before invocation, and the original local unresolved-status maintenance barrier.
+Normal publication preserves the whole guarded summary row, including its prior
+non-effect data. Bootstrap refuses an occupied unresolved summary rather than
+resetting it; guard-aware summary evolution requires its own later qualified helper.
+Exact protected native checkpoint CAS
+and a durable local reservation fence new work before maintenance inspection;
+late replies preserve the reservation. Native/provider pending recovery is always
+the same candidate/operation and provider inspection never resends.
+
+Covered fresh zero-blocker shared evidence permits explicit fallback resolution
+without contacting the original installation. An unresolved original local barrier
+or shared UNKNOWN remains a refusal. Only the original guarded owner can refresh
+its local-clear evidence from actual freshly inspected local state; this does not
+erase shared UNKNOWN. Bootstrap coverage requires the initial epoch-one owner and
+exact protected checkpoint. A later empty owner cannot claim unobserved legacy
+effects were resolved. This is a routing-evidence migration limit and never an
+all-peer role-election gate. Native checkpoint/effect schemas are pinned only in
+UNRELEASED; installed profiles are unchanged. Full guard qualification and the
+candidate/root/promotion flow remain required.
 Full-capacity retained/unknown work must fit protected evidence without omission;
 metadata is bounded at128KiB and the actual native frame limit remains1MiB.
 

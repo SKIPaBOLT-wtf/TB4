@@ -7,3 +7,5 @@ protocol/network-description-v1.schema.json text eol=lf
 protocol/network-table-v1.schema.json text eol=lf
 protocol/configuration-v1.schema.json text eol=lf
 protocol/reconfiguration-maintenance-v1.schema.json text eol=lf
+protocol/reconfiguration-effects-v1.schema.json text eol=lf
+protocol/native-checkpoint-v1.schema.json text eol=lf

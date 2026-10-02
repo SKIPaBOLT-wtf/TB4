@@ -526,9 +526,6 @@
         "properties": {
           "pending": {
             "type": "null"
-          },
-          "resolution": {
-            "type": "null"
           }
         }
       }

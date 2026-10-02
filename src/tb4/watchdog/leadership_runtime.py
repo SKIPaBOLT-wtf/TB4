@@ -62,6 +62,7 @@ class Checkpoint:
     election: ElectionMutation | None = None
     mutation: RecordMutation | None = None
     receipts: tuple[Receipt, ...] = ()
+    maintenance: str | None = None
 
 
 @dataclass(frozen=True, repr=False)
@@ -77,6 +78,7 @@ class NativeWatchdogContext:
     transition: object = lambda: secrets.token_hex(32)
     status: object = lambda state, reason: None
     configuration_revision: object = lambda: None  # trusted local active revision, not shared input
+    effects: object = None  # trusted protected journal; absent only for legacy composition
 
 
 class NativeWatchdogRuntime:
@@ -90,6 +92,10 @@ class NativeWatchdogRuntime:
                 (context.capabilities, context.clock, context.next_work, context.transition,
                  context.status, context.configuration_revision)), "NATIVE_PORTS")
         self._active = False
+        if context.effects is not None:
+            from tb4.reconfiguration_effects import Effects
+            require(type(context.effects) is Effects and context.effects.leadership is self.leadership
+                    and context.effects.checkpoint is store, "NATIVE_EFFECT_CONTEXT")
         self._since = None
         self._due = self._renew_at = self._last_clock = None
         self.state, self.reason = "PAUSED", "ROLE_STARTUP"
@@ -117,6 +123,7 @@ class NativeWatchdogRuntime:
                 and (state.election is None or type(state.election) is ElectionMutation)
                 and (state.mutation is None or type(state.mutation) is RecordMutation)
                 and type(state.receipts) is tuple and len(state.receipts) <= len(Action)
+                and (state.maintenance is None or transition_id(state.maintenance))
                 and all(type(r) is Receipt and type(r.action) is Action and transition_id(r.operation_id)
                         and type(r.epoch) is int and r.epoch > 0
                         and r.outcome in {"UNKNOWN", "COMPLETE", "NO_WORK", "SUPERSEDED", "NOT_DISPATCHED"}
@@ -214,6 +221,8 @@ class NativeWatchdogRuntime:
         caps = self._caps()
         require(caps.observe and caps.coordinate and (action is None or action in caps.actions), "ACTION_CAPABILITY")
         state = self._load()
+        if state.maintenance is not None:
+            raise ConfigurationError("CONFIGURATION_MAINTENANCE")
         require(state.election is None and state.grant is not None, "LEADERSHIP_UNKNOWN")
         clock = self.context.clock()
         require(type(clock) is ClockSample and clock.monotonic_trusted
@@ -223,9 +232,16 @@ class NativeWatchdogRuntime:
             self._status(False, "OLDER_DOG_DETECTED")
             raise AuthorityError("OWNER_SUPERSEDED")
         require_dispatch(observed.snapshot.document(), self.context.configuration_revision())
+        from tb4.reconfiguration_effects import ledger, SLOT
+        if ledger(observed.snapshot.document()["records"][SLOT]) is not None:
+            if self.context.effects is None:
+                raise ConfigurationError("CONFIGURATION_EFFECT_EVIDENCE_REQUIRED")
         return state, observed.snapshot
 
     def _receipt(self, state, receipt, *, mutation=...):
+        fresh = self._load()
+        if fresh != state and replace(fresh, maintenance=state.maintenance) == state:
+            state = fresh  # A maintenance reservation must survive a late reply.
         rows = tuple(r for r in state.receipts if r.action != receipt.action) + (receipt,)
         pending = state.mutation if mutation is ... else mutation
         return self._save(state, replace(state, receipts=rows, mutation=pending))
@@ -238,6 +254,17 @@ class NativeWatchdogRuntime:
         if old is not None and (old.operation_id == work.operation_id or old.outcome == "UNKNOWN"):
             return old.outcome  # A possibly sent external effect is never replayed.
         receipt = Receipt(work.action, work.operation_id, state.grant.epoch, "UNKNOWN")
+        effects = self.context.effects
+        if effects is not None:
+            effects.ensure(state)
+            old_shared = effects.receipt(work.action)
+            if old_shared is not None and (old_shared["operation_id"] == work.operation_id
+                                          or old_shared["outcome"] == "UNKNOWN"):
+                return old_shared["outcome"]
+            state = self._receipt(state, receipt)
+            if effects.start(state.grant, work.action, work.operation_id) != "CONFIRMED":
+                return "UNKNOWN"
+            state, snapshot = self._admit(work.action)
         if work.action in SHARED:
             if state.mutation is not None:
                 return "UNKNOWN"
@@ -248,6 +275,8 @@ class NativeWatchdogRuntime:
             report = reconcile(self.leadership.backend, plan, mode="START", max_reads=4, max_writes=2)
             if report.outcome == "CONFIRMED":
                 self._receipt(state, replace(receipt, outcome="COMPLETE"), mutation=None)
+                if effects is not None:
+                    effects.finish(state.grant, work.action, work.operation_id, "COMPLETE")
                 return "COMPLETE"
             return "UNKNOWN"
         state = self._receipt(state, receipt)
@@ -264,6 +293,8 @@ class NativeWatchdogRuntime:
         if type(result) is not str or result not in {"COMPLETE", "NO_WORK", "UNKNOWN"}:
             result = "UNKNOWN"
         self._receipt(state, replace(receipt, outcome=result))
+        if effects is not None and result != "UNKNOWN":
+            effects.finish(state.grant, work.action, work.operation_id, result)
         return result
 
     def inspect_shared(self):
@@ -275,6 +306,9 @@ class NativeWatchdogRuntime:
             rows = [r for r in state.receipts if r.action in SHARED and r.outcome == "UNKNOWN"]
             require(len(rows) == 1, "LOCAL_MUTATION_RECEIPT")
             self._receipt(state, replace(rows[0], outcome="COMPLETE" if report.outcome == "CONFIRMED" else "SUPERSEDED"), mutation=None)
+            if self.context.effects is not None and state.grant is not None:
+                self.context.effects.finish(state.grant, rows[0].action, rows[0].operation_id,
+                    "COMPLETE" if report.outcome == "CONFIRMED" else "SUPERSEDED")
         return report.outcome
 
     def cycle(self):

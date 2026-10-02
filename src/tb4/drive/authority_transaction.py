@@ -60,6 +60,8 @@ class RecordMutation:
         proposed = copy.deepcopy(document)
         proposed["records"].update(copy.deepcopy(changes))
         validate_document(proposed)
+        from tb4.reconfiguration_effects import preserves_effects
+        require(preserves_effects(document, proposed), "CONFIGURATION_EFFECT_TRANSACTION_REQUIRED")
         require(any(encoded(changes[k]) != encoded(records[k]) for k in changes), "NO_CHANGE")
         return cls(snapshot.binding, owner,
                    encoded({k:v for k,v in document.items() if k != "records"}),
@@ -89,6 +91,10 @@ class RecordMutation:
             return "CONFLICT", None
         document["records"].update(after)
         validate_document(document)
+        from tb4.reconfiguration_effects import preserves_effects
+        original = snapshot.document()
+        if not preserves_effects(original, document):
+            return "CONFLICT", None
         return "READY", document
 
 
