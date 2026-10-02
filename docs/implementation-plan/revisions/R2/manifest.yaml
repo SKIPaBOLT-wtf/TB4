@@ -1050,7 +1050,7 @@ steps:
     revalidation_required: []
   RP-026:
     title: Authorized stable-IP provisioning adapter
-    status: IN_PROGRESS
+    status: BLOCKED
     definition: steps/RP-026.md
     depends_on:
     - RP-006
@@ -1068,6 +1068,8 @@ steps:
     completed_checks: []
     evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/qualified-predecessor-handoff.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/network-authority-decision.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/network-authority-review.md
     amendments:
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md

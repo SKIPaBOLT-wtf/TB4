@@ -1,23 +1,37 @@
 schema_version: 1
-revision: "R2"
-work_item: "RP-026"
-check: "RP-026.C1"
-attempt: "A001"
-phase: "NETWORK_AUTHORITY_DESIGN_REVIEW"
-source_branch: "main"
-source_commit: "a6b6dfaf728de283991ec8a34ac2c4a93d51f443"
-journal: "docs/development/journal/RP-026/A001/events.jsonl"
-last_verified_event: "RP-026-A001-0010"
-last_completed: "RP-025"
-next_action: "Publish proposal and coherent factual design-review outcome/current cursor. If owner architecture choice is absent, record the exact decision request and stop before dependent implementation; no broad context or secret request."
-verification: "Fresh exact-head/base/review/protection/source checks and single ordinary PR34 merge, then actual merged main/ancestry/full current-history readback. RP-026 remains zero-check and no operational network authority is inferred."
-execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
+revision: R2
+work_item: RP-026
+check: RP-026.C1
+attempt: A001
+phase: NETWORK_AUTHORITY_DESIGN_REVIEW
+source_branch: main
+source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
+journal: docs/development/journal/RP-026/A001/events.jsonl
+last_verified_event: RP-026-A001-0011
+last_completed: RP-025
+next_action: Owner selects DHCP-first design with isolated implementation/tests (recommended)
+  or managed-host-first design. Record that exact decision in journal/amendment, then
+  implement and qualify the selected authority under new published INTENT; no live
+  network change is implied.
+verification: After owner choice, record journal/amendment and scope; implement selected
+  provider/authority contract using synthetic/isolated negative and native tests.
+  Qualify exact assignment/rollback under its explicit scoped authorization; preserve
+  no-replay/current-owner/privacy boundaries.
+execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-026-A001-0010"]
-expected_user_action: null
-blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Revoke only a specifically confirmed new enrollment; retain slot generation/history, prior approved bindings and UNKNOWN operations. Do not copy another installation credential/profile, reset authority or replay an uncertain write."
-next_implementation_step: "RP-026"
-next_implementation_check: "RP-026.C1"
+unsettled_intents: []
+expected_user_action: 'Choose the RP-026 network authority design: approve DHCP-first
+  with isolated implementation/tests (recommended), or select managed-host-first.
+  No credentials or broad project history required; no live network change is authorized.'
+blocking_decisions:
+- 'RP-026.C1: explicit supported network-management authority design choice, as required
+  by R2 README and owner baseline; proposal in evidence/RP-026/A001/network-authority-decision.md.'
+known_open_defects:
+- DEF-001
+- DEF-002
+rollback: Revoke only a specifically confirmed new enrollment; retain slot generation/history,
+  prior approved bindings and UNKNOWN operations. Do not copy another installation
+  credential/profile, reset authority or replay an uncertain write.
+next_implementation_step: RP-026
+next_implementation_check: RP-026.C1
