@@ -3,21 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_CANDIDATE_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C2_FIRST_TARGETED_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c323da611eb98de3966145e226679335976b3f22
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0036
+last_verified_event: RP-027-A001-0037
 last_completed: RP-026
-next_action: Publish/read back exact candidate/inherited/native/first-run/desktop
-  scoped test INTENT; run on fresh absent owned fixture root once and preserve actual
-  exit, full cases/failures before dependent changes.
-verification: C2 eleven-file protected actual-first-run candidate source remotely
-  saved; untested/unaccepted; original authority/profile untouched.
+next_action: Publish/read back actual full cases/outcome, register each proven or
+  suspected new fault if any, and repair the smallest proven cause with a new verified
+  INTENT. If passing, proceed to separately scoped C3 same-authority relocation/crash/fallback
+  unit.
+verification: C2 source/amendment remotely saved;27-target candidate/inherited/native/Qt
+  test INTENT pending actual result.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0037
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
