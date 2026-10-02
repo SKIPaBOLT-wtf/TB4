@@ -3,22 +3,25 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: CANONICAL_SOURCE_AND_GUIDANCE_WIP_PUBLISHED
+phase: HOSTED_PLATFORM_AND_INSTRUCTION_QUALIFICATION
 source_branch: feat/rp026-local-network-table
 source_commit: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0034
+last_verified_event: RP-026-A001-0035
 last_completed: RP-025
-next_action: Publish/read back latest-source instruction/hash/SKILL/diff and full
-  hosted Windows/Linux regression/build/installer qualification plus draft PR INTENT,
-  then execute/read same actual runs before acceptance.
+next_action: Inspect same local instruction group and PR-hosted runs/artifacts. Publish
+  actual source-linked qualification OUTCOME and per-check/common-gate evidence. If
+  all pass, close proven DEF-049/050/051 and accept C1-C4 coherently; then separately
+  publish a merge INTENT after mandatory checks/review. If failed, preserve the actual
+  failing run and use a bounded diagnosis/repair INTENT.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-026-A001-0035
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
