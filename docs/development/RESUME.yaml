@@ -3,21 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_INITIAL_BOOTSTRAP_FIXTURE_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C1_INHERITED_EFFECT_REPEAT_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 95ee0e15cf467af4bbeb8b13a8c4d1868d135db3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0028
+last_verified_event: RP-027-A001-0029
 last_completed: RP-026
-next_action: Publish/read back fresh exact24-target repeat-test INTENT; run original682
-  predicates plus new initial-acquisition native predicate in a newly allocated owned
-  absent fixture root, preserve actual process/case results before any further repair.
-verification: Two-file fixture-only source saved/read back; true initial bootstrap
-  recipe untested, application guards unchanged.
+next_action: Publish/read back exact repeat outcome/evidence and append DEF-058 supported
+  or failed remedy facts. If passing, continue C2 actual protected first-run candidate/old-profile
+  retention; if failing, preserve and repair the smallest proven cause under a new
+  verified INTENT.
+verification: Two-file initial fixture source saved; exact24-target repeat INTENT,
+  result pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0029
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
