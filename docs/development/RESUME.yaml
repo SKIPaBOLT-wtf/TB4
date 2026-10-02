@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: POST_REPAIR_NATIVE_AND_CLEAN_CHECKOUT_DIAGNOSTIC
+phase: POST_REPAIR_NATIVE_DIAGNOSTIC_PASS
 source_branch: feat/rp026-local-network-table
 source_commit: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0043
+last_verified_event: RP-026-A001-0044
 last_completed: RP-025
-next_action: Record/read back the exact diagnostic outcome; if PASS publish full native/Qt/source-gate
-  and hosted platform qualification INTENT for existing PR35, otherwise diagnose under
-  a new repair INTENT.
+next_action: Publish full exact-source native/Qt/regression/source gate and hosted
+  Windows/Linux qualification INTENT on existing PR35; record actual checkouts, cases/skips
+  and build/artifact outcomes before acceptance.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-026-A001-0043
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
