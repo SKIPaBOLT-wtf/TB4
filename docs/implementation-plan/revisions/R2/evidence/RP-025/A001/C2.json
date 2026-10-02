@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "item": "RP-025",
+  "check": "RP-025.C2",
+  "attempt": "A001",
+  "source_ref": "a6b6dfaf728de283991ec8a34ac2c4a93d51f443",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "First acceptance review of the unchanged qualified source and concrete assertions for this predicate, after current prerequisite reacceptance. Use complete real checkpoint/main-history/registry/projection guards; no historical acceptance is fabricated.",
+  "procedure": "Inspect enrollment_workflow.py, fetcher_enrollment.py, fetcher_profile.py, enrollment_records.py and actual dedicated/native/mixed-role assertions. Consume 79 dedicated tests passed on both OS, full/native/Qt/frozen common evidence and separately qualified helper/semantic-gate repairs. Match own first-acceptance INTENT/OUTCOME and review privacy/rollback before coherent publication.",
+  "expected": "Publish effective OS/interpreters, launch mode, polling/idle policy and next-check/freshness information rather than WATCHDOG guesses.",
+  "observed": "FetcherEnrollment.capture uses its own typed native RuntimeSnapshot, effective TimingProfile and ActivityClock rather than saved WATCHDOG/FETCHER proposals. Native process OS/architecture and running CPython are inspected; other PATH interpreters remain UNQUALIFIED and are never executed. A frozen application is not asserted to be external Python. Reports retain disabled capability states, actual cadence/idle/hold modes, next check, revision and conservative stale/future/unknown-clock freshness in the bounded codec.",
+  "exit_code": 0,
+  "platform_scope": "Actual Windows x64 and Ubuntu Linux x64 native runtime/protected identity/credential persistence, 79 dedicated enrollment/profile cases on each OS, full platform suites and isolated WATCHDOG/FETCHER frozen/setup/install qualification. Peer/authority faults use explicit synthetic trusted adapters.",
+  "negative_cases": [
+    "test_actual_runtime_policy_not_saved_watchdog_or_fetcher_proposal_drives_report",
+    "test_profile_revision_and_freshness_are_effective_not_a_ready_guess",
+    "test_native_process_os_python_and_unqualified_path_presence_have_no_private_output",
+    "test_frozen_app_is_not_an_external_python_interpreter",
+    "test_effective_owner_cadence_clock_and_hold_modes_roundtrip",
+    "test_future_stale_boundary_and_unknown_clock_never_become_fresh",
+    "test_compact_profile_rejects_ambiguous_encoding"
+  ],
+  "unverified_scope": "Production authenticated peer/transport and integrated setup/runtime deployment are later gates. Actual instruction profile remains UNRELEASED/default-deny and execution_authorized is always false. No physical power-loss, real home topology or field ARM64 qualification is inferred.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Revoke only an explicitly confirmed FETCHER enrollment with preserved slot generation and history. Keep previous identity/profile, unrelated artifacts/BALLPARK and exact UNKNOWN private plans; no copying WATCHDOG credentials or destructive reset/resend.",
+  "intent_event": "RP-025-A001-0074",
+  "outcome_event": "RP-025-A001-0075",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-025/A001/reviewed-acceptance.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/combined-source-invariant-review.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-025/A001/source-review.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-025/A001/helper-reference-validation.md"
+  ]
+}

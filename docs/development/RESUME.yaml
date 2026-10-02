@@ -7,19 +7,19 @@ phase: ACCEPTANCE_REVIEW
 source_branch: work/rp-025-a001
 source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
 journal: docs/development/journal/RP-025/A001/events.jsonl
-last_verified_event: RP-025-A001-0074
-last_completed: RP-024
-next_action: Review RP-025 C1-C4 and publish coherent first acceptance with four reviewed
-  source-linked receipts after complete guarded candidate and main-history validation.
-  Then close only defects whose repair and every required recheck have proven acceptance.
-verification: Own first RP-025/A001 acceptance against final source and complete shared
-  qualification, after current RP-022/RP-024 accepted receipts. Preserve all failure,
-  helper/native repair and suspension history; no new attempt or old accepted snapshot.
+last_verified_event: RP-025-A001-0075
+last_completed: RP-025
+next_action: Publish/read back guarded first RP-025/A001 four-check acceptance. Then
+  publish a separate defect-resolution INTENT and close DEF-042 through DEF-048 only
+  after every required repair/recheck and preserved failure/history link is verified.
+verification: Verify defect-specific repair and every required accepted recheck before
+  coherent resolution; then complete final public source/diff/privacy/history review
+  and ordinary authorized PR merge. No live release/deployment/network authority is
+  implied.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-025-A001-0074
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
