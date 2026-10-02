@@ -3796,10 +3796,12 @@ defects:
         a dedicated basetemp; all631 cases finish but sessionfinish cleanup of an
         existing global pytest-current alias raises WinError5 and actual process exits1.
       failing_source: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
-      passing_source: null
+      passing_source: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-session-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-isolated-tests.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-isolated-test-cases.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -3821,6 +3823,14 @@ defects:
       result: UNTESTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-session-failure.md
+    - id: same-source-isolated-session-completed
+      claim: The identical631-case source/predicate set exits0 in a fresh owned absent
+        basetemp, with627PASS and4 Linux-only skips; no source/test/global path or
+        protection change. This supports the isolation remedy while preserving the
+        original untested hypothesis and failure.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-isolated-tests.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -3841,5 +3851,6 @@ defects:
     notes: Test harness isolation only. No product assertion failure or application-source
       origin is proven. Accepted predecessor hosted/native qualification is not invalidated
       by this unfinished RP027 local runner fault. No deletion/ACL repair of preexisting
-      global temp state.
+      global temp state. Exact same-source/same-predicate isolated repeat exits0;
+      retain OPEN only for mandatory full affected C1-C4 rechecks at final RP027 acceptance.
     legacy_record: null
