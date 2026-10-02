@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: FUNCTIONAL_TARGET_PASS_FORMAT_FAILURE
+phase: SOURCE_FORMAT_ONLY_REPAIR
 source_branch: feat/rp026-local-network-table
 source_commit: 9e986b3ff62c18facc81e06a7b1b521209a899b9
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0032
+last_verified_event: RP-026-A001-0033
 last_completed: RP-025
-next_action: Publish/read back smallest formatting-only source/digest repair INTENT
-  and WIP OUTCOME, preserving prior target pass and diff failure. Then publish latest-source
-  skill/hash/diff and hosted full platform/build draft PR qualification INTENT.
+next_action: Normalize only the declared EOF/digest files, publish/read back WIP and
+  exact source/body-equivalence OUTCOME, then authorize latest-source instruction/SKILL/diff/public
+  guards and draft PR hosted native Windows/Linux full-suite/build/installer matrix.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-026-A001-0033
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
