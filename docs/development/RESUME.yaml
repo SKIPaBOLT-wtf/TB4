@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: NATIVE_READ_SCOPE_AND_CANONICAL_INPUT_REPAIR
+phase: NATIVE_READ_SCOPE_REPAIR_WIP_RECORDED
 source_branch: feat/rp026-local-network-table
-source_commit: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
+source_commit: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0041
+last_verified_event: RP-026-A001-0042
 last_completed: RP-025
-next_action: Apply only bounded new-module/three-attribute/real-native-test repair,
-  publish/read back exact WIP and source-linked OUTCOME; then new native/Qt/fresh-checkout
-  and hosted full-platform qualification INTENT on existing PR35.
+next_action: Publish new exact-source native/Qt/fresh-checkout and hosted full-platform
+  qualification INTENT on existing PR35; execute isolated tests and record each real
+  terminal result before acceptance.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-026-A001-0041
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
