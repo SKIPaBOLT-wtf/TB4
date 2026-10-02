@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_CUT_REPEAT_RUNNING
+phase: STAGED_RECONFIGURATION_C2_NATIVE_CUT_REPEAT_PASSED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 8ffdbfeaf4fd5c5a4b3f3c158368c6096bc24ce0
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0044
+last_verified_event: RP-027-A001-0045
 last_completed: RP-026
-next_action: Inspect the same LOCAL-SESSION-99172 or its exact task-local output;
-  after completion preserve actual source-linked720 cases/exit/time and DEF060 remedy
-  facts before C3.
-verification: Same720-predicate repeat executing; actual recoverable local session
-  recorded, result pending.
+next_action: Publish/read back a separately scoped C3 same-existing-authority root
+  relocation source INTENT. Implement exact fixed-object/native directory rebind plans,
+  protected durable unknown inspection, metadata-only no-retry moves, role/fallback/crash/access
+  invariants and candidate root readback integration; preserve source before targeted
+  tests.
+verification: Exact720-predicate27-target Windows repeat716PASS/4Linuxskip; native
+  same-candidate cut recovery proven; C1-C4 not accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0043
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

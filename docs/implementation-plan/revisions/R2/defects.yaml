@@ -4132,11 +4132,13 @@ defects:
         the injected OSError to SETTINGS_STORE_UNAVAILABLE; all stop at regex mismatch
         before remaining exact pending/promote/resume/no-send assertions.
       failing_source: c323da611eb98de3966145e226679335976b3f22
-      passing_source: null
+      passing_source: 8ffdbfeaf4fd5c5a4b3f3c158368c6096bc24ce0
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-cut-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-native-repeat.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-native-repeat-cases.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4171,6 +4173,15 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-cut-provenance.md
+    - id: exact-native-candidate-recovery-assertions-pass-after-code-expectation-repair
+      claim: Exact720 predicates are retained. Three actual-native interrupted metadata/archive/profile
+        cases now reach and pass explicit owner recovery, exact pending promotion/readback,
+        same staging resume, unchanged original bytes and provider count, under unchanged
+        accepted native guards.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-native-repeat.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-native-repeat-cases.json
     repairs:
     - item: RP-027
       attempt: A001
@@ -4193,5 +4204,6 @@ defects:
       and post-cut recovery are not yet qualified; C1-C4 rechecks held. Same failed
       native frames are proven intact; post-cut recovery assertions await repeated
       unchanged tests. Preserve the earlier untested hypothesis and append supported
-      facts.
+      facts. Exact27-target/720-predicate Windows repeat exits0 with716PASS/4Linuxskip;
+      mandatory final C1-C4 rechecks held.
     legacy_record: null
