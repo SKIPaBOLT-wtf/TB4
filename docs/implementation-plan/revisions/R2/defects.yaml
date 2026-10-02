@@ -4056,10 +4056,12 @@ defects:
         stale check rejects INCUMBENT_FRESH before acquisition. Other fallback cases
         without this renewal pass.
       failing_source: 95ee0e15cf467af4bbeb8b13a8c4d1868d135db3
-      passing_source: null
+      passing_source: 7d571ea43040aeb0b1eae2fff3853387093c1242
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/heartbeat-derived-effect-repeat.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/heartbeat-derived-effect-repeat-cases.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4077,6 +4079,14 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
+    - id: actual-renewed-heartbeat-derived-stale-clock-preserves-unknown-fallback
+      claim: Exact unchanged683 predicates pass with actual heartbeat plus unchanged
+        configured stale interval. UNKNOWN survives first-CAS fallback, no replay
+        or peer acknowledgement, and evidence refusal remains enforced.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/heartbeat-derived-effect-repeat.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/heartbeat-derived-effect-repeat-cases.json
     repairs:
     - item: RP-027
       attempt: A001
@@ -4096,5 +4106,6 @@ defects:
     resolution_evidence: []
     notes: New test clock only. Initial coverage source/pins, native epoch/owner/clock/timing
       guards and prior accepted sources stay unchanged. Preserve the failed fresh-incumbent
-      result; no live timer advance or operation replay.
+      result; no live timer advance or operation replay. Exact heartbeat-derived repeat
+      exits0; final mandatory C1-C4 rechecks remain held.
     legacy_record: null

@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_HEARTBEAT_DERIVED_REPEAT_TEST
+phase: STAGED_RECONFIGURATION_C1_EFFECT_TARGETED_REPEAT_PASSED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 7d571ea43040aeb0b1eae2fff3853387093c1242
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0033
+last_verified_event: RP-027-A001-0034
 last_completed: RP-026
-next_action: Publish/read back exact test outcome/cases and append supported or failed
-  DEF-059 remedy facts. If passing, continue a separately scoped C2 protected actual-first-run
-  candidate/old-profile retention implementation; otherwise preserve and repair the
-  smallest proven remaining defect.
-verification: Actual-heartbeat fixture source saved;24-target/683-predicate repeat
-  INTENT, result pending.
+next_action: Publish/read back a C2 protected-candidate source INTENT; implement actual
+  first-run Setup/Prerequisites review in separate protected staged profile with immutable
+  original archive and exact same-authority binding; old active profile stays unchanged.
+  Preserve source/outcome before targeted native/negative tests.
+verification: Windows exact24-target/unchanged683-predicate effect repeat PASS679/4Linuxskip;
+  C1-C4 unaccepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0033
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
