@@ -2564,7 +2564,7 @@ defects:
     legacy_record: null
   DEF-042:
     title: New FETCHER test fixture import depends on pytest collection ordering
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-025.C4
     suspected_origin: null
     proven_origin:
@@ -2577,7 +2577,7 @@ defects:
         fixture through the new test before unqualified security sibling is on pytest
         path; ModuleNotFoundError, exit2.
       failing_source: 9c31cf661ace178723792924455c93841e0e1ed1
-      passing_source: null
+      passing_source: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/focused-collection-failure.md
     repair_steps:
@@ -2613,15 +2613,26 @@ defects:
     issue: null
     regression_test: Dedicated tests/drive/test_fetcher_profile.py and test_fetcher_enrollment.py
       collection without security test collection ordering
-    resolution_evidence: []
-    notes: Test infrastructure repair only; no RP025 assertions executed and no predecessor
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/qualified-defect-closure.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/fixture-import-repair.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/complete-focused-validation.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/reviewed-acceptance.md
+    notes: 'Test infrastructure repair only; no RP025 assertions executed and no predecessor
       acceptance reopened. Keep failed source and collection outcome; qualify native
       cases through explicit fixtures.
+
+      Resolution review 2026-10-02: Dedicated enrollment/profile collection now reaches
+      and passes all 79 cases on each OS independently of security sibling ordering.
+      The original import failure remains. Passing source a6b6dfaf728de283991ec8a34ac2c4a93d51f443;
+      exact hosted checkout 8f389e87d21f26501d7085c1f869f424525a9f51. No live/release
+      or unavailable field capability is inferred.'
     legacy_record: null
   DEF-043:
     title: New enrollment negative tests use mismatched commissioning and fault-injection
       fixtures
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-025.C4
     suspected_origin:
       work_item: RP-025
@@ -2634,7 +2645,7 @@ defects:
         fail at missing second slot, leadership display-name mismatch, unsupported
         discovery method or unused fixture failure field.'
       failing_source: 37f8c9cc1d9487edea98e7ae26b7df294a8a55ac
-      passing_source: null
+      passing_source: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/dedicated-fixture-failures.md
       - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/discovery-stimulus-failure.md
@@ -2682,17 +2693,30 @@ defects:
     issue: null
     regression_test: The eight named enrollment duplicate, lost-reply takeover, discovery
       refresh, stale/force owner and private save failure cases in tests/drive/test_fetcher_enrollment.py
-    resolution_evidence: []
-    notes: Test-only setup repair; do not modify older assertions or runtime. Construct
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/qualified-defect-closure.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/negative-fixture-repair.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/discovery-stimulus-repair.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/complete-focused-validation.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/reviewed-acceptance.md
+    notes: 'Test-only setup repair; do not modify older assertions or runtime. Construct
       real two-device synthetic commissioning and inject actual guarded persistence
       boundaries. Keep C1-C4 holds and every failure until qualified complete acceptance.
       Continuation repair RP-025-A001-0017 is retained in the same A001 journal/hypothesis/evidence;
       it is not a second repair identity. Both failed and later passing focused results
       remain preserved.
+
+      Resolution review 2026-10-02: The intended eight negative boundaries and discovery
+      preservation assertion execute using valid two-device scope/leadership fixtures
+      and actual guarded private-save fault injection. Both failed stimulus rounds
+      remain; no extra repair identity or unproved origin is invented. Passing source
+      a6b6dfaf728de283991ec8a34ac2c4a93d51f443; exact hosted checkout 8f389e87d21f26501d7085c1f869f424525a9f51.
+      No live/release or unavailable field capability is inferred.'
     legacy_record: null
   DEF-044:
     title: RP025 current progress checkpoint fails closed input validation
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-025.C4
     suspected_origin:
       work_item: RP-025
@@ -2708,7 +2732,7 @@ defects:
       procedure: Current ledger on exact clean checkpoint d06c362 reports LEDGER_INPUT_INVALID
         exit1 before history/PR qualification.
       failing_source: d06c3628fa1a4d56457a32476d7d444f18978506
-      passing_source: null
+      passing_source: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/current-ledger-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/current-ledger-diagnosis.md
@@ -2744,14 +2768,27 @@ defects:
           - RP-025.C4
     issue: null
     regression_test: Current and complete history ledger validators on RP025 checkpoints
-    resolution_evidence: []
-    notes: Current registry bookkeeping only. Preserve both journaled repair actions,
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/qualified-defect-closure.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/current-ledger-diagnosis.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/source-review.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/helper-reference-validation.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/reviewed-acceptance.md
+    notes: 'Current registry bookkeeping only. Preserve both journaled repair actions,
       failed evidence and original repair identity; do not weaken validator or alter
       accepted runtime.
+
+      Resolution review 2026-10-02: Current registry has one original repair identity
+      per RP-025/A001 defect repair, with continuation history retained. Real current,
+      serialized checkpoint and actual-main-history validators pass without weakening
+      uniqueness or original source guards. Passing source a6b6dfaf728de283991ec8a34ac2c4a93d51f443;
+      exact hosted checkout 8f389e87d21f26501d7085c1f869f424525a9f51. No live/release
+      or unavailable field capability is inferred.'
     legacy_record: null
   DEF-045:
     title: FETCHER profile summary rejects legitimate WATCHDOG-only catalogue devices
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-025.C4
     suspected_origin: null
     proven_origin:
@@ -2764,7 +2801,7 @@ defects:
         and one unbound WATCHDOG-only device passes shared/layout validation, but
         actual Enrollment.summary raises ENROLLMENT_DEVICE_NOT_APPROVED.
       failing_source: 098fa945dde8b43cd9ce98feb651b237817afe70
-      passing_source: null
+      passing_source: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/mixed-role-summary-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/mixed-role-regression-reproduction.md
@@ -2801,15 +2838,26 @@ defects:
     issue: null
     regression_test: Mixed WATCHDOG/FETCHER/combined/all-WATCHDOG role summaries,
       bounded pagination and non-FETCHER enrollment denial
-    resolution_evidence: []
-    notes: Minimal unaccepted summary-role boundary. Keep registration and invalid-binding
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/qualified-defect-closure.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/mixed-role-runtime-repair.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/complete-focused-validation.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/reviewed-acceptance.md
+    notes: 'Minimal unaccepted summary-role boundary. Keep registration and invalid-binding
       rejection strict; filter valid eligible slots only for FETCHER summary and keep
       source/failed review evidence/holds.
+
+      Resolution review 2026-10-02: Eligible FETCHER filtering precedes bounded pagination;
+      valid WATCHDOG-only catalogue entries no longer make the summary fail. Mixed/combined/all-WATCHDOG
+      cases pass; hidden bound FETCHER and unauthorized enrollment still refuse. Passing
+      source a6b6dfaf728de283991ec8a34ac2c4a93d51f443; exact hosted checkout 8f389e87d21f26501d7085c1f869f424525a9f51.
+      No live/release or unavailable field capability is inferred.'
     legacy_record: null
   DEF-046:
     title: Hosted Linux held-key recheck does not always reject original same-size
       mutation
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-025.C4
     suspected_origin:
       work_item: RP-021
@@ -2826,7 +2874,7 @@ defects:
         after original same-size write while sealed snapshot assertion passes; dedicated
         same native test suite33 passed earlier.
       failing_source: 6a9da65c39716052df61e4181741cb850d03379f
-      passing_source: null
+      passing_source: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/linux-held-key-qualification-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/native-held-source-diagnosis.md
@@ -2948,8 +2996,13 @@ defects:
     issue: null
     regression_test: Actual native held original-mutation recheck plus deterministic
       coalesced-metadata/content and fresh-admission cases
-    resolution_evidence: []
-    notes: Real qualification failure preserved. Establish exact mechanism and prior-acceptance
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/qualified-defect-closure.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/local-native-validation.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/combined-source-invariant-review.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/reviewed-acceptance.md
+    notes: 'Real qualification failure preserved. Establish exact mechanism and prior-acceptance
       impact before patch; do not weaken original assertions or hide skipped builds.
       Only fresh synthetic protected files are allowed. Native diagnosis proves the
       metadata-only held-recheck gap in original RP021 source a39427c, not the exact
@@ -2959,10 +3012,19 @@ defects:
       takeover; no native patch or acceptance bypass performed. Administrative reconciliation
       extension belongs to active RP025/A001 and its explicit helper implementation
       INTENT; root RP021/A002 repair remains a separate later reopening record.
+
+      Resolution review 2026-10-02: Native held recheck now compares current bounded
+      positional content with original opaque version and wipes scratch on every exit.
+      Actual original mutation plus controlled equal-metadata changed-content, fresh-version,
+      read/race/error/wipe/offset cases pass. The exact natural hosted timestamp mechanism
+      remains unproved. All RP-021 through RP-025 affected checks are currently accepted.
+      Passing source a6b6dfaf728de283991ec8a34ac2c4a93d51f443; exact hosted checkout
+      8f389e87d21f26501d7085c1f869f424525a9f51. No live/release or unavailable field
+      capability is inferred.'
     legacy_record: null
   DEF-047:
     title: Real reconciliation checkpoint staging omits retained public source references
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-025.C4
     suspected_origin: null
     proven_origin: null
@@ -2972,7 +3034,7 @@ defects:
         whereas immutable historical journals include retained original public source
         references. Current real-root ledger passes with those files present.
       failing_source: 6162dea493900e64b916ced098889d75849dc43f
-      passing_source: null
+      passing_source: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/reopening-preparation-reference-failure.md
     repair_steps:
@@ -3011,17 +3073,31 @@ defects:
     regression_test: Real-shaped checkpoint.prepare/validate_plan with immutable original
       public source evidence references and source_evidence_correction, including
       missing/untracked/symlink/invalid reference cases
-    resolution_evidence: []
-    notes: No candidate published and no native/acceptance state changed by failed
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/qualified-defect-closure.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/helper-reference-validation.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/helper-public-prefix-fixture-correction.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/reviewed-acceptance.md
+    notes: 'No candidate published and no native/acceptance state changed by failed
       preparation. Root reopening may use the authorized manual checkpoint path with
       the same full schema/current/history/publication checks and only tracked referenced
       public files. Integration extension belongs to neveraccepted RP025; keep its
       fullholds and repair actual helper before final RP025 acceptance. No underlying
       historical origin claimed yet.
+
+      Resolution review 2026-10-02: Real prepare/validate_plan stages exact tracked
+      regular public UTF-8 referenced Git blobs with size and local-match bounds.
+      Dirty/private/symlink/missing/untracked/oversize/non-UTF8/post-prepare negatives
+      refuse; docs-only export and original prefixes remain exact. Current and all
+      dependency-ordered acceptance candidates have exercised the real repaired helper.
+      Historical origin remains unproved. Passing source a6b6dfaf728de283991ec8a34ac2c4a93d51f443;
+      exact hosted checkout 8f389e87d21f26501d7085c1f869f424525a9f51. No live/release
+      or unavailable field capability is inferred.'
     legacy_record: null
   DEF-048:
     title: Full qualification gate-identity assertion depends on inline YAML text
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-021.C4
     suspected_origin:
       work_item: RP-012
@@ -3039,7 +3115,7 @@ defects:
         satisfies old text search and is rejected semantically. Actual policy/export/gate
         mappings remain unchanged/correct.
       failing_source: b4fd7c5158a14cdbb73eebd2b95f2b78947beddc
-      passing_source: null
+      passing_source: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-qualification-plan-identity-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/semantic-gate-identity-diagnosis.md
@@ -3081,8 +3157,13 @@ defects:
     regression_test: tests/protocol/test_security_contract.py exact current-plan identity
       test plus equivalent serialization/missing gate disguised as comment/duplicate
       key/wrong definition cases
-    resolution_evidence: []
-    notes: This is supplemental validation-harness repair, with original responsible
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/qualified-defect-closure.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/semantic-gate-local-validation.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/combined-source-invariant-review.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/reviewed-acceptance.md
+    notes: 'This is supplemental validation-harness repair, with original responsible
       RP012 source/test/receipt meaning explicitly preserved. All actual historical/current
       policy exports and real gate identities remain true; no accepted runtime/security
       invariant is invalidated by merely equivalent YAML serialization. Attach a responsible-step
@@ -3090,7 +3171,16 @@ defects:
       sources passed new negatives. Repair executes under already-open RP021/A002
       common validation and all21-25full holds, not a new product policy or dependency
       waiver. New active-attempt registry repair has ownRP021rechecks only, as required
-      by the unchanged guard; DEF046's existing complete21-25transitive holds/rechecks
-      and the new defect's explicit affected-impact review remain. The rejected broader
+      by the unchanged guard; DEF046''s existing complete21-25transitive holds/rechecks
+      and the new defect''s explicit affected-impact review remain. The rejected broader
       unpublished metadata is preserved separately.
+
+      Resolution review 2026-10-02: The unchanged policy/export identities are verified
+      semantically through CURRENT-selected duplicate-safe manifest loading. Equivalent
+      formats pass; all 37 comment-disguised omissions, wrong definition and duplicate-key
+      negatives refuse. Original other test ASTs and RP-012 historical meaning remain.
+      Formal repair rechecks are RP-021 only; explicit transitive impact and DEF-046''s
+      accepted RP-021 through RP-025 rechecks complete the common qualification. Passing
+      source a6b6dfaf728de283991ec8a34ac2c4a93d51f443; exact hosted checkout 8f389e87d21f26501d7085c1f869f424525a9f51.
+      No live/release or unavailable field capability is inferred.'
     legacy_record: null

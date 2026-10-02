@@ -7,32 +7,25 @@ phase: PREDECESSOR_HANDOFF
 source_branch: work/rp-025-a001
 source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0001
+last_verified_event: RP-026-A001-0002
 last_completed: RP-025
-next_action: Close only proven predecessor development defects and publish their evidence/registry
-  outcome. Then finish unchanged-source lightweight gates and authorized PR34 merge
-  before starting RP-026 authority selection.
-verification: 'Administrative predecessor handoff only: prove exact defect regressions
-  and accepted rechecks, complete final unchanged-source/diff/privacy/history gates
-  and merge PR34. Then inspect RP-026 commissioned authority/authorization; no network
-  change or RP-026 acceptance.'
+next_action: After coherent closure readback, publish final unchanged-source/diff/privacy/history
+  and lightweight progress qualification INTENT. Complete it, update PR34 final body/readiness
+  under a separate intent, and merge once with exact expected head after fresh remote
+  review.
+verification: 'Final public qualification closure: actual unchanged source versus
+  qualified a6/8f, append-only history against actual main, current ledger, development
+  suite, public scanner, qualified CRLF diff and complete PR review; no repeated full
+  bundles or live/network mutation.'
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-026-A001-0001
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
 - DEF-001
 - DEF-002
-- DEF-042
-- DEF-043
-- DEF-044
-- DEF-045
-- DEF-046
-- DEF-047
-- DEF-048
 rollback: Revoke only a specifically confirmed new enrollment; retain slot generation/history,
   prior approved bindings and UNKNOWN operations. Do not copy another installation
   credential/profile, reset authority or replay an uncertain write.
