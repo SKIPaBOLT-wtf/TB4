@@ -1,24 +1,25 @@
 schema_version: 1
 revision: R2
-work_item: RP-024
-check: RP-024.C4
-attempt: A002
-phase: REVALIDATION_REVIEW
+work_item: RP-025
+check: RP-025.C4
+attempt: A001
+phase: ACCEPTANCE_REVIEW
 source_branch: work/rp-025-a001
 source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
-journal: docs/development/journal/RP-024/A002/events.jsonl
-last_verified_event: RP-024-A002-0002
+journal: docs/development/journal/RP-025/A001/events.jsonl
+last_verified_event: RP-025-A001-0074
 last_completed: RP-024
-next_action: After guarded candidate and actual-main-history PASS, publish/read back
-  RP-024/A002 four-check acceptance; then unblock RP-025/A001 for first acceptance
-  review and retain DEF-042 through DEF-048 until all scoped receipts are verified.
-verification: Review RP-025 distinct protected FETCHER enrollment, actual effective
-  profiles, durable no-replay recovery and bounded privacy-safe summaries. Native/commissioning/discovery/BALLPARK
-  dependencies have current source-linked accepted receipts.
+next_action: Review RP-025 C1-C4 and publish coherent first acceptance with four reviewed
+  source-linked receipts after complete guarded candidate and main-history validation.
+  Then close only defects whose repair and every required recheck have proven acceptance.
+verification: Own first RP-025/A001 acceptance against final source and complete shared
+  qualification, after current RP-022/RP-024 accepted receipts. Preserve all failure,
+  helper/native repair and suspension history; no new attempt or old accepted snapshot.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-025-A001-0074
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
