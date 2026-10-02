@@ -1,0 +1,9 @@
+# Final actual checkout and public source confirmation
+
+Sourcea6b6dfaf728de283991ec8a34ac2c4a93d51f443; required triggerheadbc7497b3da24b3a2ce7a4e086caae1e0f5ba7e01; actual completed Progress job110658450389/run36949311561 log confirms checkout**8f389e87d21f26501d7085c1f869f424525a9f51**. Git tree2514c9076aad022da6e02305af30ef7cc0681ce6 and parents e4a78d81cd42dc53b379b868631ba3845a0b3e36 plusbc7497b3da24b3a2ce7a4e086caae1e0f5ba7e01 were fetched and read, not inferred from the moving merge ref.
+
+Immediate PR API initially reported older merge6209606f817b45ef04f1c959d53aea19ba073475 (parentsbasee4a and previoushead040a). A read-only comparison of that older public object was locally retained; it is not called the actual job checkout. Completed job logs provided the new factual identity, followed by a second read-only comparison of the actual object, without repeating any test/trigger/mutating provider action.
+
+Actualcheckout8f and reviewedbranch4723735d40957cd0f9e35ca29bc52c6a85959077 are exactsourcea6 matches for src/tests/tools/.github/protocol/config/packaging/SKILL/pyproject and operational enrollment documentation. Runtime/native/policy/workflow closure matches native repaircc0abf1e53b350e8885a2826a0f8549dae0e9269 (only administrative helper/supplemental tests differ). Original Linux mutation regression AST is identical to introductiona39427c4a104e0f61e3ea3231b1a06866848eefd. Fullbranch declared per-command CR-at-EOL diff returned0; no source, old journal/evidence, guard or Git configuration changed.
+
+Completed final Progress: **235passed12.77s**, current and actualmain-base historyPASS20verified/64, only finalqualification0028pending; public scanner clean. Required CI36949311586 and Desktop36949311684 are still running. This source/progress milestone accepts neither full product tests nor any held check/artifact. Complete each remaining job's actual log/checkout confirmation before the final outcome.
