@@ -92,6 +92,20 @@ effects were resolved. This is a routing-evidence migration limit and never an
 all-peer role-election gate. Native checkpoint/effect schemas are pinned only in
 UNRELEASED; installed profiles are unchanged. Full guard qualification and the
 candidate/root/promotion flow remain required.
+
+The C2 source adds [A-003](implementation-plan/revisions/R2/amendments/RP-027/A-003-protected-first-run-candidate.md):
+closed native candidate metadata, an immutable complete original-profile archive
+and a separate same-identity actual Setup. Known operation history, selected
+credential metadata and protected network-table selection survive. Old derived
+packages stay in the archive and cannot become new routing evidence. Existing
+first-run binding freezes remain unchanged. Review uses actual Prerequisites and
+CommissionedStorage with fresh environment/credential/access/readback/instruction
+checks; persisted readiness and arbitrary READY callbacks cannot activate it.
+The desktop staged controller retains default denied activation. Explicit local
+recovery promotes only the exact schema/binding/previous-state-checked pending
+frame. Original profile bytes, authority and workload records remain unchanged.
+This unit keeps role/root/backend/domain/layout/fixed identity unchanged. C3 root
+relocation and C4 monotonic publication/cache invalidation/promotion remain required.
 Full-capacity retained/unknown work must fit protected evidence without omission;
 metadata is bounded at128KiB and the actual native frame limit remains1MiB.
 
