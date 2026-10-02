@@ -1,33 +1,32 @@
 schema_version: 1
 revision: R2
-work_item: RP-026
-check: RP-026.C4
+work_item: RP-027
+check: RP-027.C1
 attempt: A001
-phase: LOCAL_NETWORK_TABLE_REVIEWED_ACCEPTANCE
+phase: DEPENDENCY_READY_PR35_MERGE
 source_branch: feat/rp026-local-network-table
-source_commit: 2575de12ffed36a2e3e739710a9183dd0bfa437d
-journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0056
+source_commit: 6aab6313ef3f98e3bff020130ac5ededc107664e
+journal: docs/development/journal/RP-027/A001/events.jsonl
+last_verified_event: RP-027-A001-0001
 last_completed: RP-026
-next_action: Publish/read back separate RP-027 A001 dependency-ready administrative
-  INTENT to ready/update/merge verified PR35 at the exact current head after current
-  public/history/diff/privacy/ref/rule guards and unchanged-source qualification proof;
-  record merge outcome on main, then inspect/implement RP-027 staged reconfiguration.
-verification: RP-026.C1-C4 accepted on exact final public source and actual native
-  Windows/Linux/Qt/full distributions; preserve UNRELEASED/live limits. Next validate
-  exact PR35 merge under RP-027 handoff, then dependency-ready maintenance/reconfiguration.
+next_action: Record exact verified merge outcome on main, then publish RP-027.C1 architecture/source-inspection
+  intent for staged maintenance/reconfiguration using current accepted commissioning/leadership/network-table
+  contracts.
+verification: Administrative PR35 handoff, not RP-027 implementation acceptance; preserve
+  accepted RP-026 source and all successful gates.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0001
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
 - DEF-001
 - DEF-002
-rollback: Keep last verified table/selection and exact pending candidate; inspect
-  before completion, retain prior location/data, refuse foreign/unknown destinations
-  and current-owner loss. Preserve all old sources/failed hypotheses/evidence. No
-  router/host reset, workload replay, credential copying or live deployment.
+rollback: No force, squash/rebase, historical deletion or cleanup of other work. Preserve
+  exact sources, seven defect histories and pending native fixtures. If refs/rules/qualification
+  differ, inspect and record before mutation; an unknown merge result must be read
+  back as the same operation, not retried blindly.
 next_implementation_step: RP-027
 next_implementation_check: RP-027.C1
