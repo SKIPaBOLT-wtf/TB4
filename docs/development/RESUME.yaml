@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: TARGETED_REPAIR_WIP_PUBLISHED
+phase: REPAIRED_TARGETED_QUALIFICATION
 source_branch: feat/rp026-local-network-table
 source_commit: f719927c8eed0df2d98842f9782ff4b3068f22f4
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0020
+last_verified_event: RP-026-A001-0021
 last_completed: RP-025
-next_action: Publish and remotely verify a new bounded exact-source Windows native/Qt
-  target, skill and public-data/history qualification INTENT; inspect actual results
-  before further source changes. Then record hosted Windows/Linux CI/build INTENT
-  for stable source.
+next_action: Read actual rp26-targeted-002 results and publish source-linked OUTCOME/evidence.
+  If failed, preserve failures and publish the next bounded diagnosis/repair INTENT.
+  If all local gates pass, publish separate hosted CI/Windows/Linux build and PR qualification
+  INTENT.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-026-A001-0021
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
