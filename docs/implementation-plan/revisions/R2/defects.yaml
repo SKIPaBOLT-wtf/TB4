@@ -3854,3 +3854,60 @@ defects:
       global temp state. Exact same-source/same-predicate isolated repeat exits0;
       retain OPEN only for mandatory full affected C1-C4 rechecks at final RP027 acceptance.
     legacy_record: null
+  DEF-057:
+    title: Fallback test fixtures replace the enrolled incumbent computer label
+    status: OPEN
+    detected_in: RP-027.C1
+    suspected_origin:
+      work_item: RP-027
+      source_ref: a8c97e9f822842fe53070e9f67a0aff038e18488
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-tests-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: a8c97e9f822842fe53070e9f67a0aff038e18488
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-tests-failure.md
+    reproduction:
+      procedure: Run the recorded maintenance/foundation/native target set. Three
+        new fixtures map the existing owner to a synthetic label differing from the
+        stored enrolled label; Leadership.observe raises LEADERSHIP_IDENTITY before
+        takeover assertions.
+      failing_source: a8c97e9f822842fe53070e9f67a0aff038e18488
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-tests-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-test-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R16
+    hypotheses:
+    - id: incumbent-enrollment-fixture-mismatch
+      claim: New test candidate maps replace the known incumbent's stored computer
+        label; the exact parser condition rejects them before acquisition, as observed
+        in all three traces.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-tests-failure.md
+    - id: preserve-enrollment-and-reach-takeover
+      claim: Preserving the actual incumbent enrollment and adding only a new candidate
+        label reaches the intended stale-takeover/inspection/adoption predicates without
+        changing application guards.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-tests-failure.md
+    repairs: []
+    issue: null
+    regression_test: Existing three failed takeover/inspection/adoption cases plus
+      a negative wrong-incumbent-name refusal; keep all original effect/epoch/preservation
+      assertions.
+    resolution_evidence: []
+    notes: Fixture-only provenance fault in unaccepted RP027. Accepted leadership
+      identity checks correctly reject the mismatch; no application-source or predecessor
+      acceptance defect is claimed. Keep full required C1-C4 rechecks held under the
+      unchanged registry.
+    legacy_record: null
