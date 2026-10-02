@@ -3,15 +3,16 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: COMPLETE_CONTEXT_NATIVE_AND_HOSTED_QUALIFICATION_RUNNING
+phase: COMPLETE_LOCAL_PASS_HOSTED_FULL_REGRESSIONS_RUNNING
 source_branch: feat/rp026-local-network-table
 source_commit: 2575de12ffed36a2e3e739710a9183dd0bfa437d
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0054
+last_verified_event: RP-026-A001-0055
 last_completed: RP-025
-next_action: Inspect same local session95544 and three actual hosted runs; publish
-  actual targeted/hosted outcomes, checkout/source-tree proof and reviewed predicate/defect
-  acceptance only after all required results.
+next_action: Inspect same CI37030150351/Desktop37030150369 full jobs/checkouts/artifacts;
+  finish source/invariant/privacy/configuration/rollback review. If all pass publish
+  terminal OUTCOME and coordinated C1-C4/defect acceptance, then separately journal
+  exact PR35 merge and continue RP-027.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
