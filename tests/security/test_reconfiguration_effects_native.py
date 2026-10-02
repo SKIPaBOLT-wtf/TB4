@@ -115,11 +115,25 @@ def test_native_copy_and_broad_checkpoint_cannot_admit_or_resolve(fixture):
     commits = value.provider.store.commits
     protect_fixture(root,broad=True)
     try:
-        with pytest.raises(ConfigurationError,match="UNAVAILABLE"):
+        with pytest.raises(ConfigurationError,match="NATIVE_CHECKPOINT_INSPECT_REQUIRED"):
             value.controller.begin(owner_authorized=True)
     finally:
         protect_fixture(root)
     assert value.provider.store.commits == commits
+
+
+def test_truthfully_initial_native_fixture_retains_verified_bootstrap_acquisition(fixture):
+    root,store = fixture; value = native_system(root,store)
+    grant = value.checkpoint.read().grant
+    spec = value.flow.port.spec
+    row = value.provider.store.document["records"]["global.leadership"]
+    assert grant.epoch == row["generation"] == 1
+    assert grant.owner == spec.bootstrap_actor == value.setup.installation_id
+    assert grant.acquisition_id == row["operation_id"] == spec.operation("authority")
+    assert len([x for x in value.provider.metadata.values()
+                if x.get("mimeType") == "application/vnd.google-apps.document"]) == 1
+    assert value.provider.store.document["records"]["target.000.work"]["generation"] == 0
+    assert value.effects.store.read() is None
 
 
 @pytest.mark.parametrize("fault",["boolean-epoch","foreign-field","foreign-authority"])
