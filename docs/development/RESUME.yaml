@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_FOUNDATION_TARGETED_TESTS_PASSED
+phase: STAGED_RECONFIGURATION_C1_MAINTENANCE_CONTROLLER_IMPLEMENTATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0012
+last_verified_event: RP-027-A001-0013
 last_completed: RP-026
-next_action: 'Publish/read back C1 maintenance/resolution controller source INTENT:
-  exact same-authority owner-confirmed maintenance WAL/CAS/adoption/unknown-write
-  inspection, protected evidence and fresh explicit zero-blocker resolution; add meaningful
-  crash/fallback/stale/negative/native tests. Then source OUTCOME before separate
-  test INTENT.'
-verification: Foundation631-case exact-source repeat PASS627/skipped4/exit0 with isolated
-  owned native fixtures. C1-C4 held for full workflow/platform/common gates.
+next_action: Publish/read back exact scoped controller WIP, append source OUTCOME
+  and exact remaining boundaries, then publish a focused controller/full-capacity/legacy/native/crash/fallback
+  test INTENT using fresh owned fixture roots.
+verification: Foundation pass saved; C1 controller source intent only. All RP027 checks
+  still held for complete workflow/platform/common gates.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0013
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
