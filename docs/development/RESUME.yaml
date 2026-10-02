@@ -3,31 +3,30 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: PR35_MERGED_MAIN_VERIFIED
+phase: STAGED_RECONFIGURATION_SOURCE_INSPECTION
 source_branch: main
-source_commit: d819eda943761564c3019809ec3878db42376ae7
+source_commit: 65f3e52586be065580f96d2c033085dd958d017c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0002
+last_verified_event: RP-027-A001-0003
 last_completed: RP-026
-next_action: Publish/read back RP-027.C1 staged-reconfiguration source/contract-inspection
-  INTENT, then inspect only current accepted commissioning/root/leadership/work/result/descriptor
-  adapters and tests; record precise invariant, gaps and bounded implementation unit
-  without any live action.
-verification: PR35 exact merge and current/main-history/public/diff guards PASS; source
-  qualification preserved. RP-027 implementation remains zero checks and next source
-  inspection.
+next_action: Publish source-linked RP-027 inspection OUTCOME and concrete invariant/negative-scenario/rollback
+  plan; then publish the next narrowly scoped implementation or required design-amendment
+  INTENT.
+verification: RP-027 dependency-ready source inspection; no check acceptance or runtime
+  action.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0003
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
 - DEF-001
 - DEF-002
-rollback: No force, squash/rebase, historical deletion or cleanup of other work. Preserve
-  exact sources, seven defect histories and pending native fixtures. If refs/rules/qualification
-  differ, inspect and record before mutation; an unknown merge result must be read
-  back as the same operation, not retried blindly.
+rollback: Only a new owned Git branch/read-only source inspection. Preserve all branches,
+  local records and historical evidence; do not force refs, reset working copies,
+  adopt existing unrelated branches, touch native deployment state or replay an uncertain
+  operation.
 next_implementation_step: RP-027
 next_implementation_check: RP-027.C1
