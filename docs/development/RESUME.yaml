@@ -3,17 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_CUT_REPEAT_TEST
+phase: STAGED_RECONFIGURATION_C2_NATIVE_CUT_REPEAT_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 8ffdbfeaf4fd5c5a4b3f3c158368c6096bc24ce0
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0043
+last_verified_event: RP-027-A001-0044
 last_completed: RP-026
-next_action: Publish/read back actual source-linked cases/outcome and append supported
-  or failed DEF060 remedy facts; if passing, execute separately recorded C3 same-existing-authority
-  root rebind/crash/fallback development.
-verification: One-file native closed diagnostic source saved;27-target/720-predicate
-  repeat INTENT pending actual recovery result.
+next_action: Inspect the same LOCAL-SESSION-99172 or its exact task-local output;
+  after completion preserve actual source-linked720 cases/exit/time and DEF060 remedy
+  facts before C3.
+verification: Same720-predicate repeat executing; actual recoverable local session
+  recorded, result pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
