@@ -3,22 +3,24 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: POST_REPAIR_NATIVE_DIAGNOSTIC_PASS
+phase: REPAIRED_NATIVE_QT_AND_HOSTED_PLATFORM_QUALIFICATION
 source_branch: feat/rp026-local-network-table
 source_commit: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0044
+last_verified_event: RP-026-A001-0045
 last_completed: RP-025
-next_action: Publish full exact-source native/Qt/regression/source gate and hosted
-  Windows/Linux qualification INTENT on existing PR35; record actual checkouts, cases/skips
-  and build/artifact outcomes before acceptance.
+next_action: Inspect and record actual local and hosted run results; if a gate fails
+  preserve its cause and repair only under new INTENT. If all pass review invariant
+  coverage/privacy/compatibility/rollback and close verified defects with coordinated
+  C1-C4 acceptance, then separately publish merge INTENT after mandatory checks.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-026-A001-0045
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
