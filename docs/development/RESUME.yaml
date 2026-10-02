@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_FALLBACK_FIXTURE_REPAIR
+phase: STAGED_RECONFIGURATION_C1_FALLBACK_FIXTURE_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: a8c97e9f822842fe53070e9f67a0aff038e18488
+source_commit: 0feb433824d43e6f0f6975e8f776316e9723c910
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0017
+last_verified_event: RP-027-A001-0018
 last_completed: RP-026
-next_action: Save/read back fixture-only source checkpoint, append OUTCOME, then publish/read
-  back a fresh owned-fixture exact-source controller/foundation/accepted-boundary
-  repeat-test INTENT.
-verification: Three fixture prerequisite failures preserved; scoped one-file repair
-  INTENT only, all application identity checks unchanged.
+next_action: Publish/read back exact-source controller/foundation/accepted-boundary
+  repeat-test INTENT and run the same22 targets plus new negative predicate in a fresh
+  owned absent fixture root.
+verification: One-file fixture-only source saved and read back; actual identity guards
+  unchanged. Repeat tests pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0017
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
