@@ -3019,3 +3019,78 @@ defects:
       fullholds and repair actual helper before final RP025 acceptance. No underlying
       historical origin claimed yet.
     legacy_record: null
+  DEF-048:
+    title: Full qualification gate-identity assertion depends on inline YAML text
+    status: OPEN
+    detected_in: RP-021.C4
+    suspected_origin:
+      work_item: RP-012
+      source_ref: d31bfe687bda0944307ca82f279d2a2296c4bacc
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-ci-plan-identity-failure.md
+    proven_origin:
+      work_item: RP-012
+      source_ref: d31bfe687bda0944307ca82f279d2a2296c4bacc
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/semantic-gate-identity-diagnosis.md
+    reproduction:
+      procedure: Unchanged test fails on actual valid block manifest containing all37gate
+        identities; same mapping inline passes. Missing-real-step inline+comment falsely
+        satisfies old text search and is rejected semantically. Actual policy/export/gate
+        mappings remain unchanged/correct.
+      failing_source: b4fd7c5158a14cdbb73eebd2b95f2b78947beddc
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-qualification-plan-identity-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/semantic-gate-identity-diagnosis.md
+    repair_steps:
+    - RP-012
+    - RP-021
+    affected_acceptance:
+    - RP-021
+    - RP-022
+    - RP-023
+    - RP-024
+    - RP-025
+    affected_requirements:
+    - R18
+    - R19
+    - R20
+    - R21
+    hypotheses:
+    - id: literal-inline-yaml-consumer
+      claim: The original RP012 test equates textual inline serialization with real
+        current-plan keys. Valid block output is a false negative and embedded comment
+        can be a false positive; the actual37identities and policy remain valid.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/semantic-gate-identity-diagnosis.md
+    repairs:
+    - item: RP-021
+      attempt: A002
+      intent_event: RP-021-A002-0023
+      rechecks:
+        RP-021:
+          attempt: A002
+          checks:
+          - RP-021.C1
+          - RP-021.C2
+          - RP-021.C3
+          - RP-021.C4
+    issue: null
+    regression_test: tests/protocol/test_security_contract.py exact current-plan identity
+      test plus equivalent serialization/missing gate disguised as comment/duplicate
+      key/wrong definition cases
+    resolution_evidence: []
+    notes: This is supplemental validation-harness repair, with original responsible
+      RP012 source/test/receipt meaning explicitly preserved. All actual historical/current
+      policy exports and real gate identities remain true; no accepted runtime/security
+      invariant is invalidated by merely equivalent YAML serialization. Attach a responsible-step
+      amendment and new current held-qualification evidence; do not claim historical
+      sources passed new negatives. Repair executes under already-open RP021/A002
+      common validation and all21-25full holds, not a new product policy or dependency
+      waiver. New active-attempt registry repair has ownRP021rechecks only, as required
+      by the unchanged guard; DEF046's existing complete21-25transitive holds/rechecks
+      and the new defect's explicit affected-impact review remain. The rejected broader
+      unpublished metadata is preserved separately.
+    legacy_record: null
