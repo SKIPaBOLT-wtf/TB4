@@ -7,11 +7,10 @@ phase: TARGETED_NATIVE_QUALIFICATION
 source_branch: feat/rp026-local-network-table
 source_commit: f638b9ec28091554f879dd59cd4b8db3105f1251
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0016
+last_verified_event: RP-026-A001-0017
 last_completed: RP-025
-next_action: Publish/read back qualification INTENT, run the bounded target suite
-  and record exact result. Diagnose/repair any failing invariant under new INTENT,
-  then trigger separately recorded Windows/Linux CI/builds.
+next_action: Inspect this same local exec session and rp26-targeted-001 structured
+  result; publish actual OUTCOME before any code repair or dependent qualification.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
