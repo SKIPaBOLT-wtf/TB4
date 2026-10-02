@@ -45,6 +45,9 @@ per-read checks remain active. It cannot stage or promote setup changes. Other
 threads acquire the normal native lock, and an escaped read port is invalid after
 the callback. The original native store is restored even when the callback refuses
 or raises. This adds no role authority or takeover acknowledgement requirement.
+WATCHDOG description status reports a known pending table change as inspection
+required, while retaining the last verified table and new observation evidence.
+Reading status does not complete, clear or replay that change.
 
 ## Machine interface
 
@@ -83,6 +86,11 @@ DescriptionAssistant.begin/propose/confirm. The host supplies its current
 compatible repository adapter/runtime facts; the helper pins and verifies the
 guidance/schema closure, formats one identity/revision-bound proposal and requires
 exact digest approval. A local Qt editor provides direct owner declarations.
+begin binds one device and table revision only after its complete pinned draft
+succeeds. Proposals cannot change that device or silently select a later revision.
+A failed new begin/proposal clears any earlier candidate, and a completed approval
+requires a fresh begin for another revision. Partial or failed contexts do not
+confer proposal or approval authority.
 Approval updates the local table only, not FETCHER enrollment, authenticated
 capabilities or shared BALLPARK. Remote publication uses the existing owner CAS.
 Untrusted descriptions/observations cannot select instructions or confer authority.

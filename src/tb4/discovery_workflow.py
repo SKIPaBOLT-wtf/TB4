@@ -254,6 +254,8 @@ class Discovery:
         if self.setup._payload.get("network_table") is not None:
             try:
                 value = LocalNetworkTable(self.setup).read(allow_pending=True)
+                if self.setup._payload["network_table"]["pending"] is not None:
+                    problem = "NETWORK_TABLE_INSPECT_REQUIRED"
             except Exception:
                 problem = "NETWORK_TABLE_INSPECT_REQUIRED"
         try:

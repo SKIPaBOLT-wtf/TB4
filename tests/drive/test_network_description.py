@@ -7,7 +7,7 @@ import pytest
 
 from tb4.instructions import InstructionError
 from tb4.network_description import DescriptionAssistant,SCHEMA
-from tb4.network_table import GUIDANCE,NetworkTableError,render_proposal
+from tb4.network_table import GUIDANCE,NetworkTableError,draft,render_proposal
 from tests.coach.test_instruction_selection import SourceFixture,FIRST,FACTS,digest
 from tests.network_table_support import CANARY,system,good_proposal
 
@@ -89,3 +89,63 @@ def test_device_instruction_injection_does_not_change_pinned_guidance_or_state(a
     with pytest.raises(NetworkTableError):
         assistant.propose(json.dumps(proposed).encode())
     assert assistant.pin is pin and assistant.table.read()==before
+
+
+def test_begun_helper_cannot_switch_to_another_existing_device(assistant):
+    from tb4.discovery_catalogue import Catalogue,Interface,Observation,Scope
+    table=assistant.table
+    catalogue=Catalogue(table.read()["catalogue"])
+    scope=Scope((Interface("synthetic-interface",7,("192.0.2.0/24",),"LAN"),))
+    assert catalogue.observe((Observation(7,"192.0.2.9","NEIGHBOR_CACHE",100,60,
+                                         hardware_hint="synthetic-other-hint"),),scope,now=100)==("OBSERVED",)
+    table.sync_observations(catalogue.private_image(),current_owner=lambda:True)
+    ids=[e["device_id"] for e in table.read()["catalogue"]["entries"] if e is not None]
+    assert len(ids)==2
+    assistant.begin(ids[0]);before=table.read()
+    other=draft(before,ids[1]);other["description"]["device_kind"]="COMPUTER"
+    with pytest.raises(NetworkTableError,match="^NETWORK_PROPOSAL_CONTEXT$"):
+        assistant.propose(render_proposal(other))
+    assert table.read()==before and before["descriptions"]=={}
+
+
+def test_begun_helper_cannot_silently_rebase_to_a_new_table_revision(assistant):
+    first=good_proposal(assistant.table)
+    assistant.begin(first["device_id"])
+    assistant.table.approve(first,now=100,owner_authorized=True)
+    before=assistant.table.read()
+    revised=good_proposal(assistant.table)
+    with pytest.raises(NetworkTableError,match="^NETWORK_PROPOSAL_CONTEXT$"):
+        assistant.propose(render_proposal(revised))
+    assert assistant.table.read()==before
+
+
+def test_failed_new_begin_requires_a_new_valid_context(assistant):
+    first=good_proposal(assistant.table);assistant.begin(first["device_id"])
+    assistant.propose(render_proposal(first));before=assistant.table.read()
+    with pytest.raises(NetworkTableError,match="^NETWORK_DEVICE_UNKNOWN$"):
+        assistant.begin("00000000-0000-4000-8000-000000000099")
+    with pytest.raises(NetworkTableError,match="^NETWORK_GUIDANCE_REQUIRED$"):
+        assistant.propose(render_proposal(first))
+    assert assistant.table.read()==before
+
+
+def test_failed_new_proposal_cannot_confirm_the_previous_candidate(assistant):
+    first=good_proposal(assistant.table);assistant.begin(first["device_id"])
+    accepted=assistant.propose(render_proposal(first));before=assistant.table.read()
+    with pytest.raises(NetworkTableError):
+        assistant.propose(b"{}")
+    with pytest.raises(NetworkTableError,match="^NETWORK_GUIDANCE_REQUIRED$"):
+        assistant.confirm(accepted["candidate_digest"],now=100,owner_authorized=True)
+    assert assistant.table.read()==before
+
+
+def test_confirmed_description_requires_fresh_begin_for_the_next_revision(assistant):
+    first=good_proposal(assistant.table);assistant.begin(first["device_id"])
+    accepted=assistant.propose(render_proposal(first))
+    assert assistant.confirm(accepted["candidate_digest"],now=100,owner_authorized=True)=="CONFIRMED"
+    revised=good_proposal(assistant.table)
+    with pytest.raises(NetworkTableError,match="^NETWORK_GUIDANCE_REQUIRED$"):
+        assistant.propose(render_proposal(revised))
+    assistant.begin(revised["device_id"])
+    accepted=assistant.propose(render_proposal(revised))
+    assert assistant.confirm(accepted["candidate_digest"],now=101,owner_authorized=True)=="CONFIRMED"

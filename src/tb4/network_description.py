@@ -15,23 +15,29 @@ class DescriptionAssistant:
         require(type(table) is LocalNetworkTable and type(runtime) is RuntimeFacts, "NETWORK_GUIDANCE_CONTEXT")
         self.table, self.source, self.runtime = table, source, runtime
         self.pin = None
+        self._context = None
         self._candidate = None
 
     def begin(self, device_id):
-        self.pin = select(self.source, self.runtime)
-        self.pin.read(GUIDANCE)
+        # A failed new begin cannot retain an earlier approval/proposal context.
+        self.pin, self._context, self._candidate = None, None, None
+        pin = select(self.source, self.runtime)
+        pin.read(GUIDANCE)
         try:
-            require(json.loads(self.pin.read(SCHEMA)) == SCHEMA_BUNDLE, "NETWORK_GUIDANCE_SCHEMA")
+            require(json.loads(pin.read(SCHEMA)) == SCHEMA_BUNDLE, "NETWORK_GUIDANCE_SCHEMA")
         except Exception:
-            self.pin = None
             require(False, "NETWORK_GUIDANCE_SCHEMA")
-        self._candidate = None
-        return draft(self.table.read(), device_id)
+        value = draft(self.table.read(), device_id)
+        self.pin, self._context = pin, (value["device_id"], value["expected_revision"])
+        return value
 
     def propose(self, raw):
-        require(self.pin is not None, "NETWORK_GUIDANCE_REQUIRED")
+        self._candidate = None
+        require(self.pin is not None and self._context is not None, "NETWORK_GUIDANCE_REQUIRED")
         check_boundary(self.source, self.pin, self.runtime)
         value = parse_proposal(raw)
+        require((value["device_id"], value["expected_revision"]) == self._context,
+                "NETWORK_PROPOSAL_CONTEXT")
         current = draft(self.table.read(), value["device_id"])
         require(current["expected_revision"] == value["expected_revision"], "NETWORK_REVISION_CHANGED")
         self._candidate = render_proposal(value)
@@ -47,4 +53,5 @@ class DescriptionAssistant:
         result = self.table.approve(parse_proposal(self._candidate), now=now,
                                     owner_authorized=True, instruction_commit=self.pin.commit)
         self._candidate = None
+        self._context = None
         return result

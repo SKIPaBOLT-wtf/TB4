@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import sys
 from threading import Thread
+from dataclasses import replace
 
 import pytest
 
@@ -198,3 +199,31 @@ def test_native_owner_callback_refusal_restores_store_and_retains_pending(native
     assert table.read(allow_pending=True)==before
     with pytest.raises(NetworkTableError,match="^NETWORK_TABLE_INSPECT_REQUIRED$"):
         table.read()
+
+
+def test_native_discovery_reports_pending_table_update_without_replay(tmp_path,capsys,monkeypatch):
+    monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[1]/"drive"))
+    from test_discovery_workflow import build,observation
+    parent=tmp_path/"native-pending-description"
+    parent.mkdir(mode=0o700);protect_fixture(parent)
+    installation=parent/"installation"
+    installation.mkdir(mode=0o700);protect_fixture(installation)
+    flow,setup,provider,_,_=build(store=native_settings(parent/"setup",create=True,owner_authorized=True))
+    table=LocalNetworkTable(setup,installation_root=installation)
+    table.configure(owner_authorized=True)
+    table_before=table.read()
+    remote_before=copy.deepcopy(provider.store.document)
+    current_capabilities=flow.capabilities
+    flow.capabilities=lambda:replace(current_capabilities(),
+                                    coordinate=setup._payload["network_table"]["pending"] is None)
+    assert flow.observe((observation(),))==("OBSERVED",)
+    before_status=copy.deepcopy(setup._payload)
+    assert before_status["network_table"]["pending"]["kind"]=="UPDATE"
+    assert before_status["network_table"]["pending"]["requires_owner"] is True
+    for _ in range(2):
+        status=flow.status()["descriptions"]
+        assert status["problem"]=="NETWORK_TABLE_INSPECT_REQUIRED"
+        assert status["needs_description"]==1
+        assert setup._payload==before_status and table.read(allow_pending=True)==table_before
+    assert provider.store.document==remote_before
+    assert capsys.readouterr()==("","")
