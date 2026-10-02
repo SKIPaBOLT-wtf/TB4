@@ -3507,7 +3507,18 @@ defects:
     - RP-026
     affected_acceptance:
     - RP-026
-    repairs: []
+    repairs:
+    - item: RP-026
+      attempt: A001
+      intent_event: RP-026-A001-0051
+      rechecks:
+        RP-026:
+          attempt: A001
+          checks:
+          - RP-026.C1
+          - RP-026.C2
+          - RP-026.C3
+          - RP-026.C4
     issue: null
     resolution_evidence: []
     legacy_record: null
@@ -3559,7 +3570,18 @@ defects:
     - RP-026
     affected_acceptance:
     - RP-026
-    repairs: []
+    repairs:
+    - item: RP-026
+      attempt: A001
+      intent_event: RP-026-A001-0051
+      rechecks:
+        RP-026:
+          attempt: A001
+          checks:
+          - RP-026.C1
+          - RP-026.C2
+          - RP-026.C3
+          - RP-026.C4
     issue: null
     resolution_evidence: []
     legacy_record: null
