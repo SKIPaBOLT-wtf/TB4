@@ -1,24 +1,25 @@
 schema_version: 1
 revision: R2
-work_item: RP-022
-check: RP-022.C4
+work_item: RP-023
+check: RP-023.C4
 attempt: A002
 phase: REVALIDATION_REVIEW
 source_branch: work/rp-025-a001
 source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
-journal: docs/development/journal/RP-022/A002/events.jsonl
-last_verified_event: RP-022-A002-0002
+journal: docs/development/journal/RP-023/A002/events.jsonl
+last_verified_event: RP-023-A002-0001
 last_completed: RP-022
-next_action: "Unblock only RP023/A002 own review after confirmed RP022 receipt/status\
-  \ readback; keep24\u201325holds and DEF042\u2013048open until scoped acceptance\
-  \ complete."
-verification: Review RP023authorized discovery/identity/quarantine/current-owner/pending/public
-  projections on exact same completed source; prior native/commissioning acceptance
-  now verified with immutable history.
+next_action: Review each RP-023 predicate and prepare four own-attempt receipts; publish
+  coherent PASS only after complete guarded candidate and main-history validation,
+  then unblock only RP-024.
+verification: Own RP-023 scoped interface/subnet/freshness, protected identity, ambiguity
+  quarantine and no-side-effect publication review against unchanged final source
+  and completed qualification; retain RP-024/RP-025 holds.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-023-A002-0001
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
