@@ -3,24 +3,23 @@ revision: R2
 work_item: RP-026
 check: RP-026.C1
 attempt: A001
-phase: PREDECESSOR_HANDOFF
+phase: FINAL_REVIEW
 source_branch: work/rp-025-a001
 source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0002
+last_verified_event: RP-026-A001-0003
 last_completed: RP-025
-next_action: After coherent closure readback, publish final unchanged-source/diff/privacy/history
-  and lightweight progress qualification INTENT. Complete it, update PR34 final body/readiness
-  under a separate intent, and merge once with exact expected head after fresh remote
-  review.
-verification: 'Final public qualification closure: actual unchanged source versus
-  qualified a6/8f, append-only history against actual main, current ledger, development
-  suite, public scanner, qualified CRLF diff and complete PR review; no repeated full
-  bundles or live/network mutation.'
+next_action: Launch one final lightweight local qualification, publish its actual
+  session identity, inspect the same session and fresh PR metadata, and publish measured
+  outcome. Then separately document PR body/readiness and exact-head merge.
+verification: Final lightweight progress and complete actual-main history on unchanged
+  already qualified public source; exact current PR/reviews/protection readback and
+  rollback/privacy review before ordinary merge.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-026-A001-0003
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
