@@ -37,4 +37,3 @@ never invent a new operation to hide the previous one.
 
 Real table data and network-specific administration stay private. Installed skill
 packages contain repository pointers only, not these operating instructions.
-

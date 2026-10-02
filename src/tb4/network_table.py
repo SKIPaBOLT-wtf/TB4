@@ -300,4 +300,3 @@ class AddressingObservation:
     value: str
     observed_at: int
     valid_for_s: int
-

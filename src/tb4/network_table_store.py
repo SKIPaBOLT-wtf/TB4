@@ -340,4 +340,3 @@ class LocalNetworkTable:
         result = notices(image, value, now=now)
         result["maintenance"] = "INSPECT_REQUIRED" if self._selected()["pending"] is not None else "NONE"
         return result
-

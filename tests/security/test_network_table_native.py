@@ -87,4 +87,3 @@ def test_native_existing_location_identity_swap_is_refused(native_table):
     with pytest.raises(NetworkTableError):
         table.read()
     assert (moved/"settings.json").exists()
-

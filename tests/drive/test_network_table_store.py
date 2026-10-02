@@ -196,4 +196,3 @@ def test_unknown_setup_operations_preserve_all_private_payloads(tmp_path):
     with pytest.raises(NetworkTableError,match="SETUP_INSPECT"):
         table.move(tmp_path/"not-created",owner_authorized=True)
     assert table.setup._payload==before and not (tmp_path/"not-created").exists()
-

@@ -89,4 +89,3 @@ def test_device_instruction_injection_does_not_change_pinned_guidance_or_state(a
     with pytest.raises(NetworkTableError):
         assistant.propose(json.dumps(proposed).encode())
     assert assistant.pin is pin and assistant.table.read()==before
-

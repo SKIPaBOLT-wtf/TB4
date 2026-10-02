@@ -143,4 +143,3 @@ def test_semantic_table_identity_and_schema_errors_are_closed(table,mutation):
     else: value["catalogue"]["entries"][1]=copy.deepcopy(value["catalogue"]["entries"][0])
     with pytest.raises(NetworkTableError):
         validate(value)
-

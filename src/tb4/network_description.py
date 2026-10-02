@@ -48,4 +48,3 @@ class DescriptionAssistant:
                                     owner_authorized=True, instruction_commit=self.pin.commit)
         self._candidate = None
         return result
-

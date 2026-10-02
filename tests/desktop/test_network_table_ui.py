@@ -66,4 +66,3 @@ def test_opening_editor_or_setup_does_not_create_or_move_a_table(application,tmp
     finally:
         dialog.close();window.close();dialog.deleteLater();window.deleteLater()
         application.processEvents()
-

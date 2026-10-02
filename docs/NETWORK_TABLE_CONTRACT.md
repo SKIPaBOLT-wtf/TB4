@@ -82,4 +82,3 @@ or runtime activation is created by this development change.
 RP-027 consumes location/configuration maintenance and unresolved transactions.
 RP-029 consumes revision/provenance/drift; RP-051 consumes the tested host helper
 binding. These future acceptance gates are not completed by this contract.
-

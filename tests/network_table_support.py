@@ -67,4 +67,3 @@ def good_proposal(table, *, kind="COMPUTER", stable_ip="UNKNOWN"):
     proposed = draft(value, device_id)
     proposed["description"].update(device_kind=kind, stable_ip=stable_ip)
     return proposed
-

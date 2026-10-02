@@ -177,4 +177,3 @@ class NetworkTableDialog(QtWidgets.QDialog):
             self.refresh()
         except Exception:
             self.message.setText(ERROR)
-
