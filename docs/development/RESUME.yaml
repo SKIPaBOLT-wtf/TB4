@@ -1,25 +1,25 @@
 schema_version: 1
 revision: R2
-work_item: RP-023
-check: RP-023.C4
+work_item: RP-024
+check: RP-024.C4
 attempt: A002
 phase: REVALIDATION_REVIEW
 source_branch: work/rp-025-a001
 source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
-journal: docs/development/journal/RP-023/A002/events.jsonl
-last_verified_event: RP-023-A002-0002
+journal: docs/development/journal/RP-024/A002/events.jsonl
+last_verified_event: RP-024-A002-0001
 last_completed: RP-023
-next_action: Publish and read back coherent RP-023/A002 four-check acceptance after
-  complete real-helper and actual-main-history validation. Then unblock only RP-024/A002;
-  preserve RP-025 holds and DEF-042 through DEF-048 until scoped revalidation completes.
-verification: Review RP-024 repository-pinned closed guidance, approved minimal BALLPARK
-  CAS, safe LLM projection and blank/partial/failure behavior against the same qualified
-  source. Native credential, commissioning and discovery prerequisites now have current
-  accepted receipts.
+next_action: Review RP-024 predicates and prepare four own-attempt receipts; publish
+  coherent guarded PASS, then unblock RP-025/A001 for its first acceptance review
+  without fabricating previous acceptance.
+verification: Own RP-024 repository-pinned guidance, local owner approval, existing-object
+  publication, minimal LLM description and failure/rollback review against the unchanged
+  final qualification. RP-025 remains held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-024-A002-0001
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
