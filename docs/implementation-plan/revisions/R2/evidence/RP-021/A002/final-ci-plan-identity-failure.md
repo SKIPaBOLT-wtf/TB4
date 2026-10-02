@@ -1,0 +1,7 @@
+# Final CI plan-identity failure
+
+Exact sourceb4fd7c5158a14cdbb73eebd2b95f2b78947beddc; headb60ded298b109e6df59db2226a2647ffa385b5c6; actual checkout9bfcc503b52eba30bac299eb5eada5525a5b5996. CI36945834818/job110647641653 failed, exit1: **1failed,2324passed,22skipped,4known strict DEF-002 xfailed in653.15s**. The exact failing test is `tests/protocol/test_security_contract.py::test_export_and_every_gate_reference_are_current_plan_identities`; it searched each gate step using the literal `  STEP: ` inside YAML text. Its first reported gate was RP-015/RP-016. The native Linux43/34 protected/2 loopback groups had passed.
+
+Required Progress36945834809/job110647641632 had succeeded on the same checkout with235development tests, current/historyPASS20 and scanner clean. This is not proof the protocol test is harmless or that the full suite passed. Inspect actual YAML mapping and current-plan identities, serialization and test provenance before fixing anything. Same Desktop36945834819 Windows110647641742/Linux110647641913 jobs are still running; do not replace or infer their outcomes. All21–25current holds remain, with immutable prior accepted21–24/A001 history.
+
+Suspected cause: a textual gate-identity assertion depends on inline versus block YAML formatting after valid checkpoint serialization. It is unproven at this boundary. Next: a read-only exact-checkout semantic/format control reproduction, then a separately documented minimal repair if justified. No live runtime, protocol release or test result is accepted here.
