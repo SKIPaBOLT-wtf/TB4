@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_COVERAGE_FIXTURE_CAUSE_PROVEN
+phase: STAGED_RECONFIGURATION_C1_INITIAL_BOOTSTRAP_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: ac587b6b6856e3c7785030720ee9c120c2fad0e5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0026
+last_verified_event: RP-027-A001-0027
 last_completed: RP-026
-next_action: 'Publish/read back two-file fixture/support repair INTENT: construct
-  a truthfully initial synthetic Setup/Bootstrap/Commissioner/discovery/descriptor
-  deployment and verified initial_grant before guard tests, never rewind failed authority;
-  assert exact native protection refusal. Preserve all old predicates and add fresh-bootstrap
-  epoch-one/source proof regression.'
-verification: Same native frames and actual factory prove epoch2 fixture misuse; no
-  app guard defect or replay. Two-file fixture repair next.
+next_action: Save/read back exact two-file fixture source, publish OUTCOME, then verify
+  fresh exact24-target repeat INTENT and execute original682 predicates plus the new
+  actual-bootstrap native predicate in a new owned absent fixture root.
+verification: Proven fixture epoch/coded-refusal mismatch; two-file repair INTENT
+  only, application guards unchanged.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0027
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
