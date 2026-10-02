@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_FOUNDATION_TEST_SESSION_FAILED
+phase: STAGED_RECONFIGURATION_C1_ISOLATED_TEST_HARNESS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0010
+last_verified_event: RP-027-A001-0011
 last_completed: RP-026
-next_action: 'Publish/read back one scoped isolated-fixture qualification INTENT:
-  select a new absent child inside a freshly owned task directory, add --basetemp
-  only to the task runner, and rerun the same exact source/631-case targets without
-  changing test predicates or existing temp directories.'
-verification: Overall first foundation session FAIL exit1 despite627 case passes;
-  preserve exact run and qualify task-isolated temp harness before any new source
-  unit.
+next_action: Publish/read back exact isolated-session OUTCOME/evidence and DEF-056
+  provenance. Keep all required RP027 rechecks held under the unchanged registry contract;
+  implement/qualify remaining C1-C4 workflow/native/platform/common gates in new source
+  units before acceptance.
+verification: Recorded overall session failure; new task-isolated exact-source test
+  intent pending execution, no check accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0011
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

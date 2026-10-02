@@ -1127,7 +1127,11 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-001-staged-same-authority.md
     active_attempt: A001
     check_evidence: {}
-    revalidation_required: []
+    revalidation_required:
+    - RP-027.C1
+    - RP-027.C2
+    - RP-027.C3
+    - RP-027.C4
   RP-028:
     title: Explicit full reset and re-enrollment
     status: PLANNED
