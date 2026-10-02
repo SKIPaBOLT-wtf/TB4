@@ -4136,6 +4136,7 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-cut-provenance.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4162,6 +4163,14 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
+    - id: same-failed-native-cut-frames-proven-intact
+      claim: Read-only inspection of the original three failed fixture roots proves
+        one complete native-bound first-revision pending transaction/archive/profile
+        frame each, matching original base/seed/archive and retaining both known operation
+        outcomes; no promotion/provider call during inspection.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-cut-provenance.md
     repairs: []
     issue: null
     regression_test: Same three actual-native metadata/archive/profile interruption
@@ -4170,5 +4179,8 @@ defects:
     resolution_evidence: []
     notes: New unaccepted C2 native test expectation. Original native protection/error
       translation and all application guards remain unchanged. Pending frame facts
-      and post-cut recovery are not yet qualified; C1-C4 rechecks held.
+      and post-cut recovery are not yet qualified; C1-C4 rechecks held. Same failed
+      native frames are proven intact; post-cut recovery assertions await repeated
+      unchanged tests. Preserve the earlier untested hypothesis and append supported
+      facts.
     legacy_record: null

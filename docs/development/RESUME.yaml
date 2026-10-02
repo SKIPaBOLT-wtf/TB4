@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_SAME_NATIVE_CUT_DIAGNOSTIC
+phase: STAGED_RECONFIGURATION_C2_NATIVE_CUT_PROVENANCE_CONFIRMED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c323da611eb98de3966145e226679335976b3f22
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0039
+last_verified_event: RP-027-A001-0040
 last_completed: RP-026
-next_action: Publish/read back actual same-fixture diagnostic OUTCOME/evidence; if
-  exact cuts are proven, record one-file fixture-only closed-code repair INTENT retaining
-  all recovery/no-send/original-byte assertions, then exact repeated27-target tests.
-verification: C2 first test failures remotely preserved with DEF060; same failed native
-  frames diagnostic INTENT pending.
+next_action: Publish/read back one-file test-only repair INTENT; change actual-native
+  cut expected closed code to accepted SETTINGS_STORE_UNAVAILABLE, retaining exact
+  pending promotion/owner/resume/old bytes/no-send assertions and all720 cases; preserve
+  source before separately recorded repeat.
+verification: Same three failed native cut frames inspected intact; DEF060 closed
+  expectation fault proven; recovery repeat unqualified.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0039
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
