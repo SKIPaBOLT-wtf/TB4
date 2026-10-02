@@ -87,6 +87,17 @@ def test_fresh_verified_addressing_is_scoped_to_only_that_action_and_endpoint(ta
     assert addressing_prerequisite(table.read(),device_id,required=True,now=99) == "STABLE_ADDRESS_REQUIRED"
     seed(table,at=102,address="192.0.2.9")
     assert table.read()["catalogue"]["entries"][0]["device_id"] == device_id
+    # An unverified hardware hint is quarantined, not proof of identity movement.
+    assert table.read()["catalogue"]["quarantine"][0]["reason"] == "HINT_COLLISION"
+    assert addressing_prerequisite(table.read(),device_id,required=True,now=103) == "SATISFIED"
+    from tb4.discovery_catalogue import Catalogue,Interface,Observation,Scope,TrustView,VerifiedBinding
+    catalogue=Catalogue(table.read()["catalogue"])
+    observed=Observation(7,"192.0.2.9","FIXED_HELPER",103,60,online=True,
+                         hardware_hint="synthetic-hint")
+    trust=TrustView(frozenset({device_id}),(VerifiedBinding(device_id,7,"192.0.2.9",103),))
+    scope=Scope((Interface("synthetic-interface",7,("192.0.2.0/24",),"LAN"),))
+    assert catalogue.observe((observed,),scope,now=103,trust=trust)==("OBSERVED",)
+    table.sync_observations(catalogue.private_image(),current_owner=lambda:True)
     assert addressing_prerequisite(table.read(),device_id,required=True,now=103) == "STABLE_ADDRESS_REQUIRED"
 
 
@@ -99,8 +110,19 @@ def test_stale_unknown_platform_and_noncomputer_descriptions_are_distinct(table)
     assert status["missing"] == ["platform.architecture","platform.os"]
     assert table.status(now=160)["devices"][0]["description_status"] == "STALE_DESCRIPTION"
     assert table.status(now=99)["devices"][0]["description_status"] == "CLOCK_UNCERTAIN"
-    table.approve(good_proposal(table,kind="ROUTER"),now=200,owner_authorized=True)
+    router=good_proposal(table,kind="ROUTER")
+    assert router["description"]["roles"] == ["fetcher"]
+    router["description"].update(roles=[],launch_mode={})
+    table.approve(router,now=200,owner_authorized=True)
     assert table.status(now=201)["devices"][0]["description_status"] == "DESCRIBED"
+
+
+def test_untrusted_clock_does_not_present_zero_timestamp_as_fresh(table):
+    table.approve(good_proposal(table,stable_ip="ASSIGNED"),now=0,owner_authorized=True)
+    value=table.read()
+    row=notices(value["catalogue"],value,now=0,clock_trusted=False)["devices"][0]
+    assert row["description_status"]=="CLOCK_UNCERTAIN"
+    assert row["stable_ip"]==dict(value="UNKNOWN",source="OWNER_DECLARATION",freshness="CLOCK_UNCERTAIN")
 
 
 @pytest.mark.parametrize("mutation",["identity","foreign-description","role","extra","revision","duplicate-entry"])

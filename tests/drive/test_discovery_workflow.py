@@ -59,6 +59,16 @@ def test_discovery_reports_unconfigured_description_table_without_provisioning(s
     assert all(secret not in json.dumps(descriptions) for secret in (CANARY, "192.0.2.8", "synthetic-hint"))
 
 
+def test_unavailable_description_clock_keeps_discovery_status_inspectable(system):
+    flow, setup, provider, native, kwargs = system
+    flow.observe((observation(),))
+    def unavailable(): raise OSError(CANARY)
+    flow.clock = unavailable
+    result = flow.status()
+    assert result["used"] == 1 and result["descriptions"]["problem"] == "NETWORK_CLOCK_UNCERTAIN"
+    assert CANARY not in json.dumps(result)
+
+
 @pytest.fixture
 def system():
     return build()

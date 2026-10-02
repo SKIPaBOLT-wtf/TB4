@@ -256,9 +256,15 @@ class Discovery:
                 value = LocalNetworkTable(self.setup).read(allow_pending=True)
             except Exception:
                 problem = "NETWORK_TABLE_INSPECT_REQUIRED"
-        sample = self.clock()
-        now = sample.utc if type(sample) is ClockSample and sample.wall_trusted else 0
-        descriptions = notices(package["image"], value, now=now)
+        try:
+            sample = self.clock()
+            trusted = type(sample) is ClockSample and sample.wall_trusted
+            now = sample.utc if trusted else 0
+        except Exception:
+            trusted, now = False, 0
+        if not trusted:
+            problem = problem or "NETWORK_CLOCK_UNCERTAIN"
+        descriptions = notices(package["image"], value, now=now, clock_trusted=trusted)
         descriptions["problem"] = problem
         return {**Catalogue(package["image"]).status(), "publication_pending": package["pending"] is not None,
                 "descriptions": descriptions}

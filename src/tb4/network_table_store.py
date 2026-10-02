@@ -120,8 +120,13 @@ class LocalNetworkTable:
             raise NetworkTableError("NETWORK_STORE_UNAVAILABLE") from None
 
     def _binding(self, store):
-        with store.native.locked() as port:
-            return digest(port.binding)
+        try:
+            with store.native.locked() as port:
+                return digest(port.binding)
+        except NetworkTableError:
+            raise
+        except Exception:
+            raise NetworkTableError("NETWORK_STORE_UNAVAILABLE") from None
 
     def _read_store(self, store, selected):
         try:

@@ -71,9 +71,10 @@ def test_native_table_lock_blocks_competing_writer_without_losing_revision(nativ
     table,parent=native_table
     native=native_settings(Path(table.local_location())).native
     before=table.read()
+    proposed=good_proposal(table)
     with native.locked():
         with pytest.raises(NetworkTableError):
-            table.approve(good_proposal(table),now=100,owner_authorized=True)
+            table.approve(proposed,now=100,owner_authorized=True)
     assert table.read()==before
 
 

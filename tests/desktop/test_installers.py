@@ -64,17 +64,21 @@ def test_linux_uninstaller_refuses_live_role(tmp_path):
 @pytest.mark.skipif(os.name == 'nt', reason='POSIX installer contract')
 @pytest.mark.parametrize('script', ['install-linux.sh', 'uninstall-linux.sh'])
 @pytest.mark.parametrize('table_type', ['directory', 'dangling-symlink'])
-def test_linux_installer_preserves_installation_local_table_before_any_replacement(tmp_path, script, table_type):
+@pytest.mark.parametrize('table_location', ['network-table', 'custom-table', 'data/nested-custom'])
+def test_linux_installer_preserves_installation_local_table_before_any_replacement(tmp_path, script, table_type, table_location):
     env = dict(os.environ, HOME=str(tmp_path), XDG_DATA_HOME=str(tmp_path / 'data'),
                XDG_CONFIG_HOME=str(tmp_path / 'config'))
     destination = tmp_path / 'data/tb4-apps/watchdog'
     destination.mkdir(parents=True)
     worker = destination / 'tb4-watchdog-worker'
     worker.write_text('#!/bin/sh\nexit 0\n'); worker.chmod(0o755)
-    table = destination / 'network-table'
+    table = destination / table_location
+    table.parent.mkdir(parents=True, exist_ok=True)
     if table_type == 'directory':
         table.mkdir(); (table / 'settings.json').write_text('synthetic-retained-table')
     else:
+        if table_location != 'network-table':
+            pytest.skip('a dangling custom link contains no table data and native storage never adopts it')
         table.symlink_to(destination / 'absent-target', target_is_directory=True)
     source = tmp_path / 'operation.sh'
     source.write_text((ROOT / 'packaging/desktop' / script).read_text().replace('@ROLE@', 'watchdog'))

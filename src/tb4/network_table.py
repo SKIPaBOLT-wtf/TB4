@@ -242,20 +242,20 @@ def draft(value, device_id):
                          description=body))
 
 
-def fact_status(row, entry, *, now):
+def fact_status(row, entry, *, now, clock_trusted=True):
     if row is None or row["source"] == "NONE":
         return dict(value="UNKNOWN", source="NONE", freshness="UNKNOWN")
-    freshness = ("CLOCK_UNCERTAIN" if row["observed_at"] > now else
+    freshness = ("CLOCK_UNCERTAIN" if not clock_trusted or row["observed_at"] > now else
                  "STALE" if now-row["observed_at"] >= row["valid_for_s"]
                  or row["endpoint_digest"] != endpoint_digest(entry) else "FRESH")
     return dict(value=row["value"] if freshness == "FRESH" else "UNKNOWN",
                 source=row["source"], freshness=freshness)
 
 
-def notices(image, value, *, now):
+def notices(image, value, *, now, clock_trusted=True):
     """Safe finite status; observation hints/addresses never enter assistance output."""
     image = validate_image(image)
-    require(integer(now), "NETWORK_CLOCK")
+    require(integer(now) and type(clock_trusted) is bool, "NETWORK_CLOCK")
     if value is not None:
         value = validate(value, installation=image["installation_id"], domain=image["domain_id"])
     result = []
@@ -266,12 +266,13 @@ def notices(image, value, *, now):
         row = None if value is None else value["descriptions"].get(device_id)
         missing = [] if row is None else missing_fields(row["description"])
         state = ("MISSING_DESCRIPTION" if row is None else
-                 "CLOCK_UNCERTAIN" if now < row["approved_at"] else
+                 "CLOCK_UNCERTAIN" if not clock_trusted or now < row["approved_at"] else
                  "STALE_DESCRIPTION" if now-row["approved_at"] >= row["valid_for_s"] else
                  "INADEQUATE_DESCRIPTION" if missing else "DESCRIBED")
         result.append(dict(device_id=device_id, alias=entry["alias"], description_status=state,
                            missing=missing, stable_ip=fact_status(
-                               None if value is None else value["addressing"].get(device_id), entry, now=now)))
+                               None if value is None else value["addressing"].get(device_id), entry,
+                               now=now, clock_trusted=clock_trusted)))
     return dict(schema_version=1, kind="NETWORK_DESCRIPTION_STATUS", devices=result,
                 needs_description=sum(e["description_status"] != "DESCRIBED" for e in result),
                 table_revision=None if value is None else value["revision"])

@@ -29,7 +29,7 @@ destination cannot be overwritten or adopted. Conflicting source revisions or
 readback failures retain the selection/pending intent. Explicit completion of the
 same local change follows an exact current-state inspection, never blind replay.
 No chmod/ACL repair, credential copying, identity reset or remote storage
-migration occurs. Linux installers refuse replacement/removal if a default table
+migration occurs. Linux installers refuse replacement/removal if a default or custom table
 still resides in the installation folder; move it through settings first.
 Windows uninstallation does not track or delete user-created table files.
 Installer preservation and platform constraints require their own qualified tests.
