@@ -3,22 +3,24 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: HELPER_SCOPE_STIMULUS_WIP_PUBLISHED
+phase: INSTALLER_DATA_INSPECTION_DIAGNOSTIC
 source_branch: feat/rp026-local-network-table
 source_commit: f7982df61404257affa794c4c355cdba3841d305
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0025
+last_verified_event: RP-026-A001-0026
 last_completed: RP-025
-next_action: Publish/read back a fresh exact-source Windows target/SKILL/current/history/scanner/diff
-  qualification INTENT, execute a new run and inspect actual results; after local
-  pass publish separate hosted platform/build INTENT.
+next_action: Inspect this same isolated diagnostic. If a refusal failure is reproduced,
+  record a new source-linked DEF and C1-C4 holds, then publish a smallest Linux guard/regression
+  repair INTENT. If it passes, record that result and proceed to new exact-source
+  target qualification.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-026-A001-0026
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
