@@ -3320,3 +3320,45 @@ defects:
       Source inspection/initial traces support the hypothesis; repaired runtime qualification
       has not occurred. See docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md.
     legacy_record: null
+  DEF-051:
+    title: Linux custom-table installer guard treats failed search as confirmed absence
+    status: OPEN
+    detected_in: RP-026.C4
+    suspected_origin:
+      work_item: RP-026
+      source_ref: f7982df61404257affa794c4c355cdba3841d305
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/installer-inspection-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: Run both exact scripts in fresh synthetic installation trees with
+        a PATH-local find shim exiting 42 and empty stdout; require refusal and unchanged
+        custom table/binaries.
+      failing_source: f7982df61404257affa794c4c355cdba3841d305
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/installer-inspection-failure.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    affected_requirements:
+    - R13
+    - R18
+    - R20
+    - R21
+    hypotheses:
+    - id: failed-search-exit-is-discarded
+      claim: The -z command-substitution test discards find exit failure, allowing
+        replacement/removal despite unknown local table presence.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/installer-inspection-failure.md
+    repairs: []
+    issue: null
+    regression_test: tests.desktop.test_installers.test_linux_installer_refuses_when_local_data_inspection_is_unavailable
+    resolution_evidence: []
+    notes: New neveraccepted RP-026 custom table guard; accepted predecessor history
+      stays unchanged. Fix and requalify both shell operations before accepting. All
+      mutation in the reproduction stayed inside fresh synthetic Linux fixtures.
+    legacy_record: null
