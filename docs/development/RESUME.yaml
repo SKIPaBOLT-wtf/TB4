@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_CUT_FIXTURE_REPAIR
+phase: STAGED_RECONFIGURATION_C2_NATIVE_CUT_FIXTURE_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: c323da611eb98de3966145e226679335976b3f22
+source_commit: 8ffdbfeaf4fd5c5a4b3f3c158368c6096bc24ce0
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0041
+last_verified_event: RP-027-A001-0042
 last_completed: RP-026
-next_action: Publish/read back exact one-file source OUTCOME; then fresh27-target/unchanged720-predicate
-  repeat INTENT and run once with a new owned absent fixture root. Record STARTED
-  if still running before waiting and preserve actual outcome/defect facts before
+next_action: Publish/read back exact27-target/720-predicate repeat test INTENT; run
+  on fresh owned initially absent fixtures, record actual STARTED session before waiting,
+  then source-linked full outcome and supported or failed DEF060 remedy facts before
   C3.
-verification: Same native pending-cut integrity proven; one-file closed native test
-  expectation repair INTENT; original guards unchanged.
+verification: One-file native expected diagnostic fixture source saved; all recovery
+  assertions retained; repeat required.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0041
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
