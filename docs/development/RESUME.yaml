@@ -1,37 +1,23 @@
 schema_version: 1
-revision: R2
-work_item: RP-021
-check: RP-021.C4
-attempt: A002
-phase: REPAIR
-source_branch: work/rp-025-a001
-source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
-journal: docs/development/journal/RP-021/A002/events.jsonl
-last_verified_event: RP-021-A002-0024
-last_completed: RP-020
-next_action: Qualify targeted security/protocol, all development and real source/current/main-history/privacy/diff
-  guards on exact new source, then one new final required matrix.
-verification: Qualify native held source-content revocation and all transitive affected
-  checks on exact repaired source; preserve immutable snapshot and private/native
-  trust boundaries.
-execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
+revision: "R2"
+work_item: "RP-021"
+check: "RP-021.C4"
+attempt: "A002"
+phase: "VALIDATION"
+source_branch: "work/rp-025-a001"
+source_commit: "a6b6dfaf728de283991ec8a34ac2c4a93d51f443"
+journal: "docs/development/journal/RP-021/A002/events.jsonl"
+last_verified_event: "RP-021-A002-0025"
+last_completed: "RP-020"
+next_action: "Record actual local qualification and precise source; if all pass, publish final matrix INTENT and inspect newly launched required CI/Progress/Desktop jobs."
+verification: "Qualify native held source-content revocation and all transitive affected checks on exact repaired source; preserve immutable snapshot and private/native trust boundaries."
+execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-021-A002-0025"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects:
-- DEF-001
-- DEF-002
-- DEF-042
-- DEF-043
-- DEF-044
-- DEF-045
-- DEF-046
-- DEF-047
-- DEF-048
-rollback: Revoke only a specifically confirmed new enrollment; retain slot generation/history,
-  prior approved bindings and UNKNOWN operations. Do not copy another installation
-  credential/profile, reset authority or replay an uncertain write.
-next_implementation_step: RP-025
-next_implementation_check: RP-025.C4
+known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046","DEF-047","DEF-048"]
+rollback: "Revoke only a specifically confirmed new enrollment; retain slot generation/history, prior approved bindings and UNKNOWN operations. Do not copy another installation credential/profile, reset authority or replay an uncertain write."
+next_implementation_step: "RP-025"
+next_implementation_check: "RP-025.C4"
