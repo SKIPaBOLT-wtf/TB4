@@ -10,6 +10,7 @@ import pytest
 from tb4.ballpark import catalogue
 from tb4.ballpark_records import shared
 from tb4.configuration_contract import ConfigurationError, configuration
+from tb4.drive.docs_authority import AuthorityError
 from tb4.drive.leadership import Leadership
 from tb4.commissioning_state import Setup
 from tb4.exchange_layout import encoded
@@ -19,7 +20,7 @@ from tb4.reconfiguration_maintenance import Maintenance, MaintenanceMutation, WA
 from tb4.watchdog.leadership_runtime import Action, Capabilities, Checkpoint, Receipt
 from reconfiguration_controller_support import TRANSITION, resolution_archive, restart, system
 from test_native_docs_transport import wire_document
-from test_native_leadership import ACTORS, ENROLLMENT, clock, tid
+from test_native_leadership import ACTORS, clock, tid
 from test_native_watchdog_startup import LocalCheckpoint
 from tests.security.test_private_settings import MemoryNative
 
@@ -92,8 +93,8 @@ def test_unknown_local_effect_blocks_resolution_without_blocking_role_takeover()
     assert status["counts"]["LOCAL_EFFECT_UNKNOWN"] == 1
     with pytest.raises(ConfigurationError, match="RESOLUTION_REQUIRED"):
         value.controller.resolve(decision, resolution_archive(value), owner_authorized=True)
-    candidate = Leadership(value.flow.leader.backend, actor=ACTORS[1], enrollment={
-        **ENROLLMENT, value.setup.installation_id:"synthetic-old-owner"})
+    candidate = Leadership(value.flow.leader.backend, actor=ACTORS[1],
+                           enrollment=value.flow.leader.enrollment)
     plan = candidate.acquire(candidate.observe(clock(340)), transition=tid("maintenance-fallback"))
     assert candidate.commit(plan, mode="START").outcome == "CONFIRMED"
     assert configuration(value.provider.store.document)["phase"] == "MAINTENANCE"
@@ -144,8 +145,8 @@ def test_lost_shared_reply_restarts_in_inspect_only_and_confirms_after_takeover(
     assert value.context.store.read().payload["pending"] is not None
     commits = value.provider.store.commits
     value.provider.store.after_write = value.provider.store.on_read = None
-    candidate = Leadership(value.flow.leader.backend, actor=ACTORS[1], enrollment={
-        **ENROLLMENT, value.setup.installation_id:"synthetic-old-owner"})
+    candidate = Leadership(value.flow.leader.backend, actor=ACTORS[1],
+                           enrollment=value.flow.leader.enrollment)
     plan = candidate.acquire(candidate.observe(clock(340)), transition=tid("lost-maintenance-takeover"))
     assert candidate.commit(plan, mode="START").outcome == "CONFIRMED"
     resumed = restart(value)
@@ -215,7 +216,7 @@ def test_fresh_fallback_adopts_role_and_marker_without_claiming_missing_old_loca
     choices = value.setup.private_choices()
     choices["descriptor"]["installation_id"] = new_setup.installation_id
     new_setup.choose(choices)
-    enrollment = {**ENROLLMENT,value.setup.installation_id:"synthetic-previous",
+    enrollment = {**value.flow.leader.enrollment,
                   new_setup.installation_id:"synthetic-fallback"}
     leader = Leadership(value.flow.leader.backend,actor=new_setup.installation_id,enrollment=enrollment)
     plan = leader.acquire(leader.observe(clock(340)),transition=tid("new-installation-fallback"))
@@ -240,6 +241,18 @@ def test_fresh_fallback_adopts_role_and_marker_without_claiming_missing_old_loca
         adopter.resolve(decision,archive,owner_authorized=True)
     assert archive.store.read() is None
     assert value.checkpoint.state.receipts[0].outcome == "UNKNOWN"
+
+
+def test_changed_incumbent_label_refuses_before_acquisition_without_authority_write():
+    value = system()
+    before = copy.deepcopy(value.provider.store.document)
+    commits = value.provider.store.commits
+    candidate = Leadership(value.flow.leader.backend, actor=ACTORS[1], enrollment={
+        **value.flow.leader.enrollment, value.setup.installation_id: "synthetic-wrong-label"})
+    with pytest.raises(AuthorityError, match="LEADERSHIP_IDENTITY"):
+        candidate.observe(clock(340))
+    assert value.provider.store.document == before
+    assert value.provider.store.commits == commits
 
 
 def test_malformed_pending_cannot_recover_or_change_protected_identity():
