@@ -3,30 +3,30 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_SOURCE_INSPECTION_RECORDED
+phase: STAGED_RECONFIGURATION_C1_FOUNDATION_IMPLEMENTATION
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: ed974c57ce99e54b3a28da79d212c86f07951ec7
+source_commit: 51a40da7176cfe2668c8b7bf2eeff7dea230d685
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0005
+last_verified_event: RP-027-A001-0006
 last_completed: RP-026
-next_action: Publish/read back RP-027 design/C1 implementation INTENT for explicit
-  unreleased same-authority amendment/closed maintenance codec, deterministic unresolved-work
-  inspection, protected evidence and ordinary admission fencing with targeted regression
-  tests; preserve exact WIP before any test action.
-verification: RP-027 source inspection recorded; one owned clean feature branch; no
-  check accepted or live operation.
+next_action: Commit/publish/read back exact foundation WIP; append source OUTCOME
+  and amendment linkage with zero accepted checks. Then publish focused current/legacy/native/maintenance-race
+  test INTENT and execute only those tests in fresh synthetic fixtures.
+verification: C1 foundation source unit only; no test result/check acceptance/live
+  action.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0006
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
 - DEF-001
 - DEF-002
-rollback: Only a new owned Git branch/read-only source inspection. Preserve all branches,
-  local records and historical evidence; do not force refs, reset working copies,
-  adopt existing unrelated branches, touch native deployment state or replay an uncertain
-  operation.
+rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
+  records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
+  mutation. If any compatibility assumption fails, preserve its reproduction before
+  repair.
 next_implementation_step: RP-027
 next_implementation_check: RP-027.C1
