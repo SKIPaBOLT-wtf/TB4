@@ -3944,7 +3944,11 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-cases.json
-    proven_origin: null
+    proven_origin:
+      work_item: RP-027
+      source_ref: ac587b6b6856e3c7785030720ee9c120c2fad0e5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-coverage-fixture-provenance.md
     reproduction:
       procedure: 'Run the recorded24 targets on exact new guard source: fourteen new
         cases stop at CONFIGURATION_LEGACY_EVIDENCE_REQUIRED, one follow-up cannot
@@ -3956,6 +3960,7 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-coverage-fixture-provenance.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -3981,6 +3986,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-cases.json
+    - id: same-failed-native-checkpoints-and-factory-prove-later-epoch
+      claim: Both same failed native checkpoints have current epoch2, no pending election/mutation,
+        and a durable maintenance reservation; exact accepted ready/build factory
+        first commissions ACTORS[0] at epoch1 then explicitly acquires for a newly
+        created setup at epoch2. The new guard helper reused this later-owner fixture,
+        violating initial coverage rather than proving a product takeover fault.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-coverage-fixture-provenance.md
     repairs: []
     issue: null
     regression_test: All16 failed predicate cases, exact same24-target prior regressions
@@ -3990,5 +4004,8 @@ defects:
       Do not weaken initial-epoch coverage, rewind a live/evaluated authority, hide
       unknown work or drop failed assertions. Preserve source and all actual results;
       inspect the exact failed native fixture/factory before repair. Full C1-C4 rechecks
-      remain held.
+      remain held. Same failed native frames and actual factory prove epoch2 fixture
+      misuse; remedy must create an actually initial epoch-one synthetic deployment
+      through existing bootstrap/commissioning adapters without changing or rewinding
+      the failed authority.
     legacy_record: null

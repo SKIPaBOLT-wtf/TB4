@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_COVERAGE_FIXTURE_DIAGNOSTIC
+phase: STAGED_RECONFIGURATION_C1_COVERAGE_FIXTURE_CAUSE_PROVEN
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: ac587b6b6856e3c7785030720ee9c120c2fad0e5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0025
+last_verified_event: RP-027-A001-0026
 last_completed: RP-026
-next_action: Publish/read back actual diagnostic OUTCOME/provenance and DEF-058 hypothesis
-  update; then publish a scoped fixture repair or concrete proven application repair
-  INTENT, preserve exact source and separately repeat tests.
-verification: Actual682-case failure checkpoint verified; read-only exact-fixture
-  provenance INTENT, no diagnostic result yet.
+next_action: 'Publish/read back two-file fixture/support repair INTENT: construct
+  a truthfully initial synthetic Setup/Bootstrap/Commissioner/discovery/descriptor
+  deployment and verified initial_grant before guard tests, never rewind failed authority;
+  assert exact native protection refusal. Preserve all old predicates and add fresh-bootstrap
+  epoch-one/source proof regression.'
+verification: Same native frames and actual factory prove epoch2 fixture misuse; no
+  app guard defect or replay. Two-file fixture repair next.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0025
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
