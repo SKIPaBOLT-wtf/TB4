@@ -3184,3 +3184,600 @@ defects:
       source a6b6dfaf728de283991ec8a34ac2c4a93d51f443; exact hosted checkout 8f389e87d21f26501d7085c1f869f424525a9f51.
       No live/release or unavailable field capability is inferred.'
     legacy_record: null
+  DEF-049:
+    title: New network-table qualification stimuli do not establish identity drift
+      or clear retained roles
+    status: RESOLVED
+    detected_in: RP-026.C4
+    suspected_origin:
+      work_item: RP-026
+      source_ref: f638b9ec28091554f879dd59cd4b8db3105f1251
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+    proven_origin:
+      work_item: RP-026
+      source_ref: f638b9ec28091554f879dd59cd4b8db3105f1251
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    reproduction:
+      procedure: Initial targeted Windows pytest failed on the exact published source;
+        see retained failing assertions and bounded stimulus diagnosis.
+      failing_source: f638b9ec28091554f879dd59cd4b8db3105f1251
+      passing_source: 2575de12ffed36a2e3e739710a9183dd0bfa437d
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    affected_requirements:
+    - R05
+    - R13
+    - R18
+    - R20
+    - R21
+    hypotheses:
+    - id: initial-source-stimulus-review
+      claim: First two failures may come from expecting an unverified hardware hint
+        to move identity and expecting an existing proposal to clear prior roles automatically;
+        native lock stimulus also prepares its proposal inside the held lock.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+    - id: source-trace-diagnosis-supported
+      claim: First two failures may come from expecting an unverified hardware hint
+        to move identity and expecting an existing proposal to clear prior roles automatically;
+        native lock stimulus also prepares its proposal inside the held lock.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md
+    - id: complete-final-source-qualification
+      claim: Concrete original regression and every required C1-C4 recheck pass on
+        the final exact source; native Windows/Linux/Qt/negative/complete platform/build
+        and reviewed privacy/rollback gates support the bounded repair, without weakening
+        accepted predecessor policy.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    repairs:
+    - item: RP-026
+      attempt: A001
+      intent_event: RP-026-A001-0019
+      rechecks:
+        RP-026:
+          attempt: A001
+          checks:
+          - RP-026.C1
+          - RP-026.C2
+          - RP-026.C3
+          - RP-026.C4
+    issue: null
+    regression_test: tests.drive.test_network_table_schema.test_fresh_verified_addressing_is_scoped_to_only_that_action_and_endpoint;
+      tests.drive.test_network_table_schema.test_stale_unknown_platform_and_noncomputer_descriptions_are_distinct;
+      tests.security.test_network_table_native.test_native_table_lock_blocks_competing_writer_without_losing_revision
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C4.json
+    notes: New neveraccepted RP-026 scope only. Preserve all initial failures; no
+      accepted predecessor invariant is invalidated merely by a mistaken new stimulus.
+      Qualify exact corrected stimulus and module behavior before accepting or closing.
+      Source inspection/initial traces support the hypothesis; repaired runtime qualification
+      has not occurred. See docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md.
+      Later exact-source reviewed acceptance at RP-026-A001-0056 resolves this new
+      scope only; original failed/green tests, hypotheses, provenance and repair intents
+      remain immutable. Field/runtime release limits are unchanged.
+    legacy_record: null
+  DEF-050:
+    title: Local network table binding accessor does not normalize native unavailable/busy
+      errors
+    status: RESOLVED
+    detected_in: RP-026.C4
+    suspected_origin:
+      work_item: RP-026
+      source_ref: f638b9ec28091554f879dd59cd4b8db3105f1251
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+    proven_origin:
+      work_item: RP-026
+      source_ref: f638b9ec28091554f879dd59cd4b8db3105f1251
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    reproduction:
+      procedure: Initial targeted Windows pytest failed on the exact published source;
+        see retained failing assertions and bounded stimulus diagnosis.
+      failing_source: f638b9ec28091554f879dd59cd4b8db3105f1251
+      passing_source: 2575de12ffed36a2e3e739710a9183dd0bfa437d
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    affected_requirements:
+    - R05
+    - R13
+    - R18
+    - R20
+    - R21
+    hypotheses:
+    - id: initial-source-stimulus-review
+      claim: The new table binding helper may expose SettingsError where its module
+        advertises NetworkTableError. Native locking itself refused as intended; wrapper
+        behavior and exact mutator stimulus require recheck.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+    - id: source-trace-diagnosis-supported
+      claim: The new table binding helper may expose SettingsError where its module
+        advertises NetworkTableError. Native locking itself refused as intended; wrapper
+        behavior and exact mutator stimulus require recheck.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md
+    - id: complete-final-source-qualification
+      claim: Concrete original regression and every required C1-C4 recheck pass on
+        the final exact source; native Windows/Linux/Qt/negative/complete platform/build
+        and reviewed privacy/rollback gates support the bounded repair, without weakening
+        accepted predecessor policy.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    repairs:
+    - item: RP-026
+      attempt: A001
+      intent_event: RP-026-A001-0019
+      rechecks:
+        RP-026:
+          attempt: A001
+          checks:
+          - RP-026.C1
+          - RP-026.C2
+          - RP-026.C3
+          - RP-026.C4
+    issue: null
+    regression_test: tests.drive.test_network_table_schema.test_fresh_verified_addressing_is_scoped_to_only_that_action_and_endpoint;
+      tests.drive.test_network_table_schema.test_stale_unknown_platform_and_noncomputer_descriptions_are_distinct;
+      tests.security.test_network_table_native.test_native_table_lock_blocks_competing_writer_without_losing_revision
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C4.json
+    notes: New neveraccepted RP-026 scope only. Preserve all initial failures; no
+      accepted predecessor invariant is invalidated merely by a mistaken new stimulus.
+      Qualify exact corrected stimulus and module behavior before accepting or closing.
+      Source inspection/initial traces support the hypothesis; repaired runtime qualification
+      has not occurred. See docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md.
+      Later exact-source reviewed acceptance at RP-026-A001-0056 resolves this new
+      scope only; original failed/green tests, hypotheses, provenance and repair intents
+      remain immutable. Field/runtime release limits are unchanged.
+    legacy_record: null
+  DEF-051:
+    title: Linux custom-table installer guard treats failed search as confirmed absence
+    status: RESOLVED
+    detected_in: RP-026.C4
+    suspected_origin:
+      work_item: RP-026
+      source_ref: f7982df61404257affa794c4c355cdba3841d305
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/installer-inspection-failure.md
+    proven_origin:
+      work_item: RP-026
+      source_ref: f7982df61404257affa794c4c355cdba3841d305
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/installer-inspection-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    reproduction:
+      procedure: Run both exact scripts in fresh synthetic installation trees with
+        a PATH-local find shim exiting 42 and empty stdout; require refusal and unchanged
+        custom table/binaries.
+      failing_source: f7982df61404257affa794c4c355cdba3841d305
+      passing_source: 2575de12ffed36a2e3e739710a9183dd0bfa437d
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/installer-inspection-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    affected_requirements:
+    - R13
+    - R18
+    - R20
+    - R21
+    hypotheses:
+    - id: failed-search-exit-is-discarded
+      claim: The -z command-substitution test discards find exit failure, allowing
+        replacement/removal despite unknown local table presence.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/installer-inspection-failure.md
+    - id: complete-final-source-qualification
+      claim: Concrete original regression and every required C1-C4 recheck pass on
+        the final exact source; native Windows/Linux/Qt/negative/complete platform/build
+        and reviewed privacy/rollback gates support the bounded repair, without weakening
+        accepted predecessor policy.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    repairs:
+    - item: RP-026
+      attempt: A001
+      intent_event: RP-026-A001-0028
+      rechecks:
+        RP-026:
+          attempt: A001
+          checks:
+          - RP-026.C1
+          - RP-026.C2
+          - RP-026.C3
+          - RP-026.C4
+    issue: null
+    regression_test: tests.desktop.test_installers.test_linux_installer_refuses_when_local_data_inspection_is_unavailable
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C4.json
+    notes: New neveraccepted RP-026 custom table guard; accepted predecessor history
+      stays unchanged. Fix and requalify both shell operations before accepting. All
+      mutation in the reproduction stayed inside fresh synthetic Linux fixtures. Later
+      exact-source reviewed acceptance at RP-026-A001-0056 resolves this new scope
+      only; original failed/green tests, hypotheses, provenance and repair intents
+      remain immutable. Field/runtime release limits are unchanged.
+    legacy_record: null
+  DEF-052:
+    title: New instruction/schema hash inputs lack canonical cross-platform checkout
+      bytes
+    status: RESOLVED
+    detected_in: RP-026.C4
+    suspected_origin:
+      work_item: RP-026
+      source_ref: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/initial-hosted-windows-catalog-failure.md
+    proven_origin:
+      work_item: RP-026
+      source_ref: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/initial-hosted-windows-catalog-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    reproduction:
+      procedure: Initial real Windows hosted checkout failed unchanged catalog raw-byte
+        assertion; CRLF encoding exactly matches observed digest, LF matches expected.
+        New nested guidance/schema inputs fall outside existing LF attributes.
+      failing_source: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
+      passing_source: 2575de12ffed36a2e3e739710a9183dd0bfa437d
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/initial-hosted-windows-catalog-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/native-owner-and-checkout-reproduction.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    affected_requirements:
+    - R07
+    - R15
+    - R17
+    - R18
+    hypotheses:
+    - id: new-inputs-not-covered-by-lf-attributes
+      claim: Windows autoCRLF transforms new nested guidance/protocol JSON bytes because
+        existing canonical attributes cover only top-level instruction files.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/initial-hosted-windows-catalog-failure.md
+    - id: fresh-checkout-three-input-reproduction
+      claim: Fresh actual Windows Git checkouts reproduce exactly three mismatched
+        new inputs with autoCRLF true, and all7 exact catalog inputs with false.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/native-owner-and-checkout-reproduction.md
+    - id: complete-final-source-qualification
+      claim: Concrete original regression and every required C1-C4 recheck pass on
+        the final exact source; native Windows/Linux/Qt/negative/complete platform/build
+        and reviewed privacy/rollback gates support the bounded repair, without weakening
+        accepted predecessor policy.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    repairs:
+    - item: RP-026
+      attempt: A001
+      intent_event: RP-026-A001-0041
+      rechecks:
+        RP-026:
+          attempt: A001
+          checks:
+          - RP-026.C1
+          - RP-026.C2
+          - RP-026.C3
+          - RP-026.C4
+    issue: null
+    regression_test: tests.coach.test_instruction_selection.test_repository_catalog_consistent_but_deliberately_not_live_eligible
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C4.json
+    notes: Existing digest/trust assertion and accepted source remain unchanged. Exact
+      catalog input bytes must match Git blobs in a fresh Windows/Linux checkout,
+      with no global config or digest normalization bypass. New neveraccepted RP-026
+      only. Later exact-source reviewed acceptance at RP-026-A001-0056 resolves this
+      new scope only; original failed/green tests, hypotheses, provenance and repair
+      intents remain immutable. Field/runtime release limits are unchanged.
+    legacy_record: null
+  DEF-053:
+    title: Native table observation callback reenters its already-held setup lock
+    status: RESOLVED
+    detected_in: RP-026.C3
+    suspected_origin:
+      work_item: RP-026
+      source_ref: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/native-owner-and-checkout-reproduction.md
+    proven_origin:
+      work_item: RP-026
+      source_ref: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/native-owner-and-checkout-reproduction.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    reproduction:
+      procedure: Actual protected native Setup plus synthetic commissioned Discovery/current-owner
+        provider; after table configure, observe one fixture endpoint and require
+        exact table update. Closed trace PASS,PASS,SETTINGS_BUSY leaves catalogue1/table0
+        and owner-required UPDATE pending.
+      failing_source: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
+      passing_source: 2575de12ffed36a2e3e739710a9183dd0bfa437d
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/native-owner-and-checkout-reproduction.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    affected_requirements:
+    - R05
+    - R13
+    - R15
+    - R18
+    hypotheses:
+    - id: same-setup-lock-read-reentry
+      claim: New table's native setup lock encloses an existing Discovery._current
+        callback whose Setup._fresh reader reacquires that lock. Native exclusive
+        locking correctly refuses.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/native-owner-and-checkout-reproduction.md
+    - id: complete-final-source-qualification
+      claim: Concrete original regression and every required C1-C4 recheck pass on
+        the final exact source; native Windows/Linux/Qt/negative/complete platform/build
+        and reviewed privacy/rollback gates support the bounded repair, without weakening
+        accepted predecessor policy.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    repairs:
+    - item: RP-026
+      attempt: A001
+      intent_event: RP-026-A001-0041
+      rechecks:
+        RP-026:
+          attempt: A001
+          checks:
+          - RP-026.C1
+          - RP-026.C2
+          - RP-026.C3
+          - RP-026.C4
+    issue: null
+    regression_test: tests.security.test_network_table_native.test_actual_discovery_owner_callback_updates_native_table_without_lock_reentry
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C4.json
+    notes: New neveraccepted local-table integration only; accepted native/discovery
+      locking and owner policy remains intact. Read-only held-port borrow must be
+      scoped to same thread/store and never skip full owner refresh, allow writes
+      or escape a stale reader. Later exact-source reviewed acceptance at RP-026-A001-0056
+      resolves this new scope only; original failed/green tests, hypotheses, provenance
+      and repair intents remain immutable. Field/runtime release limits are unchanged.
+    legacy_record: null
+  DEF-054:
+    status: RESOLVED
+    suspected_origin:
+      work_item: RP-026
+      source_ref: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    proven_origin:
+      work_item: RP-026
+      source_ref: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    repairs:
+    - item: RP-026
+      attempt: A001
+      intent_event: RP-026-A001-0051
+      rechecks:
+        RP-026:
+          attempt: A001
+          checks:
+          - RP-026.C1
+          - RP-026.C2
+          - RP-026.C3
+          - RP-026.C4
+    issue: null
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C4.json
+    legacy_record: null
+    title: Discovery description status hides a known pending local-table update
+    detected_in: RP-026.C4
+    reproduction:
+      procedure: Fresh actual protected native Discovery/table; capability callback
+        refuses after durable UPDATE intent. Observe preserved local pending and unchanged
+        table, then actual description status problem remains null instead of inspection-required.
+      failing_source: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+      passing_source: 2575de12ffed36a2e3e739710a9183dd0bfa437d
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    affected_requirements:
+    - R05
+    - R13
+    - R18
+    hypotheses:
+    - id: source-review-allow-pending-notice
+      claim: Reading the current table with allow_pending=True may omit its known
+        unresolved update from WATCHDOG description status.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/repaired-hosted-platform-pass-review-hold.md
+    - id: actual-native-pending-notice-reproduced
+      claim: Actual native current-owner/capability refusal keeps UPDATE pending and
+        table unchanged. Direct table status says INSPECT_REQUIRED but Discovery description
+        problem is null.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    - id: complete-final-source-qualification
+      claim: Concrete original regression and every required C1-C4 recheck pass on
+        the final exact source; native Windows/Linux/Qt/negative/complete platform/build
+        and reviewed privacy/rollback gates support the bounded repair, without weakening
+        accepted predecessor policy.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    regression_test: Planned tests.security.test_network_table_native.test_native_discovery_reports_pending_table_update_without_replay
+    notes: Neveraccepted new RP-026 reporting integration only. Original owner refusal,
+      native storage and observation evidence are correct and must remain unchanged;
+      no local transaction replay or production change. Later exact-source reviewed
+      acceptance at RP-026-A001-0056 resolves this new scope only; original failed/green
+      tests, hypotheses, provenance and repair intents remain immutable. Field/runtime
+      release limits are unchanged.
+  DEF-055:
+    status: RESOLVED
+    suspected_origin:
+      work_item: RP-026
+      source_ref: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    proven_origin:
+      work_item: RP-026
+      source_ref: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    repairs:
+    - item: RP-026
+      attempt: A001
+      intent_event: RP-026-A001-0051
+      rechecks:
+        RP-026:
+          attempt: A001
+          checks:
+          - RP-026.C1
+          - RP-026.C2
+          - RP-026.C3
+          - RP-026.C4
+    issue: null
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C4.json
+    legacy_record: null
+    title: Description helper does not bind a proposal to its begun device and revision
+    detected_in: RP-026.C3
+    reproduction:
+      procedure: Populate two distinct synthetic existing catalogue devices. Begin
+        actual DescriptionAssistant for first, propose fresh canonical candidate for
+        second and explicitly approve its digest in fixture. Helper admits/CONFIRMS
+        second while first remains undescribed.
+      failing_source: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+      passing_source: 2575de12ffed36a2e3e739710a9183dd0bfa437d
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    affected_requirements:
+    - R13
+    - R15
+    - R17
+    - R18
+    hypotheses:
+    - id: source-review-begin-device-context
+      claim: Propose checks supplied device against current table but may not retain
+        the identity/revision selected by begin.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/repaired-hosted-platform-pass-review-hold.md
+    - id: actual-two-device-proposal-reproduced
+      claim: A fresh candidate for a different existing device is admitted and fixture
+        owner digest approval writes that second description. Begin target is not
+        enforced.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    - id: complete-final-source-qualification
+      claim: Concrete original regression and every required C1-C4 recheck pass on
+        the final exact source; native Windows/Linux/Qt/negative/complete platform/build
+        and reviewed privacy/rollback gates support the bounded repair, without weakening
+        accepted predecessor policy.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    regression_test: Planned tests.drive.test_network_description.test_begun_helper_cannot_switch_to_another_existing_device;
+      context revision and failed begin/propose lifecycle regressions.
+    notes: Neveraccepted new RP-026 helper binding only. Existing stable catalogue
+      identity and instruction profile remain intact. Fix one bounded begin/propose/confirm
+      context without adding grants, instruction sources or live host integration.
+      Later exact-source reviewed acceptance at RP-026-A001-0056 resolves this new
+      scope only; original failed/green tests, hypotheses, provenance and repair intents
+      remain immutable. Field/runtime release limits are unchanged.

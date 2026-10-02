@@ -1,0 +1,505 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "addressing": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "endpoint_digest": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "observed_at": {
+            "maximum": 1000000000000,
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "source": {
+            "enum": [
+              "OWNER_DECLARATION",
+              "FIXED_HELPER",
+              "NONE"
+            ]
+          },
+          "valid_for_s": {
+            "maximum": 31536000,
+            "minimum": 1,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "value": {
+            "enum": [
+              "ASSIGNED",
+              "NOT_ASSIGNED",
+              "UNKNOWN"
+            ]
+          }
+        },
+        "required": [
+          "value",
+          "source",
+          "observed_at",
+          "valid_for_s",
+          "endpoint_digest"
+        ],
+        "type": "object"
+      },
+      "maxProperties": 64,
+      "propertyNames": {
+        "pattern": "^[0-9a-f-]{36}$",
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "catalogue": {
+      "additionalProperties": false,
+      "properties": {
+        "domain_id": {
+          "pattern": "^[0-9a-f-]{36}$",
+          "type": "string"
+        },
+        "entries": {
+          "items": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "alias": {
+                    "pattern": "^[a-z][a-z0-9-]{0,31}$",
+                    "type": "string"
+                  },
+                  "device_id": {
+                    "pattern": "^[0-9a-f-]{36}$",
+                    "type": "string"
+                  },
+                  "endpoints": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "address": {
+                          "maxLength": 64,
+                          "type": "string"
+                        },
+                        "hardware_hint": {
+                          "maxLength": 128,
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "interface_index": {
+                          "maximum": 2147483647,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "name_hint": {
+                          "maxLength": 128,
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "observed_at": {
+                          "maximum": 1000000000000,
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        "online": {
+                          "type": "boolean"
+                        },
+                        "source": {
+                          "enum": [
+                            "NEIGHBOR_CACHE",
+                            "ICMP",
+                            "FIXED_HELPER"
+                          ]
+                        },
+                        "valid_for_s": {
+                          "maximum": 86400,
+                          "minimum": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "interface_index",
+                        "address",
+                        "source",
+                        "observed_at",
+                        "valid_for_s",
+                        "online",
+                        "hardware_hint",
+                        "name_hint"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 8,
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "device_id",
+                  "alias",
+                  "endpoints"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "maxItems": 64,
+          "minItems": 1,
+          "type": "array"
+        },
+        "installation_id": {
+          "pattern": "^[0-9a-f-]{36}$",
+          "type": "string"
+        },
+        "overflow": {
+          "type": "boolean"
+        },
+        "quarantine": {
+          "items": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "observation": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "address": {
+                        "maxLength": 64,
+                        "type": "string"
+                      },
+                      "hardware_hint": {
+                        "maxLength": 128,
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "interface_index": {
+                        "maximum": 2147483647,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "name_hint": {
+                        "maxLength": 128,
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "observed_at": {
+                        "maximum": 1000000000000,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "online": {
+                        "type": "boolean"
+                      },
+                      "source": {
+                        "enum": [
+                          "NEIGHBOR_CACHE",
+                          "ICMP",
+                          "FIXED_HELPER"
+                        ]
+                      },
+                      "valid_for_s": {
+                        "maximum": 86400,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "interface_index",
+                      "address",
+                      "source",
+                      "observed_at",
+                      "valid_for_s",
+                      "online",
+                      "hardware_hint",
+                      "name_hint"
+                    ],
+                    "type": "object"
+                  },
+                  "reason": {
+                    "enum": [
+                      "ADDRESS_IDENTITY_CHANGED",
+                      "HINT_COLLISION",
+                      "IDENTITY_UNCONFIRMED",
+                      "VERIFIED_IDENTITY_CONFLICT",
+                      "CAPACITY_FULL",
+                      "ENDPOINT_CAPACITY"
+                    ]
+                  }
+                },
+                "required": [
+                  "reason",
+                  "observation"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "type": "array"
+        },
+        "revision": {
+          "maximum": 9223372036854775807,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "schema_version": {
+          "const": 1
+        }
+      },
+      "required": [
+        "schema_version",
+        "installation_id",
+        "domain_id",
+        "revision",
+        "entries",
+        "quarantine",
+        "overflow"
+      ],
+      "type": "object"
+    },
+    "descriptions": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "approved_at": {
+            "maximum": 1000000000000,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "description": {
+            "additionalProperties": false,
+            "properties": {
+              "capabilities": {
+                "additionalProperties": false,
+                "properties": {
+                  "fetcher_execution": {
+                    "enum": [
+                      "SUPPORTED",
+                      "UNSUPPORTED",
+                      "UNKNOWN"
+                    ]
+                  },
+                  "ssh_start": {
+                    "enum": [
+                      "SUPPORTED",
+                      "UNSUPPORTED",
+                      "UNKNOWN"
+                    ]
+                  },
+                  "ssh_status": {
+                    "enum": [
+                      "SUPPORTED",
+                      "UNSUPPORTED",
+                      "UNKNOWN"
+                    ]
+                  },
+                  "wake": {
+                    "enum": [
+                      "SUPPORTED",
+                      "UNSUPPORTED",
+                      "UNKNOWN"
+                    ]
+                  }
+                },
+                "required": [
+                  "ssh_status",
+                  "ssh_start",
+                  "wake",
+                  "fetcher_execution"
+                ],
+                "type": "object"
+              },
+              "device_kind": {
+                "enum": [
+                  "COMPUTER",
+                  "ROUTER",
+                  "SWITCH",
+                  "ACCESS_POINT",
+                  "PRINTER",
+                  "STORAGE",
+                  "OTHER",
+                  "UNKNOWN"
+                ]
+              },
+              "launch_mode": {
+                "additionalProperties": {
+                  "enum": [
+                    "DESKTOP_SESSION",
+                    "OS_SERVICE",
+                    "EXTERNAL",
+                    "UNSUPPORTED"
+                  ]
+                },
+                "propertyNames": {
+                  "enum": [
+                    "watchdog",
+                    "fetcher"
+                  ]
+                },
+                "type": "object"
+              },
+              "platform": {
+                "additionalProperties": false,
+                "properties": {
+                  "architecture": {
+                    "enum": [
+                      "X64",
+                      "ARM64",
+                      "X86",
+                      "OTHER",
+                      "UNKNOWN"
+                    ]
+                  },
+                  "os": {
+                    "enum": [
+                      "WINDOWS",
+                      "LINUX",
+                      "OTHER",
+                      "UNKNOWN"
+                    ]
+                  }
+                },
+                "required": [
+                  "os",
+                  "architecture"
+                ],
+                "type": "object"
+              },
+              "roles": {
+                "items": {
+                  "enum": [
+                    "watchdog",
+                    "fetcher"
+                  ]
+                },
+                "maxItems": 2,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "stable_ip": {
+                "enum": [
+                  "ASSIGNED",
+                  "NOT_ASSIGNED",
+                  "UNKNOWN"
+                ]
+              },
+              "transports": {
+                "items": {
+                  "enum": [
+                    "DRIVE_API",
+                    "SHARED_FOLDER",
+                    "SSH",
+                    "WOL"
+                  ]
+                },
+                "maxItems": 4,
+                "type": "array",
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "device_kind",
+              "platform",
+              "roles",
+              "launch_mode",
+              "transports",
+              "capabilities",
+              "stable_ip"
+            ],
+            "type": "object"
+          },
+          "instruction_commit": {
+            "pattern": "^[0-9a-f]{40}$",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source": {
+            "enum": [
+              "OWNER_LOCAL",
+              "REPOSITORY_SKILL"
+            ]
+          },
+          "valid_for_s": {
+            "maximum": 31536000,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "description",
+          "approved_at",
+          "valid_for_s",
+          "source",
+          "instruction_commit"
+        ],
+        "type": "object"
+      },
+      "maxProperties": 64,
+      "propertyNames": {
+        "pattern": "^[0-9a-f-]{36}$",
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "domain_id": {
+      "pattern": "^[0-9a-f-]{36}$",
+      "type": "string"
+    },
+    "installation_id": {
+      "pattern": "^[0-9a-f-]{36}$",
+      "type": "string"
+    },
+    "kind": {
+      "const": "NETWORK_TABLE"
+    },
+    "revision": {
+      "maximum": 9223372036854775807,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "table_id": {
+      "pattern": "^[0-9a-f-]{36}$",
+      "type": "string"
+    },
+    "visibility": {
+      "const": "PROTECTED_LOCAL"
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "visibility",
+    "table_id",
+    "installation_id",
+    "domain_id",
+    "revision",
+    "catalogue",
+    "descriptions",
+    "addressing"
+  ],
+  "type": "object"
+}

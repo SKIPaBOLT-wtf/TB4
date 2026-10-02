@@ -17,7 +17,10 @@
       "files": {
         "skill/tb4/operations/r2.md": "4303178a28423c1591c9288b45250bbc951b223a6414060b6ca4a11700252803",
         "skill/tb4/operations/setup-r2.md": "00e84844dc6ec425e204495c9a0fe8479823f6e3de6970e5a0eae148bb0f5d6b",
-        "skill/tb4/operations/enrollment-r2.md": "ff7731b670ba9e80702f25ebceebb8be37e727c40373bf907bfcddc4e5c9f84a"
+        "skill/tb4/operations/enrollment-r2.md": "ff7731b670ba9e80702f25ebceebb8be37e727c40373bf907bfcddc4e5c9f84a",
+        "skill/tb4/operations/device-description/SKILL.md": "b7528e9003fe9b599845f4261f1760296773a2d40af39d2fcdb453aca8faac36",
+        "protocol/network-description-v1.schema.json": "366c5944df1eac692e0480d25190beb603ef644ea9210e387c1b9bc45545291c",
+        "protocol/network-table-v1.schema.json": "f90e4b2ea1d44c24d8c51d01822e66638ff837a835c9988be25e02e374cd55b0"
       }
     }
   ]

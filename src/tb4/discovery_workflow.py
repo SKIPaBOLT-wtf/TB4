@@ -119,6 +119,16 @@ class Discovery:
         image = catalogue.private_image()
         if image != package["image"]:
             self._save({**package, "image": image})  # IDs are durable before any publication.
+        if self.setup._payload.get("network_table") is not None:
+            from .network_table_store import LocalNetworkTable
+            from .network_table import NetworkTableError
+            try:
+                LocalNetworkTable(self.setup).sync_observations(
+                    image, current_owner=lambda: bool(self._current(Action.SCAN) >= 0))
+            except NetworkTableError:
+                # Discovery is still evidence. The table reports its own pending/
+                # unavailable status; never erase observations or retry its write.
+                pass
         return outcomes
 
     def collect(self, port, *, targets=None, monotonic=time.monotonic):
@@ -238,4 +248,25 @@ class Discovery:
 
     def status(self):
         package = self._package(allow_cancelled=True)
-        return {**Catalogue(package["image"]).status(), "publication_pending": package["pending"] is not None}
+        from .network_table import notices
+        from .network_table_store import LocalNetworkTable
+        value, problem = None, None
+        if self.setup._payload.get("network_table") is not None:
+            try:
+                value = LocalNetworkTable(self.setup).read(allow_pending=True)
+                if self.setup._payload["network_table"]["pending"] is not None:
+                    problem = "NETWORK_TABLE_INSPECT_REQUIRED"
+            except Exception:
+                problem = "NETWORK_TABLE_INSPECT_REQUIRED"
+        try:
+            sample = self.clock()
+            trusted = type(sample) is ClockSample and sample.wall_trusted
+            now = sample.utc if trusted else 0
+        except Exception:
+            trusted, now = False, 0
+        if not trusted:
+            problem = problem or "NETWORK_CLOCK_UNCERTAIN"
+        descriptions = notices(package["image"], value, now=now, clock_trusted=trusted)
+        descriptions["problem"] = problem
+        return {**Catalogue(package["image"]).status(), "publication_pending": package["pending"] is not None,
+                "descriptions": descriptions}

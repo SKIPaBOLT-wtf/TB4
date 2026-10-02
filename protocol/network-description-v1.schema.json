@@ -1,0 +1,314 @@
+{
+  "$defs": {
+    "description": {
+      "additionalProperties": false,
+      "properties": {
+        "capabilities": {
+          "additionalProperties": false,
+          "properties": {
+            "fetcher_execution": {
+              "enum": [
+                "SUPPORTED",
+                "UNSUPPORTED",
+                "UNKNOWN"
+              ]
+            },
+            "ssh_start": {
+              "enum": [
+                "SUPPORTED",
+                "UNSUPPORTED",
+                "UNKNOWN"
+              ]
+            },
+            "ssh_status": {
+              "enum": [
+                "SUPPORTED",
+                "UNSUPPORTED",
+                "UNKNOWN"
+              ]
+            },
+            "wake": {
+              "enum": [
+                "SUPPORTED",
+                "UNSUPPORTED",
+                "UNKNOWN"
+              ]
+            }
+          },
+          "required": [
+            "ssh_status",
+            "ssh_start",
+            "wake",
+            "fetcher_execution"
+          ],
+          "type": "object"
+        },
+        "device_kind": {
+          "enum": [
+            "COMPUTER",
+            "ROUTER",
+            "SWITCH",
+            "ACCESS_POINT",
+            "PRINTER",
+            "STORAGE",
+            "OTHER",
+            "UNKNOWN"
+          ]
+        },
+        "launch_mode": {
+          "additionalProperties": {
+            "enum": [
+              "DESKTOP_SESSION",
+              "OS_SERVICE",
+              "EXTERNAL",
+              "UNSUPPORTED"
+            ]
+          },
+          "propertyNames": {
+            "enum": [
+              "watchdog",
+              "fetcher"
+            ]
+          },
+          "type": "object"
+        },
+        "platform": {
+          "additionalProperties": false,
+          "properties": {
+            "architecture": {
+              "enum": [
+                "X64",
+                "ARM64",
+                "X86",
+                "OTHER",
+                "UNKNOWN"
+              ]
+            },
+            "os": {
+              "enum": [
+                "WINDOWS",
+                "LINUX",
+                "OTHER",
+                "UNKNOWN"
+              ]
+            }
+          },
+          "required": [
+            "os",
+            "architecture"
+          ],
+          "type": "object"
+        },
+        "roles": {
+          "items": {
+            "enum": [
+              "watchdog",
+              "fetcher"
+            ]
+          },
+          "maxItems": 2,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "stable_ip": {
+          "enum": [
+            "ASSIGNED",
+            "NOT_ASSIGNED",
+            "UNKNOWN"
+          ]
+        },
+        "transports": {
+          "items": {
+            "enum": [
+              "DRIVE_API",
+              "SHARED_FOLDER",
+              "SSH",
+              "WOL"
+            ]
+          },
+          "maxItems": 4,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "device_kind",
+        "platform",
+        "roles",
+        "launch_mode",
+        "transports",
+        "capabilities",
+        "stable_ip"
+      ],
+      "type": "object"
+    },
+    "proposal": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "additionalProperties": false,
+          "properties": {
+            "capabilities": {
+              "additionalProperties": false,
+              "properties": {
+                "fetcher_execution": {
+                  "enum": [
+                    "SUPPORTED",
+                    "UNSUPPORTED",
+                    "UNKNOWN"
+                  ]
+                },
+                "ssh_start": {
+                  "enum": [
+                    "SUPPORTED",
+                    "UNSUPPORTED",
+                    "UNKNOWN"
+                  ]
+                },
+                "ssh_status": {
+                  "enum": [
+                    "SUPPORTED",
+                    "UNSUPPORTED",
+                    "UNKNOWN"
+                  ]
+                },
+                "wake": {
+                  "enum": [
+                    "SUPPORTED",
+                    "UNSUPPORTED",
+                    "UNKNOWN"
+                  ]
+                }
+              },
+              "required": [
+                "ssh_status",
+                "ssh_start",
+                "wake",
+                "fetcher_execution"
+              ],
+              "type": "object"
+            },
+            "device_kind": {
+              "enum": [
+                "COMPUTER",
+                "ROUTER",
+                "SWITCH",
+                "ACCESS_POINT",
+                "PRINTER",
+                "STORAGE",
+                "OTHER",
+                "UNKNOWN"
+              ]
+            },
+            "launch_mode": {
+              "additionalProperties": {
+                "enum": [
+                  "DESKTOP_SESSION",
+                  "OS_SERVICE",
+                  "EXTERNAL",
+                  "UNSUPPORTED"
+                ]
+              },
+              "propertyNames": {
+                "enum": [
+                  "watchdog",
+                  "fetcher"
+                ]
+              },
+              "type": "object"
+            },
+            "platform": {
+              "additionalProperties": false,
+              "properties": {
+                "architecture": {
+                  "enum": [
+                    "X64",
+                    "ARM64",
+                    "X86",
+                    "OTHER",
+                    "UNKNOWN"
+                  ]
+                },
+                "os": {
+                  "enum": [
+                    "WINDOWS",
+                    "LINUX",
+                    "OTHER",
+                    "UNKNOWN"
+                  ]
+                }
+              },
+              "required": [
+                "os",
+                "architecture"
+              ],
+              "type": "object"
+            },
+            "roles": {
+              "items": {
+                "enum": [
+                  "watchdog",
+                  "fetcher"
+                ]
+              },
+              "maxItems": 2,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "stable_ip": {
+              "enum": [
+                "ASSIGNED",
+                "NOT_ASSIGNED",
+                "UNKNOWN"
+              ]
+            },
+            "transports": {
+              "items": {
+                "enum": [
+                  "DRIVE_API",
+                  "SHARED_FOLDER",
+                  "SSH",
+                  "WOL"
+                ]
+              },
+              "maxItems": 4,
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "device_kind",
+            "platform",
+            "roles",
+            "launch_mode",
+            "transports",
+            "capabilities",
+            "stable_ip"
+          ],
+          "type": "object"
+        },
+        "device_id": {
+          "pattern": "^[0-9a-f-]{36}$",
+          "type": "string"
+        },
+        "expected_revision": {
+          "maximum": 9223372036854775807,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "schema_version": {
+          "const": 1
+        }
+      },
+      "required": [
+        "schema_version",
+        "expected_revision",
+        "device_id",
+        "description"
+      ],
+      "type": "object"
+    }
+  },
+  "$ref": "#/$defs/proposal",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

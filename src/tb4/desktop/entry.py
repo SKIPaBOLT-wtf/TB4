@@ -58,6 +58,7 @@ def main(fixed_role: str | None = None, argv: list[str] | None = None) -> int:
     parser.add_argument("--action", choices=("gui", "setup", "setup-smoke", "run", "validate", "check", "authorize", "bootstrap", "save", "recover-return", "probe-lock", "self-test", "gui-smoke"), default="gui")
     parser.add_argument("--profile-root", type=Path)
     parser.add_argument("--setup-root", type=Path)
+    parser.add_argument("--installation-root", type=Path)
     parser.add_argument("--report", type=Path)
     args = parser.parse_args(argv)
     if fixed_role is not None and args.role != fixed_role:
@@ -66,7 +67,9 @@ def main(fixed_role: str | None = None, argv: list[str] | None = None) -> int:
     if args.action in {"setup", "setup-smoke"} or (args.action == "gui" and not profile.config.exists()):
         from .setup_app import run_setup
         return run_setup(args.role, root=args.setup_root, smoke=args.action == "setup-smoke",
-                         smoke_report=args.report if args.action == "setup-smoke" else None)
+                         smoke_report=args.report if args.action == "setup-smoke" else None,
+                         installation_root=Path(sys.executable).parent if getattr(sys,"frozen",False)
+                         else args.installation_root)
     if args.action == "probe-lock":
         try:
             with ProfileLock(profile, "gui"), ProfileLock(profile, "worker"):

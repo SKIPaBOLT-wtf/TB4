@@ -2,3 +2,6 @@
 skill/tb4/SKILL.md text eol=lf
 skill/tb4/compatibility.json text eol=lf
 skill/tb4/operations/*.md text eol=lf
+skill/tb4/operations/device-description/SKILL.md text eol=lf
+protocol/network-description-v1.schema.json text eol=lf
+protocol/network-table-v1.schema.json text eol=lf

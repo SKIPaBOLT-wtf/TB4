@@ -3,7 +3,7 @@ revision: R2
 status_authority: docs/implementation-plan/revisions/R2/manifest.yaml
 baseline_commit: 3d3e6e0dc0eee51e694e83b37547c047cea8e355
 authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
-current_step: RP-026
+current_step: RP-027
 execution_started: true
 statuses:
 - PLANNED
@@ -1050,7 +1050,7 @@ steps:
     revalidation_required: []
   RP-026:
     title: Local network table and device-description workflow
-    status: IN_PROGRESS
+    status: VERIFIED
     definition: steps/RP-026.md
     depends_on:
     - RP-006
@@ -1070,21 +1070,43 @@ steps:
     - R15
     - R17
     - R18
-    completed_checks: []
+    completed_checks:
+    - RP-026.C1
+    - RP-026.C2
+    - RP-026.C3
+    - RP-026.C4
     evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/qualified-predecessor-handoff.md
     - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/network-authority-decision.md
     - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/network-authority-review.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/local-table-wip.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-context-windows-and-progress-milestone.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-context-windows-case-status.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/context-boundary-post-repair-pass.md
     amendments:
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
     - docs/implementation-plan/revisions/R2/amendments/RP-026/A-001-local-network-table.md
     active_attempt: A001
-    check_evidence: {}
+    check_evidence:
+      RP-026.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C1.json
+      RP-026.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C2.json
+      RP-026.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C3.json
+      RP-026.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/C4.json
     revalidation_required: []
   RP-027:
     title: Reconfiguration of an existing deployment
-    status: PLANNED
+    status: IN_PROGRESS
     definition: steps/RP-027.md
     depends_on:
     - RP-011
@@ -1102,7 +1124,7 @@ steps:
     evidence: []
     amendments:
     - docs/implementation-plan/revisions/R2/amendments/RP-026/A-001-local-network-table.md
-    active_attempt: null
+    active_attempt: A001
     check_evidence: {}
     revalidation_required: []
   RP-028:
