@@ -3933,3 +3933,62 @@ defects:
       unchanged registry. Exact fixture-only repair repeat passes all intended predicates;
       final mandatory C1-C4 rechecks remain held.
     legacy_record: null
+  DEF-058:
+    title: New guard fixtures fail coverage prerequisites and a native closed-code
+      expectation
+    status: OPEN
+    detected_in: RP-027.C1
+    suspected_origin:
+      work_item: RP-027
+      source_ref: ac587b6b6856e3c7785030720ee9c120c2fad0e5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-cases.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Run the recorded24 targets on exact new guard source: fourteen new
+        cases stop at CONFIGURATION_LEGACY_EVIDENCE_REQUIRED, one follow-up cannot
+        find the expected native pending frame, and one protection refusal asserts
+        UNAVAILABLE instead of actual NATIVE_CHECKPOINT_INSPECT_REQUIRED. Prior657
+        predicate statuses remain unchanged.'
+      failing_source: ac587b6b6856e3c7785030720ee9c120c2fad0e5
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: reacquired-fixture-is-not-initial-coverage-owner
+      claim: The reused accepted first-run fixture may already have reacquired leadership
+        beyond epoch1, so a new empty guard cannot claim initial coverage. Exact failed-native
+        fixture/current factory facts must be inspected before naming this the proven
+        cause.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-cases.json
+    - id: protection-refusal-code-expectation-too-broad
+      claim: The native protection negative case actually refuses with NATIVE_CHECKPOINT_INSPECT_REQUIRED
+        before any reported success; its UNAVAILABLE-only regex fails. Updating the
+        asserted concrete closed code must retain refusal/no-mutation assertions.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-cases.json
+    repairs: []
+    issue: null
+    regression_test: All16 failed predicate cases, exact same24-target prior regressions
+      and truthful initial-coverage versus later-owner negative fixtures.
+    resolution_evidence: []
+    notes: Unaccepted new RP027 scope only; no accepted predecessor failure is observed.
+      Do not weaken initial-epoch coverage, rewind a live/evaluated authority, hide
+      unknown work or drop failed assertions. Preserve source and all actual results;
+      inspect the exact failed native fixture/factory before repair. Full C1-C4 rechecks
+      remain held.
+    legacy_record: null

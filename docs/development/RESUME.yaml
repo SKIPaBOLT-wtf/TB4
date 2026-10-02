@@ -3,23 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_INHERITED_EFFECT_TEST
+phase: STAGED_RECONFIGURATION_C1_INHERITED_EFFECT_TEST_FAILURE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: ac587b6b6856e3c7785030720ee9c120c2fad0e5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0023
+last_verified_event: RP-027-A001-0024
 last_completed: RP-026
-next_action: Publish/read back actual exact-source outcome and case evidence before
-  dependent edits. If any case fails, record actual predicate/provenance and scoped
-  repair; if this unit passes, prepare C2 protected first-run candidate with old-profile
-  retention and C3/C4 handoff.
-verification: Shared effect/native runtime source and A-002 saved;24-target exact-source
-  test INTENT, no result yet.
+next_action: Publish/read back read-only DEF-058 diagnostic INTENT for the same failed
+  native checkpoint and actual ready/discovery fixture factory; verify exact source
+  of initial-coverage failure, preserve facts, then scoped repair/repeat.
+verification: 24-target run682cases:662PASS/16FAIL/4Linux skips, actual exit1 preserved.
+  Prior657 unchanged; DEF-058 diagnostic required.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0023
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -27,6 +25,7 @@ known_open_defects:
 - DEF-002
 - DEF-056
 - DEF-057
+- DEF-058
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
