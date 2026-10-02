@@ -54,6 +54,8 @@ jobs:
         run: python -m pytest tests/discovery/test_native_loopback.py -ra
       - name: Private BALLPARK and local owner review qualification
         run: python -m pytest tests/drive/test_ballpark_setup.py tests/drive/test_ballpark_publication.py -ra
+      - name: Distinct FETCHER enrollment and actual profile qualification
+        run: python -m pytest tests/drive/test_fetcher_profile.py tests/drive/test_fetcher_enrollment.py -ra
       - name: Complete platform regression suite
         run: python -m pytest
       - name: Build WATCHDOG

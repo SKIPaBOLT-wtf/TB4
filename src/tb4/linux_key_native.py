@@ -87,6 +87,27 @@ class HeldKey:
         f = self._native.f
         if f.fcntl(self.handle, f.F_GET_SEALS) & self._native.seals != self._native.seals:
             raise KeyAccessError(Outcome.DENIED)
+        # Timestamps may coalesce. Revoke on actual source changes even when
+        # metadata is equal; leave both source and borrowed snapshot offsets.
+        data = bytearray(MAX_KEY_BYTES + 1)
+        view = memoryview(data)
+        try:
+            count = 0
+            while count < len(data):
+                size = os.preadv(self._source, [view[count:]], count)
+                if size == 0:
+                    break
+                count += size
+            if count != self._info[6] or self._native.file_info(self._source, self._uid) != self._info:
+                raise KeyAccessError(Outcome.REVOKED)
+            version = hashlib.sha256(repr(self._info).encode("ascii"))
+            version.update(view[:count])
+            if int.from_bytes(version.digest(), "big") + 1 != self.version:
+                raise KeyAccessError(Outcome.REVOKED)
+            self._native.recheck_chain(self._chain, self._uid)
+        finally:
+            view[:] = b"\x00" * len(data)
+            view.release()
 
 
 class LinuxKeyNative:
@@ -99,7 +120,7 @@ class LinuxKeyNative:
             self.f = fcntl
             self.seals = (fcntl.F_SEAL_WRITE | fcntl.F_SEAL_GROW |
                           fcntl.F_SEAL_SHRINK | fcntl.F_SEAL_SEAL)
-            for name in ("memfd_create", "readv", "getresuid", "getresgid",
+            for name in ("memfd_create", "readv", "preadv", "getresuid", "getresgid",
                          "O_PATH", "O_NOFOLLOW", "MFD_ALLOW_SEALING"):
                 getattr(os, name)
             self._libc = ctypes.CDLL(None, use_errno=True)

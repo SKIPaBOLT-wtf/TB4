@@ -288,3 +288,98 @@ def test_actual_tmpfs_source_is_outside_selected_filesystem_scope():
             with open_selected(path)[1]:
                 pytest.fail("Unqualified tmpfs key admitted")
         assert error.value.outcome is Outcome.DENIED
+
+
+
+def coalesced_timestamps(native, key, monkeypatch):
+    actual = native.file_info
+    # Normalize only timestamp observations; real permission/ACL/mount/identity
+    # checks and every other descriptor field continue to execute.
+    def info(fd, uid):
+        current = actual(fd, uid)
+        return current[:7] + key._info[7:]
+    monkeypatch.setattr(native, "file_info", info)
+
+
+def test_held_source_content_recheck_with_coalesced_timestamps(selected, monkeypatch):
+    native, context = open_selected(selected)
+    with context as key:
+        original_version = key.version
+        coalesced_timestamps(native, key, monkeypatch)
+        selected.write_bytes(b"X" * len(CANARY))
+        assert native.file_info(key._source, os.getuid()) == key._info
+        assert os.pread(key.handle, MAX_KEY_BYTES, 0) == CANARY
+        with pytest.raises(KeyAccessError) as error:
+            key.recheck()
+        assert error.value.outcome is Outcome.REVOKED
+        with native.open_key(str(selected), os.getuid()) as fresh:
+            assert fresh.version != original_version
+            assert os.pread(fresh.handle, MAX_KEY_BYTES, 0) == b"X" * len(CANARY)
+
+
+def test_coalesced_change_denied_before_fixed_helper(selected, monkeypatch, capsys):
+    resolver, store, runner, ref, handle = enroll(selected)
+    native = store._native
+    actual = native.open_key
+    @contextmanager
+    def changed_after_admission(path, uid):
+        with actual(path, uid) as key:
+            coalesced_timestamps(native, key, monkeypatch)
+            selected.write_bytes(b"X" * len(CANARY))
+            yield key
+    monkeypatch.setattr(native, "open_key", changed_after_admission)
+    report = resolver.invoke(handle, **request()).report()
+    assert report["outcome"] == "REVOKED" and runner.calls == 0
+    assert CANARY.decode() not in json.dumps(report) and str(selected) not in json.dumps(report)
+    captured = capsys.readouterr()
+    assert captured.out == captured.err == ""
+
+
+@pytest.mark.parametrize("case", ["success", "partial", "read-error", "short-read",
+                                  "oversized", "metadata-race", "content-revoked"])
+def test_held_content_read_is_bounded_zeroed_and_preserves_offsets(selected, monkeypatch, case):
+    native, context = open_selected(selected)
+    buffers = []
+    with context as key:
+        os.lseek(key._source, 2, os.SEEK_SET)
+        os.lseek(key.handle, 3, os.SEEK_SET)
+        actual = os.preadv
+        if case == "content-revoked":
+            coalesced_timestamps(native, key, monkeypatch)
+        def read(fd, views, offset):
+            assert fd == key._source and len(views) == 1
+            buffer = views[0].obj
+            assert type(buffer) is bytearray and len(buffer) == MAX_KEY_BYTES + 1
+            assert 0 <= offset < len(buffer) and len(views[0]) == len(buffer) - offset
+            buffers.append(buffer)
+            if offset == 0 and case in {"oversized", "content-revoked"}:
+                selected.write_bytes(b"X" * (MAX_KEY_BYTES + 1 if case == "oversized" else len(CANARY)))
+            if case == "short-read" and offset:
+                return 0
+            size = actual(fd, [views[0][:2]] if case in {"partial", "short-read"} else views, offset)
+            if case == "read-error":
+                raise OSError(errno.EIO, CANARY.decode() + str(selected))
+            if case == "metadata-race":
+                selected.chmod(0o644)
+            return size
+        monkeypatch.setattr(os, "preadv", read)
+        if case in {"success", "partial"}:
+            key.recheck()
+        else:
+            with pytest.raises(KeyAccessError) as error:
+                key.recheck()
+            assert CANARY.decode() not in str(error.value) and str(selected) not in str(error.value)
+            assert error.value.outcome is (Outcome.STORE_UNAVAILABLE if case == "read-error"
+                                          else Outcome.DENIED if case == "metadata-race" else Outcome.REVOKED)
+        assert buffers and all(not any(buffer) for buffer in buffers)
+        assert os.lseek(key._source, 0, os.SEEK_CUR) == 2
+        assert os.lseek(key.handle, 0, os.SEEK_CUR) == 3
+        assert os.pread(key.handle, MAX_KEY_BYTES, 0) == CANARY
+    assert all(not any(buffer) for buffer in buffers)
+
+
+def test_missing_positioned_mutable_read_fails_closed(selected, monkeypatch):
+    monkeypatch.delattr(os, "preadv")
+    with pytest.raises(KeyAccessError):
+        LinuxKeyNative()
+    assert selected.read_bytes() == CANARY

@@ -271,3 +271,15 @@ with all reviewed PASS receipts, original matching INTENT/OUTCOME and artifacts.
 That historical proof does not accept the new attempt or remove its holds. A
 later separate defect in the same reopened attempt uses its own later INTENT;
 the first reopening still establishes all historical snapshots and impact.
+
+An affected active dependent that has never been accepted may be explicitly
+suspended before reopening its accepted prerequisite, using the closed
+`reconciled_unaccepted` repair record described in
+`../implementation-plan/revisions/R2/amendments/RP-025/A-001-unaccepted-dependent-reconciliation.md`.
+Publish and verify its matching suspension INTENT/RECORDED OUTCOME first, settle
+all earlier actions, and preserve the complete public unaccepted snapshot,
+attempt/WIP and full revalidation holds. The dependent becomes BLOCKED with no
+fabricated accepted history; accepted prerequisites/dependents still reopen in
+new attempts with their original acceptance snapshots. Unrecorded or partial
+reconciliation, accepted work recast as unaccepted, and default concurrent
+takeover remain forbidden. This grants no live runtime authority.

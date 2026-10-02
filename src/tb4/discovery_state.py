@@ -81,8 +81,8 @@ def catalogue_record(row):
     body = row["body"]
     require(row["retention"] == "RETAINED" and type(body) is dict
             and {"artifacts", "enrollment"} <= set(body)
-            and set(body) <= {"artifacts", "enrollment", "discovery", "ballpark"}
-            and body["enrollment"] == "UNENROLLED" and type(body["artifacts"]) is dict
+            and set(body) <= {"artifacts", "enrollment", "discovery", "ballpark", "fetcher"}
+            and type(body["artifacts"]) is dict
             and set(body["artifacts"]) == {"input", "output"}, "DISCOVERY_FOREIGN_CATALOGUE")
     from .drive.commissioning import Allocation
     for ref in body["artifacts"].values():
@@ -95,6 +95,8 @@ def catalogue_record(row):
         from .ballpark_records import expand
         require("discovery" in body, "DISCOVERY_FOREIGN_CATALOGUE")
         expand(body["ballpark"], body["discovery"])
+    from .enrollment_records import validate_extension
+    validate_extension(body)
     return body
 
 

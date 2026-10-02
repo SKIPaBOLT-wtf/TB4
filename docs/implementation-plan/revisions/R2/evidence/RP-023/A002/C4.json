@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "item": "RP-023",
+  "check": "RP-023.C4",
+  "attempt": "A002",
+  "source_ref": "a6b6dfaf728de283991ec8a34ac2c4a93d51f443",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect the exact qualified source and concrete assertions for this predicate, preserve original A001 meaning, and consume completed native/platform/common evidence. Validate the own-attempt receipt and complete actual-main history using the unchanged checkpoint helper.",
+  "procedure": "Read discovery_catalogue.py, discovery_native.py, discovery_state.py, discovery_workflow.py and named catalogue/collection/loopback/persistent-publication assertions. Consume final exact-source CI, both OS full suites, native protected persistence and frozen/setup/install qualification; do not repeat network operations or builds.",
+  "expected": "Verify discovery updates existing records without creating per-device runtime files, changing OS names or reserving addresses implicitly.",
+  "observed": "Publication is limited to existing bounded catalogue/quarantine records and guards original artifact, enrollment, BALLPARK and FETCHER profile fields. New assignment requires related slots free; refresh retains UNKNOWN work. Exact durable plan validation rejects changed owner/authority/generation/slot/artifact. Lost replies and restart use INSPECT without resend; stale/forced takeover and takeover after private save block subsequent old-owner publication without any sink acknowledgement barrier. Public projections omit protected endpoints, names and hardware hints; no OS-name or DHCP mutation port exists.",
+  "exit_code": 0,
+  "platform_scope": "Actual Windows x64 and Ubuntu Linux x64 native loopback, protected settings and full/frozen suites; routed/VPN and multi-interface policy scenarios are explicitly synthetic.",
+  "negative_cases": [
+    "test_existing_identity_refresh_preserves_unknown_work",
+    "test_retained_work_blocks_new_identity_but_is_never_erased",
+    "test_lost_reply_restart_is_read_only_then_confirms_same_plan",
+    "test_stale_or_forced_takeover_stops_old_publication_without_all_sink_barrier",
+    "test_takeover_after_pending_save_blocks_cas_and_keeps_exact_inspection",
+    "test_restored_pending_plan_cannot_expand_scope_or_rebind",
+    "test_discovery_refresh_preserves_enrollment_and_effective_profile",
+    "test_older_local_projection_preserves_newer_shared_network_evidence"
+  ],
+  "unverified_scope": "Actual Windows/Linux loopback and native protected persistence are qualified. Routed/VPN/multiple-interface topology uses explicit synthetic fixtures; real home-network collection, authenticated production peer, physical power loss and release/deployment remain later gates.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Preserve previous protected identities, aliases, bindings, quarantine and pending UNKNOWN operations. Revert only a confirmed public observation revision while stopped; never reassign a trusted target, rename an OS, reserve an address or replay a write.",
+  "intent_event": "RP-023-A002-0001",
+  "outcome_event": "RP-023-A002-0002",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/combined-source-invariant-review.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-023/A001/reviewed-validation.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-023/A002/reviewed-validation.md"
+  ]
+}

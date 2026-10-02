@@ -1,0 +1,7 @@
+# Exact committed CRLF review
+
+Read-only diagnosis at checkpoint d91cf411b5a00a1cdb75ea3a478f0fd075ac4c04 and sourceb4fd7c5158a14cdbb73eebd2b95f2b78947beddc. The initial default whitespace failure in final-source-default-whitespace-failure.md is retained, not converted to a successful invocation.
+
+Exact raw public Git blobs establish WORK_INSTRUCTION285/285, checkpoint.py386/386, defects.py372/372 and test_checkpoint.py323/323 CRLF/LF counts. Their earlier accepted base71b blobs are LF; each inspected current file has zero spaces/tabs before its CRLF. `git -c core.whitespace=cr-at-eol diff --check 71b8eac7aa8e6df58e32db46094a57a3b60598a0 HEAD` returned0 for the entire branch. This per-command declared Windows CRLF review retains ordinary whitespace-error checks and changes no global or repository configuration. Earlier local runner diff checks were unstaged-worktree checks, not fullbranch proof; they are not recast as the same procedure.
+
+Together the exact bytes and fullbranch qualified exit0 establish default CR-at-EOL interpretation, not a hidden content defect. Code equality to the hosted checkout and original native regression AST was independently established before the default diagnostic; current and full history remained PASS20 and scanner clean. No published journal/evidence blob, code/assertion or source was rewritten; final source/full platform tests continue at the same exact tuple.

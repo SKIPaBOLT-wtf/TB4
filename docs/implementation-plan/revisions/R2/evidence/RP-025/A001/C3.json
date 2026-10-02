@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "item": "RP-025",
+  "check": "RP-025.C3",
+  "attempt": "A001",
+  "source_ref": "a6b6dfaf728de283991ec8a34ac2c4a93d51f443",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "First acceptance review of the unchanged qualified source and concrete assertions for this predicate, after current prerequisite reacceptance. Use complete real checkpoint/main-history/registry/projection guards; no historical acceptance is fabricated.",
+  "procedure": "Inspect enrollment_workflow.py, fetcher_enrollment.py, fetcher_profile.py, enrollment_records.py and actual dedicated/native/mixed-role assertions. Consume 79 dedicated tests passed on both OS, full/native/Qt/frozen common evidence and separately qualified helper/semantic-gate repairs. Match own first-acceptance INTENT/OUTCOME and review privacy/rollback before coherent publication.",
+  "expected": "Test duplicate enrollment, reinstallation, changed device identity, conflicting aliases, insufficient capacity and stale profile revisions.",
+  "observed": "Same confirmed report is read-only idempotent; reinstallation cannot take a prior identity. Duplicate installation, changed device/alias/capacity, stale/gapped/future profile and malformed durable owner/authority/pin/after-image refuse without remapping or truncation. Exact protected operation is saved before CAS; failed private save or peer/owner change leaves the same inspection-only plan. Lost reply, cancellation, restart and immediate takeover never resend it. Revocation preserves unrelated UNKNOWN work and generations; complete 64-slot profiles fit the existing budgets.",
+  "exit_code": 0,
+  "platform_scope": "Actual Windows x64 and Ubuntu Linux x64 native runtime/protected identity/credential persistence, 79 dedicated enrollment/profile cases on each OS, full platform suites and isolated WATCHDOG/FETCHER frozen/setup/install qualification. Peer/authority faults use explicit synthetic trusted adapters.",
+  "negative_cases": [
+    "test_same_confirmed_report_is_idempotent_but_reinstall_cannot_take_its_identity",
+    "test_conflicting_or_stale_report_preserves_confirmed_state",
+    "test_same_installation_cannot_enroll_second_approved_device_or_rebind_local_choices",
+    "test_lost_reply_restart_only_inspects_exact_operation_after_takeover",
+    "test_unsent_durable_intent_cancelled_restart_remains_unknown_without_resend",
+    "test_persisted_pending_tamper_is_rejected_before_recovery",
+    "test_peer_change_after_durable_intent_is_inspection_only",
+    "test_whole_record_headroom_rejection_does_not_reset_or_truncate",
+    "test_all64_preallocated_targets_keep_complete_profiles_within_existing_budgets",
+    "test_revocation_preserves_unknown_work_history_and_prevents_old_binding"
+  ],
+  "unverified_scope": "Production authenticated peer/transport and integrated setup/runtime deployment are later gates. Actual instruction profile remains UNRELEASED/default-deny and execution_authorized is always false. No physical power-loss, real home topology or field ARM64 qualification is inferred.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Revoke only an explicitly confirmed FETCHER enrollment with preserved slot generation and history. Keep previous identity/profile, unrelated artifacts/BALLPARK and exact UNKNOWN private plans; no copying WATCHDOG credentials or destructive reset/resend.",
+  "intent_event": "RP-025-A001-0074",
+  "outcome_event": "RP-025-A001-0075",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-025/A001/reviewed-acceptance.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/combined-source-invariant-review.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-025/A001/source-review.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-025/A001/helper-reference-validation.md"
+  ]
+}

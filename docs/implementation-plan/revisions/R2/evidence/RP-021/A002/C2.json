@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "item": "RP-021",
+  "check": "RP-021.C2",
+  "attempt": "A002",
+  "source_ref": "a6b6dfaf728de283991ec8a34ac2c4a93d51f443",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect exact source, unchanged original native assertions and new controlled real-kernel content/privacy exits against each stated invariant; review actual complete platform and frozen lifecycle evidence, not counts.",
+  "procedure": "Completed source-identical actual CI/Progress/Desktop qualification and local native/policy/privacy/semantic/source/history checks, as recorded in final-combined-hosted-qualification.md, local-native-validation.md and combined-source-invariant-review.md. Real prospective receipt/current/main-history validation precedes coherent remote acceptance.",
+  "expected": "Desktop/headless existing-key access is explicit and bounded; unsupported agent/SecretService/auto/unlock paths refuse with no plaintext configuration fallback.",
+  "observed": "Actual finalLinux43native/Windows15native and protected34/30+4opposite-platformskip, fullCI2367pass22skip4knownDEF002xfail, LinuxDesktop2387pass17skip4knownxfail, WindowsDesktop2313pass91skip4knownxfail; Qt75/71+4POSIXskip, loopback2, both-role frozen/core/GUI/setup/install/uninstall/profilePASS. Local actualLinux156passes and source/private/failure/wipe/offset controls pass; no unchanged original native failure remains. Named invariant review and boundaries are in referenced evidence.",
+  "exit_code": 0,
+  "platform_scope": "Actual Ubuntu Linux x64 and Windows x64 hosted plus actual WSL Linux x86_64 and local Windows native tests. Opposite native platform skips are covered by native jobs; no fieldARM64/XFS/ReFS or livehome qualification.",
+  "negative_cases": [
+    "Unsupported modes and unavailable native positioned mutable read reject.",
+    "Missing/locked/permission-denied sources do not prompt forever or fall back."
+  ],
+  "unverified_scope": "Existing-key selection only; actual authenticated remotehelper/peer/passphrase parsing, unlocked Linuxdesktop, fieldARM64/XFS/ReFS/physicalpowerloss and productionrelease/live migration remain separate later gates. Current instruction profileUNRELEASED/defaultDeny. No forensic RAM erasure, mandatory Linux locking or retroactive cancellation of admitted effects.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Revoke only specifically selected installation-local handle and close owned descriptors; retain external keys/permissions/profiles/protected operations/history. Preserve oldA001source/receipts; no live reinstallation or workload replay.",
+  "intent_event": "RP-021-A002-0033",
+  "outcome_event": "RP-021-A002-0034",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/combined-source-invariant-review.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/local-native-validation.md"
+  ]
+}

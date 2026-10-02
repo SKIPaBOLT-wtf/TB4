@@ -20,6 +20,84 @@ def fixture_base(root, expected):
         verify_checkout_base(root, expected)
 
 
+def source_reference_fixture(root):
+    from tests.development.test_source_evidence_correction import rows
+    history = rows()
+    for path in ('src/tb4/synthetic.py', 'tests/test_synthetic.py'):
+        save(root, path, 'synthetic = True\n')
+    for path in ('docs/synthetic.md', 'docs/source-receipt.md'):
+        save(root, path, 'Synthetic public source checkpoint\n')
+    save(root, JOURNAL+'/RP-001/A001/events.jsonl', history)
+    cursor = load(root, RESUME)
+    cursor.update(last_verified_event=history[-1]['event_id'], unsettled_intents=[])
+    save(root, RESUME, cursor)
+    assert validate(root, reachable=lambda _: True)['verified'] == 0
+    git_fixture(root, 'init')
+    git_fixture(root, 'add', '.')
+    git_fixture(root, '-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid',
+                'commit', '-m', 'synthetic public source references')
+    next_event = event(4)
+    next_event['action_id'] = 'CHECK-SOURCE-STAGING'
+    return git_fixture(root, 'rev-parse', 'HEAD'), next_event
+
+
+def test_source_reference_history_survives_prepare_revalidate_and_readback(ledger, tmp_path):
+    head, row = source_reference_fixture(ledger)
+    before = (ledger/JOURNAL/'RP-001/A001/events.jsonl').read_bytes()
+    from tools.development.checkpoint import GitBackend
+    public_prefix = GitBackend(ledger).run('show', head+':'+JOURNAL+'/RP-001/A001/events.jsonl')
+    plan = prepare(ledger, row, 'work/fixture', head, reachable=lambda _: True)
+    validate_plan(ledger, plan, reachable=lambda _: True)
+    assert plan.files[JOURNAL+'/RP-001/A001/events.jsonl'].startswith(public_prefix)
+    assert all(path.startswith('docs/') for path in plan.files)
+    remote = Remote()
+    remote.head = head
+    assert send(ledger, plan, remote, tmp_path/'source-reference-pending.json')['state'] == 'VERIFIED'
+    assert remote.writes == 1 and remote.files == plan.files
+    assert (ledger/JOURNAL/'RP-001/A001/events.jsonl').read_bytes() == before
+
+
+@pytest.mark.parametrize('case', ['missing', 'untracked', 'modified', 'git-symlink', 'oversized', 'non-utf8', 'private-path'])
+def test_source_reference_stage_rejects_unsafe_or_nonpublic_inputs(ledger, case):
+    head, row = source_reference_fixture(ledger)
+    source = ledger/'src/tb4/synthetic.py'
+    if case == 'missing': source.unlink()
+    elif case == 'modified': source.write_text('synthetic = False\n')
+    elif case == 'untracked':
+        git_fixture(ledger, 'rm', '--cached', 'src/tb4/synthetic.py')
+    elif case == 'git-symlink':
+        blob = git_fixture(ledger, 'hash-object', 'src/tb4/synthetic.py')
+        git_fixture(ledger, 'update-index', '--cacheinfo', '120000,'+blob+',src/tb4/synthetic.py')
+    elif case == 'oversized':
+        source.write_text('X'*2_000_001)
+        git_fixture(ledger, 'add', 'src/tb4/synthetic.py')
+    elif case == 'non-utf8':
+        source.write_bytes(b'\xff'*12)
+        git_fixture(ledger, 'add', 'src/tb4/synthetic.py')
+    elif case == 'private-path':
+        history = [json.loads(line) for line in (ledger/JOURNAL/'RP-001/A001/events.jsonl').read_text().splitlines()]
+        history[1]['evidence'][0] = history[2]['source_evidence_correction']['old_value'][0] = 'private/secret.py'
+        save(ledger, JOURNAL+'/RP-001/A001/events.jsonl', history)
+        git_fixture(ledger, 'add', 'docs')
+    if case in {'untracked', 'git-symlink', 'oversized', 'non-utf8', 'private-path'}:
+        git_fixture(ledger, '-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid',
+                    'commit', '-m', 'synthetic negative source state')
+        head = git_fixture(ledger, 'rev-parse', 'HEAD')
+    with pytest.raises(LedgerError):
+        prepare(ledger, row, 'work/fixture', head, reachable=lambda _: True)
+
+
+def test_source_reference_change_after_prepare_blocks_serialized_publication(ledger, tmp_path):
+    head, row = source_reference_fixture(ledger)
+    plan = prepare(ledger, row, 'work/fixture', head, reachable=lambda _: True)
+    (ledger/'src/tb4/synthetic.py').write_text('synthetic = False\n')
+    remote = Remote()
+    remote.head = head
+    with pytest.raises(LedgerError, match='SOURCE_REFERENCE_DIRTY'):
+        send(ledger, plan, remote, tmp_path/'source-reference-dirty.json')
+    assert remote.writes == remote.commits == 0
+
+
 def prepare(*args, **kwargs):
     return real_prepare(*args, base_verifier=fixture_base, **kwargs)
 

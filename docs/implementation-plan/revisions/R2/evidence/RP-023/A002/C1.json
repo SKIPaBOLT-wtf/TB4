@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "item": "RP-023",
+  "check": "RP-023.C1",
+  "attempt": "A002",
+  "source_ref": "a6b6dfaf728de283991ec8a34ac2c4a93d51f443",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect the exact qualified source and concrete assertions for this predicate, preserve original A001 meaning, and consume completed native/platform/common evidence. Validate the own-attempt receipt and complete actual-main history using the unchanged checkpoint helper.",
+  "procedure": "Read discovery_catalogue.py, discovery_native.py, discovery_state.py, discovery_workflow.py and named catalogue/collection/loopback/persistent-publication assertions. Consume final exact-source CI, both OS full suites, native protected persistence and frozen/setup/install qualification; do not repeat network operations or builds.",
+  "expected": "Discover only authorized interfaces/subnets and record evidence source/freshness without assuming ICMP or local broadcast is available everywhere.",
+  "observed": "Scope.permits requires the exact selected interface index and approved subnet; NativeNeighbors checks current native name/index before and after bounded reads. Collection uses chosen methods and a total deadline, and failed/empty/overflow collection cannot manufacture an ONLINE/OFFLINE observation. Cache presence stays UNKNOWN; stale/future/uncertain evidence cannot refresh reachability. Discovery._current checks the current role before every trusted helper invocation.",
+  "exit_code": 0,
+  "platform_scope": "Actual Windows x64 and Ubuntu Linux x64 native loopback, protected settings and full/frozen suites; routed/VPN and multi-interface policy scenarios are explicitly synthetic.",
+  "negative_cases": [
+    "test_scope_requires_both_exact_interface_and_authorized_subnet",
+    "test_cache_is_not_current_reachability_proof",
+    "test_old_or_uncertain_time_cannot_refresh_catalogue",
+    "test_changed_interface_discards_entire_collection",
+    "test_empty_scope_and_disabled_method_never_call_os",
+    "test_total_deadline_refuses_remaining_queries",
+    "test_actual_loopback_identity_and_cache_read_only",
+    "test_actual_mismatched_loopback_identity_refuses_before_neighbor_read"
+  ],
+  "unverified_scope": "Actual Windows/Linux loopback and native protected persistence are qualified. Routed/VPN/multiple-interface topology uses explicit synthetic fixtures; real home-network collection, authenticated production peer, physical power loss and release/deployment remain later gates.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Preserve previous protected identities, aliases, bindings, quarantine and pending UNKNOWN operations. Revert only a confirmed public observation revision while stopped; never reassign a trusted target, rename an OS, reserve an address or replay a write.",
+  "intent_event": "RP-023-A002-0001",
+  "outcome_event": "RP-023-A002-0002",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/combined-source-invariant-review.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-023/A001/reviewed-validation.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-023/A002/reviewed-validation.md"
+  ]
+}

@@ -304,3 +304,167 @@ def test_historical_resolution_cannot_use_forged_or_missing_proof(accepted,case)
     elif case=='missing-artifact':update(accepted,path,lambda r:r.update(artifacts=['docs/absent.md']))
     elif case=='no-receipt':update(accepted,MANIFEST,lambda m:m['steps']['RP-001']['acceptance_history'][0]['check_evidence'].update({'RP-001.C1':[]}))
     with pytest.raises(LedgerError):validate(accepted,reachable=lambda _:True)
+
+
+def unaccepted_dependent(root):
+    """New synthetic work, never derived from a claimed accepted RP-004."""
+    manifest = load(root, MANIFEST)
+    child = json.loads(json.dumps(manifest['steps']['RP-003']).replace('RP-003', 'RP-004'))
+    child.update(status='IN_PROGRESS', active_attempt='A001', depends_on=['RP-003'],
+                 completed_checks=[], check_evidence={}, evidence=[],
+                 revalidation_required=[f'RP-004.C{i}' for i in range(1, 5)])
+    manifest['steps']['RP-004'] = child
+    manifest['current_step'] = 'RP-004'
+    save(root, MANIFEST, manifest)
+    save(root, PLAN+'/steps/RP-004.md', '\n'.join(f'- [ ] **RP-004.C{i}** - Fixture' for i in range(1, 5)))
+    update(root, PLAN+'/requirements.yaml', lambda r: r['requirements']['R19']['steps'].append('RP-004'))
+    index = root/PLAN/'CHECKLIST.md'
+    index.write_text(index.read_text()+'\n- [ ] [RP-004 - Fixture](steps/RP-004.md)\n')
+    rows = [json.loads(json.dumps(event(n, kind, related, result)).replace('RP-001', 'RP-004'))
+            for n, kind, related, result in [(1, 'INTENT', None, 'PENDING'),
+                (2, 'OUTCOME', 'RP-001-A001-0001', 'RECORDED'),
+                (3, 'INTENT', None, 'PENDING'), (4, 'OUTCOME', 'RP-001-A001-0003', 'RECORDED')]]
+    rows[0]['action_id'] = rows[1]['action_id'] = 'IMPLEMENT-CHILD'
+    rows[2]['action_id'] = rows[3]['action_id'] = 'SUSPEND-UNACCEPTED-FOR-PREREQUISITE-REPAIR'
+    save(root, JOURNAL+'/RP-004/A001/events.jsonl', rows)
+    update(root, RESUME, lambda c: c.update(work_item='RP-004', check='RP-004.C1', attempt='A001',
+        journal=JOURNAL+'/RP-004/A001/events.jsonl', last_verified_event=rows[-1]['event_id'], unsettled_intents=[]))
+    assert validate(root, reachable=lambda _: True)['verified'] == 3
+    return {'RP-004': dict(attempt='A001', suspend_intent=rows[2]['event_id'],
+                          suspend_outcome=rows[3]['event_id'], frozen_step=copy.deepcopy(child))}
+
+
+def reconciled_repair(root, records):
+    return open_repair(load(root, MANIFEST), load(root, REGISTRY), 'DEF-001', 'RP-001',
+                       'RP-001-A002-0001', reconciled_unaccepted=records)
+
+
+def test_explicit_reconciliation_preserves_wip_and_publish_then_reaccepts(accepted, tmp_path):
+    records = unaccepted_dependent(accepted)
+    old_manifest, old_registry = load(accepted, MANIFEST), load(accepted, REGISTRY)
+    manifest, registry = reconciled_repair(accepted, records)
+    child = manifest['steps']['RP-004']
+    assert child == {**records['RP-004']['frozen_step'], 'status': 'BLOCKED'}
+    assert 'acceptance_history' not in child and child['active_attempt'] == 'A001'
+    for item in ('RP-001', 'RP-002', 'RP-003'):
+        assert manifest['steps'][item]['acceptance_history'][0]['check_evidence'] == old_manifest['steps'][item]['check_evidence']
+    assert load(accepted, MANIFEST) == old_manifest
+    validate_registry_history(old_registry, registry, old_manifest, manifest)
+    plan = prepare(accepted, repair_event(), 'work/repair', SHA, manifest=manifest, defects=registry, reachable=lambda _: True)
+    validate_plan(accepted, plan, reachable=lambda _: True)
+    remote = Remote()
+    assert send(accepted, plan, remote, tmp_path/'reconcile-pending.json')['state'] == 'VERIFIED'
+    apply(accepted, plan)
+    assert validate(accepted, reachable=lambda _: True)['verified'] == 0
+    # Later ordinary work is allowed; suspension is checked at its original freeze.
+    for item in ('RP-001', 'RP-002', 'RP-003', 'RP-004'):
+        manifest = load(accepted, MANIFEST)
+        manifest['current_step'] = item
+        step = manifest['steps'][item]
+        child_resume = item == 'RP-004'
+        if item != 'RP-001':
+            step['status'] = 'IN_PROGRESS'
+            if child_resume:
+                intent = json.loads(json.dumps(event(5)).replace('RP-001', item))
+                intent['action_id'] = 'RESUME-RECONCILED-CHILD'
+            else:
+                intent = repair_event(item=item)
+            apply(accepted, prepare(accepted, intent, 'work/repair', SHA, manifest=manifest, reachable=lambda _: True))
+        else:
+            intent = repair_event()
+        evidence = {}
+        for i in range(1, 5):
+            receipt = copy.deepcopy(load(accepted, PLAN+f'/evidence/RP-001/A001/C{i}.json'))
+            receipt.update(item=item, check=f'{item}.C{i}', attempt=step['active_attempt'],
+                           intent_event=intent['event_id'], outcome_event=f"{item}-{step['active_attempt']}-{'0006' if child_resume else '0002'}")
+            path = PLAN+f"/evidence/{item}/{step['active_attempt']}/C{i}.json"
+            evidence[path] = json.dumps(receipt)
+            step['completed_checks'].append(f'{item}.C{i}')
+            step['check_evidence'][f'{item}.C{i}'] = [path]
+            step['evidence'].append(path)
+        step.update(status='VERIFIED', revalidation_required=[])
+        if child_resume:
+            outcome = json.loads(json.dumps(event(6, 'OUTCOME', 'RP-001-A001-0005', 'PASS')).replace('RP-001', item))
+            outcome['action_id'] = intent['action_id']
+        else:
+            outcome = repair_event(2, 'OUTCOME', item)
+        result = prepare(accepted, outcome, 'work/repair', SHA, manifest=manifest, evidence=evidence, reachable=lambda _: True)
+        validate_plan(accepted, result, reachable=lambda _: True)
+        apply(accepted, result)
+    assert validate(accepted, reachable=lambda _: True)['verified'] == 4
+    assert not load(accepted, MANIFEST)['steps']['RP-004'].get('acceptance_history')
+
+
+def test_reconciliation_history_base_may_predate_first_dependent_start(accepted):
+    records = unaccepted_dependent(accepted)
+    old_manifest, old_registry = load(accepted, MANIFEST), load(accepted, REGISTRY)
+    manifest, registry = reconciled_repair(accepted, records)
+    old_manifest['steps']['RP-004'].update(status='PLANNED', active_attempt=None, revalidation_required=[])
+    validate_registry_history(old_registry, registry, old_manifest, manifest)
+
+
+def test_default_concurrency_guard_still_rejects_neveraccepted_dependent(accepted):
+    unaccepted_dependent(accepted)
+    with pytest.raises(LedgerError, match='REPAIR_CONCURRENT_WORK_REQUIRES_RECONCILIATION'):
+        repair(accepted)
+
+
+@pytest.mark.parametrize('case', ['empty', 'extra', 'wrong-attempt', 'partial-checks', 'receipts',
+    'history', 'no-hold', 'foreign-hold', 'snapshot-mismatch', 'unknown-field', 'accepted-status'])
+def test_unaccepted_reconciliation_candidate_is_strict(accepted, case):
+    records = unaccepted_dependent(accepted)
+    record = records['RP-004']
+    frozen = record['frozen_step']
+    if case == 'empty': records.clear()
+    elif case == 'extra': records['RP-001'] = copy.deepcopy(record)
+    elif case == 'wrong-attempt': record['attempt'] = 'A002'
+    elif case == 'partial-checks': frozen['completed_checks'] = ['RP-004.C1']
+    elif case == 'receipts': frozen['check_evidence'] = {'RP-004.C1': []}
+    elif case == 'history': frozen['acceptance_history'] = [dict(attempt='A001', completed_checks=[], check_evidence={}, evidence=[], defect='DEF-001')]
+    elif case == 'no-hold': frozen['revalidation_required'] = []
+    elif case == 'foreign-hold': frozen['revalidation_required'] = ['RP-003.C1']
+    elif case == 'snapshot-mismatch': frozen['title'] = 'Different WIP'
+    elif case == 'unknown-field': record['allow_takeover'] = True
+    elif case == 'accepted-status': frozen['status'] = 'VERIFIED'
+    with pytest.raises(LedgerError): reconciled_repair(accepted, records)
+
+
+@pytest.mark.parametrize('case', ['missing-intent', 'missing-outcome', 'wrong-action', 'wrong-source',
+    'wrong-check', 'wrong-attempt', 'wrong-related', 'passing-outcome', 'late-outcome', 'unsettled', 'partial-holds'])
+def test_reconciliation_requires_exact_settled_prior_suspension(accepted, case):
+    from tools.development.defects import validate_registry
+    from tools.development.ledger import _journals
+    records = unaccepted_dependent(accepted)
+    manifest, registry = reconciled_repair(accepted, records)
+    events, _, _ = _journals(accepted, lambda _: True)
+    opening = repair_event()
+    events[opening['event_id']] = opening
+    intent, outcome = events['RP-004-A001-0003'], events['RP-004-A001-0004']
+    if case == 'missing-intent': del events[intent['event_id']]
+    elif case == 'missing-outcome': del events[outcome['event_id']]
+    elif case == 'wrong-action': intent['action_id'] = outcome['action_id'] = 'UNRELATED-SUSPENSION'
+    elif case == 'wrong-source': outcome['source_ref'] = 'b'*40
+    elif case == 'wrong-check': outcome['check'] = 'RP-004.C2'
+    elif case == 'wrong-attempt': outcome['attempt'] = 'A002'
+    elif case == 'wrong-related': outcome['related_event'] = 'RP-004-A001-0001'
+    elif case == 'passing-outcome': outcome['outcome'] = 'PASS'
+    elif case == 'late-outcome': outcome['at'] = '2026-09-30T18:00:01Z'
+    elif case == 'unsettled': events['RP-004-A001-0002']['outcome'] = 'UNKNOWN'
+    elif case == 'partial-holds':
+        repair_record = registry['defects']['DEF-001']['repairs'][-1]
+        repair_record['rechecks']['RP-004']['checks'] = ['RP-004.C1']
+        repair_record['reconciled_unaccepted']['RP-004']['frozen_step']['revalidation_required'] = ['RP-004.C1']
+    with pytest.raises(LedgerError): validate_registry(accepted, registry, manifest, lambda _: True, events)
+
+
+@pytest.mark.parametrize('case', ['accepted-base', 'changed-dependency', 'omitted-impact', 'fake-child-history', 'lost-root-history'])
+def test_reconciliation_cannot_forge_or_erase_acceptance_impact(accepted, case):
+    records = unaccepted_dependent(accepted)
+    old_manifest, old_registry = load(accepted, MANIFEST), load(accepted, REGISTRY)
+    manifest, registry = reconciled_repair(accepted, records)
+    if case == 'accepted-base': old_manifest['steps']['RP-004']['status'] = 'VERIFIED'
+    elif case == 'changed-dependency': registry['defects']['DEF-001']['repairs'][0]['reconciled_unaccepted']['RP-004']['frozen_step']['depends_on'] = []
+    elif case == 'omitted-impact': del registry['defects']['DEF-001']['repairs'][0]['rechecks']['RP-003']
+    elif case == 'fake-child-history': manifest['steps']['RP-004']['acceptance_history'] = [dict(attempt='A001', completed_checks=[], check_evidence={}, evidence=[], defect='DEF-001')]
+    elif case == 'lost-root-history': manifest['steps']['RP-001']['acceptance_history'] = []
+    with pytest.raises(LedgerError): validate_registry_history(old_registry, registry, old_manifest, manifest)

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "item": "RP-025",
+  "check": "RP-025.C4",
+  "attempt": "A001",
+  "source_ref": "a6b6dfaf728de283991ec8a34ac2c4a93d51f443",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "First acceptance review of the unchanged qualified source and concrete assertions for this predicate, after current prerequisite reacceptance. Use complete real checkpoint/main-history/registry/projection guards; no historical acceptance is fabricated.",
+  "procedure": "Inspect enrollment_workflow.py, fetcher_enrollment.py, fetcher_profile.py, enrollment_records.py and actual dedicated/native/mixed-role assertions. Consume 79 dedicated tests passed on both OS, full/native/Qt/frozen common evidence and separately qualified helper/semantic-gate repairs. Match own first-acceptance INTENT/OUTCOME and review privacy/rollback before coherent publication.",
+  "expected": "Verify WATCHDOG summarizes the actual profile including disabled capabilities and credential availability for its own installation.",
+  "observed": "Bounded summary filters eligible FETCHER roles before pagination and refuses a hidden bound FETCHER on an unapproved role. It reports the actual profile, disabled capabilities and conservative freshness/liveness, always with execution_authorized false. Credential availability comes only from this WATCHDOG installation's current purpose/target/trust-bound resolver; foreign resolver, revoked key and copied binding cannot imply availability. Public views omit handles, paths, trust material and installation UUID. Mixed WATCHDOG/FETCHER/combined/all-WATCHDOG summaries and discovery refresh preserve legitimate profiles.",
+  "exit_code": 0,
+  "platform_scope": "Actual Windows x64 and Ubuntu Linux x64 native runtime/protected identity/credential persistence, 79 dedicated enrollment/profile cases on each OS, full platform suites and isolated WATCHDOG/FETCHER frozen/setup/install qualification. Peer/authority faults use explicit synthetic trusted adapters.",
+  "negative_cases": [
+    "test_summary_pages_only_initially_approved_fetcher_roles",
+    "test_summary_cannot_hide_bound_fetcher_on_unapproved_role",
+    "test_native_own_credentials_availability_is_not_copied_or_exposed",
+    "test_discovery_refresh_preserves_enrollment_and_effective_profile",
+    "test_profile_revision_and_freshness_are_effective_not_a_ready_guess"
+  ],
+  "unverified_scope": "Production authenticated peer/transport and integrated setup/runtime deployment are later gates. Actual instruction profile remains UNRELEASED/default-deny and execution_authorized is always false. No physical power-loss, real home topology or field ARM64 qualification is inferred.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Revoke only an explicitly confirmed FETCHER enrollment with preserved slot generation and history. Keep previous identity/profile, unrelated artifacts/BALLPARK and exact UNKNOWN private plans; no copying WATCHDOG credentials or destructive reset/resend.",
+  "intent_event": "RP-025-A001-0074",
+  "outcome_event": "RP-025-A001-0075",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-025/A001/reviewed-acceptance.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/combined-source-invariant-review.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-025/A001/source-review.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-025/A001/helper-reference-validation.md"
+  ]
+}
