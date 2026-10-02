@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_INITIAL_BOOTSTRAP_FIXTURE_REPAIR
+phase: STAGED_RECONFIGURATION_C1_INITIAL_BOOTSTRAP_FIXTURE_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: ac587b6b6856e3c7785030720ee9c120c2fad0e5
+source_commit: 95ee0e15cf467af4bbeb8b13a8c4d1868d135db3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0027
+last_verified_event: RP-027-A001-0028
 last_completed: RP-026
-next_action: Save/read back exact two-file fixture source, publish OUTCOME, then verify
-  fresh exact24-target repeat INTENT and execute original682 predicates plus the new
-  actual-bootstrap native predicate in a new owned absent fixture root.
-verification: Proven fixture epoch/coded-refusal mismatch; two-file repair INTENT
-  only, application guards unchanged.
+next_action: Publish/read back fresh exact24-target repeat-test INTENT; run original682
+  predicates plus new initial-acquisition native predicate in a newly allocated owned
+  absent fixture root, preserve actual process/case results before any further repair.
+verification: Two-file fixture-only source saved/read back; true initial bootstrap
+  recipe untested, application guards unchanged.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0027
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
