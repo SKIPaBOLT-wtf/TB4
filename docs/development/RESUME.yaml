@@ -1,25 +1,25 @@
 schema_version: 1
 revision: R2
 work_item: RP-027
-check: RP-027.C2
+check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_CUT_REPEAT_PASSED
+phase: STAGED_RECONFIGURATION_C3_NATIVE_DOCS_ROOT_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 8ffdbfeaf4fd5c5a4b3f3c158368c6096bc24ce0
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0045
+last_verified_event: RP-027-A001-0046
 last_completed: RP-026
-next_action: Publish/read back a separately scoped C3 same-existing-authority root
-  relocation source INTENT. Implement exact fixed-object/native directory rebind plans,
-  protected durable unknown inspection, metadata-only no-retry moves, role/fallback/crash/access
-  invariants and candidate root readback integration; preserve source before targeted
-  tests.
-verification: Exact720-predicate27-target Windows repeat716PASS/4Linuxskip; native
-  same-candidate cut recovery proven; C1-C4 not accepted.
+next_action: Preserve/read back source and publish OUTCOME; separately verified targeted
+  native-Docs relocation/old first-run/720-regression tests with actual cases/negative
+  failures, then qualified folder move and final same-authority rebind/candidate promotion
+  units.
+verification: C2 repeat716PASS/4Linuxskip remotely recorded; C3 bounded native Docs
+  root move WAL source INTENT pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0046
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
