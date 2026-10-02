@@ -1,32 +1,23 @@
 schema_version: 1
-revision: R2
-work_item: RP-026
-check: RP-026.C1
-attempt: A001
-phase: FINAL_REVIEW
-source_branch: work/rp-025-a001
-source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
-journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0003
-last_completed: RP-025
-next_action: Launch one final lightweight local qualification, publish its actual
-  session identity, inspect the same session and fresh PR metadata, and publish measured
-  outcome. Then separately document PR body/readiness and exact-head merge.
-verification: Final lightweight progress and complete actual-main history on unchanged
-  already qualified public source; exact current PR/reviews/protection readback and
-  rollback/privacy review before ordinary merge.
-execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
+revision: "R2"
+work_item: "RP-026"
+check: "RP-026.C1"
+attempt: "A001"
+phase: "FINAL_REVIEW"
+source_branch: "work/rp-025-a001"
+source_commit: "a6b6dfaf728de283991ec8a34ac2c4a93d51f443"
+journal: "docs/development/journal/RP-026/A001/events.jsonl"
+last_verified_event: "RP-026-A001-0004"
+last_completed: "RP-025"
+next_action: "Inspect this same local session; read fresh PR/main/reviews and complete hosted qualification metadata, then record the measured final review outcome before PR readiness/merge."
+verification: "Final lightweight progress and complete actual-main history on unchanged already qualified public source; exact current PR/reviews/protection readback and rollback/privacy review before ordinary merge."
+execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-026-A001-0003
+unsettled_intents: ["RP-026-A001-0003"]
 expected_user_action: null
 blocking_decisions: []
-known_open_defects:
-- DEF-001
-- DEF-002
-rollback: Revoke only a specifically confirmed new enrollment; retain slot generation/history,
-  prior approved bindings and UNKNOWN operations. Do not copy another installation
-  credential/profile, reset authority or replay an uncertain write.
-next_implementation_step: RP-025
-next_implementation_check: RP-025.C4
+known_open_defects: ["DEF-001","DEF-002"]
+rollback: "Revoke only a specifically confirmed new enrollment; retain slot generation/history, prior approved bindings and UNKNOWN operations. Do not copy another installation credential/profile, reset authority or replay an uncertain write."
+next_implementation_step: "RP-025"
+next_implementation_check: "RP-025.C4"
