@@ -3,31 +3,30 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: PUBLICATION_TARGET_AUTHORITY_RECORDED
-source_branch: main
-source_commit: 7ca9e1576266783c2190078138893098bf4b3409
+phase: STAGED_RECONFIGURATION_SOURCE_INSPECTION_RECORDED
+source_branch: feat/rp027-staged-reconfiguration
+source_commit: ed974c57ce99e54b3a28da79d212c86f07951ec7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0004
+last_verified_event: RP-027-A001-0005
 last_completed: RP-026
-next_action: 'Complete the existing RP-027-A001-0003 inspection: create/read back
-  feat/rp027-staged-reconfiguration from the current verified main record, safely
-  acquire its clean tracking checkout and inspect exact commissioning/authority/work/result/revision
-  contracts; record concrete invariants and the next bounded implementation unit.'
-verification: Same rejected documentation publication reconciled with explicit owner
-  continuation; exact ref/files verified. Existing RP-027 inspection INTENT remains
-  pending; no implementation acceptance.
+next_action: Publish/read back RP-027 design/C1 implementation INTENT for explicit
+  unreleased same-authority amendment/closed maintenance codec, deterministic unresolved-work
+  inspection, protected evidence and ordinary admission fencing with targeted regression
+  tests; preserve exact WIP before any test action.
+verification: RP-027 source inspection recorded; one owned clean feature branch; no
+  check accepted or live operation.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0003
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
 - DEF-001
 - DEF-002
-rollback: Keep the exact main/candidate/source history and previous rejection/stop
-  records. All refs remain non-force; no live configuration, authority or workload
-  changes occur.
+rollback: Only a new owned Git branch/read-only source inspection. Preserve all branches,
+  local records and historical evidence; do not force refs, reset working copies,
+  adopt existing unrelated branches, touch native deployment state or replay an uncertain
+  operation.
 next_implementation_step: RP-027
 next_implementation_check: RP-027.C1
