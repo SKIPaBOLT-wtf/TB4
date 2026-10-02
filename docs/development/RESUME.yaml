@@ -1,24 +1,25 @@
 schema_version: 1
 revision: R2
 work_item: RP-027
-check: RP-027.C1
+check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_EFFECT_TARGETED_REPEAT_PASSED
+phase: STAGED_RECONFIGURATION_C2_PROTECTED_CANDIDATE_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 7d571ea43040aeb0b1eae2fff3853387093c1242
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0034
+last_verified_event: RP-027-A001-0035
 last_completed: RP-026
-next_action: Publish/read back a C2 protected-candidate source INTENT; implement actual
-  first-run Setup/Prerequisites review in separate protected staged profile with immutable
-  original archive and exact same-authority binding; old active profile stays unchanged.
-  Preserve source/outcome before targeted native/negative tests.
-verification: Windows exact24-target/unchanged683-predicate effect repeat PASS679/4Linuxskip;
-  C1-C4 unaccepted.
+next_action: Publish/read back exact bounded source OUTCOME, then targeted candidate
+  plus inherited24-target/native first-run/desktop tests in a fresh owned absent fixture
+  root. Resolve failures through recorded exact reproductions; C3 root changes and
+  C4 actual monotonic promotion remain separate.
+verification: C1 targeted679PASS/4Linuxskip remotely recorded; C2 protected candidate
+  source INTENT, no accepted C1-C4.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0035
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
