@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-025"
 check: "RP-025.C4"
 attempt: "A001"
-phase: "VALIDATION"
+phase: "IMPLEMENTATION"
 source_branch: "work/rp-025-a001"
 source_commit: "276ce3a035b66c08cab20976dde911cfc3e5f506"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0068"
+last_verified_event: "RP-025-A001-0069"
 last_completed: "RP-020"
-next_action: "Publish minimal test-only correction INTENT: assert exact committed public Git blob prefix and independently unchanged local fixture bytes, preserving every old history/source guard; retest full helper/realgraph gates."
+next_action: "Publish test-only checkpoint, then same targeted/fulldevelopment/current/history/privacy/realgraph retest with fresh owned dirs."
 verification: "Qualify native held source-content revocation and all transitive affected checks on exact repaired source; preserve immutable snapshot and private/native trust boundaries."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-025-A001-0069"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046","DEF-047"]
