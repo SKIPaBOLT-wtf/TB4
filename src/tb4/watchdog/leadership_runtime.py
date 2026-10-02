@@ -13,6 +13,7 @@ import secrets
 from tb4.drive.authority_transaction import OwnerGuard, RecordMutation, reconcile
 from tb4.drive.docs_authority import AuthorityError, require
 from tb4.drive.leadership import ClockSample, ElectionMutation, Grant, Leadership, transition_id
+from tb4.configuration_contract import ConfigurationError, require_dispatch
 
 
 class Action(StrEnum):
@@ -75,6 +76,7 @@ class NativeWatchdogContext:
     commissioning: bool = False
     transition: object = lambda: secrets.token_hex(32)
     status: object = lambda state, reason: None
+    configuration_revision: object = lambda: None  # trusted local active revision, not shared input
 
 
 class NativeWatchdogRuntime:
@@ -85,7 +87,8 @@ class NativeWatchdogRuntime:
         require(store.installation_id == self.leadership.actor
                 and store.binding == self.leadership.backend.binding, "LOCAL_INSTALLATION_BINDING")
         require(type(context.commissioning) is bool and all(callable(x) for x in
-                (context.capabilities, context.clock, context.next_work, context.transition, context.status)), "NATIVE_PORTS")
+                (context.capabilities, context.clock, context.next_work, context.transition,
+                 context.status, context.configuration_revision)), "NATIVE_PORTS")
         self._active = False
         self._since = None
         self._due = self._renew_at = self._last_clock = None
@@ -219,6 +222,7 @@ class NativeWatchdogRuntime:
         if not self.leadership._owns(observed.leader, observed.request, state.grant):
             self._status(False, "OLDER_DOG_DETECTED")
             raise AuthorityError("OWNER_SUPERSEDED")
+        require_dispatch(observed.snapshot.document(), self.context.configuration_revision())
         return state, observed.snapshot
 
     def _receipt(self, state, receipt, *, mutation=...):
@@ -282,6 +286,11 @@ class NativeWatchdogRuntime:
             work = self.context.next_work()
             if work is not None:
                 self.perform(work)
+        except ConfigurationError as error:
+            if str(error) == "CONFIGURATION_MAINTENANCE":
+                self._status(True, "CONFIGURATION_MAINTENANCE")
+            else:
+                self._status(False, "CONFIGURATION_REVISION_REQUIRED")
         except Exception:
             self._status(False, "AUTHORITY_UNAVAILABLE")
 

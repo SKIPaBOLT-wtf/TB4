@@ -16,10 +16,12 @@ from .drive.commissioning import frozen_plan, restored_plan
 from .exchange_layout import empty_document, encoded, validate_document
 from .instructions import check_boundary
 from .watchdog.leadership_runtime import Action
+from .configuration_contract import configuration
 
 
 def changes(document, draft, choices):
     """Pure exact revision plan; byte budgets apply before any write-ahead save."""
+    require(configuration(document) is None, "CONFIGURATION_TRANSACTION_REQUIRED")
     spec, _ = storage_spec(choices["storage"])
     require(validate_document(document) == spec.capacity and document["domain_id"] == spec.domain_id,
             "BALLPARK_AUTHORITY_BINDING")

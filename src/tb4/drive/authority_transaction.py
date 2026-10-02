@@ -12,6 +12,7 @@ from tb4.command_contract import (binding, compact_record, expand_leaf, operatio
                                   validate_request, validate_result, validate_shape, ContractError)
 from tb4.exchange_layout import MAX_GENERATION, encoded, validate_document
 from .docs_authority import AuthorityError, WriteResult, require
+from tb4.configuration_contract import configuration
 
 
 @dataclass(frozen=True, repr=False)
@@ -50,6 +51,12 @@ class RecordMutation:
         require(set(changes) <= records.keys() and protect <= records.keys()
                 and not set(changes) & protect, "MUTATION_SLOTS")
         require(not {"global.leadership", "global.force_request"} & set(changes), "ELECTION_SEPARATE")
+        config = configuration(document)
+        require(config is None or config["phase"] != "MAINTENANCE", "CONFIGURATION_MAINTENANCE")
+        if config is not None:
+            require(not {"global.settings", "global.registry"} & set(changes),
+                    "CONFIGURATION_TRANSACTION_REQUIRED")
+            protect = protect | {"global.settings"}
         proposed = copy.deepcopy(document)
         proposed["records"].update(copy.deepcopy(changes))
         validate_document(proposed)
@@ -70,6 +77,10 @@ class RecordMutation:
             return "CONFLICT", None
         records = document["records"]
         protected, before, after = (json.loads(v) for v in (self.protected, self.before, self.after))
+        config = configuration(document)
+        if config is not None and (config["phase"] == "MAINTENANCE"
+                                  or "global.settings" not in protected):
+            return "CONFLICT", None
         if any(encoded(records[k]) != encoded(value) for k,value in protected.items()):
             return "CONFLICT", None
         if all(encoded(records[k]) == encoded(value) for k,value in after.items()):

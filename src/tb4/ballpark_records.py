@@ -8,6 +8,7 @@ from .ballpark import catalogue, require, validate
 from .ballpark_setup import GUIDANCE, digest, validate_pin
 from .exchange_layout import encoded, validate_document
 from .timing_contract import TimingProfile
+from .configuration_contract import configuration
 
 ROLES = ("watchdog", "fetcher")
 SYSTEMS = ("WINDOWS", "LINUX", "OTHER", "UNKNOWN")
@@ -92,7 +93,10 @@ def shared(document):
     require(row["generation"] == meta["revision"]
             and row["operation_id"] == settings["operation_id"] == meta["provenance"]["decision_id"]
             and settings["generation"] == meta["revision"], "BALLPARK_RECORD")
-    require(type(settings["body"]) is dict and set(settings["body"]) == {"descriptor_state", "revision", "timing"}
+    configuration(document)
+    require(type(settings["body"]) is dict and set(settings["body"]) in (
+            {"descriptor_state", "revision", "timing"},
+            {"descriptor_state", "revision", "timing", "configuration"})
             and settings["body"]["descriptor_state"] == "VALIDATED"
             and type(settings["body"]["revision"]) is int
             and settings["body"]["revision"] == meta["revision"], "BALLPARK_RECORD")
