@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "item": "RP-026",
+  "check": "RP-026.C3",
+  "attempt": "A001",
+  "source_ref": "2575de12ffed36a2e3e739710a9183dd0bfa437d",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect final source and actual invariant assertions, same-source native Windows/Linux/Qt plus unfiltered platform regressions and packages; match original INTENT0053 and terminal OUTCOME0056. Counts alone are not acceptance.",
+  "procedure": "Consume current isolated native/helper boundary reproduction, actual371-case targeted/status receipt and four source-proven hosted jobs. Review schema, native staging/owner locking, helper context, UI/installer, privacy, instruction compatibility, configuration bounds and rollback. Apply unchanged real checkpoint/current/main-history/registry/projection guards in one coordinated acceptance.",
+  "expected": "Observation-only missing/inadequate description reporting and deterministic pinned repository SKILL/helper/local approval, preserving enrollment and shared current-owner authority.",
+  "observed": "Actual Discovery.observe feeds the protected native table using the full unchanged current-owner/local/capability/clock callback immediately before write. Scoped same-store/thread/duration read access to the held native setup port avoids reentry while forbidding writes and expired/other-thread borrowing. Repository-owned additional SKILL plus installed pointer only use a compatible pinned schema/guidance closure. DescriptionAssistant.begin binds one successful device/revision, rejects another device/rebased revision, clears failed/finished candidate contexts and requires exact owner digest. Real Qt editor approves optional addressing and moves table locally. No new FETCHER enrollment, authenticated capability, BALLPARK grant or all-sink takeover acknowledgement is introduced.",
+  "exit_code": 0,
+  "platform_scope": "Actual Windows x64 and Ubuntu Linux x64 native protected storage/identity/credential/loopback and Qt, full suites and both frozen role/build/isolated installer checks. Provider, discovery topology and clocks use explicitly synthetic commissioned adapters.",
+  "negative_cases": [
+    "test_actual_discovery_owner_callback_updates_native_table_without_lock_reentry",
+    "test_native_owner_read_scope_refuses_writes_and_expired_port",
+    "test_other_thread_cannot_borrow_native_owner_read_scope",
+    "test_pinned_helper_formats_safe_draft_and_requires_exact_owner_digest",
+    "test_begun_helper_cannot_switch_to_another_existing_device",
+    "test_begun_helper_cannot_silently_rebase_to_a_new_table_revision",
+    "test_failed_new_begin_requires_a_new_valid_context",
+    "test_failed_new_proposal_cannot_confirm_the_previous_candidate",
+    "test_confirmed_description_requires_fresh_begin_for_the_next_revision",
+    "test_guidance_is_not_replaced_with_memory_or_invented_sources",
+    "test_real_local_editor_reports_missing_approves_optional_ip_and_moves_table"
+  ],
+  "unverified_scope": "Production host binding for the additional SKILL remains RP-051; current instruction profile is UNRELEASED/default-deny. No live topology/router provisioning, real-provider pilot, field ARM64/ReFS/XFS, physical power-loss or independently downloaded artifact hash is inferred. Actual installation/runtime migration and full reset remain separately authorized future operations.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Keep last verified table/selection and exact pending candidate; inspect before completion, retain prior location/data, refuse foreign/unknown destinations and current-owner loss. Preserve all old sources/failed hypotheses/evidence. No router/host reset, workload replay, credential copying or live deployment.",
+  "intent_event": "RP-026-A001-0053",
+  "outcome_event": "RP-026-A001-0056",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-context-windows-and-progress-milestone.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-context-windows-case-status.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/context-boundary-post-repair-pass.md",
+    "docs/NETWORK_TABLE_CONTRACT.md"
+  ]
+}

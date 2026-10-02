@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "item": "RP-026",
+  "check": "RP-026.C2",
+  "attempt": "A001",
+  "source_ref": "2575de12ffed36a2e3e739710a9183dd0bfa437d",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect final source and actual invariant assertions, same-source native Windows/Linux/Qt plus unfiltered platform regressions and packages; match original INTENT0053 and terminal OUTCOME0056. Counts alone are not acceptance.",
+  "procedure": "Consume current isolated native/helper boundary reproduction, actual371-case targeted/status receipt and four source-proven hosted jobs. Review schema, native staging/owner locking, helper context, UI/installer, privacy, instruction compatibility, configuration bounds and rollback. Apply unchanged real checkpoint/current/main-history/registry/projection guards in one coordinated acceptance.",
+  "expected": "Protected installation-default/custom table location, native persistence/restart, conflicting revision refusal, exact readback and staged relocation preserving prior selection/data.",
+  "observed": "Installed default uses the actual executable parent plus network-table leaf; development supplies explicit installation root. Owner selection lives in the native protected setup frame with exact table/domain/directory binding and pending transaction. CREATE/MOVE/UPDATE intent is durable before native I/O. Verified target data/binding/readback precedes selection commit; previous table bytes remain. Windows and Linux native ACL/mode/identity/restart/custom move, competing lock and changed directory cases pass. Faultable staging/promotion/readback/source/destination races retain exact pending intent and inspect the same candidate; foreign/empty destinations are not adopted.",
+  "exit_code": 0,
+  "platform_scope": "Actual Windows x64 and Ubuntu Linux x64 native protected storage/identity/credential/loopback and Qt, full suites and both frozen role/build/isolated installer checks. Provider, discovery topology and clocks use explicitly synthetic commissioned adapters.",
+  "negative_cases": [
+    "test_default_custom_location_and_restart_keep_the_exact_table",
+    "test_custom_initial_location_never_creates_default",
+    "test_stale_owner_proposal_and_competing_settings_writer_cannot_overwrite",
+    "test_failed_update_recovers_the_same_complete_candidate_without_second_write",
+    "test_failed_target_readback_preserves_prior_root_then_inspects_same_written_table",
+    "test_existing_destination_is_never_overwritten",
+    "test_target_creation_race_leaves_pending_and_does_not_adopt_empty_foreign_folder",
+    "test_changed_source_after_move_intent_is_not_replaced_or_falsely_confirmed",
+    "test_native_default_restart_approval_custom_move_and_prior_data",
+    "test_native_table_permission_loss_is_closed_and_not_repaired",
+    "test_native_existing_location_identity_swap_is_refused"
+  ],
+  "unverified_scope": "Production host binding for the additional SKILL remains RP-051; current instruction profile is UNRELEASED/default-deny. No live topology/router provisioning, real-provider pilot, field ARM64/ReFS/XFS, physical power-loss or independently downloaded artifact hash is inferred. Actual installation/runtime migration and full reset remain separately authorized future operations.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Keep last verified table/selection and exact pending candidate; inspect before completion, retain prior location/data, refuse foreign/unknown destinations and current-owner loss. Preserve all old sources/failed hypotheses/evidence. No router/host reset, workload replay, credential copying or live deployment.",
+  "intent_event": "RP-026-A001-0053",
+  "outcome_event": "RP-026-A001-0056",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-context-windows-and-progress-milestone.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-context-windows-case-status.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/context-boundary-post-repair-pass.md",
+    "docs/NETWORK_TABLE_CONTRACT.md"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "item": "RP-026",
+  "check": "RP-026.C4",
+  "attempt": "A001",
+  "source_ref": "2575de12ffed36a2e3e739710a9183dd0bfa437d",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect final source and actual invariant assertions, same-source native Windows/Linux/Qt plus unfiltered platform regressions and packages; match original INTENT0053 and terminal OUTCOME0056. Counts alone are not acceptance.",
+  "procedure": "Consume current isolated native/helper boundary reproduction, actual371-case targeted/status receipt and four source-proven hosted jobs. Review schema, native staging/owner locking, helper context, UI/installer, privacy, instruction compatibility, configuration bounds and rollback. Apply unchanged real checkpoint/current/main-history/registry/projection guards in one coordinated acceptance.",
+  "expected": "Drift, missing/stale/unknown/ambiguous/malformed/denied/conflicting/interrupted cases refuse safely, with no false provisioning, implicit grant or uncertain action replay.",
+  "observed": "Unverified hint collisions remain quarantined; only permitted trusted endpoint rebinding expires the addressing fact. Unknown platform/roles and stale/future/uncertain clocks yield truthful description/status facts. Secret/topology/instruction extra fields, duplicate keys, malformed identities, revoked guidance and stale owner/digest/revision refuse without writes. Actual native owner refusal preserves pending UPDATE and prior table; WATCHDOG reports its inspection requirement and repeated status reads do not replay/clear it. Linux installer inspection failure42/denied directories preserve custom/default/nested/retained table data and prior binaries. Exact checkout catalog bytes remain canonical LF without hash normalization or global Git config change. All prior failed hypotheses/runs are preserved; seven new defects are source-qualified.",
+  "exit_code": 0,
+  "platform_scope": "Actual Windows x64 and Ubuntu Linux x64 native protected storage/identity/credential/loopback and Qt, full suites and both frozen role/build/isolated installer checks. Provider, discovery topology and clocks use explicitly synthetic commissioned adapters.",
+  "negative_cases": [
+    "test_stale_unknown_platform_and_noncomputer_descriptions_are_distinct",
+    "test_observations_recheck_current_owner_at_the_actual_native_write",
+    "test_unknown_setup_operations_preserve_all_private_payloads",
+    "test_native_owner_callback_refusal_restores_store_and_retains_pending",
+    "test_native_discovery_reports_pending_table_update_without_replay",
+    "test_device_instruction_injection_does_not_change_pinned_guidance_or_state",
+    "test_withdrawn_eligibility_rejects_candidate_without_local_write",
+    "test_editor_keeps_captured_revision_and_private_provider_errors_closed",
+    "test_linux_installer_preserves_installation_local_table_before_any_replacement",
+    "test_linux_installer_refuses_when_local_data_inspection_is_unavailable",
+    "test_repository_catalog_consistent_but_deliberately_not_live_eligible"
+  ],
+  "unverified_scope": "Production host binding for the additional SKILL remains RP-051; current instruction profile is UNRELEASED/default-deny. No live topology/router provisioning, real-provider pilot, field ARM64/ReFS/XFS, physical power-loss or independently downloaded artifact hash is inferred. Actual installation/runtime migration and full reset remain separately authorized future operations.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Keep last verified table/selection and exact pending candidate; inspect before completion, retain prior location/data, refuse foreign/unknown destinations and current-owner loss. Preserve all old sources/failed hypotheses/evidence. No router/host reset, workload replay, credential copying or live deployment.",
+  "intent_event": "RP-026-A001-0053",
+  "outcome_event": "RP-026-A001-0056",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-context-windows-and-progress-milestone.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-context-windows-case-status.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/context-boundary-post-repair-pass.md",
+    "docs/NETWORK_TABLE_CONTRACT.md"
+  ]
+}

@@ -37,7 +37,7 @@ This is a projection of `manifest.yaml`. Mark a step/check complete only through
 - [x] [RP-023 - Scoped discovery and persistent catalogue identity](steps/RP-023.md) - prerequisites: RP-005, RP-012, RP-017, RP-022.
 - [x] [RP-024 - Private BALLPARK creation with SKILL assistance](steps/RP-024.md) - prerequisites: RP-005, RP-007, RP-019, RP-022, RP-023.
 - [x] [RP-025 - FETCHER enrollment and effective profile publication](steps/RP-025.md) - prerequisites: RP-005, RP-006, RP-019, RP-022, RP-024.
-- [ ] [RP-026 - Local network table and device-description workflow](steps/RP-026.md) - prerequisites: RP-006, RP-007, RP-012, RP-020, RP-021, RP-022, RP-023, RP-024, RP-025.
+- [x] [RP-026 - Local network table and device-description workflow](steps/RP-026.md) - prerequisites: RP-006, RP-007, RP-012, RP-020, RP-021, RP-022, RP-023, RP-024, RP-025.
 - [ ] [RP-027 - Reconfiguration of an existing deployment](steps/RP-027.md) - prerequisites: RP-011, RP-017, RP-022, RP-024, RP-025, RP-026.
 - [ ] [RP-028 - Explicit full reset and re-enrollment](steps/RP-028.md) - prerequisites: RP-006, RP-012, RP-019, RP-025, RP-027.
 - [ ] [RP-029 - Ongoing BALLPARK evolution and stale-view handling](steps/RP-029.md) - prerequisites: RP-007, RP-023, RP-024, RP-025, RP-026, RP-027.

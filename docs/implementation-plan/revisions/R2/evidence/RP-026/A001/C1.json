@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "item": "RP-026",
+  "check": "RP-026.C1",
+  "attempt": "A001",
+  "source_ref": "2575de12ffed36a2e3e739710a9183dd0bfa437d",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect final source and actual invariant assertions, same-source native Windows/Linux/Qt plus unfiltered platform regressions and packages; match original INTENT0053 and terminal OUTCOME0056. Counts alone are not acceptance.",
+  "procedure": "Consume current isolated native/helper boundary reproduction, actual371-case targeted/status receipt and four source-proven hosted jobs. Review schema, native staging/owner locking, helper context, UI/installer, privacy, instruction compatibility, configuration bounds and rollback. Apply unchanged real checkpoint/current/main-history/registry/projection guards in one coordinated acceptance.",
+  "expected": "Closed deterministic table/description schema with stable identity, separate observed/approved facts, provenance/freshness, optional stable-IP status and only concrete action-specific addressing prerequisites.",
+  "observed": "Versioned closed bounded schemas and stronger semantic checks enforce canonical identities, alias/endpoints, domain/installation/table binding, exact role/launch keys and permitted sources. Canonical sorted ASCII encoding rejects duplicate/nonfinite/extra/secret/instruction values. Notices use opaque identities/aliases and fixed field names, omitting addresses/names/hints. OWNER_DECLARATION is distinct from trusted FIXED_HELPER; unknown/not-assigned never blocks otherwise eligible work. Only an explicitly requested action's fresh endpoint-bound helper fact can satisfy a addressing prerequisite, without authorization.",
+  "exit_code": 0,
+  "platform_scope": "Actual Windows x64 and Ubuntu Linux x64 native protected storage/identity/credential/loopback and Qt, full suites and both frozen role/build/isolated installer checks. Provider, discovery topology and clocks use explicitly synthetic commissioned adapters.",
+  "negative_cases": [
+    "test_generated_machine_schemas_and_canonical_round_trip",
+    "test_secret_topology_and_instruction_fields_are_not_description_inputs",
+    "test_invalid_proposal_identity_revision_and_types",
+    "test_duplicate_nonfinite_and_unbounded_proposals_fail_closed",
+    "test_optional_addressing_does_not_block_adequate_description_or_other_prerequisites",
+    "test_fresh_verified_addressing_is_scoped_to_only_that_action_and_endpoint",
+    "test_untrusted_clock_does_not_present_zero_timestamp_as_fresh",
+    "test_semantic_table_identity_and_schema_errors_are_closed"
+  ],
+  "unverified_scope": "Production host binding for the additional SKILL remains RP-051; current instruction profile is UNRELEASED/default-deny. No live topology/router provisioning, real-provider pilot, field ARM64/ReFS/XFS, physical power-loss or independently downloaded artifact hash is inferred. Actual installation/runtime migration and full reset remain separately authorized future operations.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Keep last verified table/selection and exact pending candidate; inspect before completion, retain prior location/data, refuse foreign/unknown destinations and current-owner loss. Preserve all old sources/failed hypotheses/evidence. No router/host reset, workload replay, credential copying or live deployment.",
+  "intent_event": "RP-026-A001-0053",
+  "outcome_event": "RP-026-A001-0056",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/reviewed-acceptance.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-source-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-context-windows-and-progress-milestone.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/complete-context-windows-case-status.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-026/A001/context-boundary-post-repair-pass.md",
+    "docs/NETWORK_TABLE_CONTRACT.md"
+  ]
+}
