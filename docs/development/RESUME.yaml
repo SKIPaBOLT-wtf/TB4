@@ -7,14 +7,14 @@ phase: "VALIDATION"
 source_branch: "work/rp-025-a001"
 source_commit: "a6b6dfaf728de283991ec8a34ac2c4a93d51f443"
 journal: "docs/development/journal/RP-021/A002/events.jsonl"
-last_verified_event: "RP-021-A002-0026"
+last_verified_event: "RP-021-A002-0027"
 last_completed: "RP-020"
-next_action: "Inspect same exec10086 and allowlisted task status; record actual targeted/protocol/development/history/source results before a new hosted matrix."
+next_action: "Publish/read-back one new final CI/Progress/Desktop qualification INTENT on exactsourcea6b6dfa; record actual IDs and inspect same native/Qt/full/frozen/both-role/install/artifact jobs before any acceptance."
 verification: "Qualify native held source-content revocation and all transitive affected checks on exact repaired source; preserve immutable snapshot and private/native trust boundaries."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-021-A002-0025"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046","DEF-047","DEF-048"]
