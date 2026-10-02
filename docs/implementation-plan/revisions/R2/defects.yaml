@@ -3220,7 +3220,18 @@ defects:
       result: UNTESTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
-    repairs: []
+    repairs:
+    - item: RP-026
+      attempt: A001
+      intent_event: RP-026-A001-0019
+      rechecks:
+        RP-026:
+          attempt: A001
+          checks:
+          - RP-026.C1
+          - RP-026.C2
+          - RP-026.C3
+          - RP-026.C4
     issue: null
     regression_test: tests.drive.test_network_table_schema.test_fresh_verified_addressing_is_scoped_to_only_that_action_and_endpoint;
       tests.drive.test_network_table_schema.test_stale_unknown_platform_and_noncomputer_descriptions_are_distinct;
@@ -3266,7 +3277,18 @@ defects:
       result: UNTESTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
-    repairs: []
+    repairs:
+    - item: RP-026
+      attempt: A001
+      intent_event: RP-026-A001-0019
+      rechecks:
+        RP-026:
+          attempt: A001
+          checks:
+          - RP-026.C1
+          - RP-026.C2
+          - RP-026.C3
+          - RP-026.C4
     issue: null
     regression_test: tests.drive.test_network_table_schema.test_fresh_verified_addressing_is_scoped_to_only_that_action_and_endpoint;
       tests.drive.test_network_table_schema.test_stale_unknown_platform_and_noncomputer_descriptions_are_distinct;
