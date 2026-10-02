@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-021"
 check: "RP-021.C4"
 attempt: "A002"
-phase: "VALIDATION"
+phase: "REVIEW"
 source_branch: "work/rp-025-a001"
 source_commit: "b4fd7c5158a14cdbb73eebd2b95f2b78947beddc"
 journal: "docs/development/journal/RP-021/A002/events.jsonl"
-last_verified_event: "RP-021-A002-0011"
+last_verified_event: "RP-021-A002-0012"
 last_completed: "RP-020"
-next_action: "Inspect these same run/job IDs, verify actual checkout/source equivalence, then capture complete job logs and artifact digests before acceptance."
+next_action: "Read back updated PR34 metadata, record outcome, and continue inspecting the same required qualification runs."
 verification: "Qualify native held source-content revocation and all transitive affected checks on exact repaired source; preserve immutable snapshot and private/native trust boundaries."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-021-A002-0010"]
+unsettled_intents: ["RP-021-A002-0010","RP-021-A002-0012"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046","DEF-047"]
