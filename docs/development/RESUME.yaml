@@ -3,27 +3,29 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_FOUNDATION_TEST_RUN
+phase: STAGED_RECONFIGURATION_C1_FOUNDATION_TEST_SESSION_FAILED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0009
+last_verified_event: RP-027-A001-0010
 last_completed: RP-026
-next_action: Inspect this same session/structured report. Publish actual source-linked
-  test OUTCOME and any discovered defect before repair; never launch a duplicate test
-  run based on missing completion metadata.
-verification: Exact single foundation run launched; inspect LOCAL-SESSION-45805 and
-  its private structured result, not a new test run.
+next_action: 'Publish/read back one scoped isolated-fixture qualification INTENT:
+  select a new absent child inside a freshly owned task directory, add --basetemp
+  only to the task runner, and rerun the same exact source/631-case targets without
+  changing test predicates or existing temp directories.'
+verification: Overall first foundation session FAIL exit1 despite627 case passes;
+  preserve exact run and qualify task-isolated temp harness before any new source
+  unit.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0008
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
 - DEF-001
 - DEF-002
+- DEF-056
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before

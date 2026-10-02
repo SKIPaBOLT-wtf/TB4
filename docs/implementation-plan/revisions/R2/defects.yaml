@@ -3781,3 +3781,54 @@ defects:
       Later exact-source reviewed acceptance at RP-026-A001-0056 resolves this new
       scope only; original failed/green tests, hypotheses, provenance and repair intents
       remain immutable. Field/runtime release limits are unchanged.
+  DEF-056:
+    title: Default pytest session cleanup reaches denied preexisting temporary state
+    status: OPEN
+    detected_in: RP-027.C1
+    suspected_origin:
+      work_item: RP-027
+      source_ref: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-session-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: Run the recorded Windows64 foundation/accepted-boundary targets without
+        a dedicated basetemp; all631 cases finish but sessionfinish cleanup of an
+        existing global pytest-current alias raises WinError5 and actual process exits1.
+      failing_source: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-session-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: default-session-cleanup-denied-alias
+      claim: Observed pytest sessionfinish traverses the existing global temporary
+        alias after all case results are written. Its protection/provenance is unknown;
+        application-source fault is not established.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-session-failure.md
+    - id: fresh-owned-fixture-root
+      claim: Explicit newly allocated absent basetemp can isolate these exact test
+        predicates without altering user/global paths or permissions.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-session-failure.md
+    repairs: []
+    issue: null
+    regression_test: Repeat exact recorded631-case target set with a fresh owned absent
+      --basetemp child, actual exit0 and identical predicate collection; preserve
+      existing denied global state.
+    resolution_evidence: []
+    notes: Test harness isolation only. No product assertion failure or application-source
+      origin is proven. Accepted predecessor hosted/native qualification is not invalidated
+      by this unfinished RP027 local runner fault. No deletion/ACL repair of preexisting
+      global temp state.
+    legacy_record: null
