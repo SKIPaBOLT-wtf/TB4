@@ -73,6 +73,8 @@ class CommissionedStorage:
             port = self.port
             require(port.spec == spec and port.root_id == spec.root_id and port.mode == spec.mode,
                     "STORAGE_UNAVAILABLE")
+            require(getattr(port,"root_transition",None) == record.get("root_transition"),
+                    "STORAGE_UNAVAILABLE")
             port.check_root()
             require(port.inspect_authority(spec, handle) == handle, "STORAGE_UNAVAILABLE")
             snapshot = port.authority(handle).read()

@@ -18,11 +18,15 @@ def private(index):
     return PrivateSettings(native)
 
 
-def system(*, profile=None, archive=None, transaction=None, environment=None, **kwargs):
+def system(*, profile=None, archive=None, transaction=None, environment=None, schemas=(), **kwargs):
     value = guarded_system(**kwargs)
     raw = (Path(__file__).parents[2]/SCHEMA).read_bytes()
     value.source.files[value.source.head][SCHEMA] = raw
     value.source.catalog["profiles"][0]["files"][SCHEMA] = hashlib.sha256(raw).hexdigest()
+    for path in schemas:
+        raw = (Path(__file__).parents[2]/path).read_bytes()
+        value.source.files[value.source.head][path] = raw
+        value.source.catalog["profiles"][0]["files"][path] = hashlib.sha256(raw).hexdigest()
     value.source.save()
     # Actual durable known-operation history in this fresh synthetic profile.
     # These fixture callbacks have no external effect and must never be replayed.

@@ -37,7 +37,8 @@ class ConnectedDocsSelection:
                 if request is not None:
                     require(request["mode"] == "NATIVE_DOCS"
                             and drive_root_id(request["location"]) == spec.root_id, "STORAGE_UNAVAILABLE")
-                port=NativeCommissioning(self.drive,self.docs,spec,llm_authorized=True)
+                port=NativeCommissioning(self.drive,self.docs,spec,llm_authorized=True,
+                                        root_transition=current.get("root_transition"))
                 return StorageSelection(current,CommissionedStorage(port))
             request=choices.get("storage_request")
             require(type(request) is dict and request["mode"] == "NATIVE_DOCS", "STORAGE_UNAVAILABLE")

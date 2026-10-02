@@ -10,3 +10,4 @@ protocol/reconfiguration-maintenance-v1.schema.json text eol=lf
 protocol/reconfiguration-effects-v1.schema.json text eol=lf
 protocol/native-checkpoint-v1.schema.json text eol=lf
 protocol/reconfiguration-candidate-v1.schema.json text eol=lf
+protocol/reconfiguration-root-v1.schema.json text eol=lf

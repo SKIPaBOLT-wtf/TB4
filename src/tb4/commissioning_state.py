@@ -31,12 +31,16 @@ def match(pattern, value):
 
 
 def storage_spec(value):
-    require(type(value) is dict and set(value) == {"spec", "authority"}, "SETUP_STORAGE_SHAPE")
+    require(type(value) is dict and set(value) in ({"spec", "authority"},
+            {"spec", "authority", "root_transition"}), "SETUP_STORAGE_SHAPE")
     spec = value["spec"]
     require(type(spec) is dict and set(spec) == {
         "root_id", "domain_id", "setup_id", "bootstrap_actor", "mode", "capacity"},
         "SETUP_STORAGE_SHAPE")
     parsed = SetupSpec(**{**spec, "capacity": Capacity.parse(spec["capacity"])})
+    if "root_transition" in value:
+        require(parsed.mode == "NATIVE_DOCS" and match(r"[0-9a-f]{64}",value["root_transition"]),
+                "SETUP_ROOT_TRANSITION")
     return parsed, AuthorityHandle.parse(value["authority"])
 
 

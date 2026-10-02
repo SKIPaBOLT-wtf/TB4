@@ -106,6 +106,18 @@ recovery promotes only the exact schema/binding/previous-state-checked pending
 frame. Original profile bytes, authority and workload records remain unchanged.
 This unit keeps role/root/backend/domain/layout/fixed identity unchanged. C3 root
 relocation and C4 monotonic publication/cache invalidation/promotion remain required.
+
+The C3 Docs source adds [A-004](implementation-plan/revisions/R2/amendments/RP-027/A-004-existing-docs-root-moves.md):
+an exact existing-object plan anchored to the protected resolution image, a native
+per-file pending WAL and shared IDENTITY UNKNOWN before one metadata/parents SDK
+update. An opaque per-transition witness disambiguates the exact applied move;
+closed optional private storage root_transition selects expected metadata and
+does not grant authority. Native locking spans final owner/current intent checks
+and send. Lost reply/restart/recovery only inspect the same object/operation; before
+or conflict never authorizes resend. First-CAS role fallback remains available and
+old-owner shared UNKNOWN is preserved. Physical move facts do not activate routing
+or replace first-run verification. Folder rename, proven non-dispatch/inherited
+settlement, remote commissioning/catalogue rebind and final promotion remain required.
 Full-capacity retained/unknown work must fit protected evidence without omission;
 metadata is bounded at128KiB and the actual native frame limit remains1MiB.
 
