@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: REPAIRED_LOCAL_PASS_HOSTED_REGRESSIONS_RUNNING
+phase: REPAIRED_PLATFORM_PASS_FINAL_REVIEW_HOLD
 source_branch: feat/rp026-local-network-table
 source_commit: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0047
+last_verified_event: RP-026-A001-0048
 last_completed: RP-025
-next_action: Review invariant/test coverage and inspect these same CI37025861081/Desktop37025860808
-  jobs; record actual platform terminal results, checkouts/build/artifact metadata
-  and limitations before acceptance.
+next_action: Publish/read back bounded new synthetic pending-status and two-device
+  helper-target diagnostic INTENT; execute exact same source, record real outcomes,
+  then repair only supported gaps and requalify before C1-C4 acceptance/merge.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-026-A001-0045
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
