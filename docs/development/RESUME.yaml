@@ -1,23 +1,37 @@
 schema_version: 1
-revision: "R2"
-work_item: "RP-025"
-check: "RP-025.C4"
-attempt: "A001"
-phase: "VALIDATION"
-source_branch: "work/rp-025-a001"
-source_commit: "b4fd7c5158a14cdbb73eebd2b95f2b78947beddc"
-journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0073"
-last_completed: "RP-020"
-next_action: "Restore RP021/A002 navigation with final combined-source full CI/Progress/LinuxWindows nativeQt/frozen both-role installer INTENT, trigger meaningful non-skip checkpoint and record actual run IDs; review before impacted reacceptance."
-verification: "Qualify native held source-content revocation and all transitive affected checks on exact repaired source; preserve immutable snapshot and private/native trust boundaries."
-execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
+revision: R2
+work_item: RP-021
+check: RP-021.C4
+attempt: A002
+phase: VALIDATION
+source_branch: work/rp-025-a001
+source_commit: b4fd7c5158a14cdbb73eebd2b95f2b78947beddc
+journal: docs/development/journal/RP-021/A002/events.jsonl
+last_verified_event: RP-021-A002-0010
+last_completed: RP-020
+next_action: Record launched PR34 source/actual workflow IDs as STARTED, monitor same
+  jobs, preserve any failure and complete repair before all affected per-check acceptance.
+verification: Qualify native held source-content revocation and all transitive affected
+  checks on exact repaired source; preserve immutable snapshot and private/native
+  trust boundaries.
+execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-021-A002-0010
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046","DEF-047"]
-rollback: "Revoke only a specifically confirmed new enrollment; retain slot generation/history, prior approved bindings and UNKNOWN operations. Do not copy another installation credential/profile, reset authority or replay an uncertain write."
-next_implementation_step: "RP-025"
-next_implementation_check: "RP-025.C4"
+known_open_defects:
+- DEF-001
+- DEF-002
+- DEF-042
+- DEF-043
+- DEF-044
+- DEF-045
+- DEF-046
+- DEF-047
+rollback: Revoke only a specifically confirmed new enrollment; retain slot generation/history,
+  prior approved bindings and UNKNOWN operations. Do not copy another installation
+  credential/profile, reset authority or replay an uncertain write.
+next_implementation_step: RP-025
+next_implementation_check: RP-025.C4
