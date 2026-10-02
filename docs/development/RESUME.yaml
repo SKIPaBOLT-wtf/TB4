@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: INSTALLER_INSPECTION_FAILURE_REPRODUCED
+phase: INSTALLER_DATA_GUARD_REPAIR
 source_branch: feat/rp026-local-network-table
 source_commit: f7982df61404257affa794c4c355cdba3841d305
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0027
+last_verified_event: RP-026-A001-0028
 last_completed: RP-025
-next_action: Publish/read back a smallest Linux guard and failing-search regression
-  repair INTENT; make status failure explicit before the no-data test. Preserve existing
-  data/no-data tests; then publish source-linked OUTCOME and fresh Windows/Linux qualification
-  INTENT.
+next_action: Apply bounded Linux failure guard/regression patch, publish/read back
+  source and source-linked OUTCOME, then publish a fresh exact-source Windows target/SKILL/public-contract
+  and Linux diagnostic qualification INTENT.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-026-A001-0028
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
