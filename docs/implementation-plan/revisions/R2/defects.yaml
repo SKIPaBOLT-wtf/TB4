@@ -3373,3 +3373,47 @@ defects:
       stays unchanged. Fix and requalify both shell operations before accepting. All
       mutation in the reproduction stayed inside fresh synthetic Linux fixtures.
     legacy_record: null
+  DEF-052:
+    title: New instruction/schema hash inputs lack canonical cross-platform checkout
+      bytes
+    status: OPEN
+    detected_in: RP-026.C4
+    suspected_origin:
+      work_item: RP-026
+      source_ref: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/initial-hosted-windows-catalog-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: Initial real Windows hosted checkout failed unchanged catalog raw-byte
+        assertion; CRLF encoding exactly matches observed digest, LF matches expected.
+        New nested guidance/schema inputs fall outside existing LF attributes.
+      failing_source: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/initial-hosted-windows-catalog-failure.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    affected_requirements:
+    - R07
+    - R15
+    - R17
+    - R18
+    hypotheses:
+    - id: new-inputs-not-covered-by-lf-attributes
+      claim: Windows autoCRLF transforms new nested guidance/protocol JSON bytes because
+        existing canonical attributes cover only top-level instruction files.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/initial-hosted-windows-catalog-failure.md
+    repairs: []
+    issue: null
+    regression_test: tests.coach.test_instruction_selection.test_repository_catalog_consistent_but_deliberately_not_live_eligible
+    resolution_evidence: []
+    notes: Existing digest/trust assertion and accepted source remain unchanged. Exact
+      catalog input bytes must match Git blobs in a fresh Windows/Linux checkout,
+      with no global config or digest normalization bypass. New neveraccepted RP-026
+      only.
+    legacy_record: null
