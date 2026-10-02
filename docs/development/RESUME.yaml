@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_MAINTENANCE_FIXTURE_FAILURE
+phase: STAGED_RECONFIGURATION_C1_FALLBACK_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: a8c97e9f822842fe53070e9f67a0aff038e18488
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0016
+last_verified_event: RP-027-A001-0017
 last_completed: RP-026
-next_action: 'Publish/read back a scoped fixture-only repair INTENT: preserve the
-  incumbent''s actual enrollment map, add only the new candidate label, retain all
-  intended takeover/unknown/crash/adoption assertions and add an explicit wrong-label
-  refusal regression. Save exact WIP/outcome before separately recorded repeat tests.'
-verification: Actual maintenance656-case run FAIL649/3/4; three invalid fallback fixtures
-  must be repaired before claiming takeover predicates.
+next_action: Save/read back fixture-only source checkpoint, append OUTCOME, then publish/read
+  back a fresh owned-fixture exact-source controller/foundation/accepted-boundary
+  repeat-test INTENT.
+verification: Three fixture prerequisite failures preserved; scoped one-file repair
+  INTENT only, all application identity checks unchanged.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0017
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
