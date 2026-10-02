@@ -1,0 +1,18 @@
+# Verified PR35 administrative handoff
+
+PR35 merged exactly once using method `merge`, expected head `9d78ded742a8053bb63047e60445134c5c4c9432`, main `d819eda943761564c3019809ec3878db42376ae7`, parents `33e7aeb1896df4709ee9cdca7134532bc536aeb5`, `9d78ded742a8053bb63047e60445134c5c4c9432`. GitHub definite result, independent PR/main/commit reads and local Git all agree. The merged tree equals the exact reviewed feature head. Current main was unprotected, rulesets/reviews/review comments empty and PR ready/clean/mergeable; no protection override occurred.
+
+The exact accepted application and non-progress contracts stayed unchanged across source `2575de12ffed36a2e3e739710a9183dd0bfa437d`, qualified head `532a81fdef7cef012d1ed842938941ff4a3f8cb3`, actual CI checkout `1f113f8f6b1826ab211f2ab7622f9a6ecb24aab7` and final handoff. Full non-progress Git-entry closure: 457 entries; identical SHA256 `3066fb496584525b6546709ac8488cc752fdf4cf892807007eda779f7f52dbf1`. Only docs/development and docs/implementation-plan differ. All three actual hosted workflows and four jobs were re-read as terminal success before merge. [RP-026 platform/acceptance receipt](../../RP-026/A001/complete-source-hosted-qualification.md) remains authoritative for the packaged source. The skip-ci merge avoids duplicating identical qualified application builds; it does not label this later documentation commit as a new tested package.
+
+| Gate | Before merge | Actual merged main |
+| --- | --- | --- |
+| current | exit 0, 14.438 s | exit 0, 13.171 s |
+| history | exit 0, 26.844 s | exit 0, 25.563 s |
+| scanner | exit 0, 6.328 s | exit 0, 5.766 s |
+| diff | exit 0, 0.047 s | exit 0, 0.046 s |
+
+Current/history guards show 26 VERIFIED of64 and only this administrative merge INTENT pending before its actual OUTCOME. All source/failure/acceptance ancestry is retained. A clean ancestor local main was fast-forwarded without reset or force. Initial prospective checkpoint fetch was denied by the command sandbox; the authorized public read was rerun with approved network escalation. The first task-only qualification runner lacked the old CI preview commit locally and stopped before tests or merge; fresh GitHub read confirmed that same commit/tree, one safe explicit public fetch supplied it, and all unchanged-source guards then passed. Neither failure is omitted or treated as an application defect.
+
+RP-027 is dependency-ready IN_PROGRESS/A001, zero accepted checks. Next: publish source/contract inspection INTENT for maintenance, candidate configuration through accepted first-run, root/topology/launcher/credential failure and revision/cache/lease fencing. Local table/optional stable-IP direction remains in force. No live deployment, release, router configuration, credential copying, destructive reset, unknown operation replay or SKILL installation occurred.
+
+Prospective staged history diagnostics: the original candidate guard stopped with GIT_REFERENCE_UNAVAILABLE. A second instrumented run identified the exact same public blob; all334 base evidence blobs read successfully from the actual repo. A new isolated stage reproduced Git Windows exit128, `failed to stat` the revision string / `Filename too long` for the long public milestone path. Explicit revision separator and command-local `core.longpaths=true` each read the same2538-character blob with exit0. The task wrapper appends that setting only to its child Git environment and reruns unchanged core prepare/validate/current/full base-history rules; no on-disk Git configuration, history or validator is changed. Original failed attempts and exact diagnostic are retained locally and documented here; publication requires the full prospective guard to pass.

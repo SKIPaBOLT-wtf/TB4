@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: DEPENDENCY_READY_PR35_MERGE
-source_branch: feat/rp026-local-network-table
-source_commit: 6aab6313ef3f98e3bff020130ac5ededc107664e
+phase: PR35_MERGED_MAIN_VERIFIED
+source_branch: main
+source_commit: d819eda943761564c3019809ec3878db42376ae7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0001
+last_verified_event: RP-027-A001-0002
 last_completed: RP-026
-next_action: Record exact verified merge outcome on main, then publish RP-027.C1 architecture/source-inspection
-  intent for staged maintenance/reconfiguration using current accepted commissioning/leadership/network-table
-  contracts.
-verification: Administrative PR35 handoff, not RP-027 implementation acceptance; preserve
-  accepted RP-026 source and all successful gates.
+next_action: Publish/read back RP-027.C1 staged-reconfiguration source/contract-inspection
+  INTENT, then inspect only current accepted commissioning/root/leadership/work/result/descriptor
+  adapters and tests; record precise invariant, gaps and bounded implementation unit
+  without any live action.
+verification: PR35 exact merge and current/main-history/public/diff guards PASS; source
+  qualification preserved. RP-027 implementation remains zero checks and next source
+  inspection.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0001
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
