@@ -44,9 +44,11 @@ def source_reference_fixture(root):
 def test_source_reference_history_survives_prepare_revalidate_and_readback(ledger, tmp_path):
     head, row = source_reference_fixture(ledger)
     before = (ledger/JOURNAL/'RP-001/A001/events.jsonl').read_bytes()
+    from tools.development.checkpoint import GitBackend
+    public_prefix = GitBackend(ledger).run('show', head+':'+JOURNAL+'/RP-001/A001/events.jsonl')
     plan = prepare(ledger, row, 'work/fixture', head, reachable=lambda _: True)
     validate_plan(ledger, plan, reachable=lambda _: True)
-    assert plan.files[JOURNAL+'/RP-001/A001/events.jsonl'].startswith(before.decode())
+    assert plan.files[JOURNAL+'/RP-001/A001/events.jsonl'].startswith(public_prefix)
     assert all(path.startswith('docs/') for path in plan.files)
     remote = Remote()
     remote.head = head
