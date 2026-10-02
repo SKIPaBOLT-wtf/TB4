@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_CUT_EXPECTATION_FAILURE
+phase: STAGED_RECONFIGURATION_C2_SAME_NATIVE_CUT_DIAGNOSTIC
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c323da611eb98de3966145e226679335976b3f22
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0038
+last_verified_event: RP-027-A001-0039
 last_completed: RP-026
-next_action: Publish/read back bounded read-only diagnosis INTENT for the same three
-  failed owned native roots/log/XML; inspect exact protected pending/current state
-  and retain counts/closed facts only. Then publish outcome and separate one-file
-  fixture repair INTENT, retaining all pending/history/readback/no-send assertions.
-verification: C2 first720-case27-target run713PASS/3native closed-code expectationFAIL/4Linuxskip;
-  DEF060 pending exact inspection; C1-C4 unaccepted.
+next_action: Publish/read back actual same-fixture diagnostic OUTCOME/evidence; if
+  exact cuts are proven, record one-file fixture-only closed-code repair INTENT retaining
+  all recovery/no-send/original-byte assertions, then exact repeated27-target tests.
+verification: C2 first test failures remotely preserved with DEF060; same failed native
+  frames diagnostic INTENT pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0039
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
