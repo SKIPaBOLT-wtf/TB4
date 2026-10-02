@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_INHERITED_EFFECT_REPEAT_TEST
+phase: STAGED_RECONFIGURATION_C1_FALLBACK_CLOCK_FIXTURE_FAILURE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 95ee0e15cf467af4bbeb8b13a8c4d1868d135db3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0029
+last_verified_event: RP-027-A001-0030
 last_completed: RP-026
-next_action: Publish/read back exact repeat outcome/evidence and append DEF-058 supported
-  or failed remedy facts. If passing, continue C2 actual protected first-run candidate/old-profile
-  retention; if failing, preserve and repair the smallest proven cause under a new
-  verified INTENT.
-verification: Two-file initial fixture source saved; exact24-target repeat INTENT,
-  result pending.
+next_action: Publish/read back one-file fixture repair INTENT for actual observed
+  heartbeat plus configured stale interval, reuse that exact clock in acquisition
+  and adopter context, preserve all assertions/source, then separately recorded24-target
+  repeat.
+verification: 683-case run678PASS/1FAIL/4Linux skips, actual exit1. Initial fixture
+  remedy supported; DEF-059 clock repair next.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0029
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -28,6 +27,7 @@ known_open_defects:
 - DEF-056
 - DEF-057
 - DEF-058
+- DEF-059
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before

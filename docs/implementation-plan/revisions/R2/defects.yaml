@@ -3956,11 +3956,13 @@ defects:
         UNAVAILABLE instead of actual NATIVE_CHECKPOINT_INSPECT_REQUIRED. Prior657
         predicate statuses remain unchanged.'
       failing_source: ac587b6b6856e3c7785030720ee9c120c2fad0e5
-      passing_source: null
+      passing_source: 95ee0e15cf467af4bbeb8b13a8c4d1868d135db3
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-coverage-fixture-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -3995,6 +3997,16 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-coverage-fixture-provenance.md
+    - id: fresh-actual-bootstrap-and-protection-code-qualified
+      claim: The repaired initial factory reaches the original guard/native/pending
+        assertions, new actual-bootstrap proof passes and15 of16 originally failed
+        predicates pass. The remaining predicate now reaches its stale acquisition
+        but fails a separate fixed-clock expectation after actual heartbeat renewal;
+        no bootstrap guard change was needed.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
     repairs:
     - item: RP-027
       attempt: A001
@@ -4018,5 +4030,60 @@ defects:
       remain held. Same failed native frames and actual factory prove epoch2 fixture
       misuse; remedy must create an actually initial epoch-one synthetic deployment
       through existing bootstrap/commissioning adapters without changing or rewinding
-      the failed authority.
+      the failed authority. Initial coverage/coded-refusal fixture remedy supported
+      by actual683-case repeat; a separately tracked fixed stale-clock fixture fault
+      remains, so final C1-C4 rechecks stay held.
+    legacy_record: null
+  DEF-059:
+    title: Fallback fixture uses a fixed clock after renewing the incumbent heartbeat
+    status: OPEN
+    detected_in: RP-027.C1
+    suspected_origin:
+      work_item: RP-027
+      source_ref: ac587b6b6856e3c7785030720ee9c120c2fad0e5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: ac587b6b6856e3c7785030720ee9c120c2fad0e5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
+    reproduction:
+      procedure: Actual initial-bootstrap guarded external-UNKNOWN case ticks at240,
+        renewing the incumbent, then its fallback helper observes fixed340. Native
+        stale check rejects INCUMBENT_FRESH before acquisition. Other fallback cases
+        without this renewal pass.
+      failing_source: 95ee0e15cf467af4bbeb8b13a8c4d1868d135db3
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: fixed-fallback-clock-not-beyond-current-stale-interval
+      claim: Runtime fixture renews at240 before external UNKNOWN; fixed fallback340
+        is still fresh under actual default stale policy. Derive takeover time from
+        the freshly observed heartbeat plus unchanged configured stale interval, without
+        altering production timing.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
+    repairs: []
+    issue: null
+    regression_test: Existing test_external_unknown_survives_fallback_without_acknowledgements_or_replay
+      with actual freshly stale timestamp, retaining unknown/preservation/acquisition/no-replay
+      assertions; all24-target regressions.
+    resolution_evidence: []
+    notes: New test clock only. Initial coverage source/pins, native epoch/owner/clock/timing
+      guards and prior accepted sources stay unchanged. Preserve the failed fresh-incumbent
+      result; no live timer advance or operation replay.
     legacy_record: null
