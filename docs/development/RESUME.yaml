@@ -7,14 +7,14 @@ phase: "VALIDATION"
 source_branch: "work/rp-025-a001"
 source_commit: "b4fd7c5158a14cdbb73eebd2b95f2b78947beddc"
 journal: "docs/development/journal/RP-025/A001/events.jsonl"
-last_verified_event: "RP-025-A001-0072"
+last_verified_event: "RP-025-A001-0073"
 last_completed: "RP-020"
-next_action: "Inspect same run/status/log; publish complete measured outcome before root21 final hosted qualification."
+next_action: "Restore RP021/A002 navigation with final combined-source full CI/Progress/LinuxWindows nativeQt/frozen both-role installer INTENT, trigger meaningful non-skip checkpoint and record actual run IDs; review before impacted reacceptance."
 verification: "Qualify native held source-content revocation and all transitive affected checks on exact repaired source; preserve immutable snapshot and private/native trust boundaries."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-025-A001-0071"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046","DEF-047"]
