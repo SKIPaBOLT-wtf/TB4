@@ -3,15 +3,15 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: REPAIRED_NATIVE_AND_HOSTED_QUALIFICATION_RUNNING
+phase: REPAIRED_LOCAL_PASS_HOSTED_REGRESSIONS_RUNNING
 source_branch: feat/rp026-local-network-table
 source_commit: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0046
+last_verified_event: RP-026-A001-0047
 last_completed: RP-025
-next_action: Inspect the same actual local session and three hosted workflow runs;
-  publish actual terminal results and source-tree proof before any acceptance or dependent
-  source action.
+next_action: Review invariant/test coverage and inspect these same CI37025861081/Desktop37025860808
+  jobs; record actual platform terminal results, checkouts/build/artifact metadata
+  and limitations before acceptance.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
