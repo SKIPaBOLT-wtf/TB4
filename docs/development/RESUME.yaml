@@ -3,21 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_INHERITED_EFFECT_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C1_INHERITED_EFFECT_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: ac587b6b6856e3c7785030720ee9c120c2fad0e5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0022
+last_verified_event: RP-027-A001-0023
 last_completed: RP-026
-next_action: Publish/read back exact-source inherited-effect/native-checkpoint/controller/foundation/accepted-boundary
-  regression test INTENT, run once in a fresh owned absent fixture root and preserve
-  actual outcomes before any repair or C2 candidate implementation.
-verification: Exact17-file shared-effect/native runtime source WIP saved and read
-  back; no new test/acceptance.
+next_action: Publish/read back actual exact-source outcome and case evidence before
+  dependent edits. If any case fails, record actual predicate/provenance and scoped
+  repair; if this unit passes, prepare C2 protected first-run candidate with old-profile
+  retention and C3/C4 handoff.
+verification: Shared effect/native runtime source and A-002 saved;24-target exact-source
+  test INTENT, no result yet.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0023
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
