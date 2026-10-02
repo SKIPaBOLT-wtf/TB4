@@ -5,20 +5,19 @@ check: RP-021.C4
 attempt: A002
 phase: REPAIR
 source_branch: work/rp-025-a001
-source_commit: b4fd7c5158a14cdbb73eebd2b95f2b78947beddc
+source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
 journal: docs/development/journal/RP-021/A002/events.jsonl
-last_verified_event: RP-021-A002-0023
+last_verified_event: RP-021-A002-0024
 last_completed: RP-020
-next_action: Implement minimal test-only semantic identity correction; publish exact
-  source and reviewed outcome, then run focused/local qualification and new full matrix.
+next_action: Qualify targeted security/protocol, all development and real source/current/main-history/privacy/diff
+  guards on exact new source, then one new final required matrix.
 verification: Qualify native held source-content revocation and all transitive affected
   checks on exact repaired source; preserve immutable snapshot and private/native
   trust boundaries.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-021-A002-0023
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

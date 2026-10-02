@@ -413,6 +413,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
     - docs/implementation-plan/revisions/R2/amendments/RP-012/A-001-mandatory-security-qualification.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-012/A-001-semantic-plan-gate-references.md
     active_attempt: A001
     check_evidence:
       RP-012.C1:
