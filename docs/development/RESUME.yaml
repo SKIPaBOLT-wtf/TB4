@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: HOSTED_WINDOWS_CATALOG_FAILURE
+phase: CLEAN_CHECKOUT_NATIVE_TABLE_DIAGNOSTIC
 source_branch: feat/rp026-local-network-table
 source_commit: aba77c9aa9df314e3088dfb388a84a7f7011cb6a
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0038
+last_verified_event: RP-026-A001-0039
 last_completed: RP-025
-next_action: Publish/read back bounded fresh Windows checkout hash and actual native
-  observation-to-table owner callback diagnostic INTENT. Record actual result before
-  smallest canonical attribute/current-owner repair; then latest-source qualification
-  on same PR35.
+next_action: Inspect actual fresh-checkout/native table result, publish source-linked
+  hypotheses/defects and precise failure evidence. Then publish smallest explicit
+  canonical attribute and only proven native-read integration repair INTENT, followed
+  by new exact-source focused/full-platform qualification on existing PR35.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-026-A001-0039
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
