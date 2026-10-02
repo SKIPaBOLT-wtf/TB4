@@ -96,6 +96,10 @@ def test_fresh_verified_addressing_is_scoped_to_only_that_action_and_endpoint(ta
                          hardware_hint="synthetic-hint")
     trust=TrustView(frozenset({device_id}),(VerifiedBinding(device_id,7,"192.0.2.9",103),))
     scope=Scope((Interface("synthetic-interface",7,("192.0.2.0/24",),"LAN"),))
+    before=catalogue.private_image()
+    assert catalogue.observe((observed,),scope,now=103,trust=trust)==("OUT_OF_SCOPE",)
+    assert catalogue.private_image()==before
+    scope=Scope(scope.interfaces,frozenset({"FIXED_HELPER"}))
     assert catalogue.observe((observed,),scope,now=103,trust=trust)==("OBSERVED",)
     table.sync_observations(catalogue.private_image(),current_owner=lambda:True)
     assert addressing_prerequisite(table.read(),device_id,required=True,now=103) == "STABLE_ADDRESS_REQUIRED"
