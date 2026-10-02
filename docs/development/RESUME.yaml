@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_FALLBACK_CLOCK_FIXTURE_FAILURE
+phase: STAGED_RECONFIGURATION_C1_STALE_CLOCK_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 95ee0e15cf467af4bbeb8b13a8c4d1868d135db3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0030
+last_verified_event: RP-027-A001-0031
 last_completed: RP-026
-next_action: Publish/read back one-file fixture repair INTENT for actual observed
-  heartbeat plus configured stale interval, reuse that exact clock in acquisition
-  and adopter context, preserve all assertions/source, then separately recorded24-target
-  repeat.
-verification: 683-case run678PASS/1FAIL/4Linux skips, actual exit1. Initial fixture
-  remedy supported; DEF-059 clock repair next.
+next_action: Preserve/publish exact one-file source and OUTCOME, then publish/read
+  back exact24-target repeat INTENT and run original683 predicates in a new owned
+  absent fixture root.
+verification: Deeper fixed-clock fixture failure preserved; one-file repair INTENT,
+  timing/ownership code unchanged.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0031
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
