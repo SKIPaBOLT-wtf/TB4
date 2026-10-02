@@ -3202,6 +3202,7 @@ defects:
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md
     repair_steps:
     - RP-026
     affected_acceptance:
@@ -3220,6 +3221,14 @@ defects:
       result: UNTESTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+    - id: source-trace-diagnosis-supported
+      claim: First two failures may come from expecting an unverified hardware hint
+        to move identity and expecting an existing proposal to clear prior roles automatically;
+        native lock stimulus also prepares its proposal inside the held lock.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md
     repairs:
     - item: RP-026
       attempt: A001
@@ -3240,6 +3249,8 @@ defects:
     notes: New neveraccepted RP-026 scope only. Preserve all initial failures; no
       accepted predecessor invariant is invalidated merely by a mistaken new stimulus.
       Qualify exact corrected stimulus and module behavior before accepting or closing.
+      Source inspection/initial traces support the hypothesis; repaired runtime qualification
+      has not occurred. See docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md.
     legacy_record: null
   DEF-050:
     title: Local network table binding accessor does not normalize native unavailable/busy
@@ -3259,6 +3270,7 @@ defects:
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md
     repair_steps:
     - RP-026
     affected_acceptance:
@@ -3277,6 +3289,14 @@ defects:
       result: UNTESTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+    - id: source-trace-diagnosis-supported
+      claim: The new table binding helper may expose SettingsError where its module
+        advertises NetworkTableError. Native locking itself refused as intended; wrapper
+        behavior and exact mutator stimulus require recheck.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md
     repairs:
     - item: RP-026
       attempt: A001
@@ -3297,4 +3317,6 @@ defects:
     notes: New neveraccepted RP-026 scope only. Preserve all initial failures; no
       accepted predecessor invariant is invalidated merely by a mistaken new stimulus.
       Qualify exact corrected stimulus and module behavior before accepting or closing.
+      Source inspection/initial traces support the hypothesis; repaired runtime qualification
+      has not occurred. See docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-repair-diagnosis.md.
     legacy_record: null
