@@ -3,6 +3,7 @@ import copy
 from dataclasses import replace
 import hashlib
 import json
+from math import ceil
 from pathlib import Path
 
 import pytest
@@ -31,7 +32,9 @@ def acquire_fallback(value):
     setup.choose(choices)
     leader = Leadership(value.flow.leader.backend,actor=setup.installation_id,
         enrollment={**value.flow.leader.enrollment,setup.installation_id:"synthetic-guarded-fallback"})
-    plan = leader.acquire(leader.observe(clock(340)),transition=tid("guarded-fallback"))
+    incumbent = value.flow.leader.backend.read().document()["records"]["global.leadership"]["body"]
+    sample = clock(ceil(incumbent["heartbeat_at"] + leader.profile.lease_stale_s))
+    plan = leader.acquire(leader.observe(sample),transition=tid("guarded-fallback"))
     report = leader.commit(plan,mode="START"); assert report.outcome == "CONFIRMED"
     grant = leader.confirmed_grant(plan,report)
     checkpoint = NativeCheckpoint(PrivateSettings(MemoryNative()),installation_id=setup.installation_id,
@@ -41,7 +44,7 @@ def acquire_fallback(value):
         transition_id=TRANSITION)
     caps = Capabilities(setup.installation_id,True,True,frozenset(Action))
     context = replace(value.context,setup=setup,leadership=leader,checkpoint=checkpoint,effects=effects,
-        store=PrivateSettings(MemoryNative()),baseline=baseline,clock=lambda:clock(340),capabilities=lambda:caps)
+        store=PrivateSettings(MemoryNative()),baseline=baseline,clock=lambda:sample,capabilities=lambda:caps)
     return Maintenance(context),effects,context
 
 
