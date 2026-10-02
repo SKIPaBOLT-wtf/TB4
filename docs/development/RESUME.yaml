@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_NATIVE_DOCS_ROOT_SOURCE
+phase: STAGED_RECONFIGURATION_C3_NATIVE_DOCS_ROOT_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 8ffdbfeaf4fd5c5a4b3f3c158368c6096bc24ce0
+source_commit: 90635ed953d297fdea34209cb305439c464c4470
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0046
+last_verified_event: RP-027-A001-0047
 last_completed: RP-026
-next_action: Preserve/read back source and publish OUTCOME; separately verified targeted
-  native-Docs relocation/old first-run/720-regression tests with actual cases/negative
-  failures, then qualified folder move and final same-authority rebind/candidate promotion
-  units.
-verification: C2 repeat716PASS/4Linuxskip remotely recorded; C3 bounded native Docs
-  root move WAL source INTENT pending.
+next_action: Publish/read back source-linked root/native/old first-run/desktop/inherited
+  regression INTENT; execute exact scoped suite once in fresh owned absent fixtures,
+  record actual session/STARTED, outcomes/full cases/defects before fixes. Then qualified
+  folder physical move, proven non-dispatch/inherited settlement and remote/root/config
+  promotion units.
+verification: C3 fifteen-file existing-Docs root WAL source saved; no tests/C1-C4
+  acceptance; subsequent settlement/folder/promotion required.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0046
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
