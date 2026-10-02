@@ -3491,3 +3491,110 @@ defects:
       scoped to same thread/store and never skip full owner refresh, allow writes
       or escape a stale reader.
     legacy_record: null
+  DEF-054:
+    status: OPEN
+    suspected_origin:
+      work_item: RP-026
+      source_ref: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    proven_origin:
+      work_item: RP-026
+      source_ref: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    repairs: []
+    issue: null
+    resolution_evidence: []
+    legacy_record: null
+    title: Discovery description status hides a known pending local-table update
+    detected_in: RP-026.C4
+    reproduction:
+      procedure: Fresh actual protected native Discovery/table; capability callback
+        refuses after durable UPDATE intent. Observe preserved local pending and unchanged
+        table, then actual description status problem remains null instead of inspection-required.
+      failing_source: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    affected_requirements:
+    - R05
+    - R13
+    - R18
+    hypotheses:
+    - id: source-review-allow-pending-notice
+      claim: Reading the current table with allow_pending=True may omit its known
+        unresolved update from WATCHDOG description status.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/repaired-hosted-platform-pass-review-hold.md
+    - id: actual-native-pending-notice-reproduced
+      claim: Actual native current-owner/capability refusal keeps UPDATE pending and
+        table unchanged. Direct table status says INSPECT_REQUIRED but Discovery description
+        problem is null.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    regression_test: Planned tests.security.test_network_table_native.test_native_discovery_reports_pending_table_update_without_replay
+    notes: Neveraccepted new RP-026 reporting integration only. Original owner refusal,
+      native storage and observation evidence are correct and must remain unchanged;
+      no local transaction replay or production change.
+  DEF-055:
+    status: OPEN
+    suspected_origin:
+      work_item: RP-026
+      source_ref: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    proven_origin:
+      work_item: RP-026
+      source_ref: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    repairs: []
+    issue: null
+    resolution_evidence: []
+    legacy_record: null
+    title: Description helper does not bind a proposal to its begun device and revision
+    detected_in: RP-026.C3
+    reproduction:
+      procedure: Populate two distinct synthetic existing catalogue devices. Begin
+        actual DescriptionAssistant for first, propose fresh canonical candidate for
+        second and explicitly approve its digest in fixture. Helper admits/CONFIRMS
+        second while first remains undescribed.
+      failing_source: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    affected_requirements:
+    - R13
+    - R15
+    - R17
+    - R18
+    hypotheses:
+    - id: source-review-begin-device-context
+      claim: Propose checks supplied device against current table but may not retain
+        the identity/revision selected by begin.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/repaired-hosted-platform-pass-review-hold.md
+    - id: actual-two-device-proposal-reproduced
+      claim: A fresh candidate for a different existing device is admitted and fixture
+        owner digest approval writes that second description. Begin target is not
+        enforced.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/pending-notice-and-helper-target-reproduction.md
+    regression_test: Planned tests.drive.test_network_description.test_begun_helper_cannot_switch_to_another_existing_device;
+      context revision and failed begin/propose lifecycle regressions.
+    notes: Neveraccepted new RP-026 helper binding only. Existing stable catalogue
+      identity and instruction profile remain intact. Fix one bounded begin/propose/confirm
+      context without adding grants, instruction sources or live host integration.
