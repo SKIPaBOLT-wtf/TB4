@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: REPAIRED_TARGETED_FAILURE_SCOPE_DIAGNOSIS
+phase: HELPER_SCOPE_STIMULUS_REPAIR
 source_branch: feat/rp026-local-network-table
 source_commit: f719927c8eed0df2d98842f9782ff4b3068f22f4
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0023
+last_verified_event: RP-026-A001-0024
 last_completed: RP-025
-next_action: Publish/read back a bounded new FIXED_HELPER scope stimulus diagnosis/repair
-  INTENT; inspect approved scope and correct only proven new stimulus. Requalify under
-  a separate new exact-source test INTENT.
+next_action: Apply only the bounded scope fixture patch, publish/read back source
+  and source-linked OUTCOME, then publish/read back a fresh Windows target/SKILL/history/privacy
+  requalification INTENT.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-026-A001-0024
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
