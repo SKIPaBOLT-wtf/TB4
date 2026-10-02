@@ -59,3 +59,29 @@ def test_linux_uninstaller_refuses_live_role(tmp_path):
     result = subprocess.run(['sh', str(uninstall)], env=env, capture_output=True, timeout=15)
     assert result.returncode != 0
     assert worker.exists()
+
+
+@pytest.mark.skipif(os.name == 'nt', reason='POSIX installer contract')
+@pytest.mark.parametrize('script', ['install-linux.sh', 'uninstall-linux.sh'])
+@pytest.mark.parametrize('table_type', ['directory', 'dangling-symlink'])
+def test_linux_installer_preserves_installation_local_table_before_any_replacement(tmp_path, script, table_type):
+    env = dict(os.environ, HOME=str(tmp_path), XDG_DATA_HOME=str(tmp_path / 'data'),
+               XDG_CONFIG_HOME=str(tmp_path / 'config'))
+    destination = tmp_path / 'data/tb4-apps/watchdog'
+    destination.mkdir(parents=True)
+    worker = destination / 'tb4-watchdog-worker'
+    worker.write_text('#!/bin/sh\nexit 0\n'); worker.chmod(0o755)
+    table = destination / 'network-table'
+    if table_type == 'directory':
+        table.mkdir(); (table / 'settings.json').write_text('synthetic-retained-table')
+    else:
+        table.symlink_to(destination / 'absent-target', target_is_directory=True)
+    source = tmp_path / 'operation.sh'
+    source.write_text((ROOT / 'packaging/desktop' / script).read_text().replace('@ROLE@', 'watchdog'))
+    result = subprocess.run(['sh', str(source)], env=env, capture_output=True, timeout=15)
+    assert result.returncode != 0 and worker.exists()
+    assert not destination.with_name('watchdog.previous').exists()
+    if table_type == 'directory':
+        assert (table / 'settings.json').read_text() == 'synthetic-retained-table'
+    else:
+        assert table.is_symlink()

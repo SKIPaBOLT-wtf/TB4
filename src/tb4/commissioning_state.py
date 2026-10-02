@@ -93,7 +93,7 @@ def validated(payload):
         fields = {"schema_version", "installation_id", "setup_nonce", "state", "reason", "choices", "operations"}
         require(type(payload) is dict and fields <= set(payload)
                 and set(payload) <= fields | {"credential_image", "discovery", "ballpark_draft", "ballpark_publication",
-                                             "enrollments", "fetcher_enrollment"},
+                                             "enrollments", "fetcher_enrollment", "network_table"},
             "SETUP_SCHEMA")
         require(type(payload["schema_version"]) is int and payload["schema_version"] == 1
                 and identity(payload["installation_id"])
@@ -101,6 +101,9 @@ def validated(payload):
         require(type(payload["state"]) is str and payload["state"] in STATES
                 and type(payload["reason"]) is str and payload["reason"] in REASONS, "SETUP_STATE")
         validate_choices(payload["choices"], payload["installation_id"])
+        if payload.get("network_table") is not None:
+            from .network_table_store import selection
+            selection(payload["network_table"], payload)
         if payload.get("discovery") is not None:
             from .discovery_state import validated_package
             spec, authority = storage_spec(payload["choices"]["storage"])

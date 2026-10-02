@@ -47,6 +47,18 @@ def build(store=None, *, scope=SCOPE):
     return workflow, setup, provider, native, kwargs
 
 
+def test_discovery_reports_unconfigured_description_table_without_provisioning(system):
+    flow, setup, provider, native, kwargs = system
+    before = copy.deepcopy(provider.created)
+    flow.observe((observation(),))
+    descriptions = flow.status()["descriptions"]
+    assert descriptions["needs_description"] == 1
+    assert descriptions["devices"][0]["description_status"] == "MISSING_DESCRIPTION"
+    assert descriptions["devices"][0]["stable_ip"]["value"] == "UNKNOWN"
+    assert provider.created == before
+    assert all(secret not in json.dumps(descriptions) for secret in (CANARY, "192.0.2.8", "synthetic-hint"))
+
+
 @pytest.fixture
 def system():
     return build()

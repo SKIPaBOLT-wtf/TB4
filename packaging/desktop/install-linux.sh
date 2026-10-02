@@ -12,6 +12,7 @@ if [ -x "$DEST/tb4-$ROLE-worker" ]; then
     "$DEST/tb4-$ROLE-worker" --action probe-lock || { echo 'Stop this role and exit its tray app first.' >&2; exit 1; }
 fi
 [ ! -L "$DEST" ] || { echo 'Refusing symlink installation destination' >&2; exit 1; }
+[ ! -e "$DEST/network-table" ] && [ ! -L "$DEST/network-table" ] || { echo 'Move the local network table through TB4 settings before replacing this installation.' >&2; exit 1; }
 mkdir -p "$DATA/tb4-apps" "$DATA/applications" "$CONFIG/autostart"
 STAGE=$(mktemp -d "$DATA/tb4-apps/.$ROLE-install.XXXXXX")
 trap 'rm -rf -- "$STAGE"' EXIT HUP INT TERM

@@ -113,6 +113,10 @@ class SetupWindow(QtWidgets.QWidget):
         self.ballpark.setToolTip("Available after discovery and compatible setup guidance are connected.")
         self.ballpark.clicked.connect(self.review_ballpark)
         layout.addWidget(self.ballpark)
+        self.network = QtWidgets.QPushButton("Network devices and table location")
+        self.network.setEnabled(controller.role == "watchdog")
+        self.network.clicked.connect(self.review_network)
+        layout.addWidget(self.network)
         buttons = QtWidgets.QHBoxLayout()
         self.save = QtWidgets.QPushButton("Save choices")
         self.check = QtWidgets.QPushButton("Check setup")
@@ -173,12 +177,23 @@ class SetupWindow(QtWidgets.QWidget):
         except Exception:
             self.message.setText(MESSAGES["DESCRIPTOR_REQUIRED"])
 
+    def review_network(self):
+        if self.job is not None:
+            return
+        try:
+            from .network_table_dialog import NetworkTableDialog
+            dialog = NetworkTableDialog(self.controller.network_session(), self)
+            dialog.exec()
+            dialog.deleteLater()
+        except Exception:
+            self.message.setText("The network table needs a verified storage identity and a private local location.")
+
     def start_check(self, action):
         if self.job is not None:
             return
         self.job = CheckJob(self.controller,action,self)
         for widget in (self.mode,self.location,self.scope,self.isolated,self.targets,self.credential,
-                       self.save,self.check,self.cancel,self.resume,self.ballpark):
+                       self.save,self.check,self.cancel,self.resume,self.ballpark,self.network):
             widget.setEnabled(False)
         self.message.setText("Checking the saved setup…")
         self.job.result.connect(self.show_status)
@@ -193,6 +208,7 @@ class SetupWindow(QtWidgets.QWidget):
             widget.setEnabled(True)
         self._scope_enabled(self.isolated.isChecked())
         self.ballpark.setEnabled(self.controller.role == "watchdog" and callable(self.controller.ballpark_factory))
+        self.network.setEnabled(self.controller.role == "watchdog")
         self.show_status(self.controller.view())
 
     def closeEvent(self, event):
@@ -248,7 +264,7 @@ class SetupStart(QtWidgets.QWidget):
             self.message.setText("This location could not be verified. Select a private local folder; existing permissions were not changed.")
 
 
-def run_setup(role, *, root=None, smoke_report=None, smoke=False):
+def run_setup(role, *, root=None, smoke_report=None, smoke=False, installation_root=None):
     app=QtWidgets.QApplication.instance() or QtWidgets.QApplication([])
     app.setApplicationName("TB4 " + role.upper() + " setup")
     temporary=None
@@ -257,7 +273,8 @@ def run_setup(role, *, root=None, smoke_report=None, smoke=False):
             temporary=tempfile.TemporaryDirectory(prefix="tb4-setup-ui-smoke-")
             root=Path(temporary.name)/"uncreated-settings"
         root=root or default_setup_root(role)
-        start=SetupStart(role,root)
+        start=SetupStart(role,root,controller_factory=lambda chosen,**options:
+                         open_setup(chosen,installation_root=installation_root,**options))
         start.show()
         if smoke:
             def finish():

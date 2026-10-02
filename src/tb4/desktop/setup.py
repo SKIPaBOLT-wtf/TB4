@@ -20,13 +20,15 @@ class StorageSelection:
 
 class SetupController:
     def __init__(self, setup, *, role, environment=None, storage_selector=None,
-                 checker_factory=None, credential_factory=None, credential_targets=(), ballpark_factory=None):
+                 checker_factory=None, credential_factory=None, credential_targets=(), ballpark_factory=None,
+                 installation_root=None, network_factory=None):
         require(type(setup) is Setup and role in {"watchdog","fetcher"}, "SETUP_CONTROLLER")
         self.setup, self.role = setup, role
         self.environment_probe = environment or (lambda:detect_environment(launch_mode="DESKTOP_SESSION"))
         self.storage_selector, self.checker_factory = storage_selector, checker_factory
         self.credential_factory, self.credential_targets = credential_factory, tuple(credential_targets)
         self.ballpark_factory = ballpark_factory
+        self.installation_root, self.network_factory = installation_root, network_factory
         self.environment = None
         self.problem = None
         try:
@@ -52,6 +54,16 @@ class SetupController:
         require(self.role == "watchdog" and callable(self.ballpark_factory), "DESCRIPTOR_REQUIRED")
         session = self.ballpark_factory(self.setup)
         require(type(session) is Publisher and session.setup is self.setup, "DESCRIPTOR_INVALID")
+        return session
+
+    def network_session(self):
+        from tb4.network_table_store import LocalNetworkTable
+        require(self.role == "watchdog", "SETUP_ROLE_MISMATCH")
+        if self.network_factory is not None:
+            session = self.network_factory(self.setup)
+        else:
+            session = LocalNetworkTable(self.setup, installation_root=self.installation_root)
+        require(type(session) is LocalNetworkTable and session.setup is self.setup, "SETUP_NETWORK_CONTEXT")
         return session
 
     def save_owner_choices(self, *, mode, location, scope, isolated):
