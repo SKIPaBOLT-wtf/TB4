@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_MAINTENANCE_CONTROLLER_IMPLEMENTATION
+phase: STAGED_RECONFIGURATION_C1_MAINTENANCE_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
+source_commit: a8c97e9f822842fe53070e9f67a0aff038e18488
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0013
+last_verified_event: RP-027-A001-0014
 last_completed: RP-026
-next_action: Publish/read back exact scoped controller WIP, append source OUTCOME
-  and exact remaining boundaries, then publish a focused controller/full-capacity/legacy/native/crash/fallback
-  test INTENT using fresh owned fixture roots.
-verification: Foundation pass saved; C1 controller source intent only. All RP027 checks
-  still held for complete workflow/platform/common gates.
+next_action: Publish/read back focused controller/foundation/accepted-boundary/native/full-capacity
+  test INTENT, run it once in a fresh owned absent fixture root and preserve actual
+  failures. Then implement the compact shared inherited-operation evidence guard/resolution
+  handoff before C1 acceptance or any candidate/root/promotion unit.
+verification: Controller source WIP saved; no controller test/acceptance. Adopted
+  routing resolution stays blocked until inherited-operation proof is qualified.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0013
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
