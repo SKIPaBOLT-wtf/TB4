@@ -7,19 +7,18 @@ phase: REVALIDATION_REVIEW
 source_branch: work/rp-025-a001
 source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
 journal: docs/development/journal/RP-022/A002/events.jsonl
-last_verified_event: RP-022-A002-0001
-last_completed: RP-021
-next_action: Review each RP022predicate and own four receipts against completed exactsource
-  evidence; publish coherent PASS acceptance after guarded candidate/mainhistoryvalidation,
-  then unblockonlyRP023.
-verification: Own RP022native/protected/Qt/UNKNOWN/released-instruction activation
-  invariants against exact sourcea6 and completed final common qualification; no copied
-  identity/credential or live runtime.
+last_verified_event: RP-022-A002-0002
+last_completed: RP-022
+next_action: "Unblock only RP023/A002 own review after confirmed RP022 receipt/status\
+  \ readback; keep24\u201325holds and DEF042\u2013048open until scoped acceptance\
+  \ complete."
+verification: Review RP023authorized discovery/identity/quarantine/current-owner/pending/public
+  projections on exact same completed source; prior native/commissioning acceptance
+  now verified with immutable history.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-022-A002-0001
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

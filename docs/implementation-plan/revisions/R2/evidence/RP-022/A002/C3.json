@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "item": "RP-022",
+  "check": "RP-022.C3",
+  "attempt": "A002",
+  "source_ref": "a6b6dfaf728de283991ec8a34ac2c4a93d51f443",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Independently inspect protected first-run/Prerquisites/native credential persistence/Qt and pending/activation rollback source and named assertions, preserve original A001meaning, then review complete exact-source platform/common evidence and dependency-ready receipt candidate.",
+  "procedure": "Consume completed actual finalsourcea6/checkout8f native protected34Linux/30Windows+4explicitLinuxskip, realQt75/71+4POSIXskip, fullplatform and both-role frozen/setup/install/uninstall evidence. Inspect Setup.choose/persist/restore/review/activate/perform_once/reconcile/rollback and named native/GUI/private failure cases mapped in combined-source-invariant-review.md; validate own receipt candidate/current/mainhistory via unchanged real helper.",
+  "expected": "Preserve incomplete/blocked/cancelled states, one installation UUID/nonce and all UNKNOWN operations across protected save/restart/cancel without private leakage or replay.",
+  "observed": "Own commissioning invariants and corresponding original/new guarded enrollment composition remain satisfied. Actual protected root/credential restoration runs succeeded on each OS; complete CI2367/Linux2387/Windows2313passes with declared native/optional skips and fourknownDEF002xfails; Qt, bothrole frozen first-run/core/GUI/install/profile checks PASS. Source unchanged since shared qualification; native content recheck composes with same installed local reference after restart, and cancellation/unknown/rollback cannot bypass current readiness/defaultDeny.",
+  "exit_code": 0,
+  "platform_scope": "Actual Windows x64 and Ubuntu Linux x64 native protected files/user/session/key/Qt and isolated frozen/installers. No main-machine live root/domain/network/physicalpowerloss or ARM64/XFS/ReFS field proof.",
+  "negative_cases": [
+    "Unknown operation blocks new callback/choice and survives cancel/restart/staged recovery.",
+    "Incomplete existing root/malformed stage cannot mint replacement identity.",
+    "Revocation during UNKNOWN persists; previous references cannot be forgotten/unrevoked or leaked through status."
+  ],
+  "unverified_scope": "Actualauthenticated production peer/transport, integrated GUI/runtime deployment and released compatiblebuilds remain later integration gates. DefaultDeny and realUNRELEASED profile retained; synthetic trusted activation ports are not a release grant. Linux unlocked desktop/physicalpowerloss/fieldtopology/ARM64 not inferred.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Stopped rollback appends revision with unchanged installation/nonce/root/operations/credentialrevocation/discovery/descriptor/enrollment; preserve external keys and oldA001receipt/source. No live reset, workload replay or copied installation.",
+  "intent_event": "RP-022-A002-0001",
+  "outcome_event": "RP-022-A002-0002",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/combined-source-invariant-review.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-022/A001/reviewed-validation.md"
+  ]
+}

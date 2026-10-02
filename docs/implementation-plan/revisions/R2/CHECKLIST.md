@@ -33,7 +33,7 @@ This is a projection of `manifest.yaml`. Mark a step/check complete only through
 
 ## First run, BALLPARK, enrollment and reconfiguration
 
-- [ ] [RP-022 - First-run commissioning state machine](steps/RP-022.md) - prerequisites: RP-005, RP-007, RP-011, RP-012, RP-017, RP-019, RP-020, RP-021.
+- [x] [RP-022 - First-run commissioning state machine](steps/RP-022.md) - prerequisites: RP-005, RP-007, RP-011, RP-012, RP-017, RP-019, RP-020, RP-021.
 - [ ] [RP-023 - Scoped discovery and persistent catalogue identity](steps/RP-023.md) - prerequisites: RP-005, RP-012, RP-017, RP-022.
 - [ ] [RP-024 - Private BALLPARK creation with SKILL assistance](steps/RP-024.md) - prerequisites: RP-005, RP-007, RP-019, RP-022, RP-023.
 - [ ] [RP-025 - FETCHER enrollment and effective profile publication](steps/RP-025.md) - prerequisites: RP-005, RP-006, RP-019, RP-022, RP-024.
