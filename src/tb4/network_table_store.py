@@ -7,6 +7,7 @@ import hashlib
 import os
 from pathlib import Path
 import secrets
+from threading import get_ident
 from uuid import uuid4
 
 from .commissioning_state import Setup, storage_spec
@@ -27,6 +28,62 @@ def path(value):
     require(result.is_absolute() and result != result.anchor and ".." not in result.parts
             and result.parent != result, "NETWORK_LOCATION")
     return result
+
+
+class _ReadOnlySetupPort:
+    """Read the actual held native port only within its owner's callback."""
+    def __init__(self, reader):
+        self._reader = reader
+
+    def _port(self):
+        reader = self._reader
+        if not reader._active or get_ident() != reader._thread:
+            raise SettingsError("SETTINGS_READ_CONTEXT_EXPIRED")
+        return reader._port
+
+    @property
+    def binding(self):
+        return self._port().binding
+
+    def read(self, name):
+        return self._port().read(name)
+
+    def stage(self, raw):
+        self._port()
+        raise SettingsError("SETTINGS_READ_ONLY")
+
+    def promote(self):
+        self._port()
+        raise SettingsError("SETTINGS_READ_ONLY")
+
+
+class _HeldSetupReader:
+    """A scoped reader, never a replacement lock or writable native adapter."""
+    def __init__(self, native, port):
+        self._native, self._port = native, port
+        self._thread, self._active = get_ident(), True
+
+    @contextmanager
+    def locked(self):
+        if self._active and get_ident() == self._thread:
+            yield _ReadOnlySetupPort(self)
+        else:
+            # Another thread (or an escaped reader) must acquire the real lock.
+            with self._native.locked() as port:
+                yield port
+
+
+@contextmanager
+def _held_setup_read(store, port):
+    original = store.native
+    reader = _HeldSetupReader(original, port)
+    store.native = reader
+    try:
+        yield
+        require(store.native is reader, "NETWORK_SETTINGS_CHANGED")
+    finally:
+        reader._active = False
+        store.native = original
 
 
 def selection(value, payload):
@@ -103,7 +160,7 @@ class LocalNetworkTable:
                 require(port.read("settings.pending") is None
                         and current.revision == self.setup.snapshot.revision
                         and current.payload == self.setup._payload, "NETWORK_SETTINGS_CHANGED")
-                yield
+                yield port
         except NetworkTableError:
             raise
         except Exception:
@@ -211,11 +268,15 @@ class LocalNetworkTable:
             requires_owner=current_owner is not None)})
         return self.resume(owner_authorized=True, current_owner=current_owner)
 
-    def _target(self, selected, *, write, current_owner):
+    def _target(self, selected, *, write, current_owner, setup_port):
         pending = selected["pending"]
         def guard():
             if pending["requires_owner"]:
-                require(callable(current_owner) and current_owner() is True, "NETWORK_OWNER_SUPERSEDED")
+                require(callable(current_owner), "NETWORK_OWNER_SUPERSEDED")
+                # Full owner/local/capability/clock checks still run immediately
+                # before the table write, reading the validated locked snapshot.
+                with _held_setup_read(self.setup.store, setup_port):
+                    require(current_owner() is True, "NETWORK_OWNER_SUPERSEDED")
         target = pending["target_root"]
         exists = os.path.lexists(target)
         require(exists or write, "NETWORK_DESTINATION_NOT_CREATED")
@@ -251,14 +312,15 @@ class LocalNetworkTable:
         require(selected["pending"] is not None, "NETWORK_NO_PENDING_TRANSACTION")
         pending = selected["pending"]
         try:
-            with self._setup_lock():
+            with self._setup_lock() as setup_port:
                 if pending["kind"] == "MOVE":
                     source = self._store(selected["root"])
                     require(self._binding(source) == selected["binding_digest"], "NETWORK_LOCATION_CHANGED")
                     before = self._read_store(source, selected)
                     require(before.revision == pending["source_revision"]
                             and digest(before.payload) == pending["source_digest"], "NETWORK_SOURCE_CHANGED")
-                target, current = self._target(selected, write=write, current_owner=current_owner)
+                target, current = self._target(selected, write=write, current_owner=current_owner,
+                                               setup_port=setup_port)
                 validate(current.payload, installation=self.setup.installation_id,
                          domain=selected["domain_id"], table_id=selected["table_id"])
                 binding = self._binding(target)

@@ -36,6 +36,16 @@ changing the active selection alone intentionally retains its previous table cop
 Windows uninstallation does not track or delete user-created table files.
 Installer preservation and platform constraints require their own qualified tests.
 
+An observation update holds the actual native setup lock and verifies the current
+setup revision/payload. Its full current-owner callback still checks local state,
+capabilities, trusted clock and remote ownership immediately before the table
+write. The callback reads the same validated held native port through a temporary
+read-only scope bound to that exact store, thread and callback duration; native
+per-read checks remain active. It cannot stage or promote setup changes. Other
+threads acquire the normal native lock, and an escaped read port is invalid after
+the callback. The original native store is restored even when the callback refuses
+or raises. This adds no role authority or takeover acknowledgement requirement.
+
 ## Machine interface
 
 protocol/network-table-v1.schema.json defines the closed, bounded table format.
