@@ -1050,7 +1050,7 @@ steps:
     revalidation_required: []
   RP-026:
     title: Authorized stable-IP provisioning adapter
-    status: BLOCKED
+    status: IN_PROGRESS
     definition: steps/RP-026.md
     depends_on:
     - RP-006
