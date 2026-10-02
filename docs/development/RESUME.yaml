@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_STALE_CLOCK_FIXTURE_REPAIR
+phase: STAGED_RECONFIGURATION_C1_FALLBACK_CLOCK_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 95ee0e15cf467af4bbeb8b13a8c4d1868d135db3
+source_commit: 7d571ea43040aeb0b1eae2fff3853387093c1242
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0031
+last_verified_event: RP-027-A001-0032
 last_completed: RP-026
-next_action: Preserve/publish exact one-file source and OUTCOME, then publish/read
-  back exact24-target repeat INTENT and run original683 predicates in a new owned
-  absent fixture root.
-verification: Deeper fixed-clock fixture failure preserved; one-file repair INTENT,
-  timing/ownership code unchanged.
+next_action: Publish/read back fresh exact24-target repeat INTENT; run all683 predicates
+  once in a new owned initially absent fixture root and preserve actual outcomes before
+  C2 candidate work.
+verification: One-file clock fixture WIP saved/read back; configured native stale
+  guard unchanged;24-target repeat pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0031
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
