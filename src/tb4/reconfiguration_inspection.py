@@ -26,6 +26,13 @@ KINDS = frozenset({"SHARED_BUSY", "SHARED_UNREAD", "SHARED_UNKNOWN", "LOCAL_SETU
                    "LOCAL_PENDING", "LOCAL_ELECTION", "LOCAL_MUTATION", "LOCAL_EFFECT_UNKNOWN"})
 
 
+def workload_fingerprint(document):
+    """Private resolution binding; heartbeat progress is not a workload change."""
+    validate_document(document)
+    return hashlib.sha256(encoded({key: row for key, row in document["records"].items()
+                                   if key not in METADATA})).hexdigest()
+
+
 @dataclass(frozen=True, repr=False)
 class Blocker:
     kind: str

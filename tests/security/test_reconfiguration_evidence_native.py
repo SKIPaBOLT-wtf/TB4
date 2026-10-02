@@ -98,3 +98,19 @@ def test_large_unicode_authority_fits_one_native_frame_without_previous_copy(fix
     assert len((root / "settings.json").read_bytes()) < MAX_BYTES
     assert store.read().previous is None
     assert base64.b64decode(archive.read(receipt)["image"]) == snapshot.raw
+
+
+def test_full_capacity_unknown_work_is_archived_in_one_native_frame(fixture):
+    root, store = fixture
+    capacity = Capacity(64, 16, 128, 32)
+    value, document = setup(capacity), empty_document(DOMAIN, capacity)
+    for key in document["records"]:
+        document["records"][key] = dict(generation=1, operation_id=TRANSITION,
+            retention="UNKNOWN", body={"private":"SYNTHETIC_PRIVATE_CANARY"})
+    snapshot = image(document)
+    facts = inspect(snapshot, setup_payload=value._payload, checkpoint=Checkpoint())
+    assert len(facts.blockers) == 689
+    archive = ProtectedEvidence(store, installation_id=value.installation_id, transition_id=TRANSITION)
+    receipt = archive.preserve(snapshot, facts, owner_authorized=True)
+    assert len((root/"settings.json").read_bytes()) < MAX_BYTES
+    assert len(archive.read(receipt)["inspection"]["blockers"]) == 689

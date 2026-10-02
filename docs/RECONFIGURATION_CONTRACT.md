@@ -53,12 +53,28 @@ counts and no identities, hashes, paths, addresses, credential material or paylo
 
 ## Required subsequent workflow
 
-The foundation alone does not satisfy any RP-027 check. The controller must still
-persist exact maintenance/resolution intent, support bounded resolution of existing
-work without replay, stage a candidate through actual first-run checks, retain old
-private configuration until new access/readback succeeds, qualify same-authority
-root relocation and fallback/crash recovery, then publish a monotonic descriptor/
-configuration/leadership transition and invalidate stale local caches/leases.
+The foundation alone does not satisfy any RP-027 check. Complete acceptance still
+requires qualified maintenance/resolution transitions and preserved unresolved
+work, a candidate through actual first-run checks, retained old private settings
+until new access/readback succeeds, same-authority root relocation and fallback/
+crash recovery, then a monotonic descriptor/configuration/leadership transition
+and stale local cache/lease refusal.
+
+The C1 controller source adds settings-only maintenance entry/adoption, durable
+protected local WAL, exact read-only unknown-write inspection and fresh explicit
+zero-blocker resolution. Original setup remains unchanged. A resolution binds
+configuration/operation, workload bytes, local profile/revision and current owner
+epoch; routine heartbeat progress does not invalidate unchanged work. Pending
+local writes can only promote their exact binding/schema-checked candidate with
+explicit owner approval, and provider recovery remains inspect-only.
+
+Adoption gives the current role holder a local maintenance checkpoint without
+claiming access to the previous installation's missing local evidence. It cannot
+resolve routing eligibility from its own empty journal. The inherited-operation
+evidence handoff/guard and candidate/root/promotion flow still require subsequent
+qualified units; this conservative refusal is not an all-peer role-election gate.
+Full-capacity retained/unknown work must fit protected evidence without omission;
+metadata is bounded at128KiB and the actual native frame limit remains1MiB.
 
 Rollback is another monotonic same-authority transition, never an epoch/generation
 rewind. Any possibly applied provider effect is inspected at its exact original

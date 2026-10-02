@@ -20,6 +20,8 @@ from .reconfiguration_inspection import Blocker, Inspection, authority_image
 from .drive.docs_authority import AuthorityBinding, validated
 from .drive.folder_authority import FolderBinding
 
+MAX_FACT_BYTES = 128 * 1024  # All fixed-layout blockers still fit a first private frame.
+
 
 @dataclass(frozen=True, repr=False)
 class EvidenceReceipt:
@@ -56,7 +58,7 @@ class ProtectedEvidence:
         facts = payload["inspection"]
         require(type(facts) is dict and set(facts) == {
             "authority", "revision", "raw_sha256", "setup_sha256", "blockers"}
-            and len(encoded(facts)) <= 16 * 1024, "CONFIGURATION_EVIDENCE_CHANGED")
+            and len(encoded(facts)) <= MAX_FACT_BYTES, "CONFIGURATION_EVIDENCE_CHANGED")
         authority = facts["authority"]
         require(type(authority) is dict and set(authority) == {"mode", "binding"}
                 and authority["mode"] in {"NATIVE_DOCS", "FOLDER_SQLITE_V1"},
@@ -92,7 +94,7 @@ class ProtectedEvidence:
                 and inspection.raw_sha256 == hashlib.sha256(snapshot.raw).hexdigest(),
                 "CONFIGURATION_EVIDENCE_CHANGED")
         facts = inspection.private_record()
-        require(len(encoded(facts)) <= 16 * 1024 and len(snapshot.raw) <= MAX_DOCUMENT_BYTES,
+        require(len(encoded(facts)) <= MAX_FACT_BYTES and len(snapshot.raw) <= MAX_DOCUMENT_BYTES,
                 "CONFIGURATION_EVIDENCE_SIZE")
         payload = dict(schema_version=1, kind="RECONFIGURATION_AUTHORITY_EVIDENCE",
                        installation_id=self.installation_id, transition_id=self.transition_id,
