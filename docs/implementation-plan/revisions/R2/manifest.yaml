@@ -3,7 +3,7 @@ revision: R2
 status_authority: docs/implementation-plan/revisions/R2/manifest.yaml
 baseline_commit: 3d3e6e0dc0eee51e694e83b37547c047cea8e355
 authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
-current_step: RP-025
+current_step: RP-026
 execution_started: true
 statuses:
 - PLANNED
@@ -1050,7 +1050,7 @@ steps:
     revalidation_required: []
   RP-026:
     title: Authorized stable-IP provisioning adapter
-    status: PLANNED
+    status: IN_PROGRESS
     definition: steps/RP-026.md
     depends_on:
     - RP-006
@@ -1066,11 +1066,12 @@ steps:
     - R15
     - R18
     completed_checks: []
-    evidence: []
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/qualified-predecessor-handoff.md
     amendments:
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
-    active_attempt: null
+    active_attempt: A001
     check_evidence: {}
     revalidation_required: []
   RP-027:

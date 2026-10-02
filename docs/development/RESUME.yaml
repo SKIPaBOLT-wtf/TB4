@@ -1,25 +1,26 @@
 schema_version: 1
 revision: R2
-work_item: RP-025
-check: RP-025.C4
+work_item: RP-026
+check: RP-026.C1
 attempt: A001
-phase: ACCEPTANCE_REVIEW
+phase: PREDECESSOR_HANDOFF
 source_branch: work/rp-025-a001
 source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
-journal: docs/development/journal/RP-025/A001/events.jsonl
-last_verified_event: RP-025-A001-0075
+journal: docs/development/journal/RP-026/A001/events.jsonl
+last_verified_event: RP-026-A001-0001
 last_completed: RP-025
-next_action: Publish/read back guarded first RP-025/A001 four-check acceptance. Then
-  publish a separate defect-resolution INTENT and close DEF-042 through DEF-048 only
-  after every required repair/recheck and preserved failure/history link is verified.
-verification: Verify defect-specific repair and every required accepted recheck before
-  coherent resolution; then complete final public source/diff/privacy/history review
-  and ordinary authorized PR merge. No live release/deployment/network authority is
-  implied.
+next_action: Close only proven predecessor development defects and publish their evidence/registry
+  outcome. Then finish unchanged-source lightweight gates and authorized PR34 merge
+  before starting RP-026 authority selection.
+verification: 'Administrative predecessor handoff only: prove exact defect regressions
+  and accepted rechecks, complete final unchanged-source/diff/privacy/history gates
+  and merge PR34. Then inspect RP-026 commissioned authority/authorization; no network
+  change or RP-026 acceptance.'
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-026-A001-0001
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
