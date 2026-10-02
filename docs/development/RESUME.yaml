@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_MAINTENANCE_REPEAT_TEST
+phase: STAGED_RECONFIGURATION_C1_MAINTENANCE_REPEAT_PASSED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 0feb433824d43e6f0f6975e8f776316e9723c910
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0019
+last_verified_event: RP-027-A001-0020
 last_completed: RP-026
-next_action: Publish/read back actual source-linked repeat outcome/case evidence,
-  preserving any failures; then proceed with the next inherited-operation/runtime
-  C1 source unit or its scoped defect repair, retaining all C1-C4 holds.
-verification: Exact repaired source saved; scoped repeat INTENT pending actual process
-  outcome.
+next_action: Publish/read back bounded C1 shared inherited-operation/runtime-native
+  reservation implementation INTENT and explicit unreleased contract amendment; preserve
+  role availability, exact-operation UNKNOWN evidence and no second control authority.
+verification: Exact source657 predicates:653PASS,4 Linux-only skips, actual exit0.
+  Fixture remedy supported; all C1-C4 unaccepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0019
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

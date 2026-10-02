@@ -3874,10 +3874,12 @@ defects:
         stored enrolled label; Leadership.observe raises LEADERSHIP_IDENTITY before
         takeover assertions.
       failing_source: a8c97e9f822842fe53070e9f67a0aff038e18488
-      passing_source: null
+      passing_source: 0feb433824d43e6f0f6975e8f776316e9723c910
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-tests-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-test-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-fixture-repeat.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-fixture-repeat-cases.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -3900,6 +3902,14 @@ defects:
       result: UNTESTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-tests-failure.md
+    - id: exact-repaired-source-retains-and-passes-all-fallback-predicates
+      claim: Same22 target run retains every original656 predicate plus new wrong-label
+        refusal and exits0, reaching all three original intended fallback/inspection/adoption
+        assertions without any application guard change.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-fixture-repeat.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-fixture-repeat-cases.json
     repairs:
     - item: RP-027
       attempt: A001
@@ -3920,5 +3930,6 @@ defects:
     notes: Fixture-only provenance fault in unaccepted RP027. Accepted leadership
       identity checks correctly reject the mismatch; no application-source or predecessor
       acceptance defect is claimed. Keep full required C1-C4 rechecks held under the
-      unchanged registry.
+      unchanged registry. Exact fixture-only repair repeat passes all intended predicates;
+      final mandatory C1-C4 rechecks remain held.
     legacy_record: null
