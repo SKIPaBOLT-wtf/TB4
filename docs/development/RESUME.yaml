@@ -3,21 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_FALLBACK_CLOCK_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C1_HEARTBEAT_DERIVED_REPEAT_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 7d571ea43040aeb0b1eae2fff3853387093c1242
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0032
+last_verified_event: RP-027-A001-0033
 last_completed: RP-026
-next_action: Publish/read back fresh exact24-target repeat INTENT; run all683 predicates
-  once in a new owned initially absent fixture root and preserve actual outcomes before
-  C2 candidate work.
-verification: One-file clock fixture WIP saved/read back; configured native stale
-  guard unchanged;24-target repeat pending.
+next_action: Publish/read back exact test outcome/cases and append supported or failed
+  DEF-059 remedy facts. If passing, continue a separately scoped C2 protected actual-first-run
+  candidate/old-profile retention implementation; otherwise preserve and repair the
+  smallest proven remaining defect.
+verification: Actual-heartbeat fixture source saved;24-target/683-predicate repeat
+  INTENT, result pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0033
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
