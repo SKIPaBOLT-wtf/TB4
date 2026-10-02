@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: INSTALLER_DATA_GUARD_WIP_PUBLISHED
+phase: EXACT_SOURCE_TARGET_QUALIFICATION
 source_branch: feat/rp026-local-network-table
 source_commit: 9e986b3ff62c18facc81e06a7b1b521209a899b9
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0029
+last_verified_event: RP-026-A001-0030
 last_completed: RP-025
-next_action: Publish/read back a fresh exact-source qualification INTENT for a new
-  Windows target/SKILL/current/history/scanner/diff group and independent isolated
-  Linux failed-inspection recheck. Then separately authorize hosted full platform/build
-  checks and a draft PR.
+next_action: Read this same fresh Windows target run and new Linux diagnostic result;
+  publish all actual gate/skip outcomes and source-linked review. If passed, publish
+  separate hosted full platform/build and draft PR qualification INTENT.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-026-A001-0030
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
