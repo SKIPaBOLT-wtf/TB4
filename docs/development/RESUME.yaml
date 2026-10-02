@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: PENDING_NOTICE_AND_HELPER_CONTEXT_REPAIR
+phase: PENDING_NOTICE_AND_HELPER_CONTEXT_WIP_RECORDED
 source_branch: feat/rp026-local-network-table
-source_commit: 6b1a4d19d5e4f349823b4367b5e19b4b7fe8a657
+source_commit: 2575de12ffed36a2e3e739710a9183dd0bfa437d
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0051
+last_verified_event: RP-026-A001-0052
 last_completed: RP-025
-next_action: Apply only bounded reporting/helper-context/tests/contract change, publish/read
-  back exact WIP and source-linked OUTCOME; then fresh diagnostic/targeted/hosted
-  qualification INTENT for same PR35.
+next_action: Publish fresh diagnostic/targeted/native/Qt/source gate and hosted platform
+  qualification INTENT for exact source on same PR35; run new isolated fixtures, preserve
+  actual results and accept only reviewed complete predicates.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-026-A001-0051
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
