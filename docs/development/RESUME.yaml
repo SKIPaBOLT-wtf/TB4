@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_CUT_PROVENANCE_CONFIRMED
+phase: STAGED_RECONFIGURATION_C2_NATIVE_CUT_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c323da611eb98de3966145e226679335976b3f22
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0040
+last_verified_event: RP-027-A001-0041
 last_completed: RP-026
-next_action: Publish/read back one-file test-only repair INTENT; change actual-native
-  cut expected closed code to accepted SETTINGS_STORE_UNAVAILABLE, retaining exact
-  pending promotion/owner/resume/old bytes/no-send assertions and all720 cases; preserve
-  source before separately recorded repeat.
-verification: Same three failed native cut frames inspected intact; DEF060 closed
-  expectation fault proven; recovery repeat unqualified.
+next_action: Publish/read back exact one-file source OUTCOME; then fresh27-target/unchanged720-predicate
+  repeat INTENT and run once with a new owned absent fixture root. Record STARTED
+  if still running before waiting and preserve actual outcome/defect facts before
+  C3.
+verification: Same native pending-cut integrity proven; one-file closed native test
+  expectation repair INTENT; original guards unchanged.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0041
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
