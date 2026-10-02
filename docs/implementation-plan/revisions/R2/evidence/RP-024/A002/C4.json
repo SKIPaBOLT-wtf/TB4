@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "item": "RP-024",
+  "check": "RP-024.C4",
+  "attempt": "A002",
+  "source_ref": "a6b6dfaf728de283991ec8a34ac2c4a93d51f443",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Independent exact-source and named-assertion review of this predicate against completed common qualification; preserve original A001 meaning and qualify the own receipt with complete actual-main history.",
+  "procedure": "Inspect ballpark_setup.py, ballpark_publication.py, ballpark_records.py, actual Qt BallparkDialog and selected concrete test assertions. Consume the 75 BALLPARK tests passed on each OS, final full/native/Qt/frozen qualification and semantic gate checks. Use unchanged real helper/current/history/registry/privacy/projection guards before publication.",
+  "expected": "Test blank deployment, partial information, wrong root, incompatible schema and malicious device-provided text; never seed from a developer machine or past user topology.",
+  "observed": "Blank deployment has no machine seed or implicit scan. Partial choices remain durable and request only missing fields. Wrong root/domain/schema/authority, malicious extra fields, stale discovery decisions, cancelled setup, altered pin or pending plan, overflow and failed native private saves refuse without replacing the prior descriptor. Codec rejects bool/unknown values and the full 64-slot bounded layout round-trips. Default repository guidance remains UNRELEASED with no released build.",
+  "exit_code": 0,
+  "platform_scope": "Actual Windows x64 and Ubuntu Linux x64 BALLPARK/Qt/native protected persistence/full suites and isolated both-role frozen/setup/install tests. Trusted provider operations and network arrangement use explicit synthetic adapters.",
+  "negative_cases": [
+    "test_blank_deployment_has_no_machine_seed_or_implicit_scan",
+    "test_invalid_closed_selection_preserves_draft",
+    "test_discovery_change_requires_new_proposal_before_confirmation",
+    "test_protected_frame_rejects_wrong_binding_or_tampered_draft",
+    "test_local_pending_save_failure_never_reaches_shared_write",
+    "test_invalid_remote_binding_never_writes_or_activates",
+    "test_remote_record_over_budget_cannot_be_replaced_or_reset",
+    "test_compact_codec_rejects_ambiguous_or_unrecognized_values",
+    "test_repository_profile_remains_unreleased_and_hashes_include_setup_guidance"
+  ],
+  "unverified_scope": "No live-domain publication, authenticated production adapter/peer, released build, integrated end-to-end setup deployment or physical power-loss test is claimed. Guidance/profile remains UNRELEASED/default-deny; synthetic trusted ports prove bounded component composition only.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Keep the prior confirmed descriptor active until the exact new revision is confirmed. Preserve protected choices, original instruction pin, identities, profiles, external credentials and pending UNKNOWN plans; cancellation or rollback cannot erase owner decisions or replay a publication.",
+  "intent_event": "RP-024-A002-0001",
+  "outcome_event": "RP-024-A002-0002",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-024/A002/reviewed-validation.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/combined-source-invariant-review.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-024/A001/reviewed-validation.md"
+  ]
+}

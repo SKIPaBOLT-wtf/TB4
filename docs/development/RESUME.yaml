@@ -7,19 +7,18 @@ phase: REVALIDATION_REVIEW
 source_branch: work/rp-025-a001
 source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
 journal: docs/development/journal/RP-024/A002/events.jsonl
-last_verified_event: RP-024-A002-0001
-last_completed: RP-023
-next_action: Review RP-024 predicates and prepare four own-attempt receipts; publish
-  coherent guarded PASS, then unblock RP-025/A001 for its first acceptance review
-  without fabricating previous acceptance.
-verification: Own RP-024 repository-pinned guidance, local owner approval, existing-object
-  publication, minimal LLM description and failure/rollback review against the unchanged
-  final qualification. RP-025 remains held.
+last_verified_event: RP-024-A002-0002
+last_completed: RP-024
+next_action: After guarded candidate and actual-main-history PASS, publish/read back
+  RP-024/A002 four-check acceptance; then unblock RP-025/A001 for first acceptance
+  review and retain DEF-042 through DEF-048 until all scoped receipts are verified.
+verification: Review RP-025 distinct protected FETCHER enrollment, actual effective
+  profiles, durable no-replay recovery and bounded privacy-safe summaries. Native/commissioning/discovery/BALLPARK
+  dependencies have current source-linked accepted receipts.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-024-A002-0001
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
