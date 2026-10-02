@@ -29,7 +29,7 @@ This is a projection of `manifest.yaml`. Mark a step/check complete only through
 - [x] [RP-018 - Shared-folder transport conformance adapter](steps/RP-018.md) - prerequisites: RP-008, RP-009, RP-010, RP-012, RP-015.
 - [x] [RP-019 - Idempotent fixed-slot commissioning](steps/RP-019.md) - prerequisites: RP-009, RP-015, RP-016.
 - [x] [RP-020 - Windows protected credential resolver](steps/RP-020.md) - prerequisites: RP-006, RP-012.
-- [ ] [RP-021 - Linux protected credential resolver](steps/RP-021.md) - prerequisites: RP-006, RP-012.
+- [x] [RP-021 - Linux protected credential resolver](steps/RP-021.md) - prerequisites: RP-006, RP-012.
 
 ## First run, BALLPARK, enrollment and reconfiguration
 

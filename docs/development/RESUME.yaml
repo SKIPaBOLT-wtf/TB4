@@ -1,23 +1,38 @@
 schema_version: 1
-revision: "R2"
-work_item: "RP-021"
-check: "RP-021.C4"
-attempt: "A002"
-phase: "ACCEPTANCE_REVIEW"
-source_branch: "work/rp-025-a001"
-source_commit: "a6b6dfaf728de283991ec8a34ac2c4a93d51f443"
-journal: "docs/development/journal/RP-021/A002/events.jsonl"
-last_verified_event: "RP-021-A002-0033"
-last_completed: "RP-020"
-next_action: "Publish reviewed root acceptance after real candidate/history checks; then select RP022/A002 revalidation and consume same final common-source evidence without duplicate builds."
-verification: "Qualify native held source-content revocation and all transitive affected checks on exact repaired source; preserve immutable snapshot and private/native trust boundaries."
-execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
+revision: R2
+work_item: RP-021
+check: RP-021.C4
+attempt: A002
+phase: ACCEPTANCE_REVIEW
+source_branch: work/rp-025-a001
+source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
+journal: docs/development/journal/RP-021/A002/events.jsonl
+last_verified_event: RP-021-A002-0034
+last_completed: RP-021
+next_action: Select RP022/A002 own revalidation review only after remotely verified
+  RP021 acceptance; preserve all remaining dependent/native/registration defects until
+  full affected acceptance.
+verification: "Revalidate RP022 native credential restoration/commissioning activation\
+  \ and all protected/pending/public boundaries on same completed sourcea6/checkout8f;\
+  \ preserve RP021/A001history and remaining22\u201325holds."
+execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: ["RP-021-A002-0033"]
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002","DEF-042","DEF-043","DEF-044","DEF-045","DEF-046","DEF-047","DEF-048"]
-rollback: "Revoke only a specifically confirmed new enrollment; retain slot generation/history, prior approved bindings and UNKNOWN operations. Do not copy another installation credential/profile, reset authority or replay an uncertain write."
-next_implementation_step: "RP-025"
-next_implementation_check: "RP-025.C4"
+known_open_defects:
+- DEF-001
+- DEF-002
+- DEF-042
+- DEF-043
+- DEF-044
+- DEF-045
+- DEF-046
+- DEF-047
+- DEF-048
+rollback: Revoke only a specifically confirmed new enrollment; retain slot generation/history,
+  prior approved bindings and UNKNOWN operations. Do not copy another installation
+  credential/profile, reset authority or replay an uncertain write.
+next_implementation_step: RP-025
+next_implementation_check: RP-025.C4
