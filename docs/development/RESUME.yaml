@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-026
 check: RP-026.C1
 attempt: A001
-phase: LOCAL_NETWORK_TABLE_IMPLEMENTATION
-source_branch: main
-source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
+phase: LOCAL_NETWORK_TABLE_WIP_PUBLISHED
+source_branch: feat/rp026-local-network-table
+source_commit: f638b9ec28091554f879dd59cd4b8db3105f1251
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0014
+last_verified_event: RP-026-A001-0015
 last_completed: RP-025
-next_action: Create and verify the exact dedicated branch; implement and publish sanitized
-  source WIP, then checkpoint its actual outcome before targeted/native regression
-  tests.
+next_action: Publish and read back a bounded targeted native Windows/schema/helper/Qt
+  regression and public-data/progress qualification INTENT for exact source f638b9ec28091554f879dd59cd4b8db3105f1251.
+  Record failures before repairs, then qualify the corresponding Linux and hosted
+  packaged matrix.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-026-A001-0014
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

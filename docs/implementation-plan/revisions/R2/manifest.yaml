@@ -1075,6 +1075,7 @@ steps:
     - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/qualified-predecessor-handoff.md
     - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/network-authority-decision.md
     - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/network-authority-review.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/local-table-wip.md
     amendments:
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
