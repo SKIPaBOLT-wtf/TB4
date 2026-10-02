@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C1
 attempt: A001
-phase: STAGED_RECONFIGURATION_C1_FOUNDATION_IMPLEMENTATION
+phase: STAGED_RECONFIGURATION_C1_FOUNDATION_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 51a40da7176cfe2668c8b7bf2eeff7dea230d685
+source_commit: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0006
+last_verified_event: RP-027-A001-0007
 last_completed: RP-026
-next_action: Commit/publish/read back exact foundation WIP; append source OUTCOME
-  and amendment linkage with zero accepted checks. Then publish focused current/legacy/native/maintenance-race
-  test INTENT and execute only those tests in fresh synthetic fixtures.
-verification: C1 foundation source unit only; no test result/check acceptance/live
-  action.
+next_action: Publish/read back focused foundation/legacy/native regression test INTENT,
+  run exact synthetic tests on this source and preserve any failures before repair.
+  Full maintenance controller/resolution/candidate/root/revision units remain required.
+verification: Untested foundation WIP remotely saved; C1-C4 unaccepted. Actual tests
+  require the next verified INTENT.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0006
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
