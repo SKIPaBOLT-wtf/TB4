@@ -880,7 +880,7 @@ steps:
       defect: DEF-046
   RP-023:
     title: Scoped discovery and persistent catalogue identity
-    status: IN_PROGRESS
+    status: VERIFIED
     definition: steps/RP-023.md
     depends_on:
     - RP-005
@@ -892,20 +892,31 @@ steps:
     - R13
     - R15
     - R18
-    completed_checks: []
-    evidence:
-    - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C1.json
-    - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C2.json
-    - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C3.json
-    - docs/implementation-plan/revisions/R2/evidence/RP-023/A001/C4.json
-    amendments: []
-    active_attempt: A002
-    check_evidence: {}
-    revalidation_required:
+    completed_checks:
     - RP-023.C1
     - RP-023.C2
     - RP-023.C3
     - RP-023.C4
+    evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-023/A002/C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-023/A002/C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-023/A002/C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-023/A002/C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-023/A002/reviewed-validation.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md
+    - docs/implementation-plan/revisions/R2/evidence/RP-021/A002/combined-source-invariant-review.md
+    amendments: []
+    active_attempt: A002
+    check_evidence:
+      RP-023.C1:
+      - docs/implementation-plan/revisions/R2/evidence/RP-023/A002/C1.json
+      RP-023.C2:
+      - docs/implementation-plan/revisions/R2/evidence/RP-023/A002/C2.json
+      RP-023.C3:
+      - docs/implementation-plan/revisions/R2/evidence/RP-023/A002/C3.json
+      RP-023.C4:
+      - docs/implementation-plan/revisions/R2/evidence/RP-023/A002/C4.json
+    revalidation_required: []
     acceptance_history:
     - attempt: A001
       completed_checks:

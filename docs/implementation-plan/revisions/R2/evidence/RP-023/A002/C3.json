@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "item": "RP-023",
+  "check": "RP-023.C3",
+  "attempt": "A002",
+  "source_ref": "a6b6dfaf728de283991ec8a34ac2c4a93d51f443",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Inspect the exact qualified source and concrete assertions for this predicate, preserve original A001 meaning, and consume completed native/platform/common evidence. Validate the own-attempt receipt and complete actual-main history using the unchanged checkpoint helper.",
+  "procedure": "Read discovery_catalogue.py, discovery_native.py, discovery_state.py, discovery_workflow.py and named catalogue/collection/loopback/persistent-publication assertions. Consume final exact-source CI, both OS full suites, native protected persistence and frozen/setup/install qualification; do not repeat network operations or builds.",
+  "expected": "Test duplicate hostnames, address reassignment, multiple interfaces, unstable hardware identifiers and routed/VPN observations.",
+  "observed": "Duplicate names remain separate untrusted identities. Reassigned addresses, lost/colliding hardware hints, conflicting verified endpoints and full catalogue/quarantine retain prior mappings or create bounded quarantine evidence. A separately verified binding can track multiple endpoints for one enrolled identity; hints cannot construct that binding. Routed IPv4/IPv6/VPN behavior is covered by explicit synthetic scope and trusted-port fixtures, not inferred from native loopback.",
+  "exit_code": 0,
+  "platform_scope": "Actual Windows x64 and Ubuntu Linux x64 native loopback, protected settings and full/frozen suites; routed/VPN and multi-interface policy scenarios are explicitly synthetic.",
+  "negative_cases": [
+    "test_duplicate_hostnames_are_distinct_untrusted_catalogue_entries",
+    "test_address_reassignment_or_lost_hardware_hint_is_quarantined",
+    "test_same_hardware_hint_on_another_interface_never_merges_identity",
+    "test_verified_peer_tracks_multiple_mutable_addresses_with_one_alias",
+    "test_unverified_observation_cannot_refresh_trusted_target_or_copy_its_trust",
+    "test_conflicting_verified_address_never_reassigns_existing_target",
+    "test_routed_ipv6_and_icmp_unavailable_do_not_imply_offline_or_fetcher",
+    "test_full_catalogue_and_quarantine_preserve_all_existing_records"
+  ],
+  "unverified_scope": "Actual Windows/Linux loopback and native protected persistence are qualified. Routed/VPN/multiple-interface topology uses explicit synthetic fixtures; real home-network collection, authenticated production peer, physical power loss and release/deployment remain later gates.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Preserve previous protected identities, aliases, bindings, quarantine and pending UNKNOWN operations. Revert only a confirmed public observation revision while stopped; never reassign a trusted target, rename an OS, reserve an address or replay a write.",
+  "intent_event": "RP-023-A002-0001",
+  "outcome_event": "RP-023-A002-0002",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/final-combined-hosted-qualification.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-021/A002/combined-source-invariant-review.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-023/A001/reviewed-validation.md",
+    "docs/implementation-plan/revisions/R2/evidence/RP-023/A002/reviewed-validation.md"
+  ]
+}
