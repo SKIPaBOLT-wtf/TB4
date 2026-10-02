@@ -3,18 +3,18 @@ revision: "R2"
 work_item: "RP-026"
 check: "RP-026.C1"
 attempt: "A001"
-phase: "MERGED_VERIFIED"
+phase: "NETWORK_AUTHORITY_DESIGN_REVIEW"
 source_branch: "main"
 source_commit: "a6b6dfaf728de283991ec8a34ac2c4a93d51f443"
 journal: "docs/development/journal/RP-026/A001/events.jsonl"
-last_verified_event: "RP-026-A001-0009"
+last_verified_event: "RP-026-A001-0010"
 last_completed: "RP-025"
-next_action: "Inspect RP-026.C1 authorized network-management decision and applicable protected commissioning/archive facts; prepare a concrete portable supported authority proposal. Implement only within the approved architecture and scoped permissions; no automatic network change or unsupported feature acceptance."
+next_action: "Publish proposal and coherent factual design-review outcome/current cursor. If owner architecture choice is absent, record the exact decision request and stop before dependent implementation; no broad context or secret request."
 verification: "Fresh exact-head/base/review/protection/source checks and single ordinary PR34 merge, then actual merged main/ancestry/full current-history readback. RP-026 remains zero-check and no operational network authority is inferred."
 execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents: ["RP-026-A001-0010"]
 expected_user_action: null
 blocking_decisions: []
 known_open_defects: ["DEF-001","DEF-002"]
