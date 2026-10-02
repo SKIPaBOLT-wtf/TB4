@@ -89,3 +89,55 @@ def test_linux_installer_preserves_installation_local_table_before_any_replaceme
         assert (table / 'settings.json').read_text() == 'synthetic-retained-table'
     else:
         assert table.is_symlink()
+
+
+@pytest.mark.skipif(os.name == 'nt', reason='POSIX installer contract')
+@pytest.mark.parametrize('operation', ['install', 'uninstall'])
+@pytest.mark.parametrize('failure', ['failed-search', 'denied-directory'])
+def test_linux_installer_refuses_when_local_data_inspection_is_unavailable(tmp_path, operation, failure):
+    if failure == 'denied-directory' and os.geteuid() == 0:
+        pytest.skip('permission denial requires an actual non-root Linux principal')
+    home = tmp_path / 'isolated-home'
+    home.mkdir()
+    env = dict(os.environ, HOME=str(home), XDG_DATA_HOME=str(home / 'data'),
+               XDG_CONFIG_HOME=str(home / 'config'))
+    destination = home / 'data/tb4-apps/watchdog'
+    destination.mkdir(parents=True)
+    worker = destination / 'tb4-watchdog-worker'
+    original = '#!/bin/sh\n# original-synthetic\nexit 0\n'
+    worker.write_text(original)
+    worker.chmod(0o755)
+    table = destination / 'custom-table/settings.json'
+    table.parent.mkdir()
+    table.write_text('synthetic-preserved-table')
+    stage = tmp_path / 'candidate'
+    stage.mkdir()
+    bundle = stage / 'tb4-watchdog'
+    bundle.mkdir()
+    for name in ('tb4-watchdog', 'tb4-watchdog-worker'):
+        candidate = bundle / name
+        candidate.write_text('#!/bin/sh\n# candidate-synthetic\nexit 0\n')
+        candidate.chmod(0o755)
+    (stage / 'uninstall.sh').write_text('#!/bin/sh\nexit 0\n')
+    script = stage / (operation + '.sh')
+    script.write_text((ROOT / ('packaging/desktop/' + operation + '-linux.sh')).read_text().replace('@ROLE@', 'watchdog'))
+    if failure == 'failed-search':
+        shims = tmp_path / 'shims'
+        shims.mkdir()
+        find = shims / 'find'
+        find.write_text('#!/bin/sh\nexit 42\n')
+        find.chmod(0o755)
+        env['PATH'] = str(shims) + os.pathsep + env['PATH']
+    else:
+        table.parent.chmod(0)
+    try:
+        result = subprocess.run(['sh', str(script)], env=env, capture_output=True, timeout=20)
+    finally:
+        if failure == 'denied-directory':
+            table.parent.chmod(0o700)  # Restore this isolated fixture only.
+    assert result.returncode != 0
+    assert worker.read_text() == original
+    assert table.read_text() == 'synthetic-preserved-table'
+    assert not destination.with_name('watchdog.previous').exists()
+    assert not (home / 'data/applications/tb4-watchdog.desktop').exists()
+    assert str(table.parent).encode() not in result.stdout + result.stderr

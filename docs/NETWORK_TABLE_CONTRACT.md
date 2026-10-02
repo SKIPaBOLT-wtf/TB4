@@ -30,7 +30,9 @@ readback failures retain the selection/pending intent. Explicit completion of th
 same local change follows an exact current-state inspection, never blind replay.
 No chmod/ACL repair, credential copying, identity reset or remote storage
 migration occurs. Linux installers refuse replacement/removal if a default or custom table
-still resides in the installation folder; move it through settings first.
+or its retained prior copy still resides in the installation folder, or if local-data
+inspection fails. Preserve all such data outside the folder before replacement/removal;
+changing the active selection alone intentionally retains its previous table copy.
 Windows uninstallation does not track or delete user-created table files.
 Installer preservation and platform constraints require their own qualified tests.
 
