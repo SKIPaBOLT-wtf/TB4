@@ -5,6 +5,9 @@ import json
 from pathlib import Path
 
 import pytest
+import yaml
+
+from tools.development.ledger import LedgerError, load
 
 from tb4.command_contract import operation_id
 from tb4.security_contract import (ACTORS, BASE, DIMENSIONS, FACTS, FAULTS, GATES,
@@ -45,9 +48,79 @@ def check_artifact(descriptor, data, **changes):
 def test_export_and_every_gate_reference_are_current_plan_identities():
     exported = json.loads((ROOT / "protocol/drafts/r2-security-matrix.json").read_text(encoding="utf-8"))
     assert exported == matrix_export()
-    manifest = (ROOT / "docs/implementation-plan/revisions/R2/manifest.yaml").read_text(encoding="utf-8")
+    current = load(ROOT, "docs/implementation-plan/CURRENT.yaml")
+    assert current["active_revision"] == "R2"
+    manifest = load(ROOT, current["manifest"])
+    assert manifest["revision"] == "R2"
     for steps in GATES.values():
-        assert steps and all("  " + step + ": " in manifest for step in steps)
+        assert steps and all(step in manifest["steps"] for step in steps)
+        assert all(manifest["steps"][step]["definition"] == f"steps/{step}.md" for step in steps)
+
+
+def _gate_manifest():
+    return load(ROOT, load(ROOT, "docs/implementation-plan/CURRENT.yaml")["manifest"])
+
+
+def _inline_gate_manifest(manifest):
+    text = yaml.safe_dump({k: v for k, v in manifest.items() if k != "steps"}, sort_keys=False)
+    return text + "steps:\n" + "".join(
+        "  " + step + ": " + yaml.safe_dump(record, default_flow_style=True, width=1000000).strip() + "\n"
+        for step, record in manifest["steps"].items())
+
+
+def _gate_repository(tmp_path, text):
+    root = tmp_path / "synthetic-repository"
+    current = load(ROOT, "docs/implementation-plan/CURRENT.yaml")
+    current_path = root / "docs/implementation-plan/CURRENT.yaml"
+    current_path.parent.mkdir(parents=True)
+    current_path.write_text(yaml.safe_dump(current), encoding="utf-8")
+    manifest_path = root / current["manifest"]
+    manifest_path.parent.mkdir(parents=True)
+    manifest_path.write_text(text, encoding="utf-8")
+    exported_path = root / "protocol/drafts/r2-security-matrix.json"
+    exported_path.parent.mkdir(parents=True)
+    exported_path.write_text(json.dumps(matrix_export()), encoding="utf-8")
+    return root
+
+
+@pytest.mark.parametrize("style", ["block", "inline", "json"])
+def test_gate_identities_survive_equivalent_manifest_serialization(tmp_path, monkeypatch, style):
+    manifest = _gate_manifest()
+    text = (yaml.safe_dump(manifest, sort_keys=False) if style == "block" else
+            _inline_gate_manifest(manifest) if style == "inline" else json.dumps(manifest))
+    monkeypatch.setattr(__import__(__name__, fromlist=["ROOT"]), "ROOT", _gate_repository(tmp_path, text))
+    test_export_and_every_gate_reference_are_current_plan_identities()
+
+
+@pytest.mark.parametrize("missing", sorted({step for steps in GATES.values() for step in steps}))
+def test_gate_identity_cannot_be_replaced_by_comment_text(tmp_path, monkeypatch, missing):
+    manifest = _gate_manifest()
+    del manifest["steps"][missing]
+    text = _inline_gate_manifest(manifest) + f"#  {missing}: synthetic non-record text\n"
+    # Positive control for the old false acceptance; all other real keys remain.
+    assert all("  " + step + ": " in text for steps in GATES.values() for step in steps)
+    monkeypatch.setattr(__import__(__name__, fromlist=["ROOT"]), "ROOT", _gate_repository(tmp_path, text))
+    with pytest.raises(AssertionError):
+        test_export_and_every_gate_reference_are_current_plan_identities()
+
+
+def test_gate_identity_cannot_point_to_another_definition(tmp_path, monkeypatch):
+    manifest = _gate_manifest()
+    manifest["steps"][GATES["authority_cas"][0]]["definition"] = "steps/RP-999.md"
+    text = _inline_gate_manifest(manifest)
+    monkeypatch.setattr(__import__(__name__, fromlist=["ROOT"]), "ROOT", _gate_repository(tmp_path, text))
+    with pytest.raises(AssertionError):
+        test_export_and_every_gate_reference_are_current_plan_identities()
+
+
+def test_gate_identity_rejects_duplicate_manifest_keys(tmp_path, monkeypatch):
+    manifest = _gate_manifest()
+    step = GATES["authority_cas"][0]
+    text = _inline_gate_manifest(manifest) + "  " + step + ": " + yaml.safe_dump(
+        manifest["steps"][step], default_flow_style=True, width=1000000).strip() + "\n"
+    monkeypatch.setattr(__import__(__name__, fromlist=["ROOT"]), "ROOT", _gate_repository(tmp_path, text))
+    with pytest.raises(LedgerError, match="DUPLICATE_OR_INVALID_KEY"):
+        test_export_and_every_gate_reference_are_current_plan_identities()
 
 
 @pytest.mark.parametrize("action", RULES)
