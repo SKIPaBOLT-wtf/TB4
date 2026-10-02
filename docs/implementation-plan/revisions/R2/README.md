@@ -53,8 +53,7 @@ the same mandatory checkpoint process is performed manually.
 
 Design decisions are deliverables with acceptance evidence, not assumptions to
 silently choose during coding. Key decision gates: RP-008 (safe storage/leadership),
-RP-009 (fixed capacity/layout), RP-010/011 (schema/timing), RP-026 (authorized
-network management), RP-042 (actual exit-mode launcher). Blocking a required
+RP-009 (fixed capacity/layout), RP-010/011 (schema/timing), RP-026 (protected local network table and device-description workflow), RP-042 (actual exit-mode launcher). Blocking a required
 feature or declaring it unsupported does not satisfy that feature's final gate.
 
 ## Completion rules
@@ -64,3 +63,5 @@ platform/topology scope, reviewed sanitized evidence and an interruption/rollbac
 boundary. All four checks plus the common work-instruction gates are required for
 step VERIFIED. A defect opens a new attempt and forces scoped revalidation; it
 does not delete earlier evidence. No live commands were sent to create this plan.
+
+The owner's [RP-026 local-network-table amendment](amendments/RP-026/A-001-local-network-table.md) supersedes the unaccepted stable-IP provisioning requirement. WATCHDOG observes topology and reports description needs; stable addressing is optional informational status, with concrete action-specific prerequisites only.

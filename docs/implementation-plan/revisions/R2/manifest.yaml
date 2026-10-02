@@ -1049,21 +1049,26 @@ steps:
       - docs/implementation-plan/revisions/R2/evidence/RP-025/A001/C4.json
     revalidation_required: []
   RP-026:
-    title: Authorized stable-IP provisioning adapter
+    title: Local network table and device-description workflow
     status: IN_PROGRESS
     definition: steps/RP-026.md
     depends_on:
     - RP-006
+    - RP-007
     - RP-012
     - RP-020
     - RP-021
+    - RP-022
     - RP-023
     - RP-024
+    - RP-025
     requirements:
     - R05
+    - R12
     - R13
     - R14
     - R15
+    - R17
     - R18
     completed_checks: []
     evidence:
@@ -1073,6 +1078,7 @@ steps:
     amendments:
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-026/A-001-local-network-table.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required: []
@@ -1086,6 +1092,7 @@ steps:
     - RP-022
     - RP-024
     - RP-025
+    - RP-026
     requirements:
     - R09
     - R13
@@ -1093,7 +1100,8 @@ steps:
     - R16
     completed_checks: []
     evidence: []
-    amendments: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-026/A-001-local-network-table.md
     active_attempt: null
     check_evidence: {}
     revalidation_required: []
@@ -1129,6 +1137,7 @@ steps:
     - RP-023
     - RP-024
     - RP-025
+    - RP-026
     - RP-027
     requirements:
     - R05
@@ -1137,7 +1146,8 @@ steps:
     - R17
     completed_checks: []
     evidence: []
-    amendments: []
+    amendments:
+    - docs/implementation-plan/revisions/R2/amendments/RP-026/A-001-local-network-table.md
     active_attempt: null
     check_evidence: {}
     revalidation_required: []
@@ -1616,6 +1626,7 @@ steps:
     depends_on:
     - RP-007
     - RP-024
+    - RP-026
     - RP-029
     - RP-032
     - RP-034
@@ -1634,6 +1645,7 @@ steps:
     amendments:
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-001-native-docs-authority.md
     - docs/implementation-plan/revisions/R2/amendments/RP-008/A-002-available-owner-takeover.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-026/A-001-local-network-table.md
     active_attempt: null
     check_evidence: {}
     revalidation_required: []

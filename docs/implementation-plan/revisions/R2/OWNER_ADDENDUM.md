@@ -54,3 +54,7 @@ a copy of the operating manual into every LLM host.
 No private topology, credential, root identifier or installed profile was read
 or changed to produce this planning addendum. Earlier live failure evidence
 remains historical and unresolved; the plan does not repair or replay it.
+
+## Later owner direction - 2026-10-02
+
+[RP-026 amendment A-001](amendments/RP-026/A-001-local-network-table.md) records the configurable installation-local network table, observation-only WATCHDOG, deterministic repository-owned device-description SKILL and optional stable-IP status. This replaces the unresolved mandatory provisioning choice; private network-specific administration remains outside public product instructions. Ordinary implementation authority is unchanged.

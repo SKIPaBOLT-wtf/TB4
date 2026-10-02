@@ -37,10 +37,10 @@ This is a projection of `manifest.yaml`. Mark a step/check complete only through
 - [x] [RP-023 - Scoped discovery and persistent catalogue identity](steps/RP-023.md) - prerequisites: RP-005, RP-012, RP-017, RP-022.
 - [x] [RP-024 - Private BALLPARK creation with SKILL assistance](steps/RP-024.md) - prerequisites: RP-005, RP-007, RP-019, RP-022, RP-023.
 - [x] [RP-025 - FETCHER enrollment and effective profile publication](steps/RP-025.md) - prerequisites: RP-005, RP-006, RP-019, RP-022, RP-024.
-- [ ] [RP-026 - Authorized stable-IP provisioning adapter](steps/RP-026.md) - prerequisites: RP-006, RP-012, RP-020, RP-021, RP-023, RP-024.
-- [ ] [RP-027 - Reconfiguration of an existing deployment](steps/RP-027.md) - prerequisites: RP-011, RP-017, RP-022, RP-024, RP-025.
+- [ ] [RP-026 - Local network table and device-description workflow](steps/RP-026.md) - prerequisites: RP-006, RP-007, RP-012, RP-020, RP-021, RP-022, RP-023, RP-024, RP-025.
+- [ ] [RP-027 - Reconfiguration of an existing deployment](steps/RP-027.md) - prerequisites: RP-011, RP-017, RP-022, RP-024, RP-025, RP-026.
 - [ ] [RP-028 - Explicit full reset and re-enrollment](steps/RP-028.md) - prerequisites: RP-006, RP-012, RP-019, RP-025, RP-027.
-- [ ] [RP-029 - Ongoing BALLPARK evolution and stale-view handling](steps/RP-029.md) - prerequisites: RP-007, RP-023, RP-024, RP-025, RP-027.
+- [ ] [RP-029 - Ongoing BALLPARK evolution and stale-view handling](steps/RP-029.md) - prerequisites: RP-007, RP-023, RP-024, RP-025, RP-026, RP-027.
 - [ ] [RP-030 - Interrupted commissioning and maintenance acceptance](steps/RP-030.md) - prerequisites: RP-019, RP-022, RP-024, RP-025, RP-027, RP-028, RP-029.
 
 ## WATCHDOG ingress, status, routing, wake and acknowledgement
@@ -71,7 +71,7 @@ This is a projection of `manifest.yaml`. Mark a step/check complete only through
 
 ## Repository instructions, pointer SKILL, interfaces and installers
 
-- [ ] [RP-051 - Repository-owned operational SKILL and helper interface](steps/RP-051.md) - prerequisites: RP-007, RP-024, RP-029, RP-032, RP-034, RP-038, RP-040, RP-046, RP-048, RP-049.
+- [ ] [RP-051 - Repository-owned operational SKILL and helper interface](steps/RP-051.md) - prerequisites: RP-007, RP-024, RP-026, RP-029, RP-032, RP-034, RP-038, RP-040, RP-046, RP-048, RP-049.
 - [ ] [RP-052 - Pointer-only installed SKILL package](steps/RP-052.md) - prerequisites: RP-007, RP-051.
 - [ ] [RP-053 - WATCHDOG GUI catalogue leadership and configuration](steps/RP-053.md) - prerequisites: RP-017, RP-022, RP-024, RP-027, RP-028, RP-029, RP-034, RP-035, RP-038.
 - [ ] [RP-054 - FETCHER GUI execution and idle-policy monitoring](steps/RP-054.md) - prerequisites: RP-022, RP-025, RP-027, RP-028, RP-034, RP-041, RP-042, RP-043, RP-046, RP-047, RP-048.

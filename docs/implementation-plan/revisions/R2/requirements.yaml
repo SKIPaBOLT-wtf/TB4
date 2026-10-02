@@ -1,25 +1,408 @@
 schema_version: 1
-authority: Owner realignment message plus OWNER_ADDENDUM.md; clarifications are design requirements, not deployed facts.
+authority: 'Owner realignment message plus OWNER_ADDENDUM.md; clarifications are design
+  requirements, not deployed facts. Later owner network-table direction: amendments/RP-026/A-001-local-network-table.md.'
 requirements:
-  R01: {"title": "Role separation", "statement": "WATCHDOG observes/summarizes/routes; FETCHER/RUNNER execute. Co-location does not merge ownership.", "steps": ["RP-010", "RP-017", "RP-033", "RP-034", "RP-035", "RP-038", "RP-043", "RP-044", "RP-045", "RP-051", "RP-053", "RP-054", "RP-062", "RP-064"]}
-  R02: {"title": "One deterministic ingress", "statement": "LLM preflight uses WATCHDOG summary; all work/control uses one documented ingress contract and exact correlated status.", "steps": ["RP-009", "RP-010", "RP-031", "RP-032", "RP-033", "RP-040", "RP-046", "RP-051", "RP-058", "RP-062", "RP-064"]}
-  R03: {"title": "Strict AUTO-SNIFF", "statement": "Validate exact request structure, target, identity, authorization, hash and bounds; reject malformed or unknown targets deterministically.", "steps": ["RP-010", "RP-031", "RP-032", "RP-064"]}
-  R04: {"title": "Owner timing", "statement": "WATCHDOG network 60/600 s after 3600 s inactivity; FETCHER 20 s then 1200 s slow or exit after 1200 s inactivity; clocks remain separate.", "steps": ["RP-011", "RP-035", "RP-041", "RP-042", "RP-054", "RP-058", "RP-062", "RP-064"]}
-  R05: {"title": "Truthful availability", "statement": "Separate network, SSH transport/auth, installation, FETCHER liveness, acceptance and result; expose observation freshness and effective profiles.", "steps": ["RP-005", "RP-011", "RP-023", "RP-024", "RP-025", "RP-026", "RP-029", "RP-034", "RP-035", "RP-036", "RP-037", "RP-038", "RP-041", "RP-042", "RP-053", "RP-060", "RP-063", "RP-064"]}
-  R06: {"title": "Deterministic waking", "statement": "WOL and fixed SSH/OS launch helpers follow commissioned capabilities; no SSH is not no FETCHER; fully exited FETCHER needs an external launcher.", "steps": ["RP-011", "RP-036", "RP-037", "RP-038", "RP-042", "RP-060", "RP-063", "RP-064"]}
-  R07: {"title": "Single active WATCHDOG", "statement": "Owner amendment RP-008/A-002: incumbent-first standby, immediate stale-record conditional takeover and GUI forced request without peer/sink ACK; one shared-state owner/epoch, cooperative dispatch checks and separate unknown external effects.", "steps": ["RP-008", "RP-015", "RP-016", "RP-017", "RP-019", "RP-030", "RP-053", "RP-058", "RP-060", "RP-063", "RP-064"]}
-  R08: {"title": "Fixed exchange objects", "statement": "Provision bounded reusable catalogue/control/work/artifact/history capacity; no per-command/discovery/history file creation at runtime.", "steps": ["RP-008", "RP-009", "RP-015", "RP-018", "RP-019", "RP-030", "RP-032", "RP-040", "RP-049", "RP-050", "RP-057", "RP-058", "RP-062", "RP-064"]}
-  R09: {"title": "Identity, busy and ACK", "statement": "One unconsumed operation per target; durable correlation/deduplication; explicit exact-result consumption before verified recycling.", "steps": ["RP-009", "RP-010", "RP-025", "RP-027", "RP-031", "RP-032", "RP-033", "RP-034", "RP-039", "RP-040", "RP-041", "RP-043", "RP-046", "RP-047", "RP-048", "RP-049", "RP-050", "RP-054", "RP-057", "RP-058", "RP-062", "RP-064"]}
-  R10: {"title": "Safe timeout and failure", "statement": "Differentiate no-claim timeout, active/unknown execution, cancellation and publication; never erase unread evidence or blindly replay.", "steps": ["RP-008", "RP-010", "RP-011", "RP-012", "RP-014", "RP-015", "RP-016", "RP-031", "RP-033", "RP-038", "RP-039", "RP-040", "RP-043", "RP-044", "RP-045", "RP-046", "RP-047", "RP-048", "RP-050", "RP-057", "RP-058", "RP-062", "RP-064"]}
-  R11: {"title": "Durable normal returns", "statement": "Retain execution evidence and reliably reconcile the same result to terminal publication without repeated operator repairs or re-execution.", "steps": ["RP-013", "RP-015", "RP-039", "RP-043", "RP-047", "RP-048", "RP-049", "RP-054", "RP-057", "RP-058", "RP-062", "RP-064"]}
-  R12: {"title": "No secret leakage", "statement": "No secret in code, descriptions, SKILL, logs or public GitHub; protected topology stays in operational stores, not public evidence.", "steps": ["RP-004", "RP-006", "RP-012", "RP-020", "RP-021", "RP-024", "RP-028", "RP-049", "RP-050", "RP-052", "RP-059", "RP-064"]}
-  R13: {"title": "Commissioned environment", "statement": "Collect platform, paths, scopes, storage/root and capability facts during install/first run; no fixed topology/host assumptions.", "steps": ["RP-005", "RP-009", "RP-018", "RP-019", "RP-022", "RP-023", "RP-024", "RP-025", "RP-026", "RP-027", "RP-028", "RP-029", "RP-030", "RP-052", "RP-053", "RP-054", "RP-055", "RP-056", "RP-059", "RP-060", "RP-062", "RP-063", "RP-064"]}
-  R14: {"title": "Local credential references", "statement": "Purpose/installation-bound opaque handles resolve authorized secrets locally; safe summaries advertise capability, never key material or secret paths.", "steps": ["RP-004", "RP-006", "RP-020", "RP-021", "RP-022", "RP-025", "RP-026", "RP-028", "RP-036", "RP-037", "RP-059", "RP-063", "RP-064"]}
-  R15: {"title": "BALLPARK co-creation/evolution", "statement": "Repository-loaded SKILL assists owner plus WATCHDOG; validated minimal private descriptor and versioned ongoing updates.", "steps": ["RP-005", "RP-022", "RP-023", "RP-024", "RP-025", "RP-026", "RP-027", "RP-029", "RP-030", "RP-034", "RP-051", "RP-060", "RP-062", "RP-063", "RP-064"]}
-  R16: {"title": "Reconfigure and start over", "statement": "Support staged reconfiguration and separately confirmed reset/re-enrollment, preserving uncertain work and explicit rollback limits.", "steps": ["RP-027", "RP-028", "RP-030", "RP-053", "RP-054", "RP-055", "RP-056", "RP-057", "RP-060", "RP-062", "RP-063", "RP-064"]}
-  R17: {"title": "Pointer-only installed SKILL", "statement": "Installed package only locates/fetches repository entry; actual operation/setup procedures are current, compatible, pinned repository content.", "steps": ["RP-007", "RP-024", "RP-029", "RP-051", "RP-052", "RP-059", "RP-061", "RP-062", "RP-064"]}
-  R18: {"title": "Platform/topology portability", "statement": "Independent roles/installers and qualified adapters; varied OS/session/storage/network modes; unsupported capability is explicit.", "steps": ["RP-005", "RP-006", "RP-008", "RP-012", "RP-016", "RP-017", "RP-018", "RP-020", "RP-021", "RP-022", "RP-023", "RP-026", "RP-030", "RP-036", "RP-037", "RP-038", "RP-042", "RP-044", "RP-045", "RP-052", "RP-053", "RP-054", "RP-055", "RP-056", "RP-060", "RP-061", "RP-063", "RP-064"]}
-  R19: {"title": "Durable development progress", "statement": "Verified GitHub INTENT before action and OUTCOME/next action afterward; step/check/attempt/cursor/evidence survive handoff.", "steps": ["RP-001", "RP-002", "RP-003", "RP-004", "RP-058", "RP-064"]}
-  R20: {"title": "Traceable debugging", "statement": "Map symptom, reproduction and proven origin; preserve hypotheses; repair through the same ledger and revalidate affected acceptances.", "steps": ["RP-001", "RP-003", "RP-013", "RP-014", "RP-044", "RP-045", "RP-046", "RP-048", "RP-058", "RP-064"]}
-  R21: {"title": "Safe testing and publication", "statement": "Synthetic fixtures/canaries, allowlisted diagnostics and reviewed artifacts; public test receipts contain no private deployment facts.", "steps": ["RP-001", "RP-002", "RP-004", "RP-012", "RP-059", "RP-064"]}
-  R22: {"title": "Evidence-backed release", "statement": "Exact source/build/instruction provenance, separate simulation/native/live gates and no closure based solely on CI or manual recovery.", "steps": ["RP-007", "RP-055", "RP-056", "RP-057", "RP-059", "RP-061", "RP-062", "RP-063", "RP-064"]}
+  R01:
+    title: Role separation
+    statement: WATCHDOG observes/summarizes/routes; FETCHER/RUNNER execute. Co-location
+      does not merge ownership.
+    steps:
+    - RP-010
+    - RP-017
+    - RP-033
+    - RP-034
+    - RP-035
+    - RP-038
+    - RP-043
+    - RP-044
+    - RP-045
+    - RP-051
+    - RP-053
+    - RP-054
+    - RP-062
+    - RP-064
+  R02:
+    title: One deterministic ingress
+    statement: LLM preflight uses WATCHDOG summary; all work/control uses one documented
+      ingress contract and exact correlated status.
+    steps:
+    - RP-009
+    - RP-010
+    - RP-031
+    - RP-032
+    - RP-033
+    - RP-040
+    - RP-046
+    - RP-051
+    - RP-058
+    - RP-062
+    - RP-064
+  R03:
+    title: Strict AUTO-SNIFF
+    statement: Validate exact request structure, target, identity, authorization,
+      hash and bounds; reject malformed or unknown targets deterministically.
+    steps:
+    - RP-010
+    - RP-031
+    - RP-032
+    - RP-064
+  R04:
+    title: Owner timing
+    statement: WATCHDOG network 60/600 s after 3600 s inactivity; FETCHER 20 s then
+      1200 s slow or exit after 1200 s inactivity; clocks remain separate.
+    steps:
+    - RP-011
+    - RP-035
+    - RP-041
+    - RP-042
+    - RP-054
+    - RP-058
+    - RP-062
+    - RP-064
+  R05:
+    title: Truthful availability
+    statement: Separate network, SSH transport/auth, installation, FETCHER liveness,
+      acceptance and result; expose observation freshness and effective profiles.
+    steps:
+    - RP-005
+    - RP-011
+    - RP-023
+    - RP-024
+    - RP-025
+    - RP-026
+    - RP-029
+    - RP-034
+    - RP-035
+    - RP-036
+    - RP-037
+    - RP-038
+    - RP-041
+    - RP-042
+    - RP-053
+    - RP-060
+    - RP-063
+    - RP-064
+  R06:
+    title: Deterministic waking
+    statement: WOL and fixed SSH/OS launch helpers follow commissioned capabilities;
+      no SSH is not no FETCHER; fully exited FETCHER needs an external launcher.
+    steps:
+    - RP-011
+    - RP-036
+    - RP-037
+    - RP-038
+    - RP-042
+    - RP-060
+    - RP-063
+    - RP-064
+  R07:
+    title: Single active WATCHDOG
+    statement: 'Owner amendment RP-008/A-002: incumbent-first standby, immediate stale-record
+      conditional takeover and GUI forced request without peer/sink ACK; one shared-state
+      owner/epoch, cooperative dispatch checks and separate unknown external effects.'
+    steps:
+    - RP-008
+    - RP-015
+    - RP-016
+    - RP-017
+    - RP-019
+    - RP-030
+    - RP-053
+    - RP-058
+    - RP-060
+    - RP-063
+    - RP-064
+  R08:
+    title: Fixed exchange objects
+    statement: Provision bounded reusable catalogue/control/work/artifact/history
+      capacity; no per-command/discovery/history file creation at runtime.
+    steps:
+    - RP-008
+    - RP-009
+    - RP-015
+    - RP-018
+    - RP-019
+    - RP-030
+    - RP-032
+    - RP-040
+    - RP-049
+    - RP-050
+    - RP-057
+    - RP-058
+    - RP-062
+    - RP-064
+  R09:
+    title: Identity, busy and ACK
+    statement: One unconsumed operation per target; durable correlation/deduplication;
+      explicit exact-result consumption before verified recycling.
+    steps:
+    - RP-009
+    - RP-010
+    - RP-025
+    - RP-027
+    - RP-031
+    - RP-032
+    - RP-033
+    - RP-034
+    - RP-039
+    - RP-040
+    - RP-041
+    - RP-043
+    - RP-046
+    - RP-047
+    - RP-048
+    - RP-049
+    - RP-050
+    - RP-054
+    - RP-057
+    - RP-058
+    - RP-062
+    - RP-064
+  R10:
+    title: Safe timeout and failure
+    statement: Differentiate no-claim timeout, active/unknown execution, cancellation
+      and publication; never erase unread evidence or blindly replay.
+    steps:
+    - RP-008
+    - RP-010
+    - RP-011
+    - RP-012
+    - RP-014
+    - RP-015
+    - RP-016
+    - RP-031
+    - RP-033
+    - RP-038
+    - RP-039
+    - RP-040
+    - RP-043
+    - RP-044
+    - RP-045
+    - RP-046
+    - RP-047
+    - RP-048
+    - RP-050
+    - RP-057
+    - RP-058
+    - RP-062
+    - RP-064
+  R11:
+    title: Durable normal returns
+    statement: Retain execution evidence and reliably reconcile the same result to
+      terminal publication without repeated operator repairs or re-execution.
+    steps:
+    - RP-013
+    - RP-015
+    - RP-039
+    - RP-043
+    - RP-047
+    - RP-048
+    - RP-049
+    - RP-054
+    - RP-057
+    - RP-058
+    - RP-062
+    - RP-064
+  R12:
+    title: No secret leakage
+    statement: No secret in code, descriptions, SKILL, logs or public GitHub; protected
+      topology stays in operational stores, not public evidence.
+    steps:
+    - RP-004
+    - RP-006
+    - RP-012
+    - RP-020
+    - RP-021
+    - RP-024
+    - RP-026
+    - RP-028
+    - RP-049
+    - RP-050
+    - RP-052
+    - RP-059
+    - RP-064
+  R13:
+    title: Commissioned environment
+    statement: Collect platform, paths, scopes, storage/root and capability facts
+      during install/first run; no fixed topology/host assumptions.
+    steps:
+    - RP-005
+    - RP-009
+    - RP-018
+    - RP-019
+    - RP-022
+    - RP-023
+    - RP-024
+    - RP-025
+    - RP-026
+    - RP-027
+    - RP-028
+    - RP-029
+    - RP-030
+    - RP-052
+    - RP-053
+    - RP-054
+    - RP-055
+    - RP-056
+    - RP-059
+    - RP-060
+    - RP-062
+    - RP-063
+    - RP-064
+  R14:
+    title: Local credential references
+    statement: Purpose/installation-bound opaque handles resolve authorized secrets
+      locally; safe summaries advertise capability, never key material or secret paths.
+    steps:
+    - RP-004
+    - RP-006
+    - RP-020
+    - RP-021
+    - RP-022
+    - RP-025
+    - RP-026
+    - RP-028
+    - RP-036
+    - RP-037
+    - RP-059
+    - RP-063
+    - RP-064
+  R15:
+    title: BALLPARK co-creation/evolution
+    statement: Repository-loaded SKILL assists owner plus WATCHDOG; validated minimal
+      private descriptor and versioned ongoing updates. Owner amendment RP-026/A-001
+      adds deterministic device-description assistance and a protected configurable
+      local network table; stable-IP status is optional except for a concrete action
+      prerequisite.
+    steps:
+    - RP-005
+    - RP-022
+    - RP-023
+    - RP-024
+    - RP-025
+    - RP-026
+    - RP-027
+    - RP-029
+    - RP-030
+    - RP-034
+    - RP-051
+    - RP-060
+    - RP-062
+    - RP-063
+    - RP-064
+  R16:
+    title: Reconfigure and start over
+    statement: Support staged reconfiguration and separately confirmed reset/re-enrollment,
+      preserving uncertain work and explicit rollback limits.
+    steps:
+    - RP-027
+    - RP-028
+    - RP-030
+    - RP-053
+    - RP-054
+    - RP-055
+    - RP-056
+    - RP-057
+    - RP-060
+    - RP-062
+    - RP-063
+    - RP-064
+  R17:
+    title: Pointer-only installed SKILL
+    statement: Installed package only locates/fetches repository entry; actual operation/setup
+      procedures are current, compatible, pinned repository content.
+    steps:
+    - RP-007
+    - RP-024
+    - RP-026
+    - RP-029
+    - RP-051
+    - RP-052
+    - RP-059
+    - RP-061
+    - RP-062
+    - RP-064
+  R18:
+    title: Platform/topology portability
+    statement: Independent roles/installers and qualified adapters; varied OS/session/storage/network
+      modes; unsupported capability is explicit.
+    steps:
+    - RP-005
+    - RP-006
+    - RP-008
+    - RP-012
+    - RP-016
+    - RP-017
+    - RP-018
+    - RP-020
+    - RP-021
+    - RP-022
+    - RP-023
+    - RP-026
+    - RP-030
+    - RP-036
+    - RP-037
+    - RP-038
+    - RP-042
+    - RP-044
+    - RP-045
+    - RP-052
+    - RP-053
+    - RP-054
+    - RP-055
+    - RP-056
+    - RP-060
+    - RP-061
+    - RP-063
+    - RP-064
+  R19:
+    title: Durable development progress
+    statement: Verified GitHub INTENT before action and OUTCOME/next action afterward;
+      step/check/attempt/cursor/evidence survive handoff.
+    steps:
+    - RP-001
+    - RP-002
+    - RP-003
+    - RP-004
+    - RP-058
+    - RP-064
+  R20:
+    title: Traceable debugging
+    statement: Map symptom, reproduction and proven origin; preserve hypotheses; repair
+      through the same ledger and revalidate affected acceptances.
+    steps:
+    - RP-001
+    - RP-003
+    - RP-013
+    - RP-014
+    - RP-044
+    - RP-045
+    - RP-046
+    - RP-048
+    - RP-058
+    - RP-064
+  R21:
+    title: Safe testing and publication
+    statement: Synthetic fixtures/canaries, allowlisted diagnostics and reviewed artifacts;
+      public test receipts contain no private deployment facts.
+    steps:
+    - RP-001
+    - RP-002
+    - RP-004
+    - RP-012
+    - RP-059
+    - RP-064
+  R22:
+    title: Evidence-backed release
+    statement: Exact source/build/instruction provenance, separate simulation/native/live
+      gates and no closure based solely on CI or manual recovery.
+    steps:
+    - RP-007
+    - RP-055
+    - RP-056
+    - RP-057
+    - RP-059
+    - RP-061
+    - RP-062
+    - RP-063
+    - RP-064
