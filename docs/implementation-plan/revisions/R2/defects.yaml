@@ -3184,3 +3184,95 @@ defects:
       source a6b6dfaf728de283991ec8a34ac2c4a93d51f443; exact hosted checkout 8f389e87d21f26501d7085c1f869f424525a9f51.
       No live/release or unavailable field capability is inferred.'
     legacy_record: null
+  DEF-049:
+    title: New network-table qualification stimuli do not establish identity drift
+      or clear retained roles
+    status: OPEN
+    detected_in: RP-026.C4
+    suspected_origin:
+      work_item: RP-026
+      source_ref: f638b9ec28091554f879dd59cd4b8db3105f1251
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: Initial targeted Windows pytest failed on the exact published source;
+        see retained failing assertions and bounded stimulus diagnosis.
+      failing_source: f638b9ec28091554f879dd59cd4b8db3105f1251
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    affected_requirements:
+    - R05
+    - R13
+    - R18
+    - R20
+    - R21
+    hypotheses:
+    - id: initial-source-stimulus-review
+      claim: First two failures may come from expecting an unverified hardware hint
+        to move identity and expecting an existing proposal to clear prior roles automatically;
+        native lock stimulus also prepares its proposal inside the held lock.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+    repairs: []
+    issue: null
+    regression_test: tests.drive.test_network_table_schema.test_fresh_verified_addressing_is_scoped_to_only_that_action_and_endpoint;
+      tests.drive.test_network_table_schema.test_stale_unknown_platform_and_noncomputer_descriptions_are_distinct;
+      tests.security.test_network_table_native.test_native_table_lock_blocks_competing_writer_without_losing_revision
+    resolution_evidence: []
+    notes: New neveraccepted RP-026 scope only. Preserve all initial failures; no
+      accepted predecessor invariant is invalidated merely by a mistaken new stimulus.
+      Qualify exact corrected stimulus and module behavior before accepting or closing.
+    legacy_record: null
+  DEF-050:
+    title: Local network table binding accessor does not normalize native unavailable/busy
+      errors
+    status: OPEN
+    detected_in: RP-026.C4
+    suspected_origin:
+      work_item: RP-026
+      source_ref: f638b9ec28091554f879dd59cd4b8db3105f1251
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: Initial targeted Windows pytest failed on the exact published source;
+        see retained failing assertions and bounded stimulus diagnosis.
+      failing_source: f638b9ec28091554f879dd59cd4b8db3105f1251
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+    repair_steps:
+    - RP-026
+    affected_acceptance:
+    - RP-026
+    affected_requirements:
+    - R05
+    - R13
+    - R18
+    - R20
+    - R21
+    hypotheses:
+    - id: initial-source-stimulus-review
+      claim: The new table binding helper may expose SettingsError where its module
+        advertises NetworkTableError. Native locking itself refused as intended; wrapper
+        behavior and exact mutator stimulus require recheck.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-026/A001/targeted-windows-initial-failure.md
+    repairs: []
+    issue: null
+    regression_test: tests.drive.test_network_table_schema.test_fresh_verified_addressing_is_scoped_to_only_that_action_and_endpoint;
+      tests.drive.test_network_table_schema.test_stale_unknown_platform_and_noncomputer_descriptions_are_distinct;
+      tests.security.test_network_table_native.test_native_table_lock_blocks_competing_writer_without_losing_revision
+    resolution_evidence: []
+    notes: New neveraccepted RP-026 scope only. Preserve all initial failures; no
+      accepted predecessor invariant is invalidated merely by a mistaken new stimulus.
+      Qualify exact corrected stimulus and module behavior before accepting or closing.
+    legacy_record: null

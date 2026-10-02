@@ -3,27 +3,29 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: TARGETED_NATIVE_QUALIFICATION
+phase: TARGETED_QUALIFICATION_FAILED
 source_branch: feat/rp026-local-network-table
 source_commit: f638b9ec28091554f879dd59cd4b8db3105f1251
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0017
+last_verified_event: RP-026-A001-0018
 last_completed: RP-025
-next_action: Inspect this same local exec session and rp26-targeted-001 structured
-  result; publish actual OUTCOME before any code repair or dependent qualification.
+next_action: Publish diagnostic/repair INTENT for DEF-049/050 on the same RP-026 source/attempt.
+  Inspect/correct only proven stimulus/API gaps, preserve prior failures/assertions
+  and qualify actual Windows/native and Linux behavior after source checkpoint.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-026-A001-0016
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
 - DEF-001
 - DEF-002
+- DEF-049
+- DEF-050
 rollback: Retain the last validated local table/location and exact unknown transaction;
   keep router/host configuration, current role identities, credentials and unread
   work unchanged.

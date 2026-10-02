@@ -1082,7 +1082,11 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-026/A-001-local-network-table.md
     active_attempt: A001
     check_evidence: {}
-    revalidation_required: []
+    revalidation_required:
+    - RP-026.C1
+    - RP-026.C2
+    - RP-026.C3
+    - RP-026.C4
   RP-027:
     title: Reconfiguration of an existing deployment
     status: PLANNED
