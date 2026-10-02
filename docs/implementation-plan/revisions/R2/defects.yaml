@@ -4109,3 +4109,66 @@ defects:
       result; no live timer advance or operation replay. Exact heartbeat-derived repeat
       exits0; final mandatory C1-C4 rechecks remain held.
     legacy_record: null
+  DEF-060:
+    title: Native candidate interruption fixture expects the outer portable commit
+      code
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c323da611eb98de3966145e226679335976b3f22
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: c323da611eb98de3966145e226679335976b3f22
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
+    reproduction:
+      procedure: Three actual-native staged metadata/archive/profile promotion-cut
+        cases expect COMMIT_UNCONFIRMED. Accepted native context managers translate
+        the injected OSError to SETTINGS_STORE_UNAVAILABLE; all stop at regex mismatch
+        before remaining exact pending/promote/resume/no-send assertions.
+      failing_source: c323da611eb98de3966145e226679335976b3f22
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: native-context-closed-code-expectation-mismatch
+      claim: Both existing native Settings.locked context managers preserve SettingsError
+        and translate other exceptions to SETTINGS_STORE_UNAVAILABLE. Fixture assumes
+        only the outer portable COMMIT_UNCONFIRMED; actual three traces contradict
+        that expectation.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
+    - id: same-complete-native-pending-frames-survived-the-injected-cut
+      claim: The three fresh native fixture roots should retain exact protected pending
+        metadata/archive/profile frames for inspect-only recovery. Inspect the same
+        failed roots before any corrected repeat; do not infer this from the regex
+        failure alone.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
+    repairs: []
+    issue: null
+    regression_test: Same three actual-native metadata/archive/profile interruption
+      predicates with accepted closed-code expectation and unchanged exact pending/readback/owner/resume/original
+      byte/no-provider-send assertions; all inherited683 predicates retained.
+    resolution_evidence: []
+    notes: New unaccepted C2 native test expectation. Original native protection/error
+      translation and all application guards remain unchanged. Pending frame facts
+      and post-cut recovery are not yet qualified; C1-C4 rechecks held.
+    legacy_record: null
