@@ -1,23 +1,32 @@
 schema_version: 1
-revision: "R2"
-work_item: "RP-026"
-check: "RP-026.C1"
-attempt: "A001"
-phase: "PR_READINESS"
-source_branch: "work/rp-025-a001"
-source_commit: "a6b6dfaf728de283991ec8a34ac2c4a93d51f443"
-journal: "docs/development/journal/RP-026/A001/events.jsonl"
-last_verified_event: "RP-026-A001-0007"
-last_completed: "RP-025"
-next_action: "Publish separate exact-head merge INTENT, validate the complete current/main history and unchanged qualified source, then freshly verify PR34/main/head/reviews/protection. Merge once using expected head and ordinary merge preserving source commits; inspect actual result before checkpointing main."
-verification: "All final source/platform/common/progress/history/privacy/rollback gates pass. Only PR metadata readiness and exact-head ordinary merge remain before RP-026 commissioned authority selection."
-execution_authorization: "PUBLIC_IMPLEMENTATION_AUTHORIZED"
+revision: R2
+work_item: RP-026
+check: RP-026.C1
+attempt: A001
+phase: MERGE
+source_branch: work/rp-025-a001
+source_commit: a6b6dfaf728de283991ec8a34ac2c4a93d51f443
+journal: docs/development/journal/RP-026/A001/events.jsonl
+last_verified_event: RP-026-A001-0008
+last_completed: RP-025
+next_action: Merge only this confirmed PR34 expected head once, inspect exact PR/main
+  result, then validate merged source/ancestry/current ledger and actual prior-main
+  history and publish coherent MERGED_VERIFIED checkpoint on main.
+verification: Fresh exact-head/base/review/protection/source checks and single ordinary
+  PR34 merge, then actual merged main/ancestry/full current-history readback. RP-026
+  remains zero-check and no operational network authority is inferred.
+execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-026-A001-0008
 expected_user_action: null
 blocking_decisions: []
-known_open_defects: ["DEF-001","DEF-002"]
-rollback: "Revoke only a specifically confirmed new enrollment; retain slot generation/history, prior approved bindings and UNKNOWN operations. Do not copy another installation credential/profile, reset authority or replay an uncertain write."
-next_implementation_step: "RP-025"
-next_implementation_check: "RP-025.C4"
+known_open_defects:
+- DEF-001
+- DEF-002
+rollback: Revoke only a specifically confirmed new enrollment; retain slot generation/history,
+  prior approved bindings and UNKNOWN operations. Do not copy another installation
+  credential/profile, reset authority or replay an uncertain write.
+next_implementation_step: RP-025
+next_implementation_check: RP-025.C4
