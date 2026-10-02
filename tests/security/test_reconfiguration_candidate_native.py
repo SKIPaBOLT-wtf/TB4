@@ -44,7 +44,7 @@ def test_actual_native_cut_recovery_preserves_exact_candidate_and_never_sends(fi
             port.promote = lambda: (_ for _ in ()).throw(OSError("SYNTHETIC_CANDIDATE_CUT"))
             yield port
     selected.native.locked = cut
-    with pytest.raises(SettingsError,match="COMMIT_UNCONFIRMED"):
+    with pytest.raises(SettingsError,match="SETTINGS_STORE_UNAVAILABLE"):
         s.candidate.begin(owner_authorized=True)
     selected.native.locked = locked
     with locked() as port:
