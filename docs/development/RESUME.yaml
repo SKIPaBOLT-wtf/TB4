@@ -3,16 +3,15 @@ revision: R2
 work_item: RP-026
 check: RP-026.C4
 attempt: A001
-phase: COMPLETE_NETWORK_TABLE_CONTEXT_QUALIFICATION
+phase: COMPLETE_CONTEXT_NATIVE_AND_HOSTED_QUALIFICATION_RUNNING
 source_branch: feat/rp026-local-network-table
 source_commit: 2575de12ffed36a2e3e739710a9183dd0bfa437d
 journal: docs/development/journal/RP-026/A001/events.jsonl
-last_verified_event: RP-026-A001-0053
+last_verified_event: RP-026-A001-0054
 last_completed: RP-025
-next_action: Inspect same actual diagnostic/local and hosted runs, publish real terminal
-  outcomes and reviewed per-check/common/defect-resolution evidence only if all predicates
-  pass; then separately journal PR readiness/merge at exact verified head and continue
-  dependency-ready RP-027.
+next_action: Inspect same local session95544 and three actual hosted runs; publish
+  actual targeted/hosted outcomes, checkout/source-tree proof and reviewed predicate/defect
+  acceptance only after all required results.
 verification: Validate native protected default/custom storage and relocation; schema/proposal/approval/reporting,
   optional addressing and negative cases. Preserve current-owner and no-replay boundaries;
   qualify only isolated declared platforms.
