@@ -3,26 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_TIMING_ADMISSION_REPAIR_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C4_TIMING_ADMISSION_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 0b537c1c96283cdfca9153175569267ecec5cba8
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0270
+last_verified_event: RP-027-A001-0271
 last_completed: RP-026
-next_action: Publish separate qualification INTENT for current source, run affected
-  Windows504/default3043/actualLinux560/full platform gates, and settle existing request18
-  runs. Then publish owner-requested pause checkpoint; do not begin next integration
-  unit.
-verification: 270 exact timing admission repair source saved; seven regression additions
-  await qualification. Existing probe265 runs remain unsettled. C1-C4 held.
+next_action: Execute current-source Windows/default collection and request19 qualification
+  once; record STARTED/actual IDs, settle terminal results and request18, then checkpoint
+  and pause until owner says continue.
+verification: 270 source preserved;271 current timing repair qualification pending.
+  Completion then owner-requested pause, no next integration unit.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0265
-expected_user_action: After this current timing admission repair and qualification
-  are completed and checkpointed, say continue to authorize resuming the next integration
-  unit.
+- RP-027-A001-0271
+expected_user_action: After this qualification and checkpoint are complete, say continue
+  to resume the remaining RP027 integration.
 blocking_decisions: []
 known_open_defects:
 - DEF-001
