@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_READONLY_FIRST_RUN_REPAIR_SOURCE
+phase: STAGED_RECONFIGURATION_C4_RETAINED_READONLY_PROOF_SOURCE_PRESERVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 0170f12287c03242026280bb1c79253c19b44908
+source_commit: 1f238122cf44681a4617ed4ef5807cfee6f8f370
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0230
+last_verified_event: RP-027-A001-0231
 last_completed: RP-026
-next_action: Apply exactsingle-file read-onlyfinal actualfirstRun proof repair/static/preserve/readbackOUTCOME,
-  then newsource same25qualificationINTENT. OnlyafterPASS requiredactualLinuxFolder/affected/default/currentfull/composition.
-verification: 230 onefile read-onlyactualfinalfirstRun source repair after229publishedfailure;
-  no guard/hash/test changes, same25 laterINTENT, allC1-C4held.
+next_action: Separate verified newsource same25 defaultWindows/native qualificationINTENT
+  thenactualrunonce/newownedfixtureparent. OnlyafterPASS authorize requiredactualLinuxFolder/newscoped/affected/default/currentfull/composition.
+verification: 231 onefile readonlyfinalactualfirstRun sourcepreserved/staticPASS/tests0;
+  417/0170failurechronologypreserved, same25correctedsource qualificationINTENTnext;
+  allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0230
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
