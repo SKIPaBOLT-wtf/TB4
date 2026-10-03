@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "item": "RP-027",
-  "check": "RP-027.C3",
+  "check": "RP-027.C4",
   "attempt": "A001",
-  "intent_event": "RP-027-A001-0173",
-  "source_commit": "28952a9f858985905f0f8b0702effca4c76af019",
+  "intent_event": "RP-027-A001-0178",
+  "source_commit": "3ad08dfbb64e057ea5140f7bd1c9b5d2d43d894c",
   "branch": "feat/rp027-staged-reconfiguration",
   "pr": 36,
-  "request_revision": 7,
+  "request_revision": 8,
   "required_workflow": "Folder reconfiguration",
   "required_cases": 51,
-  "scope": "Exact canonical-budget remote-rebind source28952; actual Windows27 boundary already passes27/zeroSkip. New26 +original181 Docs/effect/rebind, actual51 mapping/physical and107 original folder/native regressions. Fresh owned synthetic/native Linux fixtures only.",
-  "expected": "All51 native actual execute/pass/zeroSkip,107 original and181 Docs/effect/rebind pass/zeroSkip; native max129 compact/previous budget under unchanged fixed limits; no all-check acceptance.",
+  "scope": "Exact post-root first-run source3ad08, actual Windows20boundary PASS0Skip. Required actual Linux51mapping/physical,107originalFolderNative and201Doc/effect/rebind/post-root include20new actual first-run/current-role/native-cut/copy/late-change cases. Fresh owned synthetic/native fixtures.",
+  "expected": "All51/107/201 execute and pass zeroSkip, sameDoc/work/original-profile/operation preservation; native post-root source/role/storage/probe guards. Full suites retain preexisting max129 physical benchmark; no C1-C4 acceptance/activation.",
   "acceptance": false
 }
