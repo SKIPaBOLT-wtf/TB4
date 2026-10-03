@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_INHERITED_ROOT_SETTLEMENT_TEST_PASSED
+phase: STAGED_RECONFIGURATION_C3_PROVEN_NO_SEND_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 54a628583ba33cf4d2454049ed1f243d21c35088
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0074
+last_verified_event: RP-027-A001-0075
 last_completed: RP-026
-next_action: Publish/read back bounded source INTENT for actual native RootRevocation-based
-  shared NOT_DISPATCHED settlement and known-safe retry under current role. Preserve
-  original791 predicates, ordinary gates and immutable history; no unknown resend,
-  old-host ACK or activation.
-verification: 791 inherited-root/root/candidate/native predicates qualified on WindowsX64
-  (787PASS/4Linuxskip); no C1-C4 accepted.
+next_action: Perform bounded source-only unit; preserve exact owned files and publish
+  source-linked OUTCOME/readback before expanded synthetic/native test INTENT.
+verification: 791 predicates qualified; native proven no-send source pending, no check
+  accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0075
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
