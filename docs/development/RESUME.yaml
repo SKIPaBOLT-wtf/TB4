@@ -5,22 +5,19 @@ check: RP-027.C4
 attempt: A001
 phase: STAGED_RECONFIGURATION_C4_POST_ROOT_FIRST_RUN_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 28952a9f858985905f0f8b0702effca4c76af019
+source_commit: 3ad08dfbb64e057ea5140f7bd1c9b5d2d43d894c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0176
+last_verified_event: RP-027-A001-0177
 last_completed: RP-026
-next_action: Implement bounded11-path post-root first-run source/A013 and tests, preserve/readback/source
-  OUTCOME; then publish default Windows/native/new/old and actual Linux qualification
-  INTENT. Final publication/profile/admission/composition remains subsequent scoped
-  work.
-verification: Qualified28952 remote rebind foundation; declared C4 post-root actual
-  first-run protected candidate source, final ACTIVE/profile/runtime not yet implemented
-  or accepted.
+next_action: Publish default-import Windows new20/native+legacy candidate/rebind and
+  actualLinux51/107/augmented Docs qualification INTENT; exact actual failure/result
+  before further C4 implementation.
+verification: A01311path post-root actual first-run source/readback; new20/native/old
+  regressions unqualified, allC1-C4 held for final publication/profile/composition.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0176
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
