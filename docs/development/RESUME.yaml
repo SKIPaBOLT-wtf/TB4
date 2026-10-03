@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_PREREQUISITE_REPAIR
+phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_REQUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4b66bc7a9e46eeb134579fb43c8b861eaaf2e985
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0168
+last_verified_event: RP-027-A001-0169
 last_completed: RP-026
-next_action: Publish fresh default-import Windows26 rebind/native and original wrong-blueprint
-  refusal INTENT; if targeted pass, execute same source original181 and actual Linux51/107/181.
-  Record any new actual failure before repair/C4.
-verification: Three exact prerequisite/error paths repaired and source readback; no
-  repaired-source test yet, DEF078/all checks held.
+next_action: Execute27-case default Windows boundary; publish actual outcome on failure,
+  or continue authorized same-source181/collection/Linux request7 before exact outcome.
+verification: Repairedsource4b66 default27 first, then unchanged181/collection/exactLinux
+  if passing; C1-C4/DEF078 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0169
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
