@@ -16,6 +16,7 @@ from .ballpark_setup import pin_record, validate_pin
 from .commissioning_state import storage_spec
 from .configuration_contract import configuration, require
 from .drive.commissioning import Allocation, RAW_LIMIT, digest, object_id
+from .drive.authority_transaction import OwnerGuard
 from .drive.commissioning_bootstrap import AuthorityHandle
 from .drive.commissioning_native import NativeCommissioning, FIELDS
 from .drive.docs_authority import AuthorityError
@@ -178,6 +179,8 @@ class DocsRootMoves:
                 and type(checkpoint.grant) is Grant and checkpoint.maintenance == state["transition_id"],
                 "CONFIGURATION_ROOT_NOT_AUTHORIZED")
         if dispatch:
+            fresh = self.ctx.leadership.backend.read().document()
+            require(OwnerGuard(checkpoint.grant.owner,checkpoint.grant.epoch).matches(fresh), "OWNER_SUPERSEDED")
             observed = self.ctx.leadership.observe(sample)
             document = observed.snapshot.document()
             owns = self.ctx.leadership._owns(observed.leader,observed.request,checkpoint.grant)
