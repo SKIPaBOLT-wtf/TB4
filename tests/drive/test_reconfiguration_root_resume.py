@@ -9,11 +9,12 @@ from tb4.configuration_contract import ConfigurationError
 from tb4.drive.docs_authority import AuthorityError
 from tb4.drive.leadership import ClockSample
 from tb4.private_settings import SettingsError
+from tb4.reconfiguration_effects import changed_row,ledger,SLOT
 from tb4.reconfiguration_root_resume import ResumedDocsRootMoves,ResumeRootContext,SCHEMA
 from tb4.reconfiguration_root_settlement import InheritedRootSettlement,ProvenNoDispatchSettlement
 from tb4.watchdog.leadership_runtime import Action
 from reconfiguration_candidate_support import private
-from reconfiguration_root_resume_support import system,adopter,old_stores_unavailable
+from reconfiguration_root_resume_support import system,adopter,old_stores_unavailable,takeover
 from test_reconfiguration_effects import acquire_fallback
 from test_reconfiguration_roots import updates
 
@@ -43,7 +44,7 @@ def test_actual_current_role_adopts_only_remaining_same_fixed_objects_without_ol
     assert r.ctx.setup.store.read()==profile and s.media=={k:b"synthetic retained artifact" for k in s.media}
     assert {k for k,v in before["records"].items() if s.value.provider.store.document["records"][k]!=v} <= {"global.summary"}
     assert r.ctx.checkpoint.read().maintenance==state["transition_id"]
-    with pytest.raises(AuthorityError):
+    with pytest.raises(SettingsError,match="STORAGE_UNAVAILABLE"):
         CommissionedStorage(r.ctx.storage_port).verify(r.ctx.setup.private_choices()["storage"])
 
 
@@ -108,7 +109,7 @@ def test_saved_stale_or_unqualified_facts_do_not_adopt_or_dispatch(fault):
     elif fault=="stale-plan":s.value.provider.store.document["records"]["global.summary"]["body"]["tb4_effects_v1"]["root_plan"]["target_root"]="synthetic-other-root"
     elif fault=="stale-work":
         s.value.provider.store.document["records"]["target.000.work"].update(generation=1,operation_id="a"*64,retention="BUSY")
-    elif fault=="source":r.ctx.source.offline=True
+    elif fault=="source":r.ctx.source.fail_resolve=True
     elif fault=="clock":object.__setattr__(r.ctx,"clock",lambda:None)
     elif fault=="capability":object.__setattr__(r.ctx,"capabilities",lambda:None)
     elif fault=="force":s.value.provider.store.document["records"]["global.force_request"]["retention"]="BUSY"
@@ -118,8 +119,10 @@ def test_saved_stale_or_unqualified_facts_do_not_adopt_or_dispatch(fault):
         meta["parents"]=[r.new.root_id];meta["properties"]=r.new._props(item["key"],r.new.spec.operation(item["key"]))
         proof=r.inspector.inspect()
     elif fault=="unknown":
-        old=s.value.provider.store.document["records"]["global.summary"]["body"]["tb4_effects_v1"]
-        old["entries"]["SSH"]=dict(owner=r.ctx.setup.installation_id,epoch=2,operation_id="a"*64,outcome="UNKNOWN")
+        records=s.value.provider.store.document["records"];old=records[SLOT];value=ledger(old)
+        value["entries"]["SSH"]=dict(owner=r.ctx.setup.installation_id,
+            epoch=r.ctx.checkpoint.read().grant.epoch,operation_id="a"*64,outcome="UNKNOWN")
+        records[SLOT]=changed_row(old,value)
         proof=r.inspector.inspect()
     before=copy.deepcopy(s.value.provider.store.document);profile=r.ctx.setup.store.read()
     if fault in {"evidence-alias","wal-alias"}:
@@ -146,7 +149,7 @@ def test_current_actual_rechecks_refuse_cursor_skips_or_changed_inputs_before_an
         r.context.store.save(state,expected_revision=saved.revision)
     elif change=="profile":r.ctx.setup.choose({"network_scope":r.ctx.setup.private_choices()["network_scope"]})
     elif change=="work":s.value.provider.store.document["records"]["target.000.work"].update(generation=1,operation_id="a"*64,retention="BUSY")
-    elif change=="source":r.ctx.source.offline=True
+    elif change=="source":r.ctx.source.fail_resolve=True
     else:s.value.provider.store.document["records"]["global.force_request"]["retention"]="BUSY"
     before=copy.deepcopy(s.value.provider.store.document);profile=r.ctx.setup.store.read()
     with pytest.raises((AuthorityError,ConfigurationError,SettingsError)):
@@ -157,10 +160,7 @@ def test_current_actual_rechecks_refuse_cursor_skips_or_changed_inputs_before_an
 def test_another_current_role_takes_over_again_without_ack_and_adopted_old_sender_cannot_send():
     s=system();s.roots.begin(owner_authorized=True);r=adopter(s)
     r.begin(r.inspector.inspect(),owner_authorized=True)
-    from types import SimpleNamespace
-    value=SimpleNamespace(**{**vars(s.value),"context":r.ctx,"setup":r.ctx.setup,
-                             "flow":replace_flow(s.value.flow,r.ctx.leadership)})
-    newer=acquire_fallback(value)[2]
+    newer=takeover(r.ctx)
     with pytest.raises((AuthorityError,ConfigurationError)):
         r.advance(owner_authorized=True)
     assert not updates(s) and newer.checkpoint.read().grant.epoch==3
@@ -169,9 +169,45 @@ def test_another_current_role_takes_over_again_without_ack_and_adopted_old_sende
     assert last.advance(owner_authorized=True)=="CONFIRMED" and len(updates(s))==1
 
 
-def replace_flow(flow,leader):
-    from types import SimpleNamespace
-    return SimpleNamespace(**{**vars(flow),"leader":leader})
+@pytest.mark.parametrize("blocker",["other-unknown","unread","native-election"])
+def test_own_pending_summary_mirror_never_allows_other_actual_unresolved_work(blocker):
+    from tb4.reconfiguration_inspection import inspect
+    from test_native_leadership import tid
+    s=system();s.roots.begin(owner_authorized=True);r=adopter(s)
+    r.begin(r.inspector.inspect(),owner_authorized=True);start=r.ctx.effects.start
+    captured=[];profile=r.ctx.setup.store.read()
+    def inject(*args,**kwargs):
+        assert start(*args,**kwargs)=="CONFIRMED"
+        cp=r.ctx.checkpoint.read();records=s.value.provider.store.document["records"]
+        if blocker=="other-unknown":
+            value=ledger(records[SLOT])
+            value["entries"]["SSH"]=dict(owner=r.ctx.setup.installation_id,epoch=cp.grant.epoch,
+                                         operation_id="b"*64,outcome="UNKNOWN")
+            records[SLOT]=changed_row(records[SLOT],value)
+        elif blocker=="unread":
+            records["target.000.work"].update(generation=1,operation_id="b"*64,retention="UNREAD")
+        else:
+            leader=r.ctx.leadership
+            plan=leader.renew(leader.observe(r.ctx.clock()),cp.grant,transition=tid("adopted-pending-renew"))
+            assert r.ctx.checkpoint.replace(cp,replace(cp,election=plan))
+        cp=r.ctx.checkpoint.read()
+        facts=inspect(r.ctx.leadership.backend.read(),setup_payload=r.ctx.setup._payload,checkpoint=cp)
+        assert "SHARED_UNKNOWN" in {row.kind for row in facts.blockers}
+        assert "SHARED_EFFECT_UNKNOWN" in {row.kind for row in facts.blockers}
+        expected={"other-unknown":"SHARED_EFFECT_UNKNOWN","unread":"SHARED_UNREAD",
+                  "native-election":"LOCAL_ELECTION"}[blocker]
+        assert any(row.kind==expected and (blocker!="other-unknown" or row.identity=="b"*64)
+                   for row in facts.blockers)
+        captured.append(copy.deepcopy(s.value.provider.store.document))
+        return "CONFIRMED"
+    r.ctx.effects.start=inject
+    with pytest.raises((AuthorityError,ConfigurationError)):
+        r.advance(owner_authorized=True)
+    assert len(captured)==1 and s.value.provider.store.document==captured[0]
+    assert not updates(s) and r.ctx.setup.store.read()==profile
+    state=r.context.store.read().payload
+    assert state["pending"]["dispatch"]=="PREPARED"
+    assert r.ctx.effects.receipt(Action.IDENTITY)["outcome"]=="UNKNOWN"
 
 
 def test_valid_unicode_current_local_profile_uses_actual_inspection_fingerprint_and_is_preserved():

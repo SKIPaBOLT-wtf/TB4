@@ -185,8 +185,11 @@ class ResumedDocsRootMoves(DocsRootMoves):
                         and fact["owner"] == state["installation_id"] and fact["epoch"] == pending["epoch"],
                         "CONFIGURATION_ROOT_UNKNOWN")
         facts = inspect(snapshot,setup_payload=self.ctx.setup._payload,checkpoint=checkpoint)
-        require(all(pending is not None and row.kind == "SHARED_EFFECT_UNKNOWN"
-                    and row.identity == pending["operation_id"] for row in facts.blockers),
+        # The summary retention mirrors the strictly checked UNKNOWN entry.
+        # Any other unresolved action or blocker still forbids this send.
+        require(all(pending is not None and (
+                    row.kind == "SHARED_EFFECT_UNKNOWN" and row.identity == pending["operation_id"]
+                    or row.kind == "SHARED_UNKNOWN" and row.identity == SLOT) for row in facts.blockers),
                 "CONFIGURATION_ROOT_EVIDENCE")
         return checkpoint,owns
 
