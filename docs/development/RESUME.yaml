@@ -3,21 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_CURRENT_ROLE_ADOPTION_TEST_RUNNING
+phase: STAGED_RECONFIGURATION_C3_CURRENT_ROLE_ADOPTION_TEST_FAILED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c64fc64258fca7846d71f70ed725326ec2e83edd
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0116
+last_verified_event: RP-027-A001-0117
 last_completed: RP-026
-next_action: Observe same LOCAL-SESSION-90212/unique report, publish full actual statuses/source/checkout/exit/time/failures
-  before dependent diagnosis/repair/source.
-verification: Actual adoption/native/original related regression running LOCAL-SESSION-90212;
-  no result/check accepted.
+next_action: 'Publish/readback bounded exact-source diagnostic INTENT for five observed
+  source/fixture failure groups: pending receipt/blocker projections, actual first-run
+  class, actual source adapter switch/preservation, canonical unknown envelope, repeated
+  election transition. Preserve proof before minimal source/fixture repair and same
+  related136-case repeat.'
+verification: Adoption related136 cases fail17 new predicates, all original100 pass;
+  DEF069-073 unproved, no accepted checks.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0115
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -36,6 +38,11 @@ known_open_defects:
 - DEF-066
 - DEF-067
 - DEF-068
+- DEF-069
+- DEF-070
+- DEF-071
+- DEF-072
+- DEF-073
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before

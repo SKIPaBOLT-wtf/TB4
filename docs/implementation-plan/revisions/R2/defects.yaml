@@ -4927,3 +4927,241 @@ defects:
       changes or guard weakening. Full original839-case qualification supports repair;
       final C1-C4 remains held.
     legacy_record: null
+  DEF-069:
+    title: Adopted pending operation is rejected by actual root evidence proof before
+      metadata SDK
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: Positive continuation/native invoking/completed and unknown response
+        scenarios raise CONFIGURATION_ROOT_EVIDENCE. Suspect duplicate general summary
+        UNKNOWN projection after actual own pending root effect; inspect exact trace/actual
+        blocker kinds and strict pending receipt before repair.
+      failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: def-069-first-observed
+      claim: Positive continuation/native invoking/completed and unknown response
+        scenarios raise CONFIGURATION_ROOT_EVIDENCE. Suspect duplicate general summary
+        UNKNOWN projection after actual own pending root effect; inspect exact trace/actual
+        blocker kinds and strict pending receipt before repair.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    repairs: []
+    issue: null
+    regression_test: Preserve all original100 and all36 new adoption/native/Unicode
+      predicates; exact new/native/original related repeat plus final C1-C4/platform/common
+      gates.
+    resolution_evidence: []
+    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+      source/fixture before minimal repair; no later predicates inferred or guards
+      weakened.
+    legacy_record: null
+  DEF-070:
+    title: Complete adopted root first-run refusal fixture expects a different exception
+      class
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: All-moved positive cases reach STORAGE_UNAVAILABLE SettingsError
+        while test expects AuthorityError. Inspect actual first-run refusal frames/preservation
+        before adjusting exact expected class/code.
+      failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: def-070-first-observed
+      claim: All-moved positive cases reach STORAGE_UNAVAILABLE SettingsError while
+        test expects AuthorityError. Inspect actual first-run refusal frames/preservation
+        before adjusting exact expected class/code.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    repairs: []
+    issue: null
+    regression_test: Preserve all original100 and all36 new adoption/native/Unicode
+      predicates; exact new/native/original related repeat plus final C1-C4/platform/common
+      gates.
+    resolution_evidence: []
+    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+      source/fixture before minimal repair; no later predicates inferred or guards
+      weakened.
+    legacy_record: null
+  DEF-071:
+    title: Adoption source-fault fixture may set an unused source adapter attribute
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: source fault first test did not raise and later original snapshot
+        changed before no SDK. Determine actual SourceFixture availability switch
+        versus unused offline attribute, actual source boundary, proof/native/shared
+        effects. Do not infer an unavailable source was admitted.
+      failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: def-071-first-observed
+      claim: source fault first test did not raise and later original snapshot changed
+        before no SDK. Determine actual SourceFixture availability switch versus unused
+        offline attribute, actual source boundary, proof/native/shared effects. Do
+        not infer an unavailable source was admitted.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    repairs: []
+    issue: null
+    regression_test: Preserve all original100 and all36 new adoption/native/Unicode
+      predicates; exact new/native/original related repeat plus final C1-C4/platform/common
+      gates.
+    resolution_evidence: []
+    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+      source/fixture before minimal repair; no later predicates inferred or guards
+      weakened.
+    legacy_record: null
+  DEF-072:
+    title: Synthetic inherited external UNKNOWN fault may omit actual summary envelope
+      binding
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: UNKNOWN fault raises CONFIGURATION_EFFECT_JOURNAL during fixture
+        inspection before target assertion; inspect directly edited ledger versus
+        changed_row canonical envelope, then retain actual valid other-UNKNOWN/no-SDK
+        denial.
+      failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: def-072-first-observed
+      claim: UNKNOWN fault raises CONFIGURATION_EFFECT_JOURNAL during fixture inspection
+        before target assertion; inspect directly edited ledger versus changed_row
+        canonical envelope, then retain actual valid other-UNKNOWN/no-SDK denial.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    repairs: []
+    issue: null
+    regression_test: Preserve all original100 and all36 new adoption/native/Unicode
+      predicates; exact new/native/original related repeat plus final C1-C4/platform/common
+      gates.
+    resolution_evidence: []
+    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+      source/fixture before minimal repair; no later predicates inferred or guards
+      weakened.
+    legacy_record: null
+  DEF-073:
+    title: Second fallback fixture reuses original election transition identity
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: Second helper stale takeover raises TRANSITION_REUSED. Inspect exact
+        helper acquisition ID and fresh nonce requirement before faithful second-takeover
+        fixture.
+      failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: def-073-first-observed
+      claim: Second helper stale takeover raises TRANSITION_REUSED. Inspect exact
+        helper acquisition ID and fresh nonce requirement before faithful second-takeover
+        fixture.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    repairs: []
+    issue: null
+    regression_test: Preserve all original100 and all36 new adoption/native/Unicode
+      predicates; exact new/native/original related repeat plus final C1-C4/platform/common
+      gates.
+    resolution_evidence: []
+    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+      source/fixture before minimal repair; no later predicates inferred or guards
+      weakened.
+    legacy_record: null
