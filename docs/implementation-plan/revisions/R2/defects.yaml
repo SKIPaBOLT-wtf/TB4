@@ -6515,3 +6515,49 @@ defects:
       fails bothactualDesktop jobs. Source static review247 did not qualify repository
       catalogue. This is a normal source defect, no external blocker. AllC1-C4 held.
     legacy_record: null
+  DEF-090:
+    title: New Folder ACTIVE fixture bypasses the separate actual first storage-selection
+      contract
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 103d0eb2009880a7e76ac4604e611ce6958060da
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-binding-fixture-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: ActualrequiredLinuxpush job111241724971 passes51mapping+sixretained,
+        thenall22newFolderACTIVEfail infixtureSetup.choose becausepatch containsnewstorage_request+storage
+        binding together. ExistingSETUP_BINDING_UNVERIFIED guard correctly refuses
+        before role/adoption/cut assertions.
+      failing_source: 103d0eb2009880a7e76ac4604e611ce6958060da
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-binding-fixture-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: fixture-first-selection-contract
+      claim: Persist owner request/own choices first, use actual BoundFolderSelection
+        on freshconfigured Folderport to verify handle/allartifacts, then persistselected
+        record separately before operationhistory. Preserve existingbindingguard andall22functional
+        assertions.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-binding-fixture-failure.json
+    repairs: []
+    issue: null
+    regression_test: RequiredactualLinuxsame22 cases now reach actual role/adoption/pendingcut/negative/noreplay
+      assertions withactualselection; wholeprior484/currentfull/common. Windows55
+      productionunchanged qualification remains exact103d source.
+    resolution_evidence: []
+    notes: Fixturefirstrequest/binding guard failure, notanexternalstorage/accessproblem.
+      ActualnewFolderproductionpath notyetqualified; no skippedcasescounted. RawpublicLinuxfixturetrace
+      keptinGitHubjoblogs; reportomits ephemeralpaths. C1-C4held.
+    legacy_record: null

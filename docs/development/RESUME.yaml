@@ -3,20 +3,19 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_CATALOGUE_FAILURE
+phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_FIXTURE_FAILURE_RECORDED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 103d0eb2009880a7e76ac4604e611ce6958060da
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0250
+last_verified_event: RP-027-A001-0251
 last_completed: RP-026
-next_action: Publish verified same103d0 request16 immutableLinux/CI remainder inspection
-  INTENT; preserve originalterminal237/245 historical outcomes. Then distinct verified
-  exactonehash compatibility repair INTENT/sourceOUTCOME; corrected-source existingcoherence/affectedWindows/requiredLinux506/full
-  qualification beforedependentruntimeGUI/remotehelper work. C1-C4held.
-verification: 250 new103d0 actualWindows55PASS/default2992; bothDesktop repositoryhashcoherence
-  FAIL DEF089 exactmissingUNRELEASEDcataloguehash. NativeWindows2 discoveryPASS doesn'tprovecauseDEF088.
-  OriginalLinux506/CI unfinished; onehashrepair independent, no othernewsource untilcorrectedqualified.
-  C1-C4held.
+next_action: Verified same103d originalPRLinux/CI remainder inspection INTENT and
+  historical237/245terminalOUTCOMEs; then exacttwofile fixtureactualselection/cataloguehash
+  repair INTENT andsourceOUTCOME. Required correctedLinux506/affectedWindows497/currentfull
+  gates before furthercomposition. AllC1-C4held.
+verification: 251 source103d actualrequiredLinux new22FAIL inSetupfirstselectionfixtureguard
+  beforeadoption (old51+6PASS). DEF090 preserved plusDEF089 catalogue; Windows55/default2992qualified/productionunchanged.
+  Exacttwofilefixnextlogged; allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
@@ -62,6 +61,7 @@ known_open_defects:
 - DEF-087
 - DEF-088
 - DEF-089
+- DEF-090
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
