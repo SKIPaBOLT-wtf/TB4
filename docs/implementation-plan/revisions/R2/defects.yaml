@@ -5960,3 +5960,50 @@ defects:
       Historical c5 Linux Desktop2843PASS/21SKIP/4XFAIL and both packagesPASS; Windows
       full2706PASS/158SKIP/4XFAIL does not replace canceled package acceptance.
     legacy_record: null
+  DEF-081:
+    title: Admission credential-revocation fixture uses a foreign installation and
+      unsupported preparation API
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 96b95bae1a06c06de5e08fc538522d3f24d99e5c
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-initial-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: Actual default Windows23new admission/native:22PASS1FAIL0SKIP66.715s.
+        CredentialResolver constructor refuses STORE_INSTALLATION_MISMATCH before
+        native admission case; source-inspected grant call also differs from actual
+        qualified enroll API, not yet exercised.
+      failing_source: 96b95bae1a06c06de5e08fc538522d3f24d99e5c
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-initial-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: fixture-installation-and-enrollment-preparation
+      claim: FixtureStore default identity differs from actual current synthetic profile
+        and its later grant method is unsupported; same existing installation-bound
+        FixtureStore/enroll preparation as qualified promotion should reach actual
+        revocation admission boundary without changing production guards.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-initial-failure.json
+    repairs: []
+    issue: null
+    regression_test: Actual installation-bound FixtureStore/real CredentialResolver
+      enrolled capability passes post-root/publication/promotion, then REVOKED makes
+      fresh admission refuse CREDENTIAL_UNAVAILABLE with zero secret execution/native
+      maintenance release/remote writes; all23 and affected originals/current Linux
+      qualify.
+    resolution_evidence: []
+    notes: Actual failure retained, unsupported later API source-inspected only; production
+      origin unproven and binding guard unchanged. AllC1-C4 held until final composition/qualification.
+    legacy_record: null

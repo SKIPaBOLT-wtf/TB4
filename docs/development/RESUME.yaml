@@ -7,21 +7,20 @@ phase: STAGED_RECONFIGURATION_C4_FRESH_NATIVE_ADMISSION_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 96b95bae1a06c06de5e08fc538522d3f24d99e5c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0201
+last_verified_event: RP-027-A001-0202
 last_completed: RP-026
-next_action: Run23newactualdefaultWindows first; onPASS unchanged295/collection/Linuxrequest12
-  and actualSTARTED/sourcequalifiedOUTCOME; onfailure preserveexactnewDEF/checkpoint
-  beforeboundedrepair. Inspect197 immutablebudgetpackagejobs independently. Then cloudACTIVEadoption
-  source/fullcomposition.
-verification: Actualdefault23new first; onlyPASS original295/wholecollection/Linux423
-  with actualSTARTED/cases/artifacts; sameSource failureOUTCOME before source edit.
-  Independently inspect197 oldbudgetfull/platform; allC1-C4held.
+next_action: 'Publish scoped one-file fixture repair INTENT: current FixtureStoreinstallation/actualresolver.enroll
+  opaque local selection, production/pins/guard unchanged. Preserve sourceOUTCOME
+  thenrerun23; onlyPASS original295/defaultcollection/Linux423. Independentlyinspect197
+  immutablebudgetjobs.'
+verification: Preserveactual96b95ba23cases22PASS1FAIL STORE_INSTALLATION_MISMATCH;
+  nooriginal295/collect/Linuxstarted. Scopedone-file FixtureStoreinstallation/enroll
+  repair afterINTENT/readback. Independent197budgetjobs ongoing/allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0197
-- RP-027-A001-0201
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -52,6 +51,7 @@ known_open_defects:
 - DEF-078
 - DEF-079
 - DEF-080
+- DEF-081
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
