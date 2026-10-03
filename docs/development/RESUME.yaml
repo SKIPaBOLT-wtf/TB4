@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_SHARED_ROOT_PLAN_QUALIFIED
+phase: STAGED_RECONFIGURATION_C3_CURRENT_ROLE_ROOT_ADOPTION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0110
+last_verified_event: RP-027-A001-0111
 last_completed: RP-026
-next_action: 'Publish/readback bounded A009 current-role partial Docs plan adoption
-  source INTENT: exact fresh zero-blocker facts/AFTER prefix/terminal receipt/new
-  current native evidence+WAL, same existing fixed objects and proven dispatch/unknown
-  paths, no old host/WAL/ACK or full-first-run bypass. Targeted related regressions
-  before remaining folder/rebind/C4.'
-verification: Full original839-case shared-plan qualification passes835 predicates/4Linux
-  skips; exact DEF066/067/068 repairs supported, no final C1-C4 accepted.
+next_action: Implement exact10-path A009 source unit and preserve/readback source
+  OUTCOME. Then targeted new adoption/native and relevant original8-file root regressions,
+  with full original max129 qualification retained and final full platforms/common
+  gates still required.
+verification: Original839-case source qualification verified; actual current-role
+  partial plan adoption source authorized, no accepted checks.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0111
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
