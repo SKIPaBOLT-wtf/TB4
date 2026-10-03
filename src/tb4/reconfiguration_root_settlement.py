@@ -18,6 +18,8 @@ from .exchange_layout import encoded
 from .reconfiguration_effects import Effects, EffectMutation, SLOT, changed_row, ledger
 from .reconfiguration_maintenance import Maintenance, MaintenanceContext
 from .reconfiguration_roots import SCHEMA, SCHEMA_SHA256
+from .reconfiguration_root_plan import matches_plan
+from .watchdog.checkpoint_store import NativeCheckpoint
 from .watchdog.leadership_runtime import Action, Capabilities
 
 
@@ -36,11 +38,13 @@ class AppliedRootEvidence:
 class InheritedRootSettlement:
     def __init__(self, context):
         require(type(context) is MaintenanceContext and type(context.storage_port) is NativeCommissioning
-                and type(context.effects) is Effects, "CONFIGURATION_ROOT_SETTLEMENT_CONTEXT")
+                and type(context.effects) is Effects and type(context.checkpoint) is NativeCheckpoint
+                and context.effects.checkpoint is context.checkpoint
+                and context.effects.leadership is context.leadership, "CONFIGURATION_ROOT_SETTLEMENT_CONTEXT")
         self.context = context
         self.maintenance = Maintenance(context)
 
-    def _current(self, *, reserved, inherited=True, outcomes=("UNKNOWN","COMPLETE")):
+    def _role(self, *, reserved, require_owner=True):
         ctx = self.context
         pin = self.maintenance._proof()
         require(hashlib.sha256(pin.read(SCHEMA)).hexdigest() == SCHEMA_SHA256,
@@ -50,6 +54,8 @@ class InheritedRootSettlement:
         spec,handle = storage_spec(choices["storage"])
         require(choices["role"] == "watchdog" and ctx.setup._payload["state"] != "CANCELLED"
                 and spec == ctx.storage_port.spec and spec.mode == "NATIVE_DOCS"
+                and ctx.storage_port.root_transition == choices["storage"].get("root_transition")
+                and handle.seal == digest([spec.mode,spec.root_id,spec.domain_id,handle.object_id,handle.tab_id])
                 and ctx.storage_port.authority(handle).binding == ctx.leadership.backend.binding,
                 "CONFIGURATION_ROOT_SETTLEMENT_CONTEXT")
         caps,sample,checkpoint = ctx.capabilities(),ctx.clock(),ctx.checkpoint.read()
@@ -62,9 +68,15 @@ class InheritedRootSettlement:
         require(type(checkpoint.grant) is Grant and checkpoint.grant.owner == ctx.setup.installation_id
                 and checkpoint.election is None and checkpoint.mutation is None,
                 "CONFIGURATION_LEADERSHIP_UNKNOWN")
-        observed = ctx.leadership.observe(sample)
-        require(ctx.leadership._owns(observed.leader,observed.request,checkpoint.grant), "OWNER_SUPERSEDED")
-        document = observed.snapshot.document(); config = configuration(document)
+        if require_owner:
+            observed = ctx.leadership.observe(sample)
+            owns = ctx.leadership._owns(observed.leader,observed.request,checkpoint.grant)
+            require(owns, "OWNER_SUPERSEDED")
+            snapshot = observed.snapshot
+        else:
+            snapshot = ctx.leadership.backend.read()
+            owns = OwnerGuard(checkpoint.grant.owner,checkpoint.grant.epoch).matches(snapshot.document())
+        document = snapshot.document(); config = configuration(document)
         require(config is not None and config["phase"] == "MAINTENANCE"
                 and checkpoint.maintenance in {None,config["transition_id"]}
                 and (not reserved or checkpoint.maintenance == config["transition_id"]),
@@ -78,20 +90,28 @@ class InheritedRootSettlement:
                 and value["barrier"]["local_clear"] is True
                 and value["barrier"]["transition_id"] == config["transition_id"],
                 "CONFIGURATION_ROOT_EVIDENCE")
+        return snapshot,checkpoint,config,handle,owns
+
+    def _current(self, *, reserved, inherited=True, outcomes=("UNKNOWN","COMPLETE")):
+        snapshot,checkpoint,config,handle,_ = self._role(reserved=reserved)
+        value = ledger(snapshot.document()["records"][SLOT])
         entry = value["entries"].get(Action.IDENTITY.value)
         require(entry is not None and entry["outcome"] in outcomes
                 and (entry["epoch"] < checkpoint.grant.epoch if inherited else
                      entry["epoch"] <= checkpoint.grant.epoch and
                      (entry["epoch"] != checkpoint.grant.epoch or entry["owner"] == checkpoint.grant.owner)),
                 "CONFIGURATION_ROOT_NOT_INHERITED")
-        keys = [key for key in spec.artifact_keys + ("authority",)
+        keys = [key for key in self.context.storage_port.spec.artifact_keys + ("authority",)
                 if digest(["reconfiguration-root",config["transition_id"],key]) == entry["operation_id"]]
         require(len(keys) == 1, "CONFIGURATION_ROOT_OPERATION")
-        return observed.snapshot,checkpoint,config,copy.deepcopy(entry),keys[0],handle
+        return snapshot,checkpoint,config,copy.deepcopy(entry),keys[0],handle
 
     def inspect(self):
         snapshot,checkpoint,config,entry,key,handle = self._current(reserved=False)
         ctx = self.context; spec = ctx.storage_port.spec; doc = snapshot.document()
+        plan = ledger(doc["records"][SLOT]).get("root_plan")
+        require(plan is not None and plan["transition_id"] == config["transition_id"]
+                and matches_plan(doc,snapshot.binding,plan), "CONFIGURATION_ROOT_PLAN_CHANGED")
         protected = {k:doc["records"][k] for k in ("global.settings","global.commissioning")}
         if key == "authority":
             ref = handle.object_id
@@ -102,9 +122,8 @@ class InheritedRootSettlement:
             require(object_id(ref) and item["seal"] == digest([
                 spec.mode,spec.root_id,spec.domain_id,ref,spec.operation(key)]), "CONFIGURATION_ROOT_BINDING")
         metadata = ctx.storage_port._metadata(ref,missing_ok=True)
-        require(type(metadata) is dict and type(metadata.get("parents")) is list
-                and len(metadata["parents"]) == 1 and object_id(metadata["parents"][0])
-                and metadata["parents"][0] != spec.root_id, "CONFIGURATION_ROOT_AFTER_REQUIRED")
+        require(type(metadata) is dict and metadata.get("parents") == [plan["target_root"]],
+                "CONFIGURATION_ROOT_AFTER_REQUIRED")
         parent = metadata["parents"][0]
         after = NativeCommissioning(ctx.storage_port.drive,ctx.storage_port.docs,
             replace(spec,root_id=parent),llm_authorized=True,root_transition=config["transition_id"])

@@ -14,11 +14,12 @@ from .drive.commissioning import SetupSpec, digest, frozen_plan, object_id, rest
 from .drive.leadership import Grant, Leadership, identity, transition_id
 from .exchange_layout import MAX_GENERATION, Capacity, empty_document, encoded, validate_document
 from .private_settings import PrivateSettings
+from .reconfiguration_root_plan import root_plan, matches_plan
 
 SLOT = "global.summary"
 KEY = "tb4_effects_v1"
 SCHEMA = "protocol/reconfiguration-effects-v1.schema.json"
-SCHEMA_SHA256 = "bddcddeabfa7d79cf96ad89e748a62cc34136bea2c332e01989f4ddceb2ffbf9"
+SCHEMA_SHA256 = "646e9347dc85fac5b6de06a774db49c44e4111e3489e04f8e83eee82f1aed250"
 OUTCOMES = frozenset({"UNKNOWN", "COMPLETE", "NO_WORK", "SUPERSEDED", "NOT_DISPATCHED"})
 
 
@@ -28,7 +29,8 @@ def ledger(row):
     if type(body) is not dict or KEY not in body:
         return None
     value = body[KEY]
-    require(type(value) is dict and set(value) == {"schema_version", "coverage_epoch", "entries", "barrier"}
+    fields = {"schema_version", "coverage_epoch", "entries", "barrier"}
+    require(type(value) is dict and set(value) in (fields,fields | {"root_plan"})
             and type(value["schema_version"]) is int and value["schema_version"] == 1
             and type(value["coverage_epoch"]) is int and value["coverage_epoch"] == 1
             and type(value["entries"]) is dict and set(value["entries"]) <= {a.value for a in Action}
@@ -39,6 +41,8 @@ def ledger(row):
                 and 1 <= entry["epoch"] <= MAX_GENERATION and transition_id(entry["operation_id"])
                 and type(entry["outcome"]) is str and entry["outcome"] in OUTCOMES, "CONFIGURATION_EFFECT_JOURNAL")
     barrier = value["barrier"]
+    if "root_plan" in value:
+        root_plan(value["root_plan"])
     if barrier is not None:
         require(type(barrier) is dict and set(barrier) == {
             "transition_id", "source_owner", "source_epoch", "local_clear"}
@@ -94,6 +98,8 @@ class EffectMutation(RecordMutation):
         doc = snapshot.document()
         require(type(owner) is OwnerGuard and owner.matches(doc), "OWNER_SUPERSEDED")
         protected = {"global.settings"}
+        if purpose == "ROOT_PLAN":
+            protected.add("global.commissioning")
         if purpose in {"ROOT_SETTLE","ROOT_CANCEL","ROOT_RETRY"}:
             require(type(root_key) is str and root_key in (
                 tuple(f"artifact.{i:03d}.{kind}" for i in range(Capacity.parse(doc["capacity"]).devices)
@@ -129,19 +135,29 @@ class EffectMutation(RecordMutation):
             old, new = ledger(before), ledger(after)
             require(new is not None and after == changed_row(before,new), "CONFIGURATION_EFFECT_WAL")
             config = configuration(probe)
-            require(self.purpose in {"INITIALIZE", "START", "ROOT_START", "ROOT_SETTLE", "ROOT_CANCEL", "ROOT_RETRY", "FINISH", "CERTIFY"}, "CONFIGURATION_EFFECT_WAL")
-            if self.purpose not in {"ROOT_SETTLE","ROOT_CANCEL","ROOT_RETRY"}:
+            require(self.purpose in {"INITIALIZE", "START", "ROOT_START", "ROOT_SETTLE", "ROOT_CANCEL", "ROOT_RETRY", "ROOT_PLAN", "FINISH", "CERTIFY"}, "CONFIGURATION_EFFECT_WAL")
+            if self.purpose == "ROOT_PLAN":
+                require(set(parts["protected"]) == {"global.settings","global.commissioning"}, "CONFIGURATION_EFFECT_WAL")
+            elif self.purpose not in {"ROOT_SETTLE","ROOT_CANCEL","ROOT_RETRY"}:
                 require(set(parts["protected"]) == {"global.settings"}, "CONFIGURATION_EFFECT_WAL")
             if self.purpose in {"INITIALIZE", "START"}:
                 require(config is None or config["phase"] != "MAINTENANCE", "CONFIGURATION_MAINTENANCE")
             if self.purpose == "INITIALIZE":
-                require(old is None and self.owner.epoch == 1 and new["barrier"] is None
+                require(old is None and self.owner.epoch == 1 and new["barrier"] is None and "root_plan" not in new
                         and before["retention"] in {"FREE", "RETAINED"}
                         and all(x["owner"] == self.owner.owner and x["epoch"] == 1
                                 for x in new["entries"].values()), "CONFIGURATION_LEGACY_EVIDENCE_REQUIRED")
             else:
                 require(old is not None, "CONFIGURATION_EFFECT_WAL")
-                if self.purpose == "CERTIFY":
+                if self.purpose == "ROOT_PLAN":
+                    plan = new.get("root_plan"); barrier = old["barrier"]
+                    require(plan is not None and config is not None and config["phase"] == "MAINTENANCE"
+                            and plan["transition_id"] == config["transition_id"]
+                            and barrier is not None and barrier["local_clear"] is True
+                            and barrier["transition_id"] == config["transition_id"]
+                            and (old.get("root_plan") is None or old["root_plan"]["transition_id"] != config["transition_id"])
+                            and new == {**old,"root_plan":plan}, "CONFIGURATION_EFFECT_WAL")
+                elif self.purpose == "CERTIFY":
                     barrier = old["barrier"]
                     require(barrier is not None and config is not None and config["phase"] == "MAINTENANCE"
                             and barrier["transition_id"] == config["transition_id"]
@@ -149,6 +165,7 @@ class EffectMutation(RecordMutation):
                             and barrier["source_epoch"] == self.owner.epoch and not barrier["local_clear"]
                             and new == {**old,"barrier":{**barrier,"local_clear":True}}, "CONFIGURATION_EFFECT_WAL")
                 else:
+                    require(new.get("root_plan") == old.get("root_plan"),"CONFIGURATION_EFFECT_WAL")
                     changed = {key for key in set(old["entries"]) | set(new["entries"])
                                if old["entries"].get(key) != new["entries"].get(key)}
                     require(len(changed) == 1 and new["barrier"] == old["barrier"], "CONFIGURATION_EFFECT_WAL")
@@ -237,6 +254,12 @@ class EffectMutation(RecordMutation):
             return "CONFLICT", None
         if doc["records"][SLOT] != before[SLOT]:
             return "CONFLICT", None
+        if self.purpose == "ROOT_PLAN":
+            try:
+                if not matches_plan(doc,self.binding,ledger(after[SLOT])["root_plan"]):
+                    return "CONFLICT", None
+            except ConfigurationError:
+                return "CONFLICT", None
         doc["records"].update(after)
         validate_document(doc)
         return "READY", doc

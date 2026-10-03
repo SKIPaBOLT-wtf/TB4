@@ -35,13 +35,14 @@ def guarded_system(*, checkpoint_store=None, effect_store=None, **kwargs):
     assert profile_store.read() is None
     with patch("tb4.commissioning_state.uuid4",return_value=UUID(ACTORS[0])):
         setup = Setup(profile_store,create=True)
-    spec,provider,port,journal,bootstrap = commissioning_system()
+    spec,provider,port,journal,bootstrap = commissioning_system(capacity=kwargs.pop("capacity",None))
     seed(bootstrap)
     handle = AuthorityHandle.parse(journal.read()["handle"])
     leader = Leadership(port.authority(handle),actor=setup.installation_id,enrollment=ENROLLMENT)
     grant = bootstrap.initial_grant(leader,clock())
     assert grant.epoch == 1 and grant.owner == spec.bootstrap_actor == setup.installation_id
-    finish(Commissioner(spec,leader,grant,port,Journal(spec,setup.installation_id)))
+    finish(Commissioner(spec,leader,grant,port,Journal(spec,setup.installation_id)),
+           limit=300 if spec.capacity.devices == 1 else 4096)
     setup.choose(dict(role="watchdog",storage=dict(spec=asdict(spec),authority=handle.record()),
                       network_scope=["192.0.2.0/24"]))
     caps = [Capabilities(setup.installation_id,True,True,frozenset(Action))]

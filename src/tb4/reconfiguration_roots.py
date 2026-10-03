@@ -24,7 +24,8 @@ from .drive.leadership import ClockSample, Grant
 from .exchange_layout import MAX_GENERATION
 from .private_settings import PrivateSettings, encoded
 from .reconfiguration_candidate import Candidate, native_binding
-from .reconfiguration_effects import Effects, SLOT, ledger
+from .reconfiguration_effects import Effects, EffectMutation, SLOT, ledger, changed_row
+from .reconfiguration_root_plan import root_plan, references, stable_records
 from .reconfiguration_evidence import EvidenceReceipt
 from .reconfiguration_maintenance import hex64, sha
 from .watchdog.checkpoint_store import NativeCheckpoint
@@ -35,11 +36,6 @@ SCHEMA_SHA256 = "4a5ddeb905e347813189dfff9b856e0250b3021e2805f60ab0a3025b8e3e7b1
 FIELDS_STATE = frozenset({"schema_version","kind","installation_id","transition_id",
     "configuration_revision","base_revision","base_sha256","candidate_revision","candidate_sha256",
     "authority","target_root","records_sha256","objects","index","pending","phase","pin","binding"})
-
-
-def stable_records(document):
-    return sha({k:v for k,v in document["records"].items()
-                if k not in {"global.leadership","global.force_request",SLOT}})
 
 
 @dataclass(frozen=True, repr=False)
@@ -179,7 +175,7 @@ class DocsRootMoves:
         require(after == value and n == revision+1, "CONFIGURATION_ROOT_UNCONFIRMED")
         return after
 
-    def _proof(self, state, *, dispatch):
+    def _proof(self, state, *, dispatch, root_plan_required=True):
         pin = self.maintenance._proof()
         require(hashlib.sha256(pin.read(SCHEMA)).hexdigest() == SCHEMA_SHA256
                 and pin_record(pin) == state["pin"], "CONFIGURATION_ROOT_INSTRUCTIONS")
@@ -217,6 +213,10 @@ class DocsRootMoves:
         require(effects is not None and effects["barrier"] is not None
                 and effects["barrier"]["transition_id"] == state["transition_id"]
                 and effects["barrier"]["local_clear"] is True, "CONFIGURATION_ROOT_EVIDENCE")
+        shared_plan = effects.get("root_plan")
+        if (shared_plan is not None and shared_plan["transition_id"] == state["transition_id"]
+                or dispatch and root_plan_required):
+            require(shared_plan == self._intent(state), "CONFIGURATION_ROOT_PLAN_CHANGED")
         for action,fact in effects["entries"].items():
             if fact["outcome"] == "UNKNOWN":
                 require(pending is not None and action == Action.IDENTITY.value
@@ -260,9 +260,33 @@ class DocsRootMoves:
             candidate_sha256=qualified.setup_sha256,authority=asdict(snapshot.binding),target_root=self.new.root_id,
             records_sha256=stable_records(document),objects=objects,index=0,pending=None,phase="MOVING",
             pin=pin_record(self.maintenance._proof()),binding=self._binding())
-        self._proof(state,dispatch=True)
+        self._proof(state,dispatch=True,root_plan_required=False)
         self._save(state,0)
-        return "MOVING"
+        result = self._ensure_plan(state)
+        return "MOVING" if result == "CONFIRMED" else result
+
+    def _intent(self,state):
+        spec,refs = references(self._original_document(),self.ctx.leadership.backend.binding)
+        require(spec == self.old.spec, "CONFIGURATION_ROOT_BINDING")
+        return root_plan(dict(schema_version=1,mode="NATIVE_DOCS",transition_id=state["transition_id"],
+            source_root=spec.root_id,target_root=self.new.root_id,blueprint_sha256=spec.fingerprint,
+            references_sha256=digest(refs),records_sha256=state["records_sha256"]))
+
+    def _ensure_plan(self,state):
+        checkpoint,_ = self._proof(state,dispatch=True,root_plan_required=False)
+        if self.ctx.effects.inspect() not in {"NO_PENDING","CONFIRMED"}:
+            return "UNKNOWN"
+        snapshot = self.ctx.leadership.backend.read(); document = snapshot.document()
+        value = ledger(document["records"][SLOT]); expected = self._intent(state)
+        existing = value.get("root_plan")
+        if existing is not None and existing["transition_id"] == state["transition_id"]:
+            require(existing == expected, "CONFIGURATION_ROOT_PLAN_CHANGED")
+            return "CONFIRMED"
+        self._proof(state,dispatch=True,root_plan_required=False)
+        value["root_plan"] = expected
+        plan = EffectMutation.prepare(snapshot,OwnerGuard(checkpoint.grant.owner,checkpoint.grant.epoch),
+            changed_row(document["records"][SLOT],value),purpose="ROOT_PLAN")
+        return self.ctx.effects._commit(plan)
 
     def _inspect_object(self, item):
         value = self.old._metadata(item["id"],missing_ok=True)
@@ -284,6 +308,8 @@ class DocsRootMoves:
         require(state is not None, "CONFIGURATION_ROOT_NOT_STARTED")
         if state["pending"] is not None:
             return self.inspect()  # A resumed call is never a new SDK send.
+        if self._ensure_plan(state) != "CONFIRMED":
+            return "UNKNOWN"
         checkpoint,_ = self._proof(state,dispatch=True)
         if state["phase"] == "MOVED":
             return "MOVED"

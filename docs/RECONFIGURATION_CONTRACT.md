@@ -149,3 +149,11 @@ catalogue. Same-owner cursor resume sends no SDK; a later newly armed ROOT_RETRY
 requires that exact confirmed unsent receipt. Missing old proof leaves UNKNOWN
 held without blocking role takeover. BEFORE/INVOKING/legacy/saved proof cannot
 grant retry; ordinary START remains unchanged. No routing activation.
+
+[A-008](implementation-plan/revisions/R2/amendments/RP-027/A-008-shared-root-plan.md)
+requires a small immutable shared root destination/blueprint/fixed-reference/work
+witness before any new SDK move. Native intent precedes its strict CAS; an unknown
+plan receipt never arms SDK. Fresh actual current-role partial-root facts read only
+the exact original fixed objects under old or shared-target unique after metadata,
+with actual existing blockers and public counts. No old host/WAL/ACK or READY/
+routing grant; ordinary full first-run verification still rejects partial roots.
