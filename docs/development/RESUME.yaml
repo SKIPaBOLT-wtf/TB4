@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_ACTIVE_ADOPTION_IMMUTABLE_FULL_PLATFORM_QUALIFIED
+phase: STAGED_RECONFIGURATION_C4_RETAINED_AUTHORITY_DEFAULT_SCOPED_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 6d061a3af4c31e72fbc1c806ff04d66bfc89f80e
+source_commit: 41761af8b62b89aea0bc304615dcb7848ad2b763
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0223
+last_verified_event: RP-027-A001-0224
 last_completed: RP-026
-next_action: Separate verified current-source417/b4e9 rootless/native bounded25-test
-  qualification INTENT, then actual tests. AfterPASS publish actualLinuxFolder/mappedselection/affectedregressions/default/currentfull
-  INTENTs. AllC1-C4/compositionacceptanceheld.
-verification: "223 originalimmutable6d CI2891/Win2777/Linux2914 full/platform/package\
-  \ allPASS; current417 retainedsource staticonly222\u2192nextspecific417boundedtestINTENT.\
-  \ AllC1-C4held; independent220 settled; noacceptance."
+next_action: Execute same approved default bounded test operation once, inspect actual
+  JUnit/results, publish source-linked OUTCOME/evidence/progress with next exact dependent
+  action. After25PASS authorize required actualLinuxFolder/newscoped plus affectedWindows/defaultcollection/current-sourcefull
+  qualification; preserve failed cases and hypotheses.
+verification: 224 current417 first scoped25/defaultWindows/native qualification starts
+  only afterreadback; 222static and223old6dfullsettled. RequiredLinuxFolder/affected/currentfull/composition/C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0224
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
