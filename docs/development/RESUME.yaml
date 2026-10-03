@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_CURRENT_ROLE_ADOPTION_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C3_ADOPTION_SOURCE_BYTE_CONSISTENCY
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: e3b472d717a2647af73f0c00874054f27f19940a
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0112
+last_verified_event: RP-027-A001-0113
 last_completed: RP-026
-next_action: 'Publish/readback narrow source consistency INTENT: add new protocol
-  LF attribute, align resumed base profile hash with existing UTF8 inspection codec
-  and add valid Unicode-profile predicate/documentation. Preserve source/outcome before
-  exact targeted new adoption/native and original8-root related regression; full platform/final
-  checks held.'
-verification: A009 exact10-path source saved untested; identified LF/profile-codec
-  follow-up required before targeted qualification.
+next_action: Perform4-path source consistency update and preserve/readback source
+  OUTCOME, then publish exact new2-file and original8-root related test INTENT excluding
+  only previously-qualified max129 fixture as partial regression.
+verification: A009 source saved; exact LF/UTF8 profile codec follow-up authorized
+  before runtime qualification.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0113
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
