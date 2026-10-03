@@ -3,21 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_DIAGNOSTIC
+phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_DIAGNOSTIC_PROVED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: afbc0df905d2351c25dc7beb399c45e4fbf22a54
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0092
+last_verified_event: RP-027-A001-0093
 last_completed: RP-026
-next_action: Run exact two-probe diagnosis after remote readback; publish source-linked
-  facts/proven origin/minimal repair before source edit.
-verification: DEF066/067 bounded collision/current-snapshot diagnosis pending, final
-  C1-C4 held.
+next_action: 'Publish/read back two-path source repair INTENT: deny conflicting same-transition
+  shared root target/blueprint/source before unchanged C1/C2 validation, fix negative
+  baseline to actual current provider document, add same-target still-requires-C1/C2
+  regression. Preserve838 cases; source before same36-target bounded1800s once-run
+  repeat.'
+verification: Two exact probes prove DEF066/067 causes; minimal two-path repair/repeat
+  pending, final C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0092
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

@@ -1,0 +1,82 @@
+{
+  "source": "afbc0df905d2351c25dc7beb399c45e4fbf22a54",
+  "checkout": "f4bae2531e2ea97cd9f4aa00c1c3e9b30f4362ea",
+  "probes": [
+    {
+      "case": "different-root-after-shared-plan",
+      "error_class": "ConfigurationError",
+      "code": "CONFIGURATION_RESOLUTION_CHANGED",
+      "frames": [
+        {
+          "file": "rp27-root-plan-diagnostic.py",
+          "function": "<module>",
+          "line": 24
+        },
+        {
+          "file": "reconfiguration_roots.py",
+          "function": "begin",
+          "line": 236
+        },
+        {
+          "file": "reconfiguration_candidate.py",
+          "function": "require_validated",
+          "line": 276
+        },
+        {
+          "file": "reconfiguration_candidate.py",
+          "function": "review",
+          "line": 264
+        },
+        {
+          "file": "reconfiguration_candidate.py",
+          "function": "_proof",
+          "line": 113
+        },
+        {
+          "file": "reconfiguration_maintenance.py",
+          "function": "require_resolved",
+          "line": 457
+        },
+        {
+          "file": "configuration_contract.py",
+          "function": "require",
+          "line": 18
+        }
+      ],
+      "summary_only_change_from_resolved_image": true,
+      "resolved_work_fingerprint_differs": true,
+      "shared_unchanged": true,
+      "root_store_absent": true,
+      "sdk_moves": 0,
+      "profile_unchanged": true
+    },
+    {
+      "case": "metadata-witness-live-versus-old-fixture-document",
+      "error_class": "ConfigurationError",
+      "code": "CONFIGURATION_ROOT_BINDING",
+      "frames": [
+        {
+          "file": "rp27-root-plan-diagnostic.py",
+          "function": "<module>",
+          "line": 35
+        },
+        {
+          "file": "reconfiguration_root_facts.py",
+          "function": "inspect",
+          "line": 76
+        },
+        {
+          "file": "configuration_contract.py",
+          "function": "require",
+          "line": 18
+        }
+      ],
+      "stale_is_live": false,
+      "stale_differs_before": true,
+      "live_unchanged": true,
+      "sdk_moves_before": 1,
+      "sdk_moves_after": 1,
+      "profile_unchanged": true
+    }
+  ]
+}

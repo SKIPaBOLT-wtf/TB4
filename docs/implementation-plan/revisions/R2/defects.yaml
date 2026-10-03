@@ -4659,7 +4659,12 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
-    proven_origin: null
+    proven_origin:
+      work_item: RP-027
+      source_ref: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
     reproduction:
       procedure: Second differing-target plan fails CONFIGURATION_RESOLUTION_CHANGED
         instead of ROOT_PLAN_CHANGED. Shared root_plan changed the protected work
@@ -4671,6 +4676,8 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4689,6 +4696,17 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+    - id: unchanged-resolution-guard-precedes-collision-specific-refusal
+      claim: 'Exact trace: DocsRootMoves.begin236 -> Candidate.require_validated276/review264/_proof113
+        -> Maintenance.require_resolved457 raises CONFIGURATION_RESOLUTION_CHANGED;
+        summary-only plan change changes the original workload fingerprint. Root store
+        absent/shared/profile unchanged and zero SDK. A denial-only different-target
+        witness preflight before unchanged C1/C2 validation can project ROOT_PLAN_CHANGED
+        without granting same-target reuse.'
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
     repairs: []
     issue: null
     regression_test: Retain all original791 predicates, complete all19 no-send cases
@@ -4696,7 +4714,8 @@ defects:
     resolution_evidence: []
     notes: New unaccepted C3 qualification failure. Preserve exact full result and
       inspect source/current snapshot provenance before minimal repair; no guard weakened.
-      Mandatory final C1-C4 held.
+      Mandatory final C1-C4 held. Bounded exact-source diagnostic proves the call
+      order/baseline cause; no existing resolution/metadata guard relaxation justified.
     legacy_record: null
   DEF-067:
     title: Partial root metadata-witness fixture compares a stale document reference
@@ -4709,7 +4728,12 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
-    proven_origin: null
+    proven_origin:
+      work_item: RP-027
+      source_ref: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
     reproduction:
       procedure: metadata-witness case performs one legitimate Root.advance CAS during
         fixture setup after capturing provider.store.document. Before copy may reference
@@ -4721,6 +4745,8 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4739,6 +4765,16 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+    - id: actual-live-snapshot-unchanged-stale-fixture-reference
+      claim: Exact metadata inspection raises CONFIGURATION_ROOT_BINDING at PartialRootInspection76;
+        live document/profile unchanged and SDK count remains1. Old fixture document
+        is a different object and differs before inspection due legitimate setup Root.advance.
+        Baseline must copy actual provider.store.document after fault setup, retaining
+        every preservation assertion.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
     repairs: []
     issue: null
     regression_test: Retain all original791 predicates, complete all19 no-send cases
@@ -4746,5 +4782,6 @@ defects:
     resolution_evidence: []
     notes: New unaccepted C3 qualification failure. Preserve exact full result and
       inspect source/current snapshot provenance before minimal repair; no guard weakened.
-      Mandatory final C1-C4 held.
+      Mandatory final C1-C4 held. Bounded exact-source diagnostic proves the call
+      order/baseline cause; no existing resolution/metadata guard relaxation justified.
     legacy_record: null
