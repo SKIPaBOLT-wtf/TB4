@@ -3,26 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_ROOT_AND_FOLDER_PUBLICATION_SOURCE
+phase: STAGED_RECONFIGURATION_C4_RETAINED_AUTHORITY_SOURCE_PRESERVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 6d061a3af4c31e72fbc1c806ff04d66bfc89f80e
+source_commit: 41761af8b62b89aea0bc304615dcb7848ad2b763
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0221
+last_verified_event: RP-027-A001-0222
 last_completed: RP-026
-next_action: Implement exact scoped source unit, review diff/AST/additive schema/hash/whitelist/privacy,
-  preserve and read back public source with source-linked OUTCOME. Then publish bounded
-  new-source rootless/native qualification INTENT; following successful scoped outcome
-  qualify actual Linux Folder/mapped-selection cases and affected regressions/default
-  collection/current-source full platform gates.
-verification: 221 independently starts retained-authority C4 source only after verified
-  INTENT; 219 scoped6d30/436/bothLinux453 supports this dependency. Same6d full CI/Desktop
-  continue under220 with acceptance held.
+next_action: Settle independent source6d full CI/Desktop/package terminal evidence
+  under220 into nextOUTCOME; then newsource417 rootless/native qualification INTENT
+  and exact25tests. Afterpass separate actualLinuxFolder/mappedselection andaffected/default/currentfull
+  qualification; allC1-C4held.
+verification: 222 public417 retainedAuthoritysource17path/AST/whitelist/additiveb4e9
+  staticPASS/tests0, noacceptance. Sameold6d220fullCI/Desktop terminalsuccess ready
+  tosettle before new417boundedqualificationINTENT.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0220
-- RP-027-A001-0221
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

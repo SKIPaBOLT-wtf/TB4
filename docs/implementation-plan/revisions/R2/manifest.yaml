@@ -1141,6 +1141,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-015-native-validated-profile-promotion.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-016-fresh-native-current-admission.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-017-current-role-active-adoption.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-027/A-018-retained-authority-publication.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:
