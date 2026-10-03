@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_OWNER_REPEAT_PASSED
+phase: STAGED_RECONFIGURATION_C3_ROOT_DISPOSITION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4301f0c24ff44dc5baf3ab85dcabe5f8772ffef2
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0064
+last_verified_event: RP-027-A001-0065
 last_completed: RP-026
-next_action: Publish/read back separately bounded C3 root settlement source INTENT.
-  Add protected dispatch-phase/native revocation proof for deterministic pre-send
-  cancellation and exact unique after-metadata inherited settlement, with strictly
-  scoped effect CAS and no SDK replay/ACK barrier; preserve source before expanded
-  actual targeted tests.
-verification: Exact763 WindowsX64 root/native/Qt predicates pass with same collection;
-  root owner and ordinary admission invariants qualified; no check accepted.
+next_action: Preserve/read back disposition source OUTCOME. Publish/read back same30-target
+  plus new disposition/native predicates test INTENT, run once fresh owned absent
+  fixtures and record real session/results. Then separately scoped same-authority
+  effect tombstone/known safe continuation and cloud-only inherited unique-after settlement.
+verification: 763 root predicates qualified on WindowsX64; durable dispatch-disposition
+  source unit pending, no check accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0065
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
