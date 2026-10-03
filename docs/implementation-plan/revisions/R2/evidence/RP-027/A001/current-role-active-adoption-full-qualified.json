@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "kind": "IMMUTABLE_ACTIVE_ADOPTION_FULL_PLATFORM_QUALIFICATION",
+  "intent": "RP-027-A001-0220",
+  "source_ref": "6d061a3af4c31e72fbc1c806ff04d66bfc89f80e",
+  "trigger_commit": "9b3c526e8d82ea4cff2b109467a94013f509c04e",
+  "request_revision": 13,
+  "pr": 36,
+  "checkout": "d39b5bff9168a56ff2b5607d4e4526a7fcda3fd0",
+  "source_binding": "Existing request13 freezes source6d; independent later retained source417 is not qualified by these jobs. Same original CI/Desktop jobs were inspected without rerun.",
+  "full_ci": {
+    "run_id": 37126858546,
+    "job_id": 111213805838,
+    "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37126858546",
+    "status": "completed",
+    "conclusion": "success",
+    "passed": 2891,
+    "skipped": 27,
+    "xfailed": 4,
+    "elapsed_seconds": 1467.12,
+    "checkout_extracted": "d39b5bff9168a56ff2b5607d4e4526a7fcda3fd0",
+    "checks": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Checkout",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Set up Python",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Install",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Public repository security scan",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Isolated folder helper prerequisites",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Native Linux credential boundary qualification",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Native protected first-run qualification",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Native scoped discovery qualification",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Test",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Set up Python",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Checkout",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "desktop": {
+    "run_id": 37126858553,
+    "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37126858553",
+    "platforms": [
+      {
+        "platform": "Windows",
+        "job_id": 111213806243,
+        "passed": 2777,
+        "skipped": 158,
+        "xfailed": 4,
+        "elapsed_seconds": 2384.93,
+        "checkout_binding": "Fixed request13, PR checkout and source-linked artifact; Windows checkout command formatting differs and no log extraction is claimed.",
+        "checks": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Linux Qt dependencies",
+            "status": "completed",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Install development and desktop dependencies",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Desktop tests with real GUI and core imports",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Native Windows credential boundary qualification",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Native Linux credential boundary qualification",
+            "status": "completed",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Native protected first-run qualification",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Native scoped discovery qualification",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Private BALLPARK and local owner review qualification",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Distinct FETCHER enrollment and actual profile qualification",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete platform regression suite",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Build WATCHDOG",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Build FETCHER",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Packaged application and installer acceptance",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Publish installers and checksums",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "platform": "Linux",
+        "job_id": 111213806422,
+        "passed": 2914,
+        "skipped": 21,
+        "xfailed": 4,
+        "elapsed_seconds": 2213.78,
+        "checkout_extracted": "d39b5bff9168a56ff2b5607d4e4526a7fcda3fd0",
+        "checks": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Linux Qt dependencies",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install development and desktop dependencies",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Desktop tests with real GUI and core imports",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Native Windows credential boundary qualification",
+            "status": "completed",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Native Linux credential boundary qualification",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Native protected first-run qualification",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Native scoped discovery qualification",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Private BALLPARK and local owner review qualification",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Distinct FETCHER enrollment and actual profile qualification",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete platform regression suite",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Build WATCHDOG",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Build FETCHER",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Packaged application and installer acceptance",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Publish installers and checksums",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ],
+    "artifacts": [
+      {
+        "id": 11276605347,
+        "name": "tb4-desktop-Linux-d39b5bff9168a56ff2b5607d4e4526a7fcda3fd0",
+        "size_in_bytes": 314504235,
+        "digest": "sha256:452533f25dc39f847554e97aafe2aaa6b12036a4bb8744f7737fa0f2c7ae11fb",
+        "expired": false
+      },
+      {
+        "id": 11276237490,
+        "name": "tb4-desktop-Windows-d39b5bff9168a56ff2b5607d4e4526a7fcda3fd0",
+        "size_in_bytes": 120923854,
+        "digest": "sha256:705ac2ea4e0f139d317a2b1f78965de8f5cc153d1d76de905948a6135a3dde19",
+        "expired": false
+      }
+    ],
+    "verification": "Terminal actual platform logs and original workflow jobs, selected native security/first-run/discovery, actual GUI/core imports, complete platform regression, WATCHDOG/FETCHER builds and packaged application/installer acceptance all successful. Package metadata read only; no >100MiB artifact download or live installation."
+  },
+  "progress": {
+    "run_id": 37126858573,
+    "job_id": 111213805973,
+    "conclusion": "success"
+  },
+  "targeted_evidence": "current-role-active-adoption-qualified.json",
+  "acceptance": false,
+  "checks_accepted": [],
+  "runtime_active": false,
+  "remaining": "Current retained authority source417 is static-only. Required actual Folder/rootless qualifications and runtime/GUI/remote helper/current-source common gates remain. All C1-C4 and defects stay open.",
+  "privacy": "Owned CI synthetic/native fixtures only; no real topology, installed profile, credentials, LAN/private provider facts or raw artifact endpoints published."
+}
