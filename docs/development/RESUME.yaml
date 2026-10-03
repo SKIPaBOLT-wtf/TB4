@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_DEFAULT_FULL_COLLECTION_PASS
+phase: STAGED_RECONFIGURATION_C3_REPAIRED_DEFAULT_IMPORT_PLATFORM_REPEAT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0131
+last_verified_event: RP-027-A001-0132
 last_completed: RP-026
-next_action: Publish/readback existing PR36 source-specific native/fullplatform retry
-  INTENT without CI skip, identify fresh actual3run IDs, observe and save actual outcomes;
-  no replay of previous failed-source jobs.
-verification: Default full Windows collection2748 cases/zeroerrors without custom
-  helper paths passed; actual fullplatform execution next.
+next_action: After INTENT readback publish one CI request file, observe exact fresh
+  runs/STARTED/outcomes; preserve actual failures before source repair, or resume
+  dependency-safe C3/C4 on qualified current source.
+verification: Default2748 fullcollection passed; isolated native/fullplatform repair
+  repeat authorized after exact INTENT readback.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0132
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
