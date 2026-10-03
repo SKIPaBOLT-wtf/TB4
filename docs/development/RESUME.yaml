@@ -3,18 +3,18 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 103d0eb2009880a7e76ac4604e611ce6958060da
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0248
+last_verified_event: RP-027-A001-0249
 last_completed: RP-026
-next_action: Execute actualWindows55/defaultcollect, publishrequest16/findactualruns/STARTED;
-  inspectsameactualLinux/currentfull whileold237/245 resultscheckpointed separately.
-  PublishscopedOUTCOME beforeanydependentrepair/source/regression; allC1-C4held.
-verification: 248 new103d0/e567 actualWindows55/wholecollect andrequiredactualLinux506/currentfull
-  qualification INTENT; existingold237/current245 immutableterminalresults separate,
-  no unnecessary oldWindowsretry. C1-C4held.
+next_action: Inspectactualsession76029/defaultJUnit andsamerequest16 Linux506/newfullactualIDs.
+  Preservefailedcasesbefore boundedrepair; scopedOUTCOME beforedependentaffectedWindowsregression/sourcecomposition.
+  Checkpoint237/245 oldterminalsource results separately withno currentsource substitution.
+verification: 249 actualcurrent103d0/request16 runIDs/localWindows55session76029 captured/defaultcollect2992PASS/tests0.
+  RequiredLinux506/currentfull unfinished; old237/245 terminalhistoricalrecordnext.
+  AllC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
