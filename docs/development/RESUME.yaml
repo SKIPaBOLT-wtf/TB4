@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_SHORT_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0104
+last_verified_event: RP-027-A001-0105
 last_completed: RP-026
-next_action: Publish/readback exact original root/inherited/no-send/shared-plan/native8-target
-  short regression excluding only actual129-object slow capacity case as an explicitly
-  partial diagnostic, not acceptance. On pass publish full same36-target839-case1800s
-  once-run qualification including that case.
-verification: Proven DEF068 one-line fix saved; all839 original predicates unchanged,
-  runtime qualification pending.
+next_action: Run exact owned short root regression once, record same session if still
+  running and full actual OUTCOME. Full839-case qualification separately required
+  before dependent adoption source.
+verification: One-line fix saved; exact8-file short original root regression authorized,
+  capacity/full acceptance held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0105
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
