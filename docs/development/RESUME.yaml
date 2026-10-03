@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ADOPTION_BYTE_CONSISTENCY_SAVED
+phase: STAGED_RECONFIGURATION_C3_CURRENT_ROLE_ADOPTION_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c64fc64258fca7846d71f70ed725326ec2e83edd
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0114
+last_verified_event: RP-027-A001-0115
 last_completed: RP-026
-next_action: Publish/readback one exact10-target new adoption/native plus original8-file
-  root/inherited/no-send/shared-plan/native regression INTENT. Exclude only previously-qualified
-  costly129-object predicate as explicit partial scope; retain all original100 related
-  predicates and all newly collected cases/source/exit/failures/skips. Final full
-  broad/Linux/native/Qt/package gates remain.
-verification: A009 source+LF/UTF8 follow-up saved untested; exact targeted adoption/native/original
-  qualification next.
+next_action: Launch exact related10-file run once and record STARTED if running. Preserve
+  full actual OUTCOME/failures before bounded diagnosis/repair; on pass continue remaining
+  folder/rebind/C4 source under new verified intents.
+verification: A009 source ready for exact new/native and original100 related regression;
+  no result/check accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0115
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
