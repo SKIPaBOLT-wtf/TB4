@@ -267,3 +267,12 @@ and each admission; inherited shared UNKNOWN retains ordinary no-replay rules.
 The originating release remains strict. New timing is taken from coherent current
 configuration. Default activation stays closed; actual runtime/GUI/remote helper
 and final-source full/common qualification remain before any acceptance.
+
+[A-020](implementation-plan/revisions/R2/amendments/RP-027/A-020-read-only-remote-folder-proof.md)
+adds an opt-in read-only remote physical commissioning proof, separate from the
+unchanged default READ/CAS command. Exact expected blueprint/authority and fresh
+nonce bind a snapshot whose ready marker and allocated physical seals were checked
+under one database lock, without nested database reads or mapping resolution.
+No paths, commands, credentials or mutations are accepted through the probe.
+The observation does not grant activation or role ownership. Actual qualification,
+trusted credential/transport and typed first-run/runtime/GUI composition remain.

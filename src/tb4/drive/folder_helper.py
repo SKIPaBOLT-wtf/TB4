@@ -40,14 +40,20 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True)
     parser.add_argument("--mapping-store")  # Explicit protected server-local commissioning pointer.
+    parser.add_argument("--commissioning-probe", action="store_true")
     args = parser.parse_args()
     if sys.platform != "linux":
         return 2
     signal.signal(signal.SIGALRM, lambda *_: os._exit(2))
     signal.alarm(8)  # Includes config, bounded stdin, recovery, CAS and reply.
     try:
-        store = FolderStore(load_config(args.config,mapping_store=args.mapping_store))
-        reply = handle(store, sys.stdin.buffer.read(MAX_WIRE + 1))
+        config = load_config(args.config,mapping_store=args.mapping_store)
+        raw = sys.stdin.buffer.read(MAX_WIRE + 1)
+        if args.commissioning_probe:
+            from .folder_probe import handle_probe
+            reply = handle_probe(config, raw)
+        else:
+            reply = handle(FolderStore(config), raw)
         sys.stdout.buffer.write(reply)
         sys.stdout.buffer.flush()
         return 0

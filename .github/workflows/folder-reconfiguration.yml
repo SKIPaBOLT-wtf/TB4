@@ -36,6 +36,13 @@ jobs:
         run: python -m pip install -e ".[dev]"
       - name: Public repository security scan
         run: python tools/scan_public_repo.py
+      - name: Isolated fixed-helper prerequisites
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openssh-server
+          sudo mkdir -p /run/sshd
+      - name: Required read-only physical Folder probe and isolated SSH cases
+        run: python -m pytest tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py tests/drive/test_folder_ssh.py -ra --junitxml=folder-probe-results.xml
       - name: Required actual Linux mapping and relocation cases
         run: python -m pytest tests/drive/test_folder_mapping.py tests/drive/test_folder_relocation.py -ra --junitxml=folder-mapping-results.xml
       - name: Required actual Linux retained Folder publication cases
