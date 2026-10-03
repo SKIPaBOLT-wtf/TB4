@@ -3,22 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_REPAIRED_IMPORTS_PLATFORM_RUNNING
+phase: STAGED_RECONFIGURATION_C3_FOLDER_PATH_DESIGN_REVIEW
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0133
+last_verified_event: RP-027-A001-0134
 last_completed: RP-026
-next_action: Observe these same fresh3runs/jobs/fullpytest/build/frozen results and
-  publishactual outcomes. Preserve failuresbeforeminimalrepair; no dependent C3/C4
-  implementation until current fullplatform result.
-verification: Actual corrected-source CI/Desktop/Progress runs identified and pending;
-  current source fullplatform gate before dependent C3/C4.
+next_action: Publish/readback design outcome preserving132 unsettled CI; observe same3runs/results.
+  After platform result, next implementation unit is protected same-folder path resolver
+  with actual native C1 gate and isolated Linux tests, then separately qualified atomic
+  rename/effect recovery.
+verification: Current132 platform gate pending; independent read-only same-folder
+  path design review authorized, no source/acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0132
+- RP-027-A001-0134
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
