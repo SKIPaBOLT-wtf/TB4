@@ -6373,9 +6373,10 @@ defects:
         contains no such record, so GC-labelled target mutation/refusal assertions
         are not reached.
       failing_source: 1f238122cf44681a4617ed4ef5807cfee6f8f370
-      passing_source: null
+      passing_source: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-linux-fixture-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6408,10 +6409,62 @@ defects:
       including real allocated artifact-generation mutation between freeze/dispatch
       refusing before config publication; old51/107/320 and full current-source gates
       remain.
-    resolution_evidence: []
-    notes: Actual1f source:Windowsnew25PASS38.596s +affected472PASS446.059s +defaultcollect2970tests0.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
+    notes: 'Actual1f source:Windowsnew25PASS38.596s +affected472PASS446.059s +defaultcollect2970tests0.
       Both actualLinux51PASS +new5PASS1FAIL at nonexistent .gc selector; no107/320
       whole qualification. Code/source kernel positiveFolder paths and nativeadmission
       reached; this missing target fixture assertion remains unqualified. OriginalCI/Desktop
-      stilltracked. No external blocker; allC1-C4held.
+      stilltracked. No external blocker; allC1-C4held. Current corrected source28ade:
+      both actual Linux push/PR required484PASS0fail/error/skip, including artifact_generation
+      negative case; original failing1f CI/Desktop retained. Remains OPEN until whole
+      common C4.'
+    legacy_record: null
+  DEF-088:
+    title: Windows native loopback qualification fails before platform regression
+      with normalized discovery error
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Original current-source Desktop Windows job111233640009 executes
+        real native loopback qualification: identity/cache case fails in existing
+        loopback() BoundedRead(Windows read-only Get-NetIPAddress query, timeout10);
+        second wrong-identity case passes. 1failed1passed11.43s, full suite and packages
+        not executed.'
+      failing_source: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: bounded-system-query-availability
+      claim: The existing system query may have exceeded its bounded limit or failed;
+        normalized DiscoveryError does not distinguish causes. An unchanged-source
+        isolated CI retry can measure repeatability, not prove a specific cause.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
+    repairs: []
+    issue: null
+    regression_test: Same immutable checkout known failed Windows job once; native
+      loopback both actual cases and subsequent full suite/build/package gates must
+      succeed. Repeat failure requires new diagnosed evidence and separately logged
+      repair; no broad rerun or timeout weakening.
+    resolution_evidence: []
+    notes: Linux scoped484 fully qualified. Discovery code/test unchanged; old1f same
+      discovery step passed but this is insufficient to establish cause. Existing
+      failed job terminal, fresh disposable CI only, no installed runtime/effects
+      or unknown action. AllC1-C4 unaccepted.
     legacy_record: null
