@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_FOLDER_PHYSICAL_TRANSACTION_SOURCE
+phase: STAGED_RECONFIGURATION_C3_FOLDER_PHYSICAL_LINUX_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 31533a1eca67658641a5913d2a3d70715e804c18
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0148
+last_verified_event: RP-027-A001-0149
 last_completed: RP-026
-next_action: Publish required actual Linux physical/mapping/current-role/cut/negative
-  and original folder/native/Docs/effects qualification INTENT; trigger one fresh
-  source-linked request, record real STARTED and inspect same jobs. Debug any actual
-  errors before Docs rebind/C4.
-verification: Native same-folder transaction16-path source saved/readback, actual25new+21mapping
-  Linux cases pending; C1-C4 unaccepted.
+next_action: Trigger exact one fresh CI request; record real STARTED and inspect same
+  required native jobs. Preserve failure/defect/provenance and scoped source repair
+  as needed. Also retain originally started prior-source full/platform outcomes with
+  distinct SHAs, never substitute them for current source.
+verification: 31533 native same-folder transaction source saved/readback; required
+  actual46-case Linux plus original regressions authorized, not executed.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0149
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
