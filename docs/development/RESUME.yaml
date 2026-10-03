@@ -7,13 +7,12 @@ phase: STAGED_RECONFIGURATION_C3_FOLDER_PATH_LINUX_REPEAT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: f98ddf419471afc11a27868231432a6f8ba753f3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0144
+last_verified_event: RP-027-A001-0145
 last_completed: RP-026
-next_action: Trigger one fresh CI request and record actual STARTED jobs, inspect
-  same native jobs/result; preserve any ordinary failure and repair without external
-  blocker.
-verification: Exact one-path fixture repair saved/readback; required native Linux
-  repeat authorized, pending actual run.
+next_action: Inspect same required repaired-source native mapping/regression jobs
+  and preserve actual results; repair any ordinary failure before physical transaction.
+verification: Actual repaired-source required Linux/native and automatic full/platform
+  jobs started; IDs retained for same-run inspection.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
