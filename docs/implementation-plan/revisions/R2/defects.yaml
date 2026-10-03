@@ -6438,7 +6438,7 @@ defects:
         second wrong-identity case passes. 1failed1passed11.43s, full suite and packages
         not executed.'
       failing_source: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
-      passing_source: null
+      passing_source: 103d0eb2009880a7e76ac4604e611ce6958060da
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
     repair_steps:
@@ -6456,17 +6456,29 @@ defects:
       result: UNTESTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
+    - id: later-unchanged-native-boundary-nonrepeat
+      claim: The exact unchanged discovery implementation/fixture passed bothactualWindows
+        nativecases8.60s on103d job111241734602. It demonstrates nonrepeat at that
+        boundary, without identifying the original cause or qualifying full/package
+        gates.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-corrected-full-historical.json
     repairs: []
     issue: null
     regression_test: Same immutable checkout known failed Windows job once; native
       loopback both actual cases and subsequent full suite/build/package gates must
       succeed. Repeat failure requires new diagnosed evidence and separately logged
       repair; no broad rerun or timeout weakening.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-corrected-full-historical.json
     notes: Linux scoped484 fully qualified. Discovery code/test unchanged; old1f same
       discovery step passed but this is insufficient to establish cause. Existing
       failed job terminal, fresh disposable CI only, no installed runtime/effects
-      or unknown action. AllC1-C4 unaccepted.
+      or unknown action. AllC1-C4 unaccepted. Original28ade fullCI/Linux andbothLinuxrolepackages
+      nowterminalSUCCESS. OriginalWindowsfailednativequery/fullnotrun;243retryexplicitNOTSTARTED403/no
+      lateroldretry. Later103d nativeWindows2PASS8.60s/productiondiscoveryunchanged,
+      precisecauseUNKNOWN. RemainsOPENpending currentwholecommon.
     legacy_record: null
   DEF-089:
     title: Folder ACTIVE source schema hash is not synchronized in the unreleased

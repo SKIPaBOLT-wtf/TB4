@@ -3,25 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_ORIGINAL_FULL_HISTORICAL
+phase: STAGED_RECONFIGURATION_C4_RETAINED_CORRECTED_FULL_HISTORICAL
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 1f238122cf44681a4617ed4ef5807cfee6f8f370
+source_commit: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0253
+last_verified_event: RP-027-A001-0254
 last_completed: RP-026
-next_action: Checkpoint exacthistorical28ade full245 includingknownWindowsdiscoveryfailure
-  andLinux/CI/build/package success; then distinctverified current103d DEF089/90exacttwofile
-  fixture/catalogue repair INTENT/sourceOUTCOME/newqualification. Keeporiginal103d
-  fullCI under252; allC1-C4held.
-verification: '253 original1f full237 terminalreconciled: Windowsfull/packagesPASS,
-  Linux/CIonlyoldgcFAIL preservedDEF087/no current-source substitution. Current103d
-  DEF089/90exacttwofile repair nextafter245historicalcheckpoint; 252 originalCI stilltracked.
-  C1-C4held.'
+next_action: Verified current103d exacttwofile fixtureactualselector+UNRELEASEDcataloguehash
+  repairINTENT/sourceOUTCOME; corrected-source requiredLinux506/affectedWindows497/defaultcollection/currentfull
+  qualification. Original103d wholeCI inspectunder252; allC1-C4held.
+verification: '254 historical28ade currentfull245 reconciled: CI/Linuxfull/bothrolepackagesPASS,
+  WindowsnativequeryFAIL retained/no retrylaunched403; later103d native2PASS8.60s
+  causeUNKNOWN. Next exact103d DEF089/90twofilerepair,252originalCItracked, allC1-C4held.'
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
-- RP-027-A001-0245
 - RP-027-A001-0252
 expected_user_action: null
 blocking_decisions: []
