@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ADOPTION_REPAIRED_RELATED_PASS
+phase: STAGED_RECONFIGURATION_C3_ADOPTION_NATIVE_PLATFORM_CI
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5665870eb003bb335dc61ced8472f8809d464cf5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0124
+last_verified_event: RP-027-A001-0125
 last_completed: RP-026
-next_action: Publish/readback exact draft PR plus isolated CI/full platform qualification
-  INTENT; create or reconcile samebranch PR, attach/readback and observe same actual
-  runs. Continue dependency-safe C3/C4 work with explicit checkpoint.
-verification: 139 original/new related adoption predicates all passed; strict guards
-  retained, fullplatform/folder/rebind/C4/final checks pending.
+next_action: Open/reconcile same draft PR, attach/readback, identify real runs then
+  record STARTED/run receipts. Diagnose ordinary CI failures; separate documented
+  dependency-safe C3/C4 source next.
+verification: 139-case related source qualified; existing isolated native/full platform
+  draft-PR qualification authorized, final checks held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0125
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
