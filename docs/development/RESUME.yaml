@@ -3,24 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_FOLDER_PATH_DESIGN_REVIEW
+phase: STAGED_RECONFIGURATION_C3_FOLDER_PATH_DESIGN_RECORDED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0134
+last_verified_event: RP-027-A001-0135
 last_completed: RP-026
-next_action: Publish/readback design outcome preserving132 unsettled CI; observe same3runs/results.
-  After platform result, next implementation unit is protected same-folder path resolver
-  with actual native C1 gate and isolated Linux tests, then separately qualified atomic
-  rename/effect recovery.
-verification: Current132 platform gate pending; independent read-only same-folder
-  path design review authorized, no source/acceptance.
+next_action: Observe and record actual132 same3runs/platform execution/build/frozen
+  outcome. On qualified current source, authorize exact protected same-folder resolver/nativeC1/closed
+  schema/helper composition source unit; then separate rename/effect/crash qualification.
+verification: Independent read-only same-folder design recorded;132 fullplatform qualification
+  remains pending, no new source/acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0132
-- RP-027-A001-0134
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
