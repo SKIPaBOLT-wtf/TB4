@@ -3,24 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_FOLDER_FIXTURE_SOURCE_REPAIR
+phase: STAGED_RECONFIGURATION_C4_RETAINED_FOLDER_FIXTURE_SOURCE_PRESERVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 1f238122cf44681a4617ed4ef5807cfee6f8f370
+source_commit: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0238
+last_verified_event: RP-027-A001-0239
 last_completed: RP-026
-next_action: Apply exacttest/appendclarification2file repair/staticreview/sourcepreserve/readbackOUTCOME;
-  then verified required corrected-source Linux/fullplatform qualificationINTENT andnewrequest15
-  boundsource. Continueoriginal1ffullinspection237withoutreplay.
-verification: 238 exacttest/A018appendclarification fixture repair after236failure;
-  production/schemaunchanged andoriginal1ffull237trackedindependently. Sourceunitonly/tests0;
-  correctedrequiredLinuxrequest15laterINTENT; allC1-C4held.
+next_action: Verified corrected-source requiredLinux six/51/107/320/defaultcollection/current-sourcefullCI/Desktop
+  qualificationINTENT andrequest15; executeonlyafterreadback. Trackold1ffull237andnewsource
+  distinctIDs; no Windows25/472 unnecessaryrepeat.
+verification: 239 exactLinuxfixture/A018appendcorrection sourcepreserved/staticPASS/tests0;
+  prod/b4e9schemaunchanged retainspriorWindows25/472; correctedactualLinux484/default/currentfullrequest15nextINTENT,
+  old1ffull237tracked. AllC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0237
-- RP-027-A001-0238
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

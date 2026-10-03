@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "kind": "RETAINED_AUTHORITY_FOLDERTARGET_FIXTURE_CORRECTION",
+  "intent": "RP-027-A001-0238",
+  "failing_source": "1f238122cf44681a4617ed4ef5807cfee6f8f370",
+  "source_ref": "28ade36af1d6c98e7402ced9e19510ca58aa14fa",
+  "local_source": "c461fe0cc72a991f857a2b67f8e1c0c3e2a154a9",
+  "paths": [
+    "tests/drive/test_folder_retained.py",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-018-retained-authority-publication.md"
+  ],
+  "schema_sha256": "b4e9aefd0d9e88c02d462745632c1853cf4b7ba05b146be17a598c11f9ab0498",
+  "changes": "Negative test explicitly renamed artifact_generation and mutates only actual trusted SetupSpec.artifact_keys[0] retained row generation; object/seal/body/operation/retention preserved. Append-only A018 note records nonexistent .gc historical fixture and actual preservation seam, no claim of implemented GC protocol.",
+  "static_review": "PASS: AST/diff/exact2paths; git diff --quiet -- src and schema hash verify production/closure unchanged; tests0.",
+  "windows_evidence_reuse": {
+    "source_ref": "1f238122cf44681a4617ed4ef5807cfee6f8f370",
+    "new_cases": 25,
+    "affected": 472,
+    "qualification": "Production code/native guards/schema unchanged by this Linux-only fixture/A018clarification unit; no new Windows case success claimed. Earlier actual25/472 qualification remains applicable to unchanged production behavior."
+  },
+  "acceptance": false,
+  "runtime_active": false,
+  "remaining": "Corrected same six and required51/107/320 on actualLinux, current-source full/default/package/runtimeGUI/remotehelper/common. Original immutable1f request14 CI/Desktop remains under237, no replay.",
+  "next": "Separate required corrected-source Linux/full/defaultcollection qualification INTENT; request15/sourcecurrent. Current-source full CI/Desktop terminal tracked with distinct actualIDs."
+}
