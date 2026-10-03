@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_SHARED_ROOT_PLAN_REPEAT_RUNNING
+phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_REPEAT_FAILED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5b9c339e06d91822c594dca6f276f6634dd2dc48
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0097
+last_verified_event: RP-027-A001-0098
 last_completed: RP-026
-next_action: Observe same running LOCAL-SESSION-34722/unique output. Preserve complete
-  actual839-case collection/status/source/checkout/exit/time/failures/Linux skips
-  before publishing full OUTCOME and before any dependent source.
-verification: Actual36-target839-case bounded repeat running LOCAL-SESSION-34722;
-  no accepted checks.
+next_action: 'Publish/read back bounded exact-source diagnostic INTENT: prove Root.begin
+  failing frame and actual top-level versus records keys/no SDK/local/shared/profile
+  mutation. Publish proof before single-line records nesting repair, short original
+  root regression, then full36-target839-case repeat.'
+verification: Actual839-case repeat failed101 KeyError global.summary cases,734PASS/4Linux
+  skips, DEF068 suspected; no accepted checks.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0096
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -36,6 +36,7 @@ known_open_defects:
 - DEF-065
 - DEF-066
 - DEF-067
+- DEF-068
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before

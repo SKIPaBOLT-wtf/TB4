@@ -4807,3 +4807,51 @@ defects:
       Mandatory final C1-C4 held. Bounded exact-source diagnostic proves the call
       order/baseline cause; no existing resolution/metadata guard relaxation justified.
     legacy_record: null
+  DEF-068:
+    title: Root-plan denial preflight reads global.summary at authority document top
+      level
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 5b9c339e06d91822c594dca6f276f6634dd2dc48
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failed-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: Full same36-target repeat:101 cases fail KeyError global.summary
+        at new begin preflight. Inspect exact trace/document envelope and scoped original
+        Root.begin without SDK or source mutation before one-line records nesting
+        repair.
+      failing_source: 5b9c339e06d91822c594dca6f276f6634dd2dc48
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failed-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failure.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: root-plan-preflight-envelope-level
+      claim: New preflight accesses document()[global.summary] although authority
+        records are under document()[records]. All101 failed scenarios may share this
+        exact envelope-level error before intended root predicates.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failed-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failure.md
+    repairs: []
+    issue: null
+    regression_test: Preserve every original839 predicate and all101 failed root/inherited/no-send/plan/native
+      predicates; first exact short root regression then full36-target qualification
+      including actual129-object native budget. Final C1-C4 held.
+    resolution_evidence: []
+    notes: Actual repeat failure preserved; counts are not acceptance and no later
+      assertion inferred. Existing DEF066/067 repairs remain unqualified. No provider/live
+      changes or guard weakening.
+    legacy_record: null
