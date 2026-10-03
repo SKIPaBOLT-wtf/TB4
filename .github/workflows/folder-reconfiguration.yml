@@ -62,6 +62,7 @@ jobs:
           tests/drive/test_reconfiguration_rebind.py
           tests/drive/test_reconfiguration_post_root.py
           tests/drive/test_reconfiguration_commit.py
+          tests/drive/test_reconfiguration_promotion.py
           tests/security/test_reconfiguration_roots_native.py
           tests/security/test_reconfiguration_root_plan_native.py
           tests/security/test_reconfiguration_root_resume_native.py
@@ -70,6 +71,7 @@ jobs:
           tests/security/test_reconfiguration_rebind_native.py
           tests/security/test_reconfiguration_post_root_native.py
           tests/security/test_reconfiguration_commit_native.py
+          tests/security/test_reconfiguration_promotion_native.py
           -k 'not actual_max_capacity129_fixed_objects'
           -ra --junitxml=folder-docs-regression-results.xml
       - name: Preserve source-linked case results

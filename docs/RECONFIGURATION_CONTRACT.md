@@ -7,6 +7,12 @@ router, deploy a build or authorize any live operation. Its active amendment is
 
 ## Same-authority boundary
 
+### Protected original-profile promotion
+
+[RP-027 A-015](implementation-plan/revisions/R2/amendments/RP-027/A-015-native-validated-profile-promotion.md) binds a separate native PREPARED WAL to exact published AFTER, staged/original revisions, archive and source. Actual target first-run repeats before a standard conditional original-store save/readback, retaining its full previous profile and immutable archive. Identity, nonce, operation history, credential image and local table selection remain; obsolete caches are dropped and only the new exact descriptor receipt is rebuilt.
+
+The promoted profile remains INCOMPLETE/REVALIDATION_REQUIRED, with local maintenance intact and no runtime grant. Native pending recovery promotes only the same verified bytes and never repeats remote/root/work actions. Copied/unprotected/concurrent state or failed probes refuse. The complete native frame must fit one MiB before preparation; original history is never pruned to fit. Old archive data is not permission to restore an obsolete relocated root. Current-role ACTIVE adoption/native admission and complete Folder/rootless/runtime/GUI/helper composition remain separately qualified boundaries.
+
 ### Shared descriptor and configuration publication
 
 [RP-027 A-014](implementation-plan/revisions/R2/amendments/RP-027/A-014-shared-configuration-publication.md) follows actual post-root first-run with a separate protected native publication WAL. It advances coherent descriptor and ACTIVE configuration revisions on the same ordering authority. A compact exact plan retains commissioning, fixed objects, all work/command generations and every effect receipt; it consumes only the qualified terminal root plan. The original profile and immutable archive remain until separately qualified promotion/admission.

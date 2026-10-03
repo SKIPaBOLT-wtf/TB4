@@ -23,7 +23,7 @@ from .reconfiguration_root_plan import stable_records
 # Same immutable candidate-schema closure, selected named schema. The legacy
 # top-level candidate remains closed and its meaning is unchanged.
 SCHEMA_DEFINITION = "postRootCandidate"
-SCHEMA_SHA256 = "85e18535aaa27baf1709095b79fce257a7fe132aa724521da97df91be6d559f4"
+SCHEMA_SHA256 = "93c9bfa184438306e12539d981e4395d76d7807b357403cacde1968918fa1ef0"
 STATE_FIELDS = frozenset({"schema_version", "kind", "installation_id", "transition_id",
     "configuration_revision", "base_setup_revision", "base_setup_sha256", "seed_sha256",
     "authority", "bindings", "pin", "phase", "storage", "epoch", "records_sha256", "summary_sha256"})

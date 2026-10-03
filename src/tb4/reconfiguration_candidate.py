@@ -20,7 +20,7 @@ from .reconfiguration_evidence import ProtectedEvidence
 from .reconfiguration_maintenance import Maintenance, ResolutionProposal, hex64, sha
 
 SCHEMA = "protocol/reconfiguration-candidate-v1.schema.json"
-SCHEMA_SHA256 = "85e18535aaa27baf1709095b79fce257a7fe132aa724521da97df91be6d559f4"
+SCHEMA_SHA256 = "93c9bfa184438306e12539d981e4395d76d7807b357403cacde1968918fa1ef0"
 DERIVED = frozenset({"discovery", "ballpark_draft", "ballpark_publication",
                      "enrollments", "fetcher_enrollment"})
 STATE_FIELDS = frozenset({"schema_version", "kind", "installation_id", "transition_id",
