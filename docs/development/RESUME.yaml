@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_FOLDER_BOUNDARY_LINUX_TEST
+phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: b90713351a910341da0454f8f7b4d82e144e22b2
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0161
+last_verified_event: RP-027-A001-0162
 last_completed: RP-026
-next_action: Publish bounded next RP027 remote rebind/profile contract INTENT after
-  current source inspection. Preserve same-authority fixed objects/work and actual
-  remote readback; C4 profile/composition and final allchecks remain required.
-verification: Required native folder physical transaction now313PASS twice/zeroFailSkip
-  (51+107+155). Same source exact force/cut/fallback proof verified; final rebind/profile/composition/C4/allchecks
-  remain held.
+next_action: Save exact source/contract/schema checkpoint and outcome, then targeted
+  default-import source/native rebind and actual Linux/original regressions; repair
+  ordinary causes before final C4 admission/profile/composition.
+verification: Same-authority remote rebind source INTENT; actual native physical qualified,
+  C4/allchecks held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0162
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
