@@ -7,13 +7,13 @@ phase: STAGED_RECONFIGURATION_C3_FOLDER_PATH_LINUX_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 83dd3c09e1446a6897ef0dd64abb6c28fe5d5efb
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0139
+last_verified_event: RP-027-A001-0140
 last_completed: RP-026
-next_action: Trigger one exact authorized CI request, record actual STARTED IDs and
-  inspect same Linux mapping/native jobs. Preserve any failure with defect and scoped
-  repair, no repeated ambiguous request or dependency leap.
-verification: 83dd3 protected folder mapping source saved/readback; required actual
-  Linux mapping/regression run authorized, not executed yet.
+next_action: Inspect same required actual native Linux mapping jobs; record actual
+  source/cases/results or failure provenance and scoped repair. Existing automatically
+  started platform/full gates retain their exact run identities.
+verification: Actual source-linked Linux mapping runs and original full/native/platform
+  runs started; same IDs retained, no terminal/acceptance claim.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
