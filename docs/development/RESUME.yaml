@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_PREREQUISITE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c1402a50f66131c7771ca1c21a344097dab08bed
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0166
+last_verified_event: RP-027-A001-0167
 last_completed: RP-026
-next_action: Publish scoped repair INTENT for exact three error/fixture paths, preserve
-  current failed source and all assertions; repair import/final-state and valid READY/timing
-  budget fixture, source outcome before default/new/legacy rechecks. Inspect existing
-  Linux terminal results without repeating runs.
-verification: c140 Windows181:154PASS27FAIL/zeroSkip, collection2825pass. DEF078 inherited
-  error import and new fixture prerequisites; Linux same-run pending. C1-C4 held.
+next_action: Apply exact three-path repair, review/preserve/publish source and OUTCOME;
+  then publish fresh26/original Windows and exact-source Linux qualification INTENT.
+verification: 'c140 Windows/Linux same27fail: inherited missing import and fixture
+  prereqs; actualLinux51/107 pass twice/zeroSkip. Exact three-path repair next, all
+  checks held.'
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0167
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

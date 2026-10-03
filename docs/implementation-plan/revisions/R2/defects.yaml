@@ -5777,6 +5777,7 @@ defects:
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-linux-failure.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5793,12 +5794,24 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0167
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Original wrong-blueprint refusal, all26 new actual conformance/native
       cases with default imports and valid large-budget source, unchanged original
       Docs/effect and actual Linux51/107 regressions; final C1-C4 qualification.
     resolution_evidence: []
     notes: Preserve original c140 failure. No new rebind/native pass inferred; native/final
-      composition remains held. Keep OPEN until source-linked final acceptance.
+      composition remains held. Keep OPEN until source-linked final acceptance. Same27
+      failures reproduced on both exact-source Linux jobs after all51+107 pass/zeroSkip.
     legacy_record: null
