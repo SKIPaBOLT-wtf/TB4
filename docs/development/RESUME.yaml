@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ADOPTION_REPAIR_TEST_RUNNING
+phase: STAGED_RECONFIGURATION_C3_ADOPTION_REPAIRED_RELATED_PASS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5665870eb003bb335dc61ced8472f8809d464cf5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0123
+last_verified_event: RP-027-A001-0124
 last_completed: RP-026
-next_action: Observe same LOCAL-SESSION-51459/report; record exact complete actual
-  results before any dependent diagnostic/source.
-verification: One actual original related plus repaired/new native adoption regression
-  running; final checks unaccepted.
+next_action: Publish/readback exact draft PR plus isolated CI/full platform qualification
+  INTENT; create or reconcile samebranch PR, attach/readback and observe same actual
+  runs. Continue dependency-safe C3/C4 work with explicit checkpoint.
+verification: 139 original/new related adoption predicates all passed; strict guards
+  retained, fullplatform/folder/rebind/C4/final checks pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0122
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

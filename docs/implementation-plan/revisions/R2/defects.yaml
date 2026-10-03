@@ -4950,12 +4950,14 @@ defects:
         UNKNOWN projection after actual own pending root effect; inspect exact trace/actual
         blocker kinds and strict pending receipt before repair.
       failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
-      passing_source: null
+      passing_source: 5665870eb003bb335dc61ced8472f8809d464cf5
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4983,6 +4985,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    - id: def-069-original139-related-recheck
+      claim: Exact original10-file Windows native partial run139PASS/0failure/0error/0skip
+        exit0 90.575s; original136 and3 actual post-own-pending negatives preserved/reached.
+        Five proved source/fixture repairs supported; all final checks/platform/common
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -5005,6 +5016,7 @@ defects:
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
+      Full original139 related recheck passed, final all4checks/platforms still required.
     legacy_record: null
   DEF-070:
     title: Complete adopted root first-run refusal fixture expects a different exception
@@ -5028,12 +5040,14 @@ defects:
         while test expects AuthorityError. Inspect actual first-run refusal frames/preservation
         before adjusting exact expected class/code.
       failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
-      passing_source: null
+      passing_source: 5665870eb003bb335dc61ced8472f8809d464cf5
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5058,6 +5072,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    - id: def-070-original139-related-recheck
+      claim: Exact original10-file Windows native partial run139PASS/0failure/0error/0skip
+        exit0 90.575s; original136 and3 actual post-own-pending negatives preserved/reached.
+        Five proved source/fixture repairs supported; all final checks/platform/common
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -5080,6 +5103,7 @@ defects:
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
+      Full original139 related recheck passed, final all4checks/platforms still required.
     legacy_record: null
   DEF-071:
     title: Adoption source-fault fixture may set an unused source adapter attribute
@@ -5103,12 +5127,14 @@ defects:
         versus unused offline attribute, actual source boundary, proof/native/shared
         effects. Do not infer an unavailable source was admitted.
       failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
-      passing_source: null
+      passing_source: 5665870eb003bb335dc61ced8472f8809d464cf5
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5135,6 +5161,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    - id: def-071-original139-related-recheck
+      claim: Exact original10-file Windows native partial run139PASS/0failure/0error/0skip
+        exit0 90.575s; original136 and3 actual post-own-pending negatives preserved/reached.
+        Five proved source/fixture repairs supported; all final checks/platform/common
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -5157,6 +5192,7 @@ defects:
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
+      Full original139 related recheck passed, final all4checks/platforms still required.
     legacy_record: null
   DEF-072:
     title: Synthetic inherited external UNKNOWN fault may omit actual summary envelope
@@ -5181,12 +5217,14 @@ defects:
         changed_row canonical envelope, then retain actual valid other-UNKNOWN/no-SDK
         denial.
       failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
-      passing_source: null
+      passing_source: 5665870eb003bb335dc61ced8472f8809d464cf5
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5212,6 +5250,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    - id: def-072-original139-related-recheck
+      claim: Exact original10-file Windows native partial run139PASS/0failure/0error/0skip
+        exit0 90.575s; original136 and3 actual post-own-pending negatives preserved/reached.
+        Five proved source/fixture repairs supported; all final checks/platform/common
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -5234,6 +5281,7 @@ defects:
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
+      Full original139 related recheck passed, final all4checks/platforms still required.
     legacy_record: null
   DEF-073:
     title: Second fallback fixture reuses original election transition identity
@@ -5256,12 +5304,14 @@ defects:
         helper acquisition ID and fresh nonce requirement before faithful second-takeover
         fixture.
       failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
-      passing_source: null
+      passing_source: 5665870eb003bb335dc61ced8472f8809d464cf5
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5287,6 +5337,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    - id: def-073-original139-related-recheck
+      claim: Exact original10-file Windows native partial run139PASS/0failure/0error/0skip
+        exit0 90.575s; original136 and3 actual post-own-pending negatives preserved/reached.
+        Five proved source/fixture repairs supported; all final checks/platform/common
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -5309,4 +5368,5 @@ defects:
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
+      Full original139 related recheck passed, final all4checks/platforms still required.
     legacy_record: null
