@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "intent_event": "RP-027-A001-0162",
+  "source_commit": "c1402a50f66131c7771ca1c21a344097dab08bed",
+  "local_preserved_commit": "b4462413c1945e9b867a0d9c66de02f269fbdd9d",
+  "paths": [
+    ".gitattributes",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-012-same-authority-remote-rebind.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "protocol/reconfiguration-rebind-v1.schema.json",
+    "skill/tb4/compatibility.json",
+    "src/tb4/commissioning_records.py",
+    "src/tb4/commissioning_checks.py",
+    "src/tb4/ballpark_publication.py",
+    "src/tb4/discovery_workflow.py",
+    "src/tb4/reconfiguration_root_plan.py",
+    "src/tb4/reconfiguration_root_settlement.py",
+    "src/tb4/reconfiguration_rebind.py",
+    "tests/drive/reconfiguration_rebind_support.py",
+    "tests/drive/test_reconfiguration_rebind.py",
+    "tests/security/test_reconfiguration_rebind_native.py"
+  ],
+  "schema": "protocol/reconfiguration-rebind-v1.schema.json",
+  "schema_sha256": "012c59ef47b7a91b98985987c1682b03c65f91a2c82d2949d40784ef4e1dc9b2",
+  "tests_executed": false,
+  "new_tests": {
+    "sdk_conformance": 21,
+    "native": 5
+  },
+  "acceptance": false,
+  "remaining": "Final C4 descriptor/configuration/cache/lease admission/private profile first-run/runtime composition, allchecks."
+}

@@ -1135,6 +1135,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-009-current-role-partial-plan-adoption.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-010-protected-same-folder-path-lookup.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-011-native-same-folder-relocation.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-027/A-012-same-authority-remote-rebind.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:
