@@ -7,6 +7,12 @@ router, deploy a build or authorize any live operation. Its active amendment is
 
 ## Same-authority boundary
 
+### Shared descriptor and configuration publication
+
+[RP-027 A-014](implementation-plan/revisions/R2/amendments/RP-027/A-014-shared-configuration-publication.md) follows actual post-root first-run with a separate protected native publication WAL. It advances coherent descriptor and ACTIVE configuration revisions on the same ordering authority. A compact exact plan retains commissioning, fixed objects, all work/command generations and every effect receipt; it consumes only the qualified terminal root plan. The original profile and immutable archive remain until separately qualified promotion/admission.
+
+Every actual conditional write rechecks current source/role/candidate/first-run facts. Native pending cuts and uncertain responses inspect without resend. AFTER verification uses the target's actual CommissionedStorage and does not reuse a maintenance/rebind proof whose rows have changed. First-CAS role takeover needs no former host acknowledgement. ACTIVE alone gives no execution grant; default admission remains closed and complete Folder/rootless/runtime/GUI/helper composition is still required.
+
 ### Remote rebind after exact Docs relocation
 
 The [RP-027 A-012 amendment](implementation-plan/revisions/R2/amendments/RP-027/A-012-same-authority-remote-rebind.md) defines a separate protected native remote rebind. It consumes the closed shared root plan, terminal exact authority move receipt, current role and actual fixed metadata AFTER for every object. It changes only global.commissioning and the existing catalogue artifact seals, advancing their generations. The ordering Doc/tab/domain, fixed IDs/content and all work, registry, settings, summary and local profile remain unchanged.
