@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_SOURCE
+phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c1402a50f66131c7771ca1c21a344097dab08bed
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0163
+last_verified_event: RP-027-A001-0164
 last_completed: RP-026
-next_action: Publish fresh default-import Windows/native rebind and actual Linux mapping/physical/new
-  rebind/original qualification INTENT; source-linked actual results/failures before
-  any final C4 unit.
-verification: A012 same-authority remote rebind17-path source saved/readback, legacy/hash/refs/schema/source
-  review done; new26 cases and all native/regressions unqualified.
+next_action: Execute default-import Windows/native rebind qualification and whole
+  collection; publish revision6 workflow request and capture source-linked actual
+  Linux runs. Record exact failures/results before C4.
+verification: Source c1402a50 verified, starting default-import Windows/native and
+  exact-source actual Linux rebind/legacy qualification; C1-C4 remain held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0164
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
