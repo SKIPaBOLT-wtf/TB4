@@ -7,12 +7,13 @@ phase: STAGED_RECONFIGURATION_C3_FOLDER_BOUNDARY_LINUX_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: b90713351a910341da0454f8f7b4d82e144e22b2
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0159
+last_verified_event: RP-027-A001-0160
 last_completed: RP-026
-next_action: Publish request revision5 after verified INTENT; record actual STARTED/terminal
-  source-linked native/regression results and any failures, then qualified next unit.
-verification: Fresh actual51 native boundary proof requalification INTENT; prior failure
-  preserved and acceptance held.
+next_action: Inspect same required native jobs after termination; verify exact inner
+  late force owner cause and all51 cases/counts/skips/checkouts plus original selected
+  regressions/JUnit, preserve any failure.
+verification: Actual51 native boundary requalification running, same exact jobs/source
+  retained, no acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
