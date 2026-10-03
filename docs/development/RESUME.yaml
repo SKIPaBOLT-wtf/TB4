@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_FOLDER_PHYSICAL_LINUX_TEST
+phase: STAGED_RECONFIGURATION_C3_FOLDER_GUARD_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 31533a1eca67658641a5913d2a3d70715e804c18
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0151
+last_verified_event: RP-027-A001-0152
 last_completed: RP-026
-next_action: Publish two-path scoped DEF076 own exact operation blocker repair INTENT
-  plus negative other-action/owner/epoch/election cases. Retain all original46 assertions;
-  save/readback/source outcome then fresh required native Linux qualification.
-verification: Actual46 native cases34PASS/12FAIL/zeroSkip; own operation label mismatch
-  DEF076 proven, physical behavior and original selected regressions unqualified.
-  Ordinary scoped repair required.
+next_action: Preserve and publish exact two-path source; source-linked outcome then
+  new required native Linux and original regression qualification.
+verification: DEF076 native guard repair intent; physical behaviors unqualified and
+  all acceptance held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0152
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

@@ -5652,7 +5652,18 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.md
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0152
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: All46 native cases and unchanged original folder/native/Docs/effects;
       add valid foreign/deduplicated UNKNOWN entry and native sender owner/epoch/election
