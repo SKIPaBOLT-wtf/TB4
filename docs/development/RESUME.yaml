@@ -3,20 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_BUDGET_FIXTURE_REPAIR
+phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_VALID_BUDGET_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 28952a9f858985905f0f8b0702effca4c76af019
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0172
+last_verified_event: RP-027-A001-0173
 last_completed: RP-026
-next_action: Publish fresh default27-first then unchanged181/collection and exactsource
-  actualLinux request7 INTENT; actualfailure/result outcome before C4.
-verification: Exact one-path valid-budget fixture source saved/readback; new recheck
-  not executed, allC1-C4 held.
+next_action: Execute27-case default Windows boundary; publish actual outcome on failure,
+  or continue authorized same-source181/collection/Linux request7 before exact outcome.
+verification: Source28952 validbudget fixture ready, fresh default27 then181/collection/actualLinux
+  qualification declared, allC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0173
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
