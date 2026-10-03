@@ -3,24 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_DESKTOP_BOUNDED_BUDGET_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_FRESH_NATIVE_ADMISSION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 923741e9027a2fa6e0289f42cfd59149f8c33d3d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0198
+last_verified_event: RP-027-A001-0199
 last_completed: RP-026
-next_action: Inspect same recorded immutable-source CI/Desktop/Folder runs and preserve
-  terminalOUTCOME; independently publish scoped native current-role admission INTENT
-  and source tests/docs, using qualifiedpromotion194 dependency. No DEF080/C1-C4 acceptance
-  until actualpackage/current-sourceproof.
-verification: Inspect exact source-linked Desktop/CI/Folder runs in startedreceipt;
-  independently ownINTENT native current-role admission per qualifiedpromotion194.
-  Allacceptanceheld/no rerun/installedruntime.
+next_action: Implement/review/preserve exact source unit and publish remotely verifiedOUTCOME
+  before actualnew scoped qualification. Continue inspecting immutable-source197 jobs
+  independently; cloudACTIVEadoption/Folder/rootless/runtimeGUIhelpercomposition remain
+  after admissionqualification.
+verification: Implement only own fresh-native admission + conformance/native tests/docs/A016/workflow;
+  source preserve/readbackOUTCOME before tests. Independent197 immutable budgetjobs
+  pending; allC1-C4held; cloudACTIVEadoption/fullcompositionremain.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0197
+- RP-027-A001-0199
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
