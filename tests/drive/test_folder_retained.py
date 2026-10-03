@@ -78,8 +78,8 @@ def test_actual_second_physical_path_or_wrong_mapping_cannot_publish_from_a_term
     assert validated(raw,config.binding)==before
 
 
-@pytest.mark.parametrize("fault",["unknown","gc"])
-def test_actual_current_folder_summary_or_gc_change_refuses_final_conditional_publication(context,tmp_path,fault):
+@pytest.mark.parametrize("fault",["unknown","artifact_generation"])
+def test_actual_current_folder_summary_or_retained_artifact_generation_change_refuses_final_conditional_publication(context,tmp_path,fault):
     s=system(context,tmp_path);s.commit.begin(s.checker,owner_authorized=True,decided_at=220)
     original=s.value.setup.store.read();backend=s.ctx.leadership.backend;snap=backend.read();doc=snap.document()
     if fault=="unknown":
@@ -87,8 +87,10 @@ def test_actual_current_folder_summary_or_gc_change_refuses_final_conditional_pu
             owner=s.ctx.setup.installation_id,epoch=1,operation_id="b"*64,outcome="UNKNOWN")
         doc["records"][SLOT]=changed_row(row,value)
     else:
-        key=next(k for k in doc["records"] if k.endswith(".gc"))
-        doc["records"][key]["body"]={"synthetic_retained":True}
+        # The actual fixed layout has retained artifact rows, no .gc slot.
+        # Keep the allocated object/seal/body/operation/retention unchanged.
+        key=s.ctx.storage_port.spec.artifact_keys[0]
+        doc["records"][key]["generation"]+=1
     assert backend.compare_replace(snap,doc).name=="ACCEPTED"
     with pytest.raises((ConfigurationError,SettingsError,AuthorityError)):
         s.commit.advance(s.checker,owner_authorized=True)

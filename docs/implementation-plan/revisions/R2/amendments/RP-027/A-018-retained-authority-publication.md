@@ -63,3 +63,13 @@ mandatory; a JSON shape is no grant. The 17-file instruction closure and all siz
 budgets remain. Default entrypoints retain DenyActivation. Actual Windows/Linux
 and required Linux Folder qualifications, runtime/GUI/remote helper composition
 and current-source platform/common gates still precede all C1-C4 acceptance.
+
+The initial required Linux negative fixture incorrectly selected a nonexistent
+`.gc` logical slot. Its failed attempt remains in the journal/evidence. The
+corrected fixture is explicitly named `artifact_generation`: it changes only an
+existing retained artifact row's generation after the commit plan is frozen,
+preserving that allocation's object, seal, body, operation and retention. Final
+publication must refuse changed retained work. This qualifies the actual fixed
+layout preservation boundary; it does not claim a separate implemented GC
+protocol. Production code, native identity/protection guards and six-case count
+are unchanged by this test-seam correction.
