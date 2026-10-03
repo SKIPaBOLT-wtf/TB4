@@ -4830,7 +4830,7 @@ defects:
         Root.begin without SDK or source mutation before one-line records nesting
         repair.
       failing_source: 5b9c339e06d91822c594dca6f276f6634dd2dc48
-      passing_source: null
+      passing_source: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failed-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failure.md
@@ -4861,6 +4861,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.md
+    - id: one-line-fix-short-original-root-regression
+      claim: Exact repaired source8-file partial root run:100PASS/0fail/0skip exit0
+        65.292s. Original root/inherited/no-send/shared-plan/native-cut and different-target/same-target/current-baseline
+        assertions reached. Only max129 predicate excluded; full36 qualification and
+        finalchecks pending.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-short-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-short-result.md
     repairs:
     - item: RP-027
       attempt: A001

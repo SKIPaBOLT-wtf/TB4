@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_SHORT_RUNNING
+phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_SHORT_PASSED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0106
+last_verified_event: RP-027-A001-0107
 last_completed: RP-026
-next_action: Observe same LOCAL-SESSION-24593 and unique report, preserve actual complete
-  result before full36-target839-case qualification.
-verification: Actual short original root regression launched LOCAL-SESSION-24593;
-  no result/check accepted.
+next_action: Publish/readback full same36-target839-case1800s once-run qualification
+  INTENT with original max129 capacity case and all prior broad regressions. Record
+  actual STARTED and complete result before dependent adoption/folder/rebind/C4 source.
+verification: Exact100-case short root regression passes; full839-case/broad qualification
+  pending, no C1-C4 accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0105
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
