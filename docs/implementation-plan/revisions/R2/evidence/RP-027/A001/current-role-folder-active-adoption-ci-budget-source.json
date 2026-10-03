@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "kind": "EXPANDED_REQUIRED_LINUX_CI_BUDGET_SOURCE_PRESERVED",
+  "intent": "RP-027-A001-0257",
+  "source_ref": "6ab0691aaa1955068ac3932590f1e0280f3a36b6",
+  "local_source_commit": "ac9c2c2a13f0aa03a2ba1caf56fa05789dcd62d6",
+  "base_source": "f5bcd2b164ca55d78a0a1bbf86031bdda839c6b2",
+  "paths": [
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-019-current-role-folder-active-adoption.md"
+  ],
+  "review": {
+    "timeout_minutes_before": 15,
+    "timeout_minutes_after": 30,
+    "all_case_commands_env_permissions_unchanged": true,
+    "amendment_append_only": true,
+    "production_schema_fixtures_catalogue_unchanged": true,
+    "diff_check": true,
+    "tests_executed": 0
+  },
+  "basis": "Representative separate measured actualPR484713.67s +actualnew22fixturepreparation226.73s=940.40s exceeds900beforefunctionalassertions. Budgetinference only/no observedtimeout; allactualoldruns/results retained.",
+  "schema_sha256": "e56758941bbc7907414409e04bcb0bb3a1f211e5d50cd96839e33dd34ea05e82",
+  "source_scope": "CurrentFolderACTIVE production/schema unchanged from103d actualWindows55/default2992; correctedfixture+coherentexistingUNRELEASEDhash f5bcd preserved. CurrentactualLinux22/old484 andaffectedWindows497 notqualified. No installed/profile/provider/LAN/credential/runtime change.",
+  "next": "Verifiedactualcurrent-source qualification INTENT Windows497/defaultcollect2992/requiredactualLinux506/request17/CI/Desktop/Progress. RecordactualrunIDs andscopedoutcome beforedependent sourcework; original103d fullCI252 retained.",
+  "acceptance": false,
+  "runtime_active": false
+}
