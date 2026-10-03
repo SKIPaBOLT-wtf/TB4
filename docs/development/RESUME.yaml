@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_AUTHORITY_CORRECTED_DEFAULT_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_RETAINED_FROZEN_STAGE_FAILURE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 0170f12287c03242026280bb1c79253c19b44908
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0228
+last_verified_event: RP-027-A001-0229
 last_completed: RP-026
-next_action: Execute same25 current0170 default/native cases once in a new owned absent
-  fixture parent, inspect JUnit/results, publish actualOUTCOME/evidence. Only afterPASS
-  separately authorizeactualLinuxFolder/newscoped+affected/default/currentfull. If
-  failure recordbefore nextrepairINTENT.
-verification: 228 corrected0170 exact25 defaultWindows/native qualification only afterreadback;
-  initial417failure225and2file repairs226227 preserved. AllC1-C4/Folder/regressions/full/compositionheld.
+next_action: Verified exact single-file retained_before repairINTENT for fresh read-only
+  actual Prerequisites.validate and exact stage/pin/transaction/role/proof rechecks;
+  preserve/staticreview/sourceOUTCOME then newsource same25qualificationINTENT.
+verification: 229 corrected017025FAIL frozenStage mutatingreview(DEF086), import/alias
+  immediateboundsreached buttargetassertionsunreached. Singlefile read-onlyactualfirstRun
+  repairINTENTnext; allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0228
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -55,6 +54,7 @@ known_open_defects:
 - DEF-083
 - DEF-084
 - DEF-085
+- DEF-086
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
