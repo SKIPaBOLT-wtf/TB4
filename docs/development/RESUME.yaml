@@ -3,26 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_SOURCE_PRESERVED
+phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 103d0eb2009880a7e76ac4604e611ce6958060da
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0247
+last_verified_event: RP-027-A001-0248
 last_completed: RP-026
-next_action: Publish/verify qualification INTENT foractualWindows affectedNative30/retained25+receipt/admission/regression/defaultcollect
-  andrequiredLinux new22+old484 request16 boundsource; execute onlyafterverifiedINTENT.
-  Inspect same old237/current245 terminaljobs separately, no historicalsource substitution.
-  AllC1-C4held.
-verification: 247 newFolderACTIVE sourcepreserved14paths/e567/22plannedactualLinux/tests0,
-  static/diff/native/compat/privacy reviewed. A019linked; C1-C4held, nextrequiredLinux506
-  andaffectedWindows qualification. Old237/current245 actualimmutablefull stilltracked,
-  no source-substitution.
+next_action: Execute actualWindows55/defaultcollect, publishrequest16/findactualruns/STARTED;
+  inspectsameactualLinux/currentfull whileold237/245 resultscheckpointed separately.
+  PublishscopedOUTCOME beforeanydependentrepair/source/regression; allC1-C4held.
+verification: 248 new103d0/e567 actualWindows55/wholecollect andrequiredactualLinux506/currentfull
+  qualification INTENT; existingold237/current245 immutableterminalresults separate,
+  no unnecessary oldWindowsretry. C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0237
 - RP-027-A001-0245
+- RP-027-A001-0248
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
