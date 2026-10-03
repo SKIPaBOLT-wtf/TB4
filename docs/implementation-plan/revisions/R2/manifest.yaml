@@ -1129,6 +1129,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-003-protected-first-run-candidate.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-004-existing-docs-root-moves.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-005-durable-root-disposition.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-027/A-006-cloud-inherited-root-settlement.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:
