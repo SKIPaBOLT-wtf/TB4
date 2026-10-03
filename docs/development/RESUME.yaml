@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_DESKTOP_BOUNDED_BUDGET_SOURCE
+phase: STAGED_RECONFIGURATION_C4_DESKTOP_BOUNDED_BUDGET_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 923741e9027a2fa6e0289f42cfd59149f8c33d3d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0196
+last_verified_event: RP-027-A001-0197
 last_completed: RP-026
-next_action: Publish scoped qualification INTENT and trigger existing source-linked
-  request11; record actual Desktop/full/Folder run IDs for same-source inspection.
-  Then independent native current-role admission source may proceed under its own
-  verified INTENT while immutable-source CI executes.
-verification: Separate actual full Desktop/Folder qualification of exact bounded-budget
-  source before packagecompletion claim; then native current-role admission/ACTIVE
-  adoption/fullcomposition. No acceptance/tests0 in source unit.
+next_action: Triggerrequest11/recordactualSTARTED identities; inspect sameimmutable-source
+  runs without rerun. Independently implement native current-role admission under
+  own INTENT while these jobs run; settle qualification terminal OUTCOME before any
+  package acceptance or DEF080 resolution.
+verification: Trigger source-linked request11; record actual immutable-source run/jobs
+  and inspect same terminal logs/artifacts. Native admission source independent of
+  workflow-only budget may proceed after STARTED with ownINTENT; allacceptanceheld.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0197
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
