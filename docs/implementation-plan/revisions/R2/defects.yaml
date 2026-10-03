@@ -5370,3 +5370,57 @@ defects:
       predicates plus three actual post-own-pending denial predicates await recheck.
       Full original139 related recheck passed, final all4checks/platforms still required.
     legacy_record: null
+  DEF-074:
+    title: RP027 unqualified fixture imports prevent default full suite collection
+      on both platforms
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 5665870eb003bb335dc61ced8472f8809d464cf5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: 5665870eb003bb335dc61ced8472f8809d464cf5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.md
+    reproduction:
+      procedure: Default complete pytest collection in three real isolated CI/Desktop
+        Linux/Windows jobs raises exactly four ModuleNotFoundErrors before execution.
+        Modules exist but RP027 tests import unqualified names; default pyproject
+        adds src only, prior custom test helper paths masked portability errors.
+      failing_source: 5665870eb003bb335dc61ced8472f8809d464cf5
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: default-pytest-unqualified-new-test-imports
+      claim: Three native/full platforms have identical four fixture ModuleNotFoundErrors;
+        exact repo reads show both helpers present under tests packages and new import
+        lines unqualified. Default full collection failure is supported; preserve
+        all assertions and fix only four imports.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.md
+    repairs: []
+    issue: null
+    regression_test: Unmodified ordinary full pytest collection without custom helper
+      PYTHONPATH, then actual native Linux/Windows full regression/Qt/build/frozen
+      and final C1-C4/common gates.
+    resolution_evidence: []
+    notes: Earlier partial139 and historic broad839 remain actual past results, not
+      default/platform qualification. Exact full CI failure saved. No production dependency
+      or guard weakened. Final allchecks held.
+    legacy_record: null
