@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_INHERITED_ROOT_SETTLEMENT_TEST_RUNNING
+phase: STAGED_RECONFIGURATION_C3_INHERITED_ROOT_SETTLEMENT_TEST_PASSED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 54a628583ba33cf4d2454049ed1f243d21c35088
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0073
+last_verified_event: RP-027-A001-0074
 last_completed: RP-026
-next_action: Observe same running session33698; publish complete real32-target result
-  with sanitized predicates and any defects before dependent repair. Do not launch
-  a duplicate.
-verification: Actual32-target inherited-root native test running in session33698;
-  no result/check acceptance.
+next_action: Publish/read back bounded source INTENT for actual native RootRevocation-based
+  shared NOT_DISPATCHED settlement and known-safe retry under current role. Preserve
+  original791 predicates, ordinary gates and immutable history; no unknown resend,
+  old-host ACK or activation.
+verification: 791 inherited-root/root/candidate/native predicates qualified on WindowsX64
+  (787PASS/4Linuxskip); no C1-C4 accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0072
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
