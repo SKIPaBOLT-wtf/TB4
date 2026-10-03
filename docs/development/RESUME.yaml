@@ -1,24 +1,26 @@
 schema_version: 1
 revision: R2
 work_item: RP-027
-check: RP-027.C3
+check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_VALID_BUDGET_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_POST_ROOT_FIRST_RUN_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 28952a9f858985905f0f8b0702effca4c76af019
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0175
+last_verified_event: RP-027-A001-0176
 last_completed: RP-026
-next_action: Publish bounded C4 post-move first-run candidate/staging INTENT on this
-  qualified source, preserving the same authority/work/history and mandatory current-role
-  proofs. Final shared publication/admission/profile/composition remains separately
-  qualified; no live activation.
-verification: 28952 rebind qualified:Windows27+181/default2825; actualLinux339twice0FailSkip.
-  SameDoc/native/oldhostfree/budgets pass, allC1-C4held for finalpublication/profile/composition.
+next_action: Implement bounded11-path post-root first-run source/A013 and tests, preserve/readback/source
+  OUTCOME; then publish default Windows/native/new/old and actual Linux qualification
+  INTENT. Final publication/profile/admission/composition remains subsequent scoped
+  work.
+verification: Qualified28952 remote rebind foundation; declared C4 post-root actual
+  first-run protected candidate source, final ACTIVE/profile/runtime not yet implemented
+  or accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0176
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
