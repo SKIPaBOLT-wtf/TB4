@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_NATIVE_PLATFORM_COLLECTION_FAILED
+phase: STAGED_RECONFIGURATION_C3_DEFAULT_COLLECTION_IMPORT_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5665870eb003bb335dc61ced8472f8809d464cf5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0127
+last_verified_event: RP-027-A001-0128
 last_completed: RP-026
-next_action: Publish/readback exact4-path repository-qualified fixture import repair
-  INTENT; source checkpoint then default fullcollectwithout custom helper paths and
-  real sameplatform rerun.
-verification: Three real default fullplatform collections failed on same4 new unqualified
-  test imports; defect74 saved, ordinary fix next, finalchecks held.
+next_action: Apply exact5-path import-only repair, preserve/publish/readback source/OUTCOME,
+  then verified full default collection INTENT/run followed by actual isolated platform
+  repeat.
+verification: DEF074 full collection origin proved; exact5 import-only fixture repair
+  authorized, no guard/assertion changes.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0128
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
