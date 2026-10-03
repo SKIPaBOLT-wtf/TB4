@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "intent": "RP-027-A001-0132",
+  "source": "a71954afb45c9e667ae1dd554b6b134fcf7c17c9",
+  "base_head": "ee4ed97ac5e9bb45b3da4bb9e15e0338fc50eced",
+  "pr": "https://github.com/SKIPaBOLT-wtf/TB4/pull/36",
+  "previous_failed_head": "bbcfb19cad5dffa59c3686a72a4ac5db6acab0e9",
+  "default_collection_cases": 2748,
+  "scope": "Existing isolated CI/Desktop/Progress full/native/Qt/frozen qualification only",
+  "live_actions_authorized": false
+}
