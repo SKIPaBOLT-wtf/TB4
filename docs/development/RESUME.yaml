@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_TIMING_ADMISSION_ASSERTION_FAILURE
+phase: STAGED_RECONFIGURATION_C4_TIMING_NATIVE_ASSERTION_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 0b537c1c96283cdfca9153175569267ecec5cba8
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0273
+last_verified_event: RP-027-A001-0274
 last_completed: RP-026
-next_action: Publish one-file pending-regression assertion repair INTENT, preserve/readback
-  corrected source, then qualify Windows/native Linux/full current tests. Reconcile
-  original18/19 jobs without replay and stop at owner-requested checkpoint.
-verification: '273 Windows503PASS/1FAIL: new pending regression assertion expects
-  wrong native error class; source0b guard not changed. Default3043 passed; exact
-  request18/19 jobs still require terminal inspection. No acceptance.'
+next_action: Apply/preserve/readback one-file assertion correction, then separately
+  rerun required current qualification. Finish current part, checkpoint and pause
+  without starting remote/runtime/GUI integration.
+verification: 273 exact first qualification failure preserved.274 one-file native
+  pending assertion correction pending; no product guard change. Existing request18/19
+  jobs must be reconciled before pause.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0265
+- RP-027-A001-0274
 expected_user_action: Wait for current-part completion; after verified pause, say
   continue to resume next integration.
 blocking_decisions: []
