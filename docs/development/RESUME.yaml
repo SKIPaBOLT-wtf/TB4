@@ -7,13 +7,12 @@ phase: STAGED_RECONFIGURATION_C3_FOLDER_GUARD_LINUX_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 98b5948618877160536fca2525fdb7277054d00c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0154
+last_verified_event: RP-027-A001-0155
 last_completed: RP-026
-next_action: Record exact terminal native result and source-linked evidence; repair
-  actual ordinary failures or proceed to qualified next RP027 unit only after remote
-  outcome.
-verification: Fresh native51-case qualification INTENT for exact DEF076 repaired source,
-  acceptance held.
+next_action: Inspect the same required Folder jobs after termination, actual51 cases/counts/skips/source/checkout
+  and selected regression JUnit artifacts; preserve any failure.
+verification: Actual repaired-source Linux51-case required jobs running, same exact
+  source/head IDs retained; no terminal result or acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
