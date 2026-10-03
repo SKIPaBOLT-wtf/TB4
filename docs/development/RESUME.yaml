@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_REPAIR
+phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 5b9c339e06d91822c594dca6f276f6634dd2dc48
+source_commit: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0103
+last_verified_event: RP-027-A001-0104
 last_completed: RP-026
-next_action: Perform one-line records nesting repair and preserve source/outcome;
-  publish readback exact short original root-related regression INTENT.
-verification: DEF068 one-line proven source repair authorized;839 original predicates
-  unchanged, all checks held.
+next_action: Publish/readback exact original root/inherited/no-send/shared-plan/native8-target
+  short regression excluding only actual129-object slow capacity case as an explicitly
+  partial diagnostic, not acceptance. On pass publish full same36-target839-case1800s
+  once-run qualification including that case.
+verification: Proven DEF068 one-line fix saved; all839 original predicates unchanged,
+  runtime qualification pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0103
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
