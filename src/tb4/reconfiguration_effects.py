@@ -19,7 +19,7 @@ from .reconfiguration_root_plan import root_plan, matches_plan
 SLOT = "global.summary"
 KEY = "tb4_effects_v1"
 SCHEMA = "protocol/reconfiguration-effects-v1.schema.json"
-SCHEMA_SHA256 = "646e9347dc85fac5b6de06a774db49c44e4111e3489e04f8e83eee82f1aed250"
+SCHEMA_SHA256 = "efcd98d8a9bfa4cece8a429cd82984abccbbd30e0fe937fb8f12a11cdd49ad8b"
 OUTCOMES = frozenset({"UNKNOWN", "COMPLETE", "NO_WORK", "SUPERSEDED", "NOT_DISPATCHED"})
 
 
@@ -30,7 +30,7 @@ def ledger(row):
         return None
     value = body[KEY]
     fields = {"schema_version", "coverage_epoch", "entries", "barrier"}
-    require(type(value) is dict and set(value) in (fields,fields | {"root_plan"})
+    require(type(value) is dict and set(value) in (fields,fields | {"root_plan"},fields | {"folder_plan"})
             and type(value["schema_version"]) is int and value["schema_version"] == 1
             and type(value["coverage_epoch"]) is int and value["coverage_epoch"] == 1
             and type(value["entries"]) is dict and set(value["entries"]) <= {a.value for a in Action}
@@ -43,6 +43,9 @@ def ledger(row):
     barrier = value["barrier"]
     if "root_plan" in value:
         root_plan(value["root_plan"])
+    if "folder_plan" in value:
+        from .reconfiguration_folder_plan import folder_plan
+        folder_plan(value["folder_plan"])
     if barrier is not None:
         require(type(barrier) is dict and set(barrier) == {
             "transition_id", "source_owner", "source_epoch", "local_clear"}
@@ -98,7 +101,7 @@ class EffectMutation(RecordMutation):
         doc = snapshot.document()
         require(type(owner) is OwnerGuard and owner.matches(doc), "OWNER_SUPERSEDED")
         protected = {"global.settings"}
-        if purpose == "ROOT_PLAN":
+        if purpose in {"ROOT_PLAN","FOLDER_PLAN","FOLDER_SETTLE"}:
             protected.add("global.commissioning")
         if purpose in {"ROOT_SETTLE","ROOT_CANCEL","ROOT_RETRY"}:
             require(type(root_key) is str and root_key in (
@@ -135,21 +138,29 @@ class EffectMutation(RecordMutation):
             old, new = ledger(before), ledger(after)
             require(new is not None and after == changed_row(before,new), "CONFIGURATION_EFFECT_WAL")
             config = configuration(probe)
-            require(self.purpose in {"INITIALIZE", "START", "ROOT_START", "ROOT_SETTLE", "ROOT_CANCEL", "ROOT_RETRY", "ROOT_PLAN", "FINISH", "CERTIFY"}, "CONFIGURATION_EFFECT_WAL")
-            if self.purpose == "ROOT_PLAN":
+            require(self.purpose in {"INITIALIZE", "START", "ROOT_START", "ROOT_SETTLE", "ROOT_CANCEL", "ROOT_RETRY", "ROOT_PLAN", "FOLDER_PLAN", "FOLDER_SETTLE", "FINISH", "CERTIFY"}, "CONFIGURATION_EFFECT_WAL")
+            if self.purpose in {"ROOT_PLAN","FOLDER_PLAN","FOLDER_SETTLE"}:
                 require(set(parts["protected"]) == {"global.settings","global.commissioning"}, "CONFIGURATION_EFFECT_WAL")
             elif self.purpose not in {"ROOT_SETTLE","ROOT_CANCEL","ROOT_RETRY"}:
                 require(set(parts["protected"]) == {"global.settings"}, "CONFIGURATION_EFFECT_WAL")
             if self.purpose in {"INITIALIZE", "START"}:
                 require(config is None or config["phase"] != "MAINTENANCE", "CONFIGURATION_MAINTENANCE")
             if self.purpose == "INITIALIZE":
-                require(old is None and self.owner.epoch == 1 and new["barrier"] is None and "root_plan" not in new
+                require(old is None and self.owner.epoch == 1 and new["barrier"] is None and "root_plan" not in new and "folder_plan" not in new
                         and before["retention"] in {"FREE", "RETAINED"}
                         and all(x["owner"] == self.owner.owner and x["epoch"] == 1
                                 for x in new["entries"].values()), "CONFIGURATION_LEGACY_EVIDENCE_REQUIRED")
             else:
                 require(old is not None, "CONFIGURATION_EFFECT_WAL")
-                if self.purpose == "ROOT_PLAN":
+                if self.purpose == "FOLDER_PLAN":
+                    plan=new.get("folder_plan");barrier=old["barrier"]
+                    require(plan is not None and "root_plan" not in old and config is not None
+                            and config["phase"]=="MAINTENANCE" and plan["transition_id"]==config["transition_id"]
+                            and barrier is not None and barrier["local_clear"] is True
+                            and barrier["transition_id"]==config["transition_id"]
+                            and (old.get("folder_plan") is None or old["folder_plan"]["transition_id"]!=config["transition_id"])
+                            and new=={**old,"folder_plan":plan},"CONFIGURATION_EFFECT_WAL")
+                elif self.purpose == "ROOT_PLAN":
                     plan = new.get("root_plan"); barrier = old["barrier"]
                     require(plan is not None and config is not None and config["phase"] == "MAINTENANCE"
                             and plan["transition_id"] == config["transition_id"]
@@ -166,13 +177,25 @@ class EffectMutation(RecordMutation):
                             and new == {**old,"barrier":{**barrier,"local_clear":True}}, "CONFIGURATION_EFFECT_WAL")
                 else:
                     require(new.get("root_plan") == old.get("root_plan"),"CONFIGURATION_EFFECT_WAL")
+                    require(new.get("folder_plan")==old.get("folder_plan"),"CONFIGURATION_EFFECT_WAL")
                     changed = {key for key in set(old["entries"]) | set(new["entries"])
                                if old["entries"].get(key) != new["entries"].get(key)}
                     require(len(changed) == 1 and new["barrier"] == old["barrier"], "CONFIGURATION_EFFECT_WAL")
                     action = next(iter(changed)); entry = new["entries"].get(action); prior = old["entries"].get(action)
-                    require(entry is not None and (self.purpose in {"ROOT_SETTLE","ROOT_CANCEL"} or
+                    require(entry is not None and (self.purpose in {"ROOT_SETTLE","ROOT_CANCEL","FOLDER_SETTLE"} or
                             entry["owner"] == self.owner.owner and entry["epoch"] == self.owner.epoch),
                             "CONFIGURATION_EFFECT_WAL")
+                    if self.purpose=="FOLDER_SETTLE":
+                        plan=old.get("folder_plan");barrier=old["barrier"]
+                        require(plan is not None and action=="IDENTITY" and prior is not None
+                                and prior["outcome"]=="UNKNOWN" and entry["outcome"]=="COMPLETE"
+                                and prior["operation_id"]==plan["operation_id"]
+                                and prior["epoch"]<=self.owner.epoch
+                                and (prior["epoch"]!=self.owner.epoch or prior["owner"]==self.owner.owner)
+                                and config is not None and config["phase"]=="MAINTENANCE"
+                                and config["transition_id"]==plan["transition_id"]
+                                and barrier is not None and barrier["local_clear"] is True
+                                and barrier["transition_id"]==config["transition_id"],"CONFIGURATION_EFFECT_WAL")
                     if self.purpose in {"ROOT_SETTLE","ROOT_CANCEL","ROOT_RETRY"}:
                         barrier = old["barrier"]
                         require(action == "IDENTITY" and prior is not None
@@ -254,6 +277,14 @@ class EffectMutation(RecordMutation):
             return "CONFLICT", None
         if doc["records"][SLOT] != before[SLOT]:
             return "CONFLICT", None
+        if self.purpose in {"FOLDER_PLAN","FOLDER_SETTLE"}:
+            from .reconfiguration_folder_plan import matches_folder_plan
+            try:
+                planned=ledger(after[SLOT])["folder_plan"]
+                if not matches_folder_plan(doc,self.binding,planned):
+                    return "CONFLICT",None
+            except Exception:
+                return "CONFLICT",None
         if self.purpose == "ROOT_PLAN":
             try:
                 if not matches_plan(doc,self.binding,ledger(after[SLOT])["root_plan"]):

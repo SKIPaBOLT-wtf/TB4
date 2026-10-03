@@ -9,6 +9,7 @@ on:
       - 'src/tb4/reconfiguration_*.py'
       - 'protocol/folder-path-mapping-v1.schema.json'
       - 'tests/drive/folder_mapping_support.py'
+      - 'tests/drive/folder_relocation_support.py'
       - 'tests/drive/test_folder_*.py'
       - '.github/workflows/folder-reconfiguration.yml'
       - 'docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-request.json'
@@ -35,19 +36,36 @@ jobs:
         run: python -m pip install -e ".[dev]"
       - name: Public repository security scan
         run: python tools/scan_public_repo.py
-      - name: Required actual Linux mapping cases
-        run: python -m pytest tests/drive/test_folder_mapping.py -ra --junitxml=folder-mapping-results.xml
+      - name: Required actual Linux mapping and relocation cases
+        run: python -m pytest tests/drive/test_folder_mapping.py tests/drive/test_folder_relocation.py -ra --junitxml=folder-mapping-results.xml
       - name: Original folder and native maintenance regressions
         run: >-
           python -m pytest
           tests/drive/test_folder_commissioning.py
           tests/drive/test_folder_store.py
           tests/drive/test_folder_protocol.py
+          tests/drive/test_folder_lock_order.py
           tests/security/test_private_settings_native.py
           tests/security/test_reconfiguration_maintenance_native.py
           tests/security/test_reconfiguration_evidence_native.py
           tests/security/test_reconfiguration_effects_native.py
           -ra --junitxml=folder-regression-results.xml
+      - name: Original Docs and effect regressions
+        run: >-
+          python -m pytest
+          tests/drive/test_reconfiguration_effects.py
+          tests/drive/test_reconfiguration_roots.py
+          tests/drive/test_reconfiguration_root_plan.py
+          tests/drive/test_reconfiguration_root_resume.py
+          tests/drive/test_reconfiguration_root_settlement.py
+          tests/drive/test_reconfiguration_root_no_dispatch.py
+          tests/security/test_reconfiguration_roots_native.py
+          tests/security/test_reconfiguration_root_plan_native.py
+          tests/security/test_reconfiguration_root_resume_native.py
+          tests/security/test_reconfiguration_root_settlement_native.py
+          tests/security/test_reconfiguration_root_no_dispatch_native.py
+          -k 'not actual_max_capacity129_fixed_objects'
+          -ra --junitxml=folder-docs-regression-results.xml
       - name: Preserve source-linked case results
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

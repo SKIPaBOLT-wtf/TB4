@@ -13,3 +13,4 @@ protocol/reconfiguration-candidate-v1.schema.json text eol=lf
 protocol/reconfiguration-root-v1.schema.json text eol=lf
 protocol/reconfiguration-root-resume-v1.schema.json text eol=lf
 protocol/folder-path-mapping-v1.schema.json text eol=lf
+protocol/folder-relocation-v1.schema.json text eol=lf

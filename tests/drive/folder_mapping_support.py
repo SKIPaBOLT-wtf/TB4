@@ -25,7 +25,7 @@ from tests.drive.test_native_leadership import ACTORS,clock
 from tests.drive.reconfiguration_controller_support import TRANSITION
 
 
-def system(context,tmp_path):
+def system(context,tmp_path,*,schemas=(),device_name=None):
     spec,port,journal=context
     _,handle,commissioner=initialized(context);finish(commissioner)
     stores=[native_settings(tmp_path/("protected-"+str(i)),create=True,owner_authorized=True) for i in range(7)]
@@ -38,9 +38,10 @@ def system(context,tmp_path):
     flow=Discovery(setup,storage_port=port,leadership=leader,grant=grant,clock=lambda:clock(220),
                    capabilities=lambda:caps)
     flow.configure(SCOPE,owner_authorized=True)
-    flow.observe((observation(),));assert flow.publish()=="CONFIRMED"
+    flow.observe((observation(**({"name_hint":device_name} if device_name is not None else {})),))
+    assert flow.publish()=="CONFIRMED"
     origin=source()
-    for name in (WAL_SCHEMA,EFFECT_SCHEMA,CP_SCHEMA,SCHEMA):
+    for name in (WAL_SCHEMA,EFFECT_SCHEMA,CP_SCHEMA,SCHEMA)+tuple(schemas):
         raw=(Path(__file__).parents[2]/name).read_bytes()
         origin.files[origin.head][name]=raw
         origin.catalog["profiles"][0]["files"][name]=hashlib.sha256(raw).hexdigest()

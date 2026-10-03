@@ -246,5 +246,14 @@ class FolderMappedCommissioning:
 
     def check_root(self):return self._port().check_root()
     def inspect_authority(self,spec,known):return self._port().inspect_authority(spec,known)
-    def authority(self,handle):return self._port().authority(handle)
+    def authority(self,known):
+        # An already composed role must resolve the same fixed authority on
+        # each request, including after a path change. No new RPC operation.
+        from .folder_protocol import FolderAccess,FolderAuthority,handle as serve
+        require(self.inspect_authority(self.spec,known)==known,"FOLDER_MAPPING_CONFIG")
+        owner=self
+        class MappedPort:
+            binding=owner.binding
+            def call(self,raw):return serve(FolderStore(owner._config()),raw)
+        return FolderAuthority(MappedPort(),self.binding,FolderAccess(self.binding,self.llm_authorized,True))
     def inspect(self,key,allocation):return self._port().inspect(key,allocation)

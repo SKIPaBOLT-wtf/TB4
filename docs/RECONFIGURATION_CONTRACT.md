@@ -168,3 +168,20 @@ old stores are not inputs, and ambiguous/AFTER operations are never reissued.
 Actual current prefix/profile/source/native/role/plan/work checks remain mandatory.
 Native evidence and WAL cuts promote only the exact protected frame; first-run,
 same-authority rebind and final C4 admission remain separately qualified.
+
+[A-010](implementation-plan/revisions/R2/amendments/RP-027/A-010-protected-same-folder-path-lookup.md)
+adds actual resolved-C1 immutable protected same-folder source/destination/inode
+lookup facts and the optional private server-local helper pointer. It selects
+only the original fixed authority, grants no role or physical action, and retains
+static READ/CAS defaults. Required native Linux lookup evidence is recorded in
+folder-path-lookup-qualified.json under RP-027/A001; wholeworkflow stays held.
+
+[A-011](implementation-plan/revisions/R2/amendments/RP-027/A-011-native-same-folder-relocation.md)
+adds actual C1/C2 first-run gating, a frozen shared folder intent, native PREPARED/
+INVOKING and original shared UNKNOWN before a single Linux no-replace rename.
+Existing DB/native locks span final pure current-role/work proof and invocation;
+current parent FDs/identities and exact SQL body are checked without nested DB
+reads. Ambiguous/BEFORE recovery never resends. Actual current-role same-inode
+AFTER settlement preserves original receipt identity without old stores or ACKs.
+Source-only evidence accepts no check or final routing activation. Docs rebind,
+final configuration/pointer/descriptor/epoch admission and common gates remain.
