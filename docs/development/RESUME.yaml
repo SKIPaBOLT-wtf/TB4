@@ -3,24 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_WINDOWS_RETRY_NOT_STARTED
+phase: STAGED_RECONFIGURATION_C4_RETAINED_CURRENT_FULL_REMAINDER
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0244
+last_verified_event: RP-027-A001-0245
 last_completed: RP-026
-next_action: Publish verified samecurrentfull inspection INTENT; wait foractualsameCI/Linux/wholeDesktop
-  terminal. Any later oneWindowsretry needsdistinct verifiedINTENT afteractualnewterminalstate.
-  NextpublicFolderACTIVEadoption sourceunit canproceed under242 scopedqualificationindependence,
-  allC1-C4held.
-verification: 244 singleknownfailedWindows CI retry explicitlyrejected403 due runningLinuxpeer;
-  NOTSTARTED/no newjob, no repeatunchangedstate. Actualcurrentfull remainder retained;
-  scoped484/priorWindows25/472 qualified; nextsourceindependent242. AllC1-C4held.
+next_action: Inspect same currentactualIDs untilterminal; publish exact OUTCOME/fullcounts/artifactmetadata.
+  SeparatepublicFolderACTIVEsourceunit maystartafteritsownverifiedINTENT under242independence;
+  any eventualWindowsretry afterterminal needs newINTENT.
+verification: 245 samecurrentimmutablefull inspection only;244 retryexplicitNOTSTARTED403,
+  no repeat/cancel. ScopedLinux484/priorunchangedWindows25/472 qualified242 allow
+  separatelylogged publicFolderACTIVE composition independent. C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0237
+- RP-027-A001-0245
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
