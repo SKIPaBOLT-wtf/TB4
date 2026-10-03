@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_DESKTOP_BOUNDED_BUDGET_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_CURRENT_ROLE_ACTIVE_ADOPTION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 923741e9027a2fa6e0289f42cfd59149f8c33d3d
+source_commit: 14a53a8c8ab5903282cd23e4f428e2b26cda4b25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0208
+last_verified_event: RP-027-A001-0209
 last_completed: RP-026
-next_action: 'All197 immutable-source operations settled; continue current14a53a8
-  qualifiednativeadmission207: publish scoped cloudACTIVEadoption source INTENT without
-  former private host/WAL/ACK, samefixedDoc/domain/ownprofilepreserved; then Folder/rootless/runtimeGUIhelpercomposition
-  and current-source fullgates.'
-verification: 197 budgetsource923 fullbothplatforms/tworolepackages/upload/nativeLinux400
-  settled; current14qualified23/295/Linux423207. Next ownINTENT cloudACTIVEadoption/nooldHostWAL
-  thenfullcomposition/current-sourcefullgates; allC1-C4held.
+next_action: Implement and statically review exact bounded source unit; preserve/read
+  back source then verified OUTCOME with evidence. Publish separate new-source scoped/native
+  qualification INTENT; qualify actual Windows/Linux and affected regressions before
+  Folder/rootless/runtimeGUI/helper composition/current-source full gates.
+verification: 208 immutable-source budget/full/package settled; current14 fresh admission
+  qualified207. Current-role ACTIVE adoption source209 starts only after verified
+  readback; allC1-C4 held; source14 immutable CI may be terminal-inspected independently.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0209
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
