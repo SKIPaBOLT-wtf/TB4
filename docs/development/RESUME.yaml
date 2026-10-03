@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_POST_ROOT_FIRST_RUN_SOURCE
+phase: STAGED_RECONFIGURATION_C4_POST_ROOT_FIRST_RUN_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 3ad08dfbb64e057ea5140f7bd1c9b5d2d43d894c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0177
+last_verified_event: RP-027-A001-0178
 last_completed: RP-026
-next_action: Publish default-import Windows new20/native+legacy candidate/rebind and
-  actualLinux51/107/augmented Docs qualification INTENT; exact actual failure/result
-  before further C4 implementation.
-verification: A01311path post-root actual first-run source/readback; new20/native/old
-  regressions unqualified, allC1-C4 held for final publication/profile/composition.
+next_action: Execute default Windows20 new/native boundary; actualfailure checkpoint
+  before repair, or continue authorized same-source originals/collection/actualLinux
+  request8 and publish exact result before final C4 publication source.
+verification: 3ad08 post-root source saved; default20/native then legacy/defaultcollection/exactLinux
+  declared, allC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0178
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
