@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_PROVEN_NO_SEND_TEST_FAILED
+phase: STAGED_RECONFIGURATION_C3_NO_SEND_DIAGNOSTIC
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0079
+last_verified_event: RP-027-A001-0080
 last_completed: RP-026
-next_action: Publish/read back bounded diagnostic INTENT to inspect exact same failed
-  traces/native current-previous proof/reader bindings and closed force error provenance;
-  preserve results before minimal repair.
-verification: 810-case no-send run failed two new predicates; DEF064/065 unproven,
-  original791 retained; no accepted checks.
+next_action: Run bounded same-source three-probe diagnosis after remote readback;
+  record facts/proven origin and exact minimal repair, no new dependent source until
+  diagnostic OUTCOME readback.
+verification: DEF064/065 exact bounded diagnosis pending; no accepted checks.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0080
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
