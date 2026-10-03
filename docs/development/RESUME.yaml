@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_GATE_DIAGNOSIS
+phase: STAGED_RECONFIGURATION_C3_ROOT_GATE_CAUSE_PROVED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 90635ed953d297fdea34209cb305439c464c4470
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0051
+last_verified_event: RP-027-A001-0052
 last_completed: RP-026
-next_action: Publish/read back diagnostic OUTCOME and appended defect hypotheses/proven
-  origin; then minimal scoped source/test repair INTENT and exact same full root regression
-  repeat.
-verification: Failed root run recorded; exact same trace/current-source read-only
-  diagnosis pending.
+next_action: 'Publish/read back minimal repair INTENT: dedicated closed maintenance
+  identity effect start under actual native reservation/current owner/barrier, retain
+  ordinary START refusal; exact target-access fixture class/code; schemas/pins/docs/negative
+  regressions. Preserve source before repeat.'
+verification: Exact same traces prove root normal-START selection fault and closed
+  target-access fixture expectation. No repair/check acceptance yet.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0051
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

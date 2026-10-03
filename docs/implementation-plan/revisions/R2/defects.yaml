@@ -4217,7 +4217,11 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
-    proven_origin: null
+    proven_origin:
+      work_item: RP-027
+      source_ref: 90635ed953d297fdea34209cb305439c464c4470
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-gate-provenance.md
     reproduction:
       procedure: 'Run exact30-target first root suite: normal move, witness, two lost-reply
         cases, shared/native send intent, two stale fallback cases, historical witness
@@ -4244,15 +4248,26 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+    - id: root-controller-uses-normal-start-with-explicit-maintenance-refusal
+      claim: Exact failed traces show DocsRootMoves.advance line277 calls Effects.start
+        line288, EffectMutation.prepare line99 invokes its own _validate line124 explicit
+        INITIALIZE/START maintenance refusal. No inherited RecordMutation.prepare
+        is called. Root controller must use a separately closed maintenance identity
+        start; ordinary START/RecordMutation guards must remain unchanged.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-gate-provenance.md
     repairs: []
     issue: null
     regression_test: All nine exact failed root predicates plus inherited720 cases,
       and explicit ordinary dispatch refusal while a strictly scoped effect operation
       is admitted.
     resolution_evidence: []
-    notes: Unaccepted C3 source only. Preserve failed tests and prior accepted predicates.
+    notes: 'Unaccepted C3 source only. Preserve failed tests and prior accepted predicates.
       Inspect exact failed traces/current adapter before naming a proven origin or
-      making a scoped repair. Final C1-C4 rechecks remain held.
+      making a scoped repair. Final C1-C4 rechecks remain held. Diagnosis disproves
+      inheritance as the exact mechanism: EffectMutation overrides prepare/evaluate;
+      its own START guard is proved. No repair or repeat yet.'
     legacy_record: null
   DEF-062:
     title: Root access negative fixture excludes the actual closed authority refusal
@@ -4264,7 +4279,11 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
-    proven_origin: null
+    proven_origin:
+      work_item: RP-027
+      source_ref: 90635ed953d297fdea34209cb305439c464c4470
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-gate-provenance.md
     reproduction:
       procedure: Exact target-access predicate withdraws target root canEdit and receives
         SETUP_ROOT, then fails its expected exception class rather than proving a
@@ -4291,6 +4310,14 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+    - id: actual-root-access-refuses-before-any-sdk-move
+      claim: Same target-access trace shows DocsRootMoves.begin line218 -> NativeCommissioning.check_root
+        line57 -> AuthorityError SETUP_ROOT. Test line142 excludes AuthorityError.
+        Source asserts no update/profile change after refusal. Extend this one fault's
+        expected closed class/code, not access permission.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-gate-provenance.md
     repairs: []
     issue: null
     regression_test: Exact target-access predicate with actual closed refusal and
@@ -4298,5 +4325,6 @@ defects:
     resolution_evidence: []
     notes: Unaccepted C3 source only. Preserve failed tests and prior accepted predicates.
       Inspect exact failed traces/current adapter before naming a proven origin or
-      making a scoped repair. Final C1-C4 rechecks remain held.
+      making a scoped repair. Final C1-C4 rechecks remain held. Actual closed target-root
+      refusal proved before SDK move; fixture expectation is the fault.
     legacy_record: null
