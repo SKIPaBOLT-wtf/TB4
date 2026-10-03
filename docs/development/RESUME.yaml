@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_REPEAT_FAILED
+phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_DIAGNOSTIC
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5b9c339e06d91822c594dca6f276f6634dd2dc48
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0098
+last_verified_event: RP-027-A001-0099
 last_completed: RP-026
-next_action: 'Publish/read back bounded exact-source diagnostic INTENT: prove Root.begin
-  failing frame and actual top-level versus records keys/no SDK/local/shared/profile
-  mutation. Publish proof before single-line records nesting repair, short original
-  root regression, then full36-target839-case repeat.'
-verification: Actual839-case repeat failed101 KeyError global.summary cases,734PASS/4Linux
-  skips, DEF068 suspected; no accepted checks.
+next_action: Execute bounded exact-source probe, publish proof and updated DEF068
+  origin before one-line records lookup source repair.
+verification: Repeat839 failed; exact source envelope diagnostic authorized, DEF068
+  suspected.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0099
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
