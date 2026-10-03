@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_SHARED_PUBLICATION_SOURCE
+phase: STAGED_RECONFIGURATION_C4_SHARED_PUBLICATION_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5d6116f34f2323e8bc775ca7d092b99e2c99fe77
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0182
+last_verified_event: RP-027-A001-0183
 last_completed: RP-026
-next_action: Publish/re-read qualification INTENT, run new actual default-import conformance/native
-  publication tests first; on failure preserve/publish defect OUTCOME before repair
-  or dependent groups; ifpass original regressions/defaultcollection and source-linked
-  Linux request9.
-verification: 5d6116 scoped C4 publication source12paths verified; schema85e1853/17fileclosure/staticdiffPASS/tests0;
-  qualification next, originalprofile unchanged/allC1-C4 held.
+next_action: Inspect exact same new qualification operation; publish STARTED actual
+  run identities ifneeded, exact results/defects/next task OUTCOME before any dependent
+  source.
+verification: 5d6116 shared publication source12paths verified, actual qualification
+  authorized new casesfirst; originals/Linux followonlypass, allC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0183
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
