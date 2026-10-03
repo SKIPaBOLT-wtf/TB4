@@ -141,3 +141,11 @@ UNKNOWN-to-COMPLETE under a dedicated summary-only current-owner CAS, retaining
 original operation owner/epoch/ID. It requires actual fresh role/source/native
 checks and protected intent; no old host/WAL/ACK, SDK move, replay or first-run/
 routing grant. Partial-plan continuation and final promotion remain required.
+
+[A-007](implementation-plan/revisions/R2/amendments/RP-027/A-007-proven-no-send-settlement.md)
+adds exact actual native revocation-based shared NOT_DISPATCHED settlement,
+retaining original identity/epoch/owner and protecting settings/commissioning/
+catalogue. Same-owner cursor resume sends no SDK; a later newly armed ROOT_RETRY
+requires that exact confirmed unsent receipt. Missing old proof leaves UNKNOWN
+held without blocking role takeover. BEFORE/INVOKING/legacy/saved proof cannot
+grant retry; ordinary START remains unchanged. No routing activation.

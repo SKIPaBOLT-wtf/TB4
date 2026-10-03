@@ -418,6 +418,22 @@ class DocsRootMoves:
                 "CONFIGURATION_ROOT_BINDING")
         return copy.deepcopy(state["objects"])
 
+    def resume_revoked(self, proof, *, owner_authorized=False):
+        """Clear only an exactly revoked/confirmed-unsent cursor, no SDK call."""
+        require(owner_authorized is True, "CONFIGURATION_OWNER_REQUIRED")
+        self.require_revocation(proof)
+        state,revision = self._state()
+        checkpoint,_ = self._proof(state,dispatch=True)
+        fact = self.ctx.effects.receipt(Action.IDENTITY)
+        require(checkpoint.grant.epoch == proof.epoch and fact is not None
+                and fact == dict(owner=checkpoint.grant.owner,epoch=proof.epoch,
+                                 operation_id=proof.operation_id,outcome="NOT_DISPATCHED"),
+                "CONFIGURATION_ROOT_EVIDENCE")
+        require(self.ctx.effects.inspect() in {"NO_PENDING","CONFIRMED"}, "CONFIGURATION_EFFECT_INSPECT_REQUIRED")
+        self.require_revocation(proof); self._proof(state,dispatch=True)
+        self._save({**state,"pending":None},revision)
+        return "READY"
+
     def recover_local(self, *, owner_authorized=False):
         require(owner_authorized is True, "CONFIGURATION_OWNER_REQUIRED")
         store = self.context.store

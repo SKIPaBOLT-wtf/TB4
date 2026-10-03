@@ -23,7 +23,7 @@
         "protocol/network-table-v1.schema.json": "f90e4b2ea1d44c24d8c51d01822e66638ff837a835c9988be25e02e374cd55b0",
         "protocol/configuration-v1.schema.json": "bc9964f339851d992f99959bedb92125c767cb081c52fdb3d9156f06364ba7f9",
         "protocol/reconfiguration-maintenance-v1.schema.json": "f8cba98bb15e544d84a2e73cc58a2e359e974f96e323f708a46107275de13d31",
-        "protocol/reconfiguration-effects-v1.schema.json": "67734c81f897fb55d41ea3543e6a92c35b202e9156dbe35cd5a4ee12951f44de",
+        "protocol/reconfiguration-effects-v1.schema.json": "bddcddeabfa7d79cf96ad89e748a62cc34136bea2c332e01989f4ddceb2ffbf9",
         "protocol/native-checkpoint-v1.schema.json": "4f898bd51242cd61cca59dd7a016d467898671f266d2d1f1a9e38fd79eeeb6d4",
         "protocol/reconfiguration-candidate-v1.schema.json": "c73d85eb5c1756d12de41e8aab526703755bdaea8ce765bb4bbba2ca0d986a45",
         "protocol/reconfiguration-root-v1.schema.json": "4a5ddeb905e347813189dfff9b856e0250b3021e2805f60ab0a3025b8e3e7b18"

@@ -18,7 +18,7 @@ from .private_settings import PrivateSettings
 SLOT = "global.summary"
 KEY = "tb4_effects_v1"
 SCHEMA = "protocol/reconfiguration-effects-v1.schema.json"
-SCHEMA_SHA256 = "67734c81f897fb55d41ea3543e6a92c35b202e9156dbe35cd5a4ee12951f44de"
+SCHEMA_SHA256 = "bddcddeabfa7d79cf96ad89e748a62cc34136bea2c332e01989f4ddceb2ffbf9"
 OUTCOMES = frozenset({"UNKNOWN", "COMPLETE", "NO_WORK", "SUPERSEDED", "NOT_DISPATCHED"})
 
 
@@ -94,7 +94,7 @@ class EffectMutation(RecordMutation):
         doc = snapshot.document()
         require(type(owner) is OwnerGuard and owner.matches(doc), "OWNER_SUPERSEDED")
         protected = {"global.settings"}
-        if purpose == "ROOT_SETTLE":
+        if purpose in {"ROOT_SETTLE","ROOT_CANCEL","ROOT_RETRY"}:
             require(type(root_key) is str and root_key in (
                 tuple(f"artifact.{i:03d}.{kind}" for i in range(Capacity.parse(doc["capacity"]).devices)
                       for kind in ("input","output")) + ("authority",)), "CONFIGURATION_EFFECT_WAL")
@@ -129,8 +129,8 @@ class EffectMutation(RecordMutation):
             old, new = ledger(before), ledger(after)
             require(new is not None and after == changed_row(before,new), "CONFIGURATION_EFFECT_WAL")
             config = configuration(probe)
-            require(self.purpose in {"INITIALIZE", "START", "ROOT_START", "ROOT_SETTLE", "FINISH", "CERTIFY"}, "CONFIGURATION_EFFECT_WAL")
-            if self.purpose != "ROOT_SETTLE":
+            require(self.purpose in {"INITIALIZE", "START", "ROOT_START", "ROOT_SETTLE", "ROOT_CANCEL", "ROOT_RETRY", "FINISH", "CERTIFY"}, "CONFIGURATION_EFFECT_WAL")
+            if self.purpose not in {"ROOT_SETTLE","ROOT_CANCEL","ROOT_RETRY"}:
                 require(set(parts["protected"]) == {"global.settings"}, "CONFIGURATION_EFFECT_WAL")
             if self.purpose in {"INITIALIZE", "START"}:
                 require(config is None or config["phase"] != "MAINTENANCE", "CONFIGURATION_MAINTENANCE")
@@ -153,18 +153,29 @@ class EffectMutation(RecordMutation):
                                if old["entries"].get(key) != new["entries"].get(key)}
                     require(len(changed) == 1 and new["barrier"] == old["barrier"], "CONFIGURATION_EFFECT_WAL")
                     action = next(iter(changed)); entry = new["entries"].get(action); prior = old["entries"].get(action)
-                    require(entry is not None and (self.purpose == "ROOT_SETTLE" or
+                    require(entry is not None and (self.purpose in {"ROOT_SETTLE","ROOT_CANCEL"} or
                             entry["owner"] == self.owner.owner and entry["epoch"] == self.owner.epoch),
                             "CONFIGURATION_EFFECT_WAL")
-                    if self.purpose == "ROOT_SETTLE":
+                    if self.purpose in {"ROOT_SETTLE","ROOT_CANCEL","ROOT_RETRY"}:
                         barrier = old["barrier"]
-                        require(action == "IDENTITY" and prior is not None and prior["outcome"] == "UNKNOWN"
-                                and entry["outcome"] == "COMPLETE" and prior["epoch"] < self.owner.epoch
-                                and {k:v for k,v in entry.items() if k != "outcome"}
-                                == {k:v for k,v in prior.items() if k != "outcome"}
+                        require(action == "IDENTITY" and prior is not None
                                 and config is not None and config["phase"] == "MAINTENANCE"
                                 and barrier is not None and barrier["local_clear"] is True
                                 and barrier["transition_id"] == config["transition_id"], "CONFIGURATION_EFFECT_WAL")
+                        if self.purpose == "ROOT_RETRY":
+                            require(prior["outcome"] == "NOT_DISPATCHED" and entry["outcome"] == "UNKNOWN"
+                                    and entry["operation_id"] == prior["operation_id"]
+                                    and prior["epoch"] <= self.owner.epoch
+                                    and (prior["epoch"] != self.owner.epoch or prior["owner"] == self.owner.owner),
+                                    "CONFIGURATION_EFFECT_WAL")
+                        else:
+                            require(prior["outcome"] == "UNKNOWN"
+                                    and entry["outcome"] == ("COMPLETE" if self.purpose == "ROOT_SETTLE" else "NOT_DISPATCHED")
+                                    and (prior["epoch"] < self.owner.epoch if self.purpose == "ROOT_SETTLE" else
+                                         prior["epoch"] <= self.owner.epoch and
+                                         (prior["epoch"] != self.owner.epoch or prior["owner"] == self.owner.owner))
+                                    and {k:v for k,v in entry.items() if k != "outcome"}
+                                    == {k:v for k,v in prior.items() if k != "outcome"}, "CONFIGURATION_EFFECT_WAL")
                         row = parts["protected"]["global.commissioning"]
                         marker = row["body"]
                         spec = SetupSpec(marker["root_id"],self.binding.domain_id,marker["setup_id"],
@@ -189,7 +200,9 @@ class EffectMutation(RecordMutation):
                         require(action == "IDENTITY" and config is not None and config["phase"] == "MAINTENANCE"
                                 and barrier is not None and barrier["local_clear"] is True
                                 and barrier["transition_id"] == config["transition_id"], "CONFIGURATION_EFFECT_WAL")
-                    if self.purpose in {"START", "ROOT_START"}:
+                    if self.purpose == "ROOT_RETRY":
+                        pass  # Exact NOT_DISPATCHED precondition validated above.
+                    elif self.purpose in {"START", "ROOT_START"}:
                         require(entry["outcome"] == "UNKNOWN" and
                                 (prior is None or prior["outcome"] != "UNKNOWN"
                                  and prior["operation_id"] != entry["operation_id"]), "CONFIGURATION_EFFECT_UNKNOWN")
@@ -339,11 +352,19 @@ class Effects:
             purpose = "ROOT_START"
         value = ledger(doc["records"][SLOT]); require(value is not None, "CONFIGURATION_EFFECT_EVIDENCE_REQUIRED")
         old = value["entries"].get(action.value)
-        require(old is None or old["outcome"] != "UNKNOWN" and old["operation_id"] != operation,
-                "CONFIGURATION_EFFECT_UNKNOWN")
+        root_key = None
+        if purpose == "ROOT_START" and old is not None and old["outcome"] == "NOT_DISPATCHED" and old["operation_id"] == operation:
+            keys = tuple(f"artifact.{i:03d}.{kind}" for i in range(Capacity.parse(doc["capacity"]).devices)
+                         for kind in ("input","output")) + ("authority",)
+            matched = [key for key in keys if digest(["reconfiguration-root",maintenance_transition,key]) == operation]
+            require(len(matched) == 1, "CONFIGURATION_EFFECT_WAL")
+            purpose,root_key = "ROOT_RETRY",matched[0]
+        else:
+            require(old is None or old["outcome"] != "UNKNOWN" and old["operation_id"] != operation,
+                    "CONFIGURATION_EFFECT_UNKNOWN")
         value["entries"][action.value] = dict(owner=grant.owner,epoch=grant.epoch,operation_id=operation,outcome="UNKNOWN")
         return self._commit(EffectMutation.prepare(snap,OwnerGuard(grant.owner,grant.epoch),
-            changed_row(doc["records"][SLOT],value),purpose=purpose))
+            changed_row(doc["records"][SLOT],value),purpose=purpose,root_key=root_key))
 
     def finish(self, grant, action, operation, outcome):
         from .watchdog.leadership_runtime import Action

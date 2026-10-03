@@ -40,7 +40,7 @@ class InheritedRootSettlement:
         self.context = context
         self.maintenance = Maintenance(context)
 
-    def _current(self, *, reserved):
+    def _current(self, *, reserved, inherited=True, outcomes=("UNKNOWN","COMPLETE")):
         ctx = self.context
         pin = self.maintenance._proof()
         require(hashlib.sha256(pin.read(SCHEMA)).hexdigest() == SCHEMA_SHA256,
@@ -79,8 +79,11 @@ class InheritedRootSettlement:
                 and value["barrier"]["transition_id"] == config["transition_id"],
                 "CONFIGURATION_ROOT_EVIDENCE")
         entry = value["entries"].get(Action.IDENTITY.value)
-        require(entry is not None and entry["outcome"] in {"UNKNOWN","COMPLETE"}
-                and entry["epoch"] < checkpoint.grant.epoch, "CONFIGURATION_ROOT_NOT_INHERITED")
+        require(entry is not None and entry["outcome"] in outcomes
+                and (entry["epoch"] < checkpoint.grant.epoch if inherited else
+                     entry["epoch"] <= checkpoint.grant.epoch and
+                     (entry["epoch"] != checkpoint.grant.epoch or entry["owner"] == checkpoint.grant.owner)),
+                "CONFIGURATION_ROOT_NOT_INHERITED")
         keys = [key for key in spec.artifact_keys + ("authority",)
                 if digest(["reconfiguration-root",config["transition_id"],key]) == entry["operation_id"]]
         require(len(keys) == 1, "CONFIGURATION_ROOT_OPERATION")
@@ -143,4 +146,46 @@ class InheritedRootSettlement:
         value["entries"][Action.IDENTITY.value] = {**entry,"outcome":"COMPLETE"}
         plan = EffectMutation.prepare(snapshot,OwnerGuard(checkpoint.grant.owner,checkpoint.grant.epoch),
             changed_row(document["records"][SLOT],value),purpose="ROOT_SETTLE",root_key=key)
+        return ctx.effects._commit(plan)
+
+
+class ProvenNoDispatchSettlement:
+    """Actual native revocation can record non-dispatch; BEFORE alone cannot."""
+    def __init__(self, context):
+        self.current = InheritedRootSettlement(context)
+        self.context = context
+
+    def _proof(self, proof, *, reserved):
+        from .reconfiguration_roots import DocsRootMoves, RootRevocation
+        require(type(proof) is RootRevocation and type(proof._origin) is DocsRootMoves,
+                "CONFIGURATION_ROOT_REVOCATION_REQUIRED")
+        roots = proof._origin
+        roots.require_revocation(proof)
+        ctx = self.context
+        require(roots.old.spec == ctx.storage_port.spec and roots.old.drive is ctx.storage_port.drive
+                and roots.old.docs is ctx.storage_port.docs
+                and roots.ctx.leadership.backend.binding == ctx.leadership.backend.binding,
+                "CONFIGURATION_ROOT_BINDING")
+        snapshot,checkpoint,config,entry,key,_ = self.current._current(reserved=reserved,inherited=False,
+            outcomes=("UNKNOWN","NOT_DISPATCHED"))
+        keys = roots.old.spec.artifact_keys + ("authority",)
+        require(proof.transition_id == config["transition_id"] and proof.operation_id == entry["operation_id"]
+                and proof.epoch == entry["epoch"] and entry["owner"] == roots.ctx.setup.installation_id
+                and key == keys[proof.index], "CONFIGURATION_ROOT_EVIDENCE")
+        return snapshot,checkpoint,config,entry,key
+
+    def settle(self, proof, *, owner_authorized=False):
+        require(owner_authorized is True, "CONFIGURATION_OWNER_REQUIRED")
+        _,_,config,_,_ = self._proof(proof,reserved=False)
+        ctx = self.context
+        ctx.checkpoint.reserve(config["transition_id"],owner_authorized=True)
+        snapshot,checkpoint,_,entry,key = self._proof(proof,reserved=True)
+        if entry["outcome"] == "NOT_DISPATCHED":
+            return "CONFIRMED"
+        require(ctx.effects.inspect() in {"NO_PENDING","CONFIRMED"}, "CONFIGURATION_EFFECT_INSPECT_REQUIRED")
+        snapshot,checkpoint,_,entry,key = self._proof(proof,reserved=True)
+        document = snapshot.document(); value = ledger(document["records"][SLOT])
+        value["entries"][Action.IDENTITY.value] = {**entry,"outcome":"NOT_DISPATCHED"}
+        plan = EffectMutation.prepare(snapshot,OwnerGuard(checkpoint.grant.owner,checkpoint.grant.epoch),
+            changed_row(document["records"][SLOT],value),purpose="ROOT_CANCEL",root_key=key)
         return ctx.effects._commit(plan)
