@@ -7,13 +7,13 @@ phase: STAGED_RECONFIGURATION_C4_SHARED_PUBLICATION_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c5c77d9cea6b5b4804a399b8ed208d33e2724de8
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0187
+last_verified_event: RP-027-A001-0188
 last_completed: RP-026
-next_action: Run exact new23 first and inspectsame result, publish exact failure before
-  furtherrepair or onpass continue original/defaultcollection/Linuxrequest9 and preserve
-  same-run evidence before nextsource.
-verification: c5c77d onefilevalidfixture verified. Actual new23 requalification authorized
-  first;254original/Linux followonlypass/DEF079OPEN/allC1-C4 held.
+next_action: Inspect same Windows254 and actual source-linked Linux51/107/224 jobs;
+  preserve exact terminal counts/checkouts/artifact digests, then qualification OUTCOME
+  before next native profile/admission source.
+verification: c5c77d actualWindows23PASS/default2868collect; source-linked35bd request9
+  Linux382 and Windows254 original/new running,DEF079OPEN/allC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
