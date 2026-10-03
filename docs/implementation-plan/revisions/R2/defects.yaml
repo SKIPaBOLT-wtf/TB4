@@ -5854,9 +5854,11 @@ defects:
         Original-profile scenario fails fixture Setup.choose before C4; both compact64
         cases fail shared catalogue decode before plan construction.
       failing_source: 5d6116f34f2323e8bc775ca7d092b99e2c99fe77
-      passing_source: null
+      passing_source: c5c77d9cea6b5b4804a399b8ed208d33e2724de8
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-qualified.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5888,10 +5890,14 @@ defects:
     regression_test: All23 new actual/default/native tests with valid original-revision/max64
       prerequisites, unchanged original Candidate/Docs/effect/post-root tests and
       actual Linux mapping/Folder/Docs regressions; final C1-C4 composition.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-qualified.md
     notes: Preserve initial5d6116 and all3 closed-code failures. No original/runtime/media/work
       reset or repeated request occurred. Original/Linux dependent qualification was
       not started after this targeted failure; allC1-C4 held. Onefile valid fixture
       source c5c77d9cea6b5b4804a399b8ed208d33e2724de8 preserved under185; production
-      unchanged, passing_source pending actual requalification.
+      unchanged, passing_source pending actual requalification. Exactc5c77d Windows23/254/default2868
+      and bothLinux382 now pass0Skip, validating onefile correction. Retain OPEN until
+      complete final C1-C4/composition acceptance.
     legacy_record: null
