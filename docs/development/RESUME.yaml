@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_DEFAULT_NATIVE_PLATFORMS_QUALIFIED
+phase: STAGED_RECONFIGURATION_C3_FOLDER_PATH_RESOLVER_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0136
+last_verified_event: RP-027-A001-0137
 last_completed: RP-026
-next_action: Publish/readback exact protected same-folder mapping/read resolver with
-  actual fresh C1/native source/owner gate, closed schema/unreleased pin/helper optional
-  integration and real native Linux fixture source INTENT; preserve source then targeted
-  required Linux qualification. Continue remaining same-authority rename/Docs rebind/C4.
-verification: Actual default native/full regression/Qt/frozen Linux+Windows and Progress/history/public
-  source gates all passed; R27folder/rebind/C4/composition incomplete.
+next_action: Implement scoped protected mapping unit, preserve exact source/OUTCOME;
+  then verified targeted actual Linux C1/helper/native tests and original folder/native/static/contract
+  regressions, repair ordinary failures before next physical transaction.
+verification: Current source actual full native/platform/frozen qualified; bounded
+  protected folder path fact resolver source unit authorized, no physical move or
+  acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0137
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
