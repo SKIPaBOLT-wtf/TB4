@@ -3,25 +3,26 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_RUNNING
+phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_CATALOGUE_FAILURE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 103d0eb2009880a7e76ac4604e611ce6958060da
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0249
+last_verified_event: RP-027-A001-0250
 last_completed: RP-026
-next_action: Inspectactualsession76029/defaultJUnit andsamerequest16 Linux506/newfullactualIDs.
-  Preservefailedcasesbefore boundedrepair; scopedOUTCOME beforedependentaffectedWindowsregression/sourcecomposition.
-  Checkpoint237/245 oldterminalsource results separately withno currentsource substitution.
-verification: 249 actualcurrent103d0/request16 runIDs/localWindows55session76029 captured/defaultcollect2992PASS/tests0.
-  RequiredLinux506/currentfull unfinished; old237/245 terminalhistoricalrecordnext.
-  AllC1-C4held.
+next_action: Publish verified same103d0 request16 immutableLinux/CI remainder inspection
+  INTENT; preserve originalterminal237/245 historical outcomes. Then distinct verified
+  exactonehash compatibility repair INTENT/sourceOUTCOME; corrected-source existingcoherence/affectedWindows/requiredLinux506/full
+  qualification beforedependentruntimeGUI/remotehelper work. C1-C4held.
+verification: 250 new103d0 actualWindows55PASS/default2992; bothDesktop repositoryhashcoherence
+  FAIL DEF089 exactmissingUNRELEASEDcataloguehash. NativeWindows2 discoveryPASS doesn'tprovecauseDEF088.
+  OriginalLinux506/CI unfinished; onehashrepair independent, no othernewsource untilcorrectedqualified.
+  C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0237
 - RP-027-A001-0245
-- RP-027-A001-0248
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -60,6 +61,7 @@ known_open_defects:
 - DEF-086
 - DEF-087
 - DEF-088
+- DEF-089
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
