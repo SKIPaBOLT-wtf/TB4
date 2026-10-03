@@ -4818,7 +4818,12 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failed-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failure.md
-    proven_origin: null
+    proven_origin:
+      work_item: RP-027
+      source_ref: 5b9c339e06d91822c594dca6f276f6634dd2dc48
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.md
     reproduction:
       procedure: Full same36-target repeat:101 cases fail KeyError global.summary
         at new begin preflight. Inspect exact trace/document envelope and scoped original
@@ -4829,6 +4834,8 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failed-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4845,6 +4852,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failed-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failure.md
+    - id: exact-root-begin-envelope-lookup-proven
+      claim: Exact source Root.begin line237 raises KeyError global.summary. Actual
+        authority top-level lacks slot while records contains it. Shared/profile unchanged,
+        root WAL absent and SDK0. Records nesting omission is proven, no guard/predicate
+        relaxation justified.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.md
     repairs: []
     issue: null
     regression_test: Preserve every original839 predicate and all101 failed root/inherited/no-send/plan/native
