@@ -5605,3 +5605,61 @@ defects:
       be claimed. Actual126 native cases on both push/PR now pass at exact f98ddf
       repair source; final acceptance held.
     legacy_record: null
+  DEF-076:
+    title: Native folder transaction compares its own UNKNOWN operation digest to
+      an action label
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 31533a1eca67658641a5913d2a3d70715e804c18
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: 31533a1eca67658641a5913d2a3d70715e804c18
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.md
+    reproduction:
+      procedure: Both actual native46-case jobs:34PASS/12FAIL/zeroSkip. Nine direct
+        transaction scenarios hit FOLDER_RELOCATION_UNRESOLVED immediately after own
+        shared IDENTITY UNKNOWN; three pending/force assertions don't reach their
+        target. Actual Inspection defines SHARED_EFFECT_UNKNOWN.identity as operation_id,
+        but new _role compares identity with action label IDENTITY. No physical syscall
+        reaches this guard.
+      failing_source: 31533a1eca67658641a5913d2a3d70715e804c18
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: own-shared-operation-label-mismatch
+      claim: Actual source-linked traces stop at exact _role blocker comparison after
+        Effects.start. Inspection's typed operation digest and existing qualified
+        resumed Docs guard establish the incorrect comparison. Match only exact current
+        operation digest/own IDENTIY entry, deny any other UNKNOWN action even with
+        duplicate digest, and preserve native sender owner/epoch checks.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.md
+    repairs: []
+    issue: null
+    regression_test: All46 native cases and unchanged original folder/native/Docs/effects;
+      add valid foreign/deduplicated UNKNOWN entry and native sender owner/epoch/election
+      guards, preserving direct kernel/cut/fallback/force assertions; finalallchecks.
+    resolution_evidence: []
+    notes: Initial source-only physical checkpoint not qualified. All21 existing actual
+      mapping cases remain passing; failed native cut/late-force assertions are unreachable
+      behind the same prior guard. Keep assertions and no-replay/current-role/source/native
+      boundaries. No guard broadening or accepted check.
+    legacy_record: null
