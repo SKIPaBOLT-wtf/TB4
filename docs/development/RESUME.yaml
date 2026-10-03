@@ -3,16 +3,16 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ADOPTION_PROVEN_REPAIR_TEST
+phase: STAGED_RECONFIGURATION_C3_ADOPTION_REPAIR_TEST_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5665870eb003bb335dc61ced8472f8809d464cf5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0122
+last_verified_event: RP-027-A001-0123
 last_completed: RP-026
-next_action: Publish actual STARTED and observe same run; preserve complete real outcome
-  before dependent work.
-verification: Proven adoption source repair saved; same related partial regression
-  authorized, all final checks held.
+next_action: Observe same LOCAL-SESSION-51459/report; record exact complete actual
+  results before any dependent diagnostic/source.
+verification: One actual original related plus repaired/new native adoption regression
+  running; final checks unaccepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
