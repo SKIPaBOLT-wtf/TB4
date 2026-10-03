@@ -5,21 +5,20 @@ check: RP-027.C3
 attempt: A001
 phase: STAGED_RECONFIGURATION_C3_FOLDER_PHYSICAL_TRANSACTION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: f98ddf419471afc11a27868231432a6f8ba753f3
+source_commit: 31533a1eca67658641a5913d2a3d70715e804c18
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0147
+last_verified_event: RP-027-A001-0148
 last_completed: RP-026
-next_action: Implement and preserve scoped physical transaction source, reviewed schema/pin/compatibility/rollback
-  and outcome; then verified required actual Linux transaction/mapping/negative/cut/fallback
-  plus original folder/Docs/effect qualification. Debug actual failures, then Docs
-  rebind/C4.
-verification: Protected lookup actual126 Linux PASS verified; bounded same-folder
-  native physical transaction source unit authorized, no live action or acceptance.
+next_action: Publish required actual Linux physical/mapping/current-role/cut/negative
+  and original folder/native/Docs/effects qualification INTENT; trigger one fresh
+  source-linked request, record real STARTED and inspect same jobs. Debug any actual
+  errors before Docs rebind/C4.
+verification: Native same-folder transaction16-path source saved/readback, actual25new+21mapping
+  Linux cases pending; C1-C4 unaccepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0147
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
