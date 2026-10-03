@@ -5,23 +5,22 @@ check: RP-027.C4
 attempt: A001
 phase: STAGED_RECONFIGURATION_C4_FRESH_NATIVE_ADMISSION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 923741e9027a2fa6e0289f42cfd59149f8c33d3d
+source_commit: 96b95bae1a06c06de5e08fc538522d3f24d99e5c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0199
+last_verified_event: RP-027-A001-0200
 last_completed: RP-026
-next_action: Implement/review/preserve exact source unit and publish remotely verifiedOUTCOME
-  before actualnew scoped qualification. Continue inspecting immutable-source197 jobs
-  independently; cloudACTIVEadoption/Folder/rootless/runtimeGUIhelpercomposition remain
-  after admissionqualification.
-verification: Implement only own fresh-native admission + conformance/native tests/docs/A016/workflow;
-  source preserve/readbackOUTCOME before tests. Independent197 immutable budgetjobs
-  pending; allC1-C4held; cloudACTIVEadoption/fullcompositionremain.
+next_action: Publish new scoped qualification INTENT, actual default23new admission/native
+  first; onlyifPASS original295/defaultcollection/Linux51+107+265 qualification, source-linked
+  STARTED/artifacts and exactOUTCOME. Inspect immutable197 package jobs independently;
+  cloudACTIVEadoption then fullFolder/rootless/runtimeGUIhelperremain.
+verification: Exact8path newadmission source preserved/readback; tests0. Separate
+  INTENT actual23first/default295/collection/Linux423, inspect197 immutablepackagejobs
+  independently; allC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0197
-- RP-027-A001-0199
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
