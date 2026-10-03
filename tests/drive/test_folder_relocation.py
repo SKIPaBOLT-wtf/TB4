@@ -211,6 +211,39 @@ def test_actual_candidate_environment_failure_prevents_native_intent_and_shared_
     assert s.relocation.context.store.read() is None and s.ctx.leadership.backend.read().raw==before
 
 
+@pytest.mark.parametrize("fault",["other-unknown","duplicate-digest","sender-owner","sender-epoch","native-election"])
+def test_own_unknown_never_allows_other_work_changed_sender_or_pending_native_election(value,monkeypatch,fault):
+    s=value;v=s.value;s.relocation.begin(owner_authorized=True)
+    start=s.ctx.effects.start;calls=[];captured=[];profile=v.setup.store.read()
+    def inject(*args,**kwargs):
+        assert start(*args,**kwargs)=="CONFIRMED"
+        cp=s.ctx.checkpoint.read();backend=s.ctx.leadership.backend
+        if fault=="native-election":
+            leader=s.ctx.leadership
+            plan=leader.renew(leader.observe(s.ctx.clock()),cp.grant,transition=tid("folder-pending-renew"))
+            assert s.ctx.checkpoint.replace(cp,replace(cp,election=plan))
+        else:
+            snap=backend.read();doc=snap.document();value=ledger(doc["records"][SLOT])
+            own=value["entries"][Action.IDENTITY.value]
+            if fault in {"other-unknown","duplicate-digest"}:
+                value["entries"][Action.SSH.value]={**own,"operation_id":
+                    own["operation_id"] if fault=="duplicate-digest" else "b"*64}
+            elif fault=="sender-owner":own["owner"]=ACTORS[1]
+            else:own["epoch"]+=1
+            doc["records"][SLOT]=changed_row(doc["records"][SLOT],value)
+            assert backend.compare_replace(snap,doc)==WriteResult.ACCEPTED
+        captured.append(backend.read().raw)
+        return "CONFIRMED"
+    monkeypatch.setattr(s.ctx.effects,"start",inject)
+    monkeypatch.setattr(s.native,"run",lambda *a:calls.append(a))
+    with pytest.raises(ConfigurationError):s.relocation.advance(owner_authorized=True)
+    assert len(captured)==1 and s.ctx.leadership.backend.read().raw==captured[0]
+    assert not calls and v.port.root.exists() and not v.target.exists()
+    assert v.setup.store.read()==profile and s.relocation._state()[0]["dispatch"]=="PREPARED"
+    assert s.ctx.effects.receipt(Action.IDENTITY)["outcome"]=="UNKNOWN"
+    with pytest.raises(ConfigurationError):s.relocation.inspect()
+
+
 def test_shared_folder_plan_cannot_be_mutated_or_erased_by_an_effect_transition(value):
     s=value;s.relocation.begin(owner_authorized=True)
     state,_=s.relocation._state();assert s.relocation._plan(state)=="CONFIRMED"

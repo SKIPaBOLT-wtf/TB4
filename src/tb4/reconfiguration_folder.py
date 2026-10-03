@@ -67,9 +67,10 @@ def _role(ctx,pin,document,*,reserved,revision,allow_operation=None,require_owne
     snapshot=FolderSnapshot(ctx.leadership.backend.binding,revision,exchange_encoded(document),None)
     facts=inspect_work(snapshot,setup_payload=ctx.setup._payload,checkpoint=checkpoint)
     entry=value["entries"].get(Action.IDENTITY.value)
+    unknown={action:fact for action,fact in value["entries"].items() if fact["outcome"]=="UNKNOWN"}
     allowed=(allow_operation is not None and entry is not None and entry["operation_id"]==allow_operation
-             and entry["outcome"]=="UNKNOWN")
-    require(all(allowed and ((b.kind=="SHARED_EFFECT_UNKNOWN" and b.identity==Action.IDENTITY.value)
+             and unknown=={Action.IDENTITY.value:entry})
+    require(all(allowed and ((b.kind=="SHARED_EFFECT_UNKNOWN" and b.identity==allow_operation)
             or (b.kind=="SHARED_UNKNOWN" and b.identity==SLOT)) for b in facts.blockers),
             "FOLDER_RELOCATION_UNRESOLVED")
     return checkpoint,config,handle,value,owns
@@ -176,6 +177,10 @@ class FolderRelocation:
                 and stable_records(document)==state["records_sha256"]
                 and digest(handle.record())==self._intent(state)["handle_sha256"],"FOLDER_RELOCATION_CHANGED")
         if planned:require(value.get("folder_plan")==self._intent(state),"FOLDER_RELOCATION_PLAN")
+        entry=value["entries"].get(Action.IDENTITY.value)
+        if entry is not None and entry["outcome"]=="UNKNOWN":
+            require(entry==dict(owner=state["installation_id"],epoch=state["epoch"],
+                operation_id=state["operation_id"],outcome="UNKNOWN"),"FOLDER_RELOCATION_SENDER_CHANGED")
         if owner:require(checkpoint.grant.epoch==state["epoch"],"OWNER_SUPERSEDED")
         return checkpoint,owns
 
