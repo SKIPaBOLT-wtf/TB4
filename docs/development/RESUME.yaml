@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_REPAIR_SAVED
+phase: STAGED_RECONFIGURATION_C3_SHARED_ROOT_PLAN_REPEAT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5b9c339e06d91822c594dca6f276f6634dd2dc48
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0095
+last_verified_event: RP-027-A001-0096
 last_completed: RP-026
-next_action: Publish/read back same36-target839-case repeat INTENT with explicit1800s
-  task-only runner bound and unique fresh absent owned fixtures/output; record actual
-  STARTED/full result before dependent adoption/folder/rebind/C4 source.
-verification: Two-path deny-only/current baseline source saved;36-target839-case bounded
-  repeat pending, final C1-C4 held.
+next_action: Prepare exact task-only1800s runner and launch same36-target once after
+  remote INTENT readback; observe same session and publish full actual OUTCOME before
+  any dependent source.
+verification: Same36-target839-case shared-plan repeat with1800s task-only bound pending;
+  final C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0096
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
