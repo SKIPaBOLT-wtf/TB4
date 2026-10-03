@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_PROVEN_NO_SEND_SOURCE
+phase: STAGED_RECONFIGURATION_C3_PROVEN_NO_SEND_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 54a628583ba33cf4d2454049ed1f243d21c35088
+source_commit: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0075
+last_verified_event: RP-027-A001-0076
 last_completed: RP-026
-next_action: Perform bounded source-only unit; preserve exact owned files and publish
-  source-linked OUTCOME/readback before expanded synthetic/native test INTENT.
-verification: 791 predicates qualified; native proven no-send source pending, no check
-  accepted.
+next_action: Publish/read back exact expanded34-target test INTENT retaining original791
+  predicates, launch once fresh absent owned WindowsX64 native/offscreenQt fixtures;
+  record complete real session/result/defects before repair or next source.
+verification: Actual proven-no-send settlement/retry source saved; expanded34-target
+  qualification pending, no C1-C4 accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0075
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
