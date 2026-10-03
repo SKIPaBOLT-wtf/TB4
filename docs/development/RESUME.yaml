@@ -3,23 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_ADMISSION_CREDENTIAL_FIXTURE_SOURCE
+phase: STAGED_RECONFIGURATION_C4_FRESH_NATIVE_ADMISSION_REQUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 14a53a8c8ab5903282cd23e4f428e2b26cda4b25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0204
+last_verified_event: RP-027-A001-0205
 last_completed: RP-026
-next_action: Publish scoped actualdefault23requalification INTENT; onlyifnewallPASS
-  original295/defaultcollection/Linuxrequest12 actual423/sourceSTARTED terminalOUTCOME.
-  Continue sameimmutable197 budgetjobs independent; thencloudACTIVEadoption/fullcomposition.
-verification: Exactone-file/two-line installation/enroll fixture source preserved/readback;
-  tests0. Separate actual23 first then295/defaultwholecollection/Linux423 onlyifPASS,
-  allC1-C4held; inspect197independentjobs.
+next_action: Run23newactualdefaultWindows first; onPASS unchanged295/collection/Linuxrequest12
+  and actualSTARTED/sourcequalifiedOUTCOME; onfailure preserveexactnewDEF/checkpoint
+  beforeboundedrepair. Inspect197 immutablebudgetpackagejobs independently. Then cloudACTIVEadoption
+  source/fullcomposition.
+verification: Exact14a53a8 default23 correctedfixture first; onlyPASS unchanged295/defaultcollection/Linuxrequest12
+  423 with STARTED/terminal artifacts; source96admission unchanged. Independent197
+  package jobs and allfinalholds remain.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0197
+- RP-027-A001-0205
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
