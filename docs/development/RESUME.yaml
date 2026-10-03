@@ -7,20 +7,18 @@ phase: STAGED_RECONFIGURATION_C4_ACTIVE_ADOPTION_REGRESSION_PLATFORM_QUALIFICATI
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6d061a3af4c31e72fbc1c806ff04d66bfc89f80e
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0218
+last_verified_event: RP-027-A001-0219
 last_completed: RP-026
-next_action: Inspect exact local original/affected result and same required Linux
-  push/PR jobs; preserve reached terminal outputs and artifacts. Full/platform same
-  immutable source continues independently, do not rerun or substitute earlier source.
-  No new dependent source until local/collection/required Linux allPASS remotelyrecorded.
-verification: 218 exact6d source targeted30PASS/defaultcollect2939PASS; actuallocaloriginalsession75008
-  +requiredLinux37126858581/37126855823 pending; CI/Desktopcurrentimmutable6d ongoing;
-  allC1-C4held.
+next_action: Publish explicit independent immutable6d CI/Desktop remainder inspection
+  INTENT retaining same existing runIDs, then source INTENT for actual retained-root/rootless
+  and Folder publication/profile/admission composition; allacceptanceheld.
+verification: "219 scoped6d30/436/default2939/bothLinux453PASS qualified; existingCI/Desktopsame6dnotfinished\u2192\
+  nextspecificsame-runinspectionINTENT. Recordedindependencepermitsretained-root/Folder\
+  \ source afteritsINTENT, allC1-C4held."
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0217
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
