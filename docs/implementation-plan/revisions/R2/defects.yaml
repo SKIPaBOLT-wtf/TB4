@@ -4672,12 +4672,14 @@ defects:
         denial-only current-plan collision preflight before unchanged Candidate.require_validated
         may project a deterministic target conflict without relaxing C1/C2.
       failing_source: afbc0df905d2351c25dc7beb399c45e4fbf22a54
-      passing_source: null
+      passing_source: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualified-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualification.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4707,6 +4709,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
+    - id: full-original839-repaired-source-qualified
+      claim: Full same36-target original839-case WindowsX64 native/offscreenQt run:835PASS/4Linux-onlyskip,exit0,785.144s.
+        Original different-target conflict/same-target C1-C2 refusal/live snapshot/native
+        cuts/max129-budget assertions reached without guard/test weakening. Defect
+        remains OPEN pending final all4checks/platforms.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualified-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualification.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -4727,6 +4738,7 @@ defects:
       inspect source/current snapshot provenance before minimal repair; no guard weakened.
       Mandatory final C1-C4 held. Bounded exact-source diagnostic proves the call
       order/baseline cause; no existing resolution/metadata guard relaxation justified.
+      Full original839-case qualification supports repair; final C1-C4 remains held.
     legacy_record: null
   DEF-067:
     title: Partial root metadata-witness fixture compares a stale document reference
@@ -4752,12 +4764,14 @@ defects:
         before/after inspector and stale pointer; no SDK/shared mutation from refused
         inspection may have occurred.
       failing_source: afbc0df905d2351c25dc7beb399c45e4fbf22a54
-      passing_source: null
+      passing_source: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualified-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualification.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4786,6 +4800,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
+    - id: full-original839-repaired-source-qualified
+      claim: Full same36-target original839-case WindowsX64 native/offscreenQt run:835PASS/4Linux-onlyskip,exit0,785.144s.
+        Original different-target conflict/same-target C1-C2 refusal/live snapshot/native
+        cuts/max129-budget assertions reached without guard/test weakening. Defect
+        remains OPEN pending final all4checks/platforms.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualified-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualification.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -4806,6 +4829,7 @@ defects:
       inspect source/current snapshot provenance before minimal repair; no guard weakened.
       Mandatory final C1-C4 held. Bounded exact-source diagnostic proves the call
       order/baseline cause; no existing resolution/metadata guard relaxation justified.
+      Full original839-case qualification supports repair; final C1-C4 remains held.
     legacy_record: null
   DEF-068:
     title: Root-plan denial preflight reads global.summary at authority document top
@@ -4836,6 +4860,8 @@ defects:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualified-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualification.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4870,6 +4896,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-short-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-short-result.md
+    - id: full-original839-repaired-source-qualified
+      claim: Full same36-target original839-case WindowsX64 native/offscreenQt run:835PASS/4Linux-onlyskip,exit0,785.144s.
+        Original different-target conflict/same-target C1-C2 refusal/live snapshot/native
+        cuts/max129-budget assertions reached without guard/test weakening. Defect
+        remains OPEN pending final all4checks/platforms.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualified-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualification.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -4889,5 +4924,6 @@ defects:
     resolution_evidence: []
     notes: Actual repeat failure preserved; counts are not acceptance and no later
       assertion inferred. Existing DEF066/067 repairs remain unqualified. No provider/live
-      changes or guard weakening.
+      changes or guard weakening. Full original839-case qualification supports repair;
+      final C1-C4 remains held.
     legacy_record: null
