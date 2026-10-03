@@ -16,7 +16,7 @@ from tb4.desktop.reconfiguration import CandidateController
 from tb4.private_settings import SettingsError
 from tb4.reconfiguration_candidate import Candidate, SCHEMA, SCHEMA_SHA256, seed
 from reconfiguration_candidate_support import system
-from test_credential_contract import FixtureStore, TARGET, TRUST
+from tests.security.test_credential_contract import FixtureStore, TARGET, TRUST
 
 
 def test_original_complete_payload_and_history_retained_with_one_authority(capsys):

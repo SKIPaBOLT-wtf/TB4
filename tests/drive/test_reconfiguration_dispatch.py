@@ -5,7 +5,7 @@ import pytest
 
 from tb4.configuration_contract import ConfigurationError
 from tb4.watchdog.leadership_runtime import Action, NativeWatchdogRuntime, Work
-from reconfiguration_support import configure
+from tests.reconfiguration_support import configure
 from test_native_watchdog_startup import setup  # noqa: F401 - actual fixture
 from test_native_leadership import clock, tid
 

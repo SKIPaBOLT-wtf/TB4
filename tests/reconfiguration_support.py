@@ -9,7 +9,7 @@ from tb4.exchange_layout import Capacity, empty_document
 from tb4.private_settings import PrivateSettings
 from tb4.timing_contract import TimingProfile
 from tests.security.test_private_settings import MemoryNative
-from test_native_docs_transport import BINDING, DOMAIN, WireStore
+from tests.drive.test_native_docs_transport import BINDING, DOMAIN, WireStore
 
 CANARY = "SYNTHETIC_PRIVATE_RECONFIGURATION_CANARY"
 TRANSITION = "c" * 64

@@ -14,9 +14,9 @@ from tb4.private_settings import PrivateSettings
 from tb4.reconfiguration_evidence import ProtectedEvidence
 from tb4.reconfiguration_inspection import inspect
 from tb4.watchdog.leadership_runtime import Action, Checkpoint, Receipt
-from reconfiguration_support import CANARY, TRANSITION, configure, image, setup
+from tests.reconfiguration_support import CANARY, TRANSITION, configure, image, setup
 from tests.security.test_private_settings import MemoryNative
-from test_native_docs_transport import BINDING, DOMAIN, WireStore
+from tests.drive.test_native_docs_transport import BINDING, DOMAIN, WireStore
 
 
 def test_closed_marker_schema_matches_runtime_and_legacy_absence():

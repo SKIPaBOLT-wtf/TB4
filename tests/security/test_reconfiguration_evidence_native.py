@@ -11,8 +11,8 @@ from tb4.exchange_layout import Capacity, empty_document, slots
 from tb4.reconfiguration_evidence import ProtectedEvidence
 from tb4.reconfiguration_inspection import inspect
 from tb4.watchdog.leadership_runtime import Checkpoint
-from reconfiguration_support import TRANSITION, image, setup
-from test_native_docs_transport import DOMAIN
+from tests.reconfiguration_support import TRANSITION, image, setup
+from tests.drive.test_native_docs_transport import DOMAIN
 from test_private_settings_native import fixture, protect_fixture  # noqa: F401
 
 pytestmark = pytest.mark.skipif(sys.platform not in {"win32", "linux"}, reason="native Windows/Linux64")
