@@ -7,12 +7,12 @@ phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_VALID_BUDGET_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 28952a9f858985905f0f8b0702effca4c76af019
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0173
+last_verified_event: RP-027-A001-0174
 last_completed: RP-026
-next_action: Execute27-case default Windows boundary; publish actual outcome on failure,
-  or continue authorized same-source181/collection/Linux request7 before exact outcome.
-verification: Source28952 validbudget fixture ready, fresh default27 then181/collection/actualLinux
-  qualification declared, allC1-C4 held.
+next_action: Inspect the same Windows181 and source-linked Linux51/107/181 jobs; preserve
+  exact terminal results/failures and artifacts before any C4 source unit.
+verification: 28952 Windows27 pass, defaultcollection2825; same-source Windows181/Linux51/107/181+fullplatform
+  actualstarted, allchecksheld.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
