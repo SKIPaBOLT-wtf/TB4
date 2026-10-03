@@ -176,7 +176,8 @@ class ProvenNoDispatchSettlement:
 
     def _proof(self, proof, *, reserved):
         from .reconfiguration_roots import DocsRootMoves, RootRevocation
-        require(type(proof) is RootRevocation and type(proof._origin) is DocsRootMoves,
+        from .reconfiguration_root_resume import ResumedDocsRootMoves
+        require(type(proof) is RootRevocation and type(proof._origin) in (DocsRootMoves,ResumedDocsRootMoves),
                 "CONFIGURATION_ROOT_REVOCATION_REQUIRED")
         roots = proof._origin
         roots.require_revocation(proof)

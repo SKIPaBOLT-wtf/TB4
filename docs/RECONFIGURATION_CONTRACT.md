@@ -157,3 +157,14 @@ plan receipt never arms SDK. Fresh actual current-role partial-root facts read o
 the exact original fixed objects under old or shared-target unique after metadata,
 with actual existing blockers and public counts. No old host/WAL/ACK or READY/
 routing grant; ordinary full first-run verification still rejects partial roots.
+
+[A-009](implementation-plan/revisions/R2/amendments/RP-027/A-009-current-role-partial-plan-adoption.md)
+adds actual current-role continuation from fresh zero-blocker ordered partial
+facts and exact terminal progress receipt. Its immutable native evidence and
+separate closed current-installation WAL preserve the original main/work/fixed
+Doc/tab/domain. The concrete resumed controller reuses the existing exclusive
+PREPARED/INVOKING/send/inspect/recovery paths for newly prepared BEFORE remainder;
+old stores are not inputs, and ambiguous/AFTER operations are never reissued.
+Actual current prefix/profile/source/native/role/plan/work checks remain mandatory.
+Native evidence and WAL cuts promote only the exact protected frame; first-run,
+same-authority rebind and final C4 admission remain separately qualified.
