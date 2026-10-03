@@ -193,3 +193,14 @@ reads. Ambiguous/BEFORE recovery never resends. Actual current-role same-inode
 AFTER settlement preserves original receipt identity without old stores or ACKs.
 Source-only evidence accepts no check or final routing activation. Docs rebind,
 final configuration/pointer/descriptor/epoch admission and common gates remain.
+
+[A-013](implementation-plan/revisions/R2/amendments/RP-027/A-013-post-root-first-run-candidate.md)
+adds the protected post-Docs-root first-run candidate. Actual current-role shared
+AFTER, compatible source/native/epoch/work proofs precede separate STAGING,
+immutable full original archive and cache-free target-storage seed. The existing
+actual Prerequisites/CommissionedStorage revalidates every use. Pending recovery
+promotes only the same exact protected frame; old host/candidate/WAL acknowledgements
+are unnecessary. The original profile/shared authority/history remain. Named
+candidate-schema definitions retain its original top-level contract and 17-file
+pin limit. Final ACTIVE publication, local active profile/admission and Folder/
+rootless/runtime/GUI/helper composition are separately required; no check accepted.

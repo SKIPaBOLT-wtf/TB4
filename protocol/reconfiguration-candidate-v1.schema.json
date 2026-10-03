@@ -224,5 +224,389 @@
         "STAGED"
       ]
     }
+  },
+  "$defs": {
+    "postRootCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "kind",
+        "installation_id",
+        "transition_id",
+        "configuration_revision",
+        "base_setup_revision",
+        "base_setup_sha256",
+        "seed_sha256",
+        "authority",
+        "bindings",
+        "pin",
+        "phase",
+        "storage",
+        "epoch",
+        "records_sha256",
+        "summary_sha256"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "RECONFIGURATION_POST_ROOT_CANDIDATE"
+        },
+        "installation_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "transition_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "configuration_revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "base_setup_revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "base_setup_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "seed_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "authority": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "mode",
+                "binding"
+              ],
+              "properties": {
+                "mode": {
+                  "const": "NATIVE_DOCS"
+                },
+                "binding": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "document_id",
+                    "tab_id",
+                    "domain_id"
+                  ],
+                  "properties": {
+                    "document_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 256,
+                      "pattern": "^[A-Za-z0-9_-]+$"
+                    },
+                    "tab_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 256,
+                      "pattern": "^[A-Za-z0-9_-]+$"
+                    },
+                    "domain_id": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "bindings": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "original",
+            "profile",
+            "archive",
+            "transaction",
+            "rebind",
+            "checkpoint",
+            "effects",
+            "maintenance",
+            "baseline"
+          ],
+          "properties": {
+            "original": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "profile": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "archive": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "transaction": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "rebind": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "checkpoint": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "effects": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "maintenance": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "baseline": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "pin": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "commit",
+            "profile",
+            "policy_digest",
+            "runtime",
+            "instructions",
+            "files"
+          ],
+          "properties": {
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "profile": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{0,63}$"
+            },
+            "policy_digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "runtime": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "build_commit",
+                "protocol",
+                "capabilities"
+              ],
+              "properties": {
+                "build_commit": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{40}$"
+                },
+                "protocol": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "capabilities": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "instructions": {
+              "type": "string"
+            },
+            "files": {
+              "type": "object",
+              "minProperties": 2,
+              "maxProperties": 17,
+              "additionalProperties": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        },
+        "phase": {
+          "enum": [
+            "STAGING",
+            "STAGED"
+          ]
+        },
+        "storage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "spec",
+            "authority",
+            "root_transition"
+          ],
+          "properties": {
+            "spec": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "root_id",
+                "domain_id",
+                "setup_id",
+                "bootstrap_actor",
+                "mode",
+                "capacity"
+              ],
+              "properties": {
+                "root_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9_-]{1,128}$"
+                },
+                "domain_id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+                },
+                "setup_id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "bootstrap_actor": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+                },
+                "mode": {
+                  "const": "NATIVE_DOCS"
+                },
+                "capacity": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "devices",
+                    "ingress",
+                    "history",
+                    "quarantine"
+                  ],
+                  "properties": {
+                    "devices": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 64
+                    },
+                    "ingress": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 16
+                    },
+                    "history": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 128
+                    },
+                    "quarantine": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 32
+                    }
+                  }
+                }
+              }
+            },
+            "authority": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "object_id",
+                "seal",
+                "tab_id"
+              ],
+              "properties": {
+                "object_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9_-]{1,128}$"
+                },
+                "seal": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "tab_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9_-]{1,128}$"
+                }
+              }
+            },
+            "root_transition": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "epoch": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "records_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "summary_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "postRootArchive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "kind",
+        "installation_id",
+        "transition_id",
+        "base_setup_revision",
+        "base_setup_sha256",
+        "profile"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "RECONFIGURATION_POST_ROOT_ORIGINAL_PROFILE"
+        },
+        "installation_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "transition_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "base_setup_revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "base_setup_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "profile": {
+          "type": "object"
+        }
+      }
+    }
   }
 }
