@@ -9,6 +9,7 @@ from uuid import UUID
 from tb4.commissioning_checks import CommissionedStorage,Prerequisites
 from tb4.commissioning_state import Setup,Reconciliation
 from tb4.drive.commissioning_folder import FolderCommissioning
+from tb4.desktop.setup_storage import BoundFolderSelection
 from tb4.drive.leadership import Leadership
 from tb4.private_settings import native_settings
 from tb4.reconfiguration_active_adoption import ActiveAdoptionContext
@@ -46,7 +47,11 @@ def system(context,tmp_path,*,moved=True):
     choices["network_scope"]=["198.51.100.0/24"]
     # The original path is private input, not a shared path copied from the old host.
     choices["storage_request"]=dict(mode=port.mode,location=str(port.root))
+    intended=choices.pop("storage")
     model.choose(choices)
+    selected=BoundFolderSelection(port)(model.private_choices())
+    assert selected.record==intended and selected.verifier.verify(selected.record)
+    model.choose(dict(storage=selected.record))
     model.perform_once("f"*64,lambda:None,owner_authorized=True)
     model.reconcile("f"*64,lambda _:Reconciliation.CONFIRMED)
     leader=Leadership(port.authority(former.value.handle),actor=model.installation_id,
