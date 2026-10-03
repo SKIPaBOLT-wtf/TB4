@@ -1,0 +1,5 @@
+# Adoption protocol/profile byte consistency source
+
+Source `c64fc64258fca7846d71f70ed725326ec2e83edd`, local commit `130d14ee0acaa0e7f5c14b02247c33097d7aa7ad`. Exactly four paths follow the original ten-path A009 source: new protocol explicit LF attribute, resumed base profile hash/fresh comparison use existing canonical UTF8 commissioning digest, actual valid local Unicode device display_name regression, A009 explanation. Native binding/private frame digest and existing original root/candidate/first-run guards are unchanged; schema digest remains `aede9105fbb41f1e31629068811d198910902fcb715095938479b8cfe7f8a5e5`.
+
+Source/diff/privacy/readback only, no application import/test/build/live mutation. Next: exact new2 adoption/native files plus original8 root-related files, excluding only the costly previously-qualified max129 capacity predicate as declared partial regression. Preserve full actual collection/status/source/platform/exit/time/failures; no final check acceptance until all required C1-C4/common/platform/product behavior.

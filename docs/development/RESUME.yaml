@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ADOPTION_SOURCE_BYTE_CONSISTENCY
+phase: STAGED_RECONFIGURATION_C3_ADOPTION_BYTE_CONSISTENCY_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: e3b472d717a2647af73f0c00874054f27f19940a
+source_commit: c64fc64258fca7846d71f70ed725326ec2e83edd
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0113
+last_verified_event: RP-027-A001-0114
 last_completed: RP-026
-next_action: Perform4-path source consistency update and preserve/readback source
-  OUTCOME, then publish exact new2-file and original8-root related test INTENT excluding
-  only previously-qualified max129 fixture as partial regression.
-verification: A009 source saved; exact LF/UTF8 profile codec follow-up authorized
-  before runtime qualification.
+next_action: Publish/readback one exact10-target new adoption/native plus original8-file
+  root/inherited/no-send/shared-plan/native regression INTENT. Exclude only previously-qualified
+  costly129-object predicate as explicit partial scope; retain all original100 related
+  predicates and all newly collected cases/source/exit/failures/skips. Final full
+  broad/Linux/native/Qt/package gates remain.
+verification: A009 source+LF/UTF8 follow-up saved untested; exact targeted adoption/native/original
+  qualification next.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0113
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
