@@ -7,15 +7,14 @@ phase: STAGED_RECONFIGURATION_C4_FRESH_NATIVE_ADMISSION_REQUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 14a53a8c8ab5903282cd23e4f428e2b26cda4b25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0205
+last_verified_event: RP-027-A001-0206
 last_completed: RP-026
-next_action: Run23newactualdefaultWindows first; onPASS unchanged295/collection/Linuxrequest12
-  and actualSTARTED/sourcequalifiedOUTCOME; onfailure preserveexactnewDEF/checkpoint
-  beforeboundedrepair. Inspect197 immutablebudgetpackagejobs independently. Then cloudACTIVEadoption
-  source/fullcomposition.
-verification: Exact14a53a8 default23 correctedfixture first; onlyPASS unchanged295/defaultcollection/Linuxrequest12
-  423 with STARTED/terminal artifacts; source96admission unchanged. Independent197
-  package jobs and allfinalholds remain.
+next_action: Inspect same original295Windows run and actualLinuxPR/push recordedjobs/logs/artifacts;
+  publish exactqualificationOUTCOMEbefore cloudACTIVEadoption source. Inspect197sameimmutable
+  DesktopWindows completion and preserve separate budget/fullpackageOUTCOME.
+verification: ExactWindows23PASS/wholecollection2909; inspectsameWindows295/Linuxruns37122851826/37122849283
+  terminal423/artifacts; qualificationOUTCOMEbefore cloudACTIVEadoption. Inspectindependent197samebudgetfull/package
+  jobs.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
