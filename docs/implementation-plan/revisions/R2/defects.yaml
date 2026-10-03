@@ -4648,3 +4648,103 @@ defects:
       Exact811-case Windows repeat supports the fixture repair; final C1-C4 rechecks
       remain held.
     legacy_record: null
+  DEF-066:
+    title: Different root-plan collision reaches prior resolution invalidation before
+      target-specific refusal
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: Second differing-target plan fails CONFIGURATION_RESOLUTION_CHANGED
+        instead of ROOT_PLAN_CHANGED. Shared root_plan changed the protected work
+        summary after original resolution. Inspect exact call order/fingerprint; a
+        denial-only current-plan collision preflight before unchanged Candidate.require_validated
+        may project a deterministic target conflict without relaxing C1/C2.
+      failing_source: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: root-plan-collision-preflight-order
+      claim: Second differing-target plan fails CONFIGURATION_RESOLUTION_CHANGED instead
+        of ROOT_PLAN_CHANGED. Shared root_plan changed the protected work summary
+        after original resolution. Inspect exact call order/fingerprint; a denial-only
+        current-plan collision preflight before unchanged Candidate.require_validated
+        may project a deterministic target conflict without relaxing C1/C2.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+    repairs: []
+    issue: null
+    regression_test: Retain all original791 predicates, complete all19 no-send cases
+      and actual no-SDK/UNKNOWN/profile assertions; final mandatory C1-C4 rechecks.
+    resolution_evidence: []
+    notes: New unaccepted C3 qualification failure. Preserve exact full result and
+      inspect source/current snapshot provenance before minimal repair; no guard weakened.
+      Mandatory final C1-C4 held.
+    legacy_record: null
+  DEF-067:
+    title: Partial root metadata-witness fixture compares a stale document reference
+      after legitimate setup CAS
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: metadata-witness case performs one legitimate Root.advance CAS during
+        fixture setup after capturing provider.store.document. Before copy may reference
+        the old object replaced by that CAS. Compare actual live document immediately
+        before/after inspector and stale pointer; no SDK/shared mutation from refused
+        inspection may have occurred.
+      failing_source: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: root-plan-negative-stale-fixture-snapshot
+      claim: metadata-witness case performs one legitimate Root.advance CAS during
+        fixture setup after capturing provider.store.document. Before copy may reference
+        the old object replaced by that CAS. Compare actual live document immediately
+        before/after inspector and stale pointer; no SDK/shared mutation from refused
+        inspection may have occurred.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+    repairs: []
+    issue: null
+    regression_test: Retain all original791 predicates, complete all19 no-send cases
+      and actual no-SDK/UNKNOWN/profile assertions; final mandatory C1-C4 rechecks.
+    resolution_evidence: []
+    notes: New unaccepted C3 qualification failure. Preserve exact full result and
+      inspect source/current snapshot provenance before minimal repair; no guard weakened.
+      Mandatory final C1-C4 held.
+    legacy_record: null

@@ -1,0 +1,7 @@
+# RP-027.C3 A001 — shared root-plan initial qualification failures
+
+Source `afbc0df905d2351c25dc7beb399c45e4fbf22a54`, checkout `b06e3e44a7a252500176cd8653e43a052421bb83`, actual session14077.36 targets/838 predicates:832PASS,2FAILURE,0ERROR,4Linux-onlySKIPPED,exit1,873.154s. Original811 retained passing/skipped;25 of27 new pass. [Full sanitized cases](shared-root-plan-first-cases.json). Actual full129-object synthetic commissioning/plan/facts budget case passes, measured actual JUnit727.817s; no speed guarantee. All fixtures fresh owned absent native WindowsX64/offscreenQt, SDK/clock/topology synthetic, no live/installed provider action, raw logs/XML/paths private.
+
+Differing target: CONFIGURATION_RESOLUTION_CHANGED precedes expected ROOT_PLAN_CHANGED. Suspect original resolved work fingerprint includes summary changed by the first root_plan; inspect exact call order before denial-only target preflight. Metadata-witness: negative compares differing document objects after legitimate setup Root.advance; suspect old pointer captured before its CAS versus actual document read immediately before inspection. Causes remain unproved; do not infer later no-SDK/preservation assertions.
+
+DEF066/067 OPEN and final C1-C4 held. Next: exact bounded two-probe call-order/current-vs-stale-snapshot diagnosis; minimal repair/repeat before adoption/folder/rebind/C4/final platform/GUI/package gates. The same target repeat may need a documented larger bounded harness deadline due observed873.154s runtime; no action replay or test predicate weakening.
