@@ -44,6 +44,9 @@ forged/stale facts, native aliases/cursor skips/order, and actual native evidenc
 begin/invoking/terminal cuts. Windows and Linux/native/Qt/package/common gates
 remain required. Source-only evidence accepts no C1-C4 check.
 
-The new protocol file also requires the repository's explicit LF attribute
-before Windows fresh-checkout qualification; this source unit identifies that
-one-file follow-up instead of silently extending its ten-path scope.
+The new protocol file has the repository's explicit LF attribute for identical
+Windows/Linux pinned blob bytes. The resumed base-profile fingerprint uses the
+same canonical UTF8 exchange codec as Inspection, including valid Unicode local
+device names. Private frame encryption/native binding fingerprints remain
+unchanged. A separate recorded four-path consistency source unit follows the
+original ten-path implementation checkpoint before runtime qualification.

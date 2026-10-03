@@ -172,3 +172,17 @@ def test_another_current_role_takes_over_again_without_ack_and_adopted_old_sende
 def replace_flow(flow,leader):
     from types import SimpleNamespace
     return SimpleNamespace(**{**vars(flow),"leader":leader})
+
+
+def test_valid_unicode_current_local_profile_uses_actual_inspection_fingerprint_and_is_preserved():
+    from tb4.drive.commissioning import digest
+    s=system();s.roots.begin(owner_authorized=True);ctx=acquire_fallback(s.value)[2]
+    descriptor=ctx.setup.private_choices()["descriptor"]
+    descriptor["devices"][0]["display_name"]="synthetic Šiaurė Årø"
+    ctx.setup.choose({"descriptor":descriptor})
+    r=adopter(s,context=ctx);proof=r.inspector.inspect();profile=ctx.setup.store.read()
+    assert r.begin(proof,owner_authorized=True)=="MOVING"
+    assert r.context.store.read().payload["base_sha256"]==proof.inspection.setup_sha256==digest(ctx.setup._payload)
+    for _ in range(3):
+        assert r.advance(owner_authorized=True) in {"CONFIRMED","MOVED"}
+    assert r.verify_moved() and len(updates(s))==3 and ctx.setup.store.read()==profile

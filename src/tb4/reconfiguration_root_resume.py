@@ -20,7 +20,7 @@ from .reconfiguration_candidate import native_binding
 from .reconfiguration_effects import SLOT, ledger
 from .reconfiguration_evidence import EvidenceReceipt, ProtectedEvidence
 from .reconfiguration_inspection import inspect
-from .reconfiguration_maintenance import MaintenanceContext, hex64, sha
+from .reconfiguration_maintenance import MaintenanceContext, hex64
 from .reconfiguration_root_facts import PartialRootInspection
 from .reconfiguration_root_plan import matches_plan, references, root_plan, stable_records
 from .reconfiguration_root_settlement import InheritedRootSettlement
@@ -157,7 +157,7 @@ class ResumedDocsRootMoves(DocsRootMoves):
                 and pin_record(pin) == state["pin"], "CONFIGURATION_ROOT_INSTRUCTIONS")
         self.ctx.setup._fresh()
         require(self.ctx.setup.snapshot.revision == state["base_revision"]
-                and sha(self.ctx.setup._payload) == state["base_sha256"],
+                and digest(self.ctx.setup._payload) == state["base_sha256"],
                 "CONFIGURATION_ROOT_PROFILE_CHANGED")
         require(native_binding(self.context.evidence.store) == state["evidence_binding"],
                 "CONFIGURATION_ROOT_EVIDENCE")
@@ -238,7 +238,7 @@ class ResumedDocsRootMoves(DocsRootMoves):
         state = dict(schema_version=1,kind="RECONFIGURATION_DOCS_ROOT_RESUME",
             installation_id=self.ctx.setup.installation_id,transition_id=fresh.transition_id,
             configuration_revision=config["revision"],base_revision=self.ctx.setup.snapshot.revision,
-            base_sha256=sha(self.ctx.setup._payload),authority=asdict(fresh.snapshot.binding),
+            base_sha256=digest(self.ctx.setup._payload),authority=asdict(fresh.snapshot.binding),
             target_root=fresh.target_root,records_sha256=stable_records(fresh.snapshot.document()),
             objects=[{k:v for k,v in row.items() if k != "state"} for row in rows],
             index=index,pending=None,phase="MOVED" if index == len(rows) else "MOVING",
