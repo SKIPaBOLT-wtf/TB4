@@ -6613,3 +6613,52 @@ defects:
       functional adoption cases; full CI and both Desktop build/package gates pass.
       Status remains OPEN pending complete RP-027 C1-C4 acceptance.'
     legacy_record: null
+  DEF-091:
+    title: Current configuration admission accepts a stale Leadership timing profile
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: f7d283897eaef2ca521df99d45544dad2d07dd5e
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/stale-leadership-timing-diagnostic.json
+    proven_origin: null
+    reproduction:
+      procedure: Construct the existing synthetic promoted-profile admission fixture.
+        Keep protected/shared timing coherent; replace only Leadership.profile with
+        valid control_s7/lease_stale_s180. Observe release(), revision(), and a change
+        during the first-run environment callback. All three incorrectly return revision2;
+        release cases clear local maintenance. No shared write occurs.
+      failing_source: f7d283897eaef2ca521df99d45544dad2d07dd5e
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/stale-leadership-timing-diagnostic.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R04
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: The admission proof compares protected and shared timing but omits the
+        actual Leadership.profile used by runtime scheduling and leases.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/stale-leadership-timing-diagnostic.json
+    repairs: []
+    issue: null
+    regression_test: Planned release, per-use runtime and late-first-run mismatch
+      refusal; actual native preservation and existing stale/forced takeover tests.
+    resolution_evidence: []
+    notes: Independent diagnostic against unchanged A016 admission code while immutable
+      probe265 runs continue. Synthetic SDK/MemoryNative only, 7.302 seconds, no pytest
+      or native/live qualification. Expected BLOCKED, observed ADMITTED in all three
+      cases. Historical source of introduction has not been bisected; do not infer
+      a deployed incident. All RP027 C1-C4 remain unaccepted. Checkpoint candidate
+      initially failed RECORD_SCHEMA_INVALID because detected_in included prose; it
+      was corrected to the required RP-027.C4 ID. Failed local candidate retained;
+      no ref changed and no validation guard bypassed.
+    legacy_record: null
