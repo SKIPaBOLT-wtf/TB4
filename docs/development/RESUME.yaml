@@ -3,16 +3,15 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_CURRENT_ROLE_ADOPTION_TEST
+phase: STAGED_RECONFIGURATION_C3_CURRENT_ROLE_ADOPTION_TEST_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c64fc64258fca7846d71f70ed725326ec2e83edd
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0115
+last_verified_event: RP-027-A001-0116
 last_completed: RP-026
-next_action: Launch exact related10-file run once and record STARTED if running. Preserve
-  full actual OUTCOME/failures before bounded diagnosis/repair; on pass continue remaining
-  folder/rebind/C4 source under new verified intents.
-verification: A009 source ready for exact new/native and original100 related regression;
+next_action: Observe same LOCAL-SESSION-90212/unique report, publish full actual statuses/source/checkout/exit/time/failures
+  before dependent diagnosis/repair/source.
+verification: Actual adoption/native/original related regression running LOCAL-SESSION-90212;
   no result/check accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
