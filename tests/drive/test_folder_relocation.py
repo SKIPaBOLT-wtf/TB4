@@ -9,7 +9,7 @@ import pytest
 
 from tb4.commissioning_checks import CommissionedStorage
 from tb4.configuration_contract import ConfigurationError
-from tb4.drive.docs_authority import AuthorityError,WriteResult
+from tb4.drive.docs_authority import AuthorityError,WriteResult,validated
 from tb4.drive.folder_authority import DB,FolderStore,identity
 from tb4.private_settings import SettingsError
 from tb4.reconfiguration_effects import SLOT,ledger,changed_row,EffectMutation
@@ -87,8 +87,13 @@ def test_kernel_no_replace_rejects_destination_created_at_the_actual_syscall(val
     s.relocation.begin(owner_authorized=True)
     assert s.relocation.advance(owner_authorized=True)=="UNKNOWN"
     assert len(seen)==1 and v.port.root.exists() and (v.target/"retained-foreign").read_bytes()==b"synthetic foreign destination"
-    with pytest.raises(ConfigurationError):s.relocation.advance(owner_authorized=True)
-    assert len(seen)==1 and s.ctx.effects.receipt(Action.IDENTITY)["outcome"]=="UNKNOWN"
+    with pytest.raises(AuthorityError,match="HELPER_UNAVAILABLE"):
+        s.relocation.advance(owner_authorized=True)
+    # The protected mapped helper rejects contradictory roots. Read the exact
+    # original authority inode directly to verify the retained UNKNOWN fact.
+    _,raw=FolderStore(v.port._config()).read()
+    receipt=ledger(validated(raw,s.ctx.leadership.backend.binding)["records"][SLOT])["entries"][Action.IDENTITY.value]
+    assert len(seen)==1 and receipt["outcome"]=="UNKNOWN"
 
 
 @pytest.mark.parametrize("where",["begin","invoking","applied","settled"])
@@ -176,7 +181,7 @@ def test_actual_stale_first_cas_takeover_needs_no_old_host_and_settles_only_exac
 
 
 def test_force_arriving_after_preflight_is_refused_inside_the_actual_database_lock(value,monkeypatch):
-    s=value;v=s.value;original=FolderStore.connection;entered=[False];calls=[]
+    s=value;v=s.value;original=FolderStore.connection;entered=[False];calls=[];refusals=[]
     from tb4.drive.leadership import Leadership
     peer=Leadership(s.ctx.leadership.backend,actor=ACTORS[1],enrollment=ENROLLMENT)
     @contextmanager
@@ -198,9 +203,24 @@ def test_force_arriving_after_preflight_is_refused_inside_the_actual_database_lo
     monkeypatch.setattr(s.relocation.context.store,"_save_locked",armed)
     monkeypatch.setattr(FolderStore,"connection",raced)
     monkeypatch.setattr(s.native,"run",lambda *a:calls.append(a))
-    with pytest.raises(ConfigurationError,match="OWNER_SUPERSEDED"):
+    proof=s.relocation._proof
+    def verified(state,document=None,**kwargs):
+        try:return proof(state,document,**kwargs)
+        except ConfigurationError as error:
+            if document is not None:
+                refusals.append((str(error),state["dispatch"],
+                    document["records"]["global.force_request"]["body"]["request_id"],kwargs.get("sql_revision")))
+            raise
+    monkeypatch.setattr(s.relocation,"_proof",verified)
+    # The native port exposes an opaque error for exceptions from its body.
+    # Require the actual underlying held-SQL owner proof, not that outer code.
+    with pytest.raises(SettingsError,match="SETTINGS_STORE_UNAVAILABLE"):
         s.relocation.advance(owner_authorized=True)
+    assert len(refusals)==1 and refusals[0][:3]==("OWNER_SUPERSEDED","INVOKING",tid("last-folder-force"))
+    assert type(refusals[0][3]) is int and refusals[0][3]>=1
     assert entered[0] and not calls and v.port.root.exists() and not v.target.exists()
+    assert s.relocation._state()[0]["dispatch"]=="INVOKING"
+    assert s.ctx.effects.receipt(Action.IDENTITY)["outcome"]=="UNKNOWN"
 
 
 def test_actual_candidate_environment_failure_prevents_native_intent_and_shared_plan(value,monkeypatch):
