@@ -19,6 +19,7 @@ from tb4.reconfiguration_effects import SLOT,ledger,changed_row
 from tb4.reconfiguration_rebind import RemoteRebind,RebindContext,RebindMutation,SCHEMA,SCHEMA_SHA256
 from tb4.reconfiguration_root_plan import root_plan,references,stable_records
 from tb4.watchdog.leadership_runtime import Action
+from tb4.timing_contract import TimingProfile
 from reconfiguration_rebind_support import system,fallback,TARGET
 from reconfiguration_candidate_support import private
 from test_native_docs_transport import BINDING,wire_document
@@ -162,8 +163,10 @@ def large_plan():
     from tb4.drive.docs_authority import NativeDocsAuthority
     spec=SetupSpec("synthetic-source-root",BINDING.domain_id,tid("rebind-large"),ACTORS[0],"NATIVE_DOCS",Capacity(64,1,1,1))
     doc=json.loads(seed_document(spec,"Synthetic įrenginys",clock(220)))
+    doc["records"]["global.commissioning"]["body"]=spec.marker("STORAGE_READY")
     tx=tid("rebind-large-transition");doc["records"]["global.settings"]=dict(generation=1,operation_id=tx,retention="RETAINED",
-        body=dict(descriptor_state="VALIDATED",revision=1,configuration=dict(schema_version=1,revision=1,phase="MAINTENANCE",transition_id=tx)))
+        body=dict(descriptor_state="VALIDATED",revision=1,timing=asdict(TimingProfile()),
+            configuration=dict(schema_version=1,revision=1,phase="MAINTENANCE",transition_id=tx)))
     for index in range(64):
         refs={}
         for kind in ("input","output"):

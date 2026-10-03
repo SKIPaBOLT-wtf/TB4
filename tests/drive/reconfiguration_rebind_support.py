@@ -40,8 +40,8 @@ def system(*,root_store=None,rebind_store=None,move=True,**kwargs):
     roots=DocsRootMoves(RootContext(s.candidate,s.checker,root_store or private(106),TARGET))
     if move:
         assert roots.begin(owner_authorized=True)=="MOVING"
-        for _ in roots.old.spec.artifact_keys+("authority",):
-            assert roots.advance(owner_authorized=True)=="CONFIRMED"
+        for key in roots.old.spec.artifact_keys+("authority",):
+            assert roots.advance(owner_authorized=True)==("MOVED" if key=="authority" else "CONFIRMED")
         assert roots.inspect()=="MOVED"
     context=RebindContext(s.value.context,rebind_store or private(107))
     return SimpleNamespace(value=s.value,candidate=s.candidate,checker=s.checker,roots=roots,moves=moves,media=media,

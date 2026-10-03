@@ -13,6 +13,7 @@ from .drive.authority_transaction import OwnerGuard
 from .drive.commissioning import digest, object_id
 from .drive.commissioning_bootstrap import AuthorityHandle
 from .drive.commissioning_native import NativeCommissioning
+from .drive.docs_authority import AuthorityError
 from .drive.leadership import ClockSample, Grant
 from .exchange_layout import encoded
 from .reconfiguration_effects import Effects, EffectMutation, SLOT, changed_row, ledger
