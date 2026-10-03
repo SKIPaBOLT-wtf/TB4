@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_DIAGNOSTIC
+phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_HARNESS_FAILED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5b9c339e06d91822c594dca6f276f6634dd2dc48
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0099
+last_verified_event: RP-027-A001-0100
 last_completed: RP-026
-next_action: Execute bounded exact-source probe, publish proof and updated DEF068
-  origin before one-line records lookup source repair.
-verification: Repeat839 failed; exact source envelope diagnostic authorized, DEF068
-  suspected.
+next_action: Publish readback INTENT correcting only task diagnostic import path to
+  include repository root, then run same one-probe exact source once and publish actual
+  evidence before source repair.
+verification: Envelope diagnostic harness failed before fixture import; source cause
+  still unproven, no mutation/check accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0099
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
