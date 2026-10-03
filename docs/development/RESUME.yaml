@@ -3,23 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ADOPTION_FAILURE_ORIGINS_PROVED
+phase: STAGED_RECONFIGURATION_C3_ADOPTION_PROVEN_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c64fc64258fca7846d71f70ed725326ec2e83edd
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0119
+last_verified_event: RP-027-A001-0120
 last_completed: RP-026
-next_action: 'Publish/readback exact3-path repair INTENT: own pending strict-validated
-  summary mirror only, exact first-run SettingsError expectation, fail_resolve fault
-  control, changed_row valid other-UNKNOWN, own test helper fresh second election
-  transition. Add negative pending other-UNKNOWN/local/unread assertions if needed,
-  preserve original136 then same related repeat.'
-verification: Five exact adoption source/fixture causes proved; strict guards retained,
-  scoped repair/recheck pending.
+next_action: Apply exact3-path repair and source checkpoint; publish/readback OUTCOME
+  then authorize/run same original10-file related partial regression.
+verification: Five causes proven; minimal exact3-path repair authorized, no accepted
+  checks.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0120
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
