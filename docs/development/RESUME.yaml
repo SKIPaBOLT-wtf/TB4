@@ -3,18 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_NATIVE_DOCS_ROOT_FIRST_TEST
+phase: STAGED_RECONFIGURATION_C3_NATIVE_DOCS_ROOT_TEST_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 90635ed953d297fdea34209cb305439c464c4470
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0048
+last_verified_event: RP-027-A001-0049
 last_completed: RP-026
-next_action: Publish/read back actual cases/outcome and register reproducible failures;
-  perform scoped repair cycles if needed. Then separately qualify deterministic non-dispatch/inherited
-  settlement, folder physical rename and same-authority remote root/candidate/config
-  promotion.
-verification: C3 source/amendment saved;30-target actual SDK/native/old commissioning/720-regression
-  test INTENT pending actual result.
+next_action: Inspect same LOCAL-SESSION-64942 and its exact output. Preserve actual
+  source-linked full cases/exit/time and record outcome/defects before code repair
+  or subsequent root settlement/folder/promotion units.
+verification: C3 exact source30-target root test executing; actual recoverable session
+  recorded; result pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
