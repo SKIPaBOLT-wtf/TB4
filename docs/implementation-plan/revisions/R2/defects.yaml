@@ -6516,7 +6516,18 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-catalogue-failure.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0255
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Actual existingrepository-profile hash assertion/BALLPARK and
       affected native/receipt/admission regressions; actual corrected-sourceLinux506/fullplatform
@@ -6563,7 +6574,18 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-binding-fixture-failure.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0255
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: RequiredactualLinuxsame22 cases now reach actual role/adoption/pendingcut/negative/noreplay
       assertions withactualselection; wholeprior484/currentfull/common. Windows55

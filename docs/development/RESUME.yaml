@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_CORRECTED_FULL_HISTORICAL
+phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_BOUNDARY_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
+source_commit: 103d0eb2009880a7e76ac4604e611ce6958060da
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0254
+last_verified_event: RP-027-A001-0255
 last_completed: RP-026
-next_action: Verified current103d exacttwofile fixtureactualselector+UNRELEASEDcataloguehash
-  repairINTENT/sourceOUTCOME; corrected-source requiredLinux506/affectedWindows497/defaultcollection/currentfull
-  qualification. Original103d wholeCI inspectunder252; allC1-C4held.
-verification: '254 historical28ade currentfull245 reconciled: CI/Linuxfull/bothrolepackagesPASS,
-  WindowsnativequeryFAIL retained/no retrylaunched403; later103d native2PASS8.60s
-  causeUNKNOWN. Next exact103d DEF089/90twofilerepair,252originalCItracked, allC1-C4held.'
+next_action: Apply exact2file source/staticreview/preserve/readbackOUTCOME; then correctedsource
+  actualWindows497/defaultcollect andrequiredLinux506/currentfull request17 qualificationINTENT.
+  Keeporiginal103d CI252inspectedwithoutreplay. C1-C4held.
+verification: 255 exact2file DEF089/090 fixtureactualselection+existingUNRELEASEDhash
+  repair INTENT source103d; production/e567/schema/defaults unchanged, tests0. Previousimmutablefull237/245reconciled;252originalCItracked.
+  C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0252
+- RP-027-A001-0255
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
