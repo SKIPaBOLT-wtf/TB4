@@ -5,19 +5,18 @@ check: RP-027.C3
 attempt: A001
 phase: STAGED_RECONFIGURATION_C3_FOLDER_BOUNDARY_TEST_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 98b5948618877160536fca2525fdb7277054d00c
+source_commit: b90713351a910341da0454f8f7b4d82e144e22b2
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0157
+last_verified_event: RP-027-A001-0158
 last_completed: RP-026
-next_action: Save exact test-only source/readback/outcome then repeat actual51 native
-  cases and selected original regressions.
-verification: DEF077 test-only real refusal proof repair INTENT; current production
-  unchanged, native qualification incomplete.
+next_action: Fresh required actual51 native qualification and selected original folder/native/Docs/effects,
+  preserve actual source/job/checkout/JUnit and any failures.
+verification: DEF077 real boundary test-only source saved/readback;51 native cases
+  and original regressions awaiting fresh qualification.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0157
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

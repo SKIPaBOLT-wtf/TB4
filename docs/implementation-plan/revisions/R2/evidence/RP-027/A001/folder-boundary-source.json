@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "intent_event": "RP-027-A001-0157",
+  "source_commit": "b90713351a910341da0454f8f7b4d82e144e22b2",
+  "local_preserved_commit": "e438eea1dc555ce89fce8252efc56444a69358df",
+  "paths": [
+    "tests/drive/test_folder_relocation.py"
+  ],
+  "production_changed": false,
+  "scenario_cases": 51,
+  "tests_executed": false,
+  "diff_check": "PASS",
+  "acceptance": false
+}
