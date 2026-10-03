@@ -234,7 +234,7 @@ class DocsRootMoves:
         require(owner_authorized is True, "CONFIGURATION_OWNER_REQUIRED")
         require(self._state()[0] is None, "CONFIGURATION_ROOT_INSPECT_REQUIRED")
         # Denial only: a same-target request still needs all C1/C2 validation.
-        value = ledger(self.ctx.leadership.backend.read().document()[SLOT])
+        value = ledger(self.ctx.leadership.backend.read().document()["records"][SLOT])
         existing = None if value is None else value.get("root_plan")
         if existing is not None and existing["transition_id"] == self.ctx.baseline.transition_id:
             require(existing["target_root"] == self.new.root_id and existing["source_root"] == self.old.root_id
