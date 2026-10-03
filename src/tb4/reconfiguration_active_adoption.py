@@ -7,7 +7,7 @@ from dataclasses import asdict, dataclass
 import copy
 import hashlib
 
-from .ballpark import catalogue, DEVICE_PROPERTIES, validate
+from .ballpark import BallparkError, catalogue, DEVICE_PROPERTIES, validate
 from .ballpark_records import receipt, shared, validate_receipt
 from .ballpark_setup import pin_record, restore_pin, validate_pin
 from .commissioning_checks import CommissionedStorage, Prerequisites
@@ -18,7 +18,7 @@ from .drive.commissioning import SetupSpec, digest
 from .drive.commissioning_bootstrap import AuthorityHandle
 from .drive.commissioning_native import NativeCommissioning
 from .exchange_layout import MAX_GENERATION, encoded
-from .instructions import check_boundary, select
+from .instructions import InstructionError, check_boundary, select
 from .private_settings import MAX_BYTES, PrivateSettings
 from .reconfiguration_admission import AdmissionContext, ConfigurationAdmission
 from .reconfiguration_candidate import DERIVED, native_binding, seed, SCHEMA, SCHEMA_SHA256
@@ -170,8 +170,11 @@ class ActiveAdoption:
         if transition is not None:storage["root_transition"] = transition
         controls = sha({k:doc["records"][k] for k in (
             "global.settings","global.registry","global.commissioning")})
-        pin = select(ctx.checker.source,ctx.checker.runtime) if state is None else restore_pin(
-            ctx.checker.source,state["pin"],ctx.checker.runtime)
+        try:
+            pin = select(ctx.checker.source,ctx.checker.runtime) if state is None else restore_pin(
+                ctx.checker.source,state["pin"],ctx.checker.runtime)
+        except (InstructionError, BallparkError):
+            require(False, "ACTIVE_ADOPTION_INSTRUCTIONS")
         require(all(hashlib.sha256(pin.read(path)).hexdigest() == expected for path,expected in (
             (SCHEMA,SCHEMA_SHA256),(EFFECT_SCHEMA,EFFECT_SHA),(WAL_SCHEMA,WAL_SCHEMA_SHA256),(CP_SCHEMA,CP_SHA))),
             "ACTIVE_ADOPTION_INSTRUCTIONS")
@@ -278,7 +281,10 @@ class ActiveAdoption:
                 "ACTIVE_ADOPTION_TIMING")
         validation = self._checker(state).validate(copy.deepcopy(stage.payload))
         require(pin_record(validation.pin) == state["pin"], "ACTIVE_ADOPTION_INSTRUCTIONS")
-        check_boundary(self.context.local.checker.source,validation.pin,self.context.local.checker.runtime)
+        try:
+            check_boundary(self.context.local.checker.source,validation.pin,self.context.local.checker.runtime)
+        except InstructionError:
+            require(False, "ACTIVE_ADOPTION_INSTRUCTIONS")
         after = self._proof(state,held=held,original_snapshot=original_snapshot)
         require(self.context.profile.read() == stage and before[:4] == after[:4] and before[5] == after[5],
                 "ACTIVE_ADOPTION_CHANGED")

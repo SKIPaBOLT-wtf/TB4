@@ -20,7 +20,8 @@ from tb4.watchdog.leadership_runtime import Action, Receipt, Work
 from reconfiguration_active_adoption_support import system, finish, runtime
 from reconfiguration_rebind_support import TARGET
 from test_native_leadership import clock, tid
-from tests.security.test_credential_contract import FixtureStore, TARGET as DEVICE, TRUST
+from tests.security.test_linux_credentials import Native as CredentialNative, Runner as CredentialRunner, TARGET as DEVICE, TRUST
+from tb4.linux_credentials import LinuxKeyStore
 from tb4.credential_contract import CredentialResolver, Outcome, Purpose
 
 ERRORS = (ConfigurationError, SettingsError, AuthorityError)
@@ -127,9 +128,13 @@ def test_invalid_own_local_state_never_stages_or_blocks_actual_election(fault):
 
 
 def test_selected_own_credential_is_preserved_and_fresh_revocation_refuses_promotion():
-    s=system();store=FixtureStore(s.before.payload["installation_id"])
-    resolver=CredentialResolver(store.installation_id,store,clock=lambda:store.now)
-    handle=resolver.enroll(target_id=DEVICE,target_trust=TRUST,store_locator="synthetic-own-adoption-slot",
+    s=system();native=CredentialNative();runner=CredentialRunner(native)
+    store=LinuxKeyStore(s.before.payload["installation_id"],native=native,runner=runner,clock=lambda:100)
+    selected=store.select(path="/synthetic/private/key",target_id=DEVICE,target_trust=TRUST,
+        purposes=frozenset({Purpose.FETCHER_STATUS}),expires_at=200,access_mode="existing_key",
+        launch_mode="headless",owner_authorized=True)
+    resolver=CredentialResolver(store.installation_id,store,clock=lambda:100)
+    handle=resolver.enroll(target_id=DEVICE,target_trust=TRUST,store_locator=selected,
         purposes=frozenset({Purpose.FETCHER_STATUS}),expires_at=200,owner_authorized=True)
     Setup(s.local.profile).persist_credentials(store,resolver,[dict(handle=handle,target_id=DEVICE,
         target_trust=TRUST,purposes=[Purpose.FETCHER_STATUS.value])])
@@ -138,9 +143,9 @@ def test_selected_own_credential_is_preserved_and_fresh_revocation_refuses_promo
     assert s.context.profile.read().payload["credential_image"]==before.payload["credential_image"]
     assert s.context.profile.read().payload["choices"]["credentials"]==before.payload["choices"]["credentials"]
     s.adoption.prepare(owner_authorized=True,decided_at=s.local.clock().utc)
-    store.state=Outcome.REVOKED
+    resolver.revoke(handle,owner_authorized=True)
     with pytest.raises(SettingsError,match="CREDENTIAL_UNAVAILABLE"):s.adoption.advance(owner_authorized=True)
-    assert s.local.profile.read()==before and store.executions==0
+    assert s.local.profile.read()==before and runner.calls==0 and native.held==0
 
 
 @pytest.mark.parametrize("fault",["stage","takeover"])
