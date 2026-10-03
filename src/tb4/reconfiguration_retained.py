@@ -10,7 +10,7 @@ from .ballpark import catalogue,validate as validate_descriptor
 from .ballpark_records import shared,validate_header
 from .ballpark_setup import pin_record,validate_pin
 from .commissioning_checks import CommissionedStorage,Prerequisites
-from .commissioning_state import storage_spec,validated
+from .commissioning_state import Validation,storage_spec,validated
 from .configuration_contract import configuration,require
 from .drive.authority_transaction import OwnerGuard
 from .drive.commissioning import digest,frozen_plan
@@ -21,7 +21,7 @@ from .drive.folder_mapping import FolderMappedCommissioning
 from .drive.docs_authority import AuthorityBinding,AuthorityError
 from .exchange_layout import MAX_GENERATION,empty_document,encoded,validate_document
 from .private_settings import PrivateSettings
-from .reconfiguration_candidate import Candidate,CandidateValidation,DERIVED,SCHEMA,SCHEMA_SHA256,native_binding,seed
+from .reconfiguration_candidate import Candidate,DERIVED,SCHEMA,SCHEMA_SHA256,native_binding,seed
 from .reconfiguration_commit import (ConfigurationCommit,ConfigurationMutation,CONTROLLED,STATE_FIELDS,
     catalogue_slots,catalogue_row,publication_header,work_sha)
 from .reconfiguration_effects import SLOT,changed_row,ledger,covered
@@ -254,11 +254,16 @@ class RetainedConfigurationCommit(ConfigurationCommit):
     def _before(self,state,checker,*,commit_binding=None):
         self._schema(state,commit_binding=commit_binding);self._source(state)
         staged,_=self.candidate._state();decision,pin=self.candidate._proof(staged)
-        self._profile_evidence(state)
-        proof=self.candidate.require_validated(self._checker(checker,state))
-        require(type(proof) is CandidateValidation and proof.decision==decision
-            and proof.revision==state["stage_revision"] and proof.setup_sha256==state["stage_sha256"]
-            and pin_record(proof.validation.pin)==state["pin"],"COMMIT_CHANGED")
+        value,_=self._profile_evidence(state)
+        stage=self.candidate.context.profile.read()
+        require(stage is not None and stage.revision==state["stage_revision"]
+            and stage.payload==value and sha(stage.payload)==state["stage_sha256"],"COMMIT_CHANGED")
+        # UI review intentionally saves a new local revision. A frozen final
+        # proof must run the actual first-run probes without that mutation.
+        validation=self._checker(checker,state).validate(copy.deepcopy(value))
+        require(type(validation) is Validation and pin_record(validation.pin)==state["pin"]
+            and self.candidate.context.profile.read()==stage and self.candidate._state()[0]==staged,
+            "COMMIT_CHANGED")
         staged,_=self.candidate._state();fresh,pin=self.candidate._proof(staged)
         snapshot,cp=self.candidate.context.maintenance._current()
         _,plan=self._profile_evidence(state)
