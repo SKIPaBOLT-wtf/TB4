@@ -3,17 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_SHARED_ROOT_PLAN_REPEAT
+phase: STAGED_RECONFIGURATION_C3_SHARED_ROOT_PLAN_REPEAT_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5b9c339e06d91822c594dca6f276f6634dd2dc48
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0096
+last_verified_event: RP-027-A001-0097
 last_completed: RP-026
-next_action: Prepare exact task-only1800s runner and launch same36-target once after
-  remote INTENT readback; observe same session and publish full actual OUTCOME before
-  any dependent source.
-verification: Same36-target839-case shared-plan repeat with1800s task-only bound pending;
-  final C1-C4 held.
+next_action: Observe same running LOCAL-SESSION-34722/unique output. Preserve complete
+  actual839-case collection/status/source/checkout/exit/time/failures/Linux skips
+  before publishing full OUTCOME and before any dependent source.
+verification: Actual36-target839-case bounded repeat running LOCAL-SESSION-34722;
+  no accepted checks.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
