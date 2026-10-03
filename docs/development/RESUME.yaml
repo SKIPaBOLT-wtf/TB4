@@ -7,15 +7,15 @@ phase: STAGED_RECONFIGURATION_C4_ACTIVE_ADOPTION_REGRESSION_PLATFORM_QUALIFICATI
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6d061a3af4c31e72fbc1c806ff04d66bfc89f80e
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0217
+last_verified_event: RP-027-A001-0218
 last_completed: RP-026
-next_action: "Launch defaultWindows explicit originals/affectedgroup and independent\
-  \ collection; publish request13/inspectactualruns and verifiedSTARTED, then actualterminalresults.\
-  \ Failures\u2192record/outcome/repairINTENT. Only qualifiedoriginals/collection/requiredLinux\
-  \ allows nextFolder/rootlesspublication source; current-sourcecommonC4/composition\
-  \ remainheld."
-verification: 217 independentimmutable6d originals+affected/defaultcollection/Linux453/fullplatform;
-  nextimplementationhelduntil scopedgroups remotelyqualified. Targeted30PASS216/allC1-C4held.
+next_action: Inspect exact local original/affected result and same required Linux
+  push/PR jobs; preserve reached terminal outputs and artifacts. Full/platform same
+  immutable source continues independently, do not rerun or substitute earlier source.
+  No new dependent source until local/collection/required Linux allPASS remotelyrecorded.
+verification: 218 exact6d source targeted30PASS/defaultcollect2939PASS; actuallocaloriginalsession75008
+  +requiredLinux37126858581/37126855823 pending; CI/Desktopcurrentimmutable6d ongoing;
+  allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
