@@ -6180,9 +6180,10 @@ defects:
       procedure: Eight reached mutation prepare/_validate paths fail NameError configuration;
         source global import omission confirmed by static source inspection.
       failing_source: 41761af8b62b89aea0bc304615dcb7848ad2b763
-      passing_source: null
+      passing_source: 1f238122cf44681a4617ed4ef5807cfee6f8f370
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6214,7 +6215,8 @@ defects:
     regression_test: New25 +existing publication/promotion/admission/candidate/native/Folder
       regressions must reach actual post-first-run publication and negative/crash
       assertions after same exact source pin.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
     notes: 'Actual default Windows source417/b4e9 new25 qualification:0PASS25FAIL0ERROR0SKIP19.593s.
       Failure chronology and exact owned native fixture results retained; ordinary
       debugging, no external blocker. Later boundary assertions not reached; allC1-C4/fullcomposition
@@ -6222,7 +6224,10 @@ defects:
 
       Corrected0170 reaches new frozen-stage COMMIT_CHANGED rather than initial import/native-alias
       refusal; actual25 still0PASS25FAIL28.185s. Immediate fix observed, no successful
-      whole-case evidence or common acceptance.'
+      whole-case evidence or common acceptance.
+
+      Current1f2381 same25 actualdefaultWindows PASS0skip38.596s reaches all18 rootless/SDK/admission
+      and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.'
     legacy_record: null
   DEF-085:
     title: Retained synthetic fixture reuses native identities for distinct protected
@@ -6240,9 +6245,10 @@ defects:
         retained commit construction; old MemoryNative uses fixed principal/directory[1,2],
         and new fixture omitted distinct context stores.
       failing_source: 41761af8b62b89aea0bc304615dcb7848ad2b763
-      passing_source: null
+      passing_source: 1f238122cf44681a4617ed4ef5807cfee6f8f370
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6274,7 +6280,8 @@ defects:
     regression_test: Actual memory source fixture must reach final publication/no-replay/negative
       assertions with unique native bindings; copied/aliased store negative assertions
       and actual OS-native fixtures remain intact.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
     notes: 'Actual default Windows source417/b4e9 new25 qualification:0PASS25FAIL0ERROR0SKIP19.593s.
       Failure chronology and exact owned native fixture results retained; ordinary
       debugging, no external blocker. Later boundary assertions not reached; allC1-C4/fullcomposition
@@ -6282,7 +6289,10 @@ defects:
 
       Corrected0170 reaches new frozen-stage COMMIT_CHANGED rather than initial import/native-alias
       refusal; actual25 still0PASS25FAIL28.185s. Immediate fix observed, no successful
-      whole-case evidence or common acceptance.'
+      whole-case evidence or common acceptance.
+
+      Current1f2381 same25 actualdefaultWindows PASS0skip38.596s reaches all18 rootless/SDK/admission
+      and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.'
     legacy_record: null
   DEF-086:
     title: Retained final first-run proof mutates its already frozen stage revision
@@ -6300,9 +6310,10 @@ defects:
         frozen stage revision comparison; source inspection shows Candidate.require_validated
         invokes unconditional Setup.review save.'
       failing_source: 0170f12287c03242026280bb1c79253c19b44908
-      passing_source: null
+      passing_source: 1f238122cf44681a4617ed4ef5807cfee6f8f370
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-frozen-stage-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6334,11 +6345,15 @@ defects:
     regression_test: Same25 actual source/native cases must reach final/negative/crash
       assertions without final proof modifying stage. Existing late stage/force/source/UNKNOWN/protection
       refusals remain, no shared writes before frozen proof.
-    resolution_evidence: []
-    notes: Actual0170/b4e9 corrected25:0PASS25FAIL0ERROR0SKIP28.185s;24COMMIT_CHANGED
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
+    notes: 'Actual0170/b4e9 corrected25:0PASS25FAIL0ERROR0SKIP28.185s;24COMMIT_CHANGED
       and one native-cut missing pending after earlier COMMIT_CHANGED. Initial417
       missing import/fixture alias fixed at reached immediate boundaries, but no passing
       qualification. Raw local path withheld publicly, original owned logs preserved.
       AllC1-C4/default/Folder/currentfull/composition held; ordinary debugging, no
       external blocker.
+
+      Current1f2381 same25 actualdefaultWindows PASS0skip38.596s reaches all18 rootless/SDK/admission
+      and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.'
     legacy_record: null
