@@ -5523,3 +5523,61 @@ defects:
       change. Actual ordinary full native/platform/frozen qualification supports current
       repair; missing folder/rebind/C4 behavior and final acceptance remain.
     legacy_record: null
+  DEF-075:
+    title: Folder mapping changed-profile negative fixture violates an existing frozen
+      setup binding before reaching its gate
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 83dd3c09e1446a6897ef0dd64abb6c28fe5d5efb
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: 83dd3c09e1446a6897ef0dd64abb6c28fe5d5efb
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.md
+    reproduction:
+      procedure: Actual native Linux mapping suite on exact PR and push checkouts:20
+        cases pass, changed-profile case fails at fixture Setup.choose with SETUP_BALLPARK_BINDING_FROZEN
+        before creator.prepare. Original Setup correctly freezes a published network
+        binding; actual native mapping/profile guard not reached in this one case.
+      failing_source: 83dd3c09e1446a6897ef0dd64abb6c28fe5d5efb
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: native-negative-profile-fixture-bypasses-frozen-setup-boundary
+      claim: Both source-linked actual Linux jobs reproduce the same profile fixture
+        error. Actual Setup.choose disallows changed scope after BALLPARK publication;
+        choosing the unchanged scope through actual Setup still advances the protected
+        revision and invalidates prior resolution, permitting the intended negative
+        controller check without altering frozen binding or guards.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.md
+    repairs: []
+    issue: null
+    regression_test: Keep all21 Linux cases/assertions; use actual valid private Setup
+      revision change, prove it advanced, then actual creator refusal/no mapping/authority/root/profile
+      effects. Required original folder/native regressions and final full/native/platform/frozen/C1-C4
+      gates.
+    resolution_evidence: []
+    notes: Twenty actual positive/refusal/pending/helper cases executed on native
+      Linux. Failure is the test precondition, never authorization to weaken a production
+      Setup freeze. Original regressions not executed in targeted jobs after prior
+      step failure; automatically triggered full CI/Desktop still pending and cannot
+      be claimed.
+    legacy_record: null

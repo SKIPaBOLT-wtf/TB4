@@ -7,18 +7,18 @@ phase: STAGED_RECONFIGURATION_C3_FOLDER_PATH_LINUX_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 83dd3c09e1446a6897ef0dd64abb6c28fe5d5efb
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0140
+last_verified_event: RP-027-A001-0141
 last_completed: RP-026
-next_action: Inspect same required actual native Linux mapping jobs; record actual
-  source/cases/results or failure provenance and scoped repair. Existing automatically
-  started platform/full gates retain their exact run identities.
-verification: Actual source-linked Linux mapping runs and original full/native/platform
-  runs started; same IDs retained, no terminal/acceptance claim.
+next_action: Publish scoped DEF075 fixture repair INTENT; use actual same-scope Setup
+  write to advance protected profile revision, keep production freezes/all assertions,
+  save/readback; then one fresh required Linux mapping/regression qualification.
+verification: Actual Linux mapping20PASS/1 fixtureFAIL/0SKIP preserved; correct production
+  frozen binding retained. DEF075 repair required; full automatic jobs pending, C1-C4
+  unaccepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0139
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -43,6 +43,7 @@ known_open_defects:
 - DEF-072
 - DEF-073
 - DEF-074
+- DEF-075
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before

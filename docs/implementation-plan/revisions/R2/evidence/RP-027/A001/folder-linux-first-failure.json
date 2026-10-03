@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "intent_event": "RP-027-A001-0139",
+  "source_commit": "83dd3c09e1446a6897ef0dd64abb6c28fe5d5efb",
+  "trigger_head": "392ca18411ab5e46444b89238debe97b7b0b28c7",
+  "jobs": [
+    {
+      "run_id": 37103993300,
+      "job_id": 111148876196,
+      "event": "pull_request",
+      "checkout": "8b7df1892608cef01130cf68f6380ecc7b6ad760",
+      "passed": 20,
+      "failed": 1,
+      "skipped": 0,
+      "duration_s": 29.09
+    },
+    {
+      "run_id": 37103991419,
+      "job_id": 111148870653,
+      "event": "push",
+      "checkout": "392ca18411ab5e46444b89238debe97b7b0b28c7",
+      "passed": 20,
+      "failed": 1,
+      "skipped": 0,
+      "duration_s": 27.1
+    }
+  ],
+  "command": "python -m pytest tests/drive/test_folder_mapping.py -ra --junitxml=folder-mapping-results.xml",
+  "exit_code": 1,
+  "failed_case": "tests/drive/test_folder_mapping.py::test_actual_preparation_refuses_unqualified_inputs_before_any_mapping_or_root_change[profile]",
+  "failure_code": "SETUP_BALLPARK_BINDING_FROZEN",
+  "origin": "test fixture Setup.choose before actual creator.prepare",
+  "original_targeted_regressions": "NOT_RUN_AFTER_MAPPING_FAILURE",
+  "automatic_full_runs": [
+    {
+      "id": 37103993261,
+      "name": "CI",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": 37103993293,
+      "name": "Desktop",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": 37103993372,
+      "name": "Progress",
+      "status": "SUCCESS"
+    }
+  ],
+  "acceptance": false
+}
