@@ -4207,3 +4207,96 @@ defects:
       facts. Exact27-target/720-predicate Windows repeat exits0 with716PASS/4Linuxskip;
       mandatory final C1-C4 rechecks held.
     legacy_record: null
+  DEF-061:
+    title: Dedicated root move effect admission fails under its own maintenance configuration
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 90635ed953d297fdea34209cb305439c464c4470
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Run exact30-target first root suite: normal move, witness, two lost-reply
+        cases, shared/native send intent, two stale fallback cases, historical witness
+        and native completed-cut all fail with CONFIGURATION_MAINTENANCE.'
+      failing_source: 90635ed953d297fdea34209cb305439c464c4470
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: dedicated-effect-inherits-ordinary-maintenance-gate
+      claim: Nine root tests stop at CONFIGURATION_MAINTENANCE before normal root
+        move assertions; the dedicated EffectMutation may inherit the ordinary RecordMutation.prepare
+        gate. Exact failed trace and current adapters must prove the cause. Ordinary
+        maintenance admission must remain closed.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+    repairs: []
+    issue: null
+    regression_test: All nine exact failed root predicates plus inherited720 cases,
+      and explicit ordinary dispatch refusal while a strictly scoped effect operation
+      is admitted.
+    resolution_evidence: []
+    notes: Unaccepted C3 source only. Preserve failed tests and prior accepted predicates.
+      Inspect exact failed traces/current adapter before naming a proven origin or
+      making a scoped repair. Final C1-C4 rechecks remain held.
+    legacy_record: null
+  DEF-062:
+    title: Root access negative fixture excludes the actual closed authority refusal
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 90635ed953d297fdea34209cb305439c464c4470
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+    proven_origin: null
+    reproduction:
+      procedure: Exact target-access predicate withdraws target root canEdit and receives
+        SETUP_ROOT, then fails its expected exception class rather than proving a
+        send.
+      failing_source: 90635ed953d297fdea34209cb305439c464c4470
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: root-access-negative-excludes-authority-error
+      claim: The target-access negative case receives AuthorityError SETUP_ROOT while
+        expecting only ConfigurationError/SettingsError. Verify original trace and
+        root check before changing fixture expectations; retain no-SDK/no-profile
+        mutation assertions.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+    repairs: []
+    issue: null
+    regression_test: Exact target-access predicate with actual closed refusal and
+      unchanged no-send/profile preservation assertions; full root and inherited regressions.
+    resolution_evidence: []
+    notes: Unaccepted C3 source only. Preserve failed tests and prior accepted predicates.
+      Inspect exact failed traces/current adapter before naming a proven origin or
+      making a scoped repair. Final C1-C4 rechecks remain held.
+    legacy_record: null
