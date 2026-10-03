@@ -18,7 +18,7 @@ from .private_settings import PrivateSettings
 SLOT = "global.summary"
 KEY = "tb4_effects_v1"
 SCHEMA = "protocol/reconfiguration-effects-v1.schema.json"
-SCHEMA_SHA256 = "1abc0034e685aa7ba0a6b8b3c94410997624ef4bac03af2fa131ac1442110005"
+SCHEMA_SHA256 = "557de55dd47996e8cf369fa769353e679759ab54ff8ae167af1d46b2a3796b2c"
 OUTCOMES = frozenset({"UNKNOWN", "COMPLETE", "NO_WORK", "SUPERSEDED", "NOT_DISPATCHED"})
 
 
@@ -119,7 +119,7 @@ class EffectMutation(RecordMutation):
             old, new = ledger(before), ledger(after)
             require(new is not None and after == changed_row(before,new), "CONFIGURATION_EFFECT_WAL")
             config = configuration(probe)
-            require(self.purpose in {"INITIALIZE", "START", "FINISH", "CERTIFY"}, "CONFIGURATION_EFFECT_WAL")
+            require(self.purpose in {"INITIALIZE", "START", "ROOT_START", "FINISH", "CERTIFY"}, "CONFIGURATION_EFFECT_WAL")
             if self.purpose in {"INITIALIZE", "START"}:
                 require(config is None or config["phase"] != "MAINTENANCE", "CONFIGURATION_MAINTENANCE")
             if self.purpose == "INITIALIZE":
@@ -143,7 +143,12 @@ class EffectMutation(RecordMutation):
                     action = next(iter(changed)); entry = new["entries"].get(action); prior = old["entries"].get(action)
                     require(entry is not None and entry["owner"] == self.owner.owner
                             and entry["epoch"] == self.owner.epoch, "CONFIGURATION_EFFECT_WAL")
-                    if self.purpose == "START":
+                    if self.purpose == "ROOT_START":
+                        barrier = old["barrier"]
+                        require(action == "IDENTITY" and config is not None and config["phase"] == "MAINTENANCE"
+                                and barrier is not None and barrier["local_clear"] is True
+                                and barrier["transition_id"] == config["transition_id"], "CONFIGURATION_EFFECT_WAL")
+                    if self.purpose in {"START", "ROOT_START"}:
                         require(entry["outcome"] == "UNKNOWN" and
                                 (prior is None or prior["outcome"] != "UNKNOWN"
                                  and prior["operation_id"] != entry["operation_id"]), "CONFIGURATION_EFFECT_UNKNOWN")
@@ -275,18 +280,29 @@ class Effects:
         require(value is not None, "CONFIGURATION_EFFECT_EVIDENCE_REQUIRED")
         return copy.deepcopy(value["entries"].get(action.value))
 
-    def start(self, grant, action, operation):
+    def start(self, grant, action, operation, *, maintenance_transition=None):
         from .watchdog.leadership_runtime import Action
         require(type(grant) is Grant and grant.owner == self.leadership.actor
                 and type(action) is Action and transition_id(operation), "CONFIGURATION_EFFECT_ACTION")
         snap = self.leadership.backend.read(); doc = snap.document()
+        purpose = "START"
+        if maintenance_transition is not None:
+            checkpoint = self.checkpoint.read()
+            config = configuration(doc)
+            require(transition_id(maintenance_transition) and action is Action.IDENTITY
+                    and checkpoint.grant == grant and checkpoint.maintenance == maintenance_transition
+                    and checkpoint.election is None and checkpoint.mutation is None
+                    and config is not None and config["phase"] == "MAINTENANCE"
+                    and config["transition_id"] == maintenance_transition,
+                    "CONFIGURATION_ROOT_NOT_AUTHORIZED")
+            purpose = "ROOT_START"
         value = ledger(doc["records"][SLOT]); require(value is not None, "CONFIGURATION_EFFECT_EVIDENCE_REQUIRED")
         old = value["entries"].get(action.value)
         require(old is None or old["outcome"] != "UNKNOWN" and old["operation_id"] != operation,
                 "CONFIGURATION_EFFECT_UNKNOWN")
         value["entries"][action.value] = dict(owner=grant.owner,epoch=grant.epoch,operation_id=operation,outcome="UNKNOWN")
         return self._commit(EffectMutation.prepare(snap,OwnerGuard(grant.owner,grant.epoch),
-            changed_row(doc["records"][SLOT],value),purpose="START"))
+            changed_row(doc["records"][SLOT],value),purpose=purpose))
 
     def finish(self, grant, action, operation, outcome):
         from .watchdog.leadership_runtime import Action

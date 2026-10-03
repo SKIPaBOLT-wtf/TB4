@@ -51,3 +51,15 @@ stale-cache/lease refusal, safe rollback and all C1-C4/common/native/platform/fr
 checks remain required. The WAL is bounded at128KiB and129 fixed objects, under
 the existing1MiB private frame and current layout budgets. The schema is pinned
 only in UNRELEASED; installed profiles/SKILL/builds are unchanged.
+
+## Scoped effect admission repair (DEF-061)
+
+The first exact root suite proved that using ordinary effect START during
+maintenance prevents the intended root operation. ROOT_START is a separately
+closed WAL purpose: only IDENTITY, actual current native grant/reservation,
+matching maintenance transition and covered local-clear barrier, one new UNKNOWN
+entry, unchanged settings/barrier and strict owner CAS. Ordinary START and normal
+RecordMutation/runtime admission remain maintenance-denied. No effect receipt
+grants an SDK send independently of the root controller's fresh proof/lock.
+The new purpose is pinned only in the unreleased schema. The target-access test
+retains the actual closed AuthorityError SETUP_ROOT and no-send/profile checks.

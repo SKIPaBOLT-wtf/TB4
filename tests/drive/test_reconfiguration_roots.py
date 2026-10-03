@@ -10,13 +10,59 @@ import pytest
 from tb4.commissioning_checks import CommissionedStorage
 from tb4.commissioning_state import storage_spec
 from tb4.configuration_contract import ConfigurationError, configuration
+from tb4.exchange_layout import encoded
 from tb4.drive.commissioning import Allocation
 from tb4.drive.commissioning_bootstrap import AuthorityHandle
+from tb4.drive.authority_transaction import OwnerGuard, RecordMutation
+from tb4.drive.docs_authority import AuthorityError
 from tb4.private_settings import SettingsError
 from tb4.reconfiguration_roots import DocsRootMoves, SCHEMA, SCHEMA_SHA256
+from tb4.reconfiguration_effects import EffectMutation, SLOT, changed_row, ledger
 from tb4.watchdog.leadership_runtime import Action
 from reconfiguration_roots_support import system, TARGET
 from test_reconfiguration_effects import acquire_fallback
+
+
+@pytest.mark.parametrize("fault",["normal-start","wrong-transition","wrong-action","no-reservation","ordinary-record"])
+def test_root_effect_admission_cannot_open_ordinary_work_or_foreign_transition(fault):
+    s = system(); s.roots.begin(owner_authorized=True)
+    v = s.value; grant = v.checkpoint.read().grant
+    before = copy.deepcopy(v.provider.store.document)
+    effect_before = v.effects.store.read(); profile = v.setup.store.read()
+    operation = "a"*64; transition = s.context.store.read().payload["transition_id"]
+    if fault == "no-reservation":
+        checkpoint = v.checkpoint.read()
+        assert v.checkpoint.replace(checkpoint,replace(checkpoint,maintenance=None))
+    expected = AuthorityError if fault == "ordinary-record" else ConfigurationError
+    with pytest.raises(expected):
+        if fault == "ordinary-record":
+            snapshot = v.flow.leader.backend.read()
+            row = dict(before["records"]["target.000.work"],generation=8,operation_id=operation,
+                       retention="UNREAD",body={"synthetic":True})
+            RecordMutation.prepare(snapshot,owner=OwnerGuard(grant.owner,grant.epoch),
+                                   changes={"target.000.work":row},protect=set())
+        else:
+            v.effects.start(grant,Action.SSH if fault == "wrong-action" else Action.IDENTITY,operation,
+                maintenance_transition=None if fault == "normal-start" else
+                    "b"*64 if fault == "wrong-transition" else transition)
+    assert v.provider.store.document == before and v.effects.store.read() == effect_before
+    assert v.setup.store.read() == profile and not updates(s)
+
+
+def test_root_start_frozen_purpose_cannot_be_forged_for_an_active_configuration():
+    s = system(); s.roots.begin(owner_authorized=True)
+    v = s.value; grant = v.checkpoint.read().grant
+    before = copy.deepcopy(v.provider.store.document)
+    document = copy.deepcopy(before)
+    document["records"]["global.settings"]["body"]["configuration"]["phase"] = "ACTIVE"
+    snapshot = replace(v.flow.leader.backend.read(),raw=encoded(document))
+    value = ledger(document["records"][SLOT])
+    value["entries"][Action.IDENTITY.value] = dict(owner=grant.owner,epoch=grant.epoch,
+                                                 operation_id="c"*64,outcome="UNKNOWN")
+    with pytest.raises(ConfigurationError,match="CONFIGURATION_EFFECT_WAL"):
+        EffectMutation.prepare(snapshot,OwnerGuard(grant.owner,grant.epoch),
+                               changed_row(document["records"][SLOT],value),purpose="ROOT_START")
+    assert v.provider.store.document == before and not updates(s)
 
 
 def updates(s):
@@ -105,8 +151,8 @@ def test_first_cas_stale_fallback_needs_no_ack_and_old_root_sender_stops(at):
         taken.append(acquire_fallback(s.value))
     if at == "before-send":
         start = s.value.effects.start
-        def start_and_take(*args):
-            result = start(*args); take(); return result
+        def start_and_take(*args,**kwargs):
+            result = start(*args,**kwargs); take(); return result
         s.value.effects.start = start_and_take
         with pytest.raises(ConfigurationError,match="OWNER_SUPERSEDED"):
             s.roots.advance(owner_authorized=True)
@@ -139,7 +185,8 @@ def test_failed_current_prerequisite_sends_no_sdk_move(fault):
         s.value.context = replace(s.value.context,clock=lambda:clock(trusted=False))
         s.value.controller.context = s.value.context
         s.roots.ctx = s.value.context
-    with pytest.raises((ConfigurationError,SettingsError)):
+    expected = AuthorityError if fault == "target-access" else (ConfigurationError,SettingsError)
+    with pytest.raises(expected,match="SETUP_ROOT" if fault == "target-access" else None):
         s.roots.begin(owner_authorized=True)
     assert not updates(s) and s.value.setup.store.read() == original
 

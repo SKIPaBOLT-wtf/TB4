@@ -274,7 +274,8 @@ class DocsRootMoves:
         pending = dict(index=state["index"],operation_id=self._operation(state,state["index"]),
                        epoch=checkpoint.grant.epoch)
         state = self._save({**state,"pending":pending},revision)
-        result = self.ctx.effects.start(checkpoint.grant,Action.IDENTITY,pending["operation_id"])
+        result = self.ctx.effects.start(checkpoint.grant,Action.IDENTITY,pending["operation_id"],
+                                        maintenance_transition=state["transition_id"])
         if result != "CONFIRMED":
             return result
         self._proof(state,dispatch=True)
