@@ -3,24 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_TIMING_NATIVE_ASSERTION_REPAIR
+phase: STAGED_RECONFIGURATION_C4_TIMING_NATIVE_ASSERTION_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 0b537c1c96283cdfca9153175569267ecec5cba8
+source_commit: bf5c34f9fc79fcc6784ccd71009e2551608522a7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0274
+last_verified_event: RP-027-A001-0275
 last_completed: RP-026
-next_action: Apply/preserve/readback one-file assertion correction, then separately
-  rerun required current qualification. Finish current part, checkpoint and pause
-  without starting remote/runtime/GUI integration.
-verification: 273 exact first qualification failure preserved.274 one-file native
-  pending assertion correction pending; no product guard change. Existing request18/19
-  jobs must be reconciled before pause.
+next_action: Publish corrected-source qualification INTENT then execute affected Windows504/default3043/requiredLinux560
+  and current full/build gates once. Reconcile old18/19 jobs, checkpoint owner pause
+  and stop.
+verification: 275 corrected one-file native assertion saved bf5c34f; production guard
+  remains0b537c1. Qualification and immutable18/19 reconciliation remain before owner
+  pause.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0265
-- RP-027-A001-0274
 expected_user_action: Wait for current-part completion; after verified pause, say
   continue to resume next integration.
 blocking_decisions: []
