@@ -4950,7 +4950,7 @@ defects:
         UNKNOWN projection after actual own pending root effect; inspect exact trace/actual
         blocker kinds and strict pending receipt before repair.
       failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
-      passing_source: 5665870eb003bb335dc61ced8472f8809d464cf5
+      passing_source: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
@@ -4958,6 +4958,8 @@ defects:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4994,6 +4996,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+    - id: def-069-actual-default-full-platform-qualified
+      claim: Exact corrected-source default full real CI/Ubuntu22/Windows suites allsuccess
+        with counts2700/2723/2637 PASS, existing27/21/107SKIP and4 future cancellation
+        XFAIL; originalmax129 retained. Actual two-role Linux/Windows builds/frozen/GUI/install/uninstall/profile+peer
+        isolation pass; Progress235/fullhistory/public pass. Final C1-C4 remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -5017,6 +5028,8 @@ defects:
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
       Full original139 related recheck passed, final all4checks/platforms still required.
+      Actual ordinary full native/platform/frozen qualification supports current repair;
+      missing folder/rebind/C4 behavior and final acceptance remain.
     legacy_record: null
   DEF-070:
     title: Complete adopted root first-run refusal fixture expects a different exception
@@ -5040,7 +5053,7 @@ defects:
         while test expects AuthorityError. Inspect actual first-run refusal frames/preservation
         before adjusting exact expected class/code.
       failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
-      passing_source: 5665870eb003bb335dc61ced8472f8809d464cf5
+      passing_source: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
@@ -5048,6 +5061,8 @@ defects:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5081,6 +5096,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+    - id: def-070-actual-default-full-platform-qualified
+      claim: Exact corrected-source default full real CI/Ubuntu22/Windows suites allsuccess
+        with counts2700/2723/2637 PASS, existing27/21/107SKIP and4 future cancellation
+        XFAIL; originalmax129 retained. Actual two-role Linux/Windows builds/frozen/GUI/install/uninstall/profile+peer
+        isolation pass; Progress235/fullhistory/public pass. Final C1-C4 remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -5104,6 +5128,8 @@ defects:
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
       Full original139 related recheck passed, final all4checks/platforms still required.
+      Actual ordinary full native/platform/frozen qualification supports current repair;
+      missing folder/rebind/C4 behavior and final acceptance remain.
     legacy_record: null
   DEF-071:
     title: Adoption source-fault fixture may set an unused source adapter attribute
@@ -5127,7 +5153,7 @@ defects:
         versus unused offline attribute, actual source boundary, proof/native/shared
         effects. Do not infer an unavailable source was admitted.
       failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
-      passing_source: 5665870eb003bb335dc61ced8472f8809d464cf5
+      passing_source: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
@@ -5135,6 +5161,8 @@ defects:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5170,6 +5198,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+    - id: def-071-actual-default-full-platform-qualified
+      claim: Exact corrected-source default full real CI/Ubuntu22/Windows suites allsuccess
+        with counts2700/2723/2637 PASS, existing27/21/107SKIP and4 future cancellation
+        XFAIL; originalmax129 retained. Actual two-role Linux/Windows builds/frozen/GUI/install/uninstall/profile+peer
+        isolation pass; Progress235/fullhistory/public pass. Final C1-C4 remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -5193,6 +5230,8 @@ defects:
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
       Full original139 related recheck passed, final all4checks/platforms still required.
+      Actual ordinary full native/platform/frozen qualification supports current repair;
+      missing folder/rebind/C4 behavior and final acceptance remain.
     legacy_record: null
   DEF-072:
     title: Synthetic inherited external UNKNOWN fault may omit actual summary envelope
@@ -5217,7 +5256,7 @@ defects:
         changed_row canonical envelope, then retain actual valid other-UNKNOWN/no-SDK
         denial.
       failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
-      passing_source: 5665870eb003bb335dc61ced8472f8809d464cf5
+      passing_source: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
@@ -5225,6 +5264,8 @@ defects:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5259,6 +5300,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+    - id: def-072-actual-default-full-platform-qualified
+      claim: Exact corrected-source default full real CI/Ubuntu22/Windows suites allsuccess
+        with counts2700/2723/2637 PASS, existing27/21/107SKIP and4 future cancellation
+        XFAIL; originalmax129 retained. Actual two-role Linux/Windows builds/frozen/GUI/install/uninstall/profile+peer
+        isolation pass; Progress235/fullhistory/public pass. Final C1-C4 remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -5282,6 +5332,8 @@ defects:
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
       Full original139 related recheck passed, final all4checks/platforms still required.
+      Actual ordinary full native/platform/frozen qualification supports current repair;
+      missing folder/rebind/C4 behavior and final acceptance remain.
     legacy_record: null
   DEF-073:
     title: Second fallback fixture reuses original election transition identity
@@ -5304,7 +5356,7 @@ defects:
         helper acquisition ID and fresh nonce requirement before faithful second-takeover
         fixture.
       failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
-      passing_source: 5665870eb003bb335dc61ced8472f8809d464cf5
+      passing_source: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
@@ -5312,6 +5364,8 @@ defects:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5346,6 +5400,15 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+    - id: def-073-actual-default-full-platform-qualified
+      claim: Exact corrected-source default full real CI/Ubuntu22/Windows suites allsuccess
+        with counts2700/2723/2637 PASS, existing27/21/107SKIP and4 future cancellation
+        XFAIL; originalmax129 retained. Actual two-role Linux/Windows builds/frozen/GUI/install/uninstall/profile+peer
+        isolation pass; Progress235/fullhistory/public pass. Final C1-C4 remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -5369,6 +5432,8 @@ defects:
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
       Full original139 related recheck passed, final all4checks/platforms still required.
+      Actual ordinary full native/platform/frozen qualification supports current repair;
+      missing folder/rebind/C4 behavior and final acceptance remain.
     legacy_record: null
   DEF-074:
     title: RP027 unqualified fixture imports prevent default full suite collection
@@ -5398,6 +5463,8 @@ defects:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-full-collection-result.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5423,6 +5490,15 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-full-collection-result.json
+    - id: def-074-actual-default-full-platform-qualified
+      claim: Exact corrected-source default full real CI/Ubuntu22/Windows suites allsuccess
+        with counts2700/2723/2637 PASS, existing27/21/107SKIP and4 future cancellation
+        XFAIL; originalmax129 retained. Actual two-role Linux/Windows builds/frozen/GUI/install/uninstall/profile+peer
+        isolation pass; Progress235/fullhistory/public pass. Final C1-C4 remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -5444,5 +5520,6 @@ defects:
       default/platform qualification. Exact full CI failure saved. No production dependency
       or guard weakened. Final allchecks held. Exactly5 fixture paths/seven import
       lines repaired and source saved; no assertion/production/protocol/PYTHONPATH/workflow
-      change.
+      change. Actual ordinary full native/platform/frozen qualification supports current
+      repair; missing folder/rebind/C4 behavior and final acceptance remain.
     legacy_record: null
