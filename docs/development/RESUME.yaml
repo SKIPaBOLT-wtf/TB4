@@ -3,24 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_BOUNDARY_REPAIR
+phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_BOUNDARY_SOURCE_PRESERVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 103d0eb2009880a7e76ac4604e611ce6958060da
+source_commit: f5bcd2b164ca55d78a0a1bbf86031bdda839c6b2
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0255
+last_verified_event: RP-027-A001-0256
 last_completed: RP-026
-next_action: Apply exact2file source/staticreview/preserve/readbackOUTCOME; then correctedsource
-  actualWindows497/defaultcollect andrequiredLinux506/currentfull request17 qualificationINTENT.
-  Keeporiginal103d CI252inspectedwithoutreplay. C1-C4held.
-verification: 255 exact2file DEF089/090 fixtureactualselection+existingUNRELEASEDhash
-  repair INTENT source103d; production/e567/schema/defaults unchanged, tests0. Previousimmutablefull237/245reconciled;252originalCItracked.
-  C1-C4held.
+next_action: Separateverified boundedrequiredLinux CIbudget calibration sourceINTENT
+  forworkflow15->30min +appendA019timingnote only; preserve unchangedproducttiming/budgets.
+  Then correctedcurrent-sourceWindows497/defaultcollect/Linux506/full qualificationINTENT/request17.
+  Keeporiginal103d CI252 withoutreplay; allC1-C4held.
+verification: 256 exacttwofilerepairsource preserved/currente567production/22assertions
+  unchanged, same16instructionmembers+ENTRY andUNRELEASEDonlyhash changed/tests0.
+  Windows55prior scopedPASS; measuredPRcomponentstime940.40s versus15min suggestsboundedCIcalibration
+  before506 qualification, no actualtimeoutclaimed. 252originalCItracked/C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0252
-- RP-027-A001-0255
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
