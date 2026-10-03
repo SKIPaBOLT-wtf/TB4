@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_CURRENT_ROLE_ACTIVE_ADOPTION_SOURCE
+phase: STAGED_RECONFIGURATION_C4_CURRENT_ROLE_ACTIVE_ADOPTION_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 237994f7b97151304ddbb7efaa52522252996702
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0210
+last_verified_event: RP-027-A001-0211
 last_completed: RP-026
-next_action: 'Publish exact-source qualification INTENT: default30 new Windows scoped
-  cases; only onPASS original295+BALLPARK/configuration regressions/default wholecollection/actual
-  Linux423+30/newsourceCI/platform. Then Folder/rootless/runtimeGUI/helper composition.'
-verification: 210 source237994f/15paths verified; static prior schemas/pins/syntax/diff
-  PASS only, tests0. Next30 new Windows/adopted preservedUNKNOWN/nativecuts qualification;
-  allC1-C4 held; then originals/current-sourceLinux/full/platform/composition.
+next_action: After remotely verified INTENT/readback and clean exactcheckout, launch
+  new30 only. Preserve actual result/failure. OnlyPASS permits original295+affectedBALLPARK/configuration/defaultcollection;
+  then source-linked Linux/full/platform request and actualSTARTED/outcome.
+verification: 211 exact237 new30 first, onlyPASS originals/affectedBALLPARK/configuration/defaultcollection/Linux453;
+  allC1-C4 held. Current14 historicalfull/platform may settle onlyas14 evidence.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0211
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
