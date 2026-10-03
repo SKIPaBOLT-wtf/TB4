@@ -3,20 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ADOPTION_PROVEN_REPAIR_SAVED
+phase: STAGED_RECONFIGURATION_C3_ADOPTION_PROVEN_REPAIR_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5665870eb003bb335dc61ced8472f8809d464cf5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0121
+last_verified_event: RP-027-A001-0122
 last_completed: RP-026
-next_action: Publish/readback same10-file related test INTENT then one actual Windows/native
-  partial run and complete source-linked outcome.
-verification: Minimal proven adoption repair saved/readback, qualification pending,
-  no accepted checks.
+next_action: Publish actual STARTED and observe same run; preserve complete real outcome
+  before dependent work.
+verification: Proven adoption source repair saved; same related partial regression
+  authorized, all final checks held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0122
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
