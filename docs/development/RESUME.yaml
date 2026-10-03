@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_REMOTE_FOLDER_PROOF_SOURCE
+phase: STAGED_RECONFIGURATION_C2_REMOTE_FOLDER_PROOF_SOURCE_PRESERVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 6ab0691aaa1955068ac3932590f1e0280f3a36b6
+source_commit: f7d283897eaef2ca521df99d45544dad2d07dd5e
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0263
+last_verified_event: RP-027-A001-0264
 last_completed: RP-026
-next_action: After verified INTENT implement bounded proof source/tests/amendment,
-  inspect diff and preserve source. Publish verified source OUTCOME then focused Windows/actual
-  Linux/SSH qualification INTENT before execution.
-verification: 262 scoped/current platform qualification preserved. 263 bounded remote
-  Folder read-only proof source pending; all RP027 acceptance held.
+next_action: Publish focused Windows portable probe/default protocol regression and
+  default full collection plus actual required Linux553/request18 qualification INTENT;
+  execute only after readback and record exact CI IDs. Inspect all new native and
+  SSH assertions before typed remote first-run source integration.
+verification: 264 remote Folder proof source f7d2838 preserved/readback; AST/diff/privacy
+  PASS, tests0. A020 linked; qualify portable/actual Linux/SSH next, all C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0263
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
