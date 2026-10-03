@@ -5774,11 +5774,13 @@ defects:
         instead of final MOVED, max129 invalid PREPARING/missing timing fixture refuses
         before rebind.
       failing_source: c1402a50f66131c7771ca1c21a344097dab08bed
-      passing_source: null
+      passing_source: 28952a9f858985905f0f8b0702effca4c76af019
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-linux-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-budget-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-qualified.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5818,7 +5820,9 @@ defects:
     regression_test: Original wrong-blueprint refusal, all26 new actual conformance/native
       cases with default imports and valid large-budget source, unchanged original
       Docs/effect and actual Linux51/107 regressions; final C1-C4 qualification.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-qualified.md
     notes: Preserve original c140 failure. No new rebind/native pass inferred; native/final
       composition remains held. Keep OPEN until source-linked final acceptance. Same27
       failures reproduced on both exact-source Linux jobs after all51+107 pass/zeroSkip.
@@ -5826,4 +5830,7 @@ defects:
       fixture resolved, two original oversized max129 fixture cases remain. Full181/Linux
       not started after targeted failure. Exact follow-up source repair uses RP-027-A001-0171
       under the same RP-027/A001 repair chain; original repair record retained once.
+      Exactsource28952 actual Windows27/181/default2825 and bothLinux339/zeroSkip
+      now qualify the exact repairs and new rebind unit; retain OPEN/all checks held
+      until final C4/composition/acceptance.
     legacy_record: null

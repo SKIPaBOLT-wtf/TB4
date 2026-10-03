@@ -7,17 +7,18 @@ phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_VALID_BUDGET_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 28952a9f858985905f0f8b0702effca4c76af019
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0174
+last_verified_event: RP-027-A001-0175
 last_completed: RP-026
-next_action: Inspect the same Windows181 and source-linked Linux51/107/181 jobs; preserve
-  exact terminal results/failures and artifacts before any C4 source unit.
-verification: 28952 Windows27 pass, defaultcollection2825; same-source Windows181/Linux51/107/181+fullplatform
-  actualstarted, allchecksheld.
+next_action: Publish bounded C4 post-move first-run candidate/staging INTENT on this
+  qualified source, preserving the same authority/work/history and mandatory current-role
+  proofs. Final shared publication/admission/profile/composition remains separately
+  qualified; no live activation.
+verification: 28952 rebind qualified:Windows27+181/default2825; actualLinux339twice0FailSkip.
+  SameDoc/native/oldhostfree/budgets pass, allC1-C4held for finalpublication/profile/composition.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0173
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
