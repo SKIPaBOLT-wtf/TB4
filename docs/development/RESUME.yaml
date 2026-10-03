@@ -3,24 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_IMMUTABLE_FULL_REMAINDER
+phase: STAGED_RECONFIGURATION_C4_RETAINED_FOLDER_FIXTURE_SOURCE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 1f238122cf44681a4617ed4ef5807cfee6f8f370
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0237
+last_verified_event: RP-027-A001-0238
 last_completed: RP-026
-next_action: Inspectsameimmutableoriginal fulljobs atappropriateinterval and publishsource-linked
-  terminalOUTCOME whenready. Separateverified exacttest/A018clarification sourceINTENT
-  may proceed under236recordedindependence; its corrected-source Linux/full qualification
-  requiresdistinct laterINTENT.
-verification: 237 tracksame1f request14 CI/Desktop/Progress remainderno replay; 236Windows472/defaultPASS
-  +knownLinuxonlyfixture permits independentexacttest/A018clarification repair afterownINTENT.
-  AllC1-C4held.
+next_action: Apply exacttest/appendclarification2file repair/staticreview/sourcepreserve/readbackOUTCOME;
+  then verified required corrected-source Linux/fullplatform qualificationINTENT andnewrequest15
+  boundsource. Continueoriginal1ffullinspection237withoutreplay.
+verification: 238 exacttest/A018appendclarification fixture repair after236failure;
+  production/schemaunchanged andoriginal1ffull237trackedindependently. Sourceunitonly/tests0;
+  correctedrequiredLinuxrequest15laterINTENT; allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0237
+- RP-027-A001-0238
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
