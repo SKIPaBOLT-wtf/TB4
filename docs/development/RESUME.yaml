@@ -5,22 +5,21 @@ check: RP-027.C4
 attempt: A001
 phase: STAGED_RECONFIGURATION_C4_DESKTOP_BOUNDED_BUDGET_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: a2cb9dc0d0baf1812dfec9d5baa12b7e52db9fd9
+source_commit: 923741e9027a2fa6e0289f42cfd59149f8c33d3d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0195
+last_verified_event: RP-027-A001-0196
 last_completed: RP-026
-next_action: Edit/preserve exact one-line workflow source and verifyremoteOUTCOME;
-  then independently qualify actual full Desktop jobs/source receipt before recording
-  package completion. Native admission/ACTIVE adoption/fullcomposition remains next
-  application work.
-verification: "Only .github/workflows/desktop.yml40\u219290 timeout source; preserve/readback\
-  \ exact1path before separate actual Desktop qualification. AllC1-C4 remainheld/native\
-  \ admissionnext."
+next_action: Publish scoped qualification INTENT and trigger existing source-linked
+  request11; record actual Desktop/full/Folder run IDs for same-source inspection.
+  Then independent native current-role admission source may proceed under its own
+  verified INTENT while immutable-source CI executes.
+verification: Separate actual full Desktop/Folder qualification of exact bounded-budget
+  source before packagecompletion claim; then native current-role admission/ACTIVE
+  adoption/fullcomposition. No acceptance/tests0 in source unit.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0195
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
