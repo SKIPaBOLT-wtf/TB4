@@ -4389,7 +4389,11 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
-    proven_origin: null
+    proven_origin:
+      work_item: RP-027
+      source_ref: 90635ed953d297fdea34209cb305439c464c4470
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-provenance.md
     reproduction:
       procedure: Exact before-send fallback acquires its fresh owner then old root
         sender fails with raw AuthorityError LEADERSHIP_IDENTITY instead of expected
@@ -4417,6 +4421,16 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
+    - id: fresh-current-owner-refusal-precedes-old-roster-validation
+      claim: 'Exact failed trace: root advance line281 calls dispatch proof line181;
+        Leadership.observe line114 validates new owner against old enrollment at _records
+        line127 and raises LEADERSHIP_IDENTITY before root owns check. Existing OwnerGuard.matches
+        checks fresh owner/epoch/ACTIVE/force FREE without requiring the replacement''s
+        label; an added preflight rejection followed by unchanged full Leadership.observe/_owns
+        can project OWNER_SUPERSEDED while preserving every authorization guard.'
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-provenance.md
     repairs: []
     issue: null
     regression_test: Exact before-send first-CAS takeover predicate, retaining OWNER_SUPERSEDED/no-send/epoch/UNKNOWN/single-authority/original-profile
@@ -4424,5 +4438,7 @@ defects:
     resolution_evidence: []
     notes: New C3 owner-outcome integration only; stale first-CAS election remains
       available. No safety success or no-send assertion inferred solely from unexpected
-      class. Diagnose exact trace and guarded source. Final C1-C4 held.
+      class. Diagnose exact trace and guarded source. Final C1-C4 held. Exact trace
+      proves old-roster validation precedes explicit owner refusal; ordinary Leadership/enrollment
+      stays unchanged. Minimal early rejection grants no dispatch.
     legacy_record: null

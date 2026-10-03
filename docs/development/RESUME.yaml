@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_OWNER_DIAGNOSIS
+phase: STAGED_RECONFIGURATION_C3_ROOT_OWNER_CAUSE_PROVED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 3603f2678d580a9be225becae56f81e6bb10a95d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0058
+last_verified_event: RP-027-A001-0059
 last_completed: RP-026
-next_action: Publish/read back diagnostic OUTCOME and appended DEF063 proven facts;
-  separately scoped root current-owner guard/projection repair retaining original
-  predicate, preserve source then exact763-case repeat.
-verification: 763-case result recorded; exact before-send owner projection trace/source
-  diagnosis pending.
+next_action: Publish/read back bounded root-only current OwnerGuard preflight source
+  INTENT; edit one root source path, preserve source/outcome, then exact same763-case30-target
+  repeat once.
+verification: Before-send trace proves owner guard projection origin; root-only early
+  refusal repair pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0058
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
