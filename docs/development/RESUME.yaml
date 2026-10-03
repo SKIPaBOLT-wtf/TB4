@@ -3,26 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_SCOPED_QUALIFIED_WINDOWS_FAILURE
+phase: STAGED_RECONFIGURATION_C4_RETAINED_CURRENT_FULL_RETRY
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0242
+last_verified_event: RP-027-A001-0243
 last_completed: RP-026
-next_action: Publish/verify distinct full-remainder/one-known-failed-Windows-job retry
-  INTENT. Rerun only job111233640009 once with same immutable checkout and record
-  actual attempt/jobID. Track currentCI/Linux/oldfull original IDs, no replay/cancel.
-  Separate nextcomposition source INTENT allowed under recorded independence; allC1-C4
-  held.
-verification: 242 current28ade actualrequiredLinux484each0skip and defaultcollection2970
-  qualified; unchangedWindows25/472 retained. Windows discovery originalfailure DEF088
-  causeUNKNOWN recorded; fulljobs remain, explicit nextpubliccomposition independence.
-  AllC1-C4 held.
+next_action: Execute exactly one knownfailedWindows job rerun afterremoteINTENT readback;
+  inspect actualnew job/attempt identity andpublishSTARTED. Continue samecurrent/oldimmutableCI
+  status/log/artifact inspection. Separate nextcomposition source INTENT allowed by242
+  independence, no installed/runtime action.
+verification: 242 verified scoped484/source equivalence;243 isolated singleknownfailedWindows
+  CI job retry pluscurrentfull inspection authorized; originalfailurecauseUNKNOWN/DEF088
+  retained. Next independent publiccomposition source separateINTENT, allC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0237
+- RP-027-A001-0243
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
