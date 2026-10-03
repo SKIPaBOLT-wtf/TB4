@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_NO_SEND_FIXTURE_REPAIR_SAVED
+phase: STAGED_RECONFIGURATION_C3_NO_SEND_REPEAT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 95f2458f4e93fee993a26cab684ab3e3dfbbc3e8
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0083
+last_verified_event: RP-027-A001-0084
 last_completed: RP-026
-next_action: Publish/read back same34-target811-case test INTENT and launch once fresh
-  absent owned WindowsX64 native/offscreenQt fixtures, preserve complete actual result
-  before next root-plan source.
-verification: One-path fixture source saved;34-target811-case repeat pending, final
-  C1-C4 held.
+next_action: Once-run guarded34-target811-case repetition after readback; observe
+  same session, publish actual complete result/defect support before root-plan/adoption
+  source.
+verification: Exact34-target811-case native no-send repeat pending, final C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0084
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
