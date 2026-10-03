@@ -3,18 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_CORRECTED_TIMING_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_CORRECTED_TIMING_QUALIFICATION_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: bf5c34f9fc79fcc6784ccd71009e2551608522a7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0276
+last_verified_event: RP-027-A001-0277
 last_completed: RP-026
-next_action: Run corrected-source qualification once, record actual STARTED IDs and
-  terminal evidence including original18/19 reconciliation, then verified owner-requested
-  pause.
-verification: 276 corrected native assertion qualification pending onbf5c34f; preserve
-  original request19 failure and request18 results. Finish this part then pause; all
-  C1-C4 held.
+next_action: Inspect these same current jobs and local test to terminal, reconcile
+  old18/19, publish evidence and owner-requested pause without next integration.
+verification: 277 current corrected sourcebf5c34f collection3043PASS/tests0; Windows504/current
+  Linux/full/build in progress under request20. Old18/19 terminal reconciliation pending.
+  Owner pause after completion.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
