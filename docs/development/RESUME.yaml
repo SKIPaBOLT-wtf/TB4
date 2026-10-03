@@ -3,24 +3,26 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_CURRENT_FULL_REMAINDER
+phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0245
+last_verified_event: RP-027-A001-0246
 last_completed: RP-026
-next_action: Inspect same currentactualIDs untilterminal; publish exact OUTCOME/fullcounts/artifactmetadata.
-  SeparatepublicFolderACTIVEsourceunit maystartafteritsownverifiedINTENT under242independence;
-  any eventualWindowsretry afterterminal needs newINTENT.
-verification: 245 samecurrentimmutablefull inspection only;244 retryexplicitNOTSTARTED403,
-  no repeat/cancel. ScopedLinux484/priorunchangedWindows25/472 qualified242 allow
-  separatelylogged publicFolderACTIVE composition independent. C1-C4held.
+next_action: Apply exact14file bounded sourceunit; staticreview/preserve/readbackpublicsource
+  plusA019/progress OUTCOME tests0. Then separate qualificationINTENT actualLinux
+  newFolder/adoption allcuts/negatives+old484 andactualWindows affectedNative/codecs/admission
+  regressions/defaultcollection; keep237/245 originalCI tracked.
+verification: 246 bounded distinctFolderACTIVE publicsource INTENT under242 scopedqualified
+  independence; exact14paths/tests0. Actualold/currentfull pending237/245 retained,244
+  retryNOTSTARTED403. AllC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0237
 - RP-027-A001-0245
+- RP-027-A001-0246
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
