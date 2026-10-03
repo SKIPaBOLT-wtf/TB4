@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "kind": "RETAINED_AUTHORITY_TWO_FILE_BOUNDARY_REPAIR",
+  "intent": "RP-027-A001-0226",
+  "failing_source": "41761af8b62b89aea0bc304615dcb7848ad2b763",
+  "source_ref": "0170f12287c03242026280bb1c79253c19b44908",
+  "local_source": "e945ba54e26900c0210bb486634c2865ee1c4b68",
+  "paths": [
+    "src/tb4/reconfiguration_retained.py",
+    "tests/drive/reconfiguration_retained_support.py"
+  ],
+  "schema_sha256": "b4e9aefd0d9e88c02d462745632c1853cf4b7ba05b146be17a598c11f9ab0498",
+  "static_review": "PASS: AST/diff/exact2paths, schema/hash/kinds/alias/UNKNOWN/source/default guards unchanged; tests0",
+  "changes": [
+    "Exact configuration reader import required by runtime global lookup.",
+    "Actual typed synthetic distinct native original/checkpoint/effects/maintenance/baseline/resolution identities and fresh current C1 resolution before new Candidate; original archive/history/source tests preserved."
+  ],
+  "acceptance": false,
+  "runtime_active": false,
+  "next": "Separate same25 actual default Windows/native corrected-source qualification INTENT."
+}

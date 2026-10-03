@@ -3,21 +3,20 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_AUTHORITY_BOUNDARY_REPAIR_SOURCE
+phase: STAGED_RECONFIGURATION_C4_RETAINED_AUTHORITY_REPAIR_SOURCE_PRESERVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 41761af8b62b89aea0bc304615dcb7848ad2b763
+source_commit: 0170f12287c03242026280bb1c79253c19b44908
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0226
+last_verified_event: RP-027-A001-0227
 last_completed: RP-026
-next_action: Apply exact2file repair/staticreview/preserve/readback andOUTCOME, then
-  newsource25 qualificationINTENT; afterPASS required actualLinuxFolder/affected/default/currentfull/composition.
-verification: 226 exact2file import/uniquefixtures repair source afterverifiedfailure225,
-  noactualtestuntilseparatequalification; allC1-C4held.
+next_action: Verified newsource same25/defaultWindows/native qualificationINTENT;
+  runonceinnewownedabsentfixtureparent andrecordactualresultbefore dependentFolder/regressions/CI.
+verification: 227 exact2file retainedimport/uniqueMemoryfixtures repairsource preserved,
+  staticPASS/tests0; same25 newsource qualificationINTENTnext, allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0226
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
