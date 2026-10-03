@@ -5834,3 +5834,51 @@ defects:
       now qualify the exact repairs and new rebind unit; retain OPEN/all checks held
       until final C4/composition/acceptance.
     legacy_record: null
+  DEF-079:
+    title: Shared-publication qualification fixtures violate existing profile and
+      closed catalogue prerequisites
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 5d6116f34f2323e8bc775ca7d092b99e2c99fe77
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-initial-failure.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 5d6116f34f2323e8bc775ca7d092b99e2c99fe77
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-initial-failure.json
+    reproduction:
+      procedure: Default exact-source Windows23 new tests:20PASS3FAIL0SKIP58.512s.
+        Original-profile scenario fails fixture Setup.choose before C4; both compact64
+        cases fail shared catalogue decode before plan construction.
+      failing_source: 5d6116f34f2323e8bc775ca7d092b99e2c99fe77
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-initial-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: invalid-profile-and-selected-catalogue-fixtures
+      claim: Fixture-only requests conflict with existing frozen BALLPARK network_scope
+        and closed discovery catalogue; correct valid original-revision and maximal
+        compact input without weakening production guards.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-initial-failure.json
+    repairs: []
+    issue: null
+    regression_test: All23 new actual/default/native tests with valid original-revision/max64
+      prerequisites, unchanged original Candidate/Docs/effect/post-root tests and
+      actual Linux mapping/Folder/Docs regressions; final C1-C4 composition.
+    resolution_evidence: []
+    notes: Preserve initial5d6116 and all3 closed-code failures. No original/runtime/media/work
+      reset or repeated request occurred. Original/Linux dependent qualification was
+      not started after this targeted failure; allC1-C4 held.
+    legacy_record: null

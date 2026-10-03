@@ -7,18 +7,17 @@ phase: STAGED_RECONFIGURATION_C4_SHARED_PUBLICATION_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5d6116f34f2323e8bc775ca7d092b99e2c99fe77
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0183
+last_verified_event: RP-027-A001-0184
 last_completed: RP-026
-next_action: Inspect exact same new qualification operation; publish STARTED actual
-  run identities ifneeded, exact results/defects/next task OUTCOME before any dependent
-  source.
-verification: 5d6116 shared publication source12paths verified, actual qualification
-  authorized new casesfirst; originals/Linux followonlypass, allC1-C4 held.
+next_action: Publish/re-read one-test-file repair INTENT for valid original-revision
+  and compact64 catalogue/work fixture; source/ordinary guards unchanged. Then separate
+  qualificationINTENT and rerun23beforeoriginal/Linux.
+verification: 5d6116 new23:20PASS3fixtureFAIL0Skip; DEF079/test-prerequisites proven,
+  originals/Linux not started. Onefilevalidfixture repair next/allC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0183
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -47,6 +46,7 @@ known_open_defects:
 - DEF-076
 - DEF-077
 - DEF-078
+- DEF-079
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before

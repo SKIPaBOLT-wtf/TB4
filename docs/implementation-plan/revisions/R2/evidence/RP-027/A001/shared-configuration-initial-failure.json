@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0183",
+  "source": "5d6116f34f2323e8bc775ca7d092b99e2c99fe77",
+  "windows": {
+    "source": "5d6116f34f2323e8bc775ca7d092b99e2c99fe77",
+    "checkout": "271436ee31df9ce9166aeaae916c785f0aaf2efa",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 1,
+    "elapsed_seconds": 58.512,
+    "owned_absent_fixture_root": true,
+    "targets": [
+      "tests/drive/test_reconfiguration_commit.py",
+      "tests/security/test_reconfiguration_commit_native.py"
+    ],
+    "cases": [
+      {
+        "name": "test_actual_publication_advances_coherent_descriptor_configuration_and_preserves_work_profile_media",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_lost_reply_restarts_inspect_only_without_same_operation_repeat[False]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_lost_reply_restarts_inspect_only_without_same_operation_repeat[True]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_final_guards_refuse_without_shared_write_or_original_profile_reset[source]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_final_guards_refuse_without_shared_write_or_original_profile_reset[permission]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_final_guards_refuse_without_shared_write_or_original_profile_reset[clock]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_final_guards_refuse_without_shared_write_or_original_profile_reset[caps]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_final_guards_refuse_without_shared_write_or_original_profile_reset[force]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_final_guards_refuse_without_shared_write_or_original_profile_reset[work]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_final_guards_refuse_without_shared_write_or_original_profile_reset[profile]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_actual_final_guards_refuse_without_shared_write_or_original_profile_reset[stage]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_final_guards_refuse_without_shared_write_or_original_profile_reset[unknown]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_final_guards_refuse_without_shared_write_or_original_profile_reset[receipt]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_stage_change_during_final_first_run_probe_cannot_be_published",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_first_cas_takeover_supersedes_before_and_preserves_readonly_after_without_ack[False]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_first_cas_takeover_supersedes_before_and_preserves_readonly_after_without_ack[True]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_named_schema_alias_and_ordinary_writers_cannot_publish_or_consume_effects",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_compact64_slot_plan_preserves_all_command_generations_and_terminal_receipts",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_actual_native_commit_pending_cut_promotes_exact_frame_and_never_repeats[begin]",
+        "classname": "tests.security.test_reconfiguration_commit_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_commit_pending_cut_promotes_exact_frame_and_never_repeats[invoking]",
+        "classname": "tests.security.test_reconfiguration_commit_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_commit_pending_cut_promotes_exact_frame_and_never_repeats[confirmed]",
+        "classname": "tests.security.test_reconfiguration_commit_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_commit_copy_and_broad_protection_are_refused",
+        "classname": "tests.security.test_reconfiguration_commit_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_commit_compact64_plan_and_previous_frame_stay_within_budget",
+        "classname": "tests.security.test_reconfiguration_commit_native",
+        "status": "FAILURE"
+      }
+    ],
+    "failures": [
+      {
+        "name": "test_actual_final_guards_refuse_without_shared_write_or_original_profile_reset[profile]",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "message": "tb4.private_settings.SettingsError: SETUP_BALLPARK_BINDING_FROZEN"
+      },
+      {
+        "name": "test_actual_compact64_slot_plan_preserves_all_command_generations_and_terminal_receipts",
+        "classname": "tests.drive.test_reconfiguration_commit",
+        "message": "tb4.discovery_catalogue.DiscoveryError: DISCOVERY_FOREIGN_CATALOGUE"
+      },
+      {
+        "name": "test_actual_native_commit_compact64_plan_and_previous_frame_stay_within_budget",
+        "classname": "tests.security.test_reconfiguration_commit_native",
+        "message": "tb4.discovery_catalogue.DiscoveryError: DISCOVERY_FOREIGN_CATALOGUE"
+      }
+    ],
+    "counts": {
+      "PASS": 20,
+      "FAILURE": 3,
+      "ERROR": 0,
+      "SKIPPED": 0
+    }
+  },
+  "historical_post_root_full_platform": [
+    {
+      "source": "3ad08dfbb64e057ea5140f7bd1c9b5d2d43d894c",
+      "trigger": "69cd36b3e8294342a9f26c8d9280dc772e2103f5",
+      "run": 37115281880,
+      "job": 111180806157,
+      "platform": "Linux CI",
+      "conclusion": "success",
+      "counts": [
+        "2797 passed, 27 skipped, 4 xfailed in 905.57s (0:15:05)"
+      ],
+      "packages": [],
+      "scope": "Historical post-root source only; not current5d6116 shared-publication or fullC4 acceptance."
+    },
+    {
+      "source": "3ad08dfbb64e057ea5140f7bd1c9b5d2d43d894c",
+      "trigger": "69cd36b3e8294342a9f26c8d9280dc772e2103f5",
+      "run": 37115281868,
+      "job": 111180806112,
+      "platform": "Windows Desktop",
+      "conclusion": "success",
+      "counts": [
+        "2683 passed, 158 skipped, 4 xfailed in 1221.45s (0:20:21)"
+      ],
+      "packages": [
+        [
+          {
+            "role": "watchdog",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          },
+          {
+            "role": "fetcher",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          }
+        ]
+      ],
+      "scope": "Historical post-root source only; not current5d6116 shared-publication or fullC4 acceptance."
+    },
+    {
+      "source": "3ad08dfbb64e057ea5140f7bd1c9b5d2d43d894c",
+      "trigger": "69cd36b3e8294342a9f26c8d9280dc772e2103f5",
+      "run": 37115281868,
+      "job": 111180806236,
+      "platform": "Linux Desktop",
+      "conclusion": "success",
+      "counts": [
+        "2820 passed, 21 skipped, 4 xfailed in 1674.71s (0:27:54)"
+      ],
+      "packages": [
+        [
+          {
+            "role": "watchdog",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          },
+          {
+            "role": "fetcher",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          }
+        ]
+      ],
+      "scope": "Historical post-root source only; not current5d6116 shared-publication or fullC4 acceptance."
+    }
+  ],
+  "proven_facts": [
+    "20 of23 actual new Windows conformance/native cases PASS0Skip; three fixture prerequisites fail with closed original guards before the intended qualification.",
+    "Profile-change fixture asks Setup.choose to change network_scope despite existing protected BALLPARK package; exact SETUP_BALLPARK_BINDING_FROZEN occurs in fixture setup before C4 advance.",
+    "Two compact64 cases use a selected catalogue with foreign synthetic_retained_unicode property; actual shared decode rejects DISCOVERY_FOREIGN_CATALOGUE before final plan construction."
+  ],
+  "next_change": "One owned test file: advance original profile with the same existing network_scope to test revision freshness; remove foreign catalogue extension and move substantial synthetic Unicode into bounded unchanged retained work. Keep real layout/discovery/Setup guards, production source and original tests unchanged.",
+  "original_regressions_and_linux": "NOT_STARTED_AFTER_TARGET_FAILURE",
+  "acceptance": false
+}
