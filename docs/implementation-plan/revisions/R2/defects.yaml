@@ -6500,6 +6500,7 @@ defects:
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-catalogue-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-original-full-historical.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6533,10 +6534,14 @@ defects:
       affected native/receipt/admission regressions; actual corrected-sourceLinux506/fullplatform
       gates. Closure membership16+ENTRY remains same.
     resolution_evidence: []
-    notes: NewactualWindows55PASS113.767s and wholecollection2992PASS1.773s/tests0;
+    notes: 'NewactualWindows55PASS113.767s and wholecollection2992PASS1.773s/tests0;
       schemae567 additive definitions preserveexisting meanings, but metadata coherence
       fails bothactualDesktop jobs. Source static review247 did not qualify repository
       catalogue. This is a normal source defect, no external blocker. AllC1-C4 held.
+      Originalimmutable103d fullCI terminal2920PASS24FAIL27SKIP4XFAIL1783.84s: two
+      samecatalogueassertions DEF089 and22samefixtureguardfailures DEF090, alloriginalfailedcaseIDs
+      retained; originalscopedLinuxboth51+6PASS/22FAIL. Correctedcurrent6ab069 actualqualification259
+      stillpending; no oldrun replay/currentqualification substitution.'
     legacy_record: null
   DEF-090:
     title: New Folder ACTIVE fixture bypasses the separate actual first storage-selection
@@ -6558,6 +6563,7 @@ defects:
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-binding-fixture-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-original-full-historical.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6591,7 +6597,11 @@ defects:
       assertions withactualselection; wholeprior484/currentfull/common. Windows55
       productionunchanged qualification remains exact103d source.
     resolution_evidence: []
-    notes: Fixturefirstrequest/binding guard failure, notanexternalstorage/accessproblem.
+    notes: 'Fixturefirstrequest/binding guard failure, notanexternalstorage/accessproblem.
       ActualnewFolderproductionpath notyetqualified; no skippedcasescounted. RawpublicLinuxfixturetrace
-      keptinGitHubjoblogs; reportomits ephemeralpaths. C1-C4held.
+      keptinGitHubjoblogs; reportomits ephemeralpaths. C1-C4held. Originalimmutable103d
+      fullCI terminal2920PASS24FAIL27SKIP4XFAIL1783.84s: two samecatalogueassertions
+      DEF089 and22samefixtureguardfailures DEF090, alloriginalfailedcaseIDs retained;
+      originalscopedLinuxboth51+6PASS/22FAIL. Correctedcurrent6ab069 actualqualification259
+      stillpending; no oldrun replay/currentqualification substitution.'
     legacy_record: null

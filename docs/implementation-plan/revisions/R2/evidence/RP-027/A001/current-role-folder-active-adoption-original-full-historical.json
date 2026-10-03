@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "kind": "ORIGINAL_FOLDER_ACTIVE_IMMUTABLE_FULL_FAILURE_HISTORICAL",
+  "intent": "RP-027-A001-0252",
+  "source_ref": "103d0eb2009880a7e76ac4604e611ce6958060da",
+  "trigger_commit": "2352abc13bc7b994fab9a7bec635acbf81d83aec",
+  "checkout": "a4ae88397db121f426d7d2697b27efd1783bd295",
+  "ci": {
+    "run_id": 37136408977,
+    "job_id": 111241734593,
+    "conclusion": "failure",
+    "passed": 2920,
+    "failed": 24,
+    "skipped": 27,
+    "xfailed": 4,
+    "duration_seconds": 1783.84,
+    "failed_case_names": [
+      "tests/coach/test_instruction_selection.py::test_repository_catalog_consistent_but_deliberately_not_live_eligible",
+      "tests/drive/test_ballpark_setup.py::test_repository_profile_remains_unreleased_and_hashes_include_setup_guidance",
+      "tests/drive/test_folder_active_adoption.py::test_actual_new_folder_role_adopts_without_old_host_mapping_wal_ack_and_preserves_objects[False]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_new_folder_role_adopts_without_old_host_mapping_wal_ack_and_preserves_objects[True]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_inherited_folder_work_and_unknown_effect_remain_without_old_ack_or_replay[BUSY]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_inherited_folder_work_and_unknown_effect_remain_without_old_ack_or_replay[UNREAD]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_inherited_folder_work_and_unknown_effect_remain_without_old_ack_or_replay[UNKNOWN]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_current_fact_loss_refuses_main_promotion_with_no_shared_mutation[source]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_current_fact_loss_refuses_main_promotion_with_no_shared_mutation[profile]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_current_fact_loss_refuses_main_promotion_with_no_shared_mutation[force]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_current_fact_loss_refuses_main_promotion_with_no_shared_mutation[artifact]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_current_fact_loss_refuses_main_promotion_with_no_shared_mutation[clock]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_current_fact_loss_refuses_main_promotion_with_no_shared_mutation[caps]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_change_during_folder_first_run_refuses_local_confirmation[stage]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_change_during_folder_first_run_refuses_local_confirmation[role]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[intent]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[archive]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[stage]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[staged]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[prepared]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[original]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[confirmed]",
+      "tests/drive/test_folder_active_adoption.py::test_actual_folder_closed_kinds_receipts_alias_owner_and_default_activation",
+      "tests/drive/test_folder_active_adoption.py::test_actual_own_local_unknown_refuses_adoption_after_immediate_role_acquisition"
+    ],
+    "classified": {
+      "DEF089": "Two actual repository compatibility-hash assertions: coach instruction-selection and BALLPARK setup.",
+      "DEF090": "All22 newFolderACTIVE assertions are not reached becausefixtureviolatesexistingrequest/bindingguard."
+    }
+  },
+  "required_linux": [
+    {
+      "run_id": 37136405594,
+      "job_id": 111241724971,
+      "conclusion": "failure",
+      "old_mapping_passed": 51,
+      "old_retained_passed": 6,
+      "new_active_passed": 0,
+      "new_active_failed": 22,
+      "new_active_seconds": 102.2,
+      "artifacts": [
+        {
+          "id": 11278008666,
+          "name": "folder-reconfiguration-2352abc13bc7b994fab9a7bec635acbf81d83aec",
+          "size_in_bytes": 4531,
+          "digest": "sha256:eed31a2b056ebc5825f25cd7183d5dad23bd99e823ed2f76f5c49776bfda7f34",
+          "expired": false
+        }
+      ]
+    },
+    {
+      "run_id": 37136408967,
+      "job_id": 111241734545,
+      "conclusion": "failure",
+      "old_mapping_passed": 51,
+      "old_retained_passed": 6,
+      "new_active_passed": 0,
+      "new_active_failed": 22,
+      "new_active_seconds": 226.73,
+      "artifacts": [
+        {
+          "id": 11277954285,
+          "name": "folder-reconfiguration-a4ae88397db121f426d7d2697b27efd1783bd295",
+          "size_in_bytes": 4538,
+          "digest": "sha256:746ae87d5247d0aadfea807e8c960b2440706ddad65094d5c132bdc2ff4ec6ed",
+          "expired": false
+        }
+      ]
+    }
+  ],
+  "desktop": {
+    "run_id": 37136408960,
+    "linux": {
+      "job_id": 111241734473,
+      "conclusion": "failure",
+      "owner_review": {
+        "passed": 74,
+        "failed": 1,
+        "seconds": 9.32
+      }
+    },
+    "windows": {
+      "job_id": 111241734602,
+      "conclusion": "failure",
+      "owner_review": {
+        "passed": 74,
+        "failed": 1,
+        "seconds": 10.51
+      },
+      "native_discovery": {
+        "passed": 2,
+        "failed": 0,
+        "seconds": 8.6
+      }
+    },
+    "full_and_builds_packages": "not reached after catalogue failure"
+  },
+  "progress": {
+    "run_id": 37136409010,
+    "job_id": 111241734726,
+    "conclusion": "success"
+  },
+  "original_windows_scoped": "55PASS113.767s actual0skip; default2992collection1.773s/tests0 separately qualified250, no Linux/full substitution.",
+  "repair_sources": {
+    "exact_fixture_and_unreleased_hash": "f5bcd2b164ca55d78a0a1bbf86031bdda839c6b2",
+    "bounded_expanded_ci_budget": "6ab0691aaa1955068ac3932590f1e0280f3a36b6"
+  },
+  "next": "Same current6ab069 request17/INTENT259 actualWindows497 session74717 andactualLinux506/full job identities260. Original103d runs terminal/reconciled without cancellation/replay; no currentacceptance.",
+  "acceptance": false,
+  "runtime_active": false
+}

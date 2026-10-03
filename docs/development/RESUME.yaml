@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_CORRECTED_RUNNING
+phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_ORIGINAL_FULL_HISTORICAL
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 6ab0691aaa1955068ac3932590f1e0280f3a36b6
+source_commit: 103d0eb2009880a7e76ac4604e611ce6958060da
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0260
+last_verified_event: RP-027-A001-0261
 last_completed: RP-026
-next_action: Inspect sameactualsession74717 andrequest17 originalLinux506/currentfull
-  IDs. Publishoriginal103d252terminalOUTCOMEwithall24exactknownfailures. Scopedcurrent
-  qualification OUTCOME beforedependentrepair/runtimeGUI/remotehelper source; allC1-C4held.
-verification: 260 actualcurrent6ab069/request17 IDs/localWindows497session74717 recorded/defaultcollect2992PASStests0.
-  ActualLinux506/all22functionalassertions/currentfull unfinished; original103d25224failterminalhistcheckpointnext.
-  AllC1-C4held.
+next_action: Inspect same current6ab069 request17/259 Windows497 actualsession74717/currentLinux506/full
+  IDs260; preserve terminalscopedOUTCOME beforedependentruntimeGUI/remotehelper source.
+  Anynewfailure diagnosed/recordedbeforeboundedrepair; allC1-C4held.
+verification: 261 original103d immutable252 fullreconciled24exactknownfailures (2catalogueDEF089+22fixtureDEF090)/samefailedruns
+  retained. Currentcorrected6ab069/request17 actualWindows497session74717/Linux506/full
+  tracked259/260; no historicalsubstitution. C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
-- RP-027-A001-0252
 - RP-027-A001-0259
 expected_user_action: null
 blocking_decisions: []
