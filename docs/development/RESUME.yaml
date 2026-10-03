@@ -3,16 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_SHARED_ROOT_PLAN_TEST
+phase: STAGED_RECONFIGURATION_C3_SHARED_ROOT_PLAN_TEST_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: afbc0df905d2351c25dc7beb399c45e4fbf22a54
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0089
+last_verified_event: RP-027-A001-0090
 last_completed: RP-026
-next_action: Once-run guarded36-target fresh test after readback; record same actual
-  STARTED/full result/defects before any dependent source.
-verification: Shared root-plan36-target native/partial/max-capacity test pending;
-  no accepted C1-C4.
+next_action: Observe same session14077 and exact unique result; publish full actual
+  source-linked predicate/status/exit/time/failures/Linux skips before repair or adoption
+  source.
+verification: Actual36-target root-plan/partial/native/max-capacity test running LOCAL-SESSION-14077;
+  no C1-C4 accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
