@@ -3,24 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_LINUX_FIXTURE_FAILURE
+phase: STAGED_RECONFIGURATION_C4_RETAINED_IMMUTABLE_FULL_REMAINDER
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 1f238122cf44681a4617ed4ef5807cfee6f8f370
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0236
+last_verified_event: RP-027-A001-0237
 last_completed: RP-026
-next_action: Firstseparate verifiedimmutable1f originalfullremainder inspectionINTENT,
-  then distinct exact2file fixture/A018clarification sourceINTENT. Fixactual retainedartifactgeneration/name,
-  production/hash/guards unchanged; preserve source/OUTCOME then requiredcorrectedLinuxrequest15/full
-  gates. Recordedschedulingindependence basedonterminalWindows472+knownLinuxfixture
-  defect, no unchangedWindows25/472 repeat.
-verification: 236 immutable1f Windows472/default2970PASS; bothLinux51+new5PASS1FAIL(nonexistent.gc
-  fixture),107/320unqualified. TrackoriginalCI/Desktopnext237 andexacttest/A018clarificationrepairnext238independent(Windows472terminal/no
-  prodchange), allC1-C4held.
+next_action: Inspectsameimmutableoriginal fulljobs atappropriateinterval and publishsource-linked
+  terminalOUTCOME whenready. Separateverified exacttest/A018clarification sourceINTENT
+  may proceed under236recordedindependence; its corrected-source Linux/full qualification
+  requiresdistinct laterINTENT.
+verification: 237 tracksame1f request14 CI/Desktop/Progress remainderno replay; 236Windows472/defaultPASS
+  +knownLinuxonlyfixture permits independentexacttest/A018clarification repair afterownINTENT.
+  AllC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0237
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
