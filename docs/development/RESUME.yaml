@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_NATIVE_PROFILE_PROMOTION_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_DESKTOP_BOUNDED_BUDGET_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: a2cb9dc0d0baf1812dfec9d5baa12b7e52db9fd9
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0194
+last_verified_event: RP-027-A001-0195
 last_completed: RP-026
-next_action: Publish scoped INTENT to repair only Desktop bounded time budget without
-  altering tests/runtime/gates; preserve exact sourceOUTCOME and qualify actual full
-  jobs. Then native current-role admission/cloud ACTIVE adoption and full Folder/rootless/runtime/GUI/helper
-  composition; no C1-C4 acceptance yet.
-verification: a2cb9 Windows18/272/default2886 and actualLinux400 each qualified; allC1-C4
-  held. Record Desktop bounded budget repair then current-role admission/ACTIVE adoption/fullcomposition.
-  Preserve current full/platform runs and historical canceled packaging.
+next_action: Edit/preserve exact one-line workflow source and verifyremoteOUTCOME;
+  then independently qualify actual full Desktop jobs/source receipt before recording
+  package completion. Native admission/ACTIVE adoption/fullcomposition remains next
+  application work.
+verification: "Only .github/workflows/desktop.yml40\u219290 timeout source; preserve/readback\
+  \ exact1path before separate actual Desktop qualification. AllC1-C4 remainheld/native\
+  \ admissionnext."
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0195
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
