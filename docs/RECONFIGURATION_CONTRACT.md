@@ -133,3 +133,11 @@ revision; typed current/previous/binding/metadata proof establishes only local
 non-dispatch. Legacy absence, possible-send or contradictory after metadata never
 counts as unsent. Shared UNKNOWN and activation remain held for later qualified
 settlement; role takeover does not wait for that evidence or acknowledgements.
+
+[A-006](implementation-plan/revisions/R2/amendments/RP-027/A-006-cloud-inherited-root-settlement.md)
+adds current-role cloud-only exact inherited root-result inspection. Original
+blueprint/fixed references and unique new-parent transition metadata can justify
+UNKNOWN-to-COMPLETE under a dedicated summary-only current-owner CAS, retaining
+original operation owner/epoch/ID. It requires actual fresh role/source/native
+checks and protected intent; no old host/WAL/ACK, SDK move, replay or first-run/
+routing grant. Partial-plan continuation and final promotion remain required.

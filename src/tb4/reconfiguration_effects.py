@@ -10,7 +10,7 @@ import json
 
 from .configuration_contract import ConfigurationError, configuration, require
 from .drive.authority_transaction import OwnerGuard, RecordMutation, reconcile
-from .drive.commissioning import frozen_plan, restored_plan
+from .drive.commissioning import SetupSpec, digest, frozen_plan, object_id, restored_plan
 from .drive.leadership import Grant, Leadership, identity, transition_id
 from .exchange_layout import MAX_GENERATION, Capacity, empty_document, encoded, validate_document
 from .private_settings import PrivateSettings
@@ -18,7 +18,7 @@ from .private_settings import PrivateSettings
 SLOT = "global.summary"
 KEY = "tb4_effects_v1"
 SCHEMA = "protocol/reconfiguration-effects-v1.schema.json"
-SCHEMA_SHA256 = "557de55dd47996e8cf369fa769353e679759ab54ff8ae167af1d46b2a3796b2c"
+SCHEMA_SHA256 = "67734c81f897fb55d41ea3543e6a92c35b202e9156dbe35cd5a4ee12951f44de"
 OUTCOMES = frozenset({"UNKNOWN", "COMPLETE", "NO_WORK", "SUPERSEDED", "NOT_DISPATCHED"})
 
 
@@ -90,11 +90,21 @@ class EffectMutation(RecordMutation):
     purpose: str
 
     @classmethod
-    def prepare(cls, snapshot, owner, row, *, purpose):
+    def prepare(cls, snapshot, owner, row, *, purpose, root_key=None):
         doc = snapshot.document()
         require(type(owner) is OwnerGuard and owner.matches(doc), "OWNER_SUPERSEDED")
+        protected = {"global.settings"}
+        if purpose == "ROOT_SETTLE":
+            require(type(root_key) is str and root_key in (
+                tuple(f"artifact.{i:03d}.{kind}" for i in range(Capacity.parse(doc["capacity"]).devices)
+                      for kind in ("input","output")) + ("authority",)), "CONFIGURATION_EFFECT_WAL")
+            protected.add("global.commissioning")
+            if root_key != "authority":
+                protected.add("target."+root_key.split(".")[1]+".catalogue")
+        else:
+            require(root_key is None, "CONFIGURATION_EFFECT_WAL")
         result = cls(snapshot.binding, owner, encoded({k:v for k,v in doc.items() if k != "records"}),
-            encoded({"global.settings":doc["records"]["global.settings"]}),
+            encoded({k:doc["records"][k] for k in protected}),
             encoded({SLOT:doc["records"][SLOT]}), encoded({SLOT:row}), purpose)
         result._validate()
         return result
@@ -103,7 +113,7 @@ class EffectMutation(RecordMutation):
         try:
             parts = {k:json.loads(getattr(self,k)) for k in ("header", "protected", "before", "after")}
             require(all(encoded(v) == getattr(self,k) for k,v in parts.items())
-                    and set(parts["protected"]) == {"global.settings"}
+                    and "global.settings" in parts["protected"]
                     and set(parts["before"]) == set(parts["after"]) == {SLOT}
                     and identity(self.owner.owner) and type(self.owner.epoch) is int
                     and 1 <= self.owner.epoch <= MAX_GENERATION, "CONFIGURATION_EFFECT_WAL")
@@ -119,7 +129,9 @@ class EffectMutation(RecordMutation):
             old, new = ledger(before), ledger(after)
             require(new is not None and after == changed_row(before,new), "CONFIGURATION_EFFECT_WAL")
             config = configuration(probe)
-            require(self.purpose in {"INITIALIZE", "START", "ROOT_START", "FINISH", "CERTIFY"}, "CONFIGURATION_EFFECT_WAL")
+            require(self.purpose in {"INITIALIZE", "START", "ROOT_START", "ROOT_SETTLE", "FINISH", "CERTIFY"}, "CONFIGURATION_EFFECT_WAL")
+            if self.purpose != "ROOT_SETTLE":
+                require(set(parts["protected"]) == {"global.settings"}, "CONFIGURATION_EFFECT_WAL")
             if self.purpose in {"INITIALIZE", "START"}:
                 require(config is None or config["phase"] != "MAINTENANCE", "CONFIGURATION_MAINTENANCE")
             if self.purpose == "INITIALIZE":
@@ -141,8 +153,37 @@ class EffectMutation(RecordMutation):
                                if old["entries"].get(key) != new["entries"].get(key)}
                     require(len(changed) == 1 and new["barrier"] == old["barrier"], "CONFIGURATION_EFFECT_WAL")
                     action = next(iter(changed)); entry = new["entries"].get(action); prior = old["entries"].get(action)
-                    require(entry is not None and entry["owner"] == self.owner.owner
-                            and entry["epoch"] == self.owner.epoch, "CONFIGURATION_EFFECT_WAL")
+                    require(entry is not None and (self.purpose == "ROOT_SETTLE" or
+                            entry["owner"] == self.owner.owner and entry["epoch"] == self.owner.epoch),
+                            "CONFIGURATION_EFFECT_WAL")
+                    if self.purpose == "ROOT_SETTLE":
+                        barrier = old["barrier"]
+                        require(action == "IDENTITY" and prior is not None and prior["outcome"] == "UNKNOWN"
+                                and entry["outcome"] == "COMPLETE" and prior["epoch"] < self.owner.epoch
+                                and {k:v for k,v in entry.items() if k != "outcome"}
+                                == {k:v for k,v in prior.items() if k != "outcome"}
+                                and config is not None and config["phase"] == "MAINTENANCE"
+                                and barrier is not None and barrier["local_clear"] is True
+                                and barrier["transition_id"] == config["transition_id"], "CONFIGURATION_EFFECT_WAL")
+                        row = parts["protected"]["global.commissioning"]
+                        marker = row["body"]
+                        spec = SetupSpec(marker["root_id"],self.binding.domain_id,marker["setup_id"],
+                                         marker["bootstrap_actor"],marker["mode"],Capacity.parse(header["capacity"]))
+                        require(spec.mode == "NATIVE_DOCS" and marker == spec.marker("STORAGE_READY")
+                                and row["generation"] == 0 and row["retention"] == "RETAINED"
+                                and row["operation_id"] == spec.setup_id, "CONFIGURATION_EFFECT_WAL")
+                        keys = [k for k in spec.artifact_keys + ("authority",)
+                                if digest(["reconfiguration-root",config["transition_id"],k]) == prior["operation_id"]]
+                        require(len(keys) == 1, "CONFIGURATION_EFFECT_WAL")
+                        key = keys[0]; needed = {"global.settings","global.commissioning"}
+                        if key != "authority":
+                            _,index,kind = key.split("."); slot = "target."+index+".catalogue"
+                            needed.add(slot)
+                            item = parts["protected"][slot]["body"]["artifacts"][kind]
+                            require(object_id(item["id"]) and item["seal"] == digest([
+                                spec.mode,spec.root_id,spec.domain_id,item["id"],spec.operation(key)]),
+                                "CONFIGURATION_EFFECT_WAL")
+                        require(set(parts["protected"]) == needed, "CONFIGURATION_EFFECT_WAL")
                     if self.purpose == "ROOT_START":
                         barrier = old["barrier"]
                         require(action == "IDENTITY" and config is not None and config["phase"] == "MAINTENANCE"
@@ -179,7 +220,7 @@ class EffectMutation(RecordMutation):
             return "CONFIRMED", None  # Read-only fact, also after takeover.
         if not self.owner.matches(doc):
             return "SUPERSEDED", None
-        if doc["records"]["global.settings"] != json.loads(self.protected)["global.settings"]:
+        if any(doc["records"][key] != value for key,value in json.loads(self.protected).items()):
             return "CONFLICT", None
         if doc["records"][SLOT] != before[SLOT]:
             return "CONFLICT", None
