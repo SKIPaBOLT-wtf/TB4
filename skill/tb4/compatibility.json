@@ -25,7 +25,7 @@
         "protocol/reconfiguration-maintenance-v1.schema.json": "f8cba98bb15e544d84a2e73cc58a2e359e974f96e323f708a46107275de13d31",
         "protocol/reconfiguration-effects-v1.schema.json": "efcd98d8a9bfa4cece8a429cd82984abccbbd30e0fe937fb8f12a11cdd49ad8b",
         "protocol/native-checkpoint-v1.schema.json": "4f898bd51242cd61cca59dd7a016d467898671f266d2d1f1a9e38fd79eeeb6d4",
-        "protocol/reconfiguration-candidate-v1.schema.json": "7effe67c48a4d8abc904586607c84347f7a779d6ace0fbb6350b0faae84c0081",
+        "protocol/reconfiguration-candidate-v1.schema.json": "b4e9aefd0d9e88c02d462745632c1853cf4b7ba05b146be17a598c11f9ab0498",
         "protocol/reconfiguration-root-v1.schema.json": "4a5ddeb905e347813189dfff9b856e0250b3021e2805f60ab0a3025b8e3e7b18",
         "protocol/reconfiguration-root-resume-v1.schema.json": "aede9105fbb41f1e31629068811d198910902fcb715095938479b8cfe7f8a5e5",
         "protocol/folder-path-mapping-v1.schema.json": "24f83e184623f491c4730e81a64101ce8828ea6be8e6c89b642eab04d1acaa1b",

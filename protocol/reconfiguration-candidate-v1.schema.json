@@ -1626,6 +1626,496 @@
           }
         }
       }
+    },
+    "retainedConfigurationCommit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "kind",
+        "installation_id",
+        "transition_id",
+        "base_sha256",
+        "stage_sha256",
+        "stage_state_sha256",
+        "base_revision",
+        "stage_revision",
+        "authority",
+        "pin",
+        "bindings",
+        "dispatch",
+        "plan"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "RECONFIGURATION_RETAINED_COMMIT"
+        },
+        "installation_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "transition_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "base_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "stage_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "stage_state_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "base_revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "stage_revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "authority": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "document_id",
+                "tab_id",
+                "domain_id"
+              ],
+              "properties": {
+                "document_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "tab_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "domain_id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "root_id",
+                "domain_id"
+              ],
+              "properties": {
+                "root_id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+                },
+                "domain_id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+                }
+              }
+            }
+          ]
+        },
+        "pin": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "commit",
+            "profile",
+            "policy_digest",
+            "runtime",
+            "instructions",
+            "files"
+          ],
+          "properties": {
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "profile": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{0,63}$"
+            },
+            "policy_digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "runtime": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "build_commit",
+                "protocol",
+                "capabilities"
+              ],
+              "properties": {
+                "build_commit": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{40}$"
+                },
+                "protocol": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "capabilities": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "instructions": {
+              "type": "string"
+            },
+            "files": {
+              "type": "object",
+              "minProperties": 2,
+              "maxProperties": 17,
+              "additionalProperties": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        },
+        "bindings": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "original",
+            "profile",
+            "archive",
+            "transaction",
+            "checkpoint",
+            "effects",
+            "maintenance",
+            "baseline",
+            "resolution",
+            "commit"
+          ],
+          "properties": {
+            "original": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "profile": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "archive": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "transaction": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "checkpoint": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "effects": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "maintenance": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "baseline": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "resolution": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "mapping": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "dispatch": {
+          "enum": [
+            "PREPARED",
+            "INVOKING",
+            "CONFIRMED"
+          ]
+        },
+        "plan": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "owner",
+            "epoch",
+            "header",
+            "protected",
+            "before",
+            "after"
+          ],
+          "properties": {
+            "owner": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "epoch": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9223372036854775807
+            },
+            "header": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 262144
+            },
+            "protected": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 262144
+            },
+            "before": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 262144
+            },
+            "after": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 262144
+            }
+          }
+        }
+      }
+    },
+    "retainedProfilePromotion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "kind",
+        "installation_id",
+        "configuration_revision",
+        "base_revision",
+        "stage_revision",
+        "transition_id",
+        "base_sha256",
+        "stage_sha256",
+        "commit_sha256",
+        "promoted_sha256",
+        "pin",
+        "phase",
+        "bindings"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "RECONFIGURATION_RETAINED_PROMOTION"
+        },
+        "installation_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "configuration_revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "base_revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "stage_revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "transition_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "base_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "stage_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "commit_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "promoted_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "pin": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "commit",
+            "profile",
+            "policy_digest",
+            "runtime",
+            "instructions",
+            "files"
+          ],
+          "properties": {
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "profile": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{0,63}$"
+            },
+            "policy_digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "runtime": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "build_commit",
+                "protocol",
+                "capabilities"
+              ],
+              "properties": {
+                "build_commit": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{40}$"
+                },
+                "protocol": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "capabilities": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "instructions": {
+              "type": "string"
+            },
+            "files": {
+              "type": "object",
+              "minProperties": 2,
+              "maxProperties": 17,
+              "additionalProperties": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        },
+        "phase": {
+          "enum": [
+            "PREPARED",
+            "PROMOTED"
+          ]
+        },
+        "bindings": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "original",
+            "profile",
+            "archive",
+            "transaction",
+            "checkpoint",
+            "effects",
+            "maintenance",
+            "baseline",
+            "resolution",
+            "commit",
+            "promotion"
+          ],
+          "properties": {
+            "original": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "profile": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "archive": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "transaction": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "checkpoint": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "effects": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "maintenance": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "baseline": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "resolution": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "promotion": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "mapping": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        }
+      }
     }
   }
 }

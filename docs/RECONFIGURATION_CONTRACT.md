@@ -242,3 +242,16 @@ shared BUSY/UNREAD/UNKNOWN and ordinary no-replay guards; A-016 non-adoption rel
 keeps the full zero-blocker gate. Election remains immediate; default activation
 stays closed. Folder/rootless final publication and runtime/GUI/helper/common gates
 remain required; source alone accepts no check.
+
+[A-018](implementation-plan/revisions/R2/amendments/RP-027/A-018-retained-authority-publication.md)
+adds distinct retained-authority C4 publication and full own-profile promotion.
+Fresh actual Candidate/C1/source/first-run/role proof retains the exact storage and
+commissioning identity; rootless keeps the summary unchanged and actual mapped
+Folder AFTER consumes only its terminal folder plan. Compact conditional intent
+and inspection-only recovery preserve all work/GC/artifacts/generations. Earlier
+root receipts remain valid through later rootless configuration transitions.
+Native Main promotion retains the complete original archive/previous profile and
+INCOMPLETE reservation; fresh originating admission remains separate. Protected
+Folder selection accepts only its original lookup anchor or verified current
+path. Existing post-root contracts and default DenyActivation remain unchanged;
+source alone accepts no check and runtime/GUI/remote helper/common gates remain.
