@@ -5568,7 +5568,18 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.md
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0142
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Keep all21 Linux cases/assertions; use actual valid private Setup
       revision change, prove it advanced, then actual creator refusal/no mapping/authority/root/profile

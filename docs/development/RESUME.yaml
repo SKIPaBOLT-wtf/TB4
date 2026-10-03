@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_FOLDER_PATH_LINUX_TEST
+phase: STAGED_RECONFIGURATION_C3_FOLDER_PROFILE_FIXTURE_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 83dd3c09e1446a6897ef0dd64abb6c28fe5d5efb
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0141
+last_verified_event: RP-027-A001-0142
 last_completed: RP-026
-next_action: Publish scoped DEF075 fixture repair INTENT; use actual same-scope Setup
-  write to advance protected profile revision, keep production freezes/all assertions,
-  save/readback; then one fresh required Linux mapping/regression qualification.
-verification: Actual Linux mapping20PASS/1 fixtureFAIL/0SKIP preserved; correct production
-  frozen binding retained. DEF075 repair required; full automatic jobs pending, C1-C4
-  unaccepted.
+next_action: Save exact one-path fixture repair/readback and source-linked outcome,
+  then verified fresh actual native Linux mapping/regression run on repaired source.
+verification: Exact native profile fixture failure preserved; one-path actual Setup
+  revision precondition repair authorized, tests pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0142
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
