@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_FOLDER_PROFILE_FIXTURE_SOURCE
+phase: STAGED_RECONFIGURATION_C3_FOLDER_PATH_LINUX_REPEAT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: f98ddf419471afc11a27868231432a6f8ba753f3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0143
+last_verified_event: RP-027-A001-0144
 last_completed: RP-026
-next_action: Publish new actual Linux mapping/regression qualification INTENT and
-  one exact fresh request on repaired source; inspect same native push/PR jobs/cases
-  and record result before physical transaction work.
-verification: One-path actual protected profile revision fixture repair saved/readback;
-  required native qualification pending, production freezes unchanged.
+next_action: Trigger one fresh CI request and record actual STARTED jobs, inspect
+  same native jobs/result; preserve any ordinary failure and repair without external
+  blocker.
+verification: Exact one-path fixture repair saved/readback; required native Linux
+  repeat authorized, pending actual run.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0144
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
