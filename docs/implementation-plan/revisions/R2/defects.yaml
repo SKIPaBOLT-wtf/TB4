@@ -4478,7 +4478,12 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
-    proven_origin: null
+    proven_origin:
+      work_item: RP-027
+      source_ref: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
     reproduction:
       procedure: The cloned DocsRootMoves uses the same actual native store and proof
         fields. A changed transient origin may be accepted only because the helper
@@ -4490,6 +4495,8 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4508,13 +4515,25 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
+    - id: actual-native-binding-not-reader-instance
+      claim: 'Observed same protected store/binding/current-previous proof equality:
+        a second reader fresh exact proof confirms only summary NOT_DISPATCHED, zero
+        SDK, original receipt/profile retained. Actually different protected store
+        refuses CONFIGURATION_ROOT_REVOCATION_REQUIRED with unchanged UNKNOWN/zero
+        SDK/profile. Transient reader identity was not a different native root. Use
+        actual different native root for negative and preserve positive recovery reader.'
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
     repairs: []
     issue: null
     regression_test: Retain all original791 predicates, complete all19 no-send cases
       and actual no-SDK/UNKNOWN/profile assertions; final mandatory C1-C4 rechecks.
     resolution_evidence: []
     notes: Unaccepted C3 qualification failure; inspect actual trace/native identity
-      before proving a cause or changing safety/fixture expectations.
+      before proving a cause or changing safety/fixture expectations. Bounded same-source
+      diagnostic proves fixture assumptions; no product guard change is required.
     legacy_record: null
   DEF-065:
     title: No-send force negative fixture excludes actual closed authority refusal
@@ -4526,7 +4545,12 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
-    proven_origin: null
+    proven_origin:
+      work_item: RP-027
+      source_ref: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
     reproduction:
       procedure: The malformed non-free force fixture receives AuthorityError FORCE_SHAPE
         before proof admission; test expects only ConfigurationError/SettingsError.
@@ -4537,6 +4561,8 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4554,11 +4580,21 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
+    - id: actual-closed-force-shape-before-admission
+      claim: Exact malformed force trace reaches Leadership.observe/_records and raises
+        AuthorityError FORCE_SHAPE before settlement; shared UNKNOWN/profile unchanged
+        and zero SDK. Extend only this fixture's closed expected class/code and preserve
+        all force/role guards.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
     repairs: []
     issue: null
     regression_test: Retain all original791 predicates, complete all19 no-send cases
       and actual no-SDK/UNKNOWN/profile assertions; final mandatory C1-C4 rechecks.
     resolution_evidence: []
     notes: Unaccepted C3 qualification failure; inspect actual trace/native identity
-      before proving a cause or changing safety/fixture expectations.
+      before proving a cause or changing safety/fixture expectations. Bounded same-source
+      diagnostic proves fixture assumptions; no product guard change is required.
     legacy_record: null
