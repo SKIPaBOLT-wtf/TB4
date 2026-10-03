@@ -3,19 +3,18 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_CORRECTED_REQUIRED_LINUX_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_RETAINED_CORRECTED_LINUX_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0240
+last_verified_event: RP-027-A001-0241
 last_completed: RP-026
-next_action: Execute approvedcollection andpublishrequest15/findactualIDs/STARTED,
-  inspectsameLinux/currentfull/old1ffull237operations andrecordterminalOUTCOME. Afterappropriate
-  currentrequiredLinux scopedPASS recordindependence+nextverified runtimeGUI/remotehelper
-  sourceINTENT. Anyfailurepreservebeforeboundedrepair.
-verification: 240 current28ade correctedactualLinux484/defaultcollection/currentfullrequest15
-  after239fixture source; unchangedproductionpriorWindows25/472 retained, original1ffull237tracked.
-  Starts onlyafterreadback, allC1-C4held.
+next_action: InspectsamecurrentrequiredLinux/currentfull/old1f237jobIDsatappropriateinterval,
+  preserveactualterminalresults. AftercorrectedLinuxqualifiedscopedOUTCOME explicitindependenceallowsnextcomposition
+  sourceafterownINTENT; allC1-C4held.
+verification: 241 current28ade request15 actualoriginalrunIDsrecorded/defaultcollect2970PASS/tests0;
+  currentrequiredLinux484/fulljobsinprogress, priorunchangedWindows25/472 qualified/old1ffull237tracked.
+  No code source work untilscopeddependencyOUTCOME.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
