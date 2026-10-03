@@ -1,20 +1,20 @@
 schema_version: 1
 revision: R2
 work_item: RP-027
-check: RP-027.C2
+check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_REMOTE_FOLDER_PROBE_QUALIFIED
+phase: STAGED_RECONFIGURATION_C4_CORRECTED_TIMING_WINDOWS_QUALIFIED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: f7d283897eaef2ca521df99d45544dad2d07dd5e
+source_commit: bf5c34f9fc79fcc6784ccd71009e2551608522a7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0278
+last_verified_event: RP-027-A001-0279
 last_completed: RP-026
-next_action: Continue only current corrected timing qualification276/request20 and
-  reconcile original request19. After evidence is published/read back, pause until
-  owner says continue; do not start next integration.
-verification: 278 original request18/A020 all terminal qualified and settled. Current
-  corrected timingbf5c34f request20 still running; request19 original failure still
-  needs full terminal reconciliation. C1-C4 held, owner pause after this part.
+next_action: Wait for same request20 Linux/full/build jobs and request19 original
+  terminal results; record exact outcomes, then owner-requested pause without next
+  integration.
+verification: 279 corrected current sourcebf5c34f Windows504PASS0skip incl all7 timing
+  cases, default3043PASS/tests0. Request20 Linux/full/build and old19 terminal inspection
+  remain; owner pause after finishing.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
