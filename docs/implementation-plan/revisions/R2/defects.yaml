@@ -5891,5 +5891,7 @@ defects:
     resolution_evidence: []
     notes: Preserve initial5d6116 and all3 closed-code failures. No original/runtime/media/work
       reset or repeated request occurred. Original/Linux dependent qualification was
-      not started after this targeted failure; allC1-C4 held.
+      not started after this targeted failure; allC1-C4 held. Onefile valid fixture
+      source c5c77d9cea6b5b4804a399b8ed208d33e2724de8 preserved under185; production
+      unchanged, passing_source pending actual requalification.
     legacy_record: null

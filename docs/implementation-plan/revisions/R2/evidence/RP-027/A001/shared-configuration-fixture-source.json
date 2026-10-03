@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0185",
+  "source": "c5c77d9cea6b5b4804a399b8ed208d33e2724de8",
+  "local_preserved_source": "88843e164be682c44fba9c6e10664762a42eac2e",
+  "changed_paths": [
+    "tests/drive/test_reconfiguration_commit.py"
+  ],
+  "tests_executed": 0,
+  "static_diff_check": "PASS",
+  "production_source_unchanged": true,
+  "fixes": [
+    "Original Setup revision test retains the already frozen scope value and advances native revision.",
+    "Compact64 catalogues use canonical allowed fields/enrollment; substantial synthetic Unicode moves to bounded untouched retained work, keeping long fixed IDs/nonzero generations."
+  ],
+  "defect": "DEF-079",
+  "initial_failure_source": "5d6116f34f2323e8bc775ca7d092b99e2c99fe77",
+  "acceptance": false
+}

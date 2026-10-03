@@ -5,19 +5,19 @@ check: RP-027.C4
 attempt: A001
 phase: STAGED_RECONFIGURATION_C4_SHARED_PUBLICATION_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 5d6116f34f2323e8bc775ca7d092b99e2c99fe77
+source_commit: c5c77d9cea6b5b4804a399b8ed208d33e2724de8
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0185
+last_verified_event: RP-027-A001-0186
 last_completed: RP-026
-next_action: Publish/re-read corrected onefile source and sourceOUTCOME/DEF079 repair
-  chain, then qualify all23 new default conformance/native again before original/Linux.
-verification: Initial5d new23/3fixturefail preserved. Exactlyone testfile repair authorized;
-  actualproductionguards unchanged/allC1-C4 held.
+next_action: Publish/re-read requalification INTENT; run same23 new actual default-import
+  conformance/native first. Onpass qualify original254/defaultcollection and source/intention-linked
+  Linuxrequest9; onfail preserve exactfailure before anotherrepair.
+verification: Corrected one-test-file fixture source c5c77d9cea6b5b4804a399b8ed208d33e2724de8
+  verified/staticPASS/tests0; productionunchanged/DEF079OPEN/allC1-C4 held,23requalificationnext.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0185
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
