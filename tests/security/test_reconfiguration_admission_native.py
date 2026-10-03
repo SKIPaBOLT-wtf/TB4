@@ -71,3 +71,47 @@ def test_actual_native_admission_profile_copy_and_checkpoint_broad_permissions_r
     finally:protect_fixture(cp_root)
     assert context.checkpoint.store.read()==frame and context.profile.read()==profile
     assert len(s.value.provider.store.calls)==writes
+
+
+@pytest.mark.parametrize("boundary",["release","revision","late-first-run","pending"])
+def test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames(fixture,boundary):
+    root,store=fixture;s,context,admission,checker=native_system(root,store)
+    cp=context.checkpoint;original=context.leadership.profile
+    stale=replace(original,control_s=7,lease_stale_s=180)
+    if boundary=="revision":admission.release(owner_authorized=True)
+    if boundary=="pending":
+        locked=cp.store.native.locked
+        @contextmanager
+        def cut():
+            with locked() as port:
+                promote=port.promote
+                def stop():
+                    value=cp.store._decode(port.read("settings.pending"),port.binding).payload
+                    if value["checkpoint"]["maintenance"] is None:raise OSError("SYNTHETIC_TIMING_RELEASE_CUT")
+                    promote()
+                port.promote=stop;yield port
+        cp.store.native.locked=cut
+        try:
+            with pytest.raises((SettingsError,ConfigurationError)):admission.release(owner_authorized=True)
+        finally:cp.store.native.locked=locked
+    with cp.store.native.locked() as port:
+        before=port.read("settings.json");pending=port.read("settings.pending")
+    assert (pending is not None)==(boundary=="pending")
+    profile=context.profile.read();writes=len(s.value.provider.store.calls)
+    environment=checker.environment
+    if boundary=="late-first-run":
+        def late():
+            context.leadership.profile=stale
+            return environment()
+        checker.environment=late
+    else:context.leadership.profile=stale
+    with pytest.raises(ConfigurationError,match="^ADMISSION_TIMING$"):
+        if boundary=="pending":admission.recover_pending(owner_authorized=True)
+        elif boundary=="revision":admission.revision()
+        else:admission.release(owner_authorized=True)
+    with cp.store.native.locked() as port:
+        assert port.read("settings.json")==before and port.read("settings.pending")==pending
+    assert context.profile.read()==profile and len(s.value.provider.store.calls)==writes
+    checker.environment=environment;context.leadership.profile=original
+    if boundary=="pending":assert admission.recover_pending(owner_authorized=True)=="INSPECT_REQUIRED"
+    assert admission.release(owner_authorized=True)==2

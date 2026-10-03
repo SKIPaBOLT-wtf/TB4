@@ -63,7 +63,8 @@ def test_actual_restarted_admission_allows_new_work_without_old_frozen_transacti
 
 
 @pytest.mark.parametrize("fault",["source","permission","clock","caps","profile","timing","maintenance",
-                                 "barrier","shared-unknown","local-unknown","local-mutation","environment"])
+                                 "barrier","shared-unknown","local-unknown","local-mutation","environment",
+                                 "leadership-timing"])
 def test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write(fault):
     s=system();v=s.value;doc=v.provider.store.document
     if fault=="source":v.source.catalog["profiles"][0]["status"]="REVOKED";v.source.save()
@@ -72,6 +73,8 @@ def test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_w
     elif fault=="caps":v.caps[0]=replace(v.caps[0],coordinate=False)
     elif fault=="profile":Setup(v.setup.store).cancel()
     elif fault=="timing":doc["records"]["global.settings"]["body"]["timing"]["control_s"]+=1
+    elif fault=="leadership-timing":
+        s.context.leadership.profile=replace(s.context.leadership.profile,control_s=7,lease_stale_s=180)
     elif fault=="maintenance":doc["records"]["global.settings"]["body"]["configuration"]["phase"]="MAINTENANCE"
     elif fault=="barrier":doc["records"][SLOT]["body"][KEY]["barrier"]["local_clear"]=False
     elif fault=="shared-unknown":
@@ -125,18 +128,36 @@ def test_actual_credential_revocation_refuses_release_without_secret_use():
     assert stores[0].executions==0 and s.value.checkpoint.read()==cp and len(s.value.provider.store.calls)==writes
 
 
-@pytest.mark.parametrize("fault",["profile","force"])
+@pytest.mark.parametrize("fault",["profile","force","leadership-timing"])
 def test_actual_late_first_run_changes_cannot_clear_native_reservation(fault):
     s=system();v=s.value;original=s.checker.environment;changed=[];cp=v.checkpoint.read()
     def late():
         if not changed:
             changed.append(True)
             if fault=="profile":Setup(v.setup.store).choose({"credentials":[]})
+            elif fault=="leadership-timing":
+                s.context.leadership.profile=replace(s.context.leadership.profile,control_s=7,lease_stale_s=180)
             else:acquire_fallback(v)
         return original()
     s.checker.environment=late
     with pytest.raises((ConfigurationError,SettingsError,AuthorityError)):s.admission.release(owner_authorized=True)
     assert changed and v.checkpoint.read()==cp
+
+
+def test_stale_actual_runtime_timing_refuses_work_before_receipt_or_external_effect():
+    s=system();s.admission.release(owner_authorized=True)
+    runner=runtime(s);assert runner.tick()
+    original=s.context.leadership.profile
+    s.context.leadership.profile=replace(original,control_s=7,lease_stale_s=180)
+    cp=s.value.checkpoint.read();profile=s.context.profile.read()
+    doc=copy.deepcopy(s.value.provider.store.document);writes=len(s.value.provider.store.calls)
+    calls=[];work=Work(Action.WOL,tid("stale-runtime-timing"),lambda *args:calls.append(True) or "COMPLETE")
+    with pytest.raises(ConfigurationError,match="^ADMISSION_TIMING$"):s.admission.revision()
+    with pytest.raises(ConfigurationError,match="^ADMISSION_TIMING$"):runner.perform(work)
+    assert not calls and s.value.checkpoint.read()==cp and s.context.profile.read()==profile
+    assert s.value.provider.store.document==doc and len(s.value.provider.store.calls)==writes
+    s.context.leadership.profile=original
+    assert s.admission.revision()==2
 
 
 def test_typed_ports_alias_owner_confirmation_and_saved_ready_never_replace_current_proof():

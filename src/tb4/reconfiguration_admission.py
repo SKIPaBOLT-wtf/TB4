@@ -24,6 +24,7 @@ from .reconfiguration_candidate import native_binding, SCHEMA as CANDIDATE_SCHEM
 from .reconfiguration_effects import covered, ledger, SLOT, SCHEMA as EFFECT_SCHEMA, SCHEMA_SHA256 as EFFECT_SHA
 from .reconfiguration_inspection import inspect
 from .reconfiguration_maintenance import sha, WAL_SCHEMA, WAL_SCHEMA_SHA256
+from .timing_contract import TimingProfile
 from .watchdog.checkpoint_store import NativeCheckpoint, SCHEMA as CHECKPOINT_SCHEMA, SCHEMA_SHA256 as CHECKPOINT_SHA
 from .watchdog.leadership_runtime import Action, Capabilities
 
@@ -75,6 +76,9 @@ class ConfigurationAdmission:
 
     def _current(self, payload, cp, *, releasing):
         self._local(payload, cp, releasing=releasing)
+        require(type(self.context.leadership.profile) is TimingProfile
+                and self.context.leadership.profile == TimingProfile.parse(payload["choices"]["timing"]),
+                "ADMISSION_TIMING")
         caps, sample = self.context.capabilities(), self.context.clock()
         require(type(caps) is Capabilities and caps.installation_id == payload["installation_id"]
                 and caps.observe is True and caps.coordinate is True and type(caps.actions) is frozenset
