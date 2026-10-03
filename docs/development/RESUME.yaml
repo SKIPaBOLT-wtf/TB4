@@ -3,24 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_CI_BUDGET_SOURCE_PRESERVED
+phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_CORRECTED_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6ab0691aaa1955068ac3932590f1e0280f3a36b6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0258
+last_verified_event: RP-027-A001-0259
 last_completed: RP-026
-next_action: Publish verified actualcurrent-sourceWindows497/defaultcollect2992/requiredLinux506/newfull
-  qualification INTENT/request17; executeonlyafterverifiedINTENT, recordactualSTARTEDIDs.
-  Preserve original103d wholeCI252 outcome. No runtimeGUI/helpernewsource until scopedcorrectedqualification;
-  C1-C4held.
-verification: 258 bounded30minrequiredLinux workflow only+appendA019 sourcepreserved/currentproductione567
-  unchanged, same506cases/cataloguecoherent/tests0. Next current-sourceactualWindows497/default2992/Linux506/newfull
-  qualification, no repeatunchanged55.252originalCItracked/C1-C4held.
+next_action: Execute approvedactualWindows497/defaultcollect andpublishrequest17/findactualIDs/STARTED;
+  inspect sameactualLinux/currentfull. Separatelypublishoriginal103d terminal252OUTCOME.
+  ScopedOUTCOME beforedependentrepair/newsource; allC1-C4held.
+verification: 259 current6ab069/e567 correctedsource qualificationINTENT actualWindows497/default2992+actualLinux50630min/currentfull.
+  No unchanged55repeat; original103d CI252terminalhistfailureoutcomenext. C1-C4/runtimeGUI/remotehelper/commonheld.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0252
+- RP-027-A001-0259
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
