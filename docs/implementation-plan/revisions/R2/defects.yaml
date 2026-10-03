@@ -4491,12 +4491,14 @@ defects:
         compare actual bindings/current proof and a genuinely different protected
         root before changing the negative fixture.
       failing_source: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
-      passing_source: null
+      passing_source: 95f2458f4e93fee993a26cab684ab3e3dfbbc3e8
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-pass.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4526,6 +4528,16 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
+    - id: exact811-no-send-repeat-support
+      claim: Same34-target repeat retains all810 original cases with actual different-native
+        and exact force fixture corrections plus one fresh identical-native-reader
+        positive.807PASS/4Linux-onlyskip,exit0. Both failed cases now reach all unchanged
+        no-SDK/UNKNOWN/profile preservation assertions; product guards unchanged,
+        final mandatory C1-C4 still held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-pass.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -4545,6 +4557,8 @@ defects:
     notes: Unaccepted C3 qualification failure; inspect actual trace/native identity
       before proving a cause or changing safety/fixture expectations. Bounded same-source
       diagnostic proves fixture assumptions; no product guard change is required.
+      Exact811-case Windows repeat supports the fixture repair; final C1-C4 rechecks
+      remain held.
     legacy_record: null
   DEF-065:
     title: No-send force negative fixture excludes actual closed authority refusal
@@ -4568,12 +4582,14 @@ defects:
         Inspect exact trace and record no-SDK/shared-UNKNOWN invariants; do not relax
         force/leadership guards.
       failing_source: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
-      passing_source: null
+      passing_source: 95f2458f4e93fee993a26cab684ab3e3dfbbc3e8
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-pass.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4600,6 +4616,16 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
+    - id: exact811-no-send-repeat-support
+      claim: Same34-target repeat retains all810 original cases with actual different-native
+        and exact force fixture corrections plus one fresh identical-native-reader
+        positive.807PASS/4Linux-onlyskip,exit0. Both failed cases now reach all unchanged
+        no-SDK/UNKNOWN/profile preservation assertions; product guards unchanged,
+        final mandatory C1-C4 still held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-pass.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -4619,4 +4645,6 @@ defects:
     notes: Unaccepted C3 qualification failure; inspect actual trace/native identity
       before proving a cause or changing safety/fixture expectations. Bounded same-source
       diagnostic proves fixture assumptions; no product guard change is required.
+      Exact811-case Windows repeat supports the fixture repair; final C1-C4 rechecks
+      remain held.
     legacy_record: null

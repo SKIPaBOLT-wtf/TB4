@@ -1,0 +1,7 @@
+# RP-027.C3 A001 — exact811-case no-send repeat passes
+
+Source `95f2458f4e93fee993a26cab684ab3e3dfbbc3e8`, checkout `17d4d47a0f26fafde61bc28145547bcfc8198e67`, actual session2946. Same34 targets/811 predicates:807PASS,0FAILURE,0ERROR,4Linux-onlySKIPPED,exit0,124.913s. Fresh absent owned native WindowsX64/offscreenQt fixtures/synthetic SDK/topology/clock. [Complete sanitized predicate report](proven-no-send-repeat-cases.json); raw log/XML/paths private, no live/installed provider action.
+
+All original810 cases retained with different protected native store for foreign-origin and exact unchanged AuthorityError FORCE_SHAPE only for malformed force. Both reach original shared UNKNOWN/no-SDK/profile assertions. One added positive validates a fresh second reader of the same actual native store; origin alone never grants anything. Actual current/fallback owner summary-only NOT_DISPATCHED retains original receipt, same live sender fenced, separately armed known-unsent same identity move sent once, ordinary START refuses reuse and possible-send remains inspect-only. Actual native root/cancel promotion cut recovers identical intent without CAS reissue.
+
+DEF064/065 repair supported, still OPEN for final C1-C4. No checks accepted. Next: same-authority shared root-plan witness and fresh partial-root facts, then qualified plan adoption/folder/rebind/C4/full platform/GUI/package/public/history gates.
