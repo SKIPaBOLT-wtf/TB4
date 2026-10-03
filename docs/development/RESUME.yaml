@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_NATIVE_PROFILE_PROMOTION_SOURCE
+phase: STAGED_RECONFIGURATION_C4_NATIVE_PROFILE_PROMOTION_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: a2cb9dc0d0baf1812dfec9d5baa12b7e52db9fd9
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0191
+last_verified_event: RP-027-A001-0192
 last_completed: RP-026
-next_action: Publish/re-read native promotion qualification INTENT and run actual
-  new18 default conformance/native first; onfailure publish exactdefectOUTCOME before
-  repair/dependent groups. Ifpass originals272/defaultcollection and actualLinux request10
-  51/107/242. Cloud ACTIVE adoption/native admission and full composition remain next.
-verification: a2cb9dc native promotion13paths verified/schema93c9bfa/17fileclosure/staticPASS/tests0;
-  new18qualificationnext, runtime/admission/fullcomposition remain/allC1-C4 held.
+next_action: Inspect exactsame new18 operation; onpass original/defaultcollection/Linux
+  qualification and STARTED actualrun identities; publish exactOUTCOME before native
+  admission/cloud ACTIVE adoption source.
+verification: a2cb9dc nativepromotion qualification authorized new18first, originals272/Linuxfollowonlypass;
+  no runtimegrant/live profile changed/allC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0192
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
