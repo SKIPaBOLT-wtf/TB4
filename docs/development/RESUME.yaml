@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_CURRENT_ROLE_ADOPTION_TEST_FAILED
+phase: STAGED_RECONFIGURATION_C3_ADOPTION_FAILURE_DIAGNOSTIC
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c64fc64258fca7846d71f70ed725326ec2e83edd
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0117
+last_verified_event: RP-027-A001-0118
 last_completed: RP-026
-next_action: 'Publish/readback bounded exact-source diagnostic INTENT for five observed
-  source/fixture failure groups: pending receipt/blocker projections, actual first-run
-  class, actual source adapter switch/preservation, canonical unknown envelope, repeated
-  election transition. Preserve proof before minimal source/fixture repair and same
-  related136-case repeat.'
-verification: Adoption related136 cases fail17 new predicates, all original100 pass;
-  DEF069-073 unproved, no accepted checks.
+next_action: Execute exact bounded probes and publish origin/evidence/actual preservation
+  before scoped pending-projection source and faithful first-run/source/UNKNOWN/fresh-election
+  fixture repair. Repeat all136 original related predicates after source checkpoint.
+verification: 136-case failure preserved; exact five-group source/fixture diagnostic
+  authorized, no accepted checks.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0118
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
