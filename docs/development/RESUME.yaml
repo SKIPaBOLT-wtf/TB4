@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_FOLDER_GUARD_SOURCE
+phase: STAGED_RECONFIGURATION_C3_FOLDER_GUARD_LINUX_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 98b5948618877160536fca2525fdb7277054d00c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0153
+last_verified_event: RP-027-A001-0154
 last_completed: RP-026
-next_action: Publish fresh required native Linux51-case intent/request; ordinary original
-  folder/native and selected Docs/effect regressions, preserve same-source full CI/Desktop
-  IDs and all failures.
-verification: Scoped DEF076 source repair saved/readback; required51 actual native
-  mapping/physical cases pending, acceptance held.
+next_action: Record exact terminal native result and source-linked evidence; repair
+  actual ordinary failures or proceed to qualified next RP027 unit only after remote
+  outcome.
+verification: Fresh native51-case qualification INTENT for exact DEF076 repaired source,
+  acceptance held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0154
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
