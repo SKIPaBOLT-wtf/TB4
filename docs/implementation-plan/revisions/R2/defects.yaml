@@ -4227,10 +4227,12 @@ defects:
         cases, shared/native send intent, two stale fallback cases, historical witness
         and native completed-cut all fail with CONFIGURATION_MAINTENANCE.'
       failing_source: 90635ed953d297fdea34209cb305439c464c4470
-      passing_source: null
+      passing_source: 3603f2678d580a9be225becae56f81e6bb10a95d
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4257,6 +4259,16 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-gate-provenance.md
+    - id: exact-scoped-root-effect-and-access-repeat-supported
+      claim: Exact763-case repeat retains prior757 cases, passes eight of nine previously
+        blocked maintenance-code paths plus target-access closed refusal/no-send/profile
+        assertions. Six gate negatives pass; the one remaining before-send owner enrollment/error
+        projection mismatch is now reached. Mandatory final C1-C4 rechecks remain
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
     repairs:
     - item: RP-027
       attempt: A001
@@ -4278,7 +4290,9 @@ defects:
       Inspect exact failed traces/current adapter before naming a proven origin or
       making a scoped repair. Final C1-C4 rechecks remain held. Diagnosis disproves
       inheritance as the exact mechanism: EffectMutation overrides prepare/evaluate;
-      its own START guard is proved. No repair or repeat yet.'
+      its own START guard is proved. No repair or repeat yet. Scoped root gate/access
+      remedy supported; final acceptance held and separate owner projection failure
+      tracked.'
     legacy_record: null
   DEF-062:
     title: Root access negative fixture excludes the actual closed authority refusal
@@ -4300,10 +4314,12 @@ defects:
         SETUP_ROOT, then fails its expected exception class rather than proving a
         send.
       failing_source: 90635ed953d297fdea34209cb305439c464c4470
-      passing_source: null
+      passing_source: 3603f2678d580a9be225becae56f81e6bb10a95d
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4329,6 +4345,16 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-gate-provenance.md
+    - id: exact-scoped-root-effect-and-access-repeat-supported
+      claim: Exact763-case repeat retains prior757 cases, passes eight of nine previously
+        blocked maintenance-code paths plus target-access closed refusal/no-send/profile
+        assertions. Six gate negatives pass; the one remaining before-send owner enrollment/error
+        projection mismatch is now reached. Mandatory final C1-C4 rechecks remain
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
     repairs:
     - item: RP-027
       attempt: A001
@@ -4348,5 +4374,55 @@ defects:
     notes: Unaccepted C3 source only. Preserve failed tests and prior accepted predicates.
       Inspect exact failed traces/current adapter before naming a proven origin or
       making a scoped repair. Final C1-C4 rechecks remain held. Actual closed target-root
-      refusal proved before SDK move; fixture expectation is the fault.
+      refusal proved before SDK move; fixture expectation is the fault. Scoped root
+      gate/access remedy supported; final acceptance held and separate owner projection
+      failure tracked.
+    legacy_record: null
+  DEF-063:
+    title: Root supersession projects an unenrolled replacement owner as a raw leadership
+      identity refusal
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 90635ed953d297fdea34209cb305439c464c4470
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
+    proven_origin: null
+    reproduction:
+      procedure: Exact before-send fallback acquires its fresh owner then old root
+        sender fails with raw AuthorityError LEADERSHIP_IDENTITY instead of expected
+        ConfigurationError OWNER_SUPERSEDED. Inspect exact trace/owner guard before
+        repair.
+      failing_source: 3603f2678d580a9be225becae56f81e6bb10a95d
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: root-observe-old-roster-precedes-explicit-current-owner-refusal
+      claim: Old root dispatch may try full enrollment validation before checking
+        its grant against freshly replaced owner; read exact trace and owner guard
+        before naming a proven origin. Existing refusal is not evidence for all later
+        no-send assertions; do not remove enrollment/role guards.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
+    repairs: []
+    issue: null
+    regression_test: Exact before-send first-CAS takeover predicate, retaining OWNER_SUPERSEDED/no-send/epoch/UNKNOWN/single-authority/original-profile
+      assertions; all763 predicates retained.
+    resolution_evidence: []
+    notes: New C3 owner-outcome integration only; stale first-CAS election remains
+      available. No safety success or no-send assertion inferred solely from unexpected
+      class. Diagnose exact trace and guarded source. Final C1-C4 held.
     legacy_record: null

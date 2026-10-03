@@ -1,0 +1,7 @@
+# RP-027.C3 A001 — scoped gate repeat
+
+Source `3603f2678d580a9be225becae56f81e6bb10a95d`; checkout `064e7363e37c2c9fc219cf4b49d5977869e6f19b`; actual `LOCAL-SESSION-58687`; once-run fresh owned synthetic/native/offscreenQt fixture suite. Exit **1**,79.689 seconds: **763 predicates,758 PASS,1 FAIL,4 Linux-only skips**. [Full cases](scoped-root-effect-repeat-cases.json).
+
+All757 prior predicates retained. Eight of nine formerly maintenance-blocked root paths (normal moves/exact metadata witness/two lost replies/native/shared send evidence/during-send fallback/wrong historical witness/native completion cut) and actual target-access refusal now pass. All six scoped-gate negatives pass. Inherited720 cases unchanged. No failed predicate removed. DEF-061/062 repair evidence supported; final C1-C4 checks held.
+
+Remaining before-send fallback now reaches raw `AuthorityError: LEADERSHIP_IDENTITY` rather than expected `ConfigurationError: OWNER_SUPERSEDED`. DEF-063 records separate owner outcome projection; exact original trace/current owner guards must establish origin before repair. It does not prove an election/failover fault; later no-send assertions are not inferred merely from class failure. No role ACK barrier added. Next: same-run read-only diagnosis, scoped repair and exact repeated suite. Raw logs remain local. Further non-dispatch/inherited settlement, folder move, remote rebind/C4/platform/common gates required.
