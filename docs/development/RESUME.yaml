@@ -3,17 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ADOPTION_NATIVE_PLATFORM_CI
+phase: STAGED_RECONFIGURATION_C3_ADOPTION_NATIVE_PLATFORM_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5665870eb003bb335dc61ced8472f8809d464cf5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0125
+last_verified_event: RP-027-A001-0126
 last_completed: RP-026
-next_action: Open/reconcile same draft PR, attach/readback, identify real runs then
-  record STARTED/run receipts. Diagnose ordinary CI failures; separate documented
-  dependency-safe C3/C4 source next.
-verification: 139-case related source qualified; existing isolated native/full platform
-  draft-PR qualification authorized, final checks held.
+next_action: Observe same exact three runs/actual jobs/results and preserve qualification
+  or actual failure; independently read/design next same-authority server-local folder
+  source with separate verified INTENT. No accepted checks/merge.
+verification: Attached draftPR36 exacthead and three real isolated native/fullplatform
+  jobs running; C1-C4 unaccepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
