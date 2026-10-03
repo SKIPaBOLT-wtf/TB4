@@ -1,0 +1,9 @@
+# RP-027.C3 A001 — scoped root-effect admission source checkpoint
+
+Verified source `3603f2678d580a9be225becae56f81e6bb10a95d`. Six owned paths: `src/tb4/reconfiguration_effects.py`, `src/tb4/reconfiguration_roots.py`, `tests/drive/test_reconfiguration_roots.py`, `protocol/reconfiguration-effects-v1.schema.json`, `skill/tb4/compatibility.json`, `docs/implementation-plan/revisions/R2/amendments/RP-027/A-004-existing-docs-root-moves.md`. Source/static/diff/privacy/budget review only; no tests/build/import/provider/native fixture action.
+
+ROOT_START is frozen to one IDENTITY UNKNOWN change under matching MAINTENANCE/configuration/barrier, unchanged settings/barrier/current owner, and actual native checkpoint grant/reservation with no pending election/mutation. Default ordinary START remains denied in maintenance; RecordMutation/runtime guards and root access stay unchanged. No shared effect receipt itself grants SDK dispatch. Root caller supplies its proved transition. Unreleased schema exact SHA `557de55dd47996e8cf369fa769353e679759ab54ff8ae167af1d46b2a3796b2c`; installed profiles/builds unchanged.
+
+All original root predicates retained. Before-send takeover wrapper forwards the new keyword with unchanged takeover/no-send/UNKNOWN assertions. Only target-access expected class/code corrected to actual AuthorityError SETUP_ROOT; no-send/original profile checks retained. Six added admission negatives cover ordinary effect start, foreign transition, wrong action, absent real reservation, ordinary record mutation, and forged ROOT_START under ACTIVE config.
+
+Task source helper's initial relative-input spelling failed while reading the input before any mutation; corrected exact same known input, source preserved once. No retry of SDK work. DEF-061/062 remain OPEN pending repeated qualification and mandatory C1-C4 rechecks. Next: verified same30-target fresh scoped repeat, all actual predicate statuses and failure provenance.

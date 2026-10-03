@@ -3,23 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_EFFECT_REPAIR_SOURCE
+phase: STAGED_RECONFIGURATION_C3_ROOT_EFFECT_REPAIR_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 90635ed953d297fdea34209cb305439c464c4470
+source_commit: 3603f2678d580a9be225becae56f81e6bb10a95d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0053
+last_verified_event: RP-027-A001-0054
 last_completed: RP-026
-next_action: Preserve/read back source and OUTCOME with linked DEF061/062 repair intent.
-  Publish/read back exact same30-target plus added negative predicates test INTENT;
-  run once fresh owned fixtures, record actual session/result/all predicates before
-  further source units.
-verification: Exact causes recorded; scoped root-effect/fixture/source repair pending,
-  no accepted check.
+next_action: Publish/read back exact same30-target root suite test INTENT; execute
+  guarded once source3603f267 in fresh absent native fixtures/offscreenQt; record
+  STARTED and actual result/full predicates before dependent fixes or units.
+verification: Scoped root-effect and fixture source saved/read back; repeat qualification
+  required, no check accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0053
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
