@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_NO_SEND_DIAGNOSTIC_PROVED
+phase: STAGED_RECONFIGURATION_C3_NO_SEND_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0081
+last_verified_event: RP-027-A001-0082
 last_completed: RP-026
-next_action: 'Publish/read back source repair INTENT: change foreign-origin fixture
-  to an actual different protected native root, add positive fresh second-reader exact-proof
-  regression, include exact AuthorityError FORCE_SHAPE only for force fault. Retain
-  all no-send/UNKNOWN/profile/ordinary gates and original810 cases.'
-verification: Three exact diagnostic probes prove DEF064/065 fixture causes; test-only
-  repair/repeat pending, no accepted checks.
+next_action: Perform one-path fixture repair, preserve source and publish/read back
+  OUTCOME. Then publish and once-run exact34-target811-predicate repetition before
+  root-plan/adoption source.
+verification: Proved no-send fixture repair pending, same34-target repeat required;
+  no accepted checks.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0082
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
