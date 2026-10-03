@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_REPAIR
+phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_REPAIR_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+source_commit: 5b9c339e06d91822c594dca6f276f6634dd2dc48
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0094
+last_verified_event: RP-027-A001-0095
 last_completed: RP-026
-next_action: Perform two-path bounded repair, preserve/read back source OUTCOME. Then
-  publish exact36-target839-case once-run test INTENT documenting1800s bounded harness
-  limit; complete result before further source.
-verification: Proven two-path shared-plan preflight/current baseline repair pending;
-  final C1-C4 held.
+next_action: Publish/read back same36-target839-case repeat INTENT with explicit1800s
+  task-only runner bound and unique fresh absent owned fixtures/output; record actual
+  STARTED/full result before dependent adoption/folder/rebind/C4 source.
+verification: Two-path deny-only/current baseline source saved;36-target839-case bounded
+  repeat pending, final C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0094
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
