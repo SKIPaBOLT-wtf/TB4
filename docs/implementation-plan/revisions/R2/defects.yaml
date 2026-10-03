@@ -5824,5 +5824,6 @@ defects:
       failures reproduced on both exact-source Linux jobs after all51+107 pass/zeroSkip.
       Repaired4b66 actual Windows27 yields25PASS2FAIL; missing import/final physical
       fixture resolved, two original oversized max129 fixture cases remain. Full181/Linux
-      not started after targeted failure.
+      not started after targeted failure. Exact follow-up source repair uses RP-027-A001-0171
+      under the same RP-027/A001 repair chain; original repair record retained once.
     legacy_record: null
