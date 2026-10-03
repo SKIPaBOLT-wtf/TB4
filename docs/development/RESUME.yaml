@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_FROZEN_STAGE_FAILURE
+phase: STAGED_RECONFIGURATION_C4_RETAINED_READONLY_FIRST_RUN_REPAIR_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 0170f12287c03242026280bb1c79253c19b44908
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0229
+last_verified_event: RP-027-A001-0230
 last_completed: RP-026
-next_action: Verified exact single-file retained_before repairINTENT for fresh read-only
-  actual Prerequisites.validate and exact stage/pin/transaction/role/proof rechecks;
-  preserve/staticreview/sourceOUTCOME then newsource same25qualificationINTENT.
-verification: 229 corrected017025FAIL frozenStage mutatingreview(DEF086), import/alias
-  immediateboundsreached buttargetassertionsunreached. Singlefile read-onlyactualfirstRun
-  repairINTENTnext; allC1-C4held.
+next_action: Apply exactsingle-file read-onlyfinal actualfirstRun proof repair/static/preserve/readbackOUTCOME,
+  then newsource same25qualificationINTENT. OnlyafterPASS requiredactualLinuxFolder/affected/default/currentfull/composition.
+verification: 230 onefile read-onlyactualfinalfirstRun source repair after229publishedfailure;
+  no guard/hash/test changes, same25 laterINTENT, allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0230
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

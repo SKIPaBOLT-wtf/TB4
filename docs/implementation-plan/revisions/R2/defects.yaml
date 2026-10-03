@@ -6318,7 +6318,18 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-frozen-stage-failure.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0230
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Same25 actual source/native cases must reach final/negative/crash
       assertions without final proof modifying stage. Existing late stage/force/source/UNKNOWN/protection
