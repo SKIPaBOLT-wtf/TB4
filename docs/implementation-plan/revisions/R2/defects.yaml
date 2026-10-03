@@ -6497,10 +6497,11 @@ defects:
         e567; Linux74PASS1FAIL9.32s and Windows same assertion. Current default2992/Windows55
         pass independently. Fresh source metadata hash inspection matches assertion.
       failing_source: 103d0eb2009880a7e76ac4604e611ce6958060da
-      passing_source: null
+      passing_source: 6ab0691aaa1955068ac3932590f1e0280f3a36b6
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-catalogue-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-original-full-historical.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-corrected-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6541,7 +6542,10 @@ defects:
       Originalimmutable103d fullCI terminal2920PASS24FAIL27SKIP4XFAIL1783.84s: two
       samecatalogueassertions DEF089 and22samefixtureguardfailures DEF090, alloriginalfailedcaseIDs
       retained; originalscopedLinuxboth51+6PASS/22FAIL. Correctedcurrent6ab069 actualqualification259
-      stillpending; no oldrun replay/currentqualification substitution.'
+      stillpending; no oldrun replay/currentqualification substitution. Current-source
+      qualification 262: Windows497 and both required Linux506 pass, including all22
+      functional adoption cases; full CI and both Desktop build/package gates pass.
+      Status remains OPEN pending complete RP-027 C1-C4 acceptance.'
     legacy_record: null
   DEF-090:
     title: New Folder ACTIVE fixture bypasses the separate actual first storage-selection
@@ -6560,10 +6564,11 @@ defects:
         binding together. ExistingSETUP_BINDING_UNVERIFIED guard correctly refuses
         before role/adoption/cut assertions.
       failing_source: 103d0eb2009880a7e76ac4604e611ce6958060da
-      passing_source: null
+      passing_source: 6ab0691aaa1955068ac3932590f1e0280f3a36b6
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-binding-fixture-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-original-full-historical.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-corrected-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6603,5 +6608,8 @@ defects:
       fullCI terminal2920PASS24FAIL27SKIP4XFAIL1783.84s: two samecatalogueassertions
       DEF089 and22samefixtureguardfailures DEF090, alloriginalfailedcaseIDs retained;
       originalscopedLinuxboth51+6PASS/22FAIL. Correctedcurrent6ab069 actualqualification259
-      stillpending; no oldrun replay/currentqualification substitution.'
+      stillpending; no oldrun replay/currentqualification substitution. Current-source
+      qualification 262: Windows497 and both required Linux506 pass, including all22
+      functional adoption cases; full CI and both Desktop build/package gates pass.
+      Status remains OPEN pending complete RP-027 C1-C4 acceptance.'
     legacy_record: null

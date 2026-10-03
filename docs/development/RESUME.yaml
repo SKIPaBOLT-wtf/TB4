@@ -3,23 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_ORIGINAL_FULL_HISTORICAL
+phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_QUALIFIED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 103d0eb2009880a7e76ac4604e611ce6958060da
+source_commit: 6ab0691aaa1955068ac3932590f1e0280f3a36b6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0261
+last_verified_event: RP-027-A001-0262
 last_completed: RP-026
-next_action: Inspect same current6ab069 request17/259 Windows497 actualsession74717/currentLinux506/full
-  IDs260; preserve terminalscopedOUTCOME beforedependentruntimeGUI/remotehelper source.
-  Anynewfailure diagnosed/recordedbeforeboundedrepair; allC1-C4held.
-verification: 261 original103d immutable252 fullreconciled24exactknownfailures (2catalogueDEF089+22fixtureDEF090)/samefailedruns
-  retained. Currentcorrected6ab069/request17 actualWindows497session74717/Linux506/full
-  tracked259/260; no historicalsubstitution. C1-C4held.
+next_action: Publish bounded read-only remote Folder commissioning proof source INTENT,
+  then implement a closed read-only helper/probe with strict current physical artifact/spec/binding
+  verification and focused protocol/native tests. Preserve READ/CAS defaults; no remote
+  configuration activation. Follow with actual Linux/SSH qualification and separate
+  typed first-run/runtime/GUI integration.
+verification: 262 source6ab069 Windows497 and both actual Linux506 PASS; CI2944, Desktop
+  Linux2967/Windows2802 and both-role build/package gates PASS with documented skips/xfails/offscreen
+  limits. No pending runs or user action. Remote Folder proof/runtime GUI composition
+  next; all C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0259
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
