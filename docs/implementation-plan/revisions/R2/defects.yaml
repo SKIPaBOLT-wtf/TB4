@@ -6064,7 +6064,18 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0213
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Eight source revoked Main/pending native cases must refuse with
       stable adoption instructions code and preserve exact native pending/Main/CP/shared
@@ -6108,7 +6119,18 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0213
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Protected own credential-image and selected refs preserved in
       archive/stage/promotion; actual current revocation refuses before Main promotion/secret
