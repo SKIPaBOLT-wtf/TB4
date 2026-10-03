@@ -5753,3 +5753,52 @@ defects:
       exact sourceb90713351a910341da0454f8f7b4d82e144e22b2. All RP027 checks still
       held; no source/test result alone closes this defect.
     legacy_record: null
+  DEF-078:
+    title: Initial remote-rebind qualification fails at inherited error import and
+      invalid test prerequisites
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c1402a50f66131c7771ca1c21a344097dab08bed
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: c1402a50f66131c7771ca1c21a344097dab08bed
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
+    reproduction:
+      procedure: Default-import exact-source Windows181 targeted:154PASS27FAIL zeroSKIP.
+        Original wrong-blueprint raises NameError; new25 fixture cases expect CONFIRMED
+        instead of final MOVED, max129 invalid PREPARING/missing timing fixture refuses
+        before rebind.
+      failing_source: c1402a50f66131c7771ca1c21a344097dab08bed
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: initial-rebind-error-fixture-prerequisites
+      claim: Missing inherited AuthorityError import causes real refusal regression;
+        new system fixture final terminal expectation and large-plan uncommissioned/invalid
+        settings prevent new rebind qualification. Fix these exact boundaries without
+        widening production authorization.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
+    repairs: []
+    issue: null
+    regression_test: Original wrong-blueprint refusal, all26 new actual conformance/native
+      cases with default imports and valid large-budget source, unchanged original
+      Docs/effect and actual Linux51/107 regressions; final C1-C4 qualification.
+    resolution_evidence: []
+    notes: Preserve original c140 failure. No new rebind/native pass inferred; native/final
+      composition remains held. Keep OPEN until source-linked final acceptance.
+    legacy_record: null

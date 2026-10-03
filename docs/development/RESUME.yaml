@@ -7,17 +7,18 @@ phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c1402a50f66131c7771ca1c21a344097dab08bed
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0165
+last_verified_event: RP-027-A001-0166
 last_completed: RP-026
-next_action: Inspect same Windows targeted run and exact-source Linux jobs; publish
-  actual results/failures, no rebind/C4 acceptance inferred.
-verification: Exactsource c140 default collection2825 succeeds, Windows targeted181
-  and actual Linux51/107/181 plus full/platform started; all checks held.
+next_action: Publish scoped repair INTENT for exact three error/fixture paths, preserve
+  current failed source and all assertions; repair import/final-state and valid READY/timing
+  budget fixture, source outcome before default/new/legacy rechecks. Inspect existing
+  Linux terminal results without repeating runs.
+verification: c140 Windows181:154PASS27FAIL/zeroSkip, collection2825pass. DEF078 inherited
+  error import and new fixture prerequisites; Linux same-run pending. C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0164
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -45,6 +46,7 @@ known_open_defects:
 - DEF-075
 - DEF-076
 - DEF-077
+- DEF-078
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
