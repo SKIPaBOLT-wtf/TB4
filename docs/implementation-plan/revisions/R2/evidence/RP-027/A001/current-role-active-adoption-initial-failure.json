@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "kind": "CURRENT_ROLE_ACTIVE_ADOPTION_INITIAL_QUALIFICATION_FAILURE",
+  "source_ref": "237994f7b97151304ddbb7efaa52522252996702",
+  "intent": "RP-027-A001-0211",
+  "windows": {
+    "source": "237994f7b97151304ddbb7efaa52522252996702",
+    "checkout": "d81b036b3ff8eaa821cbc24adbc9a2c98eba7f09",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 1,
+    "elapsed_seconds": 70.056,
+    "owned_absent_fixture_root": true,
+    "targets": [
+      "tests/drive/test_reconfiguration_active_adoption.py",
+      "tests/security/test_reconfiguration_active_adoption_native.py"
+    ],
+    "cases": [
+      {
+        "name": "test_actual_current_role_adopts_without_former_host_wal_or_ack_and_retains_own_profile",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_inherited_shared_work_does_not_require_old_peer_ack_or_change_work[BUSY]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_inherited_shared_work_does_not_require_old_peer_ack_or_change_work[UNREAD]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_inherited_shared_work_does_not_require_old_peer_ack_or_change_work[UNKNOWN]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_inherited_shared_unknown_effect_never_replays_but_current_role_can_observe",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[source]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[permission]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[environment]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[profile]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[role]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[force]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[timing]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[barrier]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[setup-unknown]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[local-effect]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[clock]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[caps]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[identities]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_selected_own_credential_is_preserved_and_fresh_revocation_refuses_promotion",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_actual_change_during_first_run_never_promotes_main[stage]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_change_during_first_run_never_promotes_main[takeover]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_receipt_named_schema_owner_alias_and_default_activation_are_not_saved_grants",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[intent]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[archive]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[stage]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[staged]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[prepared]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[original]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[confirmed]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_actual_native_adoption_copied_transaction_and_broad_main_permissions_refuse",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      }
+    ],
+    "failures": [
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[source]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "message": "tb4.instructions.InstructionError: RELEASE_WITHDRAWN"
+      },
+      {
+        "name": "test_selected_own_credential_is_preserved_and_fresh_revocation_refuses_promotion",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "message": "tb4.private_settings.SettingsError: CREDENTIAL_IMAGE_STORE_MISMATCH"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[intent]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "message": "tb4.instructions.InstructionError: NO_UNIQUE_COMPATIBLE_RELEASE"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[archive]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "message": "tb4.instructions.InstructionError: NO_UNIQUE_COMPATIBLE_RELEASE"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[stage]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "message": "tb4.instructions.InstructionError: NO_UNIQUE_COMPATIBLE_RELEASE"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[staged]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "message": "tb4.instructions.InstructionError: RELEASE_WITHDRAWN"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[prepared]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "message": "tb4.instructions.InstructionError: RELEASE_WITHDRAWN"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[original]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "message": "tb4.instructions.InstructionError: RELEASE_WITHDRAWN"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[confirmed]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "message": "tb4.instructions.InstructionError: RELEASE_WITHDRAWN"
+      }
+    ],
+    "counts": {
+      "PASS": 21,
+      "FAILURE": 9,
+      "ERROR": 0,
+      "SKIPPED": 0
+    }
+  },
+  "observed_groups": {
+    "source_revocation_negative_cases": 8,
+    "source_revocation_codes": [
+      "RELEASE_WITHDRAWN",
+      "NO_UNIQUE_COMPATIBLE_RELEASE"
+    ],
+    "credential_fixture_preparation": 1,
+    "credential_code": "CREDENTIAL_IMAGE_STORE_MISMATCH"
+  },
+  "source_inspection": {
+    "source_error_boundary": "_current directly calls select/restore_pin, which raises safe InstructionError; selected tests expect ConfigurationError/SettingsError/AuthorityError, not that type. Source refusal happened; later no-mutation assertions in those failing cases were not reached.",
+    "credential_boundary": "persist_credentials -> export_private -> _pair rejects FixtureStore; canonical persistence requires actual WindowsKeyStore or LinuxKeyStore and same resolver/installation. Failure occurs before adoption credential case, not proof of lost image."
+  },
+  "acceptance": false,
+  "dependent_regressions": "NOT_STARTED: new group not PASS",
+  "next_action": "Publish scoped repair INTENT for one production source-error normalization and one fixture actual typed credential-persistence preparation; preserve/readback source OUTCOME before new qualification."
+}

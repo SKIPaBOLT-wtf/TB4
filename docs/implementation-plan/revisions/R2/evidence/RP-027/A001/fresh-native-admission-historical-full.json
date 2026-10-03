@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "source_ref": "14a53a8c8ab5903282cd23e4f428e2b26cda4b25",
+  "trigger_commit": "415323f058feb69f6477e90d9dee6a26aef52326",
+  "pr_checkout": "05c6e404f723ca56389d933038f8010a6007f498",
+  "qualification_intent": "RP-027-A001-0205",
+  "related_qualified_evidence": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-qualified.json",
+  "terminal_jobs": [
+    {
+      "run_id": 37122851742,
+      "job_id": 111202237877,
+      "platform": "Linux",
+      "conclusion": "success",
+      "full_suite": {
+        "passed": 2861,
+        "skipped": 27,
+        "xfailed": 4,
+        "seconds": 1414.09
+      }
+    },
+    {
+      "run_id": 37122851729,
+      "job_id": 111202237934,
+      "platform": "Windows",
+      "conclusion": "success",
+      "full_suite": {
+        "passed": 2747,
+        "skipped": 158,
+        "xfailed": 4,
+        "seconds": 1542.26
+      },
+      "roles": [
+        "watchdog",
+        "fetcher"
+      ],
+      "package_checks": [
+        "bundle_self_test",
+        "gui_smoke",
+        "setup_gui_smoke",
+        "install_uninstall_profile_isolation"
+      ],
+      "all_package_checks": "PASS",
+      "artifact_upload": "success"
+    },
+    {
+      "run_id": 37122851729,
+      "job_id": 111202238016,
+      "platform": "Linux",
+      "conclusion": "success",
+      "full_suite": {
+        "passed": 2884,
+        "skipped": 21,
+        "xfailed": 4,
+        "seconds": 2125.72
+      },
+      "roles": [
+        "watchdog",
+        "fetcher"
+      ],
+      "package_checks": [
+        "bundle_self_test",
+        "gui_smoke",
+        "setup_gui_smoke",
+        "install_uninstall_profile_isolation"
+      ],
+      "all_package_checks": "PASS",
+      "artifact_upload": "success"
+    },
+    {
+      "run_id": 37122851780,
+      "job_id": 111202238208,
+      "kind": "progress",
+      "conclusion": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11275080464,
+      "name": "tb4-desktop-Linux-05c6e404f723ca56389d933038f8010a6007f498",
+      "size_in_bytes": 314468920,
+      "digest": "sha256:07787e4b27dec68c55da17df74e341c6a23a9f814ea81261ac64ed9ebc68f21b",
+      "expired": false,
+      "downloaded": false
+    },
+    {
+      "id": 11273514914,
+      "name": "tb4-desktop-Windows-05c6e404f723ca56389d933038f8010a6007f498",
+      "size_in_bytes": 120907918,
+      "digest": "sha256:0e34556a6bbec4cfa54fa54261b4ef5b000bd37b4de0fdc07c7284cff9104e4a",
+      "expired": false,
+      "downloaded": false
+    }
+  ],
+  "limits": "Actual terminal job logs and artifact metadata inspected; artifacts larger100MiB not downloaded. Windows checkout format differs; job+request/PR+artifact name bind source. Platform skip/xfail remain declared earlier exclusions; no current237994f proof or RP027 acceptance."
+}

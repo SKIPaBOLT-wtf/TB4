@@ -6030,3 +6030,91 @@ defects:
       Production96b95ba unchanged; source-local fixture mismatch/supporting enrollment
       API repair verified. RemainsOPEN/allC1-C4held for fullcomposition.
     legacy_record: null
+  DEF-082:
+    title: Current ACTIVE adoption source refusal leaves a different exception boundary
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 237994f7b97151304ddbb7efaa52522252996702
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Actual default Windows30 qualification: eight expected source-revocation
+        negative cases fail because InstructionError RELEASE_WITHDRAWN/NO_UNIQUE_COMPATIBLE_RELEASE
+        differs from expected controller error classes; direct source call and error
+        class confirmed by source inspection.'
+      failing_source: 237994f7b97151304ddbb7efaa52522252996702
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: source-inspected-boundary
+      claim: Direct select/restore_pin source revocation correctly refuses, but propagates
+        InstructionError outside the controller's consistent ConfigurationError boundary;
+        normalize only source-pin error classes without relaxing eligibility or recovery.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+    repairs: []
+    issue: null
+    regression_test: Eight source revoked Main/pending native cases must refuse with
+      stable adoption instructions code and preserve exact native pending/Main/CP/shared
+      facts; restore exact source then same bytes recover, no repeat.
+    resolution_evidence: []
+    notes: Actual237 initial30:21PASS9FAIL0ERROR0SKIP70.056s. Failure chronology retained;
+      ordinary debugging, no external blocker. AllC1-C4/full composition held; no
+      dependent regressions started.
+    legacy_record: null
+  DEF-083:
+    title: ACTIVE adoption credential-image test passes an unsupported fixture store
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 237994f7b97151304ddbb7efaa52522252996702
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: Actual default Windows30 credential image case fails CREDENTIAL_IMAGE_STORE_MISMATCH
+        at export_private._pair before adoption; canonical exact key-store type contract
+        confirmed by source inspection.
+      failing_source: 237994f7b97151304ddbb7efaa52522252996702
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: source-inspected-boundary
+      claim: Credential persistence permits exact WindowsKeyStore/LinuxKeyStore, while
+        the new test passes FixtureStore; use actual typed LinuxKeyStore with existing
+        synthetic native/runner adapters, same installation, and real select/enroll/export/resolve/revoke.
+        No persistence guard widening.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+    repairs: []
+    issue: null
+    regression_test: Protected own credential-image and selected refs preserved in
+      archive/stage/promotion; actual current revocation refuses before Main promotion/secret
+      execution; typed-store persistence preparation reaches genuine boundary.
+    resolution_evidence: []
+    notes: Actual237 initial30:21PASS9FAIL0ERROR0SKIP70.056s. Failure chronology retained;
+      ordinary debugging, no external blocker. AllC1-C4/full composition held; no
+      dependent regressions started.
+    legacy_record: null
