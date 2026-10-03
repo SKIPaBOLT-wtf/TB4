@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_SHARED_ROOT_PLAN_SOURCE
+phase: STAGED_RECONFIGURATION_C3_SHARED_ROOT_PLAN_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 95f2458f4e93fee993a26cab684ab3e3dfbbc3e8
+source_commit: afbc0df905d2351c25dc7beb399c45e4fbf22a54
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0087
+last_verified_event: RP-027-A001-0088
 last_completed: RP-026
-next_action: Perform bounded source-only root_plan/partial-facts unit; preserve exact
-  owned files and publish source-linked OUTCOME/readback before expanded synthetic/native
-  tests.
-verification: 811-case no-send qualification saved; shared root-plan/partial facts
-  source pending, no C1-C4 accepted.
+next_action: Publish/read back exact expanded36-target test INTENT preserving original811
+  plus27 new plan/partial/native/max-capacity predicates; run once fresh absent owned
+  WindowsX64 offscreenQt/native fixtures and preserve complete real result/defects
+  before repair or actual plan adoption.
+verification: Shared root plan/partial facts source saved;36-target native/max-capacity
+  qualification pending, no accepted C1-C4.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0087
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

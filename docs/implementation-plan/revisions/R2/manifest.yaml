@@ -1131,6 +1131,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-005-durable-root-disposition.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-006-cloud-inherited-root-settlement.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-007-proven-no-send-settlement.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-027/A-008-shared-root-plan.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:
