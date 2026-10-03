@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_OWNER_REPAIR_SOURCE
+phase: STAGED_RECONFIGURATION_C3_ROOT_OWNER_REPAIR_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 3603f2678d580a9be225becae56f81e6bb10a95d
+source_commit: 4301f0c24ff44dc5baf3ab85dcabe5f8772ffef2
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0060
+last_verified_event: RP-027-A001-0061
 last_completed: RP-026
-next_action: Preserve/read back source OUTCOME, then verified exact same30-target763-predicate
-  repeat INTENT/run once with fresh absent native fixtures. Record actual session/cases/result
-  before further work.
-verification: Owner projection cause recorded; one-path early refusal source repair
-  pending.
+next_action: Publish/read back exact same30-target763-case repeat INTENT; once-run
+  guarded fresh absent native/offscreenQt fixtures, record real session/full cases/result
+  before any dependent work.
+verification: One-path root owner preflight saved/read back; exact repeated qualification
+  required.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0060
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
