@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_DISPOSITION_TARGETED_PASSED
+phase: STAGED_RECONFIGURATION_C3_INHERITED_ROOT_SETTLEMENT_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: f2e5e29ca7acd61d8e5779d87d3fe8f51f6772c1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0069
+last_verified_event: RP-027-A001-0070
 last_completed: RP-026
-next_action: Publish/read back a separately bounded shared root-effect settlement
-  source INTENT. First implement fresh current-role cloud-only unique-after inspection
-  and strict conditional inherited ROOT_UNKNOWN completion without old-host/WAL/ACK,
-  then native-revocation tombstones/known safe continuation; preserve source and qualify
-  each unit before further dependencies.
-verification: 772 actual targeted predicates pass; original763 unchanged, nine native/race/disposition
-  invariants qualified. No C1-C4 accepted; shared settlement next.
+next_action: Preserve/read back this source OUTCOME then publish/run exact expanded30-target
+  native/inherited-root/772-regression test INTENT once fresh absent fixtures. Record
+  full actual cases/session/exit/failures before repair or subsequent no-send/partial-root/folder/rebind/C4
+  units.
+verification: 772 root/disposition predicates qualified on WindowsX64; current-role
+  cloud-only inherited receipt source pending, no check accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0070
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
