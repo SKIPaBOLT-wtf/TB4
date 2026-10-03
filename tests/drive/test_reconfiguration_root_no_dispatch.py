@@ -4,6 +4,7 @@ from dataclasses import replace
 import pytest
 
 from tb4.configuration_contract import ConfigurationError
+from tb4.drive.docs_authority import AuthorityError
 from tb4.private_settings import SettingsError
 from tb4.reconfiguration_root_settlement import ProvenNoDispatchSettlement
 from tb4.watchdog.leadership_runtime import Action
@@ -93,7 +94,8 @@ def test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retr
         proof = replace(proof,index=proof.index+1)
     elif fault == "foreign-origin":
         from tb4.reconfiguration_roots import DocsRootMoves
-        proof = replace(proof,_origin=DocsRootMoves(s.context))
+        from reconfiguration_candidate_support import private
+        proof = replace(proof,_origin=DocsRootMoves(replace(s.context,store=private(29))))
     elif fault == "force":
         s.value.provider.store.document["records"]["global.force_request"].update(retention="BUSY",body={"synthetic":True})
     elif fault == "clock":
@@ -111,10 +113,23 @@ def test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retr
     elif fault == "before-only":
         proof = object()
     before = copy.deepcopy(s.value.provider.store.document)
-    with pytest.raises((ConfigurationError,SettingsError)):
+    expected = AuthorityError if fault == "force" else (ConfigurationError,SettingsError)
+    with pytest.raises(expected,match="FORCE_SHAPE" if fault == "force" else None):
         helper.settle(proof,owner_authorized=fault != "default-owner")
     assert s.value.provider.store.document == before and not updates(s)
     assert ctx.effects.receipt(Action.IDENTITY)["outcome"] == "UNKNOWN"
+
+
+def test_fresh_second_reader_of_same_actual_native_root_revalidates_receipt_without_sdk():
+    from tb4.reconfiguration_roots import DocsRootMoves
+    s,_ = revoked(); reader = DocsRootMoves(s.context); proof = reader.revocation()
+    original = s.value.setup.store.read(); before = copy.deepcopy(s.value.provider.store.document)
+    old = s.value.effects.receipt(Action.IDENTITY)
+    assert proof._origin is reader and reader.require_revocation(proof) == proof
+    assert ProvenNoDispatchSettlement(s.value.context).settle(proof,owner_authorized=True) == "CONFIRMED"
+    assert {k for k,v in before["records"].items() if s.value.provider.store.document["records"][k] != v} == {"global.summary"}
+    assert s.value.effects.receipt(Action.IDENTITY) == {**old,"outcome":"NOT_DISPATCHED"}
+    assert not updates(s) and s.value.setup.store.read() == original
 
 
 def test_possible_send_with_provider_before_metadata_remains_unknown_not_non_dispatch():
