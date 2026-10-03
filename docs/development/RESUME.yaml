@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_TIMING_NATIVE_ASSERTION_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C4_CORRECTED_TIMING_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: bf5c34f9fc79fcc6784ccd71009e2551608522a7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0275
+last_verified_event: RP-027-A001-0276
 last_completed: RP-026
-next_action: Publish corrected-source qualification INTENT then execute affected Windows504/default3043/requiredLinux560
-  and current full/build gates once. Reconcile old18/19 jobs, checkpoint owner pause
-  and stop.
-verification: 275 corrected one-file native assertion saved bf5c34f; production guard
-  remains0b537c1. Qualification and immutable18/19 reconciliation remain before owner
+next_action: Run corrected-source qualification once, record actual STARTED IDs and
+  terminal evidence including original18/19 reconciliation, then verified owner-requested
   pause.
+verification: 276 corrected native assertion qualification pending onbf5c34f; preserve
+  original request19 failure and request18 results. Finish this part then pause; all
+  C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0265
+- RP-027-A001-0276
 expected_user_action: Wait for current-part completion; after verified pause, say
   continue to resume next integration.
 blocking_decisions: []
