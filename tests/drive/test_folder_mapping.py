@@ -94,7 +94,10 @@ def test_existing_static_and_exact_mapped_helper_keep_same_authority_after_owned
 def test_actual_preparation_refuses_unqualified_inputs_before_any_mapping_or_root_change(value,tmp_path,fault):
     v=value;owner=True;creator=v.creator
     if fault=="owner":owner=False
-    elif fault=="profile":v.setup.choose({"network_scope":["198.51.100.0/24"]})
+    elif fault=="profile":
+        revision=v.setup.snapshot.revision
+        v.setup.choose({"network_scope":v.setup.private_choices()["network_scope"]})
+        assert v.setup.snapshot.revision==revision+1
     elif fault=="source":v.source.fail_resolve=True
     elif fault=="work":
         backend=v.leader.backend
