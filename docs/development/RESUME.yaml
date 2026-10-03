@@ -3,22 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_ACTIVE_ADOPTION_REGRESSION_PLATFORM_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_ACTIVE_ADOPTION_IMMUTABLE_FULL_PLATFORM_REMAINDER
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6d061a3af4c31e72fbc1c806ff04d66bfc89f80e
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0219
+last_verified_event: RP-027-A001-0220
 last_completed: RP-026
-next_action: Publish explicit independent immutable6d CI/Desktop remainder inspection
-  INTENT retaining same existing runIDs, then source INTENT for actual retained-root/rootless
-  and Folder publication/profile/admission composition; allacceptanceheld.
-verification: "219 scoped6d30/436/default2939/bothLinux453PASS qualified; existingCI/Desktopsame6dnotfinished\u2192\
-  nextspecificsame-runinspectionINTENT. Recordedindependencepermitsretained-root/Folder\
-  \ source afteritsINTENT, allC1-C4held."
+next_action: Track same immutable fulljobs; next separately authorized public sourceINTENT
+  for retained-root/rootless+Folder finalpublication/profile/admission primitives
+  with boundedactualtests. PreservefullterminalOUTCOME whenavailable; do not wait
+  to start independent source onceitsINTENT readback passes.
+verification: 220 track existingimmutable6d CI37126858546/Desktop37126858553 originaljobIDs,
+  no rerun; 219scoped30/436/default2939/bothLinux453qualified supports independent
+  nextretained-root/Folder source onlyafteritsownINTENT; allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0220
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
