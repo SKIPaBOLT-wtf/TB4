@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_DEFAULT_COLLECTION_IMPORT_REPAIR
+phase: STAGED_RECONFIGURATION_C3_DEFAULT_COLLECTION_IMPORT_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 5665870eb003bb335dc61ced8472f8809d464cf5
+source_commit: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0128
+last_verified_event: RP-027-A001-0129
 last_completed: RP-026
-next_action: Apply exact5-path import-only repair, preserve/publish/readback source/OUTCOME,
-  then verified full default collection INTENT/run followed by actual isolated platform
-  repeat.
-verification: DEF074 full collection origin proved; exact5 import-only fixture repair
-  authorized, no guard/assertion changes.
+next_action: Publish/readback bounded default fullcollect without custom PYTHONPATH
+  INTENT; actual fullcollection child exit/count/error report, then real isolated
+  native/fullplatform repeat.
+verification: Exact5-path fixture import repair saved/readback; defaultcollect/realplatform
+  qualification pending, final checks held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0128
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

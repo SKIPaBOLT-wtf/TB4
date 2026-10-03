@@ -5414,7 +5414,18 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.md
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0128
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Unmodified ordinary full pytest collection without custom helper
       PYTHONPATH, then actual native Linux/Windows full regression/Qt/build/frozen
@@ -5422,5 +5433,7 @@ defects:
     resolution_evidence: []
     notes: Earlier partial139 and historic broad839 remain actual past results, not
       default/platform qualification. Exact full CI failure saved. No production dependency
-      or guard weakened. Final allchecks held.
+      or guard weakened. Final allchecks held. Exactly5 fixture paths/seven import
+      lines repaired and source saved; no assertion/production/protocol/PYTHONPATH/workflow
+      change.
     legacy_record: null
