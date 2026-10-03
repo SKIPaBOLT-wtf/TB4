@@ -56,3 +56,17 @@ No synthetic fixture stands for a live deployment or physical cross-host pairing
 Default DenyActivation remains. Source alone accepts no C1-C4 check. Remote-client
 first-run/helper and runtime/GUI composition, final current-source platform/full
 and common gates remain required.
+
+## Required Linux CI budget calibration
+
+The expanded required workflow has the same 506 case assertions and now a bounded
+30-minute job allocation. Prior actual PR required484 stages took 713.67 seconds
+(run37133658459/job111233639980); the first actual new22 fixture preparation took
+226.73 seconds before functional assertions (run37136408967/job111241734545).
+Their representative measured sum, 940.40 seconds, exceeds the old 900-second
+allocation before the added assertion work. This is a scheduling inference from
+separate measurements, not an observed workflow timeout. Exact sources/results
+are retained in current-role-folder-active-adoption-boundary-repair-source.json
+under RP-027/A001. No case, guard, skip rule, product timing, transport bound,
+protocol/profile budget or installed configuration changes. Original 15-minute
+run evidence remains immutable; final current-source actual results are required.
