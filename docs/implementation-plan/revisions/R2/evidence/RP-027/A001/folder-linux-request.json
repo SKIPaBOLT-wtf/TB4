@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "item": "RP-027",
-  "check": "RP-027.C2",
+  "check": "RP-027.C4",
   "attempt": "A001",
-  "intent_event": "RP-027-A001-0265",
-  "source_commit": "f7d283897eaef2ca521df99d45544dad2d07dd5e",
+  "intent_event": "RP-027-A001-0271",
+  "source_commit": "0b537c1c96283cdfca9153175569267ecec5cba8",
   "branch": "feat/rp027-staged-reconfiguration",
   "pr": 36,
-  "request_revision": 18,
+  "request_revision": 19,
   "required_workflow": "Folder reconfiguration",
   "required_cases": 126,
-  "scope": "New portable31/actual physical13/existing isolated SSH3 plus existing required506 = 553, all required zero skip. New opt-in helper proof source f7d2838; unchanged default READ/CAS, source-pinned closed fields and actual artifact identity tests.",
-  "expected": "Required Linux553 PASS; default Windows portable/protocol zero skips and default collection3036 tests0. Record actual current CI/Desktop/full/build/package/Progress outcomes and skipped scopes. No live activation or C1-C4 acceptance.",
+  "scope": "Unchanged A020 physical47/mapping51/retained6/current-role22/native107 plus Docs/effect/admission327 = required560, zero skipped. DEF091 current actual Leadership timing guard and seven release/per-use/late-first-run/native pending regressions.",
+  "expected": "Required Linux560 zero-skip PASS; affected Windows504 PASS and default collection3043 tests0. Record actual current CI/Desktop full regressions, both role builds/package acceptance and Progress, preserving exact skipped scopes. After terminal evidence, checkpoint and pause at owner request. C1-C4 remain held; no deployment.",
   "acceptance": false
 }
