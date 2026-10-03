@@ -7,18 +7,18 @@ phase: STAGED_RECONFIGURATION_C4_POST_ROOT_FIRST_RUN_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 3ad08dfbb64e057ea5140f7bd1c9b5d2d43d894c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0179
+last_verified_event: RP-027-A001-0180
 last_completed: RP-026
-next_action: Inspect same actual Windows originals/new and source-linked Linux51/107/201
-  jobs, preserve exact terminal results/artifacts before subsequent C4 publication
-  source.
-verification: 3ad08 Windows20 pass/default2845 collect; same-source originals/new
-  and actualLinux51/107/201/fullplatform started, allC1-C4 held.
+next_action: Record verified INTENT for compact native same-authority C4 descriptor/configuration
+  publication source, preserving original profile until a separately qualified local
+  promotion/admission unit.
+verification: 3ad08 post-root actual Windows20/231 and Linux359x2 PASS/default2845
+  collect. Historical28952 full/platform/packages PASS separately. C4 publication/promote/admission/composition
+  remain; allC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0178
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
