@@ -113,8 +113,8 @@ def test_actual_user_force_request_flag_fences_incumbent_before_claim_without_ac
 def test_actual_credential_revocation_refuses_release_without_secret_use():
     stores=[]
     def prepare(s):
-        store=FixtureStore();resolver=CredentialResolver(s.value.setup.installation_id,store,clock=lambda:store.now)
-        handle=resolver.grant(owner_selection="synthetic-approved-key",target_id=DEVICE,target_trust=TRUST,
+        store=FixtureStore(s.value.setup.installation_id);resolver=CredentialResolver(store.installation_id,store,clock=lambda:store.now)
+        handle=resolver.enroll(target_id=DEVICE,target_trust=TRUST,store_locator="synthetic-admission-slot",
             purposes=frozenset({Purpose.FETCHER_STATUS}),expires_at=200,owner_authorized=True)
         s.post_root.candidate.choose({"credentials":[dict(handle=handle,target_id=DEVICE,target_trust=TRUST,
             purposes=[Purpose.FETCHER_STATUS.value])]},owner_authorized=True)
