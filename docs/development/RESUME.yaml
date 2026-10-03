@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_FOLDER_GUARD_LINUX_TEST
+phase: STAGED_RECONFIGURATION_C3_FOLDER_BOUNDARY_TEST_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 98b5948618877160536fca2525fdb7277054d00c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0156
+last_verified_event: RP-027-A001-0157
 last_completed: RP-026
-next_action: Publish test-only DEF077 repair intent. Keep production untouched, expect
-  documented opaque boundaries and capture actual inner OWNER_SUPERSEDED under SQL
-  lock with no syscall/UNKNOWN/source assertions; repeat same required native qualification.
-verification: Native51 cases49PASS/2FAIL0SKIP, DEF077 negative test boundary repair
-  required; hidden force cause unverified, all acceptance held.
+next_action: Save exact test-only source/readback/outcome then repeat actual51 native
+  cases and selected original regressions.
+verification: DEF077 test-only real refusal proof repair INTENT; current production
+  unchanged, native qualification incomplete.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0157
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
