@@ -3,16 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_OWNER_REPEAT_TEST
+phase: STAGED_RECONFIGURATION_C3_ROOT_OWNER_REPEAT_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4301f0c24ff44dc5baf3ab85dcabe5f8772ffef2
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0062
+last_verified_event: RP-027-A001-0063
 last_completed: RP-026
-next_action: Inspect same actual launched session/artifacts only; publish/read back
-  source-linked full actual result/defect evidence. Then separately scoped deterministic
-  root non-dispatch/inherited settlement design/source unit, preserving role availability/no-ACK/no-replay.
-verification: Root-only owner source saved; exact same763-predicate repeat pending.
+next_action: Inspect same LOCAL-SESSION-64266 and exact output; publish/read back
+  full source-linked cases/exit/time/outcome/defects before any dependent settlement/folder/rebind
+  unit.
+verification: Exact763-case owner repeat executing; actual session recorded, result
+  pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
