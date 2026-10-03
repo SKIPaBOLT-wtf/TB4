@@ -5778,6 +5778,7 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-linux-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-budget-failure.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5794,6 +5795,13 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
+    - id: oversized-compact-budget-fixture
+      claim: Remaining max129 fixtures put1500 two-byte Unicode characters in each
+        actual1024-byte catalogue; canonical layout rejects the input before rebind.
+        Keep budget guard and create valid substantial retained records.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-budget-failure.json
     repairs:
     - item: RP-027
       attempt: A001
@@ -5814,4 +5822,7 @@ defects:
     notes: Preserve original c140 failure. No new rebind/native pass inferred; native/final
       composition remains held. Keep OPEN until source-linked final acceptance. Same27
       failures reproduced on both exact-source Linux jobs after all51+107 pass/zeroSkip.
+      Repaired4b66 actual Windows27 yields25PASS2FAIL; missing import/final physical
+      fixture resolved, two original oversized max129 fixture cases remain. Full181/Linux
+      not started after targeted failure.
     legacy_record: null
