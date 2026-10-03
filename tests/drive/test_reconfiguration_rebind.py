@@ -13,7 +13,7 @@ from tb4.configuration_contract import ConfigurationError,configuration
 from tb4.drive.authority_transaction import OwnerGuard
 from tb4.drive.commissioning import SetupSpec,digest,seed_document,frozen_plan
 from tb4.drive.docs_authority import AuthorityError
-from tb4.exchange_layout import Capacity,encoded
+from tb4.exchange_layout import Capacity,encoded,validate_document
 from tb4.private_settings import SettingsError
 from tb4.reconfiguration_effects import SLOT,ledger,changed_row
 from tb4.reconfiguration_rebind import RemoteRebind,RebindContext,RebindMutation,SCHEMA,SCHEMA_SHA256
@@ -173,7 +173,8 @@ def large_plan():
             key=f"artifact.{index:03d}.{kind}";ref="s"*116+f"{index:03d}"+kind[:1]
             refs[kind]=dict(id=ref,seal=digest([spec.mode,spec.root_id,spec.domain_id,ref,spec.operation(key)]))
         doc["records"][f"target.{index:03d}.catalogue"]=dict(generation=17,operation_id=tid("retained-catalogue"),
-            retention="RETAINED",body={"artifacts":refs,"synthetic_retained_unicode":"ą"*1500})
+            retention="RETAINED",body={"artifacts":refs,"synthetic_retained_unicode":"ą"*120})
+    validate_document(doc)
     _,refs=references(doc,BINDING)
     planned=root_plan(dict(schema_version=1,mode="NATIVE_DOCS",transition_id=tx,source_root=spec.root_id,
         target_root=TARGET,blueprint_sha256=spec.fingerprint,references_sha256=digest(refs),records_sha256=stable_records(doc)))
