@@ -7,20 +7,20 @@ phase: STAGED_RECONFIGURATION_C4_FRESH_NATIVE_ADMISSION_REQUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 14a53a8c8ab5903282cd23e4f428e2b26cda4b25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0206
+last_verified_event: RP-027-A001-0207
 last_completed: RP-026
-next_action: Inspect same original295Windows run and actualLinuxPR/push recordedjobs/logs/artifacts;
-  publish exactqualificationOUTCOMEbefore cloudACTIVEadoption source. Inspect197sameimmutable
-  DesktopWindows completion and preserve separate budget/fullpackageOUTCOME.
-verification: ExactWindows23PASS/wholecollection2909; inspectsameWindows295/Linuxruns37122851826/37122849283
-  terminal423/artifacts; qualificationOUTCOMEbefore cloudACTIVEadoption. Inspectindependent197samebudgetfull/package
-  jobs.
+next_action: Inspect same independent19790minute Windows packaging and publish its
+  exactterminal sourceOUTCOME; then ownINTENT cloudACTIVEadoption from current shared
+  configuration with old private host/WAL/candidate unavailable, preserving own local
+  identity/credentials. FullFolder/rootless/runtimeGUIhelpercomposition remains; nofinalacceptance.
+verification: Exact14a53a8 actual23/295/default2909 and Linux423each qualified; allC1-C4held.
+  Inspect197same90minuteWindowspackage terminal sourceOUTCOME, then ownINTENT cloudACTIVEadoption/nooldprivatehost/fullcomposition;
+  current14full/platformpending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0197
-- RP-027-A001-0205
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

@@ -5977,9 +5977,11 @@ defects:
         native admission case; source-inspected grant call also differs from actual
         qualified enroll API, not yet exercised.
       failing_source: 96b95bae1a06c06de5e08fc538522d3f24d99e5c
-      passing_source: null
+      passing_source: 14a53a8c8ab5903282cd23e4f428e2b26cda4b25
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-qualified.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6014,7 +6016,11 @@ defects:
       fresh admission refuse CREDENTIAL_UNAVAILABLE with zero secret execution/native
       maintenance release/remote writes; all23 and affected originals/current Linux
       qualify.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-qualified.json
     notes: Actual failure retained, unsupported later API source-inspected only; production
       origin unproven and binding guard unchanged. AllC1-C4 held until final composition/qualification.
+      Actual corrected14a53a8 qualification23new/295originalWindows and bothactualLinux423PASS0Skip.
+      Production96b95ba unchanged; source-local fixture mismatch/supporting enrollment
+      API repair verified. RemainsOPEN/allC1-C4held for fullcomposition.
     legacy_record: null
