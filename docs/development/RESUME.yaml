@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_TIMING_ADMISSION_DEFECT_REPRODUCED
+phase: STAGED_RECONFIGURATION_C4_TIMING_ADMISSION_REPAIR_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: f7d283897eaef2ca521df99d45544dad2d07dd5e
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0268
+last_verified_event: RP-027-A001-0269
 last_completed: RP-026
-next_action: Publish minimal admission timing guard plus targeted/actual native regression
-  source INTENT, then preserve source and separately qualify it. Same probe265 request18
-  immutable Linux/full runs remain under inspection, with no restart.
-verification: '268 DEF091 reproduced: three stale Leadership timing cases admitted
-  despite coherent protected/shared current settings. No live actions. Probe265 immutable
-  current Linux/full still tracked; minimal repair next, C1-C4 held.'
+next_action: Implement exact three-file repair, preserve/readback source and OUTCOME.
+  Then separately qualify affected Windows504/default3043/actualLinux560 plus required
+  full platform source; settle same probe265 actual jobs independently.
+verification: 268 three synthetic stale timing admissions reproduced DEF091. 269 exact
+  guard/seven regression source pending; immutable probe265 full/current Linux still
+  inspected. All C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0265
+- RP-027-A001-0269
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
