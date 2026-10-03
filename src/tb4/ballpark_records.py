@@ -149,11 +149,17 @@ def validate_adoption(value, choices):
     require(type(value) is dict and set(value) == {
         "schema_version", "kind", "configuration", "authority", "provenance"}
         and type(value["schema_version"]) is int and value["schema_version"] == 1
-        and value["kind"] == "CURRENT_ACTIVE_ADOPTION", "BALLPARK_ADOPTION")
+        and value["kind"] in ("CURRENT_ACTIVE_ADOPTION","CURRENT_FOLDER_ACTIVE_ADOPTION"), "BALLPARK_ADOPTION")
     require(marker(value["configuration"])["phase"] == "ACTIVE", "BALLPARK_ADOPTION")
     spec, handle = storage_spec(choices["storage"])
-    require(spec.mode == "NATIVE_DOCS" and value["authority"] == dict(mode="NATIVE_DOCS",
-        binding=asdict(AuthorityBinding(handle.object_id, handle.tab_id, spec.domain_id))), "BALLPARK_ADOPTION")
+    if value["kind"] == "CURRENT_ACTIVE_ADOPTION":
+        require(spec.mode == "NATIVE_DOCS" and value["authority"] == dict(mode="NATIVE_DOCS",
+            binding=asdict(AuthorityBinding(handle.object_id,handle.tab_id,spec.domain_id))), "BALLPARK_ADOPTION")
+    else:
+        from .drive.folder_authority import FolderBinding
+        require(spec.mode == "FOLDER_SQLITE_V1" and handle.object_id == spec.root_id and handle.tab_id is None
+                and value["authority"] == dict(mode=spec.mode,binding=asdict(FolderBinding(
+                    spec.root_id,spec.domain_id))), "BALLPARK_ADOPTION")
     # The original shared decision is not presented as this local confirmation.
     local = catalogue(choices["descriptor"])
     validate_header(dict(schema_version=1, kind="BALLPARK_REVISION", codec=1,

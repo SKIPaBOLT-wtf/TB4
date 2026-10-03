@@ -27,7 +27,7 @@ from .reconfiguration_post_root import PostRootCandidate, PostRootValidation
 from .watchdog.leadership_runtime import Action
 
 SCHEMA_DEFINITION = "configurationCommit"
-SCHEMA_SHA256 = "b4e9aefd0d9e88c02d462745632c1853cf4b7ba05b146be17a598c11f9ab0498"
+SCHEMA_SHA256 = "e56758941bbc7907414409e04bcb0bb3a1f211e5d50cd96839e33dd34ea05e82"
 CONTROLLED = frozenset({"global.registry", "global.settings", SLOT})
 STATE_FIELDS = frozenset({"schema_version", "kind", "installation_id", "transition_id",
     "base_revision", "base_sha256", "stage_revision", "stage_sha256", "stage_state_sha256",

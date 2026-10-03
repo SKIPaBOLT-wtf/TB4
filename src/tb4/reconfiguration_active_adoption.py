@@ -62,6 +62,10 @@ def current_admission(local):
 
 
 class ActiveAdoption:
+    KIND = "RECONFIGURATION_ACTIVE_ADOPTION"
+    ARCHIVE_KIND = "RECONFIGURATION_ACTIVE_ADOPTION_ORIGINAL"
+    RECEIPT_KIND = "CURRENT_ACTIVE_ADOPTION"
+
     def __init__(self, context):
         require(type(context) is ActiveAdoptionContext and type(context.local) is AdmissionContext
                 and type(context.local.checker.storage.port) is NativeCommissioning
@@ -83,7 +87,7 @@ class ActiveAdoption:
     def _schema(self, value, *, held=None):
         require(type(value) is dict and set(value) == FIELDS
                 and type(value["schema_version"]) is int and value["schema_version"] == 1
-                and value["kind"] == "RECONFIGURATION_ACTIVE_ADOPTION"
+                and value["kind"] == self.KIND
                 and value["installation_id"] == self.context.local.leadership.actor
                 and all(type(value[k]) is int and 1 <= value[k] <= MAX_GENERATION for k in ("base_revision","epoch"))
                 and value["base_revision"] < MAX_GENERATION
@@ -93,11 +97,7 @@ class ActiveAdoption:
                 "ACTIVE_ADOPTION_SCHEMA")
         from .configuration_contract import marker
         require(marker(value["configuration"])["phase"] == "ACTIVE", "ACTIVE_ADOPTION_SCHEMA")
-        spec,handle = storage_spec(value["storage"])
-        binding = self.context.local.leadership.backend.binding
-        require(spec.mode == "NATIVE_DOCS" and spec.domain_id == binding.domain_id
-                and handle.object_id == binding.document_id and handle.tab_id == binding.tab_id
-                and value["authority"] == dict(mode="NATIVE_DOCS",binding=asdict(binding)), "ACTIVE_ADOPTION_BINDING")
+        self._storage_schema(value["storage"],value["authority"])
         validate_pin(value["pin"])
         p = value["promotion"]
         require((value["phase"] in {"STAGING","STAGED"} and p is None)
@@ -149,25 +149,7 @@ class ActiveAdoption:
         require(not any(b.kind.startswith("LOCAL_") for b in inspect(
             observed.snapshot,setup_payload=payload,checkpoint=cp).blockers), "ACTIVE_ADOPTION_LOCAL_UNRESOLVED")
         current_shared = shared(doc)
-        source,_ = storage_spec(payload["choices"]["storage"])
-        body = doc["records"]["global.commissioning"]["body"]
-        require(type(body) is dict, "ACTIVE_ADOPTION_STORAGE")
-        target = SetupSpec(body.get("root_id"),doc["domain_id"],body.get("setup_id"),
-            body.get("bootstrap_actor"),body.get("mode"),source.capacity)
-        require(target.mode == source.mode == "NATIVE_DOCS"
-                and target.domain_id == source.domain_id and target.setup_id == source.setup_id
-                and target.bootstrap_actor == source.bootstrap_actor, "ACTIVE_ADOPTION_STORAGE")
-        proof = body.get("reconfiguration")
-        transition = None if proof is None else proof.get("transition_id")
-        current_record(doc,target,root_transition=transition)
-        binding = observed.snapshot.binding
-        old_handle = storage_spec(payload["choices"]["storage"])[1]
-        require(old_handle.object_id == binding.document_id and old_handle.tab_id == binding.tab_id
-                and ctx.checker.storage.port.authority(old_handle).binding == binding, "ACTIVE_ADOPTION_AUTHORITY")
-        handle = AuthorityHandle(binding.document_id,digest([
-            target.mode,target.root_id,target.domain_id,binding.document_id,binding.tab_id]),binding.tab_id)
-        storage = dict(spec=asdict(target),authority=handle.record())
-        if transition is not None:storage["root_transition"] = transition
+        storage = self._current_storage(payload,doc,observed.snapshot.binding)
         controls = sha({k:doc["records"][k] for k in (
             "global.settings","global.registry","global.commissioning")})
         try:
@@ -185,6 +167,41 @@ class ActiveAdoption:
                     "ACTIVE_ADOPTION_CHANGED")
         return observed.snapshot,cp,pin,storage,controls,current_shared
 
+    def _authority_record(self, binding):
+        return dict(mode="NATIVE_DOCS",binding=asdict(binding))
+
+    def _storage_schema(self, storage, authority):
+        spec,handle = storage_spec(storage)
+        binding = self.context.local.leadership.backend.binding
+        require(spec.mode == "NATIVE_DOCS" and spec.domain_id == binding.domain_id
+                and handle.object_id == binding.document_id and handle.tab_id == binding.tab_id
+                and authority == self._authority_record(binding), "ACTIVE_ADOPTION_BINDING")
+
+    def _storage_request(self, storage):
+        return dict(mode="NATIVE_DOCS",location=storage["spec"]["root_id"])
+
+    def _current_storage(self, payload, doc, binding):
+        ctx = self.context.local
+        source,_ = storage_spec(payload["choices"]["storage"])
+        body = doc["records"]["global.commissioning"]["body"]
+        require(type(body) is dict, "ACTIVE_ADOPTION_STORAGE")
+        target = SetupSpec(body.get("root_id"),doc["domain_id"],body.get("setup_id"),
+            body.get("bootstrap_actor"),body.get("mode"),source.capacity)
+        require(target.mode == source.mode == "NATIVE_DOCS"
+                and target.domain_id == source.domain_id and target.setup_id == source.setup_id
+                and target.bootstrap_actor == source.bootstrap_actor, "ACTIVE_ADOPTION_STORAGE")
+        proof = body.get("reconfiguration")
+        transition = None if proof is None else proof.get("transition_id")
+        current_record(doc,target,root_transition=transition)
+        old_handle = storage_spec(payload["choices"]["storage"])[1]
+        require(old_handle.object_id == binding.document_id and old_handle.tab_id == binding.tab_id
+                and ctx.checker.storage.port.authority(old_handle).binding == binding, "ACTIVE_ADOPTION_AUTHORITY")
+        handle = AuthorityHandle(binding.document_id,digest([
+            target.mode,target.root_id,target.domain_id,binding.document_id,binding.tab_id]),binding.tab_id)
+        storage = dict(spec=asdict(target),authority=handle.record())
+        if transition is not None:storage["root_transition"] = transition
+        return storage
+
     def _seed(self, base, state, current_shared):
         value = seed(base)
         local = validate(value["choices"]["descriptor"])
@@ -196,12 +213,12 @@ class ActiveAdoption:
         value["choices"]["descriptor"] = validate(local)
         value["choices"]["storage"] = copy.deepcopy(state["storage"])
         if value["choices"].get("storage_request") is not None:
-            value["choices"]["storage_request"] = dict(mode="NATIVE_DOCS",location=state["storage"]["spec"]["root_id"])
+            value["choices"]["storage_request"] = self._storage_request(state["storage"])
         return validated(value)
 
     def _archive_value(self, state, base):
         require(sha(base) == state["base_sha256"], "ACTIVE_ADOPTION_PROFILE_CHANGED")
-        return dict(schema_version=1,kind="RECONFIGURATION_ACTIVE_ADOPTION_ORIGINAL",
+        return dict(schema_version=1,kind=self.ARCHIVE_KIND,
             installation_id=state["installation_id"],configuration=state["configuration"],
             base_revision=state["base_revision"],base_sha256=state["base_sha256"],profile=validated(base))
 
@@ -234,7 +251,7 @@ class ActiveAdoption:
             promoted = copy.deepcopy(value)
             draft = dict(pin=state["pin"],decision=state["promotion"]["decision"],candidate=value["choices"]["descriptor"])
             active = receipt(draft,value["choices"]["timing"])
-            active["adoption"] = dict(schema_version=1,kind="CURRENT_ACTIVE_ADOPTION",
+            active["adoption"] = dict(schema_version=1,kind=self.RECEIPT_KIND,
                 configuration=copy.deepcopy(state["configuration"]),authority=copy.deepcopy(state["authority"]),
                 provenance=copy.deepcopy(observed.document()["records"]["global.registry"]["body"]["provenance"]))
             validate_receipt(active,value["choices"])
@@ -312,9 +329,9 @@ class ActiveAdoption:
         base = validated(original.payload)
         snap,cp,pin,storage,controls,current_shared = self._current(base)
         config = configuration(snap.document())
-        state = dict(schema_version=1,kind="RECONFIGURATION_ACTIVE_ADOPTION",installation_id=base["installation_id"],
+        state = dict(schema_version=1,kind=self.KIND,installation_id=base["installation_id"],
             configuration=config,base_revision=original.revision,base_sha256=sha(base),seed_sha256="0"*64,
-            storage=storage,authority=dict(mode="NATIVE_DOCS",binding=asdict(snap.binding)),
+            storage=storage,authority=self._authority_record(snap.binding),
             bindings=self._bindings(),pin=pin_record(pin),epoch=cp.grant.epoch,controls_sha256=controls,
             phase="STAGING",promotion=None)
         initial = self._seed(base,state,current_shared)
@@ -354,7 +371,7 @@ class ActiveAdoption:
             candidate_digest=sha(stage.payload["choices"]["descriptor"]))
         draft = dict(pin=state["pin"],decision=decision,candidate=stage.payload["choices"]["descriptor"])
         active = receipt(draft,stage.payload["choices"]["timing"])
-        active["adoption"] = dict(schema_version=1,kind="CURRENT_ACTIVE_ADOPTION",configuration=state["configuration"],
+        active["adoption"] = dict(schema_version=1,kind=self.RECEIPT_KIND,configuration=state["configuration"],
             authority=state["authority"],provenance=proof[4].document()["records"]["global.registry"]["body"]["provenance"])
         promoted = validated({**stage.payload,"ballpark_publication":dict(active=active,pending=None),
             "state":"INCOMPLETE","reason":"REVALIDATION_REQUIRED"})

@@ -40,6 +40,8 @@ jobs:
         run: python -m pytest tests/drive/test_folder_mapping.py tests/drive/test_folder_relocation.py -ra --junitxml=folder-mapping-results.xml
       - name: Required actual Linux retained Folder publication cases
         run: python -m pytest tests/drive/test_folder_retained.py -ra --junitxml=folder-retained-results.xml
+      - name: Required actual Linux current-role Folder ACTIVE adoption cases
+        run: python -m pytest tests/drive/test_folder_active_adoption.py -ra --junitxml=folder-active-adoption-results.xml
       - name: Original folder and native maintenance regressions
         run: >-
           python -m pytest

@@ -91,7 +91,7 @@ class ConfigurationAdmission:
         adoption = active.get("adoption")
         if adoption is not None:
             require(adoption["configuration"] == config
-                    and adoption["authority"] == dict(mode="NATIVE_DOCS", binding=asdict(observed.snapshot.binding)),
+                    and adoption["authority"] == dict(mode=self.context.checker.storage.port.mode, binding=asdict(observed.snapshot.binding)),
                     "ADMISSION_PUBLICATION")
         require(shared(doc) == catalogue(payload["choices"]["descriptor"])
                 and doc["records"]["global.settings"]["body"]["timing"] == payload["choices"]["timing"]

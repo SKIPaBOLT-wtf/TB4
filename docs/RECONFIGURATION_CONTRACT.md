@@ -255,3 +255,15 @@ INCOMPLETE reservation; fresh originating admission remains separate. Protected
 Folder selection accepts only its original lookup anchor or verified current
 path. Existing post-root contracts and default DenyActivation remain unchanged;
 source alone accepts no check and runtime/GUI/remote helper/common gates remain.
+
+[A-019](implementation-plan/revisions/R2/amendments/RP-027/A-019-current-role-folder-active-adoption.md)
+adds distinct current-role ACTIVE Folder adoption through this installation's
+actual configured and freshly verified same-authority port. The original marker,
+spec, objects and artifact seals remain; no former private host/mapping/WAL/ACK
+or shared/physical mutation is an input. Own full archive/previous Main and native
+pending cuts reuse qualified mechanics with distinct closed Folder kinds/receipt.
+Fresh source/storage/role/force/clock/capability/profile proof precedes promotion
+and each admission; inherited shared UNKNOWN retains ordinary no-replay rules.
+The originating release remains strict. New timing is taken from coherent current
+configuration. Default activation stays closed; actual runtime/GUI/remote helper
+and final-source full/common qualification remain before any acceptance.
