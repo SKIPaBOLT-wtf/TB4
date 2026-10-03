@@ -5901,3 +5901,50 @@ defects:
       and bothLinux382 now pass0Skip, validating onefile correction. Retain OPEN until
       complete final C1-C4/composition acceptance.
     legacy_record: null
+  DEF-080:
+    title: Repeated configured Desktop time limit cancels Windows packaging after
+      passing full tests
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c5c77d9cea6b5b4804a399b8ed208d33e2724de8
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-profile-promotion-qualified.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Inspect exact terminal Desktop job111188215859/run37117920927: full2706PASS/158SKIP/4XFAIL,
+        WATCHDOG built, FETCHER build canceled and package/upload skipped; first/last
+        log span2401.46s against configured40minute bound. Earlier full-pass package/upload
+        cancellation preserved in historical evidence. No rerun or deployment.'
+      failing_source: c5c77d9cea6b5b4804a399b8ed208d33e2724de8
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-profile-promotion-qualified.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: desktop-budget-too-short
+      claim: Configured40minute limit cancels packaging of an otherwise passing full
+        suite; elapsed terminal logs and repeated prior cancellation support a bounded
+        workflow budget repair, exact provider cancellation reason absent.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-profile-promotion-qualified.json
+    repairs: []
+    issue: null
+    regression_test: Source-linked actual Windows/Linux complete Desktop regressions,
+      both-role build, packaged GUI/setup and installation profile isolation, artifact
+      upload with revised bounded budget; counts/skips and completion status must
+      be actual.
+    resolution_evidence: []
+    notes: a2cb9 promotion Windows18/272/Linux400 groups qualified independently,
+      allC1-C4 remain held; no cancelled packaging acceptance or app defect inferred.
+      Historical c5 Linux Desktop2843PASS/21SKIP/4XFAIL and both packagesPASS; Windows
+      full2706PASS/158SKIP/4XFAIL does not replace canceled package acceptance.
+    legacy_record: null

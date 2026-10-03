@@ -7,18 +7,19 @@ phase: STAGED_RECONFIGURATION_C4_NATIVE_PROFILE_PROMOTION_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: a2cb9dc0d0baf1812dfec9d5baa12b7e52db9fd9
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0193
+last_verified_event: RP-027-A001-0194
 last_completed: RP-026
-next_action: Inspect same272 Windows process and Linux runs37120022859/37120020629;
-  fetch exact terminal logs/artifact metadata and source-qualifiedOUTCOME; no native
-  admission edit until verifiedOUTCOME.
-verification: Inspect exact Windows272 operation and actual Linux runs37120022859/37120020629/jobs;
-  newWindows18PASS/defaultcollection2886 recorded, no acceptance/source edit/replay.
+next_action: Publish scoped INTENT to repair only Desktop bounded time budget without
+  altering tests/runtime/gates; preserve exact sourceOUTCOME and qualify actual full
+  jobs. Then native current-role admission/cloud ACTIVE adoption and full Folder/rootless/runtime/GUI/helper
+  composition; no C1-C4 acceptance yet.
+verification: a2cb9 Windows18/272/default2886 and actualLinux400 each qualified; allC1-C4
+  held. Record Desktop bounded budget repair then current-role admission/ACTIVE adoption/fullcomposition.
+  Preserve current full/platform runs and historical canceled packaging.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0192
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -48,6 +49,7 @@ known_open_defects:
 - DEF-077
 - DEF-078
 - DEF-079
+- DEF-080
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
