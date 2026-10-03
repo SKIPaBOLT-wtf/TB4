@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_PROVED
+phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5b9c339e06d91822c594dca6f276f6634dd2dc48
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0102
+last_verified_event: RP-027-A001-0103
 last_completed: RP-026
-next_action: 'Publish readback one-line source repair INTENT: document()[records][SLOT]
-  only, preserve full original839 tests. Save source OUTCOME then exact short existing
-  root-related regression, followed by full36-target839-case qualification.'
-verification: Exact one-probe source cause proved for DEF068; no SDK/shared/profile
-  mutation, repair/qualification pending.
+next_action: Perform one-line records nesting repair and preserve source/outcome;
+  publish readback exact short original root-related regression INTENT.
+verification: DEF068 one-line proven source repair authorized;839 original predicates
+  unchanged, all checks held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0103
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

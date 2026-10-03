@@ -4861,7 +4861,18 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.md
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0103
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Preserve every original839 predicate and all101 failed root/inherited/no-send/plan/native
       predicates; first exact short root regression then full36-target qualification
