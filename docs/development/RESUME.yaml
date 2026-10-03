@@ -5,22 +5,20 @@ check: RP-027.C4
 attempt: A001
 phase: STAGED_RECONFIGURATION_C4_CURRENT_ROLE_ACTIVE_ADOPTION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 14a53a8c8ab5903282cd23e4f428e2b26cda4b25
+source_commit: 237994f7b97151304ddbb7efaa52522252996702
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0209
+last_verified_event: RP-027-A001-0210
 last_completed: RP-026
-next_action: Implement and statically review exact bounded source unit; preserve/read
-  back source then verified OUTCOME with evidence. Publish separate new-source scoped/native
-  qualification INTENT; qualify actual Windows/Linux and affected regressions before
-  Folder/rootless/runtimeGUI/helper composition/current-source full gates.
-verification: 208 immutable-source budget/full/package settled; current14 fresh admission
-  qualified207. Current-role ACTIVE adoption source209 starts only after verified
-  readback; allC1-C4 held; source14 immutable CI may be terminal-inspected independently.
+next_action: 'Publish exact-source qualification INTENT: default30 new Windows scoped
+  cases; only onPASS original295+BALLPARK/configuration regressions/default wholecollection/actual
+  Linux423+30/newsourceCI/platform. Then Folder/rootless/runtimeGUI/helper composition.'
+verification: 210 source237994f/15paths verified; static prior schemas/pins/syntax/diff
+  PASS only, tests0. Next30 new Windows/adopted preservedUNKNOWN/nativecuts qualification;
+  allC1-C4 held; then originals/current-sourceLinux/full/platform/composition.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0209
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

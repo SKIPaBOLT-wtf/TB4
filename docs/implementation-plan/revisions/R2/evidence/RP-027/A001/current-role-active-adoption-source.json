@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "kind": "CURRENT_ROLE_ACTIVE_ADOPTION_SOURCE",
+  "intent": "RP-027-A001-0209",
+  "source_ref": "237994f7b97151304ddbb7efaa52522252996702",
+  "local_source": "d3cbc87ea7318cefca15b9ebb9b5924f70f1e2df",
+  "parent": "040e2cd6d377d805e44571d9b63de88f1575c43b",
+  "amendment": "docs/implementation-plan/revisions/R2/amendments/RP-027/A-017-current-role-active-adoption.md",
+  "static_review": {
+    "schema_version": 1,
+    "kind": "SCOPED_ACTIVE_ADOPTION_STATIC_REVIEW",
+    "source_base": "14a53a8c8ab5903282cd23e4f428e2b26cda4b25",
+    "intent": "RP-027-A001-0209",
+    "paths": [
+      ".github/workflows/folder-reconfiguration.yml",
+      "docs/RECONFIGURATION_CONTRACT.md",
+      "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+      "protocol/reconfiguration-candidate-v1.schema.json",
+      "skill/tb4/compatibility.json",
+      "src/tb4/ballpark_records.py",
+      "src/tb4/reconfiguration_admission.py",
+      "src/tb4/reconfiguration_candidate.py",
+      "src/tb4/reconfiguration_commit.py",
+      "src/tb4/reconfiguration_post_root.py",
+      "docs/implementation-plan/revisions/R2/amendments/RP-027/A-017-current-role-active-adoption.md",
+      "src/tb4/reconfiguration_active_adoption.py",
+      "tests/drive/reconfiguration_active_adoption_support.py",
+      "tests/drive/test_reconfiguration_active_adoption.py",
+      "tests/security/test_reconfiguration_active_adoption_native.py"
+    ],
+    "python_syntax": "PASS",
+    "diff_whitespace": "PASS",
+    "prior_schema_meanings": "UNCHANGED",
+    "candidate_sha256": "7effe67c48a4d8abc904586607c84347f7a779d6ace0fbb6350b0faae84c0081",
+    "tests_executed": 0,
+    "acceptance": false,
+    "installed_runtime_active": false,
+    "privacy": "Only new owned RFC5737 synthetic fixtures; no credentials/provider/LAN/private runtime values were read or included.",
+    "rollback": "Owned source only; full archive and previous frame retained; no shared/root write or generation reset."
+  },
+  "publishing": {
+    "method": "non-force conflict-guarded connector commit",
+    "remote_readback": "VERIFIED",
+    "all_15_paths_verified": true
+  },
+  "implementation": {
+    "same_authority": "Native Docs fixed document/tab/domain; derive current SetupSpec from coherent current commissioning marker and verify actual native objects using same own SDK transports",
+    "old_host_or_wal_inputs": false,
+    "own_profile": "installation, nonce, known history, credential image, table selection and private interfaces preserved; stage/archive/native conditional full-prior Main; no shared/root writes",
+    "provenance": "closed optional adoption metadata keeps original shared publication separate from new actual local owner confirmation",
+    "admission": "fresh current protected profile/checkpoint/source/first-run/current role/force; inherited shared UNKNOWN preserved with ordinary Effects no replay; local unresolved blocks profile change; original A016 release full gate unchanged",
+    "recovery": "same protected pending bytes only; native source/current role/profiles checked; no SDK mutation resend"
+  },
+  "qualification": {
+    "tests_executed": 0,
+    "actual_native_or_runtime_tests": "NOT_YET_EXECUTED",
+    "all_checks_accepted": false,
+    "default_entrypoints": "DenyActivation",
+    "installed_runtime_active": false
+  },
+  "safe_scope": "public source and new synthetic native fixtures; no installed provider/profile/LAN/root/router/credential values or operation replay",
+  "next_action": "Publish exact-source qualification INTENT: default30 new Windows scoped cases; only onPASS original295+BALLPARK/configuration regressions/default wholecollection/actual Linux423+30/newsourceCI/platform. Then Folder/rootless/runtimeGUI/helper composition."
+}
