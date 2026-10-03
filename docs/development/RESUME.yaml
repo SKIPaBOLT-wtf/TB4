@@ -3,25 +3,26 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_TIMING_ADMISSION_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_TIMING_ADMISSION_QUALIFICATION_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 0b537c1c96283cdfca9153175569267ecec5cba8
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0271
+last_verified_event: RP-027-A001-0272
 last_completed: RP-026
-next_action: Execute current-source Windows/default collection and request19 qualification
-  once; record STARTED/actual IDs, settle terminal results and request18, then checkpoint
-  and pause until owner says continue.
-verification: 270 source preserved;271 current timing repair qualification pending.
-  Completion then owner-requested pause, no next integration unit.
+next_action: Inspect these same current jobs and Windows process to terminal, settle
+  request18 actual jobs, publish outcomes and then owner-requested pause. Do not start
+  next integration or rerun unknown operations.
+verification: 272 collection3043 PASS tests0; current repair Windows/required Linux/full/build
+  running. Request18 scope already553+Windows70 PASS with full still under inspection.
+  Pause after this part.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0265
 - RP-027-A001-0271
-expected_user_action: After this qualification and checkpoint are complete, say continue
-  to resume the remaining RP027 integration.
+expected_user_action: Say continue only after this current part is finished and checkpointed,
+  to resume remaining RP027 integration.
 blocking_decisions: []
 known_open_defects:
 - DEF-001
