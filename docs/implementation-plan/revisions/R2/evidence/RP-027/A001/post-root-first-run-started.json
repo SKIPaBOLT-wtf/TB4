@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0178",
+  "source": "3ad08dfbb64e057ea5140f7bd1c9b5d2d43d894c",
+  "trigger": "69cd36b3e8294342a9f26c8d9280dc772e2103f5",
+  "request_revision": 8,
+  "runs": [
+    {
+      "id": 37115281880,
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "69cd36b3e8294342a9f26c8d9280dc772e2103f5",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37115281880"
+    },
+    {
+      "id": 37115281861,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "69cd36b3e8294342a9f26c8d9280dc772e2103f5",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37115281861"
+    },
+    {
+      "id": 37115281868,
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "69cd36b3e8294342a9f26c8d9280dc772e2103f5",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37115281868"
+    },
+    {
+      "id": 37115281874,
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "69cd36b3e8294342a9f26c8d9280dc772e2103f5",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37115281874"
+    },
+    {
+      "id": 37115278487,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "69cd36b3e8294342a9f26c8d9280dc772e2103f5",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37115278487"
+    }
+  ],
+  "windows20": {
+    "source": "3ad08dfbb64e057ea5140f7bd1c9b5d2d43d894c",
+    "checkout": "211b272854feca6fa5103147f1b67768fb33e9b3",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 39.334,
+    "owned_absent_fixture_root": true,
+    "targets": [
+      "tests/drive/test_reconfiguration_post_root.py",
+      "tests/security/test_reconfiguration_post_root_native.py"
+    ],
+    "cases": [
+      {
+        "name": "test_actual_target_first_run_archive_history_and_original_authority_are_preserved",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_fresh_guards_refuse_saved_readiness_without_remote_write_or_original_reset[source]",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_fresh_guards_refuse_saved_readiness_without_remote_write_or_original_reset[permission]",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_fresh_guards_refuse_saved_readiness_without_remote_write_or_original_reset[clock]",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_fresh_guards_refuse_saved_readiness_without_remote_write_or_original_reset[caps]",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_fresh_guards_refuse_saved_readiness_without_remote_write_or_original_reset[election]",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_fresh_guards_refuse_saved_readiness_without_remote_write_or_original_reset[work]",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_fresh_guards_refuse_saved_readiness_without_remote_write_or_original_reset[force]",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_fresh_guards_refuse_saved_readiness_without_remote_write_or_original_reset[profile]",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_fresh_guards_refuse_saved_readiness_without_remote_write_or_original_reset[receipt]",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_staged_topology_lost_credential_and_forged_proof_require_current_first_run",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_fresh_fallback_first_run_needs_no_former_profile_candidate_or_wal_ack",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_candidate_change_during_first_run_probe_cannot_return_a_stale_or_unvalidated_proof[validate-current]",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_candidate_change_during_first_run_probe_cannot_return_a_stale_or_unvalidated_proof[validate-new]",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_partial_or_unrebound_storage_and_aliases_are_never_staging_grants",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_named_schema_preserves_legacy_top_level_and_current_pin_size",
+        "classname": "tests.drive.test_reconfiguration_post_root",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_post_root_promotion_cut_recovers_exact_frame_without_remote_repeat[transaction]",
+        "classname": "tests.security.test_reconfiguration_post_root_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_post_root_promotion_cut_recovers_exact_frame_without_remote_repeat[archive]",
+        "classname": "tests.security.test_reconfiguration_post_root_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_post_root_promotion_cut_recovers_exact_frame_without_remote_repeat[profile]",
+        "classname": "tests.security.test_reconfiguration_post_root_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_post_root_copy_and_broad_protection_are_refused",
+        "classname": "tests.security.test_reconfiguration_post_root_native",
+        "status": "PASS"
+      }
+    ],
+    "failures": [],
+    "counts": {
+      "PASS": 20,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    }
+  },
+  "collection": {
+    "schema_version": 1,
+    "source": "3ad08dfbb64e057ea5140f7bd1c9b5d2d43d894c",
+    "checkout": "69cd36b3e8294342a9f26c8d9280dc772e2103f5",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.697,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 2845,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "windows_originals_and_new": "STARTED_RESULT_PENDING",
+  "linux51_107_201": "STARTED_RESULT_PENDING",
+  "acceptance": false
+}
