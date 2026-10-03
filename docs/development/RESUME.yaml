@@ -3,17 +3,16 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_SHORT_TEST
+phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_SHORT_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0105
+last_verified_event: RP-027-A001-0106
 last_completed: RP-026
-next_action: Run exact owned short root regression once, record same session if still
-  running and full actual OUTCOME. Full839-case qualification separately required
-  before dependent adoption source.
-verification: One-line fix saved; exact8-file short original root regression authorized,
-  capacity/full acceptance held.
+next_action: Observe same LOCAL-SESSION-24593 and unique report, preserve actual complete
+  result before full36-target839-case qualification.
+verification: Actual short original root regression launched LOCAL-SESSION-24593;
+  no result/check accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
