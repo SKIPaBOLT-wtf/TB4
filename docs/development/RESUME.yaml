@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_CURRENT_ROLE_ROOT_ADOPTION_SOURCE
+phase: STAGED_RECONFIGURATION_C3_CURRENT_ROLE_ADOPTION_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
+source_commit: e3b472d717a2647af73f0c00874054f27f19940a
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0111
+last_verified_event: RP-027-A001-0112
 last_completed: RP-026
-next_action: Implement exact10-path A009 source unit and preserve/readback source
-  OUTCOME. Then targeted new adoption/native and relevant original8-file root regressions,
-  with full original max129 qualification retained and final full platforms/common
-  gates still required.
-verification: Original839-case source qualification verified; actual current-role
-  partial plan adoption source authorized, no accepted checks.
+next_action: 'Publish/readback narrow source consistency INTENT: add new protocol
+  LF attribute, align resumed base profile hash with existing UTF8 inspection codec
+  and add valid Unicode-profile predicate/documentation. Preserve source/outcome before
+  exact targeted new adoption/native and original8-root related regression; full platform/final
+  checks held.'
+verification: A009 exact10-path source saved untested; identified LF/profile-codec
+  follow-up required before targeted qualification.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0111
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
