@@ -6166,3 +6166,91 @@ defects:
       under220/223; current newer retained source417 unqualified and common C4 still
       held.'
     legacy_record: null
+  DEF-084:
+    title: Retained configuration publication omitted its configuration reader import
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 41761af8b62b89aea0bc304615dcb7848ad2b763
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: Eight reached mutation prepare/_validate paths fail NameError configuration;
+        source global import omission confirmed by static source inspection.
+      failing_source: 41761af8b62b89aea0bc304615dcb7848ad2b763
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: source-inspected-initial-boundary
+      claim: New retained module uses configuration() from copied strict mutation
+        while importing only require; add exact import, preserving all mutation/profile/source
+        guards.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+    repairs: []
+    issue: null
+    regression_test: New25 +existing publication/promotion/admission/candidate/native/Folder
+      regressions must reach actual post-first-run publication and negative/crash
+      assertions after same exact source pin.
+    resolution_evidence: []
+    notes: Actual default Windows source417/b4e9 new25 qualification:0PASS25FAIL0ERROR0SKIP19.593s.
+      Failure chronology and exact owned native fixture results retained; ordinary
+      debugging, no external blocker. Later boundary assertions not reached; allC1-C4/fullcomposition
+      held.
+    legacy_record: null
+  DEF-085:
+    title: Retained synthetic fixture reuses native identities for distinct protected
+      stores
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 41761af8b62b89aea0bc304615dcb7848ad2b763
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: Seventeen basic memory cases fail COMMIT_STORE_ALIAS during actual
+        retained commit construction; old MemoryNative uses fixed principal/directory[1,2],
+        and new fixture omitted distinct context stores.
+      failing_source: 41761af8b62b89aea0bc304615dcb7848ad2b763
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: source-inspected-initial-boundary
+      claim: Use distinct actual typed MemoryNative protected ports and a separate
+        current resolved C1 evidence archive in the new retained fixture; do not relax
+        production alias guard.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+    repairs: []
+    issue: null
+    regression_test: Actual memory source fixture must reach final publication/no-replay/negative
+      assertions with unique native bindings; copied/aliased store negative assertions
+      and actual OS-native fixtures remain intact.
+    resolution_evidence: []
+    notes: Actual default Windows source417/b4e9 new25 qualification:0PASS25FAIL0ERROR0SKIP19.593s.
+      Failure chronology and exact owned native fixture results retained; ordinary
+      debugging, no external blocker. Later boundary assertions not reached; allC1-C4/fullcomposition
+      held.
+    legacy_record: null

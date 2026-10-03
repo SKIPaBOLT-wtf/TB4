@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_AUTHORITY_DEFAULT_SCOPED_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_RETAINED_AUTHORITY_INITIAL_FAILURE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 41761af8b62b89aea0bc304615dcb7848ad2b763
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0224
+last_verified_event: RP-027-A001-0225
 last_completed: RP-026
-next_action: Execute same approved default bounded test operation once, inspect actual
-  JUnit/results, publish source-linked OUTCOME/evidence/progress with next exact dependent
-  action. After25PASS authorize required actualLinuxFolder/newscoped plus affectedWindows/defaultcollection/current-sourcefull
-  qualification; preserve failed cases and hypotheses.
-verification: 224 current417 first scoped25/defaultWindows/native qualification starts
-  only afterreadback; 222static and223old6dfullsettled. RequiredLinuxFolder/affected/currentfull/composition/C1-C4held.
+next_action: Verified exact two-file repairINTENT for src/tb4/reconfiguration_retained.py
+  missingconfiguration import and tests/drive/reconfiguration_retained_support.py
+  actual distinct fixture context/resolution stores. Preserve noalias/schema/hash/default
+  guards; staticpreserveOUTCOME then newsource25 qualificationINTENT.
+verification: 225 initial417default25 actual0PASS25FAIL:missingconfigurationimport8
+  +memorynativealias17; boundaryassertionsunreached. Preservefailures/DEF084085; exact2file
+  repairINTENT next, allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0224
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -53,6 +53,8 @@ known_open_defects:
 - DEF-081
 - DEF-082
 - DEF-083
+- DEF-084
+- DEF-085
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
