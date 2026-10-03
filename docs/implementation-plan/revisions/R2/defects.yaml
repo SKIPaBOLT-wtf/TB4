@@ -5546,10 +5546,12 @@ defects:
         before creator.prepare. Original Setup correctly freezes a published network
         binding; actual native mapping/profile guard not reached in this one case.
       failing_source: 83dd3c09e1446a6897ef0dd64abb6c28fe5d5efb
-      passing_source: null
+      passing_source: f98ddf419471afc11a27868231432a6f8ba753f3
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-path-lookup-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-path-lookup-qualified.md
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5568,6 +5570,16 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.md
+    - id: actual-profile-revision-refusal-and-original-native-regressions
+      claim: Both exact repaired-source actual Linux jobs execute21mapping+105original
+        cases PASS/zeroSkip/exit0. Actual unchanged-scope Setup advances protected
+        revision and intended C1 guard refuses while mapping/authority/files/profile
+        effects remain unchanged. Original production freezes retained. Complete RP027/common
+        gates remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-path-lookup-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-path-lookup-qualified.md
     repairs:
     - item: RP-027
       attempt: A001
@@ -5590,5 +5602,6 @@ defects:
       Linux. Failure is the test precondition, never authorization to weaken a production
       Setup freeze. Original regressions not executed in targeted jobs after prior
       step failure; automatically triggered full CI/Desktop still pending and cannot
-      be claimed.
+      be claimed. Actual126 native cases on both push/PR now pass at exact f98ddf
+      repair source; final acceptance held.
     legacy_record: null

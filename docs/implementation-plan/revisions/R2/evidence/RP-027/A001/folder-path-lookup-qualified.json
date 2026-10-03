@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "intent_event": "RP-027-A001-0144",
+  "source_commit": "f98ddf419471afc11a27868231432a6f8ba753f3",
+  "trigger_head": "063db4e6f7c9b963c3eec753dc69c25122c5495d",
+  "main": "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+  "jobs": [
+    {
+      "run_id": 37104503909,
+      "job_id": 111150294301,
+      "event": "pull_request",
+      "checkout": "cf94232aaed6d8b6bcb7a180d53db1b146fb39d4",
+      "mapping": {
+        "passed": 21,
+        "failed": 0,
+        "skipped": 0,
+        "duration_s": 26.82,
+        "exit_code": 0
+      },
+      "original_regressions": {
+        "passed": 105,
+        "failed": 0,
+        "skipped": 0,
+        "duration_s": 16.1,
+        "exit_code": 0
+      },
+      "artifact": {
+        "id": 11267840580,
+        "name": "folder-reconfiguration-cf94232aaed6d8b6bcb7a180d53db1b146fb39d4",
+        "size_in_bytes": 3287,
+        "digest": "sha256:8850a65c7b65d32d6faeebfd1dbec50cb78252047399789ef5b4e95883d69f69",
+        "expired": false,
+        "created_at": "2026-10-03T06:54:12Z",
+        "expires_at": "2027-01-01T06:53:13Z",
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37104503909/artifacts/11267840580"
+      }
+    },
+    {
+      "run_id": 37104501255,
+      "job_id": 111150286597,
+      "event": "push",
+      "checkout": "063db4e6f7c9b963c3eec753dc69c25122c5495d",
+      "mapping": {
+        "passed": 21,
+        "failed": 0,
+        "skipped": 0,
+        "duration_s": 26.6,
+        "exit_code": 0
+      },
+      "original_regressions": {
+        "passed": 105,
+        "failed": 0,
+        "skipped": 0,
+        "duration_s": 16.03,
+        "exit_code": 0
+      },
+      "artifact": {
+        "id": 11267161996,
+        "name": "folder-reconfiguration-063db4e6f7c9b963c3eec753dc69c25122c5495d",
+        "size_in_bytes": 3280,
+        "digest": "sha256:d8a83fcc1990d19b74f41577f2725aa67a9126f13527286c0602495a47fc7893",
+        "expired": false,
+        "created_at": "2026-10-03T06:54:06Z",
+        "expires_at": "2027-01-01T06:53:10Z",
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37104501255/artifacts/11267161996"
+      }
+    }
+  ],
+  "commands": [
+    "python -m pytest tests/drive/test_folder_mapping.py -ra --junitxml=folder-mapping-results.xml",
+    "python -m pytest tests/drive/test_folder_commissioning.py tests/drive/test_folder_store.py tests/drive/test_folder_protocol.py tests/security/test_private_settings_native.py tests/security/test_reconfiguration_maintenance_native.py tests/security/test_reconfiguration_evidence_native.py tests/security/test_reconfiguration_effects_native.py -ra --junitxml=folder-regression-results.xml"
+  ],
+  "qualifies": "protected native same-folder path lookup unit only",
+  "tests": "actual Linux ext4/xfs folder authority/native key/private stores/current C1/helper subprocess/actual commissioning and unchanged original regressions",
+  "acceptance": false,
+  "pending": "product physical rename/recovery/inherited result settlement/Docs rebind/C4/composition/final full native/platform/frozen"
+}

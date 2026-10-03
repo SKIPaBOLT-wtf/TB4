@@ -7,17 +7,19 @@ phase: STAGED_RECONFIGURATION_C3_FOLDER_PATH_LINUX_REPEAT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: f98ddf419471afc11a27868231432a6f8ba753f3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0145
+last_verified_event: RP-027-A001-0146
 last_completed: RP-026
-next_action: Inspect same required repaired-source native mapping/regression jobs
-  and preserve actual results; repair any ordinary failure before physical transaction.
-verification: Actual repaired-source required Linux/native and automatic full/platform
-  jobs started; IDs retained for same-run inspection.
+next_action: Publish bounded actual protected same-folder physical no-replace transaction
+  INTENT from qualified lookup. Implement exact native WAL/shared UNKNOWN/database-lock
+  current-role proof and one same-filesystem rename with inspect-only recovery; qualify
+  native/fallback/cut/negative tests before Docs rebind/C4.
+verification: Actual source-linked Linux126PASS/0FAIL/0SKIP qualifies protected same-folder
+  lookup; physical product transaction/Docs rebind/C4/composition/finalallchecks remain
+  unaccepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0144
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
