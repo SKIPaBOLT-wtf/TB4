@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_GATE_REPEAT_FAILED_OWNER_PROJECTION
+phase: STAGED_RECONFIGURATION_C3_ROOT_OWNER_DIAGNOSIS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 3603f2678d580a9be225becae56f81e6bb10a95d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0057
+last_verified_event: RP-027-A001-0058
 last_completed: RP-026
-next_action: Publish/read back exact failed before-send trace/owner guard read-only
-  diagnostic INTENT and OUTCOME; then separately scoped minimal current-owner refusal
-  projection repair and full repeat.
-verification: Scoped gate/access repeat supported; one before-send owner error projection
-  failure recorded, no check accepted.
+next_action: Publish/read back diagnostic OUTCOME and appended DEF063 proven facts;
+  separately scoped root current-owner guard/projection repair retaining original
+  predicate, preserve source then exact763-case repeat.
+verification: 763-case result recorded; exact before-send owner projection trace/source
+  diagnosis pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0058
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
