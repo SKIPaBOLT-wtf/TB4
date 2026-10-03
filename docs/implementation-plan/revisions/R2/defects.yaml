@@ -4983,7 +4983,18 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0120
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Preserve all original100 and all36 new adoption/native/Unicode
       predicates; exact new/native/original related repeat plus final C1-C4/platform/common
@@ -4992,7 +5003,8 @@ defects:
     notes: Actual unaccepted source qualification failure retained. Diagnose exact
       source/fixture before minimal repair; no later predicates inferred or guards
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
-      repair; final allchecks held.
+      repair; final allchecks held. Exact3-path proven repair preserved; original136
+      predicates plus three actual post-own-pending denial predicates await recheck.
     legacy_record: null
   DEF-070:
     title: Complete adopted root first-run refusal fixture expects a different exception
@@ -5046,7 +5058,18 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0120
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Preserve all original100 and all36 new adoption/native/Unicode
       predicates; exact new/native/original related repeat plus final C1-C4/platform/common
@@ -5055,7 +5078,8 @@ defects:
     notes: Actual unaccepted source qualification failure retained. Diagnose exact
       source/fixture before minimal repair; no later predicates inferred or guards
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
-      repair; final allchecks held.
+      repair; final allchecks held. Exact3-path proven repair preserved; original136
+      predicates plus three actual post-own-pending denial predicates await recheck.
     legacy_record: null
   DEF-071:
     title: Adoption source-fault fixture may set an unused source adapter attribute
@@ -5111,7 +5135,18 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0120
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Preserve all original100 and all36 new adoption/native/Unicode
       predicates; exact new/native/original related repeat plus final C1-C4/platform/common
@@ -5120,7 +5155,8 @@ defects:
     notes: Actual unaccepted source qualification failure retained. Diagnose exact
       source/fixture before minimal repair; no later predicates inferred or guards
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
-      repair; final allchecks held.
+      repair; final allchecks held. Exact3-path proven repair preserved; original136
+      predicates plus three actual post-own-pending denial predicates await recheck.
     legacy_record: null
   DEF-072:
     title: Synthetic inherited external UNKNOWN fault may omit actual summary envelope
@@ -5176,7 +5212,18 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0120
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Preserve all original100 and all36 new adoption/native/Unicode
       predicates; exact new/native/original related repeat plus final C1-C4/platform/common
@@ -5185,7 +5232,8 @@ defects:
     notes: Actual unaccepted source qualification failure retained. Diagnose exact
       source/fixture before minimal repair; no later predicates inferred or guards
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
-      repair; final allchecks held.
+      repair; final allchecks held. Exact3-path proven repair preserved; original136
+      predicates plus three actual post-own-pending denial predicates await recheck.
     legacy_record: null
   DEF-073:
     title: Second fallback fixture reuses original election transition identity
@@ -5239,7 +5287,18 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0120
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Preserve all original100 and all36 new adoption/native/Unicode
       predicates; exact new/native/original related repeat plus final C1-C4/platform/common
@@ -5248,5 +5307,6 @@ defects:
     notes: Actual unaccepted source qualification failure retained. Diagnose exact
       source/fixture before minimal repair; no later predicates inferred or guards
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
-      repair; final allchecks held.
+      repair; final allchecks held. Exact3-path proven repair preserved; original136
+      predicates plus three actual post-own-pending denial predicates await recheck.
     legacy_record: null
