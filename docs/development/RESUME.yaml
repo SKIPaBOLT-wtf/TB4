@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_SHARED_ROOT_PLAN_TEST_FAILED
+phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_DIAGNOSTIC
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: afbc0df905d2351c25dc7beb399c45e4fbf22a54
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0091
+last_verified_event: RP-027-A001-0092
 last_completed: RP-026
-next_action: 'Publish/read back bounded two-probe diagnostic INTENT: exact collision
-  call order/work fingerprint and actual versus stale setup snapshot before/after
-  refused metadata inspection. Preserve proof before denial-only preflight/current-snapshot
-  fixture repair and same36-target repeat.'
-verification: 838-case shared-plan run failed two new predicates; actual129-object
-  budget passes, DEF066/067 unproved; no accepted checks.
+next_action: Run exact two-probe diagnosis after remote readback; publish source-linked
+  facts/proven origin/minimal repair before source edit.
+verification: DEF066/067 bounded collision/current-snapshot diagnosis pending, final
+  C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0092
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
