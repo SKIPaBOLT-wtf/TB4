@@ -3,16 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_NO_SEND_REPEAT
+phase: STAGED_RECONFIGURATION_C3_NO_SEND_REPEAT_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 95f2458f4e93fee993a26cab684ab3e3dfbbc3e8
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0084
+last_verified_event: RP-027-A001-0085
 last_completed: RP-026
-next_action: Once-run guarded34-target811-case repetition after readback; observe
-  same session, publish actual complete result/defect support before root-plan/adoption
-  source.
-verification: Exact34-target811-case native no-send repeat pending, final C1-C4 held.
+next_action: Observe same running session2946 and unique result artifacts; preserve
+  complete actual811 predicates/statuses/exit/time/failures/Linux skips, publish/read
+  back OUTCOME before further source.
+verification: Actual811-case no-send repeat running LOCAL-SESSION-2946; no accepted
+  checks.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
