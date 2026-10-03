@@ -3,25 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_FIXTURE_FAILURE_RECORDED
+phase: STAGED_RECONFIGURATION_C4_FOLDER_ACTIVE_IMMUTABLE_REMAINDER
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 103d0eb2009880a7e76ac4604e611ce6958060da
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0251
+last_verified_event: RP-027-A001-0252
 last_completed: RP-026
-next_action: Verified same103d originalPRLinux/CI remainder inspection INTENT and
-  historical237/245terminalOUTCOMEs; then exacttwofile fixtureactualselection/cataloguehash
-  repair INTENT andsourceOUTCOME. Required correctedLinux506/affectedWindows497/currentfull
-  gates before furthercomposition. AllC1-C4held.
-verification: 251 source103d actualrequiredLinux new22FAIL inSetupfirstselectionfixtureguard
-  beforeadoption (old51+6PASS). DEF090 preserved plusDEF089 catalogue; Windows55/default2992qualified/productionunchanged.
-  Exacttwofilefixnextlogged; allC1-C4held.
+next_action: InspectsameCI originaljob andrequiredLinuxartifactmetadata, publishactualterminalOUTCOMEwhenready.
+  Separatelycheckpointold237/245terminalresults thenexacttwofile fixture/catalogue
+  repairINTENT/sourceOUTCOME/qualification. AllC1-C4held.
+verification: 252 inspect original103d immutableCI remainder only; bothLinux51+6PASS/new22FAIL
+  andDesktophashFAIL DEF089/90retained, Windows55PASS. Distinctexacttwofilerepair
+  independent by250/251; old237/245terminalsourceoutcomesnext. AllC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0237
 - RP-027-A001-0245
+- RP-027-A001-0252
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
