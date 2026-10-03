@@ -5,22 +5,20 @@ check: RP-027.C4
 attempt: A001
 phase: STAGED_RECONFIGURATION_C4_NATIVE_PROFILE_PROMOTION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: c5c77d9cea6b5b4804a399b8ed208d33e2724de8
+source_commit: a2cb9dc0d0baf1812dfec9d5baa12b7e52db9fd9
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0190
+last_verified_event: RP-027-A001-0191
 last_completed: RP-026
-next_action: Publish/re-read scoped source plus sourceOUTCOME/A015, then separate
-  actual conformance/native/original Windows/Linux qualification. Current-role cloud
-  ACTIVE adoption/native admission and complete Folder/rootless/runtime/GUI/helper
-  composition remain next.
-verification: c5c77d shared-publication qualified/verified. Native post-publication
-  profile promotion source authorized; persisted readiness not execution grant, allC1-C4
-  held.
+next_action: Publish/re-read native promotion qualification INTENT and run actual
+  new18 default conformance/native first; onfailure publish exactdefectOUTCOME before
+  repair/dependent groups. Ifpass originals272/defaultcollection and actualLinux request10
+  51/107/242. Cloud ACTIVE adoption/native admission and full composition remain next.
+verification: a2cb9dc native promotion13paths verified/schema93c9bfa/17fileclosure/staticPASS/tests0;
+  new18qualificationnext, runtime/admission/fullcomposition remain/allC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0190
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

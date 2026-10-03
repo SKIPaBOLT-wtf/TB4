@@ -1138,6 +1138,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-012-same-authority-remote-rebind.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-013-post-root-first-run-candidate.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-014-shared-configuration-publication.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-027/A-015-native-validated-profile-promotion.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:
