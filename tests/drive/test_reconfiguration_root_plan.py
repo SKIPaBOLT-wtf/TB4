@@ -134,10 +134,20 @@ def test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_ro
     else:
         payload = copy.deepcopy(ctx.setup._payload); payload["choices"]["storage"]["root_transition"] = "a"*64
         ctx.setup.store.save(payload,expected_revision=ctx.setup.snapshot.revision)
-    before = copy.deepcopy(doc); requests = len(updates(s))
+    before = copy.deepcopy(s.value.provider.store.document); requests = len(updates(s))
     with pytest.raises((AuthorityError,SettingsError)):
         PartialRootInspection(ctx).inspect()
     assert s.value.provider.store.document == before and len(updates(s)) == requests
+
+
+def test_same_target_second_cursor_still_requires_unchanged_c1_c2_resolution():
+    s = system(); s.roots.begin(owner_authorized=True); store = private(29)
+    roots = DocsRootMoves(RootContext(s.candidate,s.checker,store,TARGET))
+    before = copy.deepcopy(s.value.provider.store.document); profile = s.value.setup.store.read()
+    with pytest.raises(ConfigurationError,match="CONFIGURATION_RESOLUTION_CHANGED"):
+        roots.begin(owner_authorized=True)
+    assert store.read() is None and s.value.provider.store.document == before
+    assert not updates(s) and s.value.setup.store.read() == profile
 
 
 def test_forged_or_other_inspector_partial_facts_cannot_be_a_resume_grant():
