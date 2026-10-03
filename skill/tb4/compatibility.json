@@ -29,7 +29,8 @@
         "protocol/reconfiguration-root-v1.schema.json": "4a5ddeb905e347813189dfff9b856e0250b3021e2805f60ab0a3025b8e3e7b18",
         "protocol/reconfiguration-root-resume-v1.schema.json": "aede9105fbb41f1e31629068811d198910902fcb715095938479b8cfe7f8a5e5",
         "protocol/folder-path-mapping-v1.schema.json": "24f83e184623f491c4730e81a64101ce8828ea6be8e6c89b642eab04d1acaa1b",
-        "protocol/folder-relocation-v1.schema.json": "9c7e56fd2ea19348c49b9031c5d3321b0dfb24b0e2667ad664ad5a98c4428525"
+        "protocol/folder-relocation-v1.schema.json": "9c7e56fd2ea19348c49b9031c5d3321b0dfb24b0e2667ad664ad5a98c4428525",
+        "protocol/reconfiguration-rebind-v1.schema.json": "012c59ef47b7a91b98985987c1682b03c65f91a2c82d2949d40784ef4e1dc9b2"
       }
     }
   ]

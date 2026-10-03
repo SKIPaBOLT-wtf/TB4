@@ -32,9 +32,9 @@ def references(document,binding):
     try:
         spec = SetupSpec(marker["root_id"],binding.domain_id,marker["setup_id"],marker["bootstrap_actor"],
                          marker["mode"],Capacity.parse(document["capacity"]))
-        require(spec.mode == "NATIVE_DOCS" and marker == spec.marker("STORAGE_READY")
-                and row["generation"] == 0 and row["operation_id"] == spec.setup_id
-                and row["retention"] == "RETAINED", "CONFIGURATION_ROOT_BLUEPRINT")
+        from .commissioning_records import current_record
+        current_record(document,spec,root_transition=marker.get("reconfiguration",{}).get("transition_id"))
+        require(spec.mode == "NATIVE_DOCS", "CONFIGURATION_ROOT_BLUEPRINT")
         result = []
         for key in spec.artifact_keys:
             _,index,kind = key.split(".")

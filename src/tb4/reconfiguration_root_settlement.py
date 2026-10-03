@@ -81,10 +81,9 @@ class InheritedRootSettlement:
                 and checkpoint.maintenance in {None,config["transition_id"]}
                 and (not reserved or checkpoint.maintenance == config["transition_id"]),
                 "CONFIGURATION_ROOT_NOT_AUTHORIZED")
-        commissioning = document["records"]["global.commissioning"]
-        require(commissioning["body"] == spec.marker("STORAGE_READY")
-                and commissioning["generation"] == 0 and commissioning["operation_id"] == spec.setup_id
-                and commissioning["retention"] == "RETAINED", "CONFIGURATION_ROOT_BLUEPRINT")
+        from .commissioning_records import current_record
+        try:current_record(document,spec,root_transition=choices["storage"].get("root_transition"))
+        except AuthorityError:require(False,"CONFIGURATION_ROOT_BLUEPRINT")
         value = ledger(document["records"][SLOT])
         require(value is not None and value["barrier"] is not None
                 and value["barrier"]["local_clear"] is True

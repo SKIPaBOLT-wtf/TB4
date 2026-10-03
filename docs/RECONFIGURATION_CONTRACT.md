@@ -7,6 +7,14 @@ router, deploy a build or authorize any live operation. Its active amendment is
 
 ## Same-authority boundary
 
+### Remote rebind after exact Docs relocation
+
+The [RP-027 A-012 amendment](implementation-plan/revisions/R2/amendments/RP-027/A-012-same-authority-remote-rebind.md) defines a separate protected native remote rebind. It consumes the closed shared root plan, terminal exact authority move receipt, current role and actual fixed metadata AFTER for every object. It changes only global.commissioning and the existing catalogue artifact seals, advancing their generations. The ordering Doc/tab/domain, fixed IDs/content and all work, registry, settings, summary and local profile remain unchanged.
+
+The new commissioning receipt records the exact prior marker digest/generation, source blueprint/shared plan digest and unchanged work/exact new catalogue hashes. This supports fresh current-role AFTER verification without an old native WAL/profile/acknowledgement. It is retained provenance and gives no active dispatch grant. Original generation-zero commissioning remains valid; rebound reads require its exact private root-transition binding and a compatible configuration revision. Ordinary creation/seed and SetupSpec operation derivation remain unchanged.
+
+Compact native intent stores only bounded fixed references/row hashes and closed marker data, not a full copied work image. Actual native INVOKING/readback precedes conditional replacement; uncertain or pending restarts only inspect the same operation. Maintenance stays in place until separately qualified C4 descriptor/configuration publication, private first-run promotion, cache/lease admission and actual runtime composition.
+
 The native Docs document/tab/domain, or qualified folder authority identity,
 remains the sole ordering point. A storage-root change must relocate/rebind the
 same existing fixed objects with actual metadata/access/readback verification.

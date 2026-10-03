@@ -26,8 +26,10 @@ def changes(document, draft, choices):
     require(validate_document(document) == spec.capacity and document["domain_id"] == spec.domain_id,
             "BALLPARK_AUTHORITY_BINDING")
     records = document["records"]
-    require(records["global.commissioning"] == dict(generation=0, operation_id=spec.setup_id,
-        retention="RETAINED", body=spec.marker("STORAGE_READY")), "BALLPARK_AUTHORITY_BINDING")
+    from .commissioning_records import current_record
+    from .drive.docs_authority import AuthorityError
+    try:current_record(document,spec,root_transition=choices["storage"].get("root_transition"))
+    except AuthorityError:require(False,"BALLPARK_AUTHORITY_BINDING")
     candidate = draft["candidate"]
     require(candidate is not None and draft["decision"] is not None, "BALLPARK_CHOICES_INCOMPLETE")
     if draft["base_revision"] == 0:

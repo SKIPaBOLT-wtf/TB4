@@ -1,0 +1,13 @@
+# RP-027 amendment A-012 — same-authority remote rebind
+
+Date: 2026-10-03. Implements the already authorized R2 RP-027 C3/C4 direction after the exact Docs/folder physical units. This is an unreleased contract extension, not an installed migration, acceptance or a new product choice.
+
+After the complete shared Docs root plan and actual metadata AFTER, one compact protected native rebind intent updates the same authority's commissioning record and existing catalogue seals by strict conditional replacement. Commissioning/catalogue generations advance; the Doc/tab/domain, fixed file identities/content, work generations, registry/settings/summary and original local profile remain unchanged. No create/seed, second control plane, command reset or external execution occurs.
+
+The closed commissioning provenance records schema_version, transition/configuration revision, previous marker generation/digest, original blueprint/shared root-plan digest and unchanged work/exact new catalogue hashes. A fresh current role can verify this shared AFTER and every exact fixed object without the former host/WAL/ACK. Source generation-zero records retain their exact original meaning; rebound verification additionally requires a matching protected root_transition and compatible configuration revision.
+
+The native frame uses bounded fixed references and row hashes instead of copying an entire potentially large workload image. Private store identity, current source/profile/pin, owner/epoch, pending election/mutation and actual fresh metadata fence each newly prepared write. Native INVOKING/readback precedes any conditional request. Ambiguous reply and pending recovery inspect only; BEFORE is never a replay grant. Exact AFTER can be observed after owner takeover without granting the former actor a write.
+
+This unit leaves maintenance and private profiles in place. Final descriptor/configuration revision, staged first-run profile promotion, old cache/lease invalidation, actual GUI/helper/runtime composition, all C1–C4 and common acceptance remain required. Future normal work changes the provenance hashes; those historical values are not ongoing execution grants. Rollback is a new monotonic transition, never a generation rewind.
+
+Qualification must include real conditional request construction, lost before/after reply, role change before/after the CAS, all moved metadata/seals, no old-host recovery dependency, original work/profile/content preservation, stale/saved/foreign refusal, actual native pending cuts/copy/protection and maximum129 reference/native previous-frame budget. Synthetic SDK conformance is identified explicitly; no live provider claim follows from these tests.

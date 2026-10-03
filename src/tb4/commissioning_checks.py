@@ -81,10 +81,8 @@ class CommissionedStorage:
             document = snapshot.document()
             require(document["domain_id"] == spec.domain_id, "STORAGE_UNAVAILABLE")
             require(validate_document(document) == spec.capacity, "STORAGE_UNAVAILABLE")
-            row = document["records"]["global.commissioning"]
-            require(row["body"] == spec.marker("STORAGE_READY") and row["retention"] == "RETAINED"
-                    and row["generation"] == 0 and row["operation_id"] == spec.setup_id,
-                    "STORAGE_UNAVAILABLE")
+            from .commissioning_records import current_record
+            current_record(document,spec,root_transition=record.get("root_transition"))
             verify_allocated_bindings(spec, port, document["records"], handle.object_id)
             return document
         except Exception:
