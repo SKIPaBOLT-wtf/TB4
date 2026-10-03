@@ -3,23 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_AUTHORITY_INITIAL_FAILURE
+phase: STAGED_RECONFIGURATION_C4_RETAINED_AUTHORITY_BOUNDARY_REPAIR_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 41761af8b62b89aea0bc304615dcb7848ad2b763
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0225
+last_verified_event: RP-027-A001-0226
 last_completed: RP-026
-next_action: Verified exact two-file repairINTENT for src/tb4/reconfiguration_retained.py
-  missingconfiguration import and tests/drive/reconfiguration_retained_support.py
-  actual distinct fixture context/resolution stores. Preserve noalias/schema/hash/default
-  guards; staticpreserveOUTCOME then newsource25 qualificationINTENT.
-verification: 225 initial417default25 actual0PASS25FAIL:missingconfigurationimport8
-  +memorynativealias17; boundaryassertionsunreached. Preservefailures/DEF084085; exact2file
-  repairINTENT next, allC1-C4held.
+next_action: Apply exact2file repair/staticreview/preserve/readback andOUTCOME, then
+  newsource25 qualificationINTENT; afterPASS required actualLinuxFolder/affected/default/currentfull/composition.
+verification: 226 exact2file import/uniquefixtures repair source afterverifiedfailure225,
+  noactualtestuntilseparatequalification; allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0226
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
