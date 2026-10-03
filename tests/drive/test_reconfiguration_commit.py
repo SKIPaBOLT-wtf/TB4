@@ -77,7 +77,7 @@ def test_actual_final_guards_refuse_without_shared_write_or_original_profile_res
     elif fault=="caps":object.__setattr__(s.post_root.rebind.rebind.ctx,"capabilities",lambda:None)
     elif fault=="force":store.document["records"]["global.force_request"].update(retention="BUSY",body={"synthetic":True})
     elif fault=="work":store.document["records"]["target.000.status"]["body"]={"synthetic":True}
-    elif fault=="profile":v.setup.choose({"network_scope":[]})
+    elif fault=="profile":v.setup.choose({"network_scope":v.setup.private_choices()["network_scope"]})
     elif fault=="stage":s.post_root.candidate.choose({"network_scope":["192.0.2.0/24"]},owner_authorized=True)
     elif fault=="unknown":
         row=store.document["records"][SLOT];value=ledger(row);value["entries"]["SSH"]=dict(
@@ -148,12 +148,17 @@ def large_commit_plan(pin):
     from reconfiguration_effects_support import guarded_system
     from tb4.drive.commissioning_bootstrap import AuthorityHandle
     reference_system=guarded_system();reference=reference_system.provider.store.document
+    for index in range(64):
+        body=doc["records"][f"target.{index:03d}.catalogue"]["body"]
+        del body["synthetic_retained_unicode"]
+        body["enrollment"]="UNENROLLED"
     for key in ("global.registry","global.settings"):
         doc["records"][key]=copy.deepcopy(reference["records"][key])
     doc["records"]["global.settings"]["body"]["configuration"]=prior._validate()[2]["configuration"]
     doc["records"]["target.000.catalogue"]["body"].update({k:copy.deepcopy(v) for k,v in
         reference["records"]["target.000.catalogue"]["body"].items() if k!="artifacts"})
-    doc["records"]["target.000.catalogue"]["body"]["synthetic_retained_unicode"]="ą"*20
+    doc["records"]["target.063.work"]=dict(generation=19,operation_id=digest(["retained-budget-work"]),
+        retention="RETAINED",body={"synthetic_retained_unicode":"ą"*300})
     validate_document(doc)
     shared(doc)
     descriptor=copy.deepcopy(reference_system.setup.private_choices()["descriptor"]);descriptor["revision"]+=1
