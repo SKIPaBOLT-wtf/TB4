@@ -105,10 +105,19 @@ def test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frame
             return environment()
         checker.environment=late
     else:context.leadership.profile=stale
-    with pytest.raises(ConfigurationError,match="^ADMISSION_TIMING$"):
+    rejected=[];current=admission._current
+    def observed(*args,**kwargs):
+        try:return current(*args,**kwargs)
+        except ConfigurationError as error:
+            rejected.append(str(error));raise
+    admission._current=observed
+    # Native locks redact inner errors; still prove the actual timing refusal.
+    with pytest.raises((ConfigurationError,SettingsError),match="^(ADMISSION_TIMING|SETTINGS_STORE_UNAVAILABLE)$"):
         if boundary=="pending":admission.recover_pending(owner_authorized=True)
         elif boundary=="revision":admission.revision()
         else:admission.release(owner_authorized=True)
+    assert rejected==["ADMISSION_TIMING"]
+    admission._current=current
     with cp.store.native.locked() as port:
         assert port.read("settings.json")==before and port.read("settings.pending")==pending
     assert context.profile.read()==profile and len(s.value.provider.store.calls)==writes
