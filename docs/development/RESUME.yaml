@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_INHERITED_ROOT_SETTLEMENT_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C3_INHERITED_ROOT_SETTLEMENT_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 54a628583ba33cf4d2454049ed1f243d21c35088
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0071
+last_verified_event: RP-027-A001-0072
 last_completed: RP-026
-next_action: Publish/read back expanded32-target test INTENT retaining original772
-  predicates; run once on fresh absent owned WindowsX64 native/offscreenQt fixtures,
-  record real session and complete result before dependent repair.
-verification: Cloud-only inherited root-result source saved/read back; expanded32-target
-  native/current-owner qualification pending, no check accepted.
+next_action: Launch exact32-target fresh owned fixture test once after this INTENT
+  remote readback, publish real STARTED then full result before dependent source.
+verification: Cloud inherited root source saved; expanded32-target once-run test pending,
+  no check accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0072
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
