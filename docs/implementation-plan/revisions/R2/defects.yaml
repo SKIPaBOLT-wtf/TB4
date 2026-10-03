@@ -4400,10 +4400,12 @@ defects:
         ConfigurationError OWNER_SUPERSEDED. Inspect exact trace/owner guard before
         repair.
       failing_source: 3603f2678d580a9be225becae56f81e6bb10a95d
-      passing_source: null
+      passing_source: 4301f0c24ff44dc5baf3ab85dcabe5f8772ffef2
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-repeat-pass.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-repeat-cases.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -4431,6 +4433,16 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-provenance.md
+    - id: unchanged-before-send-predicate-reaches-all-owner-and-preservation-assertions
+      claim: Exact same763 predicates repeat passes; previously failed before-send
+        case now reaches original OWNER_SUPERSEDED/no-SDK/epoch2/UNKNOWN/no-ACK/single-authority/original-profile
+        assertions. No test/source guards removed; 758 previous PASS unchanged, four
+        declared Linux-only skips remain not qualification. Mandatory final C1-C4
+        rechecks held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-repeat-pass.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-repeat-cases.json
     repairs:
     - item: RP-027
       attempt: A001
@@ -4451,5 +4463,7 @@ defects:
       available. No safety success or no-send assertion inferred solely from unexpected
       class. Diagnose exact trace and guarded source. Final C1-C4 held. Exact trace
       proves old-roster validation precedes explicit owner refusal; ordinary Leadership/enrollment
-      stays unchanged. Minimal early rejection grants no dispatch.
+      stays unchanged. Minimal early rejection grants no dispatch. Exact original763
+      predicates pass on one-path root owner preflight; all before-send retained assertions
+      reached; final C1-C4 held.
     legacy_record: null
