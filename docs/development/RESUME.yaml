@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_ENVELOPE_SHORT_PASSED
+phase: STAGED_RECONFIGURATION_C3_ROOT_PLAN_FULL_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0107
+last_verified_event: RP-027-A001-0108
 last_completed: RP-026
-next_action: Publish/readback full same36-target839-case1800s once-run qualification
-  INTENT with original max129 capacity case and all prior broad regressions. Record
-  actual STARTED and complete result before dependent adoption/folder/rebind/C4 source.
-verification: Exact100-case short root regression passes; full839-case/broad qualification
-  pending, no C1-C4 accepted.
+next_action: Launch complete36-target839-case once; publish actual STARTED/full OUTCOME.
+  On supported pass document actual current-role partial plan adoption source intent,
+  then remaining folder/rebind/C4.
+verification: Exact100-case pass verified; full original839-case qualification authorized,
+  no accepted checks.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0108
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
