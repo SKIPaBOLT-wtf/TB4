@@ -3,18 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_DISPOSITION_FIRST_TEST
+phase: STAGED_RECONFIGURATION_C3_ROOT_DISPOSITION_TEST_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: f2e5e29ca7acd61d8e5779d87d3fe8f51f6772c1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0067
+last_verified_event: RP-027-A001-0068
 last_completed: RP-026
-next_action: Inspect same actual session/artifacts only and publish/read back complete
-  source-linked OUTCOME/cases/defects. Debug ordinary failures if any, else qualified
-  same-authority cancellation/known safe continuation and cloud-only inherited after-witness
-  settlement unit.
-verification: Durable disposition source/amendment saved; original763 plus nine actual
-  native/race/negative predicates test pending.
+next_action: Inspect same LOCAL-SESSION-48091 and exact output artifacts; preserve
+  full actual source-linked collection/status/exit/time/failures and publish/read
+  back OUTCOME/defects before dependent work.
+verification: Expanded actual native/race/disposition run executing; same actual session
+  recorded, result pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
