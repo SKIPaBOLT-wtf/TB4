@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C3",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0139",
+  "source_commit": "83dd3c09e1446a6897ef0dd64abb6c28fe5d5efb",
+  "branch": "feat/rp027-staged-reconfiguration",
+  "pr": 36,
+  "scope": "Actual native Linux mapping and original folder/native maintenance regressions; all cases synthetic owned runner fixtures only; no live deployment",
+  "required_workflow": "Folder reconfiguration",
+  "required_cases": 21,
+  "expected": "execute all required mapping cases on native ext4/xfs, ordinary pytest, inspect exact source/jobs/artifacts and retain failures",
+  "acceptance": false
+}
