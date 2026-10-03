@@ -5,19 +5,19 @@ check: RP-027.C3
 attempt: A001
 phase: STAGED_RECONFIGURATION_C3_FOLDER_GUARD_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 31533a1eca67658641a5913d2a3d70715e804c18
+source_commit: 98b5948618877160536fca2525fdb7277054d00c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0152
+last_verified_event: RP-027-A001-0153
 last_completed: RP-026
-next_action: Preserve and publish exact two-path source; source-linked outcome then
-  new required native Linux and original regression qualification.
-verification: DEF076 native guard repair intent; physical behaviors unqualified and
-  all acceptance held.
+next_action: Publish fresh required native Linux51-case intent/request; ordinary original
+  folder/native and selected Docs/effect regressions, preserve same-source full CI/Desktop
+  IDs and all failures.
+verification: Scoped DEF076 source repair saved/readback; required51 actual native
+  mapping/physical cases pending, acceptance held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0152
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
