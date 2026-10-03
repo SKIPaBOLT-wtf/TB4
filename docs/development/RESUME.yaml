@@ -1,24 +1,24 @@
 schema_version: 1
 revision: R2
 work_item: RP-027
-check: RP-027.C4
+check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_CORRECTED_TIMING_QUALIFICATION_RUNNING
+phase: STAGED_RECONFIGURATION_C4_REMOTE_FOLDER_PROBE_QUALIFIED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: bf5c34f9fc79fcc6784ccd71009e2551608522a7
+source_commit: f7d283897eaef2ca521df99d45544dad2d07dd5e
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0277
+last_verified_event: RP-027-A001-0278
 last_completed: RP-026
-next_action: Inspect these same current jobs and local test to terminal, reconcile
-  old18/19, publish evidence and owner-requested pause without next integration.
-verification: 277 current corrected sourcebf5c34f collection3043PASS/tests0; Windows504/current
-  Linux/full/build in progress under request20. Old18/19 terminal reconciliation pending.
-  Owner pause after completion.
+next_action: Continue only current corrected timing qualification276/request20 and
+  reconcile original request19. After evidence is published/read back, pause until
+  owner says continue; do not start next integration.
+verification: 278 original request18/A020 all terminal qualified and settled. Current
+  corrected timingbf5c34f request20 still running; request19 original failure still
+  needs full terminal reconciliation. C1-C4 held, owner pause after this part.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
-- RP-027-A001-0265
 - RP-027-A001-0276
 expected_user_action: Wait for current-part completion; after verified pause, say
   continue to resume next integration.

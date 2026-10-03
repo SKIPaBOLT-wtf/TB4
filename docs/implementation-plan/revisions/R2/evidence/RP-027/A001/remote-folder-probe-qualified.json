@@ -1,0 +1,977 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0265",
+  "source_commit": "f7d283897eaef2ca521df99d45544dad2d07dd5e",
+  "trigger_commit": "d163f2b23a881000ea5cdcfc0ef97b0adcc441e8",
+  "pr_checkout": "c2153f1b5c0d7a969cb0320f71502f7b1a2433d0",
+  "source_equivalence": "git fetch exact PR checkout and git diff sourcef7 againstc215: only RESUME, journal, request/source evidence and manifest differ; all product/tests/workflows/schema/catalogue bytes match.",
+  "windows": {
+    "source": "f7d283897eaef2ca521df99d45544dad2d07dd5e",
+    "checkout": "898c2a488b4417c9579d01029a80d9dd7c77f5f3",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.212,
+    "owned_absent_fixture_root": true,
+    "targets": [
+      "tests/drive/test_folder_probe.py",
+      "tests/drive/test_folder_protocol.py"
+    ],
+    "cases": [
+      {
+        "name": "test_portable_exact_observation_is_fresh_and_has_no_mutating_api",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[root-10000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[domain-40000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[nonce-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[mode-FOLDER_SQLITE_V1]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[version-2]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[revision-True]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[revision-0]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[revision-1208925819614629174706176]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[body-***]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[body-eyJjYXBhY2l0eSI6eyJkZXZpY2VzIjoxLCJoaXN0b3J5IjoxLCJpbmdyZXNzIjoxLCJxdWFyYW50aW5lIjoxfSwiY29tcGF0aWJpbGl0eV9zdGF0dXMiOiJVTlJFTEVBU0VEIiwiZG9tYWluX2lkIjoiMTAwMDAwMDAtMDAwMC00MDAwLTgwMDAtMDAwMDAwMDAwMDAxIiwibGF5b3V0X3JldmlzaW9uIjoxLCJsYXlvdXRfdmVyc2lvbiI6MSwicmVjb3JkcyI6eyJhcnRpZmFjdC4wMDAuaW5wdXQiOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn0sImFydGlmYWN0LjAwMC5vdXRwdXQiOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn0sImdsb2JhbC5jb21taXNzaW9uaW5nIjp7ImJvZHkiOm51bGwsImdlbmVyYXRpb24iOjAsIm9wZXJhdGlvbl9pZCI6bnVsbCwicmV0ZW50aW9uIjoiRlJFRSJ9LCJnbG9iYWwuZm9yY2VfcmVxdWVzdCI6eyJib2R5IjpudWxsLCJnZW5lcmF0aW9uIjowLCJvcGVyYXRpb25faWQiOm51bGwsInJldGVudGlvbiI6IkZSRUUifSwiZ2xvYmFsLmxlYWRlcnNoaXAiOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn0sImdsb2JhbC5yZWdpc3RyeSI6eyJib2R5IjpudWxsLCJnZW5lcmF0aW9uIjowLCJvcGVyYXRpb25faWQiOm51bGwsInJldGVudGlvbiI6IkZSRUUifSwiZ2xvYmFsLnNldHRpbmdzIjp7ImJvZHkiOm51bGwsImdlbmVyYXRpb24iOjAsIm9wZXJhdGlvbl9pZCI6bnVsbCwicmV0ZW50aW9uIjoiRlJFRSJ9LCJnbG9iYWwuc3VtbWFyeSI6eyJib2R5IjpudWxsLCJnZW5lcmF0aW9uIjowLCJvcGVyYXRpb25faWQiOm51bGwsInJldGVudGlvbiI6IkZSRUUifSwiaGlzdG9yeS4wMDAiOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn0sImluZ3Jlc3MuMDAwIjp7ImJvZHkiOm51bGwsImdlbmVyYXRpb24iOjAsIm9wZXJhdGlvbl9pZCI6bnVsbCwicmV0ZW50aW9uIjoiRlJFRSJ9LCJxdWFyYW50aW5lLjAwMCI6eyJib2R5IjpudWxsLCJnZW5lcmF0aW9uIjowLCJvcGVyYXRpb25faWQiOm51bGwsInJldGVudGlvbiI6IkZSRUUifSwidGFyZ2V0LjAwMC5hY2siOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn0sInRhcmdldC4wMDAuY2FuY2VsIjp7ImJvZHkiOm51bGwsImdlbmVyYXRpb24iOjAsIm9wZXJhdGlvbl9pZCI6bnVsbCwicmV0ZW50aW9uIjoiRlJFRSJ9LCJ0YXJnZXQuMDAwLmNhdGFsb2d1ZSI6eyJib2R5IjpudWxsLCJnZW5lcmF0aW9uIjowLCJvcGVyYXRpb25faWQiOm51bGwsInJldGVudGlvbiI6IkZSRUUifSwidGFyZ2V0LjAwMC5yZXN1bHQiOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn0sInRhcmdldC4wMDAuc3RhdHVzIjp7ImJvZHkiOm51bGwsImdlbmVyYXRpb24iOjAsIm9wZXJhdGlvbl9pZCI6bnVsbCwicmV0ZW50aW9uIjoiRlJFRSJ9LCJ0YXJnZXQuMDAwLndvcmsiOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn19fQ==]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[blueprint-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[authority-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[extra-SYNTHETIC_PRIVATE_CANARY]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[result-SNAPSHOT]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[result-UNKNOWN]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_saved_reply_cannot_qualify_next_observation",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[duck]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[no-access]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[wrong-root]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[tab]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[mode]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[operation-CAS]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[path-SYNTHETIC_PRIVATE_CANARY]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[blueprint-bad]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[authority-bad]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[mode-FOLDER_SQLITE_V1]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[root-10000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[domain-40000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[nonce-invalid]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_default_read_cas_handler_does_not_accept_probe",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_distinct_clients_strict_revision_and_readback",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_lost_commit_reply_is_unknown_and_reconnect_inspects_same_object",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_no_same_exchange_authorized_llm_no_activation_or_io[None]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_no_same_exchange_authorized_llm_no_activation_or_io[access1]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_no_same_exchange_authorized_llm_no_activation_or_io[access2]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_no_same_exchange_authorized_llm_no_activation_or_io[access3]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_no_same_exchange_authorized_llm_no_activation_or_io[access4]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[root-10000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[domain-40000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[nonce-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[mode-DRIVE]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[version-True]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[revision-True]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[revision-0]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[body-***]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[extra-unexpected]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[result-ACCEPTED]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[duplicate]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[nan]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[bool]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[depth]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[nested]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[scalar]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[encoding]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[oversize]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_helper_rejects_paths_commands_and_mismatched_root_before_mutation",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_snapshot_origin_layout_and_canonical_validation",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fixed_process_failure_bounded_and_sanitized[nonzero-private-stderr]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fixed_process_failure_bounded_and_sanitized[bounded-stdout]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fixed_process_failure_bounded_and_sanitized[timeout]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fixed_process_success_and_input_bound",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[nfs]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[nfs4]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[cifs]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[fuse]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[overlay]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[tmpfs]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[9p]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_nested_mount_overrides_parent_filesystem",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      }
+    ],
+    "failures": [],
+    "counts": {
+      "PASS": 70,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    }
+  },
+  "collection": {
+    "schema_version": 1,
+    "source": "f7d283897eaef2ca521df99d45544dad2d07dd5e",
+    "checkout": "898c2a488b4417c9579d01029a80d9dd7c77f5f3",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.883,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3036,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "required_linux": {
+    "total_pass_per_run": 553,
+    "total_failed": 0,
+    "total_skipped": 0,
+    "scope_counts": [
+      47,
+      51,
+      6,
+      22,
+      107,
+      320
+    ],
+    "jobs": [
+      {
+        "run_id": 37160441325,
+        "job_id": 111312590451,
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37160441325/job/111312590451",
+        "name": "native-folder",
+        "status": "completed",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install development dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Public repository security scan",
+            "conclusion": "success"
+          },
+          {
+            "name": "Isolated fixed-helper prerequisites",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required read-only physical Folder probe and isolated SSH cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux mapping and relocation cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux retained Folder publication cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux current-role Folder ACTIVE adoption cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Original folder and native maintenance regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Original Docs and effect regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Preserve source-linked case results",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "test_summaries": [
+          "47 passed in 13.02s",
+          "51 passed in 95.24s (0:01:35)",
+          "6 passed in 40.88s",
+          "22 passed in 204.59s (0:03:24)",
+          "107 passed in 14.63s",
+          "320 passed, 1 deselected in 459.99s (0:07:39)"
+        ],
+        "skip_reasons": [],
+        "package_acceptance": []
+      },
+      {
+        "run_id": 37160439918,
+        "job_id": 111312586101,
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37160439918/job/111312586101",
+        "name": "native-folder",
+        "status": "completed",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install development dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Public repository security scan",
+            "conclusion": "success"
+          },
+          {
+            "name": "Isolated fixed-helper prerequisites",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required read-only physical Folder probe and isolated SSH cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux mapping and relocation cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux retained Folder publication cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux current-role Folder ACTIVE adoption cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Original folder and native maintenance regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Original Docs and effect regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Preserve source-linked case results",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "test_summaries": [
+          "47 passed in 14.34s",
+          "51 passed in 117.74s (0:01:57)",
+          "6 passed in 50.86s",
+          "22 passed in 255.50s (0:04:15)",
+          "107 passed in 16.85s",
+          "320 passed, 1 deselected in 521.23s (0:08:41)"
+        ],
+        "skip_reasons": [],
+        "package_acceptance": []
+      }
+    ],
+    "artifacts": [
+      {
+        "id": 11288035489,
+        "name": "folder-reconfiguration-c2153f1b5c0d7a969cb0320f71502f7b1a2433d0",
+        "size_in_bytes": 14227,
+        "digest": "sha256:5c71e7c77442e121cc8b1f005e53a246a90b6ca4fcf587ca8a480010d60bff1a",
+        "expired": false,
+        "run_id": 37160441325
+      },
+      {
+        "id": 11287549784,
+        "name": "folder-reconfiguration-d163f2b23a881000ea5cdcfc0ef97b0adcc441e8",
+        "size_in_bytes": 14290,
+        "digest": "sha256:ff203185819d49e29b27eff8e5596f53caa3a56357b0798d5b47de32acfc0d95",
+        "expired": false,
+        "run_id": 37160439918
+      }
+    ]
+  },
+  "full_ci": {
+    "run_id": 37160441288,
+    "job_id": 111312590119,
+    "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37160441288/job/111312590119",
+    "name": "test",
+    "status": "completed",
+    "conclusion": "success",
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Checkout",
+        "conclusion": "success"
+      },
+      {
+        "name": "Set up Python",
+        "conclusion": "success"
+      },
+      {
+        "name": "Install",
+        "conclusion": "success"
+      },
+      {
+        "name": "Public repository security scan",
+        "conclusion": "success"
+      },
+      {
+        "name": "Isolated folder helper prerequisites",
+        "conclusion": "success"
+      },
+      {
+        "name": "Native Linux credential boundary qualification",
+        "conclusion": "success"
+      },
+      {
+        "name": "Native protected first-run qualification",
+        "conclusion": "success"
+      },
+      {
+        "name": "Native scoped discovery qualification",
+        "conclusion": "success"
+      },
+      {
+        "name": "Test",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Set up Python",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Checkout",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "test_summaries": [
+      "43 passed in 0.24s",
+      "34 passed in 0.68s",
+      "2 passed in 0.05s",
+      "2988 passed, 27 skipped, 4 xfailed in 2436.30s (0:40:36)"
+    ],
+    "skip_reasons": [],
+    "package_acceptance": []
+  },
+  "desktop": [
+    {
+      "run_id": 37160441307,
+      "job_id": 111312590064,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37160441307/job/111312590064",
+      "name": "desktop (ubuntu-22.04)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "conclusion": "success"
+        },
+        {
+          "name": "Linux Qt dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install development and desktop dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Desktop tests with real GUI and core imports",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native Windows credential boundary qualification",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Native Linux credential boundary qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native protected first-run qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native scoped discovery qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Private BALLPARK and local owner review qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Distinct FETCHER enrollment and actual profile qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete platform regression suite",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build WATCHDOG",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build FETCHER",
+          "conclusion": "success"
+        },
+        {
+          "name": "Packaged application and installer acceptance",
+          "conclusion": "success"
+        },
+        {
+          "name": "Publish installers and checksums",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ],
+      "test_summaries": [
+        "90 passed, 4 skipped in 2.70s",
+        "43 passed in 0.26s",
+        "34 passed in 0.63s",
+        "2 passed in 0.07s",
+        "75 passed in 9.57s",
+        "79 passed in 17.26s",
+        "3011 passed, 21 skipped, 4 xfailed in 2567.54s (0:42:47)"
+      ],
+      "skip_reasons": [
+        "SKIPPED [4] tests/desktop/test_installers.py:81: a dangling custom link contains no table data and native storage never adopts it"
+      ],
+      "package_acceptance": [
+        "[{\"role\": \"watchdog\", \"bundle_self_test\": \"PASS\", \"gui_smoke\": \"PASS\", \"setup_gui_smoke\": \"PASS\", \"install_uninstall_profile_isolation\": \"PASS\"}, {\"role\": \"fetcher\", \"bundle_self_test\": \"PASS\", \"gui_smoke\": \"PASS\", \"setup_gui_smoke\": \"PASS\", \"install_uninstall_profile_isolation\": \"PASS\"}]"
+      ]
+    },
+    {
+      "run_id": 37160441307,
+      "job_id": 111312590238,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37160441307/job/111312590238",
+      "name": "desktop (windows-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "conclusion": "success"
+        },
+        {
+          "name": "Linux Qt dependencies",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Install development and desktop dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Desktop tests with real GUI and core imports",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native Windows credential boundary qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native Linux credential boundary qualification",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Native protected first-run qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native scoped discovery qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Private BALLPARK and local owner review qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Distinct FETCHER enrollment and actual profile qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete platform regression suite",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build WATCHDOG",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build FETCHER",
+          "conclusion": "success"
+        },
+        {
+          "name": "Packaged application and installer acceptance",
+          "conclusion": "success"
+        },
+        {
+          "name": "Publish installers and checksums",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ],
+      "test_summaries": [
+        "74 passed, 20 skipped in 2.56s",
+        "15 passed in 0.27s",
+        "30 passed, 4 skipped in 2.01s",
+        "2 passed in 6.33s",
+        "75 passed in 5.48s",
+        "79 passed in 11.10s",
+        "2833 passed, 199 skipped, 4 xfailed in 1370.90s (0:22:50)"
+      ],
+      "skip_reasons": [
+        "SKIPPED [2] tests\\desktop\\test_environment.py:15: POSIX library environment",
+        "SKIPPED [1] tests\\desktop\\test_installers.py:20: POSIX installer contract",
+        "SKIPPED [1] tests\\desktop\\test_installers.py:49: POSIX installer contract",
+        "SKIPPED [12] tests\\desktop\\test_installers.py:64: POSIX installer contract",
+        "SKIPPED [4] tests\\desktop\\test_installers.py:94: POSIX installer contract",
+        "SKIPPED [3] tests\\security\\test_private_settings_native.py:149: Linux FIFO/no-follow specific",
+        "SKIPPED [1] tests\\security\\test_private_settings_native.py:179: Linux root rename and pinned-dir check"
+      ],
+      "package_acceptance": [
+        "[{\"role\": \"watchdog\", \"bundle_self_test\": \"PASS\", \"gui_smoke\": \"PASS\", \"setup_gui_smoke\": \"PASS\", \"install_uninstall_profile_isolation\": \"PASS\"}, {\"role\": \"fetcher\", \"bundle_self_test\": \"PASS\", \"gui_smoke\": \"PASS\", \"setup_gui_smoke\": \"PASS\", \"install_uninstall_profile_isolation\": \"PASS\"}]"
+      ]
+    }
+  ],
+  "desktop_artifacts": [
+    {
+      "id": 11288223019,
+      "name": "tb4-desktop-Linux-c2153f1b5c0d7a969cb0320f71502f7b1a2433d0",
+      "size_in_bytes": 314520079,
+      "digest": "sha256:024e5b0d178d7a17e06fc0487f9040d2d3e5fb13428416452f71ce39110005e0",
+      "expired": false,
+      "run_id": 37160441307
+    },
+    {
+      "id": 11287259255,
+      "name": "tb4-desktop-Windows-c2153f1b5c0d7a969cb0320f71502f7b1a2433d0",
+      "size_in_bytes": 120932813,
+      "digest": "sha256:f15133f0d3643a6b5f486a0ed3eac33416373f14f6bb9bdc4b51ac400916b5d8",
+      "expired": false,
+      "run_id": 37160441307
+    }
+  ],
+  "progress": {
+    "run_id": 37160441283,
+    "job_id": 111312590090,
+    "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37160441283/job/111312590090",
+    "name": "ledger",
+    "status": "completed",
+    "conclusion": "success",
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pip install -e '.[dev]'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pytest tests/development -ra",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m tools.development.ledger",
+        "conclusion": "success"
+      },
+      {
+        "name": "Preserve published history",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python tools/scan_public_repo.py",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "test_summaries": [
+      "235 passed in 11.58s"
+    ],
+    "skip_reasons": [],
+    "package_acceptance": []
+  },
+  "review": {
+    "source_scope": "A020 read-only opt-in Folder commissioning proof, sourcef7; default READ/CAS unchanged",
+    "privacy": "Public source and synthetic/ephemeral CI only; metadata retained without downloading large installers",
+    "live_activation": false,
+    "election_ack_barrier": false,
+    "default_activation": "DenyActivation",
+    "acceptance": false
+  },
+  "limits": "Scoped A020 proof source qualification only. DEF091 stale runtime timing was independently reproduced after this source and remains under corrected qualification. C1-C4 unaccepted. Offscreen GUI/package checks do not prove physical desktop or live deployment. Remote first-run/credential/runtime/GUI composition not completed."
+}
