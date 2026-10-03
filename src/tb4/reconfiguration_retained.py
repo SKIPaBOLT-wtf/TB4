@@ -11,7 +11,7 @@ from .ballpark_records import shared,validate_header
 from .ballpark_setup import pin_record,validate_pin
 from .commissioning_checks import CommissionedStorage,Prerequisites
 from .commissioning_state import storage_spec,validated
-from .configuration_contract import require
+from .configuration_contract import configuration,require
 from .drive.authority_transaction import OwnerGuard
 from .drive.commissioning import digest,frozen_plan
 from .drive.commissioning_native import NativeCommissioning

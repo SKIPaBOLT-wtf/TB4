@@ -13,12 +13,19 @@ from tests.drive.reconfiguration_candidate_support import system as candidate_sy
 
 
 def system(*,commit_store=None,promotion_store=None,**kwargs):
-    s=candidate_system(**kwargs)
-    assert s.candidate.begin(owner_authorized=True)["phase"]=="STAGED"
-    context=RetainedCommitContext(s.candidate,commit_store or private(201))
+    stores={k:private(i) for k,i in (("profile_store",301),("checkpoint_store",302),
+        ("effect_store",303),("state_store",304),("baseline_store",305))}
+    s=candidate_system(**{**stores,**kwargs})
+    evidence=ProtectedEvidence(private(306),installation_id=s.value.setup.installation_id,
+        transition_id=s.value.context.baseline.transition_id)
+    decision,status=s.value.controller.proposal();assert not status["requires_resolution"]
+    assert s.value.controller.resolve(decision,evidence,owner_authorized=True)=="RESOLVED"
+    candidate=Candidate(replace(s.context,resolution=evidence))
+    assert candidate.begin(owner_authorized=True)["phase"]=="STAGED"
+    context=RetainedCommitContext(candidate,commit_store or private(201))
     commit=RetainedConfigurationCommit(context)
     promotion_context=RetainedPromotionContext(commit,promotion_store or private(202))
-    return SimpleNamespace(value=s.value,candidate=s.candidate,checker=s.checker,context=context,commit=commit,
+    return SimpleNamespace(value=s.value,candidate=candidate,checker=s.checker,context=context,commit=commit,
         promotion_context=promotion_context,promotion=RetainedProfilePromotion(promotion_context))
 
 
