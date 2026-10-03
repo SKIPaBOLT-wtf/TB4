@@ -3,24 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_SHARED_PUBLICATION_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_NATIVE_PROFILE_PROMOTION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c5c77d9cea6b5b4804a399b8ed208d33e2724de8
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0189
+last_verified_event: RP-027-A001-0190
 last_completed: RP-026
-next_action: 'Publish/re-read native original-profile promotion source INTENT: exact
-  shared AFTER and actual first-run precede bounded durable native original-profile
-  write; pending recover without replay, preserve immutable original/identity/nonce/history/credential/table.
-  Runtime admission and complete Folder/rootless/GUI/helper composition remain following
-  units.'
-verification: c5c77d actual publication Windows23/254/Linux382x2/default2868 PASS;
-  DEF079validfixtures proven/OPEN. Native originalprofile promotion/admission/composition
-  next; allC1-C4 held.
+next_action: Publish/re-read scoped source plus sourceOUTCOME/A015, then separate
+  actual conformance/native/original Windows/Linux qualification. Current-role cloud
+  ACTIVE adoption/native admission and complete Folder/rootless/runtime/GUI/helper
+  composition remain next.
+verification: c5c77d shared-publication qualified/verified. Native post-publication
+  profile promotion source authorized; persisted readiness not execution grant, allC1-C4
+  held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0190
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
