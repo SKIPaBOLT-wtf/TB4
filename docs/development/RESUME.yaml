@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_ROOT_DISPOSITION_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C3_ROOT_DISPOSITION_FIRST_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: f2e5e29ca7acd61d8e5779d87d3fe8f51f6772c1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0066
+last_verified_event: RP-027-A001-0067
 last_completed: RP-026
-next_action: Publish/read back exact same30-target root suite expanded with nine new
-  disposition predicates test INTENT. Once-run guarded fresh owned absent WindowsX64
-  native/offscreenQt fixtures; record real STARTED/full result/defects before repair
-  or further settlement source.
-verification: Durable root disposition source saved/read back; actual expanded native/race
-  qualification pending; no accepted check.
+next_action: Inspect same actual session/artifacts only and publish/read back complete
+  source-linked OUTCOME/cases/defects. Debug ordinary failures if any, else qualified
+  same-authority cancellation/known safe continuation and cloud-only inherited after-witness
+  settlement unit.
+verification: Durable disposition source/amendment saved; original763 plus nine actual
+  native/race/negative predicates test pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0067
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
