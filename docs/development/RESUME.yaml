@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_PROVEN_NO_SEND_TEST_RUNNING
+phase: STAGED_RECONFIGURATION_C3_PROVEN_NO_SEND_TEST_FAILED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0078
+last_verified_event: RP-027-A001-0079
 last_completed: RP-026
-next_action: Observe same running session70335, preserve full actual collected predicate/status/exit/time/failures/Linux
-  skips and publish/read back OUTCOME before source repair or root-plan adoption unit.
-verification: Actual34-target native no-send/retry test running LOCAL-SESSION-70335;
-  no accepted check.
+next_action: Publish/read back bounded diagnostic INTENT to inspect exact same failed
+  traces/native current-previous proof/reader bindings and closed force error provenance;
+  preserve results before minimal repair.
+verification: 810-case no-send run failed two new predicates; DEF064/065 unproven,
+  original791 retained; no accepted checks.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0077
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -31,6 +31,8 @@ known_open_defects:
 - DEF-061
 - DEF-062
 - DEF-063
+- DEF-064
+- DEF-065
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
