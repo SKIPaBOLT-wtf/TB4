@@ -3,24 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_FRESH_NATIVE_ADMISSION_REQUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_DESKTOP_BOUNDED_BUDGET_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 14a53a8c8ab5903282cd23e4f428e2b26cda4b25
+source_commit: 923741e9027a2fa6e0289f42cfd59149f8c33d3d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0207
+last_verified_event: RP-027-A001-0208
 last_completed: RP-026
-next_action: Inspect same independent19790minute Windows packaging and publish its
-  exactterminal sourceOUTCOME; then ownINTENT cloudACTIVEadoption from current shared
-  configuration with old private host/WAL/candidate unavailable, preserving own local
-  identity/credentials. FullFolder/rootless/runtimeGUIhelpercomposition remains; nofinalacceptance.
-verification: Exact14a53a8 actual23/295/default2909 and Linux423each qualified; allC1-C4held.
-  Inspect197same90minuteWindowspackage terminal sourceOUTCOME, then ownINTENT cloudACTIVEadoption/nooldprivatehost/fullcomposition;
-  current14full/platformpending.
+next_action: 'All197 immutable-source operations settled; continue current14a53a8
+  qualifiednativeadmission207: publish scoped cloudACTIVEadoption source INTENT without
+  former private host/WAL/ACK, samefixedDoc/domain/ownprofilepreserved; then Folder/rootless/runtimeGUIhelpercomposition
+  and current-source fullgates.'
+verification: 197 budgetsource923 fullbothplatforms/tworolepackages/upload/nativeLinux400
+  settled; current14qualified23/295/Linux423207. Next ownINTENT cloudACTIVEadoption/nooldHostWAL
+  thenfullcomposition/current-sourcefullgates; allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0197
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

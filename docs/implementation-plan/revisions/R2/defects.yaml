@@ -5918,10 +5918,11 @@ defects:
         log span2401.46s against configured40minute bound. Earlier full-pass package/upload
         cancellation preserved in historical evidence. No rerun or deployment.'
       failing_source: c5c77d9cea6b5b4804a399b8ed208d33e2724de8
-      passing_source: null
+      passing_source: 923741e9027a2fa6e0289f42cfd59149f8c33d3d
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-profile-promotion-qualified.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-profile-promotion-qualified.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/desktop-budget-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -5954,11 +5955,16 @@ defects:
       both-role build, packaged GUI/setup and installation profile isolation, artifact
       upload with revised bounded budget; counts/skips and completion status must
       be actual.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/desktop-budget-qualified.json
     notes: a2cb9 promotion Windows18/272/Linux400 groups qualified independently,
       allC1-C4 remain held; no cancelled packaging acceptance or app defect inferred.
       Historical c5 Linux Desktop2843PASS/21SKIP/4XFAIL and both packagesPASS; Windows
-      full2706PASS/158SKIP/4XFAIL does not replace canceled package acceptance.
+      full2706PASS/158SKIP/4XFAIL does not replace canceled package acceptance. Actual923741e
+      immutable-source90minute Desktop both platforms, both-rolepackages/GUI/setup/installisolation/upload
+      qualified; Windows terminal2629.107s exceeds old2400bound. No test/gate weakened.
+      Current14nativeadmissionsource separately qualified component, full/currentcomposition
+      stillheld; DEF080OPENuntilcommonC4acceptance.
     legacy_record: null
   DEF-081:
     title: Admission credential-revocation fixture uses a foreign installation and
