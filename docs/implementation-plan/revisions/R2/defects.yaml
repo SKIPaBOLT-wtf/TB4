@@ -6357,3 +6357,50 @@ defects:
       Current1f2381 same25 actualdefaultWindows PASS0skip38.596s reaches all18 rootless/SDK/admission
       and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.'
     legacy_record: null
+  DEF-087:
+    title: Required retained Folder negative fixture selects a nonexistent GC record
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 1f238122cf44681a4617ed4ef5807cfee6f8f370
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-linux-fixture-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: Both actual Linux request14 jobs execute51old +sixnewFolder; five
+        newPASS, one fails StopIteration at next(records endswith .gc). Fixed layout
+        contains no such record, so GC-labelled target mutation/refusal assertions
+        are not reached.
+      failing_source: 1f238122cf44681a4617ed4ef5807cfee6f8f370
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-linux-fixture-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: nonexistent-gc-fixture-slot
+      claim: GC-labelled fixture assumed an unsupported logical slot; correct it to
+        actual fixed retained artifact-generation boundary and explicitly clarify
+        the test meaning rather than inventing GC protocol or weakening preservation.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-linux-fixture-failure.json
+    repairs: []
+    issue: null
+    regression_test: Actual requiredLinux six current retainedFolder cases must pass0skip,
+      including real allocated artifact-generation mutation between freeze/dispatch
+      refusing before config publication; old51/107/320 and full current-source gates
+      remain.
+    resolution_evidence: []
+    notes: Actual1f source:Windowsnew25PASS38.596s +affected472PASS446.059s +defaultcollect2970tests0.
+      Both actualLinux51PASS +new5PASS1FAIL at nonexistent .gc selector; no107/320
+      whole qualification. Code/source kernel positiveFolder paths and nativeadmission
+      reached; this missing target fixture assertion remains unqualified. OriginalCI/Desktop
+      stilltracked. No external blocker; allC1-C4held.
+    legacy_record: null

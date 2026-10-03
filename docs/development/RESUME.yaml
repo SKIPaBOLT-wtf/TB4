@@ -3,24 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_REQUIRED_QUALIFICATION_RUNNING
+phase: STAGED_RECONFIGURATION_C4_RETAINED_LINUX_FIXTURE_FAILURE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 1f238122cf44681a4617ed4ef5807cfee6f8f370
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0235
+last_verified_event: RP-027-A001-0236
 last_completed: RP-026
-next_action: Inspect same runninglocal regression/requiredLinuxjobs andrecordterminalOUTCOME;
-  ordinaryfailures preservedbeforeboundedrepair. Afterappropriate scopedPASS explicitindependence
-  allows next separate runtimeGUI/remotehelper source while sameimmutable fullCI/Desktop
-  finish. TracksameIDs/fullOUTCOME, no jobrerun/cancel.
-verification: "235 actualoriginalrequest14 jobsrecorded/defaultcollect2970PASS, failedinitialnumericrun_idcandidate\
-  \ correctedto schemaTEXTwithoutrelaxation. RequiredLinuxbothterminalfailure\u2192\
-  exactOUTCOMEnext; Window472/fulljobsongoing, no rerun."
+next_action: Firstseparate verifiedimmutable1f originalfullremainder inspectionINTENT,
+  then distinct exact2file fixture/A018clarification sourceINTENT. Fixactual retainedartifactgeneration/name,
+  production/hash/guards unchanged; preserve source/OUTCOME then requiredcorrectedLinuxrequest15/full
+  gates. Recordedschedulingindependence basedonterminalWindows472+knownLinuxfixture
+  defect, no unchangedWindows25/472 repeat.
+verification: 236 immutable1f Windows472/default2970PASS; bothLinux51+new5PASS1FAIL(nonexistent.gc
+  fixture),107/320unqualified. TrackoriginalCI/Desktopnext237 andexacttest/A018clarificationrepairnext238independent(Windows472terminal/no
+  prodchange), allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0234
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -57,6 +57,7 @@ known_open_defects:
 - DEF-084
 - DEF-085
 - DEF-086
+- DEF-087
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
