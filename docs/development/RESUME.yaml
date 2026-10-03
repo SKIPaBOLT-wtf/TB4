@@ -3,16 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_INHERITED_ROOT_SETTLEMENT_TEST
+phase: STAGED_RECONFIGURATION_C3_INHERITED_ROOT_SETTLEMENT_TEST_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 54a628583ba33cf4d2454049ed1f243d21c35088
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0072
+last_verified_event: RP-027-A001-0073
 last_completed: RP-026
-next_action: Launch exact32-target fresh owned fixture test once after this INTENT
-  remote readback, publish real STARTED then full result before dependent source.
-verification: Cloud inherited root source saved; expanded32-target once-run test pending,
-  no check accepted.
+next_action: Observe same running session33698; publish complete real32-target result
+  with sanitized predicates and any defects before dependent repair. Do not launch
+  a duplicate.
+verification: Actual32-target inherited-root native test running in session33698;
+  no result/check acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
