@@ -216,3 +216,17 @@ are unnecessary. The original profile/shared authority/history remain. Named
 candidate-schema definitions retain its original top-level contract and 17-file
 pin limit. Final ACTIVE publication, local active profile/admission and Folder/
 rootless/runtime/GUI/helper composition are separately required; no check accepted.
+
+[A-016](implementation-plan/revisions/R2/amendments/RP-027/A-016-fresh-native-current-admission.md)
+adds the fresh native current-configuration admission boundary. Every trusted
+runtime revision callback rereads the protected profile, current compatible source,
+actual first-run/storage/credential/environment and coherent ACTIVE publication,
+clock/capabilities/current role/force state. Owner-confirmed local reservation
+release requires the matching covered transition and zero current C1 blockers,
+changing only native maintenance while retaining the complete previous frame,
+grant and receipts. Exact pending recovery freshly qualifies the same bytes and
+never repeats remote/root/work effects. Later legitimate work and live UNKNOWN
+retain ordinary runtime/Effects no-replay guards; obsolete frozen work/WAL and
+saved READY are not grants. Election remains independent; default activation
+stays closed. Cloud ACTIVE adoption and full Folder/rootless/runtime/GUI/helper
+composition remain required; source alone accepts no check.
