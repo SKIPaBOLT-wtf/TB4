@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C3",
+  "attempt": "A001",
+  "source": "28952a9f858985905f0f8b0702effca4c76af019",
+  "local_source": "e9a81646b272c9516c48262efa7fda7aa29a253b",
+  "intent_event": "RP-027-A001-0171",
+  "paths": [
+    "tests/drive/test_reconfiguration_rebind.py"
+  ],
+  "retained_targets": 64,
+  "retained_artifacts": 128,
+  "authority_objects": 1,
+  "long_id_characters": 120,
+  "unicode_characters_per_catalogue": 120,
+  "actual_fixed_budget_bytes": 1024,
+  "source_generation": 17,
+  "production_changed": false,
+  "diff_check_passed": true,
+  "tests_executed": 0,
+  "readback": "VERIFIED",
+  "acceptance": false
+}

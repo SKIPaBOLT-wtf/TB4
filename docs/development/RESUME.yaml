@@ -5,20 +5,18 @@ check: RP-027.C3
 attempt: A001
 phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_BUDGET_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 4b66bc7a9e46eeb134579fb43c8b861eaaf2e985
+source_commit: 28952a9f858985905f0f8b0702effca4c76af019
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0171
+last_verified_event: RP-027-A001-0172
 last_completed: RP-026
-next_action: Apply one-path valid catalogue budget fixture, preserve/publish/source
-  OUTCOME, then qualify27/default181/collection/actualLinux51/107/181 at exact repaired
-  source.
-verification: Remaining two max129 fixtures invalid under existing1024-byte catalogue
-  limit; one-path source repair declared, production guard and C1-C4 held.
+next_action: Publish fresh default27-first then unchanged181/collection and exactsource
+  actualLinux request7 INTENT; actualfailure/result outcome before C4.
+verification: Exact one-path valid-budget fixture source saved/readback; new recheck
+  not executed, allC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0171
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
