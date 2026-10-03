@@ -1,25 +1,26 @@
 schema_version: 1
 revision: R2
 work_item: RP-027
-check: RP-027.C2
+check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_REMOTE_FOLDER_PROOF_RUNNING
+phase: STAGED_RECONFIGURATION_C4_TIMING_ADMISSION_DIAGNOSTIC
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: f7d283897eaef2ca521df99d45544dad2d07dd5e
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0266
+last_verified_event: RP-027-A001-0267
 last_completed: RP-026
-next_action: Inspect same required Linux jobs and current full runs from this receipt,
-  no rerun. Publish actual scoped qualification or defect outcome before dependent
-  remote first-run source. All C1-C4 held.
-verification: 266 sourcef7d2838 Windows70 PASS/defaultcollection3036/tests0; exact
-  request18 current CI IDs recorded. RequiredLinux553/currentfull pending. All C1-C4
-  held.
+next_action: After verified INTENT execute this one bounded synthetic diagnostic and
+  publish exact observed outcome. If reproduced, record defect and a minimal admission
+  guard/regression source INTENT; independently settle same probe265 jobs when terminal.
+verification: 266 Windows70/default3036 and same request18 runs tracked. 267 independent
+  unchanged-admission timing mismatch diagnostic pending; probe265 remains unsettled,
+  all C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0265
+- RP-027-A001-0267
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
