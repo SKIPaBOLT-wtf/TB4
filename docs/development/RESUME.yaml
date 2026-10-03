@@ -7,18 +7,18 @@ phase: STAGED_RECONFIGURATION_C4_CURRENT_ROLE_ACTIVE_ADOPTION_REQUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6d061a3af4c31e72fbc1c806ff04d66bfc89f80e
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0215
+last_verified_event: RP-027-A001-0216
 last_completed: RP-026
-next_action: "VerifiedINTENT/readback\u2192clean exactcheckout\u2192new30; preserveactualfailureifany.\
-  \ OnPASS original295/affectedBAllPARK/configuration/credentialpersistence/defaultcollection,\
-  \ then newsourceLinux/fullplatformrequest andactualSTARTED/outcome."
-verification: 215 source6d new30first; onlyPASS original295+affectedBALLPARK/configuration/credentialpersistence/defaultcollection/Linux453.
-  DEF082/083OPEN/allC1-C4held.
+next_action: Publish separate broader qualification INTENT, exact6d original295+affected
+  BALLPARK/configuration/credential persistence/default collection and actual Linux453/full
+  CI/platform/progress.
+verification: 216 new30 WindowsallPASS/74.161s; DEF082/083targetedrepairqualified
+  butOPEN, actualLinux/affected originals/fullcomposition pending. Next separate regression+collection/Linux453/current-sourcefull
+  qualification INTENT; C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0215
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

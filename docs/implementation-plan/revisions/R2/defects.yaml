@@ -6046,9 +6046,10 @@ defects:
         differs from expected controller error classes; direct source call and error
         class confirmed by source inspection.'
       failing_source: 237994f7b97151304ddbb7efaa52522252996702
-      passing_source: null
+      passing_source: 6d061a3af4c31e72fbc1c806ff04d66bfc89f80e
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-targeted-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6080,10 +6081,13 @@ defects:
     regression_test: Eight source revoked Main/pending native cases must refuse with
       stable adoption instructions code and preserve exact native pending/Main/CP/shared
       facts; restore exact source then same bytes recover, no repeat.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-targeted-qualified.json
     notes: Actual237 initial30:21PASS9FAIL0ERROR0SKIP70.056s. Failure chronology retained;
       ordinary debugging, no external blocker. AllC1-C4/full composition held; no
-      dependent regressions started.
+      dependent regressions started. Corrected6d actualdefault30PASS0Skip74.161s,
+      including all reached source-refusal/pending/readback/credential assertions.
+      RemainsOPEN until affectedregressions/Linux/fullcomposition/commonC4.
     legacy_record: null
   DEF-083:
     title: ACTIVE adoption credential-image test passes an unsupported fixture store
@@ -6100,9 +6104,10 @@ defects:
         at export_private._pair before adoption; canonical exact key-store type contract
         confirmed by source inspection.
       failing_source: 237994f7b97151304ddbb7efaa52522252996702
-      passing_source: null
+      passing_source: 6d061a3af4c31e72fbc1c806ff04d66bfc89f80e
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-targeted-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6135,8 +6140,11 @@ defects:
     regression_test: Protected own credential-image and selected refs preserved in
       archive/stage/promotion; actual current revocation refuses before Main promotion/secret
       execution; typed-store persistence preparation reaches genuine boundary.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-targeted-qualified.json
     notes: Actual237 initial30:21PASS9FAIL0ERROR0SKIP70.056s. Failure chronology retained;
       ordinary debugging, no external blocker. AllC1-C4/full composition held; no
-      dependent regressions started.
+      dependent regressions started. Corrected6d actualdefault30PASS0Skip74.161s,
+      including all reached source-refusal/pending/readback/credential assertions.
+      RemainsOPEN until affectedregressions/Linux/fullcomposition/commonC4.
     legacy_record: null
