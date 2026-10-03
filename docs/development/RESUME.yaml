@@ -7,13 +7,12 @@ phase: STAGED_RECONFIGURATION_C3_REMOTE_REBIND_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c1402a50f66131c7771ca1c21a344097dab08bed
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0164
+last_verified_event: RP-027-A001-0165
 last_completed: RP-026
-next_action: Execute default-import Windows/native rebind qualification and whole
-  collection; publish revision6 workflow request and capture source-linked actual
-  Linux runs. Record exact failures/results before C4.
-verification: Source c1402a50 verified, starting default-import Windows/native and
-  exact-source actual Linux rebind/legacy qualification; C1-C4 remain held.
+next_action: Inspect same Windows targeted run and exact-source Linux jobs; publish
+  actual results/failures, no rebind/C4 acceptance inferred.
+verification: Exactsource c140 default collection2825 succeeds, Windows targeted181
+  and actual Linux51/107/181 plus full/platform started; all checks held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true

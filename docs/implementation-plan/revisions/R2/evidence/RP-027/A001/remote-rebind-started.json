@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C3",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0164",
+  "source": "c1402a50f66131c7771ca1c21a344097dab08bed",
+  "trigger": "0cccc24debbf81ff74e254b45719399e273d54b8",
+  "request_revision": 6,
+  "runs": [
+    {
+      "id": 37112158332,
+      "name": "Progress",
+      "event": "pull_request",
+      "head_sha": "0cccc24debbf81ff74e254b45719399e273d54b8",
+      "status": "in_progress",
+      "conclusion": null,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37112158332"
+    },
+    {
+      "id": 37112158359,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "head_sha": "0cccc24debbf81ff74e254b45719399e273d54b8",
+      "status": "in_progress",
+      "conclusion": null,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37112158359"
+    },
+    {
+      "id": 37112158327,
+      "name": "Desktop",
+      "event": "pull_request",
+      "head_sha": "0cccc24debbf81ff74e254b45719399e273d54b8",
+      "status": "in_progress",
+      "conclusion": null,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37112158327"
+    },
+    {
+      "id": 37112158346,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "0cccc24debbf81ff74e254b45719399e273d54b8",
+      "status": "in_progress",
+      "conclusion": null,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37112158346"
+    },
+    {
+      "id": 37112155503,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "head_sha": "0cccc24debbf81ff74e254b45719399e273d54b8",
+      "status": "in_progress",
+      "conclusion": null,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37112155503"
+    }
+  ],
+  "windows": {
+    "targeted": "STARTED",
+    "actual_test_result": null,
+    "default_collection": {
+      "collected": 2825,
+      "exit_code": 0,
+      "default_imports": true,
+      "custom_pythonpath": false,
+      "tests_executed": 0
+    }
+  },
+  "linux": {
+    "required": 51,
+    "original_folder_native": 107,
+    "docs_effects_rebind": 181,
+    "result": "PENDING"
+  },
+  "acceptance": false,
+  "limitations": [
+    "No test pass inferred from started runs or collection.",
+    "Fresh synthetic provider and protected fixture stores only; no installed deployment or live migration."
+  ]
+}
