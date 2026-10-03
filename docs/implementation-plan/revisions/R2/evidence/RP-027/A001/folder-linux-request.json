@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "item": "RP-027",
-  "check": "RP-027.C4",
+  "check": "RP-027.C2",
   "attempt": "A001",
-  "intent_event": "RP-027-A001-0259",
-  "source_commit": "6ab0691aaa1955068ac3932590f1e0280f3a36b6",
+  "intent_event": "RP-027-A001-0265",
+  "source_commit": "f7d283897eaef2ca521df99d45544dad2d07dd5e",
   "branch": "feat/rp027-staged-reconfiguration",
   "pr": 36,
-  "request_revision": 17,
+  "request_revision": 18,
   "required_workflow": "Folder reconfiguration",
-  "required_cases": 79,
-  "scope": "Current6ab069/e567 correctedsameFolder firstselectionfixture andexistingUNRELEASEDcataloguehash, productionunchanged103dactualWindows55qualified; actualLinux22+51mapping/sixretained/107Folder-native/320Docs=506 each0skip undermeasuredbounded30min. No originaltestguard/caseassertions/budgets/instructionmembership/defaultactivationchanged.",
-  "expected": "BothactualLinux506PASS0skip/all22functionalrole-adoption/nativecut/refusal/noreplay assertionsreached; actualWindowsaffected497/defaultwhole2992 collection independent. Newcurrent-sourceCI/Desktop90min native/GUI/full/tworolepackage/Progress actualsourceIDs/results; original103d252historicalfailedfull retained/no replay. AllC1-C4/runtimeGUI/remotehelper/commonheld/noinstalledauthority.",
+  "required_cases": 126,
+  "scope": "New portable31/actual physical13/existing isolated SSH3 plus existing required506 = 553, all required zero skip. New opt-in helper proof source f7d2838; unchanged default READ/CAS, source-pinned closed fields and actual artifact identity tests.",
+  "expected": "Required Linux553 PASS; default Windows portable/protocol zero skips and default collection3036 tests0. Record actual current CI/Desktop/full/build/package/Progress outcomes and skipped scopes. No live activation or C1-C4 acceptance.",
   "acceptance": false
 }
