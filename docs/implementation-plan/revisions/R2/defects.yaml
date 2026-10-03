@@ -6633,6 +6633,7 @@ defects:
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/stale-leadership-timing-diagnostic.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-admission-first-qualification.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6648,6 +6649,13 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/stale-leadership-timing-diagnostic.json
+    - id: H2
+      claim: The initial new native pending regression incorrectly expects unwrapped
+        ConfigurationError across an actual OS settings lock whose contract normalizes
+        it to SettingsError.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-admission-first-qualification.json
     repairs:
     - item: RP-027
       attempt: A001
@@ -6664,12 +6672,17 @@ defects:
     regression_test: Planned release, per-use runtime and late-first-run mismatch
       refusal; actual native preservation and existing stale/forced takeover tests.
     resolution_evidence: []
-    notes: Independent diagnostic against unchanged A016 admission code while immutable
+    notes: 'Independent diagnostic against unchanged A016 admission code while immutable
       probe265 runs continue. Synthetic SDK/MemoryNative only, 7.302 seconds, no pytest
       or native/live qualification. Expected BLOCKED, observed ADMITTED in all three
       cases. Historical source of introduction has not been bisected; do not infer
       a deployed incident. All RP027 C1-C4 remain unaccepted. Checkpoint candidate
       initially failed RECORD_SCHEMA_INVALID because detected_in included prose; it
       was corrected to the required RP-027.C4 ID. Failed local candidate retained;
-      no ref changed and no validation guard bypassed.
+      no ref changed and no validation guard bypassed. Qualification271 on0b537c1:
+      Windows503 PASS/1 FAIL/0skip in528.711s; new pending test expects wrong public
+      error class. Trace and native lock source establish normalization on both platforms.
+      Guard not changed by this diagnosis; passing_source remains null until corrected
+      assertions are qualified. Request19 full jobs still need terminal reconciliation
+      before pause.'
     legacy_record: null
