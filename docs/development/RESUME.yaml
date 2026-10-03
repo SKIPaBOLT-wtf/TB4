@@ -3,18 +3,19 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_RETAINED_REQUIRED_FOLDER_AFFECTED_FULL_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C4_RETAINED_REQUIRED_QUALIFICATION_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 1f238122cf44681a4617ed4ef5807cfee6f8f370
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0234
+last_verified_event: RP-027-A001-0235
 last_completed: RP-026
-next_action: Execute current-source bound localaffected/collection andpublishrequest14;
-  recordactualSTARTED/runIDs then terminal local/requiredLinux results. Afterqualifiedscoped
-  dependency publishOUTCOME/explicitindependence and nextseparate runtimeGUI/remotehelper
-  sourceINTENT; keep original currentSource fulljobs tracked untilterminalOUTCOME.
-verification: 234 immutablecurrent1f requiredactualLinuxFolder484/affectedWindows472/defaultcollection2970/currentfullrequest14
-  qualification after233new25PASS; launchesonlyafterverifiedINTENT; allC1-C4held.
+next_action: Inspect same runninglocal regression/requiredLinuxjobs andrecordterminalOUTCOME;
+  ordinaryfailures preservedbeforeboundedrepair. Afterappropriate scopedPASS explicitindependence
+  allows next separate runtimeGUI/remotehelper source while sameimmutable fullCI/Desktop
+  finish. TracksameIDs/fullOUTCOME, no jobrerun/cancel.
+verification: "235 actualoriginalrequest14 jobsrecorded/defaultcollect2970PASS, failedinitialnumericrun_idcandidate\
+  \ correctedto schemaTEXTwithoutrelaxation. RequiredLinuxbothterminalfailure\u2192\
+  exactOUTCOMEnext; Window472/fulljobsongoing, no rerun."
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true

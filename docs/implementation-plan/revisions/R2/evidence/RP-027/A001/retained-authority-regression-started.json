@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "kind": "RETAINED_AUTHORITY_IMMUTABLE_QUALIFICATION_STARTED",
+  "intent": "RP-027-A001-0234",
+  "source_ref": "1f238122cf44681a4617ed4ef5807cfee6f8f370",
+  "schema_sha256": "b4e9aefd0d9e88c02d462745632c1853cf4b7ba05b146be17a598c11f9ab0498",
+  "trigger_commit": "83f21b3a7b3cda949c148118b431674b770f8845",
+  "request_revision": 14,
+  "local_windows_regression": {
+    "status": "RUNNING",
+    "targets": [
+      "tests/drive/test_reconfiguration_effects.py",
+      "tests/drive/test_reconfiguration_roots.py",
+      "tests/drive/test_reconfiguration_root_plan.py",
+      "tests/drive/test_reconfiguration_root_resume.py",
+      "tests/drive/test_reconfiguration_root_settlement.py",
+      "tests/drive/test_reconfiguration_root_no_dispatch.py",
+      "tests/drive/test_reconfiguration_rebind.py",
+      "tests/security/test_reconfiguration_roots_native.py",
+      "tests/security/test_reconfiguration_root_plan_native.py",
+      "tests/security/test_reconfiguration_root_resume_native.py",
+      "tests/security/test_reconfiguration_root_settlement_native.py",
+      "tests/security/test_reconfiguration_root_no_dispatch_native.py",
+      "tests/security/test_reconfiguration_rebind_native.py",
+      "tests/drive/test_reconfiguration_post_root.py",
+      "tests/security/test_reconfiguration_post_root_native.py",
+      "tests/drive/test_reconfiguration_candidate.py",
+      "tests/security/test_reconfiguration_candidate_native.py",
+      "tests/drive/test_reconfiguration_commit.py",
+      "tests/security/test_reconfiguration_commit_native.py",
+      "tests/drive/test_reconfiguration_promotion.py",
+      "tests/security/test_reconfiguration_promotion_native.py",
+      "tests/drive/test_reconfiguration_admission.py",
+      "tests/security/test_reconfiguration_admission_native.py",
+      "tests/drive/test_ballpark_setup.py",
+      "tests/drive/test_ballpark_publication.py",
+      "tests/security/test_ballpark_contract.py",
+      "tests/test_reconfiguration_foundation.py",
+      "tests/drive/test_reconfiguration_dispatch.py",
+      "tests/security/test_credential_persistence.py",
+      "tests/drive/test_reconfiguration_active_adoption.py",
+      "tests/security/test_reconfiguration_active_adoption_native.py",
+      "tests/drive/test_setup_storage_selection.py",
+      "-k",
+      "not actual_max_capacity129_fixed_objects and not actual_folder_selection_checks_same_mount_and_existing_domain"
+    ],
+    "qualification": "NOT YET TERMINAL",
+    "expected_passed": 472,
+    "runner_result": "rp27-retained-default-004-result.json"
+  },
+  "default_collection": {
+    "schema_version": 1,
+    "source": "1f238122cf44681a4617ed4ef5807cfee6f8f370",
+    "checkout": "83f21b3a7b3cda949c148118b431674b770f8845",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.724,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 2970,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "runs": [
+    {
+      "run_id": 37132232347,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "trigger_commit": "83f21b3a7b3cda949c148118b431674b770f8845",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37132232347",
+      "jobs": [
+        {
+          "job_id": 111229456640,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37132232335,
+      "name": "CI",
+      "event": "pull_request",
+      "trigger_commit": "83f21b3a7b3cda949c148118b431674b770f8845",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37132232335",
+      "jobs": [
+        {
+          "job_id": 111229456265,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37132232396,
+      "name": "Desktop",
+      "event": "pull_request",
+      "trigger_commit": "83f21b3a7b3cda949c148118b431674b770f8845",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37132232396",
+      "jobs": [
+        {
+          "job_id": 111229456497,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "job_id": 111229456678,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37132232394,
+      "name": "Progress",
+      "event": "pull_request",
+      "trigger_commit": "83f21b3a7b3cda949c148118b431674b770f8845",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37132232394",
+      "jobs": [
+        {
+          "job_id": 111229456363,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "run_id": 37132229265,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "trigger_commit": "83f21b3a7b3cda949c148118b431674b770f8845",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37132229265",
+      "jobs": [
+        {
+          "job_id": 111229446954,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "acceptance": false,
+  "runtime_active": false,
+  "next": "Inspect same local operation, same required Linux push/PR and original CI/Desktop/Progress job IDs. Failed cases -> documented repair; scoped terminal success -> OUTCOME and explicit independent next source scheduling before full jobs finish. No duplicate launch."
+}
