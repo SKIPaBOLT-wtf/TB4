@@ -3,17 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_REPAIRED_DEFAULT_IMPORT_PLATFORM_REPEAT
+phase: STAGED_RECONFIGURATION_C3_REPAIRED_IMPORTS_PLATFORM_RUNNING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0132
+last_verified_event: RP-027-A001-0133
 last_completed: RP-026
-next_action: After INTENT readback publish one CI request file, observe exact fresh
-  runs/STARTED/outcomes; preserve actual failures before source repair, or resume
-  dependency-safe C3/C4 on qualified current source.
-verification: Default2748 fullcollection passed; isolated native/fullplatform repair
-  repeat authorized after exact INTENT readback.
+next_action: Observe these same fresh3runs/jobs/fullpytest/build/frozen results and
+  publishactual outcomes. Preserve failuresbeforeminimalrepair; no dependent C3/C4
+  implementation until current fullplatform result.
+verification: Actual corrected-source CI/Desktop/Progress runs identified and pending;
+  current source fullplatform gate before dependent C3/C4.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
