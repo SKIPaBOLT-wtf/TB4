@@ -121,7 +121,9 @@ def receipt(draft, timing):
 
 
 def validate_receipt(value, choices):
-    require(type(value) is dict and set(value) == {"pin", "decision", "shared_sha256", "timing"},
+    require(type(value) is dict and set(value) in (
+            {"pin", "decision", "shared_sha256", "timing"},
+            {"pin", "decision", "shared_sha256", "timing", "adoption"}),
             "BALLPARK_RECEIPT")
     validate_pin(value["pin"])
     local = validate(choices["descriptor"])
@@ -133,4 +135,28 @@ def validate_receipt(value, choices):
             and decision["candidate_digest"] == digest(encoded(local))
             and value["shared_sha256"] == digest(encoded(catalogue(local)))
             and value["timing"] == choices["timing"], "BALLPARK_RECEIPT")
+    if "adoption" in value:
+        validate_adoption(value["adoption"], choices)
+    return value
+
+
+def validate_adoption(value, choices):
+    """Closed private provenance of a local adoption, never a shared write grant."""
+    from .commissioning_state import storage_spec
+    from .configuration_contract import marker
+    from .drive.docs_authority import AuthorityBinding
+    from dataclasses import asdict
+    require(type(value) is dict and set(value) == {
+        "schema_version", "kind", "configuration", "authority", "provenance"}
+        and type(value["schema_version"]) is int and value["schema_version"] == 1
+        and value["kind"] == "CURRENT_ACTIVE_ADOPTION", "BALLPARK_ADOPTION")
+    require(marker(value["configuration"])["phase"] == "ACTIVE", "BALLPARK_ADOPTION")
+    spec, handle = storage_spec(choices["storage"])
+    require(spec.mode == "NATIVE_DOCS" and value["authority"] == dict(mode="NATIVE_DOCS",
+        binding=asdict(AuthorityBinding(handle.object_id, handle.tab_id, spec.domain_id))), "BALLPARK_ADOPTION")
+    # The original shared decision is not presented as this local confirmation.
+    local = catalogue(choices["descriptor"])
+    validate_header(dict(schema_version=1, kind="BALLPARK_REVISION", codec=1,
+        revision=local["revision"], slots=list(range(len(local["devices"]))),
+        sha256=digest(encoded(local)), provenance=value["provenance"]), spec.capacity.devices)
     return value

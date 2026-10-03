@@ -230,3 +230,15 @@ retain ordinary runtime/Effects no-replay guards; obsolete frozen work/WAL and
 saved READY are not grants. Election remains independent; default activation
 stays closed. Cloud ACTIVE adoption and full Folder/rootless/runtime/GUI/helper
 composition remain required; source alone accepts no check.
+
+[A-017](implementation-plan/revisions/R2/amendments/RP-027/A-017-current-role-active-adoption.md)
+adds current-role adoption of the coherent already ACTIVE native Docs authority
+without former private host/WAL/archive/ACK. Own protected intent/stage/full archive
+and fresh first-run precede conditional Main promotion; original shared provenance
+and new actual local confirmation remain distinct. Exact pending recovery never
+resends shared/root work. Current-profile admission can restart without obsolete
+adoption WAL. Its narrowly qualified local reservation release preserves inherited
+shared BUSY/UNREAD/UNKNOWN and ordinary no-replay guards; A-016 non-adoption release
+keeps the full zero-blocker gate. Election remains immediate; default activation
+stays closed. Folder/rootless final publication and runtime/GUI/helper/common gates
+remain required; source alone accepts no check.

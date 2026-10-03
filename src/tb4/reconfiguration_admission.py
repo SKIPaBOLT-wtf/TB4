@@ -4,6 +4,7 @@ No saved readiness, old transaction WAL or frozen workload is an execution grant
 Role election is independent; every ordinary runtime boundary checks this again.
 """
 from dataclasses import dataclass, replace
+from dataclasses import asdict
 import copy
 import hashlib
 
@@ -87,15 +88,26 @@ class ConfigurationAdmission:
         require(config is not None and config["phase"] == "ACTIVE", "CONFIGURATION_MAINTENANCE")
         require(cp.maintenance in {None, config["transition_id"]}, "ADMISSION_TRANSITION")
         active = payload["ballpark_publication"]["active"]
+        adoption = active.get("adoption")
+        if adoption is not None:
+            require(adoption["configuration"] == config
+                    and adoption["authority"] == dict(mode="NATIVE_DOCS", binding=asdict(observed.snapshot.binding)),
+                    "ADMISSION_PUBLICATION")
         require(shared(doc) == catalogue(payload["choices"]["descriptor"])
                 and doc["records"]["global.settings"]["body"]["timing"] == payload["choices"]["timing"]
-                and doc["records"]["global.registry"]["body"]["provenance"] == provenance(active),
+                and doc["records"]["global.registry"]["body"]["provenance"] == (
+                    provenance(active) if adoption is None else adoption["provenance"]),
                 "ADMISSION_PUBLICATION")
         effects = ledger(doc["records"][SLOT])
         require(effects is not None and covered(doc, config["transition_id"])
                 and "root_plan" not in effects and "folder_plan" not in effects, "ADMISSION_RESOLUTION")
         if releasing:
-            require(not inspect(observed.snapshot, setup_payload=payload, checkpoint=cp).blockers,
+            blockers = inspect(observed.snapshot, setup_payload=payload, checkpoint=cp).blockers
+            # Adopting an already committed ACTIVE configuration never changes
+            # shared routing. Inherited work/effects retain ordinary no-replay
+            # guards and cannot become an unavailable former-host ACK barrier.
+            require(not (blockers if adoption is None else tuple(
+                    b for b in blockers if b.kind.startswith("LOCAL_"))),
                     "ADMISSION_UNRESOLVED")
         return observed.snapshot, config, sample
 
