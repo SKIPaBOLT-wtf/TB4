@@ -26,7 +26,7 @@
         "protocol/reconfiguration-effects-v1.schema.json": "557de55dd47996e8cf369fa769353e679759ab54ff8ae167af1d46b2a3796b2c",
         "protocol/native-checkpoint-v1.schema.json": "4f898bd51242cd61cca59dd7a016d467898671f266d2d1f1a9e38fd79eeeb6d4",
         "protocol/reconfiguration-candidate-v1.schema.json": "c73d85eb5c1756d12de41e8aab526703755bdaea8ce765bb4bbba2ca0d986a45",
-        "protocol/reconfiguration-root-v1.schema.json": "ecd0e6f3ec4ed90e41a4672f8c13361803eac5a050d5a7a18192884e0068f4e6"
+        "protocol/reconfiguration-root-v1.schema.json": "4a5ddeb905e347813189dfff9b856e0250b3021e2805f60ab0a3025b8e3e7b18"
       }
     }
   ]

@@ -124,3 +124,12 @@ metadata is bounded at128KiB and the actual native frame limit remains1MiB.
 Rollback is another monotonic same-authority transition, never an epoch/generation
 rewind. Any possibly applied provider effect is inspected at its exact original
 identity. A checkbox cannot erase unread work or assert remote cancellation.
+
+The disposition extension [A-005](implementation-plan/revisions/R2/amendments/RP-027/A-005-durable-root-disposition.md)
+persists PREPARED before effect start and INVOKING with exact
+native readback under the same exclusive lock before SDK invocation. A fresh
+authorized REVOKED transition from actual PREPARED fences the prior live native
+revision; typed current/previous/binding/metadata proof establishes only local
+non-dispatch. Legacy absence, possible-send or contradictory after metadata never
+counts as unsent. Shared UNKNOWN and activation remain held for later qualified
+settlement; role takeover does not wait for that evidence or acknowledgements.

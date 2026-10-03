@@ -69,6 +69,93 @@ def updates(s):
     return [kw for method,kw in s.value.provider.calls if method == "files.update"]
 
 
+def prepare_without_effect_start(s):
+    s.roots.begin(owner_authorized=True)
+    start = s.value.effects.start
+    def pause(*args,**kwargs):
+        raise ConfigurationError("SYNTHETIC_BEFORE_EFFECT_START")
+    s.value.effects.start = pause
+    try:
+        with pytest.raises(ConfigurationError,match="SYNTHETIC_BEFORE_EFFECT_START"):
+            s.roots.advance(owner_authorized=True)
+    finally:
+        s.value.effects.start = start
+    assert s.context.store.read().payload["pending"]["dispatch"] == "PREPARED"
+    assert not updates(s)
+
+
+def test_prepared_revocation_is_exact_native_proof_and_never_dispatches_or_clears_shared_state():
+    s = system(); prepare_without_effect_start(s)
+    before = copy.deepcopy(s.value.provider.store.document); original = s.value.setup.store.read()
+    with pytest.raises(ConfigurationError,match="OWNER_REQUIRED"):
+        s.roots.revoke_prepared()
+    proof = s.roots.revoke_prepared(owner_authorized=True)
+    assert s.roots.require_revocation(proof) == proof
+    assert s.roots.revoke_prepared(owner_authorized=True) == proof
+    assert s.context.store.read().payload["pending"]["dispatch"] == "REVOKED"
+    assert s.context.store.read().previous["pending"]["dispatch"] == "PREPARED"
+    assert s.roots.advance(owner_authorized=True) == "UNKNOWN" and not updates(s)
+    assert s.value.provider.store.document == before and s.value.setup.store.read() == original
+    with pytest.raises(ConfigurationError,match="REVOCATION_REQUIRED"):
+        s.roots.require_revocation(replace(proof,payload_sha256="a"*64))
+    with pytest.raises(ConfigurationError,match="REVOCATION_REQUIRED"):
+        DocsRootMoves(s.context).require_revocation(proof)
+
+
+def test_revocation_during_shared_start_fences_the_same_prepared_live_sdk_call():
+    s = system(); s.roots.begin(owner_authorized=True)
+    start = s.value.effects.start; evidence = []
+    def start_and_revoke(*args,**kwargs):
+        result = start(*args,**kwargs)
+        evidence.append(s.roots.revoke_prepared(owner_authorized=True))
+        return result
+    s.value.effects.start = start_and_revoke
+    with pytest.raises(ConfigurationError,match="CONFIGURATION_ROOT_CHANGED"):
+        s.roots.advance(owner_authorized=True)
+    assert not updates(s) and len(evidence) == 1
+    assert s.roots.require_revocation(evidence[0]) == evidence[0]
+    assert s.value.effects.receipt(Action.IDENTITY)["outcome"] == "UNKNOWN"
+
+
+@pytest.mark.parametrize("fault",["invoking","legacy-absent","forged-revoked","wrong-disposition"])
+def test_saved_or_ambiguous_disposition_is_never_unsent_evidence(fault):
+    s = system()
+    if fault in {"legacy-absent","wrong-disposition"}:
+        prepare_without_effect_start(s)
+    else:
+        s.roots.begin(owner_authorized=True); s.failure[0] = "before"
+        assert s.roots.advance(owner_authorized=True) == "UNKNOWN"
+    snapshot = s.context.store.read(); body = copy.deepcopy(snapshot.payload)
+    if fault == "legacy-absent":
+        del body["pending"]["dispatch"]
+    elif fault == "forged-revoked":
+        body["pending"]["dispatch"] = "REVOKED"
+    elif fault == "wrong-disposition":
+        body["pending"]["dispatch"] = ["PREPARED"]
+    if fault != "invoking":
+        s.context.store.save(body,expected_revision=snapshot.revision)
+    with pytest.raises(ConfigurationError):
+        s.roots.revocation()
+    if fault != "forged-revoked":
+        with pytest.raises(ConfigurationError):
+            s.roots.revoke_prepared(owner_authorized=True)
+    assert len(updates(s)) == (1 if fault in {"invoking","forged-revoked"} else 0)
+
+
+def test_sdk_send_holds_invoking_marker_and_revocation_cannot_enter_its_native_lock():
+    s = system(); s.roots.begin(owner_authorized=True); seen = []
+    def inside():
+        # Inspect the actual held fake native port without reopening its lock.
+        raw = s.context.store.native.files["settings.json"]
+        assert s.context.store._decode(raw,s.context.store.native.binding).payload["pending"]["dispatch"] == "INVOKING"
+        with pytest.raises(SettingsError,match="BUSY"):
+            s.roots.revoke_prepared(owner_authorized=True)
+        seen.append(True)
+    s.before[0] = inside
+    assert s.roots.advance(owner_authorized=True) == "CONFIRMED" and seen == [True]
+    assert len(updates(s)) == 1
+
+
 def test_existing_objects_move_once_and_original_profile_work_and_media_are_preserved(capsys):
     s = system(); v = s.value
     profile = v.setup.store.read(); document = copy.deepcopy(v.provider.store.document)

@@ -31,7 +31,7 @@ from .watchdog.checkpoint_store import NativeCheckpoint
 from .watchdog.leadership_runtime import Action, Capabilities
 
 SCHEMA = "protocol/reconfiguration-root-v1.schema.json"
-SCHEMA_SHA256 = "ecd0e6f3ec4ed90e41a4672f8c13361803eac5a050d5a7a18192884e0068f4e6"
+SCHEMA_SHA256 = "4a5ddeb905e347813189dfff9b856e0250b3021e2805f60ab0a3025b8e3e7b18"
 FIELDS_STATE = frozenset({"schema_version","kind","installation_id","transition_id",
     "configuration_revision","base_revision","base_sha256","candidate_revision","candidate_sha256",
     "authority","target_root","records_sha256","objects","index","pending","phase","pin","binding"})
@@ -48,6 +48,19 @@ class RootContext:
     checker: object
     store: PrivateSettings
     target_root: str
+
+
+@dataclass(frozen=True, repr=False)
+class RootRevocation:
+    transition_id: str
+    operation_id: str
+    epoch: int
+    index: int
+    revision: int
+    payload_sha256: str
+    previous_sha256: str
+    binding: str
+    _origin: object
 
 
 class DocsRootMoves:
@@ -140,10 +153,13 @@ class DocsRootMoves:
             refs.add(item["id"])
         pending = value["pending"]
         if pending is not None:
-            require(type(pending) is dict and set(pending) == {"index","operation_id","epoch"}
+            require(type(pending) is dict and set(pending) in (
+                        {"index","operation_id","epoch"},{"index","operation_id","epoch","dispatch"})
                     and type(pending["index"]) is int and pending["index"] == value["index"] < len(keys)
                     and type(pending["epoch"]) is int and 1 <= pending["epoch"] <= MAX_GENERATION
-                    and pending["operation_id"] == self._operation(value,pending["index"]),
+                    and pending["operation_id"] == self._operation(value,pending["index"])
+                    and ("dispatch" not in pending or type(pending["dispatch"]) is str
+                         and pending["dispatch"] in {"PREPARED","INVOKING","REVOKED"}),
                     "CONFIGURATION_ROOT_WAL")
         require(value["phase"] != "MOVED" or pending is None, "CONFIGURATION_ROOT_WAL")
         require(len(encoded(value)) <= 128 * 1024, "CONFIGURATION_ROOT_WAL_SIZE")
@@ -275,7 +291,7 @@ class DocsRootMoves:
         item = state["objects"][state["index"]]
         require(self._inspect_object(item) == "BEFORE", "CONFIGURATION_ROOT_INSPECT_REQUIRED")
         pending = dict(index=state["index"],operation_id=self._operation(state,state["index"]),
-                       epoch=checkpoint.grant.epoch)
+                       epoch=checkpoint.grant.epoch,dispatch="PREPARED")
         state = self._save({**state,"pending":pending},revision)
         result = self.ctx.effects.start(checkpoint.grant,Action.IDENTITY,pending["operation_id"],
                                         maintenance_transition=state["transition_id"])
@@ -283,6 +299,7 @@ class DocsRootMoves:
             return result
         self._proof(state,dispatch=True)
         require(self._inspect_object(item) == "BEFORE", "CONFIGURATION_ROOT_INSPECT_REQUIRED")
+        invoking = self._validate({**state,"pending":{**pending,"dispatch":"INVOKING"}})
         # Keep this local operation exclusive across the final read and send.
         # A second local reader/recovery cannot settle/reuse its native intent
         # while this live invocation may still reach the provider.
@@ -297,6 +314,12 @@ class DocsRootMoves:
             require(fact is not None and fact["operation_id"] == pending["operation_id"]
                     and fact["outcome"] == "UNKNOWN" and fact["owner"] == checkpoint.grant.owner
                     and fact["epoch"] == checkpoint.grant.epoch, "CONFIGURATION_ROOT_EVIDENCE")
+            armed = self.context.store._save_locked(port,invoking,expected_revision=revision+1)
+            require(armed.payload == invoking and armed.revision == revision+2,
+                    "CONFIGURATION_ROOT_UNCONFIRMED")
+            # Persist the possible-send boundary before invoking the SDK, while
+            # retaining the same actual lock through the final owner proof/call.
+            self._proof(invoking,dispatch=True)
             try:
                 # Exactly metadata/parents; no upload, content/create/copy/delete.
                 self.old._execute(self.old.drive.files().update(fileId=item["id"],
@@ -314,6 +337,8 @@ class DocsRootMoves:
             return state["phase"]
         pending = state["pending"]
         result = self._inspect_object(state["objects"][pending["index"]])
+        if result == "AFTER" and pending.get("dispatch") in {"PREPARED","REVOKED"}:
+            return "CONFLICT"  # Contradictory evidence never clears UNKNOWN.
         if result != "AFTER":
             return "UNKNOWN" if result == "BEFORE" else "CONFLICT"
         if not owns or checkpoint.grant.epoch != pending["epoch"]:
@@ -330,6 +355,52 @@ class DocsRootMoves:
         self._save({**state,"index":index,"pending":None,
                     "phase":"MOVED" if index == len(state["objects"]) else "MOVING"},revision)
         return "MOVED" if index == len(state["objects"]) else "CONFIRMED"
+
+    def revoke_prepared(self, *, owner_authorized=False):
+        """Fence a never-armed local invocation; do not clear shared UNKNOWN."""
+        require(owner_authorized is True, "CONFIGURATION_OWNER_REQUIRED")
+        state,revision = self._state()
+        require(state is not None and state["pending"] is not None
+                and state["pending"].get("dispatch") in {"PREPARED","REVOKED"},
+                "CONFIGURATION_ROOT_NOT_PREPARED")
+        if state["pending"]["dispatch"] == "REVOKED":
+            return self.revocation()
+        checkpoint,_ = self._proof(state,dispatch=True)
+        require(checkpoint.grant.epoch == state["pending"]["epoch"], "OWNER_SUPERSEDED")
+        require(self._inspect_object(state["objects"][state["index"]]) == "BEFORE",
+                "CONFIGURATION_ROOT_INSPECT_REQUIRED")
+        revoked = self._validate({**state,"pending":{**state["pending"],"dispatch":"REVOKED"}})
+        with self.context.store.native.locked() as port:
+            require(port.read("settings.pending") is None, "CONFIGURATION_ROOT_INSPECT_REQUIRED")
+            current = self.context.store._decode(port.read("settings.json"),port.binding)
+            require(current.revision == revision and current.payload == state
+                    and sha(port.binding) == state["binding"], "CONFIGURATION_ROOT_CHANGED")
+            self._proof(state,dispatch=True)
+            after = self.context.store._save_locked(port,revoked,expected_revision=revision)
+            require(after.payload == revoked and after.revision == revision+1,
+                    "CONFIGURATION_ROOT_UNCONFIRMED")
+        return self.revocation()
+
+    def revocation(self):
+        """Fresh actual native previous/current proof, never a saved boolean."""
+        snapshot = self.context.store.read()
+        require(snapshot is not None and snapshot.revision >= 3, "CONFIGURATION_ROOT_REVOCATION_REQUIRED")
+        state = self._validate(snapshot.payload)
+        pending = state["pending"]
+        require(pending is not None and pending.get("dispatch") == "REVOKED",
+                "CONFIGURATION_ROOT_REVOCATION_REQUIRED")
+        before = {**state,"pending":{**pending,"dispatch":"PREPARED"}}
+        require(snapshot.previous == before, "CONFIGURATION_ROOT_REVOCATION_REQUIRED")
+        self._validate(before); self._proof(state,dispatch=False)
+        require(self._inspect_object(state["objects"][state["index"]]) == "BEFORE",
+                "CONFIGURATION_ROOT_INSPECT_REQUIRED")
+        return RootRevocation(state["transition_id"],pending["operation_id"],pending["epoch"],state["index"],
+            snapshot.revision,sha(state),sha(before),state["binding"],self)
+
+    def require_revocation(self, proof):
+        require(type(proof) is RootRevocation and proof._origin is self
+                and proof == self.revocation(), "CONFIGURATION_ROOT_REVOCATION_REQUIRED")
+        return proof
 
     def verify_moved(self):
         """Actual access/readback facts for later remote rebind, never activation."""
