@@ -5674,3 +5674,58 @@ defects:
       behind the same prior guard. Keep assertions and no-replay/current-role/source/native
       boundaries. No guard broadening or accepted check.
     legacy_record: null
+  DEF-077:
+    title: Native folder refusal tests expect an internal exception across opaque
+      helper/native boundaries
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 98b5948618877160536fca2525fdb7277054d00c
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: 98b5948618877160536fca2525fdb7277054d00c
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.md
+    reproduction:
+      procedure: 'Both actual native51-case jobs produce49PASS/2FAIL/zeroSkip: later
+        contradictory-target helper refuses AuthorityError while kernel test expects
+        ConfigurationError; late force yields SettingsError from existing Linux native
+        context instead of test''s internal ConfigurationError expectation. Underlying
+        force reason still needs instrumented real proof verification.'
+      failing_source: 98b5948618877160536fca2525fdb7277054d00c
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: opaque-native-helper-boundary-expectation
+      claim: Tests require a narrower internal exception than real mapped authority/native
+        context expose. Existing Linux native context source catches non-settings
+        errors from yielded body; meaningful refusal reason must be captured inside
+        actual SQL proof, not inferred from outer opaque exception.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.md
+    repairs: []
+    issue: null
+    regression_test: All51 native mapping/physical cases unchanged production guard;
+      actual held-SQL proof records exact OWNER_SUPERSEDED for late force, outward
+      opaque native error expected, kernel no-replace source/foreign bytes/one-call/UNKNOWN
+      retained; selected original/final allchecks.
+    resolution_evidence: []
+    notes: Do not broaden production guards or claim hidden force proof reason. Keep
+      native pending/no-replay/current-role boundaries and OPEN until final acceptance.
+    legacy_record: null

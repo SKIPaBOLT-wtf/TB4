@@ -7,17 +7,17 @@ phase: STAGED_RECONFIGURATION_C3_FOLDER_GUARD_LINUX_TEST
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 98b5948618877160536fca2525fdb7277054d00c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0155
+last_verified_event: RP-027-A001-0156
 last_completed: RP-026
-next_action: Inspect the same required Folder jobs after termination, actual51 cases/counts/skips/source/checkout
-  and selected regression JUnit artifacts; preserve any failure.
-verification: Actual repaired-source Linux51-case required jobs running, same exact
-  source/head IDs retained; no terminal result or acceptance.
+next_action: Publish test-only DEF077 repair intent. Keep production untouched, expect
+  documented opaque boundaries and capture actual inner OWNER_SUPERSEDED under SQL
+  lock with no syscall/UNKNOWN/source assertions; repeat same required native qualification.
+verification: Native51 cases49PASS/2FAIL0SKIP, DEF077 negative test boundary repair
+  required; hidden force cause unverified, all acceptance held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0154
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -44,6 +44,7 @@ known_open_defects:
 - DEF-074
 - DEF-075
 - DEF-076
+- DEF-077
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before

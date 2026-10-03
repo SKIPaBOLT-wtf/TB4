@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "intent_event": "RP-027-A001-0154",
+  "source_commit": "98b5948618877160536fca2525fdb7277054d00c",
+  "trigger_head": "abb1a629e0fd3763143fd419a3a8e113e5450558",
+  "jobs": [
+    {
+      "run_id": 37107923473,
+      "job_id": 111159980627,
+      "checkout": "cd918309b5835030a9f817e75c43e05943cb5cf1",
+      "passed": 49,
+      "failed": 2,
+      "skipped": 0,
+      "duration_s": 83.45,
+      "exit_code": 1,
+      "artifact_id": 11268921503,
+      "artifact_sha256": "bfded8e5f711041a6263f70efb1b5923e905b51e855ebce25efeb0af88ba5eb8"
+    },
+    {
+      "run_id": 37107921176,
+      "job_id": 111159973736,
+      "checkout": "abb1a629e0fd3763143fd419a3a8e113e5450558",
+      "passed": 49,
+      "failed": 2,
+      "skipped": 0,
+      "duration_s": 95.1,
+      "exit_code": 1,
+      "artifact_id": 11267914604,
+      "artifact_sha256": "8fd643fbf64c306244f32c725c8155b3f2fb81db214db431b8f225d2a6be5fe3"
+    }
+  ],
+  "failed_cases": [
+    "test_kernel_no_replace_rejects_destination_created_at_the_actual_syscall",
+    "test_force_arriving_after_preflight_is_refused_inside_the_actual_database_lock"
+  ],
+  "observed_errors": [
+    "AuthorityError HELPER_UNAVAILABLE from actual mapping-backed helper on contradictory destination read",
+    "SettingsError SETTINGS_STORE_UNAVAILABLE from actual LinuxSettingsNative.locked __exit__ after non-settings error inside its body"
+  ],
+  "original_regressions": "NOT_RUN_AFTER_REQUIRED_STEP_FAILURE",
+  "acceptance": false,
+  "next": "Keep production guard and physical assertions. Repair test boundary expectations and capture actual internal force proof while holding final SQL lock to establish its reason; repeat native qualification."
+}
