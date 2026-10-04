@@ -7,21 +7,21 @@ phase: STAGED_RECONFIGURATION_C2_FOLDER_AUTHORITY_PURPOSE_DEFAULT_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4951204c062cd422467fb6661e146b5d978011c3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0324
+last_verified_event: RP-027-A001-0325
 last_completed: RP-026
-next_action: Run scoped default Windows21/native authoritycases and independent whole-tree
-  collection once, inspect exact results/newIDs/skips, publish OUTCOME/evidence. Reconcile
-  same immutable A023 jobs; onnewPASS publish one currentA024 request24 plus separate
-  inspection intents. Dependent normal transport waits relevant actualLinux qualification.
-verification: A024 source4951204 preserved323; new qualification324pending with21files/newnative/portable/noPYTHONPATH
-  default collection. ImmutableA023 requiredLinux320/full321 tracked; no C1-C4 acceptance.
+next_action: Publish current495 request24 launchINTENT, triggeronce withrequiredLinux709
+  and real run/job/checkoutreceipt. Reconcile sameA023 functional320 and full321;
+  then separately inspect current24 functional/fullqualification. Normal authenticated
+  authority transport waits all relevant functional outcomes.
+verification: CurrentA024495 Windows443 includingnew39native/portablezero-skipPASS;
+  default3192noerrors and no removals. ActualLinux709/currentpackages pending, A023320/321samejobinspection
+  continues; C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0320
 - RP-027-A001-0321
-- RP-027-A001-0324
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

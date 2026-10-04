@@ -1,0 +1,343 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0324",
+  "source_commit": "4951204c062cd422467fb6661e146b5d978011c3",
+  "checkout": "50943cdc75431e9b335591956b5496daa4f30f1f",
+  "qualification": {
+    "platform": "Windows",
+    "python": "3.11.9",
+    "architecture": "AMD64",
+    "exit_code": 0,
+    "elapsed_seconds": 17.553,
+    "counts": {
+      "PASS": 443,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 13
+    },
+    "targets": [
+      "tests/security/test_folder_credential_purpose.py",
+      "tests/security/test_folder_credential_purpose_native.py",
+      "tests/security/test_credential_contract.py",
+      "tests/security/test_windows_credentials.py",
+      "tests/security/test_linux_credentials.py",
+      "tests/security/test_windows_key_native.py",
+      "tests/security/test_credential_persistence.py",
+      "tests/security/test_credential_persistence_native.py",
+      "tests/security/test_setup_credentials_native.py",
+      "tests/security/test_private_settings.py",
+      "tests/security/test_private_settings_native.py",
+      "tests/security/test_first_run.py",
+      "tests/security/test_first_run_native.py",
+      "tests/drive/test_fetcher_enrollment.py",
+      "tests/drive/test_folder_first_run.py",
+      "tests/security/test_remote_folder_first_run_native.py",
+      "tests/drive/test_folder_probe_transport.py",
+      "tests/security/test_folder_probe_transport_native.py",
+      "tests/drive/test_folder_probe_authenticated_ssh.py",
+      "tests/security/test_folder_authority_purpose.py",
+      "tests/security/test_folder_authority_purpose_native.py"
+    ],
+    "new_case_counts": {
+      "portable": 27,
+      "actual_native_windows": 12,
+      "all_pass": 39,
+      "skips": 0
+    },
+    "new_cases": [
+      {
+        "name": "test_authority_scope_uses_only_its_fixed_callback_with_one_held_key[desktop]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_authority_scope_uses_only_its_fixed_callback_with_one_held_key[headless]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_authority_only_scope_refuses_other_and_untyped_uses_before_native_access[FETCHER_STATUS]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_authority_only_scope_refuses_other_and_untyped_uses_before_native_access[FETCHER_START]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_authority_only_scope_refuses_other_and_untyped_uses_before_native_access[FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_authority_only_scope_refuses_other_and_untyped_uses_before_native_access[FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_authority_only_scope_refuses_other_and_untyped_uses_before_native_access[None]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_authority_only_scope_refuses_other_and_untyped_uses_before_native_access[7]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_historical_scope_restart_keeps_exact_image_and_does_not_grant_authority[purposes0]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_historical_scope_restart_keeps_exact_image_and_does_not_grant_authority[purposes1]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_historical_scope_restart_keeps_exact_image_and_does_not_grant_authority[purposes2]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_missing_authority_callback_denies_without_fetcher_or_proof_fallback",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_authority_pin_does_not_reach_any_callback[target_id]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_authority_pin_does_not_reach_any_callback[target_trust]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_authority_capability_does_not_authorize_later_changed_native_state[version-REVOKED]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_authority_capability_does_not_authorize_later_changed_native_state[expiry-EXPIRED]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_authority_capability_does_not_authorize_later_changed_native_state[binding-REVOKED]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_authority_capability_does_not_authorize_later_changed_native_state[selection-REVOKED]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_authority_capability_does_not_authorize_later_changed_native_state[principal-DENIED]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_authority_capability_does_not_authorize_later_changed_native_state[session-DENIED]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_authority_capability_does_not_authorize_later_changed_native_state[trust-DENIED]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_ambiguous_authority_callback_is_unknown_once_without_payload_or_retry[lost]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_ambiguous_authority_callback_is_unknown_once_without_payload_or_retry[raw]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_private_authority_metadata_round_trip_preserves_original_refs_versions_and_scopes[purposes0]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_private_authority_metadata_round_trip_preserves_original_refs_versions_and_scopes[purposes1]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_setup_authority_image_retains_identity_history_and_original_fetcher_report[purposes0]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_setup_authority_image_retains_identity_history_and_original_fetcher_report[purposes1]",
+        "classname": "tests.security.test_folder_authority_purpose",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_four_scope_setup_restart_preserves_image_identity_history_and_closed_key",
+        "classname": "tests.security.test_folder_authority_purpose_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_historical_three_scope_restart_cannot_acquire_authority",
+        "classname": "tests.security.test_folder_authority_purpose_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_ambiguous_authority_callback_closes_handle_without_replay_or_profile_change[lost]",
+        "classname": "tests.security.test_folder_authority_purpose_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_ambiguous_authority_callback_closes_handle_without_replay_or_profile_change[raw]",
+        "classname": "tests.security.test_folder_authority_purpose_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_restart_rechecks_lost_authority_credential_and_preserves_history[rotated-REVOKED]",
+        "classname": "tests.security.test_folder_authority_purpose_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_restart_rechecks_lost_authority_credential_and_preserves_history[permissions-DENIED]",
+        "classname": "tests.security.test_folder_authority_purpose_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_restart_rechecks_lost_authority_credential_and_preserves_history[expired-EXPIRED]",
+        "classname": "tests.security.test_folder_authority_purpose_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_restart_rechecks_lost_authority_credential_and_preserves_history[binding-REVOKED]",
+        "classname": "tests.security.test_folder_authority_purpose_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_restart_rechecks_lost_authority_credential_and_preserves_history[selection-REVOKED]",
+        "classname": "tests.security.test_folder_authority_purpose_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_authority_only_scope_cannot_borrow_proof_or_fetcher_methods[FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_authority_purpose_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_authority_only_scope_cannot_borrow_proof_or_fetcher_methods[FETCHER_STATUS]",
+        "classname": "tests.security.test_folder_authority_purpose_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_authority_only_scope_cannot_borrow_proof_or_fetcher_methods[FETCHER_START]",
+        "classname": "tests.security.test_folder_authority_purpose_native",
+        "status": "PASS"
+      }
+    ],
+    "declared_actual_linux_only_skips": [
+      {
+        "name": "test_linux_special_objects_fail_without_opening_or_blocking[symlink]",
+        "classname": "tests.security.test_private_settings_native",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_linux_special_objects_fail_without_opening_or_blocking[fifo]",
+        "classname": "tests.security.test_private_settings_native",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_linux_special_objects_fail_without_opening_or_blocking[directory]",
+        "classname": "tests.security.test_private_settings_native",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_linux_directory_replacement_during_transaction_fails",
+        "classname": "tests.security.test_private_settings_native",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_sealed_parent_key_authenticates_then_restart_repeats_first_run_without_mutation",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[key-version]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[key-permission]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[known-version]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[known-permission]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[expired]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[revoked]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[disconnect]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[physical-missing]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      }
+    ],
+    "skip_boundary": "Exactly13 inherited actualLinux-only cases: four native private-settings filesystem cases and nine authenticated Linux SSH/proof cases. They must execute under requiredLinux; they are not native Windows coverage.",
+    "new_fixture_root": true,
+    "custom_pythonpath": false,
+    "public_failures": []
+  },
+  "default_collection": {
+    "schema_version": 1,
+    "source": "4951204c062cd422467fb6661e146b5d978011c3",
+    "checkout": "50943cdc75431e9b335591956b5496daa4f30f1f",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.675,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3192,
+    "errors": [],
+    "tests_executed": 0,
+    "prior": 3153,
+    "added": 39,
+    "removed": 0,
+    "all_added_from_two_new_authority_files": true
+  },
+  "acceptance": false,
+  "held": "Actual current-source requiredLinux709 and currentfullplatform/package plus C1-C4 runtime/GUI/common composition. Earlier request23 onlyqualifies source9a6c; no later-source claim.",
+  "next_action": "Dispatch current source4951204 request24 exactlyonce after intent/readback, requiredLinux709 (196/51/6/22/107/327). Reconcile same A023 functional320 and full321; normal authenticated transport waits relevant currentfunctional qualifications."
+}
