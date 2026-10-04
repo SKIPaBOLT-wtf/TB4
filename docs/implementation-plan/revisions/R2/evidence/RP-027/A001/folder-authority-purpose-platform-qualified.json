@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0330",
+  "source": "4951204c062cd422467fb6661e146b5d978011c3",
+  "trigger": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+  "pr_checkout": "992182700ac230e308e7235713695f8227217673",
+  "source_equivalence": {
+    "parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "7b5fcfa366a25f62bb4165f3dc0483066f27d17c"
+    ],
+    "non_doc_diff": [],
+    "actual_all_job_checkout_logs": true
+  },
+  "runs": [
+    {
+      "id": 37239922591,
+      "name": "Progress",
+      "event": "pull_request",
+      "head": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37239922591"
+    },
+    {
+      "id": 37239922639,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "head": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37239922639"
+    },
+    {
+      "id": 37239922551,
+      "name": "CI",
+      "event": "pull_request",
+      "head": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37239922551"
+    },
+    {
+      "id": 37239922572,
+      "name": "Desktop",
+      "event": "pull_request",
+      "head": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37239922572"
+    },
+    {
+      "id": 37239920053,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "head": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37239920053"
+    }
+  ],
+  "required_linux": {
+    "qualification_event": "RP-027-A001-0332",
+    "push": {
+      "run_id": 37239920053,
+      "job_id": 111546409484,
+      "groups": [
+        {
+          "passed": 196,
+          "deselected": 0,
+          "seconds": 26.58
+        },
+        {
+          "passed": 51,
+          "deselected": 0,
+          "seconds": 106.21
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "seconds": 40.53
+        },
+        {
+          "passed": 22,
+          "deselected": 0,
+          "seconds": 196.38
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "seconds": 14.26
+        },
+        {
+          "passed": 327,
+          "deselected": 1,
+          "seconds": 409.45
+        }
+      ],
+      "passed": 709,
+      "skipped": 0,
+      "failed": 0,
+      "errors": 0
+    },
+    "pull_request": {
+      "run_id": 37239922639,
+      "job_id": 111546417590,
+      "groups": [
+        {
+          "passed": 196,
+          "deselected": 0,
+          "seconds": 26.52
+        },
+        {
+          "passed": 51,
+          "deselected": 0,
+          "seconds": 118.82
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "seconds": 51.88
+        },
+        {
+          "passed": 22,
+          "deselected": 0,
+          "seconds": 257.86
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "seconds": 16.96
+        },
+        {
+          "passed": 327,
+          "deselected": 1,
+          "seconds": 550.09
+        }
+      ],
+      "passed": 709,
+      "skipped": 0,
+      "failed": 0,
+      "errors": 0
+    }
+  },
+  "ci": {
+    "run_id": 37239922551,
+    "job_id": 111546417289,
+    "conclusion": "success",
+    "passed": 3144,
+    "skipped": 27,
+    "xfailed": 4,
+    "seconds": 2187.44
+  },
+  "desktop": {
+    "run_id": 37239922572,
+    "linux": {
+      "job_id": 111546417429,
+      "conclusion": "success",
+      "passed": 3167,
+      "skipped": 21,
+      "xfailed": 4,
+      "seconds": 1553.09,
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    },
+    "windows": {
+      "job_id": 111546417619,
+      "conclusion": "success",
+      "passed": 2976,
+      "skipped": 212,
+      "xfailed": 4,
+      "seconds": 1833.09,
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    }
+  },
+  "progress": {
+    "run_id": 37239922591,
+    "job_id": 111546417398,
+    "conclusion": "success",
+    "passed": 235,
+    "seconds": 11.94,
+    "ledger": "PASS",
+    "history": "PRESERVED",
+    "privacy": "CLEAN"
+  },
+  "artifacts_metadata_only": [
+    {
+      "id": 11318045341,
+      "name": "tb4-desktop-Windows-992182700ac230e308e7235713695f8227217673",
+      "size_in_bytes": 120939477,
+      "digest": "sha256:d0c284c8dab0926fe5421f5769f20f6f18ce7e33966080b77ddbbfaeee6036a5",
+      "expired": false
+    },
+    {
+      "id": 11317733107,
+      "name": "tb4-desktop-Linux-992182700ac230e308e7235713695f8227217673",
+      "size_in_bytes": 314537591,
+      "digest": "sha256:5381b9c704cfe38e9881aba039c776904070bf45934ecf56e32cc69414cd3c33",
+      "expired": false
+    }
+  ],
+  "new_cases": {
+    "portable": 27,
+    "actual_native_windows_and_linux": 12,
+    "total": 39,
+    "new_applicable_skips": 0
+  },
+  "existing_scopes": "Full-platform skip/xfail scopes explicit, actual required709zero skip/fail/error. All39new authority-purpose cases execute on applicableWindows/Linux; prior57authprobe cases execute actualLinux, no Windows-to-Linux network claim.",
+  "current_head_source": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25",
+  "qualifies_current_head": false,
+  "acceptance": false,
+  "scope": "Qualifies only immutable A024495, settles330. LaterA025d7 Windows496/all53/default3254PASS337; actual request25launch338 justtriggered, Linux771/currentplatform stillpending. Durableendpoint/typedfirst-run authority/runtimeGUI/C1-C4 remainheld. Artifactmetadataonly,no download/install orrealcredential/profile/authority/network changes."
+}
