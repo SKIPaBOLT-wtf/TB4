@@ -3,25 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_ORIGINAL_TIMING_CI_RECONCILED
+phase: STAGED_RECONFIGURATION_C4_TIMING_ADMISSION_QUALIFIED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 0b537c1c96283cdfca9153175569267ecec5cba8
+source_commit: bf5c34f9fc79fcc6784ccd71009e2551608522a7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0281
+last_verified_event: RP-027-A001-0282
 last_completed: RP-026
-next_action: Inspect only same corrected request20 Desktop jobs to terminal, publish
-  final current qualification and owner pause checkpoint, then stop until owner says
-  continue.
-verification: 281 all original request18/19 runs terminal and reconciled. Currentbf5c34f
-  Windows504/bothLinux560/CI2995/Progress235 passed; only current Desktop full/build/package
-  remains before owner pause.
+next_action: Inspect current A020 and actual first-run/credential transport contracts;
+  publish a bounded typed read-only remote Folder first-run integration INTENT with
+  exact tests and safe scope, then implement and qualify. C1-C4 remain held.
+verification: 282 current timing repair and all request20 source/platform/package
+  gates reconciled. All intents settled, seven regression cases passed, DEF091 scoped
+  passing_sourcebf5c34f. Full RP027 C1-C4 remain held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0276
-expected_user_action: Wait for current-part completion; after verified pause, say
-  continue to resume next integration.
+unsettled_intents: []
+expected_user_action: null
 blocking_decisions: []
 known_open_defects:
 - DEF-001

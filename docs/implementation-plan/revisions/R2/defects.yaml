@@ -6630,11 +6630,12 @@ defects:
         during the first-run environment callback. All three incorrectly return revision2;
         release cases clear local maintenance. No shared write occurs.
       failing_source: f7d283897eaef2ca521df99d45544dad2d07dd5e
-      passing_source: null
+      passing_source: bf5c34f9fc79fcc6784ccd71009e2551608522a7
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/stale-leadership-timing-diagnostic.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-admission-first-qualification.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-original-ci-reconciled.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-admission-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6670,9 +6671,11 @@ defects:
           - RP-027.C3
           - RP-027.C4
     issue: null
-    regression_test: Planned release, per-use runtime and late-first-run mismatch
-      refusal; actual native preservation and existing stale/forced takeover tests.
-    resolution_evidence: []
+    regression_test: 'tests/drive/test_reconfiguration_admission.py and tests/security/test_reconfiguration_admission_native.py:
+      seven release/per-use/late-first-run/native pending mismatch regressions with
+      state preservation and restored-profile admission.'
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-admission-qualified.json
     notes: 'Independent diagnostic against unchanged A016 admission code while immutable
       probe265 runs continue. Synthetic SDK/MemoryNative only, 7.302 seconds, no pytest
       or native/live qualification. Expected BLOCKED, observed ADMITTED in all three
@@ -6688,5 +6691,9 @@ defects:
       before pause. Original request19 terminal CI/native/platform jobs later inspected:
       only the same pending assertion failed; exact counts and skipped build/package
       stages retained in current-timing-original-ci-reconciled.json. No rerun/cancellation
-      or overwritten failure.'
+      or overwritten failure. Corrected-sourcebf5c34f now qualified: Windows504 zero
+      skip, both Linux560 zero skip, CI2995/WindowsDesktop2840/LinuxDesktop3018 passed
+      with documented existing skip/xfail scopes, both role packages passed. Scoped
+      passing_source recorded; defect remains OPEN until affected common RP027 acceptance.
+      New owner continue instruction supersedes earlier future pause wait.'
     legacy_record: null

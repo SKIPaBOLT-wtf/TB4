@@ -1,0 +1,651 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0276",
+  "source_commit": "bf5c34f9fc79fcc6784ccd71009e2551608522a7",
+  "trigger_commit": "dcf61d2bebc1183ff38c2d28e25fcf036dabf2ad",
+  "pr_checkout": "ece1b431a1e855d4de18693db04419351dbbdcf2",
+  "recovery": "Resumed on2026-10-04 and inspected the same saved request20 jobs; no test/build replay. Original request18/19 terminal outcomes were already reconciled at278/281.",
+  "windows": {
+    "evidence": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-windows-qualified.json",
+    "counts": {
+      "PASS": 504,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "elapsed_seconds": 541.397,
+    "new_regressions": [
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[leadership-timing]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_late_first_run_changes_cannot_clear_native_reservation[leadership-timing]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_stale_actual_runtime_timing_refuses_work_before_receipt_or_external_effect",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames[release]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames[revision]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames[late-first-run]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames[pending]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      }
+    ],
+    "collection": {
+      "schema_version": 1,
+      "source": "bf5c34f9fc79fcc6784ccd71009e2551608522a7",
+      "checkout": "075962ca97bb0a80dd84c7493da26e9454c43f27",
+      "branch": "feat/rp027-staged-reconfiguration",
+      "platform": "Windows",
+      "architecture": "AMD64",
+      "python": "3.11.9",
+      "exit_code": 0,
+      "elapsed_seconds": 1.848,
+      "default_pytest_configuration": true,
+      "custom_helper_pythonpath": false,
+      "collection_only": true,
+      "collected": 3043,
+      "errors": [],
+      "tests_executed": 0
+    }
+  },
+  "required_linux": {
+    "pass_per_run": 560,
+    "failures": 0,
+    "skips": 0,
+    "scope_counts": [
+      47,
+      51,
+      6,
+      22,
+      107,
+      327
+    ],
+    "jobs": [
+      {
+        "run_id": 37162934072,
+        "job_id": 111319945967,
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37162934072/job/111319945967",
+        "name": "native-folder",
+        "status": "completed",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install development dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Public repository security scan",
+            "conclusion": "success"
+          },
+          {
+            "name": "Isolated fixed-helper prerequisites",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required read-only physical Folder probe and isolated SSH cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux mapping and relocation cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux retained Folder publication cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux current-role Folder ACTIVE adoption cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Original folder and native maintenance regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Original Docs and effect regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Preserve source-linked case results",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "test_summaries": [
+          "47 passed in 9.49s",
+          "51 passed in 56.79s",
+          "6 passed in 22.37s",
+          "22 passed in 115.47s (0:01:55)",
+          "107 passed in 9.43s",
+          "327 passed, 1 deselected in 299.25s (0:04:59)"
+        ],
+        "skip_reasons": [],
+        "package_acceptance": []
+      },
+      {
+        "run_id": 37162931531,
+        "job_id": 111319938467,
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37162931531/job/111319938467",
+        "name": "native-folder",
+        "status": "completed",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install development dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Public repository security scan",
+            "conclusion": "success"
+          },
+          {
+            "name": "Isolated fixed-helper prerequisites",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required read-only physical Folder probe and isolated SSH cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux mapping and relocation cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux retained Folder publication cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux current-role Folder ACTIVE adoption cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Original folder and native maintenance regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Original Docs and effect regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Preserve source-linked case results",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "test_summaries": [
+          "47 passed in 13.12s",
+          "51 passed in 91.74s (0:01:31)",
+          "6 passed in 37.85s",
+          "22 passed in 189.16s (0:03:09)",
+          "107 passed in 14.10s",
+          "327 passed, 1 deselected in 470.03s (0:07:50)"
+        ],
+        "skip_reasons": [],
+        "package_acceptance": []
+      }
+    ],
+    "artifacts": [
+      {
+        "id": 11288029136,
+        "name": "folder-reconfiguration-ece1b431a1e855d4de18693db04419351dbbdcf2",
+        "size_in_bytes": 14318,
+        "digest": "sha256:7f210e0b6f9702e235a7765c3e1786dcc89bd6da8e577c33768d0fd72ae75d48",
+        "expired": false,
+        "run_id": 37162934072
+      },
+      {
+        "id": 11288024634,
+        "name": "folder-reconfiguration-dcf61d2bebc1183ff38c2d28e25fcf036dabf2ad",
+        "size_in_bytes": 14345,
+        "digest": "sha256:2b3e10112994790bcf30f1c23f9cf44704a1b79159af351e40e7723e16294daa",
+        "expired": false,
+        "run_id": 37162931531
+      }
+    ]
+  },
+  "progress": {
+    "run_id": 37162934096,
+    "job_id": 111319946055,
+    "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37162934096/job/111319946055",
+    "name": "ledger",
+    "status": "completed",
+    "conclusion": "success",
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pip install -e '.[dev]'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pytest tests/development -ra",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m tools.development.ledger",
+        "conclusion": "success"
+      },
+      {
+        "name": "Preserve published history",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python tools/scan_public_repo.py",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "test_summaries": [
+      "235 passed in 12.30s"
+    ],
+    "skip_reasons": [],
+    "package_acceptance": []
+  },
+  "full_ci": {
+    "run_id": 37162934065,
+    "job_id": 111319946029,
+    "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37162934065/job/111319946029",
+    "name": "test",
+    "status": "completed",
+    "conclusion": "success",
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Checkout",
+        "conclusion": "success"
+      },
+      {
+        "name": "Set up Python",
+        "conclusion": "success"
+      },
+      {
+        "name": "Install",
+        "conclusion": "success"
+      },
+      {
+        "name": "Public repository security scan",
+        "conclusion": "success"
+      },
+      {
+        "name": "Isolated folder helper prerequisites",
+        "conclusion": "success"
+      },
+      {
+        "name": "Native Linux credential boundary qualification",
+        "conclusion": "success"
+      },
+      {
+        "name": "Native protected first-run qualification",
+        "conclusion": "success"
+      },
+      {
+        "name": "Native scoped discovery qualification",
+        "conclusion": "success"
+      },
+      {
+        "name": "Test",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Set up Python",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Checkout",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "test_summaries": [
+      "43 passed in 0.15s",
+      "34 passed in 0.37s",
+      "2 passed in 0.02s",
+      "2995 passed, 27 skipped, 4 xfailed in 1226.68s (0:20:26)"
+    ],
+    "skip_reasons": [],
+    "package_acceptance": []
+  },
+  "desktop": [
+    {
+      "run_id": 37162934086,
+      "job_id": 111319946185,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37162934086/job/111319946185",
+      "name": "desktop (windows-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "conclusion": "success"
+        },
+        {
+          "name": "Linux Qt dependencies",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Install development and desktop dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Desktop tests with real GUI and core imports",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native Windows credential boundary qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native Linux credential boundary qualification",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Native protected first-run qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native scoped discovery qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Private BALLPARK and local owner review qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Distinct FETCHER enrollment and actual profile qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete platform regression suite",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build WATCHDOG",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build FETCHER",
+          "conclusion": "success"
+        },
+        {
+          "name": "Packaged application and installer acceptance",
+          "conclusion": "success"
+        },
+        {
+          "name": "Publish installers and checksums",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ],
+      "test_summaries": [
+        "74 passed, 20 skipped in 3.31s",
+        "15 passed in 0.34s",
+        "30 passed, 4 skipped in 1.37s",
+        "2 passed in 7.89s",
+        "75 passed in 10.34s",
+        "79 passed in 18.82s",
+        "2840 passed, 199 skipped, 4 xfailed in 2500.19s (0:41:40)"
+      ],
+      "skip_reasons": [
+        "SKIPPED [2] tests\\desktop\\test_environment.py:15: POSIX library environment",
+        "SKIPPED [1] tests\\desktop\\test_installers.py:20: POSIX installer contract",
+        "SKIPPED [1] tests\\desktop\\test_installers.py:49: POSIX installer contract",
+        "SKIPPED [12] tests\\desktop\\test_installers.py:64: POSIX installer contract",
+        "SKIPPED [4] tests\\desktop\\test_installers.py:94: POSIX installer contract",
+        "SKIPPED [3] tests\\security\\test_private_settings_native.py:149: Linux FIFO/no-follow specific",
+        "SKIPPED [1] tests\\security\\test_private_settings_native.py:179: Linux root rename and pinned-dir check"
+      ],
+      "package_acceptance": [
+        "[{\"role\": \"watchdog\", \"bundle_self_test\": \"PASS\", \"gui_smoke\": \"PASS\", \"setup_gui_smoke\": \"PASS\", \"install_uninstall_profile_isolation\": \"PASS\"}, {\"role\": \"fetcher\", \"bundle_self_test\": \"PASS\", \"gui_smoke\": \"PASS\", \"setup_gui_smoke\": \"PASS\", \"install_uninstall_profile_isolation\": \"PASS\"}]"
+      ]
+    },
+    {
+      "run_id": 37162934086,
+      "job_id": 111319946297,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37162934086/job/111319946297",
+      "name": "desktop (ubuntu-22.04)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "conclusion": "success"
+        },
+        {
+          "name": "Linux Qt dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install development and desktop dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Desktop tests with real GUI and core imports",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native Windows credential boundary qualification",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Native Linux credential boundary qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native protected first-run qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native scoped discovery qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Private BALLPARK and local owner review qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Distinct FETCHER enrollment and actual profile qualification",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete platform regression suite",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build WATCHDOG",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build FETCHER",
+          "conclusion": "success"
+        },
+        {
+          "name": "Packaged application and installer acceptance",
+          "conclusion": "success"
+        },
+        {
+          "name": "Publish installers and checksums",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ],
+      "test_summaries": [
+        "90 passed, 4 skipped in 3.09s",
+        "43 passed in 0.25s",
+        "34 passed in 0.63s",
+        "2 passed in 0.05s",
+        "75 passed in 9.35s",
+        "79 passed in 17.08s",
+        "3018 passed, 21 skipped, 4 xfailed in 2631.20s (0:43:51)"
+      ],
+      "skip_reasons": [
+        "SKIPPED [4] tests/desktop/test_installers.py:81: a dangling custom link contains no table data and native storage never adopts it"
+      ],
+      "package_acceptance": [
+        "[{\"role\": \"watchdog\", \"bundle_self_test\": \"PASS\", \"gui_smoke\": \"PASS\", \"setup_gui_smoke\": \"PASS\", \"install_uninstall_profile_isolation\": \"PASS\"}, {\"role\": \"fetcher\", \"bundle_self_test\": \"PASS\", \"gui_smoke\": \"PASS\", \"setup_gui_smoke\": \"PASS\", \"install_uninstall_profile_isolation\": \"PASS\"}]"
+      ]
+    }
+  ],
+  "desktop_artifacts": [
+    {
+      "id": 11289646413,
+      "name": "tb4-desktop-Windows-ece1b431a1e855d4de18693db04419351dbbdcf2",
+      "size_in_bytes": 120932123,
+      "digest": "sha256:acbe902456a67ee197d1a45dd489e73b58301227716ce2ad6be10d273549c6e5",
+      "expired": false,
+      "run_id": 37162934086
+    },
+    {
+      "id": 11289277658,
+      "name": "tb4-desktop-Linux-ece1b431a1e855d4de18693db04419351dbbdcf2",
+      "size_in_bytes": 314510502,
+      "digest": "sha256:62b96216a3bae96da345722b21558a3bf25923e14900b3647b17b37d94efa7ad",
+      "expired": false,
+      "run_id": 37162934086
+    }
+  ],
+  "review": {
+    "invariant": "Actual typed Leadership.profile must equal coherent current configuration timing before/after first-run and native pending promotion, so stale timing cannot authorize ordinary work or clear maintenance.",
+    "negative_cases": "Seven source-linked regressions prove release/per-use/late-first-run and actual native pending refusal, exact frame/profile/write preservation, no external call or receipt, and restored matching timing admission.",
+    "election": "Stale first successful CAS takeover remains available without all-peer acknowledgments.",
+    "default_activation": "DenyActivation",
+    "privacy": "Public source and synthetic/ephemeral fixtures; no private deployment data or large installer downloads."
+  },
+  "owner_continuation": "Owner requested stop after current part during source269. On2026-10-04 owner explicitly said continue before the final pause was checkpointed; this supersedes the wait condition for ordinary development. Existing authority and live-action restrictions remain.",
+  "acceptance": false,
+  "limits": "Scoped DEF091 repair qualified. RP027/C1-C4 unaccepted pending remaining first-run/remote credential transport/runtime GUI composition and common acceptance. Offscreen CI package checks do not prove live deployment or physical display."
+}
