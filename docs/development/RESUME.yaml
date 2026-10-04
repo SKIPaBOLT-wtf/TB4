@@ -3,25 +3,26 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_AUTHORITY_PURPOSE_DEFAULT_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C2_FOLDER_AUTHORITY_PURPOSE_QUALIFICATION_DISPATCH
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4951204c062cd422467fb6661e146b5d978011c3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0325
+last_verified_event: RP-027-A001-0326
 last_completed: RP-026
-next_action: Publish current495 request24 launchINTENT, triggeronce withrequiredLinux709
-  and real run/job/checkoutreceipt. Reconcile sameA023 functional320 and full321;
-  then separately inspect current24 functional/fullqualification. Normal authenticated
-  authority transport waits all relevant functional outcomes.
-verification: CurrentA024495 Windows443 includingnew39native/portablezero-skipPASS;
-  default3192noerrors and no removals. ActualLinux709/currentpackages pending, A023320/321samejobinspection
-  continues; C1-C4held.
+next_action: Launchrequest24once, record actual trigger/runs/jobs/checkout receipt
+  and publish/readback. Reconcile old23functional320/full321 and publish separatecurrent24functional/fullinspection
+  intents. Dependent normalauthenticatedauthority source waits relevant A023/A024
+  functional outcomes; C1-C4common remainheld.
+verification: A0244951204 Windows443/new39zero-skip/default3192PASS. Request24one-time
+  launch326pending; actualLinux709/currentpackages/C1-C4held. Oldimmutable23inspection320/321samejobs
+  retained.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0320
 - RP-027-A001-0321
+- RP-027-A001-0326
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
