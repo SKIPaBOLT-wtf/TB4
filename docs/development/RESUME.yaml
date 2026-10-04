@@ -3,21 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_REMOTE_FIRST_RUN_REPAIRED_PREFLIGHT
+phase: STAGED_RECONFIGURATION_C2_REMOTE_FIRST_RUN_DEFAULT_QUALIFIED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 119e518cc7adee8f5226d61cce38b05d351d8bad
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0289
+last_verified_event: RP-027-A001-0290
 last_completed: RP-026
-next_action: Run repaired default preflight and collection exactly once; checkpoint
-  result before dependent Linux/full platform or further source.
-verification: 289 repaired source119e518 default preflight/whole collection pending;
-  previous failure retained. Required Linux/full platform not launched; C1-C4 held.
+next_action: Publish a qualification INTENT and request_revision21 on current source119e518
+  for required actualLinux588 zero skip, full CI/Desktop/platform/package/Progress.
+  Retain same operation/run IDs and exact terminal evidence before further dependent
+  source.
+verification: 290 current source119e518 Windows136 zero skip/fail/error and default3071
+  passed. Source-only/targeted evidence no C1-C4 acceptance; requiredLinux588/current
+  full platform next.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0289
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

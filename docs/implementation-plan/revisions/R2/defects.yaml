@@ -6713,9 +6713,10 @@ defects:
         loads qualified security.test_first_run, whose unqualified test_private_settings
         import is unavailable at drive-first collection.
       failing_source: 0911e84be7079715972abd6eb314b057c1233c52
-      passing_source: null
+      passing_source: 119e518cc7adee8f5226d61cce38b05d351d8bad
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-folder-first-run-preflight-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-folder-first-run-default-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6747,10 +6748,14 @@ defects:
     regression_test: Default selected seven targets and default whole collection,
       with no PYTHONPATH/import-order workaround; required Linux/full platform gates
       after repair.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-folder-first-run-default-qualified.json
     notes: Selected preflight exits2 with one collection error and zero executed cases;
       whole collection exits2 with two errors and partial3046. Failed source/logs
       retained. Historical introduction was not bisected and no product runtime failure
       is inferred. All RP027 checks remain held. Namespace-only source119e518 preserved/readback;
-      AST1/diff/privacy passed, tests0. Qualification pending.
+      AST1/diff/privacy passed, tests0. Qualification pending. Default repaired preflight136
+      PASS/zero skip/error/fail2.280s; full collection3071/zero errors1.740s. Scoped
+      collection repair qualifies; current required Linux/full platform and common
+      acceptance still pending.
     legacy_record: null
