@@ -3,24 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_DEFAULT_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_QUALIFICATION_DISPATCH
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0337
+last_verified_event: RP-027-A001-0338
 last_completed: RP-026
-next_action: Publish currentd7 request25launchINTENT, triggerexactexistingrequestfileonce
-  withoutskipci andrecordactualimmutableIDs/readback; separatefunctional771/fullplatforminspections.
-  ReconcileA024330samejobs andqualifyall62newLinux cases beforedependentcompositeendpoint/first-run/runtime
-  source.
-verification: A025d7 Windows496/allnew53zero-skipPASS/default3254noerrors/add62rem0;335settled,
-  currentLinux771/platform/compositeC1-C4held. A023full336settled321; A024full330samejobs
-  pending.
+next_action: Launchrequest25once andrecordactualtrigger/runs/jobs/sourceequivalence/merge/readbackreceipt.
+  Reconcileold495full330actualterminal logs/artifacts. Publish separatecurrentfunctional771/fullplatforminspection
+  intents. No dependentnormalfirst-run/runtimecode before771outcome; independentmetadatafoundationonlywithrecordedindependence.
+verification: A025d7 Windows496/new53/default3254PASS, request25one-time launch338pending/currentLinux771/platformheld.
+  OldA024330terminalSUCCESSmetadata needs logs/receipt, A023fullyqualified336; C1-C4/compositeheld.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0330
+- RP-027-A001-0338
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
