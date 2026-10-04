@@ -6717,6 +6717,7 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-folder-first-run-preflight-failed.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-folder-first-run-default-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-folder-first-run-platform-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6750,14 +6751,18 @@ defects:
       after repair.
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-folder-first-run-default-qualified.json
-    notes: Selected preflight exits2 with one collection error and zero executed cases;
-      whole collection exits2 with two errors and partial3046. Failed source/logs
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-folder-first-run-platform-qualified.json
+    notes: 'Selected preflight exits2 with one collection error and zero executed
+      cases; whole collection exits2 with two errors and partial3046. Failed source/logs
       retained. Historical introduction was not bisected and no product runtime failure
       is inferred. All RP027 checks remain held. Namespace-only source119e518 preserved/readback;
       AST1/diff/privacy passed, tests0. Qualification pending. Default repaired preflight136
       PASS/zero skip/error/fail2.280s; full collection3071/zero errors1.740s. Scoped
       collection repair qualifies; current required Linux/full platform and common
-      acceptance still pending.
+      acceptance still pending. Request21 source119e518 fully qualified: bothLinux588
+      zero skip, CI3023, WindowsDesktop2864/LinuxDesktop3046 and both role distributions
+      pass; defect stays OPEN only pending affected common RP027 acceptance. Newer
+      A022 source has separate gates.'
     legacy_record: null
   DEF-093:
     title: Legacy Windows credential test enumerates a newly unauthorized Folder purpose

@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0291",
+  "source": "119e518cc7adee8f5226d61cce38b05d351d8bad",
+  "request_revision": 21,
+  "trigger": "7995903e1896c222176933a140124a6c54d06fc7",
+  "pr_checkout": "9627097041813d1b3615153e54c0617ee6fea722",
+  "source_equivalence": "Pinned PR merge fetched; its second parent equals trigger7995903. Diff from implementation119e518 contains only docs/development and docs/implementation-plan files. Production/tests/workflows match current source.",
+  "status": "PASS",
+  "windows_preflight": {
+    "passed": 136,
+    "skipped": 0,
+    "failed": 0,
+    "errors": 0,
+    "elapsed_seconds": 2.28,
+    "evidence": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-folder-first-run-default-qualified.json"
+  },
+  "default_collection": 3071,
+  "required_linux": [
+    {
+      "run": 37229999898,
+      "job": 111517494070,
+      "event": "pull_request",
+      "checkout": "9627097041813d1b3615153e54c0617ee6fea722",
+      "status": "PASS",
+      "groups": [
+        {
+          "passed": 75,
+          "deselected": 0,
+          "elapsed_seconds": 18.07
+        },
+        {
+          "passed": 51,
+          "deselected": 0,
+          "elapsed_seconds": 119.59
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "elapsed_seconds": 50.94
+        },
+        {
+          "passed": 22,
+          "deselected": 0,
+          "elapsed_seconds": 259.04
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "elapsed_seconds": 16.88
+        },
+        {
+          "passed": 327,
+          "deselected": 1,
+          "elapsed_seconds": 566.49
+        }
+      ],
+      "total_passed": 588,
+      "skipped": 0,
+      "failed": 0,
+      "errors": 0
+    },
+    {
+      "run": 37229996683,
+      "job": 111517483867,
+      "event": "push",
+      "checkout": "7995903e1896c222176933a140124a6c54d06fc7",
+      "status": "PASS",
+      "groups": [
+        {
+          "passed": 75,
+          "deselected": 0,
+          "elapsed_seconds": 11.26
+        },
+        {
+          "passed": 51,
+          "deselected": 0,
+          "elapsed_seconds": 55.1
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "elapsed_seconds": 23.05
+        },
+        {
+          "passed": 22,
+          "deselected": 0,
+          "elapsed_seconds": 116.03
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "elapsed_seconds": 9.53
+        },
+        {
+          "passed": 327,
+          "deselected": 1,
+          "elapsed_seconds": 282.39
+        }
+      ],
+      "total_passed": 588,
+      "skipped": 0,
+      "failed": 0,
+      "errors": 0
+    }
+  ],
+  "ci": {
+    "run": 37229999983,
+    "job": 111517494115,
+    "checkout": "9627097041813d1b3615153e54c0617ee6fea722",
+    "status": "PASS",
+    "passed": 3023,
+    "skipped": 27,
+    "xfailed": 4,
+    "elapsed_seconds": 2500,
+    "scope": "Existing27 declared off-platform cases/4 expected-failure boundary cases retained; all28 added cases pass under required actual Linux/SSH prerequisites."
+  },
+  "desktop": [
+    {
+      "run": 37229999818,
+      "job": 111517493523,
+      "platform": "Linux",
+      "checkout": "9627097041813d1b3615153e54c0617ee6fea722",
+      "status": "PASS",
+      "suite": {
+        "passed": 3046,
+        "skipped": 21,
+        "xfailed": 4,
+        "elapsed_seconds": 1873.59
+      },
+      "roles": [
+        {
+          "role": "watchdog",
+          "build": "PASS",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "build": "PASS",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ],
+      "skips": "Existing declared OS/packaging/platform/hardware-only scope. Windows includes the four new actual Linux first-run cases as skipped; Linux executes all28 new cases. Skips are not claimed as executed acceptance."
+    },
+    {
+      "run": 37229999818,
+      "job": 111517493664,
+      "platform": "Windows",
+      "checkout": "9627097041813d1b3615153e54c0617ee6fea722",
+      "status": "PASS",
+      "suite": {
+        "passed": 2864,
+        "skipped": 203,
+        "xfailed": 4,
+        "elapsed_seconds": 2477.38
+      },
+      "roles": [
+        {
+          "role": "watchdog",
+          "build": "PASS",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "build": "PASS",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ],
+      "skips": "Existing declared OS/packaging/platform/hardware-only scope. Windows includes the four new actual Linux first-run cases as skipped; Linux executes all28 new cases. Skips are not claimed as executed acceptance."
+    }
+  ],
+  "progress": {
+    "run": 37229999848,
+    "job": 111517493733,
+    "passed": 235,
+    "elapsed_seconds": 12.66,
+    "status": "PASS",
+    "ledger_history_security": "PASS"
+  },
+  "artifacts": [
+    {
+      "id": 11314498658,
+      "name": "tb4-desktop-Windows-9627097041813d1b3615153e54c0617ee6fea722",
+      "size_in_bytes": 120934842,
+      "digest": "sha256:c971002ddbeda48ba65ea29b2d60fbf87f2d0a3b1fd6564282892c503a428d06",
+      "expired": false
+    },
+    {
+      "id": 11313579984,
+      "name": "tb4-desktop-Linux-9627097041813d1b3615153e54c0617ee6fea722",
+      "size_in_bytes": 314512179,
+      "digest": "sha256:cafcea9ee6a8113389d08fce430b2286424c0441e585e54364f50fcfba951282",
+      "expired": false
+    }
+  ],
+  "limits": "This exact A021 source119e518 qualifies its read-only first-run component, not all RP027 C1-C4 or authenticated credential/runtime/GUI integration. Later independently scheduled A022 sourced19639c is a different current implementation and retains separate source qualification requirements. No current-source package claim is inferred from these older source artifacts. No live deployment, LLM endpoint, credential, hardware power-loss or universal topology acceptance.",
+  "next_action": "Checkpoint current A022 sourced19639c default Windows/collection outcome from intent300, then separately qualify its required actual Linux613/final-source scope. Implement trusted authenticated transport/runtime/GUI only after its relevant source gates; all C1-C4 remain held."
+}
