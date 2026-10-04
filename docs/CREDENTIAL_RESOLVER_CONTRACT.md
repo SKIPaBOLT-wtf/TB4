@@ -86,3 +86,13 @@ declared purposes up to the closed enum size, retaining old metadata meanings.
 FETCHER summaries retain their original two purposes. This foundation does not
 construct an authenticated Folder transport, expose a physical proof through
 UseResult, migrate an installed binding or grant activation/runtime authority.
+
+RP-027 [A-023](implementation-plan/revisions/R2/amendments/RP-027/A-023-credential-bound-folder-proof-transport.md)
+supplies that separate trusted read-only construction. The native adapters expose
+only internal held-file process paths to fixed code; key bytes never become a
+resolver/report result or temporary file. One private thread-owned proof slot
+invokes FOLDER_PROBE and clears after use; LocalStore/UseResult remain closed
+outcomes. Fresh endpoint/known-host version/key/session/trust/expiry checks and
+the exact opt-in helper precede a current typed proof, with no automatic fallback
+or retry. Durable endpoint reconstruction and normal authority/runtime/GUI remain
+separate qualification; no existing installation is migrated by this source.

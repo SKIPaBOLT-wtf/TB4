@@ -80,6 +80,16 @@ class HeldKey:
         except OSError as error:
             raise _closed_os(error) from None
 
+    def process_path(self):
+        """Private fixed-helper input; the parent keeps this sealed fd alive.
+
+        OpenSSH closes inherited descriptors at startup. Use this actual parent
+        descriptor, never a child self-fd, selected pathname or temporary copy.
+        Procfs policy failure is unavailable; there is no alternative key path.
+        """
+        self.recheck()
+        return "/proc/" + str(os.getpid()) + "/fd/" + str(self.handle)
+
     def _recheck(self):
         self._native.recheck_chain(self._chain, self._uid)
         if self._native.file_info(self._source, self._uid) != self._info:

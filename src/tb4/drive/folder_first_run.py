@@ -1,7 +1,7 @@
 """Typed read-only first-run adapter for the opt-in physical Folder probe.
 
-The trusted caller supplies the commissioned fixed process. Authentication and
-credential construction remain a separate boundary. This adapter has no runtime
+The trusted caller supplies a fixed or exact credential-bound proof process.
+Credential selection stays outside this boundary. This adapter has no runtime
 authority, allocation, mutation or activation API.
 """
 from __future__ import annotations
@@ -13,9 +13,8 @@ from .commissioning import SetupSpec
 from .commissioning_bootstrap import AuthorityHandle
 from .docs_authority import AuthorityError, require, validated
 from .folder_authority import FolderBinding
-from .folder_probe import FolderProbe, FolderProof
+from .folder_probe import FolderProbe, FolderProof, _check_transport
 from .folder_protocol import MODE
-from .folder_transport import FixedProcess
 
 
 class RemoteFolderCommissioning:
@@ -25,9 +24,9 @@ class RemoteFolderCommissioning:
                 and probe.handle.object_id == probe.spec.root_id and probe.handle.tab_id is None,
                 "REMOTE_STORAGE_BINDING")
         binding = FolderBinding(probe.spec.root_id, probe.spec.domain_id)
-        require(probe.binding == binding and type(probe.transport) is FixedProcess
-                and probe.transport.binding == binding and type(probe._origin) is object,
+        require(probe.binding == binding and type(probe._origin) is object,
                 "REMOTE_STORAGE_BINDING")
+        _check_transport(probe.transport, binding, probe.spec, probe.handle)
         self._probe, self._spec, self._handle = probe, probe.spec, probe.handle
         self._binding, self._transport, self._origin = binding, probe.transport, probe._origin
 

@@ -73,6 +73,17 @@ class HeldKey:
         if self._api.info(self.handle) != self._info:
             raise KeyAccessError(Outcome.REVOKED)
 
+    def process_path(self):
+        """Private fixed-helper input while this no-write/delete handle is held."""
+        self.recheck()
+        value = C.create_unicode_buffer(32768)
+        size = self._api.k.GetFinalPathNameByHandleW(self.handle, value, len(value), 0)
+        if not 0 < size < len(value):
+            raise KeyAccessError(Outcome.DENIED)
+        path = local_path(value.value.removeprefix("\\\\?\\"))
+        self.recheck()
+        return path
+
 
 class WindowsKeyNative:
     def __init__(self):

@@ -102,20 +102,30 @@ class FolderProof:
         return validated(self.raw, self.binding)
 
 
+def _check_transport(transport, binding, spec, handle):
+    # Local import keeps the opt-in credential runner's protocol dependency
+    # acyclic. No duck type/subclass or arbitrary new transport is admitted.
+    from .folder_probe_transport import CredentialProbeProcess
+    require(type(transport) in {FixedProcess, CredentialProbeProcess}
+            and transport.binding == binding, "HELPER_BINDING")
+    if type(transport) is CredentialProbeProcess:
+        require(transport.spec == spec and transport.authority == handle, "HELPER_BINDING")
+        transport._current()
+
+
 class FolderProbe:
     """Fresh proof via the commissioned fixed command, never a saved READY flag.
 
-This boundary does not construct SSH arguments or select credentials. Its trusted
-caller must bind the exact helper, host trust and credential purpose. A proof is
-an observation, not an authorization to activate, mutate, replay or adopt work.
-"""
+    Trusted callers supply either an already fixed command or the exact closed
+    credential-bound probe process; neither path selects credentials here. A proof
+    is an observation, not permission to activate, mutate, replay or adopt work.
+    """
     def __init__(self, transport, spec, handle, access):
         require(type(spec) is SetupSpec and spec.mode == AUTHORITY_MODE
                 and type(handle) is AuthorityHandle and handle.object_id == spec.root_id
                 and handle.tab_id is None, "PROBE_BINDING")
         binding = FolderBinding(spec.root_id, spec.domain_id)
-        require(type(transport) is FixedProcess and transport.binding == binding,
-                "HELPER_BINDING")
+        _check_transport(transport, binding, spec, handle)
         require(type(access) is FolderAccess and access.binding == binding
                 and access.llm_authorized is True and access.role_authorized is True,
                 "SAME_EXCHANGE_ACCESS_REQUIRED")
@@ -124,8 +134,7 @@ an observation, not an authorization to activate, mutate, replay or adopt work.
 
     def verify(self):
         try:
-            require(type(self.transport) is FixedProcess and self.transport.binding == self.binding,
-                    "HELPER_BINDING")
+            _check_transport(self.transport, self.binding, self.spec, self.handle)
             nonce = secrets.token_hex(16)
             request = {**probe_header(self.binding, nonce), "operation": "VERIFY",
                        "blueprint": self.spec.fingerprint, "authority": self.handle.seal}

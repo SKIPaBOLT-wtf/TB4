@@ -294,3 +294,15 @@ images preserve original references/versions and admit the declared purpose set;
 FETCHER reports keep their original scope. No authenticated transport/proof payload
 or authority/activation is supplied. Same immutable A021 platform qualification
 continues; dependent transport/runtime/GUI and all common acceptance remain held.
+
+[A-023](implementation-plan/revisions/R2/amendments/RP-027/A-023-credential-bound-folder-proof-transport.md)
+adds trusted proof-only endpoint/known-host version pins and native held process
+paths. One exact thread-owned private VERIFY/reply slot passes through the closed
+FOLDER_PROBE outcome without adding credential/proof payload to public reports.
+Exact typed FolderProbe/RemoteFolderCommissioning repeats fresh pins and proof;
+unknown/lost/parallel attempts cannot retry, replace a pending slot or mutate
+authority. Linux uses the still-held sealed parent fd; Windows uses the native
+canonical path while read-only sharing excludes changes. No config/agent/default
+identity/certificate/alternate auth/control/proxy/command/transport fallback.
+Actual source/native/isolated SSH tests are required; durable endpoint/profile,
+authority purposes, runtime/GUI/common/final acceptance remain held.
