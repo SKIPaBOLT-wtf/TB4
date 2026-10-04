@@ -3,24 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_WINDOWS_SCOPE_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_PURPOSE_REQUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0299
+last_verified_event: RP-027-A001-0300
 last_completed: RP-026
-next_action: Publish repeated sixteen-target default Windows/whole collection INTENT
-  with all25 new cases zero failure/error/skip, all supported existing cases passing,
-  four exact existing Linux-only skips declared, and default3096 expected. Required
-  actual Linux/final-source gates and291 terminal reconciliation remain.
-verification: 299 test-only sourced19639c saved/readback tests0, repeat Windows/default
-  preflight next with four explicit existing Linux-only skips. Same291 source119e518
-  LinuxDesktop/bothLinux588 pass; CI/WindowsDesktop pending. C1-C4 held.
+next_action: Run corrected default preflight/collection once, checkpoint exact evidence
+  and scoped DEF093 passing source. Then record a separate current required Linux613/full
+  final-source scope while preserving291 terminal qualification; no authenticated
+  transport integration until relevant source gates.
+verification: 300 source d19639c default Windows356+4 existing Linux-only skips/new25
+  zero-skip and collection3096 pending. Same291 oldsource CI3023/LinuxDesktop3046/bothLinux588
+  passed; WindowsDesktop final packaging pending. C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0291
+- RP-027-A001-0300
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
