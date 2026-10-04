@@ -3,18 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_CORRECTED_TIMING_WINDOWS_QUALIFIED
+phase: STAGED_RECONFIGURATION_C4_CORRECTED_TIMING_LINUX_QUALIFIED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: bf5c34f9fc79fcc6784ccd71009e2551608522a7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0279
+last_verified_event: RP-027-A001-0280
 last_completed: RP-026
-next_action: Wait for same request20 Linux/full/build jobs and request19 original
-  terminal results; record exact outcomes, then owner-requested pause without next
-  integration.
-verification: 279 corrected current sourcebf5c34f Windows504PASS0skip incl all7 timing
-  cases, default3043PASS/tests0. Request20 Linux/full/build and old19 terminal inspection
-  remain; owner pause after finishing.
+next_action: Wait for same remaining full/platform jobs, record exact results and
+  original failure reconciliation, then publish/readback owner pause. No further implementation.
+verification: 280 correctedbf5c34f both actualLinux560PASS0skip plus Windows504PASS/default3043;
+  current Progress235PASS. Only request20 full/platform/build and original19 terminal
+  reconciliation remain before owner pause.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
