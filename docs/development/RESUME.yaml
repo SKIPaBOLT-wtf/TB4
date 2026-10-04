@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_LINUX_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_NATIVE_DISCOVERY_DIAGNOSTIC_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
+source_commit: f2838a720fc3f15520a0d834e319a47259521563
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0343
+last_verified_event: RP-027-A001-0344
 last_completed: RP-026
-next_action: Inspect the same required Linux jobs and record exact 771-case results.
-  Independently prepare the bounded isolated Windows provider diagnosis with a separate
-  source/experiment INTENT; no acceptance from prior source receipts.
-verification: DEF-094 actual hosted Windows native identity-query failure preserved
-  in 342; cause unproven. Same request 25 required Linux 771 inspection pending under
-  343. Full Windows/package/C1-C4 acceptance held.
+next_action: Save and read back this diagnostic-only source unit, then publish a separate
+  one-time diagnostic-request launch INTENT. Inspect same current Linux jobs under
+  343 independently.
+verification: DEF-094 isolated diagnostic-only source preparation pending under 344.
+  Same request 25 Linux inspection 343 remains independent. Production budgets and
+  C1-C4 holds retained.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0343
+- RP-027-A001-0344
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
