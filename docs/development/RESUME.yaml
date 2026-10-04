@@ -3,26 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_PURPOSE_SOURCE
+phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_PURPOSE_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 119e518cc7adee8f5226d61cce38b05d351d8bad
+source_commit: 0db4cb1448d1d66273f04edacef52effe6346186
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0294
+last_verified_event: RP-027-A001-0295
 last_completed: RP-026
-next_action: After this exact remote intent readback, implement the bounded independent
-  credential foundation, preserve/readback source and OUTCOME; then targeted Windows/default
-  qualification. Keep inspecting the same291 runs; integration remains dependent on
-  their actual terminal outcome.
-verification: 294 independently scheduled C2 credential-purpose foundation depends
-  on already accepted native credential scope, not pending291 platform artifacts.
-  Source119e518 pushLinux588/Windows136/default3071/Progress235 pass; PR Linux/CI/Desktop
-  still pending. Integration/C1-C4 held.
+next_action: Publish targeted Windows credential/native metadata/default full collection
+  INTENT. Run all25 new cases plus existing credential/native/persistence/setup and
+  FETCHER projection regressions with default pytest; preserve outcome before dependent
+  transport code. Inspect same remaining291 full CI/Desktop jobs.
+verification: 295 independent credential foundation0db4cb1 saved/readback, tests0
+  and next default credential/native qualification. Previous source119e518 bothLinux588
+  zero skip/Windows136/default3071/Progress235 pass; same291 full CI/Desktop pending.
+  C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0291
-- RP-027-A001-0294
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
