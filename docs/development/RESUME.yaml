@@ -3,25 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_PURPOSE_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_PURPOSE_PREFLIGHT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 0db4cb1448d1d66273f04edacef52effe6346186
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0295
+last_verified_event: RP-027-A001-0296
 last_completed: RP-026
-next_action: Publish targeted Windows credential/native metadata/default full collection
-  INTENT. Run all25 new cases plus existing credential/native/persistence/setup and
-  FETCHER projection regressions with default pytest; preserve outcome before dependent
-  transport code. Inspect same remaining291 full CI/Desktop jobs.
-verification: 295 independent credential foundation0db4cb1 saved/readback, tests0
-  and next default credential/native qualification. Previous source119e518 bothLinux588
-  zero skip/Windows136/default3071/Progress235 pass; same291 full CI/Desktop pending.
-  C1-C4 held.
+next_action: Run one current Windows/default preflight, record exact result and any
+  defect before repair; preserve same291 terminal events. If passing, record required
+  Linux/final-source qualification scope before a later transport integration unit.
+verification: 296 source0db4cb1 default Windows credential/native/first-run regression
+  and default3096 collection pending. Old source119e518 request21 bothLinux588 pass;
+  same291 full CI/Desktop still pending. All acceptance/integration held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0291
+- RP-027-A001-0296
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
