@@ -7,21 +7,21 @@ phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_PROBE_OFFLINE_POLICY
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0308
+last_verified_event: RP-027-A001-0309
 last_completed: RP-026
-next_action: Publish actual offline diagnostic outcome. Continue same immutable Linux305
-  to terminal; then authorize A023 minimal trusted probe/native/first-run integration
-  with its own portable/native/isolated SSH tests.
-verification: 307 Progress235PASS and static transport findings saved; offline fixed
-  OpenSSH policy diagnostic308 pending independently. Current source Linux305/full
-  platform306 still pending; no dependent source/acceptance.
+next_action: Authorize one bounded offline parsed-known-host representation inspection
+  under a fresh synthetic fixture; preserve failure and compare quoted/percent/escape
+  token semantics. No dependent transport source before current Linux305 functional
+  outcome.
+verification: Offline308 observed FAIL in one known-host representation expectation;
+  OpenSSH parses all other closed policy flags and makes no connection. Source currentLinux305/full
+  platform306 remain pending; diagnostics must distinguish semantics before source.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0305
 - RP-027-A001-0306
-- RP-027-A001-0308
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
