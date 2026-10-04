@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0291",
+  "status": "PASS_MILESTONE",
+  "source": "119e518cc7adee8f5226d61cce38b05d351d8bad",
+  "trigger": "7995903e1896c222176933a140124a6c54d06fc7",
+  "request_revision": 21,
+  "required_linux": {
+    "run_id": 37229996683,
+    "job_id": 111517483867,
+    "event": "push",
+    "checkout": "7995903e1896c222176933a140124a6c54d06fc7",
+    "conclusion": "success",
+    "groups": [
+      {
+        "name": "Physical proof and first-run",
+        "passed": 75,
+        "seconds": 11.26
+      },
+      {
+        "name": "Mapping and relocation",
+        "passed": 51,
+        "seconds": 55.1
+      },
+      {
+        "name": "Retained Folder publication",
+        "passed": 6,
+        "seconds": 23.05
+      },
+      {
+        "name": "Current-role Folder ACTIVE adoption",
+        "passed": 22,
+        "seconds": 116.03
+      },
+      {
+        "name": "Original native regressions",
+        "passed": 107,
+        "seconds": 9.53
+      },
+      {
+        "name": "Docs/effect/admission regressions",
+        "passed": 327,
+        "deselected": 1,
+        "seconds": 282.39
+      }
+    ],
+    "passed": 588,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "existing_deselection": "Only the existing Docs test actual_max_capacity129_fixed_objects is excluded by unchanged workflow filter; no Folder physical/SSH cases skip.",
+    "new_first_run_file_observations": [
+      "##[group]Run python -m pytest tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py tests/drive/test_folder_first_run_native.py tests/security/test_remote_folder_first_run_native.py -ra --junitxml=folder-probe-results.xml",
+      "\u001b[36;1mpython -m pytest tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py tests/drive/test_folder_first_run_native.py tests/security/test_remote_folder_first_run_native.py -ra --junitxml=folder-probe-results.xml\u001b[0m"
+    ],
+    "security_scan": "CLEAN"
+  },
+  "progress": {
+    "run_id": 37229999848,
+    "job_id": 111517493733,
+    "checkout": "9627097041813d1b3615153e54c0617ee6fea722",
+    "conclusion": "success",
+    "tests": 235,
+    "elapsed_seconds": 12.66,
+    "ledger_history_privacy": "PASS"
+  },
+  "remaining_runs": [
+    {
+      "id": 37229999898,
+      "name": "Folder reconfiguration",
+      "jobs": [
+        {
+          "id": 111517494070,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37229999983,
+      "name": "CI",
+      "jobs": [
+        {
+          "id": 111517494115,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37229999818,
+      "name": "Desktop",
+      "jobs": [
+        {
+          "id": 111517493523,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111517493664,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "static_following_boundary": {
+    "verified": "Purpose enum has only FETCHER_STATUS/FETCHER_START. ExistingKeyStore.use_fixed maps status to fetcher_status and every other admitted purpose to fetcher_start. Adding a Folder purpose must replace this with closed dispatch first; LocalStore/UseResult return only enum outcomes, so Folder proof payload integration must remain trusted and separate from public reports.",
+    "source_paths": [
+      "src/tb4/credential_contract.py",
+      "src/tb4/key_policy.py",
+      "src/tb4/credential_persistence.py",
+      "src/tb4/commissioning_state.py",
+      "src/tb4/enrollment_records.py"
+    ],
+    "scope": "Read-only current-source inspection only; no credential/runtime source or actual target change. Full current qualification still awaited before a dependent source unit."
+  },
+  "acceptance": false,
+  "next_action": "Inspect the same remaining PR Linux/CI/Desktop jobs from292. Record terminal source/platform qualification before implementing a separately scoped trusted Folder credential/transport boundary."
+}

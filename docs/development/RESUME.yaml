@@ -3,18 +3,18 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_REMOTE_FIRST_RUN_PLATFORMS_RUNNING
+phase: STAGED_RECONFIGURATION_C2_REMOTE_FIRST_RUN_LINUX_MILESTONE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 119e518cc7adee8f5226d61cce38b05d351d8bad
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0292
+last_verified_event: RP-027-A001-0293
 last_completed: RP-026
-next_action: Inspect these same immutable jobs; record terminal requiredLinux588/full
-  CI/Desktop/Progress with cases, native/package evidence and documented platform
-  skip scopes. No duplicate dispatch or further dependent source.
-verification: 292 request21 actual five workflows/six jobs launched on trigger7995903/source119e518.
-  PR checkout9627097 equals source outside docs. Same-run terminal results pending;
-  C1-C4 held.
+next_action: Inspect the same remaining PR Linux/CI/Desktop jobs from292. Record terminal
+  source/platform qualification before implementing a separately scoped trusted Folder
+  credential/transport boundary.
+verification: 293 push requiredLinux588 zero skip and Progress235 PASS on source119e518/request21.
+  PR Linux/CI/Desktop/package gates from292 pending; no acceptance or new dependent
+  source.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
