@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_DISCOVERY_DIAGNOSTIC_SOURCE
+phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_LINUX_INSPECTION
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 91bad7a54916766417a882ef537ca812a08bfb05
+source_commit: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0345
+last_verified_event: RP-027-A001-0346
 last_completed: RP-026
-next_action: Publish one-time diagnostic launch INTENT then exact request source/readback;
-  inspect actual new Windows diagnostic job. Pending request 25 Linux inspection 343
-  continues same jobs.
-verification: Diagnostic-only source saved/read back; static checks passed, tests
-  0, actual execution not started. DEF-094 unproven. Same Linux request 25 inspection
-  343 remains pending; C1-C4 held.
+next_action: Publish one-time isolated Windows diagnostic launch INTENT and exact
+  request/readback. Inspect remaining same request 25 CI/Linux Desktop/Progress terminal
+  logs under a separate full-platform INTENT. Do not repeat failed Windows job or
+  infer cause from local success.
+verification: 'Both current d7 request 25 required Linux jobs qualified: 771 PASS
+  each, zero fail/error/skip, all 62 new cases executed. Hosted Windows DEF-094 and
+  remaining full platform/package/common C1-C4 gates remain held.'
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0343
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
