@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_REMOTE_FIRST_RUN_DEFAULT_QUALIFIED
+phase: STAGED_RECONFIGURATION_C2_REMOTE_FIRST_RUN_PLATFORM_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 119e518cc7adee8f5226d61cce38b05d351d8bad
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0290
+last_verified_event: RP-027-A001-0291
 last_completed: RP-026
-next_action: Publish a qualification INTENT and request_revision21 on current source119e518
-  for required actualLinux588 zero skip, full CI/Desktop/platform/package/Progress.
-  Retain same operation/run IDs and exact terminal evidence before further dependent
-  source.
-verification: 290 current source119e518 Windows136 zero skip/fail/error and default3071
-  passed. Source-only/targeted evidence no C1-C4 acceptance; requiredLinux588/current
-  full platform next.
+next_action: Trigger request21 once and checkpoint the actual run/job identities;
+  reconcile same immutable runs. If a gate fails record exact failure then repair
+  scoped cause. Once all pass record source qualification and continue trusted credential/transport
+  composition per plan; no owner pause pending.
+verification: 291 current source119e518 request21 qualification INTENT. Windows136/default3071
+  pass; requiredLinux588/full CI/Desktop/Progress pending actual dispatch. C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0291
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
