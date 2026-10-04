@@ -7,21 +7,20 @@ phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_PROBE_OFFLINE_FORMATTING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0310
+last_verified_event: RP-027-A001-0311
 last_completed: RP-026
-next_action: Publish exact diagnostic result and source construction consequence.
-  Reconcile same PR Linux613 under305 when terminal, then authorize A023 bounded native/authenticated
-  typed Folder probe unit.
-verification: Push Linux613zero-skip terminalPASS; PR Linux305 and full platform306
-  remain pending. Offline308 one formatting FAIL retained309; bounded independent310
-  inspection pending.
+next_action: Reconcile both same current requiredLinux613zero-skip runs under305.
+  Then publish A023 source INTENT for native held process paths, exact endpoint pins
+  and private one-use credential/proof transport; full platform306/common holds retained.
+verification: Offline fixed Windows OpenSSH policy310PASS33checks in0.047s; first
+  diagnostic mismatch retained309 and explained. Push Linux613PASSzero skip; PR Linux305/full
+  platform306 terminal evidence pending. C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0305
 - RP-027-A001-0306
-- RP-027-A001-0310
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
