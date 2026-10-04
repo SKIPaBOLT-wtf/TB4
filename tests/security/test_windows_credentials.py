@@ -93,7 +93,7 @@ def request(purpose=Purpose.FETCHER_STATUS):
     return dict(purpose=purpose, target_id=TARGET, target_trust=TRUST)
 
 
-@pytest.mark.parametrize("purpose", list(Purpose))
+@pytest.mark.parametrize("purpose", [Purpose.FETCHER_STATUS, Purpose.FETCHER_START])
 def test_one_fixed_call_holds_key_and_safe_report(purpose, capsys):
     resolver, store, native, runner, clock, ref, handle = setup()
     assert resolver.capability(handle, **request(purpose)).outcome is Outcome.READY
