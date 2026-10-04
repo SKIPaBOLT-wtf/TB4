@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0347",
+  "source_commit": "91bad7a54916766417a882ef537ca812a08bfb05",
+  "request_revision": 1,
+  "scope": "SELECTED_LOOPBACK_ONLY"
+}
