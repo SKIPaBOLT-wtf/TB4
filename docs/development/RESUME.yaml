@@ -3,24 +3,27 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_AUTHORITY_PURPOSE_LINUX_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_TRANSPORT
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 4951204c062cd422467fb6661e146b5d978011c3
+source_commit: c121a72f2d84cfab7a32d08d04671e3b9372ca2f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0332
+last_verified_event: RP-027-A001-0333
 last_completed: RP-026
-next_action: Publish bounded authenticatednormalFolder READ/CAS fixed transport sourceintent
-  usingbothqualified A023/A024 primitives; immutablefullplatform321/330remaintracked
-  andmustreconcile. Preserve newsource/staticOUTCOME then separatetargeted/native/default/currentLinux/fullqualification
-  before integration.
-verification: CurrentA024495 Windows443/allnew39/default3192 andbothactualLinux709/allnew39zero-skipPASS;329settled.
-  A023670bothPASS. Currentfullplatform330/old321pending; normal transport/durableendpoint/runtime/GUI/commonC1-C4held.
+next_action: Implement onlyA025module/tests/workflow/amendment/step/contracts, inspectAST/diff/privacy,
+  preserveexactownedsourcebytes andremote readback; publishOUTCOME/amendmentlink/cursor.
+  Thenpublish separateWindowsnative/portable/default collectionqualification, requiredcurrentLinux
+  andfullplatformintent. Reconcile321/330samejobs withoutretrigger; fullRemoteFolder/profile/runtime
+  compositionwaitsnewqualification.
+verification: A023670andA024709bothactualLinuxqualified327/332, Windows/native/defaultqualificationsPASS.
+  A025normalREAD/CAStransport source333pending; oldimmutableplatform321/330samejobs
+  pending andC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0321
 - RP-027-A001-0330
+- RP-027-A001-0333
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
