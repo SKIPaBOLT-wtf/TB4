@@ -3,25 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_PROBE_LINUX_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_FOLDER_AUTHORITY_PURPOSE_QUALIFICATION_DISPATCH
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 9a6c6923bfd64c5a5a0b125582c7c5808d3465d4
+source_commit: 4951204c062cd422467fb6661e146b5d978011c3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0327
+last_verified_event: RP-027-A001-0328
 last_completed: RP-026
-next_action: Record request24actual launched source4951204/trigger7b5fcfa identities
-  and receipt for326, then publish separatefunctionalLinux709/fullplatform inspections.
-  Reconcile full9a6c platform321; laterauthenticatednormalauthority composition waits
-  relevant A024qualification.
-verification: A0239a6c bothactualLinux670/all57newzero-skipPASS, functional320settled.
-  Oldfullplatform321pending; currentA024495Windows443/new39/default3192PASS, actualrequest24launched326receiptpending.
-  C1-C4held.
+next_action: Publish separate currentrequest24functionalLinux709 andcompleteplatforminspection
+  intents. Inspect same IDs, reconcile older9a6cfull321, no duplicate/retry/cancel.
+  Authenticatednormalstorage transport begins onlyaftercurrentA024functionalqualification.
+verification: A0239a6c actualLinux670bothPASS327/full321pending. CurrentA024495 Windows443/new39/default3192PASS,
+  actualrequest24launch7b5fcfa/fiveworkflows/sixjobs recorded; current709/platform/C1-C4pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0321
-- RP-027-A001-0326
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

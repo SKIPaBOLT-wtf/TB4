@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0326",
+  "source_commit": "4951204c062cd422467fb6661e146b5d978011c3",
+  "trigger_commit": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+  "request_revision": 24,
+  "request_path": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-request.json",
+  "readback": "EXACT_REQUEST",
+  "required_cases": 709,
+  "group_counts": {
+    "physical_probe_and_first_run": 196,
+    "mapping_relocation": 51,
+    "retained": 6,
+    "current_role_folder": 22,
+    "original_native": 107,
+    "docs_effect_admission": 327
+  },
+  "pr": 36,
+  "current_pr_merge": {
+    "sha": "992182700ac230e308e7235713695f8227217673",
+    "parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "7b5fcfa366a25f62bb4165f3dc0483066f27d17c"
+    ],
+    "source_commit": "4951204c062cd422467fb6661e146b5d978011c3"
+  },
+  "non_doc_source_diff": [],
+  "job_checkout_confirmation": "Pending terminal logs; current GitHub merge parents/source equivalence verified, not runner log evidence.",
+  "workflows": [
+    {
+      "run_id": 37239922639,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "head": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+      "status": "in_progress",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37239922639",
+      "jobs": [
+        {
+          "job_id": 111546417590,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37239922551,
+      "name": "CI",
+      "event": "pull_request",
+      "head": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+      "status": "in_progress",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37239922551",
+      "jobs": [
+        {
+          "job_id": 111546417289,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37239922591,
+      "name": "Progress",
+      "event": "pull_request",
+      "head": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+      "status": "in_progress",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37239922591",
+      "jobs": [
+        {
+          "job_id": 111546417398,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "run_id": 37239922572,
+      "name": "Desktop",
+      "event": "pull_request",
+      "head": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+      "status": "in_progress",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37239922572",
+      "jobs": [
+        {
+          "job_id": 111546417429,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "job_id": 111546417619,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37239920053,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "head": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+      "status": "in_progress",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37239920053",
+      "jobs": [
+        {
+          "job_id": 111546409484,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "qualification": "PENDING",
+  "acceptance": false,
+  "local_qualification": {
+    "windows_pass": 443,
+    "new_pass": 39,
+    "new_skips": 0,
+    "declared_linux_only_skips": 13,
+    "default_collected": 3192,
+    "collection_errors": 0
+  },
+  "prior_qualification": "A023 actualLinux670bothPASS327, older9a6c fullplatform still321pending. New request24 qualifies only4951204 after terminal inspection.",
+  "next_action": "Publish separate request24 functionalLinux709 and fullplatform inspection intents; same actual jobs, no duplicate/cancel/installed mutation. Finish old9a6c321."
+}
