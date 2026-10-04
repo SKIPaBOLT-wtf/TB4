@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0344",
+  "source_commit": "91bad7a54916766417a882ef537ca812a08bfb05",
+  "local_preserved_commit": "9dca99727ecb27a625c2b95e42b841dfe007a61a",
+  "base_commit": "a90a8d452288622fbbc0e3bdda3d8009bd0e07ac",
+  "paths": [
+    "tools/diagnose_native_discovery.py",
+    ".github/workflows/native-discovery-diagnostic.yml"
+  ],
+  "static": {
+    "ast": 1,
+    "workflow": 1,
+    "diff": "PASS",
+    "public_privacy": "PASS",
+    "tests_executed": 0
+  },
+  "product_and_existing_test_diff": [],
+  "bounds": {
+    "identity_queries_max": 2,
+    "identity_budget_s": 10,
+    "collection_budget_s": 15,
+    "selected_scope": "LOOPBACK",
+    "whole_job_timeout_minutes": 10
+  },
+  "guard": "GITHUB_ACTIONS Windows plus explicit exact immutable diagnostic request; all other hosts refuse before imports or native queries.",
+  "disclosure": "Only closed timing/length/exit/status metadata; no raw command, provider data, paths, native identities or addresses.",
+  "automatic_production_retry": false,
+  "diagnostic_execution": "NOT_STARTED",
+  "defect": "DEF-094",
+  "acceptance": false,
+  "next_action": "Publish one-time diagnostic launch INTENT then exact request source/readback; inspect actual new Windows diagnostic job. Pending request 25 Linux inspection 343 continues same jobs."
+}
