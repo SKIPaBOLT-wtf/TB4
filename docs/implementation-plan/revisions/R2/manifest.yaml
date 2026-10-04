@@ -1144,6 +1144,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-018-retained-authority-publication.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-019-current-role-folder-active-adoption.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-020-read-only-remote-folder-proof.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-027/A-021-typed-remote-folder-first-run.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:

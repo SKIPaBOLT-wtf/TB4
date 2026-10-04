@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0283",
+  "source_commit": "0911e84be7079715972abd6eb314b057c1233c52",
+  "local_preservation_commit": "216216e218ed2d20b70f7b4b569141c7d22ed8fc",
+  "changed_files": [
+    "src/tb4/drive/folder_first_run.py",
+    "tests/drive/test_folder_first_run.py",
+    "tests/security/test_remote_folder_first_run_native.py",
+    "tests/drive/test_folder_first_run_native.py",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-021-typed-remote-folder-first-run.md",
+    "src/tb4/commissioning_checks.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md"
+  ],
+  "invariant": "Actual first-run storage verification of protected remote Folder selection consumes exactly one fresh A020 physical proof, with exact trusted spec/handle/binding/process/origin pins and current ready document.",
+  "new_tests": {
+    "portable": 21,
+    "protected_native_windows_linux": 3,
+    "actual_linux_helper_ssh": 4,
+    "total": 28
+  },
+  "review": {
+    "ast_files": 5,
+    "diff": "PASS",
+    "public_security_scan": "CLEAN",
+    "github_exact_readback": "PASS",
+    "tests_executed": 0
+  },
+  "remaining": "Authenticated credential/host/fixed command construction, runtime/GUI and full RP027/common qualification; adapter exposes no authority/mutation API and is not accepted into runtime port allowlists.",
+  "acceptance": false
+}
