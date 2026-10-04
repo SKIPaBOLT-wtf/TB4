@@ -3,25 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_SOURCE_REVIEW
+phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_PROBE_OFFLINE_POLICY
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0307
+last_verified_event: RP-027-A001-0308
 last_completed: RP-026
-next_action: Continue same immutable request22 Linux305 inspection until both613zero-skip
-  terminal; publish its functional outcome, then authorize bounded A023 authenticated
-  read-only transport/native/typed-first-run tests. Full platform306 remains separately
-  pending.
-verification: Request22 Progress235PASS12.57s; both Linux613 and full platform306
-  pending. Static transport/native design gap and rejected inherited-fd hypothesis
-  retained; no source change or C1-C4 acceptance.
+next_action: Publish actual offline diagnostic outcome. Continue same immutable Linux305
+  to terminal; then authorize A023 minimal trusted probe/native/first-run integration
+  with its own portable/native/isolated SSH tests.
+verification: 307 Progress235PASS and static transport findings saved; offline fixed
+  OpenSSH policy diagnostic308 pending independently. Current source Linux305/full
+  platform306 still pending; no dependent source/acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0305
 - RP-027-A001-0306
+- RP-027-A001-0308
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
