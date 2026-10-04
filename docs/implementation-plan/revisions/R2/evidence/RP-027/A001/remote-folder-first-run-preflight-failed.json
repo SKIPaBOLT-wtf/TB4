@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0285",
+  "source": "0911e84be7079715972abd6eb314b057c1233c52",
+  "status": "FAIL",
+  "tests_executed": 0,
+  "selected": {
+    "source": "0911e84be7079715972abd6eb314b057c1233c52",
+    "checkout": "55b22c6f6ed25364a73a9f5c10165083e500a3ee",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 2,
+    "elapsed_seconds": 0.921,
+    "owned_absent_fixture_root": true,
+    "targets": [
+      "tests/drive/test_folder_first_run.py",
+      "tests/security/test_remote_folder_first_run_native.py",
+      "tests/drive/test_folder_probe.py",
+      "tests/drive/test_folder_protocol.py",
+      "tests/drive/test_first_run_storage.py",
+      "tests/security/test_first_run.py",
+      "tests/security/test_first_run_native.py"
+    ],
+    "cases": [
+      {
+        "name": "tests.drive.test_folder_first_run",
+        "classname": "",
+        "status": "ERROR"
+      }
+    ],
+    "failures": [
+      {
+        "name": "tests.drive.test_folder_first_run",
+        "classname": "",
+        "message": "collection failure"
+      }
+    ],
+    "counts": {
+      "PASS": 0,
+      "FAILURE": 0,
+      "ERROR": 1,
+      "SKIPPED": 0
+    }
+  },
+  "default_collection": {
+    "schema_version": 1,
+    "source": "0911e84be7079715972abd6eb314b057c1233c52",
+    "checkout": "55b22c6f6ed25364a73a9f5c10165083e500a3ee",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 2,
+    "elapsed_seconds": 2.213,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3046,
+    "errors": [
+      "E   ModuleNotFoundError: No module named 'test_private_settings'",
+      "E   ModuleNotFoundError: No module named 'test_private_settings'",
+      "ERROR tests/drive/test_folder_first_run.py",
+      "ERROR tests/drive/test_folder_first_run_native.py"
+    ],
+    "tests_executed": 0
+  },
+  "trace": [
+    {
+      "file": "tests/drive/test_folder_first_run.py",
+      "line": 18,
+      "statement": "from tests.security.test_first_run import Source, FACTS, ENVIRONMENT"
+    },
+    {
+      "file": "tests/security/test_first_run.py",
+      "line": 18,
+      "statement": "from test_private_settings import MemoryNative",
+      "error": "ModuleNotFoundError: No module named 'test_private_settings'"
+    }
+  ],
+  "diagnosis": "The new cross-directory fixture import reaches existing security fixture imports that require pytest to have already prepended the security test directory. Default drive-first collection does not supply that ordering. Test namespace failure, not evidence of a production first-run defect.",
+  "privacy": "Only public source paths, synthetic values and closed exception messages; local user/profile/fixture paths omitted. No live transport/credentials/runtime.",
+  "next_action": "Publish a separate repair INTENT for the three existing security fixture imports in tests/security/test_first_run.py; qualify their namespace explicitly without changing pytest import policy or adding PYTHONPATH. Preserve repaired source/readback before repeating default preflight."
+}
