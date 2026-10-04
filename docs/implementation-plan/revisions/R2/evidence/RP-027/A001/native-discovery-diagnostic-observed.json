@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0350",
+  "source_commit": "91bad7a54916766417a882ef537ca812a08bfb05",
+  "trigger_commit": "10cbb790a7cd09a4f9a1e4535c5aa034a8468074",
+  "actual_checkout": "10cbb790a7cd09a4f9a1e4535c5aa034a8468074",
+  "actual_checkout_confirmed": true,
+  "run_id": 37244928658,
+  "job_id": 111560817123,
+  "closed_metrics": {
+    "acceptance": false,
+    "attempt": "A001",
+    "check": "RP-027.C2",
+    "collection": {
+      "completed_queries": 1,
+      "failed_queries": 0,
+      "observed": 0,
+      "status": "COMPLETE"
+    },
+    "diagnostic_only": true,
+    "identities": [
+      {
+        "outcome": "READY",
+        "stage": "identity-first"
+      },
+      {
+        "outcome": "READY",
+        "stage": "identity-second"
+      }
+    ],
+    "intent_event": "RP-027-A001-0347",
+    "item": "RP-027",
+    "production_budgets_unchanged": true,
+    "queries": [
+      {
+        "budget_s": 10,
+        "child_exit": 0,
+        "elapsed_s": 4.25,
+        "outcome": "READY",
+        "output_bytes": 71,
+        "output_complete": true,
+        "stage": "identity-first",
+        "stopped_live_child": false
+      },
+      {
+        "budget_s": 10,
+        "child_exit": 0,
+        "elapsed_s": 0.562,
+        "outcome": "READY",
+        "output_bytes": 71,
+        "output_complete": true,
+        "stage": "identity-second",
+        "stopped_live_child": false
+      },
+      {
+        "budget_s": 5,
+        "child_exit": 0,
+        "elapsed_s": 0.594,
+        "outcome": "READY",
+        "output_bytes": 139,
+        "output_complete": true,
+        "stage": "collection",
+        "stopped_live_child": false
+      },
+      {
+        "budget_s": 5,
+        "child_exit": 0,
+        "elapsed_s": 0.578,
+        "outcome": "READY",
+        "output_bytes": 345,
+        "output_complete": true,
+        "stage": "collection",
+        "stopped_live_child": false
+      },
+      {
+        "budget_s": 5,
+        "child_exit": 0,
+        "elapsed_s": 0.578,
+        "outcome": "READY",
+        "output_bytes": 139,
+        "output_complete": true,
+        "stage": "collection",
+        "stopped_live_child": false
+      }
+    ],
+    "request_revision": 1,
+    "schema_version": 1,
+    "scope": "SELECTED_LOOPBACK_ONLY",
+    "source_commit": "91bad7a54916766417a882ef537ca812a08bfb05"
+  },
+  "result": "RECORDED_NOT_REPRODUCED",
+  "original_failure_reproduced": false,
+  "original_cause": "UNPROVEN",
+  "observed": "First isolated identity query 4.250s, second 0.562s; normal three bounded queries 0.594/0.578/0.578s, all exit 0, no killed child, collection COMPLETE. Startup overhead observed, but no ten-second failure or provider error reproduced.",
+  "native_payload_disclosure": false,
+  "production_budgets_unchanged": true,
+  "product_acceptance": false,
+  "defect": "DEF-094",
+  "next_action": "Publish scoped fresh incidental PR required-Linux/full-platform inspection INTENT and preserve exact current-source outcomes. Do not claim an unobserved original cause or change production bounds. Independently advance protected endpoint metadata only with a recorded scheduling decision based on accepted credential/private-profile foundations and qualified d7 transport."
+}

@@ -6870,6 +6870,14 @@ defects:
       result: UNTESTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-authority-transport-windows-failed.json
+    - id: H3
+      claim: 'A fresh isolated Windows diagnostic observes startup overhead: first
+        loopback identity query 4.250s versus 0.562s second query; all five native
+        queries succeed within unchanged bounds. It does not reproduce the original
+        failure or prove its hidden cause.'
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-discovery-diagnostic-observed.json
     repairs: []
     issue: null
     regression_test: Required native loopback positive and mismatched-identity cases
@@ -6882,5 +6890,10 @@ defects:
       and current local 496-pass/default-3254 cannot qualify the unexecuted hosted
       Windows stages. Discovery source files were not changed by A025. Previous source
       qualification remains valid only for its exact source. No cause or transport
-      regression inferred; common C1-C4 acceptance remains held.
+      regression inferred; common C1-C4 acceptance remains held. Isolated diagnostic
+      request 1 observed all five actual read-only loopback queries READY, collection
+      COMPLETE, no live child stopped or raw native values disclosed. First/second
+      identity timings 4.250/0.562s establish overhead only; both original H1/H2 remain
+      untested, proven_origin remains null. No unproven production repair, automatic
+      retry or accepted Windows packages.
     legacy_record: null

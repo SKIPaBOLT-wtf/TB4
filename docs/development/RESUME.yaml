@@ -7,21 +7,22 @@ phase: STAGED_RECONFIGURATION_C2_NATIVE_DISCOVERY_DIAGNOSTIC_INSPECTION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 91bad7a54916766417a882ef537ca812a08bfb05
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0350
+last_verified_event: RP-027-A001-0351
 last_completed: RP-026
-next_action: Inspect exact terminal diagnostic summary, preserve measured reproduction
-  and append supported or untested hypothesis evidence to DEF-094. Choose the smallest
-  scoped repair only after that OUTCOME is published.
-verification: One isolated Windows diagnostic request/job pinned and terminal metadata
-  successful; closed metrics inspection pending under 350. Required Linux 771 twice
-  qualified. Original Windows DEF-094/full/common gates held; old full inspection
-  348 still pending.
+next_action: Publish scoped fresh incidental PR required-Linux/full-platform inspection
+  INTENT and preserve exact current-source outcomes. Do not claim an unobserved original
+  cause or change production bounds. Independently advance protected endpoint metadata
+  only with a recorded scheduling decision based on accepted credential/private-profile
+  foundations and qualified d7 transport.
+verification: Isolated Windows diagnostic actual five READY queries/COMPLETE within
+  unchanged limits; original failure not reproduced, cause unproven, DEF-094 remains
+  open. Current d7 Linux 771 twice qualified; fresh and prior full platform/package/C1-C4
+  gates pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0348
-- RP-027-A001-0350
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
