@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_AUTHORITY_PURPOSE_QUALIFICATION_DISPATCH
+phase: STAGED_RECONFIGURATION_C2_FOLDER_AUTHORITY_PURPOSE_LINUX_INSPECTION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4951204c062cd422467fb6661e146b5d978011c3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0328
+last_verified_event: RP-027-A001-0329
 last_completed: RP-026
-next_action: Publish separate currentrequest24functionalLinux709 andcompleteplatforminspection
-  intents. Inspect same IDs, reconcile older9a6cfull321, no duplicate/retry/cancel.
-  Authenticatednormalstorage transport begins onlyaftercurrentA024functionalqualification.
-verification: A0239a6c actualLinux670bothPASS327/full321pending. CurrentA024495 Windows443/new39/default3192PASS,
-  actualrequest24launch7b5fcfa/fiveworkflows/sixjobs recorded; current709/platform/C1-C4pending.
+next_action: Inspect same two709jobs toterminal andsettle result. Publish separatecurrent24fullplatforminspection
+  intent. Once actual709PASS/readback and A023670PASS, publish bounded authenticatednormalFolderauthority
+  transport intent; durableendpoint/runtime/GUI/common remainheld.
+verification: A0244951204 request24launch328verified, current709functionalinspection329pending.
+  A023670qualified327/full321pending. CurrentWindows443/new39/default3192PASS;C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0321
+- RP-027-A001-0329
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
