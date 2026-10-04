@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_LINUX_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_NATIVE_DISCOVERY_DIAGNOSTIC_DISPATCH
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
+source_commit: 91bad7a54916766417a882ef537ca812a08bfb05
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0346
+last_verified_event: RP-027-A001-0347
 last_completed: RP-026
-next_action: Publish one-time isolated Windows diagnostic launch INTENT and exact
-  request/readback. Inspect remaining same request 25 CI/Linux Desktop/Progress terminal
-  logs under a separate full-platform INTENT. Do not repeat failed Windows job or
-  infer cause from local success.
-verification: 'Both current d7 request 25 required Linux jobs qualified: 771 PASS
-  each, zero fail/error/skip, all 62 new cases executed. Hosted Windows DEF-094 and
-  remaining full platform/package/common C1-C4 gates remain held.'
+next_action: Launch the single exact diagnostic request and publish its actual trigger/run/job/checkout
+  receipt. Then publish terminal diagnosis inspection INTENT and separate remaining
+  request 25 full-platform inspection INTENT.
+verification: Current d7 Linux 771 twice qualified in 346. One isolated Windows diagnostic
+  launch pending under 347; cause DEF-094 unproven, full/platform/common acceptance
+  held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0347
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
