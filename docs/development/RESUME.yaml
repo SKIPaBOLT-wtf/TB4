@@ -3,25 +3,26 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_TRANSPORT
+phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_DEFAULT_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0334
+last_verified_event: RP-027-A001-0335
 last_completed: RP-026
-next_action: Publish separate exactcurrentWindows/native/pure/inherited regression
-  anddefaultwholecollection qualification intent; run newownedfixtures once, inspectactual
-  newcase/skips/counts/failure andpublishOUTCOMEbefore furtherchanges. Reconcileold321/330platforms;
-  onPASS launchonecurrentrequiredLinux/fullplatform withseparate inspectionintents.
-verification: A025sourced7b0bf7 preserved/readback; AST4/diff/privacyPASS andtests0,
-  native/default/currentLinux/fullqualificationpending. QualifiedA023670/A024709retained,
-  immutable321/330fullplatformpending; allC1-C4held.
+next_action: Run currentWindowsnative/pure/inherited24files anddefaultwholecollection
+  once; saveactualresults/newcaseIDs/skipboundary andpublishOUTCOME before repair/dependentcode.
+  Independentlyreconcileoldfull321terminal andcurrent330samejobs. OnnewPASSpublishcurrentrequest25requiredLinux/fulllaunchINTENT,
+  no later-source inference.
+verification: A025d7b0bf7 source334preserved, qualification335pending24files/newnative/pure/defaultcollection.
+  PriorA023670/A024709bothPASS; old321terminalSUCCESS metadata pendinglogs/receipt,330samejobs
+  stillpending. AllC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0321
 - RP-027-A001-0330
+- RP-027-A001-0335
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
