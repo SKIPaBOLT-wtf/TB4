@@ -6759,3 +6759,49 @@ defects:
       collection repair qualifies; current required Linux/full platform and common
       acceptance still pending.
     legacy_record: null
+  DEF-093:
+    title: Legacy Windows credential test enumerates a newly unauthorized Folder purpose
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 0db4cb1448d1d66273f04edacef52effe6346186
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-credential-purpose-preflight-failed.json
+    proven_origin: null
+    reproduction:
+      procedure: Default selected sixteen-file preflight includes old test_one_fixed_call_holds_key_and_safe_report
+        parameterized by all Purpose values. Its fixture binds only FETCHER_STATUS/START,
+        so the implicit added Folder case correctly returns DENIED instead of the
+        old test's expected READY.
+      failing_source: 0db4cb1448d1d66273f04edacef52effe6346186
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-credential-purpose-preflight-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Enum expansion adds an unintended old Windows regression case whose binding
+        does not authorize the Folder purpose; policy rejection is correct.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-credential-purpose-preflight-failed.json
+    repairs: []
+    issue: null
+    regression_test: Explicit original two Windows purposes plus unchanged new19 portable/6
+      actual native Folder cases; default collection3096, actual Linux/native/final
+      platform gates remain.
+    resolution_evidence: []
+    notes: Windows356 PASS/one legacy synthetic FAIL/zero ERROR/four existing actual
+      Linux-only SKIP16.879s; all25 new cases pass without skips. Default3097/no errors1.744s;
+      +1 unintended old enum parameter, no removed baseline nodeids. No new production
+      failure inferred. Correct overbroad Windows zero-skip expectation in later intent,
+      preserving the four actual Linux requirements. All common RP027 acceptance held.
+    legacy_record: null

@@ -3,24 +3,26 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_PURPOSE_PREFLIGHT
+phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_PURPOSE_PREFLIGHT_FAILED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 0db4cb1448d1d66273f04edacef52effe6346186
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0296
+last_verified_event: RP-027-A001-0297
 last_completed: RP-026
-next_action: Run one current Windows/default preflight, record exact result and any
-  defect before repair; preserve same291 terminal events. If passing, record required
-  Linux/final-source qualification scope before a later transport integration unit.
-verification: 296 source0db4cb1 default Windows credential/native/first-run regression
-  and default3096 collection pending. Old source119e518 request21 bothLinux588 pass;
-  same291 full CI/Desktop still pending. All acceptance/integration held.
+next_action: 'Publish a separate one-file test repair INTENT: pin existing Windows
+  legacy parameterization to its original STATUS/START purposes, retaining all assertions.
+  New Folder portable/native cases remain unchanged. Save/readback source and repeat
+  the same default sixteen files with four explicitly declared existing Linux-only
+  skips, all new25 zero skip/fail. Same291 old-source CI/Desktop remain pending.'
+verification: 297 failed old Windows enum test preserved/DEF093. New25 native/portable
+  PASS; four existing actual Linux-only Windows skips retained, default3097 no errors
+  with unintended extra old enum case. Repair one test parameterization; same291 CI/Desktop
+  pending. C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0291
-- RP-027-A001-0296
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -63,6 +65,7 @@ known_open_defects:
 - DEF-090
 - DEF-091
 - DEF-092
+- DEF-093
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
