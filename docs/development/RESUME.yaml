@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_QUALIFICATION_DISPATCH
+phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_WINDOWS_FAILURE_DIAGNOSIS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0340
+last_verified_event: RP-027-A001-0341
 last_completed: RP-026
-next_action: Publish scoped Windows25failure log diagnosis INTENT/readback beforeinspectlogs;
-  recordactualfailure/defect/reproduction beforeanyrepair. Separately current771Linux/full
-  remaining inspectionintents andsamejobs, no duplicate/retry/cancel. All dependentendpoint/runtimeintegration
-  held.
-verification: CurrentA025request25launch72a436/fiveworkflows/sixjobs recorded340;
-  Winjob111556175517terminalFAILUREcauseUNINSPECTED, diagnosticnext. Local496/default3254PASS;Linux771/remainingplatform/C1-C4held.
-  PriorA023/A024fullyqualified336/339.
+next_action: Inspect the same failed Windows job, preserve its actual diagnosis and
+  publish a coordinated OUTCOME before choosing a repair or qualification retry.
+verification: Request 25 Windows Desktop failure recorded in 340; exact terminal diagnosis
+  pending under 341. Current Linux 771 and remaining platform qualification pending;
+  C1-C4 remain held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0341
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
