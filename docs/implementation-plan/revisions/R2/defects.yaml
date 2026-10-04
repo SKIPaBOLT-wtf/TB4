@@ -6634,6 +6634,7 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/stale-leadership-timing-diagnostic.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-admission-first-qualification.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-original-ci-reconciled.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6684,5 +6685,8 @@ defects:
       error class. Trace and native lock source establish normalization on both platforms.
       Guard not changed by this diagnosis; passing_source remains null until corrected
       assertions are qualified. Request19 full jobs still need terminal reconciliation
-      before pause.'
+      before pause. Original request19 terminal CI/native/platform jobs later inspected:
+      only the same pending assertion failed; exact counts and skipped build/package
+      stages retained in current-timing-original-ci-reconciled.json. No rerun/cancellation
+      or overwritten failure.'
     legacy_record: null
