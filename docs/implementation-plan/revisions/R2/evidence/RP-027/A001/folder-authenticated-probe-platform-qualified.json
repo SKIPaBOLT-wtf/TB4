@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0321",
+  "source": "9a6c6923bfd64c5a5a0b125582c7c5808d3465d4",
+  "trigger": "4d04bdaee22e1d2a6c184132fb46f28c48307cce",
+  "pr_checkout": "d31bd0f952d33d336757be6cdb3bf6435f41ee4d",
+  "source_equivalence": {
+    "parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "4d04bdaee22e1d2a6c184132fb46f28c48307cce"
+    ],
+    "non_doc_diff": [],
+    "actual_all_job_checkout_logs": true
+  },
+  "runs": [
+    {
+      "id": 37238706219,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "head": "4d04bdaee22e1d2a6c184132fb46f28c48307cce",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37238706219"
+    },
+    {
+      "id": 37238706256,
+      "name": "CI",
+      "event": "pull_request",
+      "head": "4d04bdaee22e1d2a6c184132fb46f28c48307cce",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37238706256"
+    },
+    {
+      "id": 37238706257,
+      "name": "Progress",
+      "event": "pull_request",
+      "head": "4d04bdaee22e1d2a6c184132fb46f28c48307cce",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37238706257"
+    },
+    {
+      "id": 37238706248,
+      "name": "Desktop",
+      "event": "pull_request",
+      "head": "4d04bdaee22e1d2a6c184132fb46f28c48307cce",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37238706248"
+    },
+    {
+      "id": 37238703598,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "head": "4d04bdaee22e1d2a6c184132fb46f28c48307cce",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37238703598"
+    }
+  ],
+  "required_linux": {
+    "qualification_event": "RP-027-A001-0327",
+    "push": {
+      "run_id": 37238703598,
+      "job_id": 111542864488,
+      "groups": [
+        {
+          "passed": 157,
+          "deselected": 0,
+          "seconds": 26.67
+        },
+        {
+          "passed": 51,
+          "deselected": 0,
+          "seconds": 118.85
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "seconds": 51.6
+        },
+        {
+          "passed": 22,
+          "deselected": 0,
+          "seconds": 257.1
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "seconds": 16.91
+        },
+        {
+          "passed": 327,
+          "deselected": 1,
+          "seconds": 552.43
+        }
+      ],
+      "passed": 670,
+      "skipped": 0,
+      "failed": 0,
+      "errors": 0
+    },
+    "pull_request": {
+      "run_id": 37238706219,
+      "job_id": 111542872158,
+      "groups": [
+        {
+          "passed": 157,
+          "deselected": 0,
+          "seconds": 23
+        },
+        {
+          "passed": 51,
+          "deselected": 0,
+          "seconds": 93.92
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "seconds": 39.72
+        },
+        {
+          "passed": 22,
+          "deselected": 0,
+          "seconds": 195.14
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "seconds": 14.92
+        },
+        {
+          "passed": 327,
+          "deselected": 1,
+          "seconds": 482.06
+        }
+      ],
+      "passed": 670,
+      "skipped": 0,
+      "failed": 0,
+      "errors": 0
+    }
+  },
+  "ci": {
+    "run_id": 37238706256,
+    "job_id": 111542872328,
+    "conclusion": "success",
+    "passed": 3105,
+    "skipped": 27,
+    "xfailed": 4,
+    "seconds": 1757.03
+  },
+  "desktop": {
+    "run_id": 37238706248,
+    "linux": {
+      "job_id": 111542872479,
+      "conclusion": "success",
+      "passed": 3128,
+      "skipped": 21,
+      "xfailed": 4,
+      "seconds": 1317.75,
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    },
+    "windows": {
+      "job_id": 111542872844,
+      "conclusion": "success",
+      "passed": 2937,
+      "skipped": 212,
+      "xfailed": 4,
+      "seconds": 2499.87,
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    }
+  },
+  "progress": {
+    "run_id": 37238706257,
+    "job_id": 111542872360,
+    "conclusion": "success",
+    "passed": 235,
+    "seconds": 12.66,
+    "ledger": "PASS",
+    "history": "PRESERVED",
+    "privacy": "CLEAN"
+  },
+  "artifacts_metadata_only": [
+    {
+      "id": 11317074678,
+      "name": "tb4-desktop-Windows-d31bd0f952d33d336757be6cdb3bf6435f41ee4d",
+      "size_in_bytes": 120938106,
+      "digest": "sha256:f1050f2071eb18f90edaf0c6aca9be3ed92a32ef6a3f2cc6f1d97ad9e42b237c",
+      "expired": false
+    },
+    {
+      "id": 11316738659,
+      "name": "tb4-desktop-Linux-d31bd0f952d33d336757be6cdb3bf6435f41ee4d",
+      "size_in_bytes": 314522710,
+      "digest": "sha256:b7da28cab9a78290640260df36069e659fb1cdad27de8adb9b6cce20101d2acc",
+      "expired": false
+    }
+  ],
+  "new_cases": {
+    "portable": 28,
+    "actual_native": 20,
+    "actual_linux_authenticated": 9,
+    "total": 57,
+    "new_applicable_skips": 0,
+    "windows_actual_authenticated_skips": 9
+  },
+  "existing_scopes": "Full platform skipped/xfail scopes explicit; requiredLinux670 has no skip/fail/error. New57 fully executed under requiredLinux, 48 applicable under actual Windows native. Windows-to-Linux real connection not claimed. Packages/flags actual bothroles/platforms PASS.",
+  "current_head_source": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25",
+  "qualifies_current_head": false,
+  "acceptance": false,
+  "scope": "Qualifies only immutable A0239a6c, settles321. LaterA024495 functional709passed332 but full330pending; A025d7 newdefault335pending, needs currentLinux/platform and durable endpoint/first-run/runtimeGUI/C1-C4 composition. No artifact downloaded/installed, no real credential/profile/server/network/workload mutation."
+}
