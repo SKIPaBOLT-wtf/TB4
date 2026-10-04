@@ -6780,9 +6780,10 @@ defects:
         so the implicit added Folder case correctly returns DENIED instead of the
         old test's expected READY.
       failing_source: 0db4cb1448d1d66273f04edacef52effe6346186
-      passing_source: null
+      passing_source: d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-credential-purpose-preflight-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-credential-purpose-default-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6814,12 +6815,17 @@ defects:
     regression_test: Explicit original two Windows purposes plus unchanged new19 portable/6
       actual native Folder cases; default collection3096, actual Linux/native/final
       platform gates remain.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-credential-purpose-default-qualified.json
     notes: Windows356 PASS/one legacy synthetic FAIL/zero ERROR/four existing actual
       Linux-only SKIP16.879s; all25 new cases pass without skips. Default3097/no errors1.744s;
       +1 unintended old enum parameter, no removed baseline nodeids. No new production
       failure inferred. Correct overbroad Windows zero-skip expectation in later intent,
       preserving the four actual Linux requirements. All common RP027 acceptance held.
       One-line test-only source d19639c saved/readback; AST/diff/privacy passed and
-      tests0. New Folder assertions/production policy remain unchanged.
+      tests0. New Folder assertions/production policy remain unchanged. Corrected
+      sourced19639c selected Windows356 PASS/zero fail/error and exactly four unchanged
+      Linux-only skips16.675s; all25 new cases pass zero skip. Default3096/no errors1.709s.
+      Original baseline retained, unselected Folder scope remains denied; current
+      Linux/final-source/common acceptance pending.
     legacy_record: null

@@ -3,24 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_REMOTE_FIRST_RUN_PLATFORM_QUALIFIED
+phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_PURPOSE_DEFAULT_QUALIFIED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 119e518cc7adee8f5226d61cce38b05d351d8bad
+source_commit: d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0301
+last_verified_event: RP-027-A001-0302
 last_completed: RP-026
-next_action: Checkpoint current A022 sourced19639c default Windows/collection outcome
-  from intent300, then separately qualify its required actual Linux613/final-source
-  scope. Implement trusted authenticated transport/runtime/GUI only after its relevant
-  source gates; all C1-C4 remain held.
-verification: 301 exact A021 source119e518 request21 fully qualified all terminal
-  gates and packages. Current independent A022 sourced19639c default300 outcome next;
-  its Linux/final-source gates separate. All C1-C4 held.
+next_action: Publish a separate qualification INTENT and request22 for current sourced19639c
+  required actualLinux613 zero skip (new purpose25 + previous588), full CI/Desktop/package/Progress.
+  Inspect same immutable runs; no auth/transport integration until relevant current
+  native gates, and no check acceptance before final-source/common qualification.
+verification: 302 current sourced19639c Windows356 with four exact existing Linux-only
+  skips/new25 zero skip and default3096 pass. All291 oldsource gates reconciled301;
+  current requiredLinux613/full platform next. Native/transport integration and C1-C4
+  held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0300
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
