@@ -3,24 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_WINDOWS_TEST_REPAIR
+phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_WINDOWS_SCOPE_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 0db4cb1448d1d66273f04edacef52effe6346186
+source_commit: d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0298
+last_verified_event: RP-027-A001-0299
 last_completed: RP-026
-next_action: Apply the one-line legacy Windows parameterization after readback, save/readback
-  source OUTCOME, then publish repeat default preflight with explicit platform scope.
-  Preserve same291 terminal jobs before transport integration.
-verification: 298 DEF093 one-line old Windows fixture-scope repair pending; new25
-  already pass, four existing actual Linux-only Windows skips retained. Current foundation0db4cb1
-  and same291 full platform still unaccepted.
+next_action: Publish repeated sixteen-target default Windows/whole collection INTENT
+  with all25 new cases zero failure/error/skip, all supported existing cases passing,
+  four exact existing Linux-only skips declared, and default3096 expected. Required
+  actual Linux/final-source gates and291 terminal reconciliation remain.
+verification: 299 test-only sourced19639c saved/readback tests0, repeat Windows/default
+  preflight next with four explicit existing Linux-only skips. Same291 source119e518
+  LinuxDesktop/bothLinux588 pass; CI/WindowsDesktop pending. C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0291
-- RP-027-A001-0298
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

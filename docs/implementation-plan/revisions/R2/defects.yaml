@@ -6793,7 +6793,18 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-credential-purpose-preflight-failed.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0298
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Explicit original two Windows purposes plus unchanged new19 portable/6
       actual native Folder cases; default collection3096, actual Linux/native/final
@@ -6804,4 +6815,6 @@ defects:
       +1 unintended old enum parameter, no removed baseline nodeids. No new production
       failure inferred. Correct overbroad Windows zero-skip expectation in later intent,
       preserving the four actual Linux requirements. All common RP027 acceptance held.
+      One-line test-only source d19639c saved/readback; AST/diff/privacy passed and
+      tests0. New Folder assertions/production policy remain unchanged.
     legacy_record: null
