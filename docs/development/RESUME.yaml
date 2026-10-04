@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_WINDOWS_FAILURE_DIAGNOSIS
+phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_LINUX_INSPECTION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0342
+last_verified_event: RP-027-A001-0343
 last_completed: RP-026
-next_action: Publish a bounded isolated Windows discovery diagnostic/reproduction
-  INTENT before execution, preserving production deadlines and closed public reports.
-  Inspect remaining same request 25 Linux jobs under separate INTENT; no blanket rerun
-  or acceptance.
-verification: Request 25 Windows failure diagnosed at native loopback identity query,
-  cause unproven, DEF-094 open. Current complete Windows/package qualification not
-  executed. Linux 771 and remaining same jobs still pending; C1-C4 held.
+next_action: Inspect the same required Linux jobs and record exact 771-case results.
+  Independently prepare the bounded isolated Windows provider diagnosis with a separate
+  source/experiment INTENT; no acceptance from prior source receipts.
+verification: DEF-094 actual hosted Windows native identity-query failure preserved
+  in 342; cause unproven. Same request 25 required Linux 771 inspection pending under
+  343. Full Windows/package/C1-C4 acceptance held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0343
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
