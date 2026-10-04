@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "source": "d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1",
+  "progress": {
+    "run": 37234348061,
+    "job": 111530380279,
+    "checkout": "559cb310140959fadc72b81cf96582050f1b944f",
+    "conclusion": "success",
+    "passed": 235,
+    "elapsed_s": 12.57
+  },
+  "static_facts": [
+    "FolderProbe/RemoteFolderCommissioning accept exactly FixedProcess; no credential-bound constructor exists.",
+    "ExistingKeyStore now dispatches only explicit FOLDER_PROBE; public UseResult remains closed outcome with no payload.",
+    "Linux HeldKey is sealed borrowed memfd, original pathname/secret are not exposed. Windows held handle is read-only, canonical native path confirmed and write/delete sharing denied."
+  ],
+  "rejected_hypothesis": {
+    "method": "Inherited descriptor and child self proc-fd",
+    "reason": "Primary OpenSSH main closes descriptors above stderr before identity loading. subprocess pass_fds alone is insufficient.",
+    "experiment": false
+  },
+  "proposed_scope": [
+    "Native internal process path from still-held sealed parent fd on Linux, native-confirmed held original canonical path on Windows; no temporary key copy or public material.",
+    "Explicit protected endpoint/known-host-file version and stable target/trust checked every use, one fixed read-only opt-in command only.",
+    "Exact bounded ephemeral private request/reply slot maps FOLDER_PROBE Outcome only; proof bytes consumed once privately by typed FolderProbe/RemoteFolderCommissioning.",
+    "Fresh nonce/spec/root/authority proof, current native/revocation/expiry and selected store; no default identity/config/agent/certificate/password/forwarding/multiplex/fallback/retry.",
+    "Portable, native Win/Linux and actual Linux isolated SSH negative/restart tests; final runtime/GUI and common source acceptance still separate."
+  ],
+  "unverified": [
+    "Actual parent proc-fd readability by OpenSSH under qualified Linux host policy.",
+    "No authenticated Windows-to-Linux connection or durable protected endpoint/runtime construction yet."
+  ],
+  "pending_intents": [
+    "RP-027-A001-0305",
+    "RP-027-A001-0306"
+  ],
+  "acceptance": false
+}
