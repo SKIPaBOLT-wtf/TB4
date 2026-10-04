@@ -3,23 +3,26 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_AUTHORITY_PURPOSE_LINUX_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_FOLDER_AUTHORITY_PURPOSE_PLATFORM_INSPECTION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4951204c062cd422467fb6661e146b5d978011c3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0329
+last_verified_event: RP-027-A001-0330
 last_completed: RP-026
-next_action: Inspect same two709jobs toterminal andsettle result. Publish separatecurrent24fullplatforminspection
-  intent. Once actual709PASS/readback and A023670PASS, publish bounded authenticatednormalFolderauthority
-  transport intent; durableendpoint/runtime/GUI/common remainheld.
-verification: A0244951204 request24launch328verified, current709functionalinspection329pending.
-  A023670qualified327/full321pending. CurrentWindows443/new39/default3192PASS;C1-C4held.
+next_action: Reconcile samecurrent24 fullplatformterminal evidence andsanitized artifacts;
+  keep pendingactual identitiesrecoverable. Finish oldA023321 andcurrentfunctional329
+  separately. New dependent authenticated authority source waits329PASS/readback;
+  finalsource/commonC1-C4held.
+verification: CurrentA024495 Window443/new39/default3192PASS, request24 actual IDs
+  recorded328, functional329/full330 pending. A023actualLinux670passed327/full321pending;
+  allcommonC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0321
 - RP-027-A001-0329
+- RP-027-A001-0330
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
