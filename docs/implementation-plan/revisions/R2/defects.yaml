@@ -6829,3 +6829,58 @@ defects:
       Original baseline retained, unselected Folder scope remains denied; current
       Linux/final-source/common acceptance pending.
     legacy_record: null
+  DEF-094:
+    title: Hosted Windows native loopback qualification fails before identity proof
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-authority-transport-windows-failed.json
+    proven_origin: null
+    reproduction:
+      procedure: TB4_REQUIRE_NATIVE_DISCOVERY=1 python -m pytest tests/discovery/test_native_loopback.py
+        -ra; observed terminal Windows job 111556175517, step 10. First loopback identity
+        query raises DISCOVERY_UNAVAILABLE before any neighbor collection; second
+        mismatched-identity test passes. Underlying provider/deadline cause remains
+        unproven.
+      failing_source: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-authority-transport-windows-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Cold Windows networking provider startup exceeds the fixture's ten-second
+        identity-query limit.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-authority-transport-windows-failed.json
+    - id: H2
+      claim: The provider exits nonzero or produces unavailable output during the
+        first query.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-authority-transport-windows-failed.json
+    repairs: []
+    issue: null
+    regression_test: Required native loopback positive and mismatched-identity cases
+      plus deterministic BoundedRead deadline/nonzero/oversize rejection; no larger
+      production budgets or silent retry.
+    resolution_evidence: []
+    notes: Request 25 current source d7, exact actual merge checkout 47d and trigger
+      72a confirmed in failed Windows terminal log. One failure/one pass in 13.47s;
+      complete regression and all Windows packages were skipped. Earlier Windows steps
+      and current local 496-pass/default-3254 cannot qualify the unexecuted hosted
+      Windows stages. Discovery source files were not changed by A025. Previous source
+      qualification remains valid only for its exact source. No cause or transport
+      regression inferred; common C1-C4 acceptance remains held.
+    legacy_record: null

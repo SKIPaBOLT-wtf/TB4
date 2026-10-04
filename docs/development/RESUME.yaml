@@ -7,18 +7,19 @@ phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_WINDOWS_FAILURE_
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0341
+last_verified_event: RP-027-A001-0342
 last_completed: RP-026
-next_action: Inspect the same failed Windows job, preserve its actual diagnosis and
-  publish a coordinated OUTCOME before choosing a repair or qualification retry.
-verification: Request 25 Windows Desktop failure recorded in 340; exact terminal diagnosis
-  pending under 341. Current Linux 771 and remaining platform qualification pending;
-  C1-C4 remain held.
+next_action: Publish a bounded isolated Windows discovery diagnostic/reproduction
+  INTENT before execution, preserving production deadlines and closed public reports.
+  Inspect remaining same request 25 Linux jobs under separate INTENT; no blanket rerun
+  or acceptance.
+verification: Request 25 Windows failure diagnosed at native loopback identity query,
+  cause unproven, DEF-094 open. Current complete Windows/package qualification not
+  executed. Linux 771 and remaining same jobs still pending; C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0341
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

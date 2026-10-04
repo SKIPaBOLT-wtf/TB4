@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0341",
+  "source_commit": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25",
+  "trigger_commit": "72a436ffc7e3962210fcea52f295ebc88d4828be",
+  "actual_checkout": {
+    "sha": "47d287692af8430db880b1f7fc923ae726d1f2a1",
+    "parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "72a436ffc7e3962210fcea52f295ebc88d4828be"
+    ],
+    "source_commit": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25"
+  },
+  "checkout_confirmed_in_terminal_log": true,
+  "source_equivalence": [],
+  "run_id": 37243309484,
+  "job_id": 111556175517,
+  "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37243309484/job/111556175517",
+  "platform": {
+    "os": "Microsoft Windows Server 2025",
+    "image": "windows-2025-vs2026",
+    "image_version": "20260925.250.1",
+    "python": "3.11.9"
+  },
+  "failed_step": {
+    "number": 10,
+    "name": "Native scoped discovery qualification",
+    "command": "TB4_REQUIRE_NATIVE_DISCOVERY=1 python -m pytest tests/discovery/test_native_loopback.py -ra",
+    "exit_code": 1,
+    "passed": 1,
+    "failed": 1,
+    "skipped": 0,
+    "elapsed_s": 13.47
+  },
+  "failed_test": "tests/discovery/test_native_loopback.py::test_actual_loopback_identity_and_cache_read_only",
+  "observed_error": "tb4.discovery_catalogue.DiscoveryError: DISCOVERY_UNAVAILABLE",
+  "trace": {
+    "test_line": 34,
+    "fixture_line": 25,
+    "production_line": 49,
+    "operation": "BoundedRead.run for fixed PowerShell Get-NetIPAddress loopback identity query",
+    "timeout_s": 10,
+    "failure_before": "NativeNeighbors inspection or neighbor-cache collection"
+  },
+  "raw_error_disclosure": false,
+  "cause": "UNPROVEN: closed exception does not distinguish deadline, child exit or provider output failure.",
+  "unchanged_source_files": [
+    "tests/discovery/test_native_loopback.py",
+    "src/tb4/discovery_native.py"
+  ],
+  "earlier_steps": [
+    {
+      "name": "Desktop tests with real GUI and core imports",
+      "passed": 74,
+      "skipped": 20,
+      "elapsed_s": 2.46
+    },
+    {
+      "name": "Native Windows credential boundary qualification",
+      "passed": 15,
+      "skipped": 0,
+      "elapsed_s": 0.27
+    },
+    {
+      "name": "Native protected first-run qualification",
+      "passed": 30,
+      "skipped": 4,
+      "elapsed_s": 2.27
+    }
+  ],
+  "unexecuted": [
+    "Complete platform regression suite",
+    "Build WATCHDOG",
+    "Build FETCHER",
+    "Packaged application and installer acceptance",
+    "Publish installers and checksums"
+  ],
+  "local_current_qualification": {
+    "passed": 496,
+    "declared_linux_only_skips": 22,
+    "new_passed": 53,
+    "default_collection": 3254,
+    "collection_errors": 0
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "claim": "Cold Windows networking provider startup exceeds the fixture's ten-second identity-query limit.",
+      "result": "UNTESTED"
+    },
+    {
+      "id": "H2",
+      "claim": "The provider exits nonzero or produces unavailable output during the first query.",
+      "result": "UNTESTED"
+    }
+  ],
+  "defect": "DEF-094",
+  "acceptance": false,
+  "next_action": "Publish a bounded isolated Windows discovery diagnostic/reproduction INTENT before execution, preserving production deadlines and closed public reports. Inspect remaining same request 25 Linux jobs under separate INTENT; no blanket rerun or acceptance."
+}
