@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_REMOTE_FIRST_RUN_PREFLIGHT_FAILED
+phase: STAGED_RECONFIGURATION_C2_REMOTE_FIRST_RUN_IMPORT_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 0911e84be7079715972abd6eb314b057c1233c52
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0286
+last_verified_event: RP-027-A001-0287
 last_completed: RP-026
-next_action: Publish a separate repair INTENT for the three existing security fixture
-  imports in tests/security/test_first_run.py; qualify their namespace explicitly
-  without changing pytest import policy or adding PYTHONPATH. Preserve repaired source/readback
-  before repeating default preflight.
-verification: '286 failed preflight preserved: selected zero executed/one collection
-  error; default partial3046/two collection errors. DEF092 namespace repair next;
-  no current source qualification and C1-C4 held.'
+next_action: Apply only the three qualified fixture imports after this remote intent
+  readback; preserve/readback source, then publish source OUTCOME and a separate default
+  qualification INTENT.
+verification: 287 DEF092 namespace-only repair authorized after failed preflight286
+  remote readback. Source0911e84 still unqualified; C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0287
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
