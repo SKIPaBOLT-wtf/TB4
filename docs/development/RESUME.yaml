@@ -7,21 +7,20 @@ phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_PROBE_DEFAULT_PREFLIGHT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 9a6c6923bfd64c5a5a0b125582c7c5808d3465d4
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0315
+last_verified_event: RP-027-A001-0316
 last_completed: RP-026
-next_action: Publish current scoped/default actual OUTCOME and any exact defect before
-  repair. If native/default pass, launch one source-specific requiredLinux670 (first157
-  plus51/6/22/107/327) and full platform/package request23, preserve actual run/checkout
-  IDs and independent functional/full completion gates.
-verification: A0239a6c13-file source314 saved/readback; AST8/diff/privacyPASS/tests0.
-  Current default/native preflight315pending; Linux authenticated proof/full final
-  packages unqualified, C1-C4 held; priorA022 Desktop306pending.
+next_action: Publish one current request23 launch INTENT for requiredLinux670 (first157
+  then51/6/22/107/327) and full CI/Desktop/Progress. Triggeronce, pin actual identities/checkout,
+  recordlaunch, then separate functional Linux and full platform completion inspections.
+  Continue same previousA022306 reconciliation when terminal.
+verification: A0239a6c defaultWindows404PASS/new48zero-skip with13declared Linux-only
+  scopes; wholedefault3153zeroerrors/new57/no removals. Current actualLinuxSSH and
+  packages unqualified; oldA022 Desktop306pending; C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0306
-- RP-027-A001-0315
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
