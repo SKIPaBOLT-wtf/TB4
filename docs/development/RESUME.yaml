@@ -3,23 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_LINUX_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_PLATFORM_INSPECTION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0305
+last_verified_event: RP-027-A001-0306
 last_completed: RP-026
-next_action: Publish separate full-platform completion-inspection intent for request22,
-  continue bounded source inspection while jobs run, and reconcile these same two
-  Linux jobs terminally before transport edit.
-verification: Request22 launched once; current Linux613 functional inspection pending.
-  Full CI/Desktop/package/Progress qualification will be separately tracked. Source
-  Windows356/new25/default3096 pass; C1-C4 held.
+next_action: Inspect these same immutable jobs while functional Linux305 completes;
+  publish full-platform outcome when terminal. Dependent uninstalled transport source
+  may follow only its relevant current Windows/native+Linux functional outcome, with
+  this package/common gate still held.
+verification: Request22 same actual five workflows/six jobs tracked by separate functional
+  Linux305 and full-platform306 inspections; both pending. Current d19639c Windows356/new25/default3096
+  pass; C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0305
+- RP-027-A001-0306
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
