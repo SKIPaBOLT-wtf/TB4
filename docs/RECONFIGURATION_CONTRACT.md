@@ -276,3 +276,12 @@ under one database lock, without nested database reads or mapping resolution.
 No paths, commands, credentials or mutations are accepted through the probe.
 The observation does not grant activation or role ownership. Actual qualification,
 trusted credential/transport and typed first-run/runtime/GUI composition remain.
+
+[A-021](implementation-plan/revisions/R2/amendments/RP-027/A-021-typed-remote-folder-first-run.md)
+connects the exact typed read-only A020 probe to actual first-run CommissionedStorage.
+Protected selection and trusted spec/handle/binding/process/origin pins precede
+one fresh physical proof per review. Saved success, malformed replies and later
+physical loss refuse with STORAGE_UNAVAILABLE. Actual protected profile restart,
+activation checks and UNKNOWN history remain; DenyActivation stays closed.
+The adapter has no authority/mutation API. Credential/transport construction,
+runtime/GUI and complete RP027/common acceptance remain required.

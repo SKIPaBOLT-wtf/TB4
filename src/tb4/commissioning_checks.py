@@ -71,6 +71,9 @@ class CommissionedStorage:
         try:
             spec, handle = storage_spec(record)
             port = self.port
+            from .drive.folder_first_run import RemoteFolderCommissioning
+            if type(port) is RemoteFolderCommissioning:
+                return port.verify(record)
             require(port.spec == spec and port.root_id == spec.root_id and port.mode == spec.mode,
                     "STORAGE_UNAVAILABLE")
             require(getattr(port,"root_transition",None) == record.get("root_transition"),
