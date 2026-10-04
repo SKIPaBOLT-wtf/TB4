@@ -5,25 +5,23 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_TRANSPORT
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: c121a72f2d84cfab7a32d08d04671e3b9372ca2f
+source_commit: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0333
+last_verified_event: RP-027-A001-0334
 last_completed: RP-026
-next_action: Implement onlyA025module/tests/workflow/amendment/step/contracts, inspectAST/diff/privacy,
-  preserveexactownedsourcebytes andremote readback; publishOUTCOME/amendmentlink/cursor.
-  Thenpublish separateWindowsnative/portable/default collectionqualification, requiredcurrentLinux
-  andfullplatformintent. Reconcile321/330samejobs withoutretrigger; fullRemoteFolder/profile/runtime
-  compositionwaitsnewqualification.
-verification: A023670andA024709bothactualLinuxqualified327/332, Windows/native/defaultqualificationsPASS.
-  A025normalREAD/CAStransport source333pending; oldimmutableplatform321/330samejobs
-  pending andC1-C4held.
+next_action: Publish separate exactcurrentWindows/native/pure/inherited regression
+  anddefaultwholecollection qualification intent; run newownedfixtures once, inspectactual
+  newcase/skips/counts/failure andpublishOUTCOMEbefore furtherchanges. Reconcileold321/330platforms;
+  onPASS launchonecurrentrequiredLinux/fullplatform withseparate inspectionintents.
+verification: A025sourced7b0bf7 preserved/readback; AST4/diff/privacyPASS andtests0,
+  native/default/currentLinux/fullqualificationpending. QualifiedA023670/A024709retained,
+  immutable321/330fullplatformpending; allC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0321
 - RP-027-A001-0330
-- RP-027-A001-0333
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
