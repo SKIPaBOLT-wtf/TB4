@@ -3,23 +3,26 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_REMOTE_FIRST_RUN_LINUX_MILESTONE
+phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_PURPOSE_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 119e518cc7adee8f5226d61cce38b05d351d8bad
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0293
+last_verified_event: RP-027-A001-0294
 last_completed: RP-026
-next_action: Inspect the same remaining PR Linux/CI/Desktop jobs from292. Record terminal
-  source/platform qualification before implementing a separately scoped trusted Folder
-  credential/transport boundary.
-verification: 293 push requiredLinux588 zero skip and Progress235 PASS on source119e518/request21.
-  PR Linux/CI/Desktop/package gates from292 pending; no acceptance or new dependent
-  source.
+next_action: After this exact remote intent readback, implement the bounded independent
+  credential foundation, preserve/readback source and OUTCOME; then targeted Windows/default
+  qualification. Keep inspecting the same291 runs; integration remains dependent on
+  their actual terminal outcome.
+verification: 294 independently scheduled C2 credential-purpose foundation depends
+  on already accepted native credential scope, not pending291 platform artifacts.
+  Source119e518 pushLinux588/Windows136/default3071/Progress235 pass; PR Linux/CI/Desktop
+  still pending. Integration/C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0291
+- RP-027-A001-0294
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
