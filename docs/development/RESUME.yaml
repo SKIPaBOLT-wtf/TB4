@@ -3,25 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_INDEPENDENT_FOLDER_AUTHORITY_CREDENTIAL_FOUNDATION
+phase: STAGED_RECONFIGURATION_C2_FOLDER_AUTHORITY_PURPOSE_DEFAULT_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 4951204c062cd422467fb6661e146b5d978011c3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0323
+last_verified_event: RP-027-A001-0324
 last_completed: RP-026
-next_action: Publish separate source-linked Windows/native/portable/default collection
-  qualification intent, then run and settle actual result. Reconcile same request23
-  Linux320/full321; any authenticated normal authority composition waits relevant
-  qualifications.
-verification: A024 source-only preserved/readback; AST6/diff/privacyPASS and tests0,
-  qualification pending. Independent of immutableA023 request23 inspections320/321.
-  All C1-C4/common held.
+next_action: Run scoped default Windows21/native authoritycases and independent whole-tree
+  collection once, inspect exact results/newIDs/skips, publish OUTCOME/evidence. Reconcile
+  same immutable A023 jobs; onnewPASS publish one currentA024 request24 plus separate
+  inspection intents. Dependent normal transport waits relevant actualLinux qualification.
+verification: A024 source4951204 preserved323; new qualification324pending with21files/newnative/portable/noPYTHONPATH
+  default collection. ImmutableA023 requiredLinux320/full321 tracked; no C1-C4 acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0320
 - RP-027-A001-0321
+- RP-027-A001-0324
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
