@@ -1,24 +1,25 @@
 schema_version: 1
 revision: R2
 work_item: RP-027
-check: RP-027.C4
+check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_TIMING_ADMISSION_QUALIFIED
+phase: STAGED_RECONFIGURATION_C2_REMOTE_FOLDER_FIRST_RUN_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: bf5c34f9fc79fcc6784ccd71009e2551608522a7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0282
+last_verified_event: RP-027-A001-0283
 last_completed: RP-026
-next_action: Inspect current A020 and actual first-run/credential transport contracts;
-  publish a bounded typed read-only remote Folder first-run integration INTENT with
-  exact tests and safe scope, then implement and qualify. C1-C4 remain held.
-verification: 282 current timing repair and all request20 source/platform/package
-  gates reconciled. All intents settled, seven regression cases passed, DEF091 scoped
-  passing_sourcebf5c34f. Full RP027 C1-C4 remain held.
+next_action: Implement exactly this bounded read-only adapter/tests/amendment, preserve/readback
+  source and source-only OUTCOME, then separately qualify default Windows/current
+  required Linux and source-linked platform gates.
+verification: 283 A020 and timing guard scoped gates reconciled; typed remote Folder
+  first-run source unit pending. All RP027 checks unaccepted and live actions remain
+  disallowed.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0283
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
