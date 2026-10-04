@@ -19,6 +19,8 @@ from uuid import UUID
 class Purpose(StrEnum):
     FETCHER_STATUS = "FETCHER_STATUS"
     FETCHER_START = "FETCHER_START"
+    # One commissioned read-only existing-Folder proof; never CAS or allocation.
+    FOLDER_PROBE = "FOLDER_PROBE"
 
 
 class Outcome(StrEnum):

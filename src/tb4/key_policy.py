@@ -34,7 +34,7 @@ class ExistingKeyStore:
     """Only trusted commissioning may select; ports are trusted local code.
 
     native holds/verifies the actual file, runner.verify_target checks the protected
-    current endpoint pin and maps exactly two methods to fixed helpers. No remote
+    current endpoint pin and maps explicit purposes to fixed helpers. No remote
     JSON can construct these ports. READY describes local resolver availability,
     not a successful authenticated connection or FETCHER readiness.
     """
@@ -153,11 +153,17 @@ class ExistingKeyStore:
             try:
                 if type(expected_version) is not int or expected_version < 1:
                     return Outcome.DENIED
+                methods = {Purpose.FETCHER_STATUS: "fetcher_status",
+                           Purpose.FETCHER_START: "fetcher_start",
+                           Purpose.FOLDER_PROBE: "folder_probe"}
+                if type(purpose) is not Purpose or purpose not in methods:
+                    return Outcome.DENIED
+                call = getattr(self._runner, methods[purpose], None)
+                if not callable(call):
+                    return Outcome.DENIED
                 with self._held(binding, purpose, expected_version) as key:
                     # A callback may have an effect before it raises/loses a reply.
                     try:
-                        call = (self._runner.fetcher_status if purpose is Purpose.FETCHER_STATUS
-                                else self._runner.fetcher_start)
                         result = call(key, binding.target_id, binding.target_trust)
                     except Exception:
                         return Outcome.UNKNOWN

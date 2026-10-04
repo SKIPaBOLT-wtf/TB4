@@ -98,7 +98,7 @@ def request(purpose=Purpose.FETCHER_STATUS):
 
 
 @pytest.mark.parametrize("mode", ["headless", "desktop"])
-@pytest.mark.parametrize("purpose", list(Purpose))
+@pytest.mark.parametrize("purpose", [Purpose.FETCHER_STATUS, Purpose.FETCHER_START])
 def test_fixed_use_in_declared_modes_without_agent_or_display(mode, purpose, monkeypatch, capsys):
     monkeypatch.setenv("SSH_AUTH_SOCK", CANARY)
     monkeypatch.setenv("DISPLAY", CANARY)

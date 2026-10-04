@@ -15,7 +15,7 @@ trust fingerprint, approved-store locator, exact permitted helper purposes,
 expiry, generation and revocation. Handles and locators stay local; BALLPARK and
 LLM capability reports never receive them. Binding repr omits protected fields.
 
-The only purposes are FETCHER_STATUS and FETCHER_START. There is no arbitrary
+The initial RP-006 purposes are FETCHER_STATUS and FETCHER_START. There is no arbitrary
 command/payload argument. An authorized trusted local setup controller enrolls
 the minimum needed purpose set. Owner authorization is control state established
 outside the incoming LLM/device proposal; passing a boolean from remote JSON is
@@ -76,3 +76,13 @@ copied or deployed by this change. Its raw internal transport/result objects are
 not public diagnostic artifacts; later fixed adapters must adopt the new safe
 result boundary. Rollback removes/revokes only newly introduced local metadata
 and reports capability unavailable while keeping unrelated credentials untouched.
+
+RP-027 [A-022](implementation-plan/revisions/R2/amendments/RP-027/A-022-closed-folder-probe-credential-purpose.md)
+adds the explicit read-only FOLDER_PROBE fixed purpose. Only its commissioned
+folder_probe callback may run; a missing method is DENIED and never maps to a
+FETCHER command. Public results remain the same closed outcomes/booleans, with
+no arbitrary payload or secret return. Protected images/choices accept unique
+declared purposes up to the closed enum size, retaining old metadata meanings.
+FETCHER summaries retain their original two purposes. This foundation does not
+construct an authenticated Folder transport, expose a physical proof through
+UseResult, migrate an installed binding or grant activation/runtime authority.

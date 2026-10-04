@@ -25,7 +25,7 @@ def text(value, pattern):
 
 
 def purposes(value):
-    require(type(value) is list and 1 <= len(value) <= 2
+    require(type(value) is list and 1 <= len(value) <= len(Purpose)
             and all(type(x) is str and x in {p.value for p in Purpose} for x in value)
             and len(set(value)) == len(value), "CREDENTIAL_IMAGE_INVALID")
     return frozenset(Purpose(x) for x in value)

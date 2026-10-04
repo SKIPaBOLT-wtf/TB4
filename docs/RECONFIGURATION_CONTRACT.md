@@ -285,3 +285,12 @@ physical loss refuse with STORAGE_UNAVAILABLE. Actual protected profile restart,
 activation checks and UNKNOWN history remain; DenyActivation stays closed.
 The adapter has no authority/mutation API. Credential/transport construction,
 runtime/GUI and complete RP027/common acceptance remain required.
+
+[A-022](implementation-plan/revisions/R2/amendments/RP-027/A-022-closed-folder-probe-credential-purpose.md)
+adds an independently scheduled closed FOLDER_PROBE credential purpose and
+explicit fixed-method dispatch. Missing/untyped/foreign scope cannot fall through
+to FETCHER_START; per-use native checks and closed enum outcomes remain. Private
+images preserve original references/versions and admit the declared purpose set;
+FETCHER reports keep their original scope. No authenticated transport/proof payload
+or authority/activation is supplied. Same immutable A021 platform qualification
+continues; dependent transport/runtime/GUI and all common acceptance remain held.

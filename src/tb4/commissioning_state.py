@@ -78,7 +78,7 @@ def validate_choices(choices, installation):
         require(match(r"cr_[0-9a-f]{32}", value["handle"]) and identity(value["target_id"])
                 and match(r"[0-9a-f]{64}", value["target_trust"]), "SETUP_CREDENTIALS")
         purposes = value["purposes"]
-        require(type(purposes) is list and 1 <= len(purposes) <= 2
+        require(type(purposes) is list and 1 <= len(purposes) <= len(Purpose)
                 and all(type(p) is str and p in {x.value for x in Purpose} for p in purposes)
                 and len(set(purposes)) == len(purposes), "SETUP_CREDENTIALS")
         require(value["handle"] not in seen, "SETUP_CREDENTIALS")

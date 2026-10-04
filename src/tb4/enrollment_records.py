@@ -63,7 +63,8 @@ def own_credentials(setup, resolver, device):
             and resolver._installation_id == setup.installation_id, "ENROLLMENT_CREDENTIAL_INSTALLATION")
     selected = setup.private_choices()["credentials"]
     result = {}
-    for purpose in Purpose:
+    # Folder commissioning is not a FETCHER bootstrap capability.
+    for purpose in (Purpose.FETCHER_STATUS, Purpose.FETCHER_START):
         records = [r for r in selected if r["target_id"] == device and purpose.value in r["purposes"]]
         require(not records or resolver is not None, "ENROLLMENT_CREDENTIAL_INSTALLATION")
         values = [resolver.capability(r["handle"], purpose=purpose, target_id=device,
