@@ -3,26 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_DISCOVERY_DIAGNOSTIC_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_DIAGNOSTIC_SOURCE_PLATFORM_INSPECTION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 91bad7a54916766417a882ef537ca812a08bfb05
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0351
+last_verified_event: RP-027-A001-0352
 last_completed: RP-026
-next_action: Publish scoped fresh incidental PR required-Linux/full-platform inspection
-  INTENT and preserve exact current-source outcomes. Do not claim an unobserved original
-  cause or change production bounds. Independently advance protected endpoint metadata
-  only with a recorded scheduling decision based on accepted credential/private-profile
-  foundations and qualified d7 transport.
-verification: Isolated Windows diagnostic actual five READY queries/COMPLETE within
-  unchanged limits; original failure not reproduced, cause unproven, DEF-094 remains
-  open. Current d7 Linux 771 twice qualified; fresh and prior full platform/package/C1-C4
-  gates pending.
+next_action: Inspect the same fresh five jobs to terminal and record exact receipts.
+  Independently record and implement protected endpoint metadata foundation using
+  accepted native credential/profile rules and qualified transport, without runtime
+  authority or dependency bypass.
+verification: 'Closed diagnostic recorded351: first/second identity4.250/0.562s, allqueriesREADY,
+  originalfailure/causeunproven. Fresh source91bad7 full/requiredLinux/platform inspection
+  pending352; original348 pending, C1-C4 held.'
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0348
+- RP-027-A001-0352
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
