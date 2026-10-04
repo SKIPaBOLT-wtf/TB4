@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "kind": "CURRENT_ROLE_FOLDER_ACTIVE_ADOPTION_SOURCE_PRESERVED",
+  "intent": "RP-027-A001-0246",
+  "source_ref": "103d0eb2009880a7e76ac4604e611ce6958060da",
+  "local_source_commit": "12fa2cf22b118934c84586139680368709f30337",
+  "base_source": "28ade36af1d6c98e7402ced9e19510ca58aa14fa",
+  "paths": [
+    "src/tb4/reconfiguration_active_adoption.py",
+    "src/tb4/reconfiguration_folder_active_adoption.py",
+    "src/tb4/ballpark_records.py",
+    "src/tb4/reconfiguration_admission.py",
+    "src/tb4/reconfiguration_candidate.py",
+    "src/tb4/reconfiguration_post_root.py",
+    "src/tb4/reconfiguration_commit.py",
+    "protocol/reconfiguration-candidate-v1.schema.json",
+    "tests/drive/folder_active_adoption_support.py",
+    "tests/drive/test_folder_active_adoption.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-019-current-role-folder-active-adoption.md"
+  ],
+  "schema_sha256": "e56758941bbc7907414409e04bcb0bb3a1f211e5d50cd96839e33dd34ea05e82",
+  "review": {
+    "static_ast": true,
+    "exact_paths": 14,
+    "diff_check": true,
+    "prior_schema_top_level_and_all_named_definitions_preserved": true,
+    "additive_named_definitions": [
+      "folderActiveAdoption",
+      "folderActiveAdoptionReceipt"
+    ],
+    "original_native_constructor_kinds_restricted": true,
+    "closed_distinct_folder_kinds": true,
+    "default_activation": "DenyActivation",
+    "instruction_file_closure": "unchanged17files; no instruction source file modified",
+    "record_and_native_budgets": "unchanged",
+    "native_archive_previous": "full original profile retained",
+    "no_shared_or_physical_mutation": true
+  },
+  "fixtures": {
+    "planned_actual_linux_cases": 22,
+    "boundaries": [
+      "retained and moved same Folder authority",
+      "non-default current control7/lease180 coherent timing",
+      "former private stores including mapping unavailable",
+      "own identity/nonce/history/credential image/table/interfaces preserved",
+      "inherited BUSY/UNREAD/UNKNOWN/shared effect exact no-replay",
+      "fresh source/profile/force/artifact permission/clock/capability refusal",
+      "stage/role changes during actual first-run",
+      "seven native cuts, same protected pending bytes with revoked-source refusal",
+      "closed kinds/receipt/native aliases/owner/defaultactivation",
+      "own localUNKNOWN blocks adoption after immediate first-CAS election"
+    ]
+  },
+  "tests_executed": 0,
+  "scheduling_independence": "242 scoped484/unchangedWindows25/472 qualified; previous immutable1f and28ade full jobs retain their original checkouts under237/245. Those results are historical scope for this new source; final current candidate needs new actual affected/full/common gates.",
+  "remaining": "Actual Linux22 and prior484; actual Windows original native adoption/retained/admission/codecs; whole default collection; remote-client first-run/helper and runtime/GUI composition; final-sourcefull/common before C1-C4 acceptance/merge.",
+  "acceptance": false,
+  "runtime_active": false
+}

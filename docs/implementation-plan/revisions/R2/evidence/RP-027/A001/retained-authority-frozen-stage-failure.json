@@ -1,0 +1,287 @@
+{
+  "schema_version": 1,
+  "kind": "RETAINED_AUTHORITY_FROZEN_STAGE_FAILURE",
+  "intent": "RP-027-A001-0228",
+  "source": "0170f12287c03242026280bb1c79253c19b44908",
+  "checkout": "a461506860d70456c0c515158801e0ee322d1361",
+  "branch": "feat/rp027-staged-reconfiguration",
+  "platform": "Windows",
+  "architecture": "AMD64",
+  "python": "3.11.9",
+  "exit_code": 1,
+  "elapsed_seconds": 28.185,
+  "owned_absent_fixture_root": true,
+  "targets": [
+    "tests/drive/test_reconfiguration_retained.py",
+    "tests/security/test_reconfiguration_retained_native.py"
+  ],
+  "cases": [
+    {
+      "name": "test_later_rootless_configuration_keeps_earlier_exact_root_proof_without_rebind_or_relocation",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_rootless_actual_publication_preserves_exact_root_commissioning_gc_summary_work_and_all_local_history",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_full_original_archive_previous_own_identity_and_current_fresh_admission_do_not_need_old_wals",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_ambiguous_shared_reply_restarts_same_dispatch_inspect_only_and_never_repeats[False]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_ambiguous_shared_reply_restarts_same_dispatch_inspect_only_and_never_repeats[True]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[source]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[root_permission]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[clock]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[caps]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[force]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[work]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[profile]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[stage]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[unknown]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[barrier]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_stage_change_during_actual_first_run_cannot_pass_the_last_publication_boundary",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_closed_distinct_native_metadata_and_hash_keep_existing_post_root_contract_separate",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_force_request_during_first_run_refuses_profile_promotion_without_touching_main",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[begin]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[invoking]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[confirmed]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[begin]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[original]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[confirmed]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_copied_native_commit_and_original_broad_permissions_refuse",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    }
+  ],
+  "failures": [
+    {
+      "name": "test_later_rootless_configuration_keeps_earlier_exact_root_proof_without_rebind_or_relocation",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_rootless_actual_publication_preserves_exact_root_commissioning_gc_summary_work_and_all_local_history",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_full_original_archive_previous_own_identity_and_current_fresh_admission_do_not_need_old_wals",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_ambiguous_shared_reply_restarts_same_dispatch_inspect_only_and_never_repeats[False]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_ambiguous_shared_reply_restarts_same_dispatch_inspect_only_and_never_repeats[True]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[source]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[root_permission]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[clock]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[caps]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[force]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[work]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[profile]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[stage]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[unknown]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[barrier]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_stage_change_during_actual_first_run_cannot_pass_the_last_publication_boundary",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_closed_distinct_native_metadata_and_hash_keep_existing_post_root_contract_separate",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_force_request_during_first_run_refuses_profile_promotion_without_touching_main",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[begin]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "FileNotFoundError: expected native settings.pending was not created; owned local fixture path withheld"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[invoking]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[confirmed]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[begin]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[original]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[confirmed]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    },
+    {
+      "name": "test_copied_native_commit_and_original_broad_permissions_refuse",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_CHANGED"
+    }
+  ],
+  "counts": {
+    "PASS": 0,
+    "FAILURE": 25,
+    "ERROR": 0,
+    "SKIPPED": 0
+  },
+  "privacy_redaction": "One FileNotFoundError contains an owned local fixture path; public evidence retains error type/pending-file meaning and omits private absolute path. Raw local JUnit/log/result retained outside repository.",
+  "boundary": {
+    "actual_trace": "RetainedConfigurationCommit.begin -> _before -> require(proof.revision == frozen stage_revision,...): COMMIT_CHANGED. 24 cases report this boundary; native begin-cut catches this ordinary error before pending creation and then reports missing settings.pending.",
+    "source_inspected_cause": "_before calls Candidate.require_validated; that method calls review -> Setup.review -> unconditional _save, incrementing stage revision after begin froze it. Current source/import/alias boundaries now reached; target publication/promotion/crash assertions still not reached.",
+    "hypothesis": "Supported by actual trace and implementation; no earlier-source bisection or proof of historical origin."
+  },
+  "acceptance": false,
+  "runtime_active": false,
+  "next": "Single production-file repair INTENT replaces mutating final review with actual Prerequisites.validate over exact fresh immutable stage snapshot; retains source/pin/type/current-role/UNKNOWN/native/fullproof/equality checks. Preserve source/staticOUTCOME then corrected same25 qualificationINTENT."
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "intent_event": "RP-027-A001-0149",
+  "source_commit": "31533a1eca67658641a5913d2a3d70715e804c18",
+  "trigger_head": "d6c9d3fd02763d3aa8f3fe0b957ea9912833b646",
+  "jobs": [
+    {
+      "run_id": 37106764410,
+      "job_id": 111156707685,
+      "event": "pull_request",
+      "checkout": "963fa3e2dfe33cff2c2e209b23b8d10170d96a99",
+      "passed": 34,
+      "failed": 12,
+      "skipped": 0,
+      "exit_code": 1,
+      "duration_s": 98.01,
+      "failed_cases": [
+        "tests/drive/test_folder_relocation.py::test_actual_first_run_current_role_one_syscall_same_inodes_used_bytes_and_persistent_authority[False]",
+        "tests/drive/test_folder_relocation.py::test_actual_first_run_current_role_one_syscall_same_inodes_used_bytes_and_persistent_authority[True]",
+        "tests/drive/test_folder_relocation.py::test_ambiguous_syscall_or_durability_failure_never_resends_and_preserves_original_unknown[before]",
+        "tests/drive/test_folder_relocation.py::test_ambiguous_syscall_or_durability_failure_never_resends_and_preserves_original_unknown[after]",
+        "tests/drive/test_folder_relocation.py::test_ambiguous_syscall_or_durability_failure_never_resends_and_preserves_original_unknown[fsync]",
+        "tests/drive/test_folder_relocation.py::test_kernel_no_replace_rejects_destination_created_at_the_actual_syscall",
+        "tests/drive/test_folder_relocation.py::test_actual_native_pending_cut_recovery_inspects_exact_frame_and_never_repeats[invoking]",
+        "tests/drive/test_folder_relocation.py::test_actual_native_pending_cut_recovery_inspects_exact_frame_and_never_repeats[applied]",
+        "tests/drive/test_folder_relocation.py::test_actual_native_pending_cut_recovery_inspects_exact_frame_and_never_repeats[settled]",
+        "tests/drive/test_folder_relocation.py::test_actual_stale_first_cas_takeover_needs_no_old_host_and_settles_only_exact_after[False]",
+        "tests/drive/test_folder_relocation.py::test_actual_stale_first_cas_takeover_needs_no_old_host_and_settles_only_exact_after[True]",
+        "tests/drive/test_folder_relocation.py::test_force_arriving_after_preflight_is_refused_inside_the_actual_database_lock"
+      ]
+    },
+    {
+      "run_id": 37106762327,
+      "job_id": 111156701525,
+      "event": "push",
+      "checkout": "d6c9d3fd02763d3aa8f3fe0b957ea9912833b646",
+      "passed": 34,
+      "failed": 12,
+      "skipped": 0,
+      "exit_code": 1,
+      "duration_s": 97.67,
+      "failed_cases": [
+        "tests/drive/test_folder_relocation.py::test_actual_first_run_current_role_one_syscall_same_inodes_used_bytes_and_persistent_authority[False]",
+        "tests/drive/test_folder_relocation.py::test_actual_first_run_current_role_one_syscall_same_inodes_used_bytes_and_persistent_authority[True]",
+        "tests/drive/test_folder_relocation.py::test_ambiguous_syscall_or_durability_failure_never_resends_and_preserves_original_unknown[before]",
+        "tests/drive/test_folder_relocation.py::test_ambiguous_syscall_or_durability_failure_never_resends_and_preserves_original_unknown[after]",
+        "tests/drive/test_folder_relocation.py::test_ambiguous_syscall_or_durability_failure_never_resends_and_preserves_original_unknown[fsync]",
+        "tests/drive/test_folder_relocation.py::test_kernel_no_replace_rejects_destination_created_at_the_actual_syscall",
+        "tests/drive/test_folder_relocation.py::test_actual_native_pending_cut_recovery_inspects_exact_frame_and_never_repeats[invoking]",
+        "tests/drive/test_folder_relocation.py::test_actual_native_pending_cut_recovery_inspects_exact_frame_and_never_repeats[applied]",
+        "tests/drive/test_folder_relocation.py::test_actual_native_pending_cut_recovery_inspects_exact_frame_and_never_repeats[settled]",
+        "tests/drive/test_folder_relocation.py::test_actual_stale_first_cas_takeover_needs_no_old_host_and_settles_only_exact_after[False]",
+        "tests/drive/test_folder_relocation.py::test_actual_stale_first_cas_takeover_needs_no_old_host_and_settles_only_exact_after[True]",
+        "tests/drive/test_folder_relocation.py::test_force_arriving_after_preflight_is_refused_inside_the_actual_database_lock"
+      ]
+    }
+  ],
+  "origin": "reconfiguration_folder._role compares actual SHARED_EFFECT_UNKNOWN operation digest with the action label IDENTITY",
+  "observed": "12 cases stop before kernel/pending cut/late force;21 existing mapping+13 new source/first-run/refusal cases pass. No actual relocation behavior accepted.",
+  "procedure": "Required native46case mapping/physical pytest/real Linux ext4/xfs/private/C1/C2 source, exact ordinary JUnit command in workflow",
+  "original_selected_regressions": "NOT_RUN_AFTER_REQUIRED_NATIVE_FAILURE",
+  "acceptance": false,
+  "automatic_full": "same37106764358 CI /37106764351 Desktop still pending; Progress success"
+}

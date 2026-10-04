@@ -1,33 +1,70 @@
 schema_version: 1
 revision: R2
 work_item: RP-027
-check: RP-027.C1
+check: RP-027.C4
 attempt: A001
-phase: PUBLICATION_TARGET_AUTHORITY_RECORDED
-source_branch: main
-source_commit: 7ca9e1576266783c2190078138893098bf4b3409
+phase: STAGED_RECONFIGURATION_C4_ORIGINAL_TIMING_CI_RECONCILED
+source_branch: feat/rp027-staged-reconfiguration
+source_commit: 0b537c1c96283cdfca9153175569267ecec5cba8
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0004
+last_verified_event: RP-027-A001-0281
 last_completed: RP-026
-next_action: 'Complete the existing RP-027-A001-0003 inspection: create/read back
-  feat/rp027-staged-reconfiguration from the current verified main record, safely
-  acquire its clean tracking checkout and inspect exact commissioning/authority/work/result/revision
-  contracts; record concrete invariants and the next bounded implementation unit.'
-verification: Same rejected documentation publication reconciled with explicit owner
-  continuation; exact ref/files verified. Existing RP-027 inspection INTENT remains
-  pending; no implementation acceptance.
+next_action: Inspect only same corrected request20 Desktop jobs to terminal, publish
+  final current qualification and owner pause checkpoint, then stop until owner says
+  continue.
+verification: 281 all original request18/19 runs terminal and reconciled. Currentbf5c34f
+  Windows504/bothLinux560/CI2995/Progress235 passed; only current Desktop full/build/package
+  remains before owner pause.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
-- RP-027-A001-0003
-expected_user_action: null
+- RP-027-A001-0276
+expected_user_action: Wait for current-part completion; after verified pause, say
+  continue to resume next integration.
 blocking_decisions: []
 known_open_defects:
 - DEF-001
 - DEF-002
-rollback: Keep the exact main/candidate/source history and previous rejection/stop
-  records. All refs remain non-force; no live configuration, authority or workload
-  changes occur.
+- DEF-056
+- DEF-057
+- DEF-058
+- DEF-059
+- DEF-060
+- DEF-061
+- DEF-062
+- DEF-063
+- DEF-064
+- DEF-065
+- DEF-066
+- DEF-067
+- DEF-068
+- DEF-069
+- DEF-070
+- DEF-071
+- DEF-072
+- DEF-073
+- DEF-074
+- DEF-075
+- DEF-076
+- DEF-077
+- DEF-078
+- DEF-079
+- DEF-080
+- DEF-081
+- DEF-082
+- DEF-083
+- DEF-084
+- DEF-085
+- DEF-086
+- DEF-087
+- DEF-088
+- DEF-089
+- DEF-090
+- DEF-091
+rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
+  records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
+  mutation. If any compatibility assumption fails, preserve its reproduction before
+  repair.
 next_implementation_step: RP-027
 next_implementation_check: RP-027.C1

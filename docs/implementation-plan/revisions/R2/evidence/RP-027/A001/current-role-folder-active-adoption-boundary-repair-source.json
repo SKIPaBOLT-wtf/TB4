@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "kind": "FOLDER_ACTIVE_BOUNDARY_REPAIR_SOURCE_PRESERVED",
+  "intent": "RP-027-A001-0255",
+  "source_ref": "f5bcd2b164ca55d78a0a1bbf86031bdda839c6b2",
+  "local_source_commit": "ae97ac63ea5e591bfc242668c66582949526ae42",
+  "base_source": "103d0eb2009880a7e76ac4604e611ce6958060da",
+  "paths": [
+    "tests/drive/folder_active_adoption_support.py",
+    "skill/tb4/compatibility.json"
+  ],
+  "schema_sha256": "e56758941bbc7907414409e04bcb0bb3a1f211e5d50cd96839e33dd34ea05e82",
+  "actual_selection": "Persist own request/choices first, actual BoundFolderSelection verifies currentconfiguredsameFolder root/authority/artifacts, assert same originalrecord, persist verifiedselection separately before operationhistory. Original binding guard and22case/sevennativecut assertions unchanged.",
+  "compatibility": "Exactly one existing UNRELEASED schemahash synchronized; builds[]/same16members+ENTRY/otherprofilefields preserved, no release or installed SKILL update.",
+  "review": {
+    "static_ast": true,
+    "diff_check": true,
+    "exact_paths": 2,
+    "production_schema_and_case_assertions_unchanged": true,
+    "catalogue_other_fields_unchanged": true,
+    "tests_executed": 0
+  },
+  "unchanged_windows_scope": "Original103d actualWindows55PASS113.767s/default2992 qualified; no invented newexecution or unnecessary55repeat. Correctedcatalogue/BALLPARK andaffected497 require next distinct actualqualification.",
+  "timing_observation": {
+    "previous_actual_pr_required484_seconds": 713.6700000000001,
+    "original_actual_pr_new22_fixture_preparation_before_failure_seconds": 226.73,
+    "combined_independent_measured_components_seconds": 940.4000000000001,
+    "existing_workflow_limit_seconds": 900,
+    "inference": "Representative measured components exceed current15min even before newfunctional assertions; not an observed workflow timeout. A separately logged bounded CI calibration to30min beforeexpanded506qualification is justified, product/runtime budgets unchanged."
+  },
+  "next": "Distinct workflow timeout calibration sourceINTENT/appendA019note ifneeded, then corrected-current-sourceWindows497/defaultcollection andrequiredLinux506/newfull qualification. Original103d CI252 stilltracked withoutreplay.",
+  "acceptance": false,
+  "runtime_active": false
+}

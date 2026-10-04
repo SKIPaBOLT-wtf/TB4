@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C3",
+  "attempt": "A001",
+  "source": "4b66bc7a9e46eeb134579fb43c8b861eaaf2e985",
+  "local_source": "6dfe4a7988d42fba266d45948931a4987f9b2a37",
+  "intent_event": "RP-027-A001-0167",
+  "paths": [
+    "src/tb4/reconfiguration_root_settlement.py",
+    "tests/drive/reconfiguration_rebind_support.py",
+    "tests/drive/test_reconfiguration_rebind.py"
+  ],
+  "changes": [
+    "Missing AuthorityError imported; existing closed wrong-blueprint refusal remains.",
+    "Fixture accepts final unchanged MOVED only for authority; nonfinal CONFIRMED remains mandatory.",
+    "Budget fixture explicitly canonical legacy STORAGE_READY and complete TimingProfile; no weakening of rebind verification."
+  ],
+  "diff_check_passed": true,
+  "publication_readback": "VERIFIED",
+  "tests_executed": 0,
+  "acceptance": false
+}

@@ -1,0 +1,7 @@
+# RP-027 A001 native folder transaction qualification
+
+Exact source `b90713351a910341da0454f8f7b4d82e144e22b2`; intent RP-027-A001-0159. Both actual required push and PR jobs pass313 cases:51 native mapping/physical,107 original folder/native maintenance and155 original Docs/effects. Zero skipped/failed cases; one expressly selected-out historical expensive maximum129 remains in unchanged full suites. Exact jobs/checkouts/durations/small JUnit artifact IDs/hashes are in the JSON report.
+
+Actual first-run and C1/C2 proofs precede one real no-replace syscall under the original DB inode lock. Original bytes/inodes and persistent authority survive. Real durability ambiguity and native promotion cuts inspect without resend. Current stale first-CAS takeover needs no old stores or actor acknowledgement; only exact same-inode AFTER settles original UNKNOWN. Own operation/sender/foreign duplicate digest/epoch/election negatives pass. The late-force test now captures the actual underlying held-SQL OWNER_SUPERSEDED plus original INvoking/UNKNOWN/source/no-syscall, while outer native errors remain opaque. Kernel conflict preserves foreign bytes and original source/UNKNOWN without replay.
+
+DEF076/077 have exact passing source and retained initial failures; remain OPEN for final RP027 acceptance. Remote rebind, final configuration/descriptor revision, private profile first-run/composition, cache/lease admission and C1-C4/common qualification remain required. No routing, installed migration or new authority granted.

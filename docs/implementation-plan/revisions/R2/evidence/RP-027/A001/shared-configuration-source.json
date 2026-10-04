@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0181",
+  "source": "5d6116f34f2323e8bc775ca7d092b99e2c99fe77",
+  "local_preserved_source": "42b209da3e6eb80b818406f119f27d2710ada3f8",
+  "paths": [
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "protocol/reconfiguration-candidate-v1.schema.json",
+    "skill/tb4/compatibility.json",
+    "src/tb4/reconfiguration_candidate.py",
+    "src/tb4/reconfiguration_post_root.py",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-014-shared-configuration-publication.md",
+    "src/tb4/reconfiguration_commit.py",
+    "tests/drive/reconfiguration_commit_support.py",
+    "tests/drive/test_reconfiguration_commit.py",
+    "tests/security/test_reconfiguration_commit_native.py"
+  ],
+  "tests_executed": 0,
+  "static_diff_check": "PASS",
+  "candidate_schema_sha256": "85e18535aaa27baf1709095b79fce257a7fe132aa724521da97df91be6d559f4",
+  "legacy_top_level_unchanged": true,
+  "profile_file_count": 16,
+  "pin_with_entry_count": 17,
+  "changes": [
+    "Closed compact native C4 same-authority shared descriptor/ACTIVE publication and terminal-root-plan consumption.",
+    "Fresh actual first-run/source/role/stage/work/native provenance fence before every conditional write; native PREPARED/INVOKING before transport.",
+    "Ambiguous/pending restarts inspect only; actual target CommissionedStorage and exact frozen AFTER after owner takeover.",
+    "Actual held WAL native binding passed internally rather than reacquiring its own non-reentrant lock.",
+    "Original active profile and all work/effect/commissioning/object/media state retained."
+  ],
+  "source_preparation_history": [
+    "Metadata-only named-schema helper initially assumed authority.properties; actual schema uses oneOf[0]. Failed before any file write, corrected using actual schema and original-byte SHA guard, then completed once.",
+    "A combined docs patch failed context verification before any change; exact actual header inspected and corrected. No source action or external mutation was replayed."
+  ],
+  "not_accepted": [
+    "Native original-profile promotion/admission",
+    "Folder/rootless/runtime/GUI/helper composition",
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+  ],
+  "acceptance": false
+}

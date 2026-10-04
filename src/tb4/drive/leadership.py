@@ -274,11 +274,13 @@ class Leadership:
         require(leader["owner"] == self.actor, "ACTOR_BINDING")
         return Grant(self.actor,leader["epoch"],leader["acquisition_id"])
 
-    def current_before_dispatch(self, grant, clock):
+    def current_before_dispatch(self, grant, clock, *, configuration_revision=None):
         """Fresh cooperative check, never an atomic OS/network admission lock.
 
 The caller can be suspended immediately after True, then another owner can win.
 Do not use this boolean as a durable/external bearer authorization token.
 """
         observed = self.observe(clock)
-        return self._owns(observed.leader,observed.request,grant)
+        from tb4.configuration_contract import dispatch_allowed
+        return (self._owns(observed.leader,observed.request,grant)
+                and dispatch_allowed(observed.snapshot.document(), configuration_revision))

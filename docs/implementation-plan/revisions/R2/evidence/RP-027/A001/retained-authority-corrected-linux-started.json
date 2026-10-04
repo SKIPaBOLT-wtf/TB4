@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "kind": "CORRECTED_RETAINED_AUTHORITY_QUALIFICATION_STARTED",
+  "intent": "RP-027-A001-0240",
+  "source_ref": "28ade36af1d6c98e7402ced9e19510ca58aa14fa",
+  "trigger_commit": "0a7d93007bcd65f13b881d8201734b773b0428a3",
+  "request_revision": 15,
+  "schema_sha256": "b4e9aefd0d9e88c02d462745632c1853cf4b7ba05b146be17a598c11f9ab0498",
+  "runs": [
+    {
+      "run_id": 37133658459,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "trigger_commit": "0a7d93007bcd65f13b881d8201734b773b0428a3",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37133658459",
+      "jobs": [
+        {
+          "job_id": 111233639980,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37133658457,
+      "name": "CI",
+      "event": "pull_request",
+      "trigger_commit": "0a7d93007bcd65f13b881d8201734b773b0428a3",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37133658457",
+      "jobs": [
+        {
+          "job_id": 111233640090,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37133658458,
+      "name": "Desktop",
+      "event": "pull_request",
+      "trigger_commit": "0a7d93007bcd65f13b881d8201734b773b0428a3",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37133658458",
+      "jobs": [
+        {
+          "job_id": 111233640009,
+          "name": "desktop (windows-latest)",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "job_id": 111233640149,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37133658456,
+      "name": "Progress",
+      "event": "pull_request",
+      "trigger_commit": "0a7d93007bcd65f13b881d8201734b773b0428a3",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37133658456",
+      "jobs": [
+        {
+          "job_id": 111233639910,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "run_id": 37133654513,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "trigger_commit": "0a7d93007bcd65f13b881d8201734b773b0428a3",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37133654513",
+      "jobs": [
+        {
+          "job_id": 111233627997,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "default_collection": {
+    "schema_version": 1,
+    "source": "28ade36af1d6c98e7402ced9e19510ca58aa14fa",
+    "checkout": "0a7d93007bcd65f13b881d8201734b773b0428a3",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.683,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 2970,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "unchanged_production_windows": "Actualprior1f new25/affected472 qualification retained by verified production/schema equivalence; no new Windows targeted run or invented current-source result.",
+  "old_immutable_full": "1f request14 originalCI/Desktop still tracked separately under237.",
+  "acceptance": false,
+  "runtime_active": false,
+  "next": "Inspect same currentrequiredLinux originalpush/PR andcurrentCI/Desktop IDs; failingchecks -> preserveddefect before repair. AfterqualifiedscopedLinux outcome recordindependence for next separatecomposition source; keepfulljobs tracked."
+}

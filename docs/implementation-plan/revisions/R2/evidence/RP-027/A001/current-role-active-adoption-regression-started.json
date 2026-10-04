@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "kind": "CURRENT_ROLE_ACTIVE_ADOPTION_REGRESSION_PLATFORM_STARTED",
+  "source_ref": "6d061a3af4c31e72fbc1c806ff04d66bfc89f80e",
+  "intent": "RP-027-A001-0217",
+  "targeted_windows": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-targeted-qualified.json",
+  "collection": {
+    "schema_version": 1,
+    "source": "6d061a3af4c31e72fbc1c806ff04d66bfc89f80e",
+    "checkout": "5b1353a7196a0e1982bdf6d59bfa5d52ee355145",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.669,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 2939,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "local_regression": {
+    "actual_exec_session": 75008,
+    "logical_run": "LOCAL-WINDOWS-RP027-ACTIVE-ADOPTION-003",
+    "input_file": "rp27-active-adoption-default-003-input.json",
+    "log_file": "rp27-active-adoption-default-003.log",
+    "result_file": "rp27-active-adoption-default-003-result.json",
+    "checkout": "5b1353a7196a0e1982bdf6d59bfa5d52ee355145",
+    "status": "RUNNING",
+    "targets": [
+      "tests/drive/test_reconfiguration_effects.py",
+      "tests/drive/test_reconfiguration_roots.py",
+      "tests/drive/test_reconfiguration_root_plan.py",
+      "tests/drive/test_reconfiguration_root_resume.py",
+      "tests/drive/test_reconfiguration_root_settlement.py",
+      "tests/drive/test_reconfiguration_root_no_dispatch.py",
+      "tests/drive/test_reconfiguration_rebind.py",
+      "tests/security/test_reconfiguration_roots_native.py",
+      "tests/security/test_reconfiguration_root_plan_native.py",
+      "tests/security/test_reconfiguration_root_resume_native.py",
+      "tests/security/test_reconfiguration_root_settlement_native.py",
+      "tests/security/test_reconfiguration_root_no_dispatch_native.py",
+      "tests/security/test_reconfiguration_rebind_native.py",
+      "tests/drive/test_reconfiguration_post_root.py",
+      "tests/security/test_reconfiguration_post_root_native.py",
+      "tests/drive/test_reconfiguration_candidate.py",
+      "tests/security/test_reconfiguration_candidate_native.py",
+      "tests/drive/test_reconfiguration_commit.py",
+      "tests/security/test_reconfiguration_commit_native.py",
+      "tests/drive/test_reconfiguration_promotion.py",
+      "tests/security/test_reconfiguration_promotion_native.py",
+      "tests/drive/test_reconfiguration_admission.py",
+      "tests/security/test_reconfiguration_admission_native.py",
+      "tests/drive/test_ballpark_setup.py",
+      "tests/drive/test_ballpark_publication.py",
+      "tests/security/test_ballpark_contract.py",
+      "tests/test_reconfiguration_foundation.py",
+      "tests/drive/test_reconfiguration_dispatch.py",
+      "tests/security/test_credential_persistence.py",
+      "-k",
+      "not actual_max_capacity129_fixed_objects"
+    ]
+  },
+  "github_trigger": {
+    "request_revision": 13,
+    "commit": "9b3c526e8d82ea4cff2b109467a94013f509c04e",
+    "readback": "VERIFIED",
+    "runs": [
+      {
+        "id": 37126858581,
+        "name": "Folder reconfiguration",
+        "event": "pull_request",
+        "status": "in_progress",
+        "conclusion": null,
+        "head_sha": "9b3c526e8d82ea4cff2b109467a94013f509c04e",
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37126858581"
+      },
+      {
+        "id": 37126858546,
+        "name": "CI",
+        "event": "pull_request",
+        "status": "in_progress",
+        "conclusion": null,
+        "head_sha": "9b3c526e8d82ea4cff2b109467a94013f509c04e",
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37126858546"
+      },
+      {
+        "id": 37126858553,
+        "name": "Desktop",
+        "event": "pull_request",
+        "status": "in_progress",
+        "conclusion": null,
+        "head_sha": "9b3c526e8d82ea4cff2b109467a94013f509c04e",
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37126858553"
+      },
+      {
+        "id": 37126858573,
+        "name": "Progress",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "9b3c526e8d82ea4cff2b109467a94013f509c04e",
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37126858573"
+      },
+      {
+        "id": 37126855823,
+        "name": "Folder reconfiguration",
+        "event": "push",
+        "status": "in_progress",
+        "conclusion": null,
+        "head_sha": "9b3c526e8d82ea4cff2b109467a94013f509c04e",
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37126855823"
+      }
+    ],
+    "expected_native_linux_groups": [
+      51,
+      107,
+      295
+    ],
+    "expected_native_linux_total": 453
+  },
+  "acceptance": false,
+  "installed_runtime_active": false,
+  "next_action": "Inspect exact local original/affected result and same required Linux push/PR jobs; preserve reached terminal outputs and artifacts. Full/platform same immutable source continues independently, do not rerun or substitute earlier source. No new dependent source until local/collection/required Linux allPASS remotelyrecorded."
+}

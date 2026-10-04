@@ -1,0 +1,5 @@
+# RP-027.C3 A001 — root-only owner preflight source checkpoint
+
+Verified source `4301f0c24ff44dc5baf3ab85dcabe5f8772ffef2`; one owned path `src/tb4/reconfiguration_roots.py`. Existing OwnerGuard import and fresh same-backend owner/epoch/ACTIVE/force-FREE check precede unchanged full dispatch Leadership.observe and acquisition-ID `_owns`. Changed owner rejects with closed OWNER_SUPERSEDED before old-roster label validation. Early rejection grants no work; full capabilities/trusted clock/instructions/config/work/profile/native reservation/send lock checks retained.
+
+No change to ordinary Leadership/enrollment/election, schemas, authority, SDK request, original763 predicates or timing. Three added source lines reviewed for diff/privacy/compatibility. Source/static checkpoint only: no test/build/import/provider/native/profile action. DEF-063 repair link recorded, remains OPEN until original before-send reaches all assertions and mandatory final C1-C4 rechecks. Next: exact same30-target763-case once-run fresh native/offscreenQt repeat.

@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "kind": "RETAINED_AUTHORITY_ROOTLESS_NATIVE_TARGETED_QUALIFICATION",
+  "intent": "RP-027-A001-0232",
+  "source": "1f238122cf44681a4617ed4ef5807cfee6f8f370",
+  "checkout": "952ff260bf4700bbdac82162f35bd05cd516f66e",
+  "branch": "feat/rp027-staged-reconfiguration",
+  "platform": "Windows",
+  "architecture": "AMD64",
+  "python": "3.11.9",
+  "exit_code": 0,
+  "elapsed_seconds": 38.596,
+  "owned_absent_fixture_root": true,
+  "targets": [
+    "tests/drive/test_reconfiguration_retained.py",
+    "tests/security/test_reconfiguration_retained_native.py"
+  ],
+  "cases": [
+    {
+      "name": "test_later_rootless_configuration_keeps_earlier_exact_root_proof_without_rebind_or_relocation",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_rootless_actual_publication_preserves_exact_root_commissioning_gc_summary_work_and_all_local_history",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_full_original_archive_previous_own_identity_and_current_fresh_admission_do_not_need_old_wals",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_ambiguous_shared_reply_restarts_same_dispatch_inspect_only_and_never_repeats[False]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_ambiguous_shared_reply_restarts_same_dispatch_inspect_only_and_never_repeats[True]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[source]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[root_permission]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[clock]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[caps]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[force]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[work]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[profile]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[stage]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[unknown]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[barrier]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_stage_change_during_actual_first_run_cannot_pass_the_last_publication_boundary",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_closed_distinct_native_metadata_and_hash_keep_existing_post_root_contract_separate",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_force_request_during_first_run_refuses_profile_promotion_without_touching_main",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[begin]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[invoking]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[confirmed]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[begin]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[original]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[confirmed]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_copied_native_commit_and_original_broad_permissions_refuse",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "PASS"
+    }
+  ],
+  "failures": [],
+  "counts": {
+    "PASS": 25,
+    "FAILURE": 0,
+    "ERROR": 0,
+    "SKIPPED": 0
+  },
+  "verification": "Actual default pytest imports/no PYTHONPATH on Windows, parsed JUnit and captured exit/results. 18 actual synthetic SDK/rootless/later-root/native-admission cases and7 actual Windows native commit/Main crash/protection cases; all final/negative/pending/no-replay assertions reached.",
+  "failure_history": [
+    "retained-authority-initial-failure.json",
+    "retained-authority-frozen-stage-failure.json"
+  ],
+  "qualified": "Scoped retained rootless publication/full previous Main/current native admission and exact native-frame recovery only; no current-source Linux Folder/full/composition claim.",
+  "acceptance": false,
+  "checks_accepted": [],
+  "runtime_active": false,
+  "remaining": "Required actualLinuxFolder six/olderLinux originals, affectedWindows/defaultcollection/current-sourceCI/Desktop/packages andruntime/GUI/remotehelper/common acceptance."
+}

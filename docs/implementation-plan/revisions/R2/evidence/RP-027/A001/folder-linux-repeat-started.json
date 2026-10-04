@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "intent_event": "RP-027-A001-0144",
+  "source_commit": "f98ddf419471afc11a27868231432a6f8ba753f3",
+  "trigger_head": "063db4e6f7c9b963c3eec753dc69c25122c5495d",
+  "runs": [
+    {
+      "id": 37104503909,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "head_sha": "063db4e6f7c9b963c3eec753dc69c25122c5495d",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37104503909"
+    },
+    {
+      "id": 37104503940,
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "head_sha": "063db4e6f7c9b963c3eec753dc69c25122c5495d",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37104503940"
+    },
+    {
+      "id": 37104503985,
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "in_progress",
+      "head_sha": "063db4e6f7c9b963c3eec753dc69c25122c5495d",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37104503985"
+    },
+    {
+      "id": 37104503964,
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "head_sha": "063db4e6f7c9b963c3eec753dc69c25122c5495d",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37104503964"
+    },
+    {
+      "id": 37104501255,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "status": "in_progress",
+      "head_sha": "063db4e6f7c9b963c3eec753dc69c25122c5495d",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37104501255"
+    }
+  ],
+  "acceptance": false
+}

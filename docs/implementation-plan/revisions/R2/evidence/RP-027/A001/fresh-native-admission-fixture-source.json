@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0203",
+  "source": "14a53a8c8ab5903282cd23e4f428e2b26cda4b25",
+  "production_source": "96b95bae1a06c06de5e08fc538522d3f24d99e5c",
+  "local_preserved": "d351334ecdf7622f506d9481a4306dd5856b3675",
+  "changed_files": [
+    "tests/drive/test_reconfiguration_admission.py"
+  ],
+  "exact_change": "Two preparation lines: FixtureStore(current synthetic profile installation), resolver bound to that store; existing CredentialResolver.enroll with opaque synthetic-admission-slot. Final REVOKED/zeroexecutions/nativeCP/remote assertions unchanged.",
+  "unchanged": "All production/admission/credential/protocol/pin/default/workflow/native/othertest bytes unchanged.",
+  "static_review": "Exact one-file/two-line diff/whitelist/git diff --check/source preservation/non-force remote ref/file readback pass.",
+  "tests_executed": 0,
+  "defect": "DEF-081",
+  "next_action": "Separate default23 qualification, originals295/defaultwholecollection/actualLinux423 onlyifnewPASS; no finalacceptance.",
+  "acceptance": false
+}

@@ -1,0 +1,549 @@
+{
+  "schema_version": 1,
+  "intent": "RP-027-A001-0132",
+  "source": "a71954afb45c9e667ae1dd554b6b134fcf7c17c9",
+  "head": "ab86e71b36a07e88734615d041bf119c71a05316",
+  "checkout": "5ab3eeb13a6ab7a67dabd944a3a60a2ad95933f0",
+  "base": "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+  "pr": "https://github.com/SKIPaBOLT-wtf/TB4/pull/36",
+  "runs": [
+    {
+      "id": 37100513413,
+      "name": "CI",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37100513413",
+      "jobs": [
+        {
+          "id": 111138956224,
+          "name": "test",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 37100513413,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Checkout",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Set up Python",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Install",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Public repository security scan",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Isolated folder helper prerequisites",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Native Linux credential boundary qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Native protected first-run qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Native scoped discovery qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Test",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Post Set up Python",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 19
+            },
+            {
+              "name": "Post Checkout",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 20
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37100513446,
+      "name": "Desktop",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37100513446",
+      "jobs": [
+        {
+          "id": 111138956293,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 37100513446,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Linux Qt dependencies",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Install development and desktop dependencies",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Desktop tests with real GUI and core imports",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Native Windows credential boundary qualification",
+              "status": "completed",
+              "conclusion": "skipped",
+              "number": 7
+            },
+            {
+              "name": "Native Linux credential boundary qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Native protected first-run qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Native scoped discovery qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Private BALLPARK and local owner review qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Distinct FETCHER enrollment and actual profile qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete platform regression suite",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            },
+            {
+              "name": "Build WATCHDOG",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 14
+            },
+            {
+              "name": "Build FETCHER",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15
+            },
+            {
+              "name": "Packaged application and installer acceptance",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 16
+            },
+            {
+              "name": "Publish installers and checksums",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 17
+            },
+            {
+              "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 33
+            },
+            {
+              "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 34
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 35
+            }
+          ]
+        },
+        {
+          "id": 111138956399,
+          "name": "desktop (windows-latest)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 37100513446,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Linux Qt dependencies",
+              "status": "completed",
+              "conclusion": "skipped",
+              "number": 4
+            },
+            {
+              "name": "Install development and desktop dependencies",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Desktop tests with real GUI and core imports",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Native Windows credential boundary qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Native Linux credential boundary qualification",
+              "status": "completed",
+              "conclusion": "skipped",
+              "number": 8
+            },
+            {
+              "name": "Native protected first-run qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Native scoped discovery qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Private BALLPARK and local owner review qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Distinct FETCHER enrollment and actual profile qualification",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete platform regression suite",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            },
+            {
+              "name": "Build WATCHDOG",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 14
+            },
+            {
+              "name": "Build FETCHER",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15
+            },
+            {
+              "name": "Packaged application and installer acceptance",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 16
+            },
+            {
+              "name": "Publish installers and checksums",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 17
+            },
+            {
+              "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 33
+            },
+            {
+              "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 34
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37100513478,
+      "name": "Progress",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37100513478",
+      "jobs": [
+        {
+          "id": 111138956343,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 37100513478,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run python -m pip install -e '.[dev]'",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run python -m pytest tests/development -ra",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Run python -m tools.development.ledger",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Preserve published history",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Run python tools/scan_public_repo.py",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15
+            },
+            {
+              "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 16
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 17
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "CI": {
+      "passed": 2700,
+      "skipped": 27,
+      "xfailed": 4,
+      "seconds": 1565.79
+    },
+    "DesktopUbuntu": {
+      "passed": 2723,
+      "skipped": 21,
+      "xfailed": 4,
+      "seconds": 1724.89
+    },
+    "DesktopWindows": {
+      "passed": 2637,
+      "skipped": 107,
+      "xfailed": 4,
+      "seconds": 1257.81
+    },
+    "Progress": {
+      "passed": 235,
+      "seconds": 12.83
+    }
+  },
+  "packages": {
+    "WINDOWS": [
+      {
+        "role": "watchdog",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      },
+      {
+        "role": "fetcher",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      }
+    ],
+    "LINUX": [
+      {
+        "role": "watchdog",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      },
+      {
+        "role": "fetcher",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "id": 11266927265,
+      "name": "tb4-desktop-Linux-5ab3eeb13a6ab7a67dabd944a3a60a2ad95933f0",
+      "size_in_bytes": 314422269,
+      "digest": "sha256:9a14f5f10861ff20a48d75a2b818df04e59bf029dcdbe08cb3f5d05a1eed7fe5",
+      "expired": false,
+      "created_at": "2026-10-03T06:13:23Z",
+      "expires_at": "2027-01-01T05:39:20Z",
+      "head": "ab86e71b36a07e88734615d041bf119c71a05316",
+      "run": 37100513446,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37100513446/artifacts/11266927265"
+    },
+    {
+      "id": 11266217210,
+      "name": "tb4-desktop-Windows-5ab3eeb13a6ab7a67dabd944a3a60a2ad95933f0",
+      "size_in_bytes": 120868930,
+      "digest": "sha256:86390d5383a5ca1ab15fac2176de795696775e13ecf315dc8b3a69f7b3f13842",
+      "expired": false,
+      "created_at": "2026-10-03T06:06:18Z",
+      "expires_at": "2027-01-01T05:39:20Z",
+      "head": "ab86e71b36a07e88734615d041bf119c71a05316",
+      "run": 37100513446,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37100513446/artifacts/11266217210"
+    }
+  ],
+  "xfail_scope": "Four strict legacy cancellation race reproductions in tests/integration/test_cancellation_race_reproduction.py parametrized by two modes; explicitly deferred RP044/045/046, no RP027 xfail added. Full default summaries do not map every skip individually; native mandatory gate/job statuses separately retained. No new check acceptance inferred.",
+  "outcome": "PASS",
+  "final_checks_accepted": []
+}

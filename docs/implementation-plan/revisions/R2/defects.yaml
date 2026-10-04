@@ -3781,3 +3781,2912 @@ defects:
       Later exact-source reviewed acceptance at RP-026-A001-0056 resolves this new
       scope only; original failed/green tests, hypotheses, provenance and repair intents
       remain immutable. Field/runtime release limits are unchanged.
+  DEF-056:
+    title: Default pytest session cleanup reaches denied preexisting temporary state
+    status: OPEN
+    detected_in: RP-027.C1
+    suspected_origin:
+      work_item: RP-027
+      source_ref: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-session-failure.md
+    proven_origin: null
+    reproduction:
+      procedure: Run the recorded Windows64 foundation/accepted-boundary targets without
+        a dedicated basetemp; all631 cases finish but sessionfinish cleanup of an
+        existing global pytest-current alias raises WinError5 and actual process exits1.
+      failing_source: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
+      passing_source: cfdb45c97ef7c5d177a617a0bf7c87aae929fbcf
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-session-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-isolated-tests.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-isolated-test-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: default-session-cleanup-denied-alias
+      claim: Observed pytest sessionfinish traverses the existing global temporary
+        alias after all case results are written. Its protection/provenance is unknown;
+        application-source fault is not established.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-session-failure.md
+    - id: fresh-owned-fixture-root
+      claim: Explicit newly allocated absent basetemp can isolate these exact test
+        predicates without altering user/global paths or permissions.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-first-test-session-failure.md
+    - id: same-source-isolated-session-completed
+      claim: The identical631-case source/predicate set exits0 in a fresh owned absent
+        basetemp, with627PASS and4 Linux-only skips; no source/test/global path or
+        protection change. This supports the isolation remedy while preserving the
+        original untested hypothesis and failure.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/foundation-isolated-tests.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0011
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Repeat exact recorded631-case target set with a fresh owned absent
+      --basetemp child, actual exit0 and identical predicate collection; preserve
+      existing denied global state.
+    resolution_evidence: []
+    notes: Test harness isolation only. No product assertion failure or application-source
+      origin is proven. Accepted predecessor hosted/native qualification is not invalidated
+      by this unfinished RP027 local runner fault. No deletion/ACL repair of preexisting
+      global temp state. Exact same-source/same-predicate isolated repeat exits0;
+      retain OPEN only for mandatory full affected C1-C4 rechecks at final RP027 acceptance.
+    legacy_record: null
+  DEF-057:
+    title: Fallback test fixtures replace the enrolled incumbent computer label
+    status: OPEN
+    detected_in: RP-027.C1
+    suspected_origin:
+      work_item: RP-027
+      source_ref: a8c97e9f822842fe53070e9f67a0aff038e18488
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-tests-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: a8c97e9f822842fe53070e9f67a0aff038e18488
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-tests-failure.md
+    reproduction:
+      procedure: Run the recorded maintenance/foundation/native target set. Three
+        new fixtures map the existing owner to a synthetic label differing from the
+        stored enrolled label; Leadership.observe raises LEADERSHIP_IDENTITY before
+        takeover assertions.
+      failing_source: a8c97e9f822842fe53070e9f67a0aff038e18488
+      passing_source: 0feb433824d43e6f0f6975e8f776316e9723c910
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-tests-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-test-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-fixture-repeat.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-fixture-repeat-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R16
+    hypotheses:
+    - id: incumbent-enrollment-fixture-mismatch
+      claim: New test candidate maps replace the known incumbent's stored computer
+        label; the exact parser condition rejects them before acquisition, as observed
+        in all three traces.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-tests-failure.md
+    - id: preserve-enrollment-and-reach-takeover
+      claim: Preserving the actual incumbent enrollment and adding only a new candidate
+        label reaches the intended stale-takeover/inspection/adoption predicates without
+        changing application guards.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-first-tests-failure.md
+    - id: exact-repaired-source-retains-and-passes-all-fallback-predicates
+      claim: Same22 target run retains every original656 predicate plus new wrong-label
+        refusal and exits0, reaching all three original intended fallback/inspection/adoption
+        assertions without any application guard change.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-fixture-repeat.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/maintenance-fixture-repeat-cases.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0017
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Existing three failed takeover/inspection/adoption cases plus
+      a negative wrong-incumbent-name refusal; keep all original effect/epoch/preservation
+      assertions.
+    resolution_evidence: []
+    notes: Fixture-only provenance fault in unaccepted RP027. Accepted leadership
+      identity checks correctly reject the mismatch; no application-source or predecessor
+      acceptance defect is claimed. Keep full required C1-C4 rechecks held under the
+      unchanged registry. Exact fixture-only repair repeat passes all intended predicates;
+      final mandatory C1-C4 rechecks remain held.
+    legacy_record: null
+  DEF-058:
+    title: New guard fixtures fail coverage prerequisites and a native closed-code
+      expectation
+    status: OPEN
+    detected_in: RP-027.C1
+    suspected_origin:
+      work_item: RP-027
+      source_ref: ac587b6b6856e3c7785030720ee9c120c2fad0e5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-cases.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: ac587b6b6856e3c7785030720ee9c120c2fad0e5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-coverage-fixture-provenance.md
+    reproduction:
+      procedure: 'Run the recorded24 targets on exact new guard source: fourteen new
+        cases stop at CONFIGURATION_LEGACY_EVIDENCE_REQUIRED, one follow-up cannot
+        find the expected native pending frame, and one protection refusal asserts
+        UNAVAILABLE instead of actual NATIVE_CHECKPOINT_INSPECT_REQUIRED. Prior657
+        predicate statuses remain unchanged.'
+      failing_source: ac587b6b6856e3c7785030720ee9c120c2fad0e5
+      passing_source: 95ee0e15cf467af4bbeb8b13a8c4d1868d135db3
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-coverage-fixture-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: reacquired-fixture-is-not-initial-coverage-owner
+      claim: The reused accepted first-run fixture may already have reacquired leadership
+        beyond epoch1, so a new empty guard cannot claim initial coverage. Exact failed-native
+        fixture/current factory facts must be inspected before naming this the proven
+        cause.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-cases.json
+    - id: protection-refusal-code-expectation-too-broad
+      claim: The native protection negative case actually refuses with NATIVE_CHECKPOINT_INSPECT_REQUIRED
+        before any reported success; its UNAVAILABLE-only regex fails. Updating the
+        asserted concrete closed code must retain refusal/no-mutation assertions.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/inherited-effects-first-test-cases.json
+    - id: same-failed-native-checkpoints-and-factory-prove-later-epoch
+      claim: Both same failed native checkpoints have current epoch2, no pending election/mutation,
+        and a durable maintenance reservation; exact accepted ready/build factory
+        first commissions ACTORS[0] at epoch1 then explicitly acquires for a newly
+        created setup at epoch2. The new guard helper reused this later-owner fixture,
+        violating initial coverage rather than proving a product takeover fault.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-coverage-fixture-provenance.md
+    - id: fresh-actual-bootstrap-and-protection-code-qualified
+      claim: The repaired initial factory reaches the original guard/native/pending
+        assertions, new actual-bootstrap proof passes and15 of16 originally failed
+        predicates pass. The remaining predicate now reaches its stale acquisition
+        but fails a separate fixed-clock expectation after actual heartbeat renewal;
+        no bootstrap guard change was needed.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0027
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: All16 failed predicate cases, exact same24-target prior regressions
+      and truthful initial-coverage versus later-owner negative fixtures.
+    resolution_evidence: []
+    notes: Unaccepted new RP027 scope only; no accepted predecessor failure is observed.
+      Do not weaken initial-epoch coverage, rewind a live/evaluated authority, hide
+      unknown work or drop failed assertions. Preserve source and all actual results;
+      inspect the exact failed native fixture/factory before repair. Full C1-C4 rechecks
+      remain held. Same failed native frames and actual factory prove epoch2 fixture
+      misuse; remedy must create an actually initial epoch-one synthetic deployment
+      through existing bootstrap/commissioning adapters without changing or rewinding
+      the failed authority. Initial coverage/coded-refusal fixture remedy supported
+      by actual683-case repeat; a separately tracked fixed stale-clock fixture fault
+      remains, so final C1-C4 rechecks stay held.
+    legacy_record: null
+  DEF-059:
+    title: Fallback fixture uses a fixed clock after renewing the incumbent heartbeat
+    status: OPEN
+    detected_in: RP-027.C1
+    suspected_origin:
+      work_item: RP-027
+      source_ref: ac587b6b6856e3c7785030720ee9c120c2fad0e5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: ac587b6b6856e3c7785030720ee9c120c2fad0e5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
+    reproduction:
+      procedure: Actual initial-bootstrap guarded external-UNKNOWN case ticks at240,
+        renewing the incumbent, then its fallback helper observes fixed340. Native
+        stale check rejects INCUMBENT_FRESH before acquisition. Other fallback cases
+        without this renewal pass.
+      failing_source: 95ee0e15cf467af4bbeb8b13a8c4d1868d135db3
+      passing_source: 7d571ea43040aeb0b1eae2fff3853387093c1242
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/heartbeat-derived-effect-repeat.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/heartbeat-derived-effect-repeat-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: fixed-fallback-clock-not-beyond-current-stale-interval
+      claim: Runtime fixture renews at240 before external UNKNOWN; fixed fallback340
+        is still fresh under actual default stale policy. Derive takeover time from
+        the freshly observed heartbeat plus unchanged configured stale interval, without
+        altering production timing.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/initial-bootstrap-effect-repeat-cases.json
+    - id: actual-renewed-heartbeat-derived-stale-clock-preserves-unknown-fallback
+      claim: Exact unchanged683 predicates pass with actual heartbeat plus unchanged
+        configured stale interval. UNKNOWN survives first-CAS fallback, no replay
+        or peer acknowledgement, and evidence refusal remains enforced.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/heartbeat-derived-effect-repeat.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/heartbeat-derived-effect-repeat-cases.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0031
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Existing test_external_unknown_survives_fallback_without_acknowledgements_or_replay
+      with actual freshly stale timestamp, retaining unknown/preservation/acquisition/no-replay
+      assertions; all24-target regressions.
+    resolution_evidence: []
+    notes: New test clock only. Initial coverage source/pins, native epoch/owner/clock/timing
+      guards and prior accepted sources stay unchanged. Preserve the failed fresh-incumbent
+      result; no live timer advance or operation replay. Exact heartbeat-derived repeat
+      exits0; final mandatory C1-C4 rechecks remain held.
+    legacy_record: null
+  DEF-060:
+    title: Native candidate interruption fixture expects the outer portable commit
+      code
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c323da611eb98de3966145e226679335976b3f22
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: c323da611eb98de3966145e226679335976b3f22
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
+    reproduction:
+      procedure: Three actual-native staged metadata/archive/profile promotion-cut
+        cases expect COMMIT_UNCONFIRMED. Accepted native context managers translate
+        the injected OSError to SETTINGS_STORE_UNAVAILABLE; all stop at regex mismatch
+        before remaining exact pending/promote/resume/no-send assertions.
+      failing_source: c323da611eb98de3966145e226679335976b3f22
+      passing_source: 8ffdbfeaf4fd5c5a4b3f3c158368c6096bc24ce0
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-cut-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-native-repeat.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-native-repeat-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: native-context-closed-code-expectation-mismatch
+      claim: Both existing native Settings.locked context managers preserve SettingsError
+        and translate other exceptions to SETTINGS_STORE_UNAVAILABLE. Fixture assumes
+        only the outer portable COMMIT_UNCONFIRMED; actual three traces contradict
+        that expectation.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
+    - id: same-complete-native-pending-frames-survived-the-injected-cut
+      claim: The three fresh native fixture roots should retain exact protected pending
+        metadata/archive/profile frames for inspect-only recovery. Inspect the same
+        failed roots before any corrected repeat; do not infer this from the regex
+        failure alone.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-first-cases.json
+    - id: same-failed-native-cut-frames-proven-intact
+      claim: Read-only inspection of the original three failed fixture roots proves
+        one complete native-bound first-revision pending transaction/archive/profile
+        frame each, matching original base/seed/archive and retaining both known operation
+        outcomes; no promotion/provider call during inspection.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-cut-provenance.md
+    - id: exact-native-candidate-recovery-assertions-pass-after-code-expectation-repair
+      claim: Exact720 predicates are retained. Three actual-native interrupted metadata/archive/profile
+        cases now reach and pass explicit owner recovery, exact pending promotion/readback,
+        same staging resume, unchanged original bytes and provider count, under unchanged
+        accepted native guards.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-native-repeat.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/protected-candidate-native-repeat-cases.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0041
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Same three actual-native metadata/archive/profile interruption
+      predicates with accepted closed-code expectation and unchanged exact pending/readback/owner/resume/original
+      byte/no-provider-send assertions; all inherited683 predicates retained.
+    resolution_evidence: []
+    notes: New unaccepted C2 native test expectation. Original native protection/error
+      translation and all application guards remain unchanged. Pending frame facts
+      and post-cut recovery are not yet qualified; C1-C4 rechecks held. Same failed
+      native frames are proven intact; post-cut recovery assertions await repeated
+      unchanged tests. Preserve the earlier untested hypothesis and append supported
+      facts. Exact27-target/720-predicate Windows repeat exits0 with716PASS/4Linuxskip;
+      mandatory final C1-C4 rechecks held.
+    legacy_record: null
+  DEF-061:
+    title: Dedicated root move effect admission fails under its own maintenance configuration
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 90635ed953d297fdea34209cb305439c464c4470
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 90635ed953d297fdea34209cb305439c464c4470
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-gate-provenance.md
+    reproduction:
+      procedure: 'Run exact30-target first root suite: normal move, witness, two lost-reply
+        cases, shared/native send intent, two stale fallback cases, historical witness
+        and native completed-cut all fail with CONFIGURATION_MAINTENANCE.'
+      failing_source: 90635ed953d297fdea34209cb305439c464c4470
+      passing_source: 3603f2678d580a9be225becae56f81e6bb10a95d
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: dedicated-effect-inherits-ordinary-maintenance-gate
+      claim: Nine root tests stop at CONFIGURATION_MAINTENANCE before normal root
+        move assertions; the dedicated EffectMutation may inherit the ordinary RecordMutation.prepare
+        gate. Exact failed trace and current adapters must prove the cause. Ordinary
+        maintenance admission must remain closed.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+    - id: root-controller-uses-normal-start-with-explicit-maintenance-refusal
+      claim: Exact failed traces show DocsRootMoves.advance line277 calls Effects.start
+        line288, EffectMutation.prepare line99 invokes its own _validate line124 explicit
+        INITIALIZE/START maintenance refusal. No inherited RecordMutation.prepare
+        is called. Root controller must use a separately closed maintenance identity
+        start; ordinary START/RecordMutation guards must remain unchanged.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-gate-provenance.md
+    - id: exact-scoped-root-effect-and-access-repeat-supported
+      claim: Exact763-case repeat retains prior757 cases, passes eight of nine previously
+        blocked maintenance-code paths plus target-access closed refusal/no-send/profile
+        assertions. Six gate negatives pass; the one remaining before-send owner enrollment/error
+        projection mismatch is now reached. Mandatory final C1-C4 rechecks remain
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0053
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: All nine exact failed root predicates plus inherited720 cases,
+      and explicit ordinary dispatch refusal while a strictly scoped effect operation
+      is admitted.
+    resolution_evidence: []
+    notes: 'Unaccepted C3 source only. Preserve failed tests and prior accepted predicates.
+      Inspect exact failed traces/current adapter before naming a proven origin or
+      making a scoped repair. Final C1-C4 rechecks remain held. Diagnosis disproves
+      inheritance as the exact mechanism: EffectMutation overrides prepare/evaluate;
+      its own START guard is proved. No repair or repeat yet. Scoped root gate/access
+      remedy supported; final acceptance held and separate owner projection failure
+      tracked.'
+    legacy_record: null
+  DEF-062:
+    title: Root access negative fixture excludes the actual closed authority refusal
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 90635ed953d297fdea34209cb305439c464c4470
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 90635ed953d297fdea34209cb305439c464c4470
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-gate-provenance.md
+    reproduction:
+      procedure: Exact target-access predicate withdraws target root canEdit and receives
+        SETUP_ROOT, then fails its expected exception class rather than proving a
+        send.
+      failing_source: 90635ed953d297fdea34209cb305439c464c4470
+      passing_source: 3603f2678d580a9be225becae56f81e6bb10a95d
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: root-access-negative-excludes-authority-error
+      claim: The target-access negative case receives AuthorityError SETUP_ROOT while
+        expecting only ConfigurationError/SettingsError. Verify original trace and
+        root check before changing fixture expectations; retain no-SDK/no-profile
+        mutation assertions.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/existing-docs-root-first-cases.json
+    - id: actual-root-access-refuses-before-any-sdk-move
+      claim: Same target-access trace shows DocsRootMoves.begin line218 -> NativeCommissioning.check_root
+        line57 -> AuthorityError SETUP_ROOT. Test line142 excludes AuthorityError.
+        Source asserts no update/profile change after refusal. Extend this one fault's
+        expected closed class/code, not access permission.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-gate-provenance.md
+    - id: exact-scoped-root-effect-and-access-repeat-supported
+      claim: Exact763-case repeat retains prior757 cases, passes eight of nine previously
+        blocked maintenance-code paths plus target-access closed refusal/no-send/profile
+        assertions. Six gate negatives pass; the one remaining before-send owner enrollment/error
+        projection mismatch is now reached. Mandatory final C1-C4 rechecks remain
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0053
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Exact target-access predicate with actual closed refusal and
+      unchanged no-send/profile preservation assertions; full root and inherited regressions.
+    resolution_evidence: []
+    notes: Unaccepted C3 source only. Preserve failed tests and prior accepted predicates.
+      Inspect exact failed traces/current adapter before naming a proven origin or
+      making a scoped repair. Final C1-C4 rechecks remain held. Actual closed target-root
+      refusal proved before SDK move; fixture expectation is the fault. Scoped root
+      gate/access remedy supported; final acceptance held and separate owner projection
+      failure tracked.
+    legacy_record: null
+  DEF-063:
+    title: Root supersession projects an unenrolled replacement owner as a raw leadership
+      identity refusal
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 90635ed953d297fdea34209cb305439c464c4470
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 90635ed953d297fdea34209cb305439c464c4470
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-provenance.md
+    reproduction:
+      procedure: Exact before-send fallback acquires its fresh owner then old root
+        sender fails with raw AuthorityError LEADERSHIP_IDENTITY instead of expected
+        ConfigurationError OWNER_SUPERSEDED. Inspect exact trace/owner guard before
+        repair.
+      failing_source: 3603f2678d580a9be225becae56f81e6bb10a95d
+      passing_source: 4301f0c24ff44dc5baf3ab85dcabe5f8772ffef2
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-repeat-pass.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-repeat-cases.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: root-observe-old-roster-precedes-explicit-current-owner-refusal
+      claim: Old root dispatch may try full enrollment validation before checking
+        its grant against freshly replaced owner; read exact trace and owner guard
+        before naming a proven origin. Existing refusal is not evidence for all later
+        no-send assertions; do not remove enrollment/role guards.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/scoped-root-effect-repeat-cases.json
+    - id: fresh-current-owner-refusal-precedes-old-roster-validation
+      claim: 'Exact failed trace: root advance line281 calls dispatch proof line181;
+        Leadership.observe line114 validates new owner against old enrollment at _records
+        line127 and raises LEADERSHIP_IDENTITY before root owns check. Existing OwnerGuard.matches
+        checks fresh owner/epoch/ACTIVE/force FREE without requiring the replacement''s
+        label; an added preflight rejection followed by unchanged full Leadership.observe/_owns
+        can project OWNER_SUPERSEDED while preserving every authorization guard.'
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-provenance.md
+    - id: unchanged-before-send-predicate-reaches-all-owner-and-preservation-assertions
+      claim: Exact same763 predicates repeat passes; previously failed before-send
+        case now reaches original OWNER_SUPERSEDED/no-SDK/epoch2/UNKNOWN/no-ACK/single-authority/original-profile
+        assertions. No test/source guards removed; 758 previous PASS unchanged, four
+        declared Linux-only skips remain not qualification. Mandatory final C1-C4
+        rechecks held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-repeat-pass.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-owner-repeat-cases.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0060
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Exact before-send first-CAS takeover predicate, retaining OWNER_SUPERSEDED/no-send/epoch/UNKNOWN/single-authority/original-profile
+      assertions; all763 predicates retained.
+    resolution_evidence: []
+    notes: New C3 owner-outcome integration only; stale first-CAS election remains
+      available. No safety success or no-send assertion inferred solely from unexpected
+      class. Diagnose exact trace and guarded source. Final C1-C4 held. Exact trace
+      proves old-roster validation precedes explicit owner refusal; ordinary Leadership/enrollment
+      stays unchanged. Minimal early rejection grants no dispatch. Exact original763
+      predicates pass on one-path root owner preflight; all before-send retained assertions
+      reached; final C1-C4 held.
+    legacy_record: null
+  DEF-064:
+    title: No-send negative fixture conflates another reader of the same native root
+      with a different protected root
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
+    reproduction:
+      procedure: The cloned DocsRootMoves uses the same actual native store and proof
+        fields. A changed transient origin may be accepted only because the helper
+        revalidates all actual previous/current native facts against that reader;
+        compare actual bindings/current proof and a genuinely different protected
+        root before changing the negative fixture.
+      failing_source: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
+      passing_source: 95f2458f4e93fee993a26cab684ab3e3dfbbc3e8
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-pass.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: no-send-foreign-origin
+      claim: The cloned DocsRootMoves uses the same actual native store and proof
+        fields. A changed transient origin may be accepted only because the helper
+        revalidates all actual previous/current native facts against that reader;
+        compare actual bindings/current proof and a genuinely different protected
+        root before changing the negative fixture.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
+    - id: actual-native-binding-not-reader-instance
+      claim: 'Observed same protected store/binding/current-previous proof equality:
+        a second reader fresh exact proof confirms only summary NOT_DISPATCHED, zero
+        SDK, original receipt/profile retained. Actually different protected store
+        refuses CONFIGURATION_ROOT_REVOCATION_REQUIRED with unchanged UNKNOWN/zero
+        SDK/profile. Transient reader identity was not a different native root. Use
+        actual different native root for negative and preserve positive recovery reader.'
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
+    - id: exact811-no-send-repeat-support
+      claim: Same34-target repeat retains all810 original cases with actual different-native
+        and exact force fixture corrections plus one fresh identical-native-reader
+        positive.807PASS/4Linux-onlyskip,exit0. Both failed cases now reach all unchanged
+        no-SDK/UNKNOWN/profile preservation assertions; product guards unchanged,
+        final mandatory C1-C4 still held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-pass.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0082
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Retain all original791 predicates, complete all19 no-send cases
+      and actual no-SDK/UNKNOWN/profile assertions; final mandatory C1-C4 rechecks.
+    resolution_evidence: []
+    notes: Unaccepted C3 qualification failure; inspect actual trace/native identity
+      before proving a cause or changing safety/fixture expectations. Bounded same-source
+      diagnostic proves fixture assumptions; no product guard change is required.
+      Exact811-case Windows repeat supports the fixture repair; final C1-C4 rechecks
+      remain held.
+    legacy_record: null
+  DEF-065:
+    title: No-send force negative fixture excludes actual closed authority refusal
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
+    reproduction:
+      procedure: The malformed non-free force fixture receives AuthorityError FORCE_SHAPE
+        before proof admission; test expects only ConfigurationError/SettingsError.
+        Inspect exact trace and record no-SDK/shared-UNKNOWN invariants; do not relax
+        force/leadership guards.
+      failing_source: 6a7337e887dd2f63fcc9c1cf953c0893d4dc3427
+      passing_source: 95f2458f4e93fee993a26cab684ab3e3dfbbc3e8
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-pass.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: no-send-force-shape
+      claim: The malformed non-free force fixture receives AuthorityError FORCE_SHAPE
+        before proof admission; test expects only ConfigurationError/SettingsError.
+        Inspect exact trace and record no-SDK/shared-UNKNOWN invariants; do not relax
+        force/leadership guards.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-first-cases.json
+    - id: actual-closed-force-shape-before-admission
+      claim: Exact malformed force trace reaches Leadership.observe/_records and raises
+        AuthorityError FORCE_SHAPE before settlement; shared UNKNOWN/profile unchanged
+        and zero SDK. Extend only this fixture's closed expected class/code and preserve
+        all force/role guards.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-provenance.md
+    - id: exact811-no-send-repeat-support
+      claim: Same34-target repeat retains all810 original cases with actual different-native
+        and exact force fixture corrections plus one fresh identical-native-reader
+        positive.807PASS/4Linux-onlyskip,exit0. Both failed cases now reach all unchanged
+        no-SDK/UNKNOWN/profile preservation assertions; product guards unchanged,
+        final mandatory C1-C4 still held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/proven-no-send-repeat-pass.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0082
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Retain all original791 predicates, complete all19 no-send cases
+      and actual no-SDK/UNKNOWN/profile assertions; final mandatory C1-C4 rechecks.
+    resolution_evidence: []
+    notes: Unaccepted C3 qualification failure; inspect actual trace/native identity
+      before proving a cause or changing safety/fixture expectations. Bounded same-source
+      diagnostic proves fixture assumptions; no product guard change is required.
+      Exact811-case Windows repeat supports the fixture repair; final C1-C4 rechecks
+      remain held.
+    legacy_record: null
+  DEF-066:
+    title: Different root-plan collision reaches prior resolution invalidation before
+      target-specific refusal
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
+    reproduction:
+      procedure: Second differing-target plan fails CONFIGURATION_RESOLUTION_CHANGED
+        instead of ROOT_PLAN_CHANGED. Shared root_plan changed the protected work
+        summary after original resolution. Inspect exact call order/fingerprint; a
+        denial-only current-plan collision preflight before unchanged Candidate.require_validated
+        may project a deterministic target conflict without relaxing C1/C2.
+      failing_source: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+      passing_source: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualified-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualification.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: root-plan-collision-preflight-order
+      claim: Second differing-target plan fails CONFIGURATION_RESOLUTION_CHANGED instead
+        of ROOT_PLAN_CHANGED. Shared root_plan changed the protected work summary
+        after original resolution. Inspect exact call order/fingerprint; a denial-only
+        current-plan collision preflight before unchanged Candidate.require_validated
+        may project a deterministic target conflict without relaxing C1/C2.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+    - id: unchanged-resolution-guard-precedes-collision-specific-refusal
+      claim: 'Exact trace: DocsRootMoves.begin236 -> Candidate.require_validated276/review264/_proof113
+        -> Maintenance.require_resolved457 raises CONFIGURATION_RESOLUTION_CHANGED;
+        summary-only plan change changes the original workload fingerprint. Root store
+        absent/shared/profile unchanged and zero SDK. A denial-only different-target
+        witness preflight before unchanged C1/C2 validation can project ROOT_PLAN_CHANGED
+        without granting same-target reuse.'
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
+    - id: full-original839-repaired-source-qualified
+      claim: Full same36-target original839-case WindowsX64 native/offscreenQt run:835PASS/4Linux-onlyskip,exit0,785.144s.
+        Original different-target conflict/same-target C1-C2 refusal/live snapshot/native
+        cuts/max129-budget assertions reached without guard/test weakening. Defect
+        remains OPEN pending final all4checks/platforms.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualified-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualification.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0094
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Retain all original791 predicates, complete all19 no-send cases
+      and actual no-SDK/UNKNOWN/profile assertions; final mandatory C1-C4 rechecks.
+    resolution_evidence: []
+    notes: New unaccepted C3 qualification failure. Preserve exact full result and
+      inspect source/current snapshot provenance before minimal repair; no guard weakened.
+      Mandatory final C1-C4 held. Bounded exact-source diagnostic proves the call
+      order/baseline cause; no existing resolution/metadata guard relaxation justified.
+      Full original839-case qualification supports repair; final C1-C4 remains held.
+    legacy_record: null
+  DEF-067:
+    title: Partial root metadata-witness fixture compares a stale document reference
+      after legitimate setup CAS
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
+    reproduction:
+      procedure: metadata-witness case performs one legitimate Root.advance CAS during
+        fixture setup after capturing provider.store.document. Before copy may reference
+        the old object replaced by that CAS. Compare actual live document immediately
+        before/after inspector and stale pointer; no SDK/shared mutation from refused
+        inspection may have occurred.
+      failing_source: afbc0df905d2351c25dc7beb399c45e4fbf22a54
+      passing_source: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualified-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualification.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: root-plan-negative-stale-fixture-snapshot
+      claim: metadata-witness case performs one legitimate Root.advance CAS during
+        fixture setup after capturing provider.store.document. Before copy may reference
+        the old object replaced by that CAS. Compare actual live document immediately
+        before/after inspector and stale pointer; no SDK/shared mutation from refused
+        inspection may have occurred.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-first-failure.md
+    - id: actual-live-snapshot-unchanged-stale-fixture-reference
+      claim: Exact metadata inspection raises CONFIGURATION_ROOT_BINDING at PartialRootInspection76;
+        live document/profile unchanged and SDK count remains1. Old fixture document
+        is a different object and differs before inspection due legitimate setup Root.advance.
+        Baseline must copy actual provider.store.document after fault setup, retaining
+        every preservation assertion.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-provenance.md
+    - id: full-original839-repaired-source-qualified
+      claim: Full same36-target original839-case WindowsX64 native/offscreenQt run:835PASS/4Linux-onlyskip,exit0,785.144s.
+        Original different-target conflict/same-target C1-C2 refusal/live snapshot/native
+        cuts/max129-budget assertions reached without guard/test weakening. Defect
+        remains OPEN pending final all4checks/platforms.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualified-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualification.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0094
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Retain all original791 predicates, complete all19 no-send cases
+      and actual no-SDK/UNKNOWN/profile assertions; final mandatory C1-C4 rechecks.
+    resolution_evidence: []
+    notes: New unaccepted C3 qualification failure. Preserve exact full result and
+      inspect source/current snapshot provenance before minimal repair; no guard weakened.
+      Mandatory final C1-C4 held. Bounded exact-source diagnostic proves the call
+      order/baseline cause; no existing resolution/metadata guard relaxation justified.
+      Full original839-case qualification supports repair; final C1-C4 remains held.
+    legacy_record: null
+  DEF-068:
+    title: Root-plan denial preflight reads global.summary at authority document top
+      level
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 5b9c339e06d91822c594dca6f276f6634dd2dc48
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failed-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: 5b9c339e06d91822c594dca6f276f6634dd2dc48
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.md
+    reproduction:
+      procedure: Full same36-target repeat:101 cases fail KeyError global.summary
+        at new begin preflight. Inspect exact trace/document envelope and scoped original
+        Root.begin without SDK or source mutation before one-line records nesting
+        repair.
+      failing_source: 5b9c339e06d91822c594dca6f276f6634dd2dc48
+      passing_source: 4fa196601cbb201a779334808c0f6c4f9aff8cdc
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failed-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualified-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualification.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: root-plan-preflight-envelope-level
+      claim: New preflight accesses document()[global.summary] although authority
+        records are under document()[records]. All101 failed scenarios may share this
+        exact envelope-level error before intended root predicates.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failed-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-repeat-failure.md
+    - id: exact-root-begin-envelope-lookup-proven
+      claim: Exact source Root.begin line237 raises KeyError global.summary. Actual
+        authority top-level lacks slot while records contains it. Shared/profile unchanged,
+        root WAL absent and SDK0. Records nesting omission is proven, no guard/predicate
+        relaxation justified.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-provenance.md
+    - id: one-line-fix-short-original-root-regression
+      claim: Exact repaired source8-file partial root run:100PASS/0fail/0skip exit0
+        65.292s. Original root/inherited/no-send/shared-plan/native-cut and different-target/same-target/current-baseline
+        assertions reached. Only max129 predicate excluded; full36 qualification and
+        finalchecks pending.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-short-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/root-envelope-short-result.md
+    - id: full-original839-repaired-source-qualified
+      claim: Full same36-target original839-case WindowsX64 native/offscreenQt run:835PASS/4Linux-onlyskip,exit0,785.144s.
+        Original different-target conflict/same-target C1-C2 refusal/live snapshot/native
+        cuts/max129-budget assertions reached without guard/test weakening. Defect
+        remains OPEN pending final all4checks/platforms.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualified-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-root-plan-qualification.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0103
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Preserve every original839 predicate and all101 failed root/inherited/no-send/plan/native
+      predicates; first exact short root regression then full36-target qualification
+      including actual129-object native budget. Final C1-C4 held.
+    resolution_evidence: []
+    notes: Actual repeat failure preserved; counts are not acceptance and no later
+      assertion inferred. Existing DEF066/067 repairs remain unqualified. No provider/live
+      changes or guard weakening. Full original839-case qualification supports repair;
+      final C1-C4 remains held.
+    legacy_record: null
+  DEF-069:
+    title: Adopted pending operation is rejected by actual root evidence proof before
+      metadata SDK
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    reproduction:
+      procedure: Positive continuation/native invoking/completed and unknown response
+        scenarios raise CONFIGURATION_ROOT_EVIDENCE. Suspect duplicate general summary
+        UNKNOWN projection after actual own pending root effect; inspect exact trace/actual
+        blocker kinds and strict pending receipt before repair.
+      failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
+      passing_source: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: def-069-first-observed
+      claim: Positive continuation/native invoking/completed and unknown response
+        scenarios raise CONFIGURATION_ROOT_EVIDENCE. Suspect duplicate general summary
+        UNKNOWN projection after actual own pending root effect; inspect exact trace/actual
+        blocker kinds and strict pending receipt before repair.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    - id: def-069-exact-provenance
+      claim: Actual own PREPARED pending receipt owner/epoch/op is exact; Root.advance333
+        -> resumed._proof188 fails on actual two projections SHARED_UNKNOWN(global.summary)
+        and SHARED_EFFECT_UNKNOWN(exact op). SDK0/current profile unchanged. Strict
+        own-pending ledger guard already matches; allow only its summary mirror plus
+        exact effect after that guard, retaining every other blocker.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    - id: def-069-original139-related-recheck
+      claim: Exact original10-file Windows native partial run139PASS/0failure/0error/0skip
+        exit0 90.575s; original136 and3 actual post-own-pending negatives preserved/reached.
+        Five proved source/fixture repairs supported; all final checks/platform/common
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+    - id: def-069-actual-default-full-platform-qualified
+      claim: Exact corrected-source default full real CI/Ubuntu22/Windows suites allsuccess
+        with counts2700/2723/2637 PASS, existing27/21/107SKIP and4 future cancellation
+        XFAIL; originalmax129 retained. Actual two-role Linux/Windows builds/frozen/GUI/install/uninstall/profile+peer
+        isolation pass; Progress235/fullhistory/public pass. Final C1-C4 remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0120
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Preserve all original100 and all36 new adoption/native/Unicode
+      predicates; exact new/native/original related repeat plus final C1-C4/platform/common
+      gates.
+    resolution_evidence: []
+    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+      source/fixture before minimal repair; no later predicates inferred or guards
+      weakened. Exact bounded source/fixture provenance supports the smallest scoped
+      repair; final allchecks held. Exact3-path proven repair preserved; original136
+      predicates plus three actual post-own-pending denial predicates await recheck.
+      Full original139 related recheck passed, final all4checks/platforms still required.
+      Actual ordinary full native/platform/frozen qualification supports current repair;
+      missing folder/rebind/C4 behavior and final acceptance remain.
+    legacy_record: null
+  DEF-070:
+    title: Complete adopted root first-run refusal fixture expects a different exception
+      class
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    reproduction:
+      procedure: All-moved positive cases reach STORAGE_UNAVAILABLE SettingsError
+        while test expects AuthorityError. Inspect actual first-run refusal frames/preservation
+        before adjusting exact expected class/code.
+      failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
+      passing_source: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: def-070-first-observed
+      claim: All-moved positive cases reach STORAGE_UNAVAILABLE SettingsError while
+        test expects AuthorityError. Inspect actual first-run refusal frames/preservation
+        before adjusting exact expected class/code.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    - id: def-070-exact-provenance
+      claim: All3 original moves and resumed all-moved adoption succeed; actual CommissionedStorage.verify91
+        refuses SettingsError STORAGE_UNAVAILABLE. Shared/profile/SDK3 unchanged.
+        Correct fixture exact class/code; unchanged first-run guard remains closed.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    - id: def-070-original139-related-recheck
+      claim: Exact original10-file Windows native partial run139PASS/0failure/0error/0skip
+        exit0 90.575s; original136 and3 actual post-own-pending negatives preserved/reached.
+        Five proved source/fixture repairs supported; all final checks/platform/common
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+    - id: def-070-actual-default-full-platform-qualified
+      claim: Exact corrected-source default full real CI/Ubuntu22/Windows suites allsuccess
+        with counts2700/2723/2637 PASS, existing27/21/107SKIP and4 future cancellation
+        XFAIL; originalmax129 retained. Actual two-role Linux/Windows builds/frozen/GUI/install/uninstall/profile+peer
+        isolation pass; Progress235/fullhistory/public pass. Final C1-C4 remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0120
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Preserve all original100 and all36 new adoption/native/Unicode
+      predicates; exact new/native/original related repeat plus final C1-C4/platform/common
+      gates.
+    resolution_evidence: []
+    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+      source/fixture before minimal repair; no later predicates inferred or guards
+      weakened. Exact bounded source/fixture provenance supports the smallest scoped
+      repair; final allchecks held. Exact3-path proven repair preserved; original136
+      predicates plus three actual post-own-pending denial predicates await recheck.
+      Full original139 related recheck passed, final all4checks/platforms still required.
+      Actual ordinary full native/platform/frozen qualification supports current repair;
+      missing folder/rebind/C4 behavior and final acceptance remain.
+    legacy_record: null
+  DEF-071:
+    title: Adoption source-fault fixture may set an unused source adapter attribute
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    reproduction:
+      procedure: source fault first test did not raise and later original snapshot
+        changed before no SDK. Determine actual SourceFixture availability switch
+        versus unused offline attribute, actual source boundary, proof/native/shared
+        effects. Do not infer an unavailable source was admitted.
+      failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
+      passing_source: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: def-071-first-observed
+      claim: source fault first test did not raise and later original snapshot changed
+        before no SDK. Determine actual SourceFixture availability switch versus unused
+        offline attribute, actual source boundary, proof/native/shared effects. Do
+        not infer an unavailable source was admitted.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    - id: def-071-exact-provenance
+      claim: 'SourceFixture.offline is ignored: actual fail_resolveFalse, beginMOVING/local
+        WAL+evidence created/noSDK/shared/profile unchanged. Actual fail_resolveTrue
+        raises CONFIGURATION_INSTRUCTIONS_REQUIRED before any WAL/evidence/shared/profile/SDK
+        changes. Correct only fixture switch; source guard proven functional.'
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    - id: def-071-original139-related-recheck
+      claim: Exact original10-file Windows native partial run139PASS/0failure/0error/0skip
+        exit0 90.575s; original136 and3 actual post-own-pending negatives preserved/reached.
+        Five proved source/fixture repairs supported; all final checks/platform/common
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+    - id: def-071-actual-default-full-platform-qualified
+      claim: Exact corrected-source default full real CI/Ubuntu22/Windows suites allsuccess
+        with counts2700/2723/2637 PASS, existing27/21/107SKIP and4 future cancellation
+        XFAIL; originalmax129 retained. Actual two-role Linux/Windows builds/frozen/GUI/install/uninstall/profile+peer
+        isolation pass; Progress235/fullhistory/public pass. Final C1-C4 remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0120
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Preserve all original100 and all36 new adoption/native/Unicode
+      predicates; exact new/native/original related repeat plus final C1-C4/platform/common
+      gates.
+    resolution_evidence: []
+    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+      source/fixture before minimal repair; no later predicates inferred or guards
+      weakened. Exact bounded source/fixture provenance supports the smallest scoped
+      repair; final allchecks held. Exact3-path proven repair preserved; original136
+      predicates plus three actual post-own-pending denial predicates await recheck.
+      Full original139 related recheck passed, final all4checks/platforms still required.
+      Actual ordinary full native/platform/frozen qualification supports current repair;
+      missing folder/rebind/C4 behavior and final acceptance remain.
+    legacy_record: null
+  DEF-072:
+    title: Synthetic inherited external UNKNOWN fault may omit actual summary envelope
+      binding
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    reproduction:
+      procedure: UNKNOWN fault raises CONFIGURATION_EFFECT_JOURNAL during fixture
+        inspection before target assertion; inspect directly edited ledger versus
+        changed_row canonical envelope, then retain actual valid other-UNKNOWN/no-SDK
+        denial.
+      failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
+      passing_source: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: def-072-first-observed
+      claim: UNKNOWN fault raises CONFIGURATION_EFFECT_JOURNAL during fixture inspection
+        before target assertion; inspect directly edited ledger versus changed_row
+        canonical envelope, then retain actual valid other-UNKNOWN/no-SDK denial.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    - id: def-072-exact-provenance
+      claim: Direct entry injection leaves summary RETAINED and ledger rejects CONFIGURATION_EFFECT_JOURNAL
+        at53. changed_row creates actual UNKNOWN envelope; inspector reports exact
+        summary/effect blockers and begin refuses ROOT_EVIDENCE with no WAL/evidence/shared/SDK
+        changes. Correct fixture valid retention binding.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    - id: def-072-original139-related-recheck
+      claim: Exact original10-file Windows native partial run139PASS/0failure/0error/0skip
+        exit0 90.575s; original136 and3 actual post-own-pending negatives preserved/reached.
+        Five proved source/fixture repairs supported; all final checks/platform/common
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+    - id: def-072-actual-default-full-platform-qualified
+      claim: Exact corrected-source default full real CI/Ubuntu22/Windows suites allsuccess
+        with counts2700/2723/2637 PASS, existing27/21/107SKIP and4 future cancellation
+        XFAIL; originalmax129 retained. Actual two-role Linux/Windows builds/frozen/GUI/install/uninstall/profile+peer
+        isolation pass; Progress235/fullhistory/public pass. Final C1-C4 remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0120
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Preserve all original100 and all36 new adoption/native/Unicode
+      predicates; exact new/native/original related repeat plus final C1-C4/platform/common
+      gates.
+    resolution_evidence: []
+    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+      source/fixture before minimal repair; no later predicates inferred or guards
+      weakened. Exact bounded source/fixture provenance supports the smallest scoped
+      repair; final allchecks held. Exact3-path proven repair preserved; original136
+      predicates plus three actual post-own-pending denial predicates await recheck.
+      Full original139 related recheck passed, final all4checks/platforms still required.
+      Actual ordinary full native/platform/frozen qualification supports current repair;
+      missing folder/rebind/C4 behavior and final acceptance remain.
+    legacy_record: null
+  DEF-073:
+    title: Second fallback fixture reuses original election transition identity
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: c64fc64258fca7846d71f70ed725326ec2e83edd
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    reproduction:
+      procedure: Second helper stale takeover raises TRANSITION_REUSED. Inspect exact
+        helper acquisition ID and fresh nonce requirement before faithful second-takeover
+        fixture.
+      failing_source: c64fc64258fca7846d71f70ed725326ec2e83edd
+      passing_source: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: def-073-first-observed
+      claim: Second helper stale takeover raises TRANSITION_REUSED. Inspect exact
+        helper acquisition ID and fresh nonce requirement before faithful second-takeover
+        fixture.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-adoption-first-failure.md
+    - id: def-073-exact-provenance
+      claim: Actual first fallback grant uses fixed helper tid guarded-fallback; second
+        same helper acquire204 refuses TRANSITION_REUSED. Shared unchanged/SDK0. Second
+        actual role fixture must create a new election transition (new context/native
+        grant), preserving no-ACK/fresh takeover guard.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-five-group-provenance.md
+    - id: def-073-original139-related-recheck
+      claim: Exact original10-file Windows native partial run139PASS/0failure/0error/0skip
+        exit0 90.575s; original136 and3 actual post-own-pending negatives preserved/reached.
+        Five proved source/fixture repairs supported; all final checks/platform/common
+        held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-cases.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/adoption-repaired-related-result.md
+    - id: def-073-actual-default-full-platform-qualified
+      claim: Exact corrected-source default full real CI/Ubuntu22/Windows suites allsuccess
+        with counts2700/2723/2637 PASS, existing27/21/107SKIP and4 future cancellation
+        XFAIL; originalmax129 retained. Actual two-role Linux/Windows builds/frozen/GUI/install/uninstall/profile+peer
+        isolation pass; Progress235/fullhistory/public pass. Final C1-C4 remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0120
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Preserve all original100 and all36 new adoption/native/Unicode
+      predicates; exact new/native/original related repeat plus final C1-C4/platform/common
+      gates.
+    resolution_evidence: []
+    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+      source/fixture before minimal repair; no later predicates inferred or guards
+      weakened. Exact bounded source/fixture provenance supports the smallest scoped
+      repair; final allchecks held. Exact3-path proven repair preserved; original136
+      predicates plus three actual post-own-pending denial predicates await recheck.
+      Full original139 related recheck passed, final all4checks/platforms still required.
+      Actual ordinary full native/platform/frozen qualification supports current repair;
+      missing folder/rebind/C4 behavior and final acceptance remain.
+    legacy_record: null
+  DEF-074:
+    title: RP027 unqualified fixture imports prevent default full suite collection
+      on both platforms
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 5665870eb003bb335dc61ced8472f8809d464cf5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: 5665870eb003bb335dc61ced8472f8809d464cf5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.md
+    reproduction:
+      procedure: Default complete pytest collection in three real isolated CI/Desktop
+        Linux/Windows jobs raises exactly four ModuleNotFoundErrors before execution.
+        Modules exist but RP027 tests import unqualified names; default pyproject
+        adds src only, prior custom test helper paths masked portability errors.
+      failing_source: 5665870eb003bb335dc61ced8472f8809d464cf5
+      passing_source: a71954afb45c9e667ae1dd554b6b134fcf7c17c9
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-full-collection-result.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: default-pytest-unqualified-new-test-imports
+      claim: Three native/full platforms have identical four fixture ModuleNotFoundErrors;
+        exact repo reads show both helpers present under tests packages and new import
+        lines unqualified. Default full collection failure is supported; preserve
+        all assertions and fix only four imports.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/platform-first-collection-failure.md
+    - id: ordinary-full-collection-no-helper-paths
+      claim: Actual default full Windows pytest collection, no PYTHONPATH/custom fixture
+        directories:2748 collected/zeroerrors/exit0/1.916s, zero tests executed. Import-only
+        repair resolves reproduced discovery errors; execution/platform/frozen qualification
+        still required.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-full-collection-result.json
+    - id: def-074-actual-default-full-platform-qualified
+      claim: Exact corrected-source default full real CI/Ubuntu22/Windows suites allsuccess
+        with counts2700/2723/2637 PASS, existing27/21/107SKIP and4 future cancellation
+        XFAIL; originalmax129 retained. Actual two-role Linux/Windows builds/frozen/GUI/install/uninstall/profile+peer
+        isolation pass; Progress235/fullhistory/public pass. Final C1-C4 remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/default-import-platform-qualification.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0128
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Unmodified ordinary full pytest collection without custom helper
+      PYTHONPATH, then actual native Linux/Windows full regression/Qt/build/frozen
+      and final C1-C4/common gates.
+    resolution_evidence: []
+    notes: Earlier partial139 and historic broad839 remain actual past results, not
+      default/platform qualification. Exact full CI failure saved. No production dependency
+      or guard weakened. Final allchecks held. Exactly5 fixture paths/seven import
+      lines repaired and source saved; no assertion/production/protocol/PYTHONPATH/workflow
+      change. Actual ordinary full native/platform/frozen qualification supports current
+      repair; missing folder/rebind/C4 behavior and final acceptance remain.
+    legacy_record: null
+  DEF-075:
+    title: Folder mapping changed-profile negative fixture violates an existing frozen
+      setup binding before reaching its gate
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 83dd3c09e1446a6897ef0dd64abb6c28fe5d5efb
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: 83dd3c09e1446a6897ef0dd64abb6c28fe5d5efb
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.md
+    reproduction:
+      procedure: Actual native Linux mapping suite on exact PR and push checkouts:20
+        cases pass, changed-profile case fails at fixture Setup.choose with SETUP_BALLPARK_BINDING_FROZEN
+        before creator.prepare. Original Setup correctly freezes a published network
+        binding; actual native mapping/profile guard not reached in this one case.
+      failing_source: 83dd3c09e1446a6897ef0dd64abb6c28fe5d5efb
+      passing_source: f98ddf419471afc11a27868231432a6f8ba753f3
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-path-lookup-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-path-lookup-qualified.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: native-negative-profile-fixture-bypasses-frozen-setup-boundary
+      claim: Both source-linked actual Linux jobs reproduce the same profile fixture
+        error. Actual Setup.choose disallows changed scope after BALLPARK publication;
+        choosing the unchanged scope through actual Setup still advances the protected
+        revision and invalidates prior resolution, permitting the intended negative
+        controller check without altering frozen binding or guards.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-first-failure.md
+    - id: actual-profile-revision-refusal-and-original-native-regressions
+      claim: Both exact repaired-source actual Linux jobs execute21mapping+105original
+        cases PASS/zeroSkip/exit0. Actual unchanged-scope Setup advances protected
+        revision and intended C1 guard refuses while mapping/authority/files/profile
+        effects remain unchanged. Original production freezes retained. Complete RP027/common
+        gates remain held.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-path-lookup-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-path-lookup-qualified.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0142
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Keep all21 Linux cases/assertions; use actual valid private Setup
+      revision change, prove it advanced, then actual creator refusal/no mapping/authority/root/profile
+      effects. Required original folder/native regressions and final full/native/platform/frozen/C1-C4
+      gates.
+    resolution_evidence: []
+    notes: Twenty actual positive/refusal/pending/helper cases executed on native
+      Linux. Failure is the test precondition, never authorization to weaken a production
+      Setup freeze. Original regressions not executed in targeted jobs after prior
+      step failure; automatically triggered full CI/Desktop still pending and cannot
+      be claimed. Actual126 native cases on both push/PR now pass at exact f98ddf
+      repair source; final acceptance held.
+    legacy_record: null
+  DEF-076:
+    title: Native folder transaction compares its own UNKNOWN operation digest to
+      an action label
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 31533a1eca67658641a5913d2a3d70715e804c18
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: 31533a1eca67658641a5913d2a3d70715e804c18
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.md
+    reproduction:
+      procedure: Both actual native46-case jobs:34PASS/12FAIL/zeroSkip. Nine direct
+        transaction scenarios hit FOLDER_RELOCATION_UNRESOLVED immediately after own
+        shared IDENTITY UNKNOWN; three pending/force assertions don't reach their
+        target. Actual Inspection defines SHARED_EFFECT_UNKNOWN.identity as operation_id,
+        but new _role compares identity with action label IDENTITY. No physical syscall
+        reaches this guard.
+      failing_source: 31533a1eca67658641a5913d2a3d70715e804c18
+      passing_source: b90713351a910341da0454f8f7b4d82e144e22b2
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-qualified.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: own-shared-operation-label-mismatch
+      claim: Actual source-linked traces stop at exact _role blocker comparison after
+        Effects.start. Inspection's typed operation digest and existing qualified
+        resumed Docs guard establish the incorrect comparison. Match only exact current
+        operation digest/own IDENTIY entry, deny any other UNKNOWN action even with
+        duplicate digest, and preserve native sender owner/epoch checks.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-first-failure.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0152
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: All46 native cases and unchanged original folder/native/Docs/effects;
+      add valid foreign/deduplicated UNKNOWN entry and native sender owner/epoch/election
+      guards, preserving direct kernel/cut/fallback/force assertions; finalallchecks.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-qualified.md
+    notes: Initial source-only physical checkpoint not qualified. All21 existing actual
+      mapping cases remain passing; failed native cut/late-force assertions are unreachable
+      behind the same prior guard. Keep assertions and no-replay/current-role/source/native
+      boundaries. No guard broadening or accepted check. Required actual51 native
+      and262 original regression cases now pass twice on exact sourceb90713351a910341da0454f8f7b4d82e144e22b2.
+      All RP027 checks still held; no source/test result alone closes this defect.
+    legacy_record: null
+  DEF-077:
+    title: Native folder refusal tests expect an internal exception across opaque
+      helper/native boundaries
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 98b5948618877160536fca2525fdb7277054d00c
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.md
+    proven_origin:
+      work_item: RP-027
+      source_ref: 98b5948618877160536fca2525fdb7277054d00c
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.md
+    reproduction:
+      procedure: 'Both actual native51-case jobs produce49PASS/2FAIL/zeroSkip: later
+        contradictory-target helper refuses AuthorityError while kernel test expects
+        ConfigurationError; late force yields SettingsError from existing Linux native
+        context instead of test''s internal ConfigurationError expectation. Underlying
+        force reason still needs instrumented real proof verification.'
+      failing_source: 98b5948618877160536fca2525fdb7277054d00c
+      passing_source: b90713351a910341da0454f8f7b4d82e144e22b2
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-qualified.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: opaque-native-helper-boundary-expectation
+      claim: Tests require a narrower internal exception than real mapped authority/native
+        context expose. Existing Linux native context source catches non-settings
+        errors from yielded body; meaningful refusal reason must be captured inside
+        actual SQL proof, not inferred from outer opaque exception.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-guard-native-failure.md
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0157
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: All51 native mapping/physical cases unchanged production guard;
+      actual held-SQL proof records exact OWNER_SUPERSEDED for late force, outward
+      opaque native error expected, kernel no-replace source/foreign bytes/one-call/UNKNOWN
+      retained; selected original/final allchecks.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-qualified.md
+    notes: Do not broaden production guards or claim hidden force proof reason. Keep
+      native pending/no-replay/current-role boundaries and OPEN until final acceptance.
+      Required actual51 native and262 original regression cases now pass twice on
+      exact sourceb90713351a910341da0454f8f7b4d82e144e22b2. All RP027 checks still
+      held; no source/test result alone closes this defect.
+    legacy_record: null
+  DEF-078:
+    title: Initial remote-rebind qualification fails at inherited error import and
+      invalid test prerequisites
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c1402a50f66131c7771ca1c21a344097dab08bed
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: c1402a50f66131c7771ca1c21a344097dab08bed
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
+    reproduction:
+      procedure: Default-import exact-source Windows181 targeted:154PASS27FAIL zeroSKIP.
+        Original wrong-blueprint raises NameError; new25 fixture cases expect CONFIRMED
+        instead of final MOVED, max129 invalid PREPARING/missing timing fixture refuses
+        before rebind.
+      failing_source: c1402a50f66131c7771ca1c21a344097dab08bed
+      passing_source: 28952a9f858985905f0f8b0702effca4c76af019
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-linux-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-budget-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-qualified.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: initial-rebind-error-fixture-prerequisites
+      claim: Missing inherited AuthorityError import causes real refusal regression;
+        new system fixture final terminal expectation and large-plan uncommissioned/invalid
+        settings prevent new rebind qualification. Fix these exact boundaries without
+        widening production authorization.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-initial-failure.json
+    - id: oversized-compact-budget-fixture
+      claim: Remaining max129 fixtures put1500 two-byte Unicode characters in each
+        actual1024-byte catalogue; canonical layout rejects the input before rebind.
+        Keep budget guard and create valid substantial retained records.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-budget-failure.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0167
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Original wrong-blueprint refusal, all26 new actual conformance/native
+      cases with default imports and valid large-budget source, unchanged original
+      Docs/effect and actual Linux51/107 regressions; final C1-C4 qualification.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-qualified.md
+    notes: Preserve original c140 failure. No new rebind/native pass inferred; native/final
+      composition remains held. Keep OPEN until source-linked final acceptance. Same27
+      failures reproduced on both exact-source Linux jobs after all51+107 pass/zeroSkip.
+      Repaired4b66 actual Windows27 yields25PASS2FAIL; missing import/final physical
+      fixture resolved, two original oversized max129 fixture cases remain. Full181/Linux
+      not started after targeted failure. Exact follow-up source repair uses RP-027-A001-0171
+      under the same RP-027/A001 repair chain; original repair record retained once.
+      Exactsource28952 actual Windows27/181/default2825 and bothLinux339/zeroSkip
+      now qualify the exact repairs and new rebind unit; retain OPEN/all checks held
+      until final C4/composition/acceptance.
+    legacy_record: null
+  DEF-079:
+    title: Shared-publication qualification fixtures violate existing profile and
+      closed catalogue prerequisites
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 5d6116f34f2323e8bc775ca7d092b99e2c99fe77
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-initial-failure.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 5d6116f34f2323e8bc775ca7d092b99e2c99fe77
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-initial-failure.json
+    reproduction:
+      procedure: Default exact-source Windows23 new tests:20PASS3FAIL0SKIP58.512s.
+        Original-profile scenario fails fixture Setup.choose before C4; both compact64
+        cases fail shared catalogue decode before plan construction.
+      failing_source: 5d6116f34f2323e8bc775ca7d092b99e2c99fe77
+      passing_source: c5c77d9cea6b5b4804a399b8ed208d33e2724de8
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-qualified.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: invalid-profile-and-selected-catalogue-fixtures
+      claim: Fixture-only requests conflict with existing frozen BALLPARK network_scope
+        and closed discovery catalogue; correct valid original-revision and maximal
+        compact input without weakening production guards.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-initial-failure.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0185
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: All23 new actual/default/native tests with valid original-revision/max64
+      prerequisites, unchanged original Candidate/Docs/effect/post-root tests and
+      actual Linux mapping/Folder/Docs regressions; final C1-C4 composition.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-qualified.md
+    notes: Preserve initial5d6116 and all3 closed-code failures. No original/runtime/media/work
+      reset or repeated request occurred. Original/Linux dependent qualification was
+      not started after this targeted failure; allC1-C4 held. Onefile valid fixture
+      source c5c77d9cea6b5b4804a399b8ed208d33e2724de8 preserved under185; production
+      unchanged, passing_source pending actual requalification. Exactc5c77d Windows23/254/default2868
+      and bothLinux382 now pass0Skip, validating onefile correction. Retain OPEN until
+      complete final C1-C4/composition acceptance.
+    legacy_record: null
+  DEF-080:
+    title: Repeated configured Desktop time limit cancels Windows packaging after
+      passing full tests
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c5c77d9cea6b5b4804a399b8ed208d33e2724de8
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-profile-promotion-qualified.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Inspect exact terminal Desktop job111188215859/run37117920927: full2706PASS/158SKIP/4XFAIL,
+        WATCHDOG built, FETCHER build canceled and package/upload skipped; first/last
+        log span2401.46s against configured40minute bound. Earlier full-pass package/upload
+        cancellation preserved in historical evidence. No rerun or deployment.'
+      failing_source: c5c77d9cea6b5b4804a399b8ed208d33e2724de8
+      passing_source: 923741e9027a2fa6e0289f42cfd59149f8c33d3d
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-profile-promotion-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-profile-promotion-qualified.md
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/desktop-budget-qualified.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: desktop-budget-too-short
+      claim: Configured40minute limit cancels packaging of an otherwise passing full
+        suite; elapsed terminal logs and repeated prior cancellation support a bounded
+        workflow budget repair, exact provider cancellation reason absent.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-profile-promotion-qualified.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0195
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Source-linked actual Windows/Linux complete Desktop regressions,
+      both-role build, packaged GUI/setup and installation profile isolation, artifact
+      upload with revised bounded budget; counts/skips and completion status must
+      be actual.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/desktop-budget-qualified.json
+    notes: a2cb9 promotion Windows18/272/Linux400 groups qualified independently,
+      allC1-C4 remain held; no cancelled packaging acceptance or app defect inferred.
+      Historical c5 Linux Desktop2843PASS/21SKIP/4XFAIL and both packagesPASS; Windows
+      full2706PASS/158SKIP/4XFAIL does not replace canceled package acceptance. Actual923741e
+      immutable-source90minute Desktop both platforms, both-rolepackages/GUI/setup/installisolation/upload
+      qualified; Windows terminal2629.107s exceeds old2400bound. No test/gate weakened.
+      Current14nativeadmissionsource separately qualified component, full/currentcomposition
+      stillheld; DEF080OPENuntilcommonC4acceptance.
+    legacy_record: null
+  DEF-081:
+    title: Admission credential-revocation fixture uses a foreign installation and
+      unsupported preparation API
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 96b95bae1a06c06de5e08fc538522d3f24d99e5c
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-initial-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: Actual default Windows23new admission/native:22PASS1FAIL0SKIP66.715s.
+        CredentialResolver constructor refuses STORE_INSTALLATION_MISMATCH before
+        native admission case; source-inspected grant call also differs from actual
+        qualified enroll API, not yet exercised.
+      failing_source: 96b95bae1a06c06de5e08fc538522d3f24d99e5c
+      passing_source: 14a53a8c8ab5903282cd23e4f428e2b26cda4b25
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-qualified.md
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: fixture-installation-and-enrollment-preparation
+      claim: FixtureStore default identity differs from actual current synthetic profile
+        and its later grant method is unsupported; same existing installation-bound
+        FixtureStore/enroll preparation as qualified promotion should reach actual
+        revocation admission boundary without changing production guards.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-initial-failure.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0203
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Actual installation-bound FixtureStore/real CredentialResolver
+      enrolled capability passes post-root/publication/promotion, then REVOKED makes
+      fresh admission refuse CREDENTIAL_UNAVAILABLE with zero secret execution/native
+      maintenance release/remote writes; all23 and affected originals/current Linux
+      qualify.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-qualified.json
+    notes: Actual failure retained, unsupported later API source-inspected only; production
+      origin unproven and binding guard unchanged. AllC1-C4 held until final composition/qualification.
+      Actual corrected14a53a8 qualification23new/295originalWindows and bothactualLinux423PASS0Skip.
+      Production96b95ba unchanged; source-local fixture mismatch/supporting enrollment
+      API repair verified. RemainsOPEN/allC1-C4held for fullcomposition.
+    legacy_record: null
+  DEF-082:
+    title: Current ACTIVE adoption source refusal leaves a different exception boundary
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 237994f7b97151304ddbb7efaa52522252996702
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Actual default Windows30 qualification: eight expected source-revocation
+        negative cases fail because InstructionError RELEASE_WITHDRAWN/NO_UNIQUE_COMPATIBLE_RELEASE
+        differs from expected controller error classes; direct source call and error
+        class confirmed by source inspection.'
+      failing_source: 237994f7b97151304ddbb7efaa52522252996702
+      passing_source: 6d061a3af4c31e72fbc1c806ff04d66bfc89f80e
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-targeted-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-qualified.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: source-inspected-boundary
+      claim: Direct select/restore_pin source revocation correctly refuses, but propagates
+        InstructionError outside the controller's consistent ConfigurationError boundary;
+        normalize only source-pin error classes without relaxing eligibility or recovery.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0213
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Eight source revoked Main/pending native cases must refuse with
+      stable adoption instructions code and preserve exact native pending/Main/CP/shared
+      facts; restore exact source then same bytes recover, no repeat.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-targeted-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-full-qualified.json
+    notes: 'Actual237 initial30:21PASS9FAIL0ERROR0SKIP70.056s. Failure chronology
+      retained; ordinary debugging, no external blocker. AllC1-C4/full composition
+      held; no dependent regressions started. Corrected6d actualdefault30PASS0Skip74.161s,
+      including all reached source-refusal/pending/readback/credential assertions.
+      RemainsOPEN until affectedregressions/Linux/fullcomposition/commonC4. Fullscoped
+      current6d qualification30new/436affectedWindows/defaultcollect2939/bothactualLinux453PASS0Skip
+      confirmed; fullCI/Desktopsame6dstillrunning independently; remainsOPENuntilfullRP027commonC4.
+
+      Original immutable source6d request13 CI/Desktop full/package terminal SUCCESS
+      under220/223; current newer retained source417 unqualified and common C4 still
+      held.'
+    legacy_record: null
+  DEF-083:
+    title: ACTIVE adoption credential-image test passes an unsupported fixture store
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 237994f7b97151304ddbb7efaa52522252996702
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: Actual default Windows30 credential image case fails CREDENTIAL_IMAGE_STORE_MISMATCH
+        at export_private._pair before adoption; canonical exact key-store type contract
+        confirmed by source inspection.
+      failing_source: 237994f7b97151304ddbb7efaa52522252996702
+      passing_source: 6d061a3af4c31e72fbc1c806ff04d66bfc89f80e
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-targeted-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-qualified.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: source-inspected-boundary
+      claim: Credential persistence permits exact WindowsKeyStore/LinuxKeyStore, while
+        the new test passes FixtureStore; use actual typed LinuxKeyStore with existing
+        synthetic native/runner adapters, same installation, and real select/enroll/export/resolve/revoke.
+        No persistence guard widening.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0213
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Protected own credential-image and selected refs preserved in
+      archive/stage/promotion; actual current revocation refuses before Main promotion/secret
+      execution; typed-store persistence preparation reaches genuine boundary.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-targeted-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-full-qualified.json
+    notes: 'Actual237 initial30:21PASS9FAIL0ERROR0SKIP70.056s. Failure chronology
+      retained; ordinary debugging, no external blocker. AllC1-C4/full composition
+      held; no dependent regressions started. Corrected6d actualdefault30PASS0Skip74.161s,
+      including all reached source-refusal/pending/readback/credential assertions.
+      RemainsOPEN until affectedregressions/Linux/fullcomposition/commonC4. Fullscoped
+      current6d qualification30new/436affectedWindows/defaultcollect2939/bothactualLinux453PASS0Skip
+      confirmed; fullCI/Desktopsame6dstillrunning independently; remainsOPENuntilfullRP027commonC4.
+
+      Original immutable source6d request13 CI/Desktop full/package terminal SUCCESS
+      under220/223; current newer retained source417 unqualified and common C4 still
+      held.'
+    legacy_record: null
+  DEF-084:
+    title: Retained configuration publication omitted its configuration reader import
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 41761af8b62b89aea0bc304615dcb7848ad2b763
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: Eight reached mutation prepare/_validate paths fail NameError configuration;
+        source global import omission confirmed by static source inspection.
+      failing_source: 41761af8b62b89aea0bc304615dcb7848ad2b763
+      passing_source: 1f238122cf44681a4617ed4ef5807cfee6f8f370
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: source-inspected-initial-boundary
+      claim: New retained module uses configuration() from copied strict mutation
+        while importing only require; add exact import, preserving all mutation/profile/source
+        guards.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0226
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: New25 +existing publication/promotion/admission/candidate/native/Folder
+      regressions must reach actual post-first-run publication and negative/crash
+      assertions after same exact source pin.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
+    notes: 'Actual default Windows source417/b4e9 new25 qualification:0PASS25FAIL0ERROR0SKIP19.593s.
+      Failure chronology and exact owned native fixture results retained; ordinary
+      debugging, no external blocker. Later boundary assertions not reached; allC1-C4/fullcomposition
+      held.
+
+      Corrected0170 reaches new frozen-stage COMMIT_CHANGED rather than initial import/native-alias
+      refusal; actual25 still0PASS25FAIL28.185s. Immediate fix observed, no successful
+      whole-case evidence or common acceptance.
+
+      Current1f2381 same25 actualdefaultWindows PASS0skip38.596s reaches all18 rootless/SDK/admission
+      and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.'
+    legacy_record: null
+  DEF-085:
+    title: Retained synthetic fixture reuses native identities for distinct protected
+      stores
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 41761af8b62b89aea0bc304615dcb7848ad2b763
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: Seventeen basic memory cases fail COMMIT_STORE_ALIAS during actual
+        retained commit construction; old MemoryNative uses fixed principal/directory[1,2],
+        and new fixture omitted distinct context stores.
+      failing_source: 41761af8b62b89aea0bc304615dcb7848ad2b763
+      passing_source: 1f238122cf44681a4617ed4ef5807cfee6f8f370
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: source-inspected-initial-boundary
+      claim: Use distinct actual typed MemoryNative protected ports and a separate
+        current resolved C1 evidence archive in the new retained fixture; do not relax
+        production alias guard.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-initial-failure.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0226
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Actual memory source fixture must reach final publication/no-replay/negative
+      assertions with unique native bindings; copied/aliased store negative assertions
+      and actual OS-native fixtures remain intact.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
+    notes: 'Actual default Windows source417/b4e9 new25 qualification:0PASS25FAIL0ERROR0SKIP19.593s.
+      Failure chronology and exact owned native fixture results retained; ordinary
+      debugging, no external blocker. Later boundary assertions not reached; allC1-C4/fullcomposition
+      held.
+
+      Corrected0170 reaches new frozen-stage COMMIT_CHANGED rather than initial import/native-alias
+      refusal; actual25 still0PASS25FAIL28.185s. Immediate fix observed, no successful
+      whole-case evidence or common acceptance.
+
+      Current1f2381 same25 actualdefaultWindows PASS0skip38.596s reaches all18 rootless/SDK/admission
+      and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.'
+    legacy_record: null
+  DEF-086:
+    title: Retained final first-run proof mutates its already frozen stage revision
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 0170f12287c03242026280bb1c79253c19b44908
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-frozen-stage-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Actual default Windows source0170 new25: all fail before commit
+        metadata/shared publication. Actual trace reaches _before CandidateValidation
+        frozen stage revision comparison; source inspection shows Candidate.require_validated
+        invokes unconditional Setup.review save.'
+      failing_source: 0170f12287c03242026280bb1c79253c19b44908
+      passing_source: 1f238122cf44681a4617ed4ef5807cfee6f8f370
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-frozen-stage-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: mutating-frozen-stage-first-run
+      claim: The final repeated actual validation uses the mutating UI review path,
+        increasing stage revision itself; use actual read-only Prerequisites.validate
+        and exact snapshot/source/current-role rechecks instead.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-frozen-stage-failure.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0230
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Same25 actual source/native cases must reach final/negative/crash
+      assertions without final proof modifying stage. Existing late stage/force/source/UNKNOWN/protection
+      refusals remain, no shared writes before frozen proof.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
+    notes: 'Actual0170/b4e9 corrected25:0PASS25FAIL0ERROR0SKIP28.185s;24COMMIT_CHANGED
+      and one native-cut missing pending after earlier COMMIT_CHANGED. Initial417
+      missing import/fixture alias fixed at reached immediate boundaries, but no passing
+      qualification. Raw local path withheld publicly, original owned logs preserved.
+      AllC1-C4/default/Folder/currentfull/composition held; ordinary debugging, no
+      external blocker.
+
+      Current1f2381 same25 actualdefaultWindows PASS0skip38.596s reaches all18 rootless/SDK/admission
+      and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.'
+    legacy_record: null
+  DEF-087:
+    title: Required retained Folder negative fixture selects a nonexistent GC record
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 1f238122cf44681a4617ed4ef5807cfee6f8f370
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-linux-fixture-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: Both actual Linux request14 jobs execute51old +sixnewFolder; five
+        newPASS, one fails StopIteration at next(records endswith .gc). Fixed layout
+        contains no such record, so GC-labelled target mutation/refusal assertions
+        are not reached.
+      failing_source: 1f238122cf44681a4617ed4ef5807cfee6f8f370
+      passing_source: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-linux-fixture-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: nonexistent-gc-fixture-slot
+      claim: GC-labelled fixture assumed an unsupported logical slot; correct it to
+        actual fixed retained artifact-generation boundary and explicitly clarify
+        the test meaning rather than inventing GC protocol or weakening preservation.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-linux-fixture-failure.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0238
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Actual requiredLinux six current retainedFolder cases must pass0skip,
+      including real allocated artifact-generation mutation between freeze/dispatch
+      refusing before config publication; old51/107/320 and full current-source gates
+      remain.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
+    notes: 'Actual1f source:Windowsnew25PASS38.596s +affected472PASS446.059s +defaultcollect2970tests0.
+      Both actualLinux51PASS +new5PASS1FAIL at nonexistent .gc selector; no107/320
+      whole qualification. Code/source kernel positiveFolder paths and nativeadmission
+      reached; this missing target fixture assertion remains unqualified. OriginalCI/Desktop
+      stilltracked. No external blocker; allC1-C4held. Current corrected source28ade:
+      both actual Linux push/PR required484PASS0fail/error/skip, including artifact_generation
+      negative case; original failing1f CI/Desktop retained. Remains OPEN until whole
+      common C4.'
+    legacy_record: null
+  DEF-088:
+    title: Windows native loopback qualification fails before platform regression
+      with normalized discovery error
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Original current-source Desktop Windows job111233640009 executes
+        real native loopback qualification: identity/cache case fails in existing
+        loopback() BoundedRead(Windows read-only Get-NetIPAddress query, timeout10);
+        second wrong-identity case passes. 1failed1passed11.43s, full suite and packages
+        not executed.'
+      failing_source: 28ade36af1d6c98e7402ced9e19510ca58aa14fa
+      passing_source: 103d0eb2009880a7e76ac4604e611ce6958060da
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: bounded-system-query-availability
+      claim: The existing system query may have exceeded its bounded limit or failed;
+        normalized DiscoveryError does not distinguish causes. An unchanged-source
+        isolated CI retry can measure repeatability, not prove a specific cause.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
+    - id: later-unchanged-native-boundary-nonrepeat
+      claim: The exact unchanged discovery implementation/fixture passed bothactualWindows
+        nativecases8.60s on103d job111241734602. It demonstrates nonrepeat at that
+        boundary, without identifying the original cause or qualifying full/package
+        gates.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-corrected-full-historical.json
+    repairs: []
+    issue: null
+    regression_test: Same immutable checkout known failed Windows job once; native
+      loopback both actual cases and subsequent full suite/build/package gates must
+      succeed. Repeat failure requires new diagnosed evidence and separately logged
+      repair; no broad rerun or timeout weakening.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-corrected-full-historical.json
+    notes: Linux scoped484 fully qualified. Discovery code/test unchanged; old1f same
+      discovery step passed but this is insufficient to establish cause. Existing
+      failed job terminal, fresh disposable CI only, no installed runtime/effects
+      or unknown action. AllC1-C4 unaccepted. Original28ade fullCI/Linux andbothLinuxrolepackages
+      nowterminalSUCCESS. OriginalWindowsfailednativequery/fullnotrun;243retryexplicitNOTSTARTED403/no
+      lateroldretry. Later103d nativeWindows2PASS8.60s/productiondiscoveryunchanged,
+      precisecauseUNKNOWN. RemainsOPENpending currentwholecommon.
+    legacy_record: null
+  DEF-089:
+    title: Folder ACTIVE source schema hash is not synchronized in the unreleased
+      compatibility catalogue
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 103d0eb2009880a7e76ac4604e611ce6958060da
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-catalogue-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: Both actualDesktop native boundary checks pass, then actualrepositoryBALLPARK
+        profile test reads unchanged compatibility hash b4e9 while schema bytes hash
+        e567; Linux74PASS1FAIL9.32s and Windows same assertion. Current default2992/Windows55
+        pass independently. Fresh source metadata hash inspection matches assertion.
+      failing_source: 103d0eb2009880a7e76ac4604e611ce6958060da
+      passing_source: 6ab0691aaa1955068ac3932590f1e0280f3a36b6
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-catalogue-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-original-full-historical.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-corrected-qualified.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: missing-unreleased-catalogue-hash-update
+      claim: The24614path source unit updated additive schema and three code constants
+        but omitted one existing UNRELEASED profile hash. Synchronize exactly that
+        hash; do not change membership/status/builds/compatibility meaning or weaken
+        the repository coherence assertion.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-catalogue-failure.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0255
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Actual existingrepository-profile hash assertion/BALLPARK and
+      affected native/receipt/admission regressions; actual corrected-sourceLinux506/fullplatform
+      gates. Closure membership16+ENTRY remains same.
+    resolution_evidence: []
+    notes: 'NewactualWindows55PASS113.767s and wholecollection2992PASS1.773s/tests0;
+      schemae567 additive definitions preserveexisting meanings, but metadata coherence
+      fails bothactualDesktop jobs. Source static review247 did not qualify repository
+      catalogue. This is a normal source defect, no external blocker. AllC1-C4 held.
+      Originalimmutable103d fullCI terminal2920PASS24FAIL27SKIP4XFAIL1783.84s: two
+      samecatalogueassertions DEF089 and22samefixtureguardfailures DEF090, alloriginalfailedcaseIDs
+      retained; originalscopedLinuxboth51+6PASS/22FAIL. Correctedcurrent6ab069 actualqualification259
+      stillpending; no oldrun replay/currentqualification substitution. Current-source
+      qualification 262: Windows497 and both required Linux506 pass, including all22
+      functional adoption cases; full CI and both Desktop build/package gates pass.
+      Status remains OPEN pending complete RP-027 C1-C4 acceptance.'
+    legacy_record: null
+  DEF-090:
+    title: New Folder ACTIVE fixture bypasses the separate actual first storage-selection
+      contract
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 103d0eb2009880a7e76ac4604e611ce6958060da
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-binding-fixture-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: ActualrequiredLinuxpush job111241724971 passes51mapping+sixretained,
+        thenall22newFolderACTIVEfail infixtureSetup.choose becausepatch containsnewstorage_request+storage
+        binding together. ExistingSETUP_BINDING_UNVERIFIED guard correctly refuses
+        before role/adoption/cut assertions.
+      failing_source: 103d0eb2009880a7e76ac4604e611ce6958060da
+      passing_source: 6ab0691aaa1955068ac3932590f1e0280f3a36b6
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-binding-fixture-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-original-full-historical.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-corrected-qualified.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: fixture-first-selection-contract
+      claim: Persist owner request/own choices first, use actual BoundFolderSelection
+        on freshconfigured Folderport to verify handle/allartifacts, then persistselected
+        record separately before operationhistory. Preserve existingbindingguard andall22functional
+        assertions.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-folder-active-adoption-binding-fixture-failure.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0255
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: RequiredactualLinuxsame22 cases now reach actual role/adoption/pendingcut/negative/noreplay
+      assertions withactualselection; wholeprior484/currentfull/common. Windows55
+      productionunchanged qualification remains exact103d source.
+    resolution_evidence: []
+    notes: 'Fixturefirstrequest/binding guard failure, notanexternalstorage/accessproblem.
+      ActualnewFolderproductionpath notyetqualified; no skippedcasescounted. RawpublicLinuxfixturetrace
+      keptinGitHubjoblogs; reportomits ephemeralpaths. C1-C4held. Originalimmutable103d
+      fullCI terminal2920PASS24FAIL27SKIP4XFAIL1783.84s: two samecatalogueassertions
+      DEF089 and22samefixtureguardfailures DEF090, alloriginalfailedcaseIDs retained;
+      originalscopedLinuxboth51+6PASS/22FAIL. Correctedcurrent6ab069 actualqualification259
+      stillpending; no oldrun replay/currentqualification substitution. Current-source
+      qualification 262: Windows497 and both required Linux506 pass, including all22
+      functional adoption cases; full CI and both Desktop build/package gates pass.
+      Status remains OPEN pending complete RP-027 C1-C4 acceptance.'
+    legacy_record: null
+  DEF-091:
+    title: Current configuration admission accepts a stale Leadership timing profile
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: f7d283897eaef2ca521df99d45544dad2d07dd5e
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/stale-leadership-timing-diagnostic.json
+    proven_origin: null
+    reproduction:
+      procedure: Construct the existing synthetic promoted-profile admission fixture.
+        Keep protected/shared timing coherent; replace only Leadership.profile with
+        valid control_s7/lease_stale_s180. Observe release(), revision(), and a change
+        during the first-run environment callback. All three incorrectly return revision2;
+        release cases clear local maintenance. No shared write occurs.
+      failing_source: f7d283897eaef2ca521df99d45544dad2d07dd5e
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/stale-leadership-timing-diagnostic.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-admission-first-qualification.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-original-ci-reconciled.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R04
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: The admission proof compares protected and shared timing but omits the
+        actual Leadership.profile used by runtime scheduling and leases.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/stale-leadership-timing-diagnostic.json
+    - id: H2
+      claim: The initial new native pending regression incorrectly expects unwrapped
+        ConfigurationError across an actual OS settings lock whose contract normalizes
+        it to SettingsError.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-admission-first-qualification.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0269
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Planned release, per-use runtime and late-first-run mismatch
+      refusal; actual native preservation and existing stale/forced takeover tests.
+    resolution_evidence: []
+    notes: 'Independent diagnostic against unchanged A016 admission code while immutable
+      probe265 runs continue. Synthetic SDK/MemoryNative only, 7.302 seconds, no pytest
+      or native/live qualification. Expected BLOCKED, observed ADMITTED in all three
+      cases. Historical source of introduction has not been bisected; do not infer
+      a deployed incident. All RP027 C1-C4 remain unaccepted. Checkpoint candidate
+      initially failed RECORD_SCHEMA_INVALID because detected_in included prose; it
+      was corrected to the required RP-027.C4 ID. Failed local candidate retained;
+      no ref changed and no validation guard bypassed. Qualification271 on0b537c1:
+      Windows503 PASS/1 FAIL/0skip in528.711s; new pending test expects wrong public
+      error class. Trace and native lock source establish normalization on both platforms.
+      Guard not changed by this diagnosis; passing_source remains null until corrected
+      assertions are qualified. Request19 full jobs still need terminal reconciliation
+      before pause. Original request19 terminal CI/native/platform jobs later inspected:
+      only the same pending assertion failed; exact counts and skipped build/package
+      stages retained in current-timing-original-ci-reconciled.json. No rerun/cancellation
+      or overwritten failure.'
+    legacy_record: null

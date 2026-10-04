@@ -1,0 +1,532 @@
+{
+  "source": "4fa196601cbb201a779334808c0f6c4f9aff8cdc",
+  "checkout": "678c7b5dc12214fb9a836f422545afbf1e7ae509",
+  "branch": "feat/rp027-staged-reconfiguration",
+  "platform": "Windows",
+  "architecture": "AMD64",
+  "python": "3.11.9",
+  "exit_code": 0,
+  "elapsed_seconds": 65.292,
+  "owned_absent_fixture_root": true,
+  "targets": [
+    "tests/drive/test_reconfiguration_roots.py",
+    "tests/security/test_reconfiguration_roots_native.py",
+    "tests/drive/test_reconfiguration_root_settlement.py",
+    "tests/security/test_reconfiguration_root_settlement_native.py",
+    "tests/drive/test_reconfiguration_root_no_dispatch.py",
+    "tests/security/test_reconfiguration_root_no_dispatch_native.py",
+    "tests/drive/test_reconfiguration_root_plan.py",
+    "tests/security/test_reconfiguration_root_plan_native.py",
+    "-k",
+    "not actual_max_capacity129_fixed_objects"
+  ],
+  "cases": [
+    {
+      "name": "test_root_effect_admission_cannot_open_ordinary_work_or_foreign_transition[normal-start]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_root_effect_admission_cannot_open_ordinary_work_or_foreign_transition[wrong-transition]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_root_effect_admission_cannot_open_ordinary_work_or_foreign_transition[wrong-action]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_root_effect_admission_cannot_open_ordinary_work_or_foreign_transition[no-reservation]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_root_effect_admission_cannot_open_ordinary_work_or_foreign_transition[ordinary-record]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_root_start_frozen_purpose_cannot_be_forged_for_an_active_configuration",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_prepared_revocation_is_exact_native_proof_and_never_dispatches_or_clears_shared_state",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_revocation_during_shared_start_fences_the_same_prepared_live_sdk_call",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_saved_or_ambiguous_disposition_is_never_unsent_evidence[invoking]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_saved_or_ambiguous_disposition_is_never_unsent_evidence[legacy-absent]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_saved_or_ambiguous_disposition_is_never_unsent_evidence[forged-revoked]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_saved_or_ambiguous_disposition_is_never_unsent_evidence[wrong-disposition]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_sdk_send_holds_invoking_marker_and_revocation_cannot_enter_its_native_lock",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_existing_objects_move_once_and_original_profile_work_and_media_are_preserved",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unique_metadata_witness_and_seals_are_actual_but_not_yet_an_active_root",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_response_loss_inspects_same_item_and_never_reissues_move[before]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_response_loss_inspects_same_item_and_never_reissues_move[after]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_and_shared_intent_are_present_and_exclusive_during_sdk_send",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_first_cas_stale_fallback_needs_no_ack_and_old_root_sender_stops[before-send]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_first_cas_stale_fallback_needs_no_ack_and_old_root_sender_stops[during-send]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_failed_current_prerequisite_sends_no_sdk_move[target-access]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_failed_current_prerequisite_sends_no_sdk_move[withdrawn]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_failed_current_prerequisite_sends_no_sdk_move[unread]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_failed_current_prerequisite_sends_no_sdk_move[action]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_failed_current_prerequisite_sends_no_sdk_move[clock]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_foreign_object_or_record_hash_cannot_be_injected_into_saved_move_plan",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_historical_after_witness_never_resolves_unknown",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_root_schema_exact_pin_and_default_owner_refusal",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "status": "PASS"
+    },
+    {
+      "name": "test_actual_native_disposition_cut_recovers_exact_frame_without_sdk_reissue[invoking]",
+      "classname": "tests.security.test_reconfiguration_roots_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_actual_native_disposition_cut_recovers_exact_frame_without_sdk_reissue[revoked]",
+      "classname": "tests.security.test_reconfiguration_roots_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_actual_native_root_cut_promotes_same_frame_and_never_reissues_old_sdk[begin]",
+      "classname": "tests.security.test_reconfiguration_roots_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_actual_native_root_cut_promotes_same_frame_and_never_reissues_old_sdk[prepared]",
+      "classname": "tests.security.test_reconfiguration_roots_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_actual_native_root_cut_promotes_same_frame_and_never_reissues_old_sdk[completed]",
+      "classname": "tests.security.test_reconfiguration_roots_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_actual_native_root_wal_restart_copy_and_broad_protection",
+      "classname": "tests.security.test_reconfiguration_roots_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_new_role_settles_actual_cloud_after_witness_with_all_old_private_state_unavailable[artifact.000.input]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_new_role_settles_actual_cloud_after_witness_with_all_old_private_state_unavailable[artifact.000.output]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_new_role_settles_actual_cloud_after_witness_with_all_old_private_state_unavailable[authority]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[before]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[missing]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[historical]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[access]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[foreign-op]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[uncovered]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[wrong-blueprint]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[wrong-catalogue]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[lost-role]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[force]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[clock]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[withdrawn]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[wrong-action]",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_default_owner_forged_or_another_inspector_proof_cannot_settle",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_doc_commit_unknown_inspects_same_frozen_root_settlement_and_never_moves_again",
+      "classname": "tests.drive.test_reconfiguration_root_settlement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_actual_native_inherited_root_receipt_cut_recovers_same_intent_without_old_host_or_sdk",
+      "classname": "tests.security.test_reconfiguration_root_settlement_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_exact_native_revocation_settles_only_shared_row_and_retains_original_operation[False]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_exact_native_revocation_settles_only_shared_row_and_retains_original_operation[True]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_confirmed_non_dispatch_allows_separately_armed_same_owner_same_identity_move_once",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_same_prepared_live_sender_is_fenced_even_if_tombstone_and_cursor_resume_finish_inside_start",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retries[default-owner]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retries[forged]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retries[wrong-epoch]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retries[wrong-index]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retries[foreign-origin]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retries[force]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retries[clock]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retries[source]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retries[action]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retries[old-store]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_missing_or_stale_native_non_dispatch_proof_never_clears_unknown_or_retries[before-only]",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_fresh_second_reader_of_same_actual_native_root_revalidates_receipt_without_sdk",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_possible_send_with_provider_before_metadata_remains_unknown_not_non_dispatch",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_ordinary_start_still_refuses_same_operation_not_dispatched_receipt",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_cancel_lost_doc_receipt_inspects_same_native_intent_without_provider_move",
+      "classname": "tests.drive.test_reconfiguration_root_no_dispatch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_actual_native_revoked_root_cancel_intent_cut_is_exact_and_inspect_only",
+      "classname": "tests.security.test_reconfiguration_root_no_dispatch_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_actual_original_native_plan_and_exact_shared_witness_precede_any_sdk_move",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_second_different_root_plan_is_refused_before_native_plan_or_sdk_without_overwriting_first",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_lost_plan_receipt_inspects_exact_same_intent_and_never_reissues_unknown[False]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_lost_plan_receipt_inspects_exact_same_intent_and_never_reissues_unknown[True]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_new_current_role_inspects_exact_partial_plan_with_old_private_stores_unavailable_and_no_ready[0]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_new_current_role_inspects_exact_partial_plan_with_old_private_stores_unavailable_and_no_ready[1]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_new_current_role_inspects_exact_partial_plan_with_old_private_stores_unavailable_and_no_ready[3]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_inherited_unknown_is_a_blocker_until_exact_after_receipt_settles_and_saved_facts_expire",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[target]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[source-root]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[blueprint]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[references]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[fingerprint]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[metadata-parent]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[metadata-witness]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[catalogue]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[work]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[missing]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[source]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[force]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[clock]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[action]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_shared_plan_metadata_work_role_or_profile_never_grants_partial_routing[old-witness]",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_same_target_second_cursor_still_requires_unchanged_c1_c2_resolution",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_forged_or_other_inspector_partial_facts_cannot_be_a_resume_grant",
+      "classname": "tests.drive.test_reconfiguration_root_plan",
+      "status": "PASS"
+    },
+    {
+      "name": "test_actual_native_shared_root_plan_cut_recovers_exact_original_frame_and_never_reissues_cas[intent]",
+      "classname": "tests.security.test_reconfiguration_root_plan_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_actual_native_shared_root_plan_cut_recovers_exact_original_frame_and_never_reissues_cas[terminal]",
+      "classname": "tests.security.test_reconfiguration_root_plan_native",
+      "status": "PASS"
+    }
+  ],
+  "failures": [],
+  "counts": {
+    "PASS": 100,
+    "FAILURE": 0,
+    "ERROR": 0,
+    "SKIPPED": 0
+  }
+}

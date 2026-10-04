@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0276",
+  "source_commit": "bf5c34f9fc79fcc6784ccd71009e2551608522a7",
+  "branch": "feat/rp027-staged-reconfiguration",
+  "pr": 36,
+  "request_revision": 20,
+  "required_workflow": "Folder reconfiguration",
+  "required_cases": 126,
+  "scope": "Physical47/mapping51/retained6/current-role22/native107 and Docs/effect/admission327 = required560, zero skips. Current product timing guard0b537c1 unchanged; bf5c34f pending regression observes actual timing rejection through native error normalization and retains exact frame preservation/recovery assertions.",
+  "expected": "Windows504/default collection3043 tests0, required actualLinux560 zero skips and full current CI/Desktop/platform/package/Progress PASS. Preserve original request18/19 immutable terminal outcomes. Then checkpoint and pause until owner says continue; no new integration or live deployment.",
+  "acceptance": false
+}

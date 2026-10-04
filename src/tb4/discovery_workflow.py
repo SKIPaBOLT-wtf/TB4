@@ -73,10 +73,12 @@ class Discovery:
         snapshot = self.leader.backend.read()
         document = snapshot.document()
         from dataclasses import asdict
-        require(document["domain_id"] == spec.domain_id and document["capacity"] == asdict(spec.capacity)
-                and document["records"]["global.commissioning"] == dict(
-                    generation=0, operation_id=spec.setup_id, retention="RETAINED",
-                    body=spec.marker("STORAGE_READY")), "DISCOVERY_AUTHORITY_BINDING")
+        require(document["domain_id"] == spec.domain_id and document["capacity"] == asdict(spec.capacity),
+                "DISCOVERY_AUTHORITY_BINDING")
+        from .commissioning_records import current_record
+        from .drive.docs_authority import AuthorityError
+        try:current_record(document,spec,root_transition=choices["storage"].get("root_transition"))
+        except AuthorityError:require(False,"DISCOVERY_AUTHORITY_BINDING")
         return snapshot
 
     def configure(self, scope, *, owner_authorized=False):

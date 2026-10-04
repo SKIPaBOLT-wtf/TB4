@@ -23,10 +23,13 @@ FIELDS = "id,mimeType,parents,trashed,properties,size,capabilities(canEdit)"
 class NativeCommissioning:
     mode = "NATIVE_DOCS"
 
-    def __init__(self, drive, docs, spec, *, llm_authorized):
+    def __init__(self, drive, docs, spec, *, llm_authorized, root_transition=None):
         require(spec.mode==self.mode and llm_authorized is True,"SETUP_ACCESS")
+        require(root_transition is None or type(root_transition) is str and len(root_transition)==64
+                and all(c in "0123456789abcdef" for c in root_transition), "SETUP_ROOT_TRANSITION")
         self.drive,self.docs,self.spec=drive,docs,spec
         self.root_id,self.llm_authorized=spec.root_id,llm_authorized
+        self.root_transition=root_transition
 
     def _execute(self,request,limit=2*1024*1024,*,missing_ok=False):
         try:
@@ -39,7 +42,10 @@ class NativeCommissioning:
             raise AuthorityError("SETUP_PROVIDER_UNAVAILABLE") from None
 
     def _props(self,key,op):
-        return dict(tb4Domain=self.spec.domain_id,tb4Setup=self.spec.setup_id,tb4Slot=key,tb4Operation=op)
+        value=dict(tb4Domain=self.spec.domain_id,tb4Setup=self.spec.setup_id,tb4Slot=key,tb4Operation=op)
+        if self.root_transition is not None:
+            value["tb4Reconfiguration"]=digest(["reconfiguration-root",self.root_transition,key])
+        return value
 
     def _metadata(self,ref,*,missing_ok=False):
         require(object_id(ref),"SETUP_OBJECT")

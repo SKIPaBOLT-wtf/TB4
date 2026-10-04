@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0190",
+  "source": "a2cb9dc0d0baf1812dfec9d5baa12b7e52db9fd9",
+  "local_preserved_source": "1a797683665210af29c5a9fe8eadd6f5c846a855",
+  "paths": [
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "protocol/reconfiguration-candidate-v1.schema.json",
+    "skill/tb4/compatibility.json",
+    "src/tb4/reconfiguration_candidate.py",
+    "src/tb4/reconfiguration_commit.py",
+    "src/tb4/reconfiguration_post_root.py",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-015-native-validated-profile-promotion.md",
+    "src/tb4/reconfiguration_promotion.py",
+    "tests/drive/reconfiguration_promotion_support.py",
+    "tests/drive/test_reconfiguration_promotion.py",
+    "tests/security/test_reconfiguration_promotion_native.py"
+  ],
+  "tests_executed": 0,
+  "static_diff_check": "PASS",
+  "candidate_schema_sha256": "93c9bfa184438306e12539d981e4395d76d7807b357403cacde1968918fa1ef0",
+  "prior_definitions_unchanged": true,
+  "profile_file_count": 16,
+  "pin_with_entry_count": 17,
+  "changes": [
+    "Independent compact native promotion WAL/proof binds exact confirmed shared publication, immutable original archive and actual first-run/staged native revision.",
+    "Original profile standard conditional save/readback retains full previous/original identity/nonce/history/credential/table; only exact new descriptor receipt rebuilt from qualified publication.",
+    "Main/WAL native pending recovery promotes exact expected bytes after fresh source/target/evidence without remote/root/work repeat.",
+    "Complete standard native previous/current frame byte budget checked before preparation; no history pruning.",
+    "Promoted profile INCOMPLETE/REVALIDATION_REQUIRED, maintenance remains, runtime/admission/default activation absent."
+  ],
+  "remaining": [
+    "Current-role cloud ACTIVE adoption and native admission",
+    "Full Folder/rootless/runtime/GUI/helper composition",
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+  ],
+  "acceptance": false
+}

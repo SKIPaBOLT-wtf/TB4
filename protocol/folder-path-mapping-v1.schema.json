@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tb4:folder-path-mapping:1",
+  "title": "Protected same-identity folder path lookup facts",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kind",
+    "installation_id",
+    "transition_id",
+    "configuration_revision",
+    "base_setup_revision",
+    "base_setup_sha256",
+    "authority",
+    "source_path",
+    "target_path",
+    "source_parent",
+    "target_parent",
+    "root_identity",
+    "db_identity",
+    "journal_identity",
+    "blueprint_sha256",
+    "handle_sha256",
+    "marker_sha256",
+    "store_binding",
+    "pin"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "kind": {
+      "const": "FOLDER_PATH_MAPPING"
+    },
+    "installation_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "transition_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "configuration_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "base_setup_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "base_setup_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "root_id",
+        "domain_id"
+      ],
+      "properties": {
+        "root_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "domain_id": {
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    },
+    "source_path": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "target_path": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "source_parent": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "target_parent": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "root_identity": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "db_identity": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "journal_identity": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "blueprint_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "handle_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "marker_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "store_binding": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commit",
+        "profile",
+        "policy_digest",
+        "runtime",
+        "instructions",
+        "files"
+      ],
+      "properties": {
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "profile": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{0,63}$"
+        },
+        "policy_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "runtime": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "build_commit",
+            "protocol",
+            "capabilities"
+          ],
+          "properties": {
+            "build_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "protocol": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "capabilities": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "instructions": {
+          "type": "string"
+        },
+        "files": {
+          "type": "object",
+          "minProperties": 2,
+          "maxProperties": 17,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    }
+  }
+}

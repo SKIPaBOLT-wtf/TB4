@@ -13,7 +13,7 @@ from .folder_authority import FolderBinding, FolderConfig, FolderStore
 from .folder_protocol import MAX_WIRE, flat_json, handle
 
 
-def load_config(path):
+def load_config(path, *, mapping_store=None):
     path = Path(path)
     value = path.lstat()
     require(sys.platform == "linux" and stat.S_ISREG(value.st_mode) and value.st_nlink == 1
@@ -25,23 +25,35 @@ def load_config(path):
     require(set(config) == {"version", "root", "domain", "path", "root_dev", "root_ino",
                            "db_dev", "db_ino", "journal_dev", "journal_ino"}
             and type(config["version"]) is int and config["version"] == 1, "HELPER_CONFIG")
-    return FolderConfig(Path(config["path"]), FolderBinding(config["root"], config["domain"]),
+    expected=FolderConfig(Path(config["path"]), FolderBinding(config["root"], config["domain"]),
         (config["root_dev"], config["root_ino"]), (config["db_dev"], config["db_ino"]),
         (config["journal_dev"], config["journal_ino"]))
+    if mapping_store is None:
+        return expected
+    from tb4.private_settings import native_settings
+    from .folder_mapping import FolderPathMapping
+    return FolderPathMapping(native_settings(Path(mapping_store))).select(expected)
 
 
 def main():
     # A dedicated SSH forced command supplies this one fixed path. No client path.
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True)
+    parser.add_argument("--mapping-store")  # Explicit protected server-local commissioning pointer.
+    parser.add_argument("--commissioning-probe", action="store_true")
     args = parser.parse_args()
     if sys.platform != "linux":
         return 2
     signal.signal(signal.SIGALRM, lambda *_: os._exit(2))
     signal.alarm(8)  # Includes config, bounded stdin, recovery, CAS and reply.
     try:
-        store = FolderStore(load_config(args.config))
-        reply = handle(store, sys.stdin.buffer.read(MAX_WIRE + 1))
+        config = load_config(args.config,mapping_store=args.mapping_store)
+        raw = sys.stdin.buffer.read(MAX_WIRE + 1)
+        if args.commissioning_probe:
+            from .folder_probe import handle_probe
+            reply = handle_probe(config, raw)
+        else:
+            reply = handle(FolderStore(config), raw)
         sys.stdout.buffer.write(reply)
         sys.stdout.buffer.flush()
         return 0

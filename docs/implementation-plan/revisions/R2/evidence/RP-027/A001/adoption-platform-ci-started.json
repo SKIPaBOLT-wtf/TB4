@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "intent": "RP-027-A001-0125",
+  "source": "5665870eb003bb335dc61ced8472f8809d464cf5",
+  "head": "bbcfb19cad5dffa59c3686a72a4ac5db6acab0e9",
+  "pr": "https://github.com/SKIPaBOLT-wtf/TB4/pull/36",
+  "draft": true,
+  "base": "main",
+  "base_sha": "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+  "attached": true,
+  "readback": "VERIFIED",
+  "runs": [
+    {
+      "id": 37099512153,
+      "name": "Progress",
+      "status": "in_progress",
+      "conclusion": null,
+      "run_number": 182,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37099512153"
+    },
+    {
+      "id": 37099512167,
+      "name": "CI",
+      "status": "in_progress",
+      "conclusion": null,
+      "run_number": 506,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37099512167"
+    },
+    {
+      "id": 37099512163,
+      "name": "Desktop",
+      "status": "in_progress",
+      "conclusion": null,
+      "run_number": 57,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37099512163"
+    }
+  ],
+  "outcome": "PENDING",
+  "final_checks_accepted": []
+}

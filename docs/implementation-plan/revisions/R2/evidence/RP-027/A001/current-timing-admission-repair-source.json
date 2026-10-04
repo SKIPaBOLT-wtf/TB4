@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0269",
+  "source_commit": "0b537c1c96283cdfca9153175569267ecec5cba8",
+  "local_preservation_commit": "92d1effd442248991538d9639774f804b7d62fca",
+  "defect": "DEF-091",
+  "changed_files": [
+    "src/tb4/reconfiguration_admission.py",
+    "tests/drive/test_reconfiguration_admission.py",
+    "tests/security/test_reconfiguration_admission_native.py"
+  ],
+  "invariant": "Actual typed Leadership.profile must equal the coherent current protected/shared TimingProfile at every fresh _current check, including the check after first-run and exact pending release recovery.",
+  "regressions": {
+    "new_cases": 7,
+    "boundaries": [
+      "synthetic release before first-run",
+      "synthetic first-run timing change",
+      "ordinary runtime revision and work refusal before receipt/external effect",
+      "actual native release",
+      "actual native per-use revision",
+      "actual native late first-run",
+      "actual native pending release recovery"
+    ]
+  },
+  "source_review": {
+    "ast_parse_files": 3,
+    "diff_check": "PASS",
+    "public_security_scan": "CLEAN",
+    "exact_github_readback": "PASS",
+    "tests_executed": 0
+  },
+  "unchanged": [
+    "DenyActivation default",
+    "election and stale first successful CAS takeover",
+    "all timing values",
+    "candidate schema and catalogue digest",
+    "remote Folder probe",
+    "live profiles, credentials, topology and installed SKILL"
+  ],
+  "owner_stopping_instruction": "Finish the current timing admission repair and its checks, reconcile existing in-flight qualification, publish a verified checkpoint, then stop until the owner says continue. Do not start the next integration unit.",
+  "acceptance": false,
+  "limits": "Source preservation only. DEF091 repair unqualified, C1-C4 unaccepted, RP027 IN_PROGRESS."
+}

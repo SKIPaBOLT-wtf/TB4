@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "kind": "RETAINED_AUTHORITY_INITIAL_DEFAULT_FAILURE",
+  "intent": "RP-027-A001-0224",
+  "source": "41761af8b62b89aea0bc304615dcb7848ad2b763",
+  "checkout": "38ef6f2dde7edb5fca57937d9b4bf61072ec9c40",
+  "branch": "feat/rp027-staged-reconfiguration",
+  "platform": "Windows",
+  "architecture": "AMD64",
+  "python": "3.11.9",
+  "exit_code": 1,
+  "elapsed_seconds": 19.593,
+  "owned_absent_fixture_root": true,
+  "targets": [
+    "tests/drive/test_reconfiguration_retained.py",
+    "tests/security/test_reconfiguration_retained_native.py"
+  ],
+  "cases": [
+    {
+      "name": "test_later_rootless_configuration_keeps_earlier_exact_root_proof_without_rebind_or_relocation",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_rootless_actual_publication_preserves_exact_root_commissioning_gc_summary_work_and_all_local_history",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_full_original_archive_previous_own_identity_and_current_fresh_admission_do_not_need_old_wals",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_ambiguous_shared_reply_restarts_same_dispatch_inspect_only_and_never_repeats[False]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_ambiguous_shared_reply_restarts_same_dispatch_inspect_only_and_never_repeats[True]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[source]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[root_permission]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[clock]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[caps]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[force]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[work]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[profile]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[stage]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[unknown]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[barrier]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_stage_change_during_actual_first_run_cannot_pass_the_last_publication_boundary",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_closed_distinct_native_metadata_and_hash_keep_existing_post_root_contract_separate",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_force_request_during_first_run_refuses_profile_promotion_without_touching_main",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[begin]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[invoking]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[confirmed]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[begin]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[original]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[confirmed]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_copied_native_commit_and_original_broad_permissions_refuse",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "status": "FAILURE"
+    }
+  ],
+  "failures": [
+    {
+      "name": "test_later_rootless_configuration_keeps_earlier_exact_root_proof_without_rebind_or_relocation",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "NameError: name 'configuration' is not defined"
+    },
+    {
+      "name": "test_rootless_actual_publication_preserves_exact_root_commissioning_gc_summary_work_and_all_local_history",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_full_original_archive_previous_own_identity_and_current_fresh_admission_do_not_need_old_wals",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_ambiguous_shared_reply_restarts_same_dispatch_inspect_only_and_never_repeats[False]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_ambiguous_shared_reply_restarts_same_dispatch_inspect_only_and_never_repeats[True]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[source]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[root_permission]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[clock]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[caps]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[force]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[work]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[profile]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[stage]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[unknown]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_fresh_final_boundaries_refuse_without_shared_write_or_main_replacement[barrier]",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_stage_change_during_actual_first_run_cannot_pass_the_last_publication_boundary",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_closed_distinct_native_metadata_and_hash_keep_existing_post_root_contract_separate",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_force_request_during_first_run_refuses_profile_promotion_without_touching_main",
+      "classname": "tests.drive.test_reconfiguration_retained",
+      "message": "tb4.configuration_contract.ConfigurationError: COMMIT_STORE_ALIAS"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[begin]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "NameError: name 'configuration' is not defined"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[invoking]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "NameError: name 'configuration' is not defined"
+    },
+    {
+      "name": "test_native_commit_cut_recovers_only_same_complete_frame_and_never_resends[confirmed]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "NameError: name 'configuration' is not defined"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[begin]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "NameError: name 'configuration' is not defined"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[original]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "NameError: name 'configuration' is not defined"
+    },
+    {
+      "name": "test_native_full_profile_cut_preserves_previous_and_recovers_same_bytes_without_shared_mutation[confirmed]",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "NameError: name 'configuration' is not defined"
+    },
+    {
+      "name": "test_copied_native_commit_and_original_broad_permissions_refuse",
+      "classname": "tests.security.test_reconfiguration_retained_native",
+      "message": "NameError: name 'configuration' is not defined"
+    }
+  ],
+  "counts": {
+    "PASS": 0,
+    "FAILURE": 25,
+    "ERROR": 0,
+    "SKIPPED": 0
+  },
+  "diagnosis": {
+    "missing_configuration_import": {
+      "cases": 8,
+      "boundary": "RetainedConfigurationMutation.prepare calls configuration after actual first-run; new module omitted the import. Static AST could not prove runtime global lookup.",
+      "suspected_origin": "New retained source417 assembly. No earlier-source bisection performed."
+    },
+    "fixture_native_identity_alias": {
+      "cases": 17,
+      "boundary": "New synthetic memory fixture reused the fixed MemoryNative native binding for original/checkpoint/effects/maintenance/baseline/resolution. Actual COMMIT_STORE_ALIAS refusal occurs during constructor before publication/promotion assertions.",
+      "suspected_origin": "New retained fixture assembly uses old basic Candidate memory fixture without distinct context native identities; production alias guard remains mandatory."
+    }
+  },
+  "reached": "All25 fail before their final publication/promotion/native-cut/no-replay acceptance assertions. No successful case claimed.",
+  "acceptance": false,
+  "runtime_active": false,
+  "next": "Publish exact two-file repair INTENT: missing configuration import and new retained fixture supplies distinct protected stores/current resolution. Preserve schema/closed kinds/native guards/default activation unchanged; static source preserve then new-source25 qualification."
+}
