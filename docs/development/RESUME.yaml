@@ -3,24 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_LINUX_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_PROBE_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0312
+last_verified_event: RP-027-A001-0313
 last_completed: RP-026
-next_action: Publish/readback A023 source intent for closed authenticated read-only
-  Folder probe/native borrowed path/typed first-run composition; save bounded source
-  and tests separately, then default/native/required actual SSH qualification. Keep
-  inspecting same full platform306 terminally without duplicate launch.
-verification: Current d19639c Linux613PASSzero-skip on both pinned push/PR; Windows356/new25/default3096PASS
-  and offline policy33checks qualified. Full platform306 pending; trusted transport/runtime/GUI/C1-C4/common
-  held.
+next_action: Save/publish exact A023 source and review-only OUTCOME, then authorize
+  scoped default Windows/portable/native and full default collection. Retain any failure
+  before repair; launch required actual Linux SSH and source-specific package qualification
+  only after local preflight.
+verification: Both currentA022 Linux613zero-skip plus Windows356/new25/default3096
+  and offlineSSH policy33checks pass. A023 bounded source313 pending; current old-source
+  full platform306 and all C1-C4/common holds remain.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0306
+- RP-027-A001-0313
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
