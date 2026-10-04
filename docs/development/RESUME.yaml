@@ -7,20 +7,18 @@ phase: STAGED_RECONFIGURATION_C2_FOLDER_CREDENTIAL_QUALIFICATION_DISPATCH
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0303
+last_verified_event: RP-027-A001-0304
 last_completed: RP-026
-next_action: Trigger request22 once and publish launch receipt with actual run/job/checkout
-  IDs. Then publish separate current Linux completion inspection and full platform
-  completion inspection intents; no dependent transport source before current Linux
-  functional OUTCOME.
-verification: 303 request22 one-time dispatch pending on current d19639c; source Windows356/new25/default3096
-  pass. Required Linux613/full platform actual identities and terminal evidence follow
-  under separate inspection actions; C1-C4 held.
+next_action: Publish separate required Linux613 completion-inspection and full CI/Desktop/package/Progress
+  completion-inspection intents for these same immutable runs. Do not relaunch or
+  modify source before current functional Linux OUTCOME. Common C1-C4 acceptance held.
+verification: Request22 actual launch/source/checkout identities recorded; same running
+  Linux613 and full platform packages pending terminal evidence. Current source Windows356/new25/default3096
+  pass; C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0303
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
