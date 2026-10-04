@@ -3,25 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_PROBE_OFFLINE_POLICY
+phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_PROBE_OFFLINE_FORMATTING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0309
+last_verified_event: RP-027-A001-0310
 last_completed: RP-026
-next_action: Authorize one bounded offline parsed-known-host representation inspection
-  under a fresh synthetic fixture; preserve failure and compare quoted/percent/escape
-  token semantics. No dependent transport source before current Linux305 functional
-  outcome.
-verification: Offline308 observed FAIL in one known-host representation expectation;
-  OpenSSH parses all other closed policy flags and makes no connection. Source currentLinux305/full
-  platform306 remain pending; diagnostics must distinguish semantics before source.
+next_action: Publish exact diagnostic result and source construction consequence.
+  Reconcile same PR Linux613 under305 when terminal, then authorize A023 bounded native/authenticated
+  typed Folder probe unit.
+verification: Push Linux613zero-skip terminalPASS; PR Linux305 and full platform306
+  remain pending. Offline308 one formatting FAIL retained309; bounded independent310
+  inspection pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0305
 - RP-027-A001-0306
+- RP-027-A001-0310
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
