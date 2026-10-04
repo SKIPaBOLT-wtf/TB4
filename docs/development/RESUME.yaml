@@ -3,24 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FOLDER_AUTHORITY_PURPOSE_PLATFORM_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_QUALIFICATION_DISPATCH
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 4951204c062cd422467fb6661e146b5d978011c3
+source_commit: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0339
+last_verified_event: RP-027-A001-0340
 last_completed: RP-026
-next_action: Discoveractual request25fiveworkflow/sixjob/head/checkoutidentities,
-  confirmsourceequivalence, recordlaunchreceiptfor338 andpublish/readback. Thenpublish
-  separatefunctional771/fullplatforminspectionintents; no dependentRPCintegration
-  beforeactual771qualification. Independentmetadatafoundationonlywithrecordedindependence.
-verification: A024495 fullyfunctional/platform/packages qualified339,330settled. A023fullyqualified336;
-  currentA025d7Windows496/new53/default3254PASS337, request25actualtriggerreadback
-  butreceipt/771/platform/compositeC1-C4pending.
+next_action: Publish scoped Windows25failure log diagnosis INTENT/readback beforeinspectlogs;
+  recordactualfailure/defect/reproduction beforeanyrepair. Separately current771Linux/full
+  remaining inspectionintents andsamejobs, no duplicate/retry/cancel. All dependentendpoint/runtimeintegration
+  held.
+verification: CurrentA025request25launch72a436/fiveworkflows/sixjobs recorded340;
+  Winjob111556175517terminalFAILUREcauseUNINSPECTED, diagnosticnext. Local496/default3254PASS;Linux771/remainingplatform/C1-C4held.
+  PriorA023/A024fullyqualified336/339.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0338
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

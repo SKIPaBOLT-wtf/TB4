@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0338",
+  "source_commit": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25",
+  "trigger_commit": "72a436ffc7e3962210fcea52f295ebc88d4828be",
+  "request_revision": 25,
+  "request_path": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-linux-request.json",
+  "readback": "EXACT_REQUEST",
+  "required_cases": 771,
+  "group_counts": {
+    "physical_probe_and_first_run": 258,
+    "mapping_relocation": 51,
+    "retained": 6,
+    "current_role_folder": 22,
+    "original_native": 107,
+    "docs_effect_admission": 327
+  },
+  "pr": 36,
+  "current_pr_merge": {
+    "sha": "47d287692af8430db880b1f7fc923ae726d1f2a1",
+    "parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "72a436ffc7e3962210fcea52f295ebc88d4828be"
+    ],
+    "source_commit": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25"
+  },
+  "non_doc_source_diff": [],
+  "job_checkout_confirmation": "Pending terminal log confirmation; current GitHub merge/source equivalence/parents verified.",
+  "workflows": [
+    {
+      "run_id": 37243309484,
+      "name": "Desktop",
+      "event": "pull_request",
+      "head": "72a436ffc7e3962210fcea52f295ebc88d4828be",
+      "status": "in_progress",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37243309484",
+      "jobs": [
+        {
+          "job_id": 111556175517,
+          "name": "desktop (windows-latest)",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "job_id": 111556175645,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37243309444,
+      "name": "CI",
+      "event": "pull_request",
+      "head": "72a436ffc7e3962210fcea52f295ebc88d4828be",
+      "status": "in_progress",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37243309444",
+      "jobs": [
+        {
+          "job_id": 111556175303,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37243309445,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "head": "72a436ffc7e3962210fcea52f295ebc88d4828be",
+      "status": "in_progress",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37243309445",
+      "jobs": [
+        {
+          "job_id": 111556175280,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37243309437,
+      "name": "Progress",
+      "event": "pull_request",
+      "head": "72a436ffc7e3962210fcea52f295ebc88d4828be",
+      "status": "completed",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37243309437",
+      "jobs": [
+        {
+          "job_id": 111556175282,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "run_id": 37243307194,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "head": "72a436ffc7e3962210fcea52f295ebc88d4828be",
+      "status": "in_progress",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37243307194",
+      "jobs": [
+        {
+          "job_id": 111556168442,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "qualification": "PENDING_WITH_TERMINAL_WINDOWS_FAILURE_METADATA",
+  "windows_failure_observation": {
+    "run_id": 37243309484,
+    "job_id": 111556175517,
+    "status": "completed",
+    "conclusion": "failure",
+    "cause": "UNINSPECTED; diagnostic intent required before log inspection/repair."
+  },
+  "local_qualification": {
+    "windows_pass": 496,
+    "new_pass": 53,
+    "new_applicable_skips": 0,
+    "declared_linux_only_skips": 22,
+    "default_collection": 3254,
+    "collection_errors": 0
+  },
+  "acceptance": false,
+  "next_action": "Publish exact failedWindows terminal log diagnosis intent, preserve reproduction/defect before repair; separately inspect sameLinux771/full remainingactualjobs. No duplicate request/cancel or dependentintegration untilqualified."
+}
