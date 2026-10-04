@@ -5,24 +5,23 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_INDEPENDENT_FOLDER_AUTHORITY_CREDENTIAL_FOUNDATION
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 9e20843982927244c0dac979780256baf6b216d6
+source_commit: 4951204c062cd422467fb6661e146b5d978011c3
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0322
+last_verified_event: RP-027-A001-0323
 last_completed: RP-026
-next_action: Implement only A024 foundation, static/private diff review, preserve
-  and readback source, then publish OUTCOME/amendment-link/cursor. Publish targeted/native/default
-  qualification intent separately; reconcile immutable request23 functional320 and
-  platform321. Authenticated normal authority transport waits relevant qualifications.
-verification: Independent A024 foundation schedule322 uses accepted RP006/020/021/022
-  and fullyqualifiedA022317; no dependency on pendingA023 transport. Immutable current9a6c
-  request23 inspections320/321 remain pending; no C1-C4 acceptance.
+next_action: Publish separate source-linked Windows/native/portable/default collection
+  qualification intent, then run and settle actual result. Reconcile same request23
+  Linux320/full321; any authenticated normal authority composition waits relevant
+  qualifications.
+verification: A024 source-only preserved/readback; AST6/diff/privacyPASS and tests0,
+  qualification pending. Independent of immutableA023 request23 inspections320/321.
+  All C1-C4/common held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0320
 - RP-027-A001-0321
-- RP-027-A001-0322
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
