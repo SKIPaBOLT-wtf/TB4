@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_PLATFORM_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_NATIVE_DISCOVERY_DIAGNOSTIC_DISPATCH
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
+source_commit: 91bad7a54916766417a882ef537ca812a08bfb05
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0348
+last_verified_event: RP-027-A001-0349
 last_completed: RP-026
-next_action: Inspect same remaining request 25 jobs to terminal and preserve exact
-  outcomes; independently discover and record diagnostic launch 347 actual identities,
-  then inspect its metadata under a separate INTENT.
-verification: Current d7 required Linux 771 twice PASS. Remaining exact request 25
-  platform inspection pending under 348; Windows failure remains preserved. Separate
-  diagnostic request 1 triggered 10cbb7 under 347, launch identities pending.
+next_action: Publish diagnostic terminal-log inspection INTENT before reading closed
+  metrics. Continue exact remaining request 25 full-platform inspection 348. Fresh
+  incidental PR full/platform/required-Linux qualification requires its own inspection
+  INTENT.
+verification: One diagnostic request 1 pinned to 10cbb7 with exact merge 614e8d/source91bad7.
+  Actual isolated Windows diagnostic job terminal SUCCESS metadata, metrics uninspected.
+  Old request 25 full inspection 348 pending, DEF-094 and C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
-- RP-027-A001-0347
 - RP-027-A001-0348
 expected_user_action: null
 blocking_decisions: []
