@@ -48,6 +48,8 @@ jobs:
           tests/drive/test_folder_first_run_native.py tests/security/test_remote_folder_first_run_native.py
           tests/security/test_folder_credential_purpose.py tests/security/test_folder_credential_purpose_native.py
           tests/security/test_folder_authority_purpose.py tests/security/test_folder_authority_purpose_native.py
+          tests/drive/test_folder_authority_transport.py tests/security/test_folder_authority_transport_native.py
+          tests/drive/test_folder_authority_authenticated_ssh.py
           tests/drive/test_folder_probe_transport.py tests/security/test_folder_probe_transport_native.py
           tests/drive/test_folder_probe_authenticated_ssh.py
           -ra --junitxml=folder-probe-results.xml

@@ -315,3 +315,12 @@ Only its explicit trusted callback is dispatched; native per-use checks, closed
 UNKNOWN/no-retry, historical metadata and FETCHER summary semantics remain.
 No normal authenticated transport, root effect or activation is implemented here;
 the pending probe qualification, durable endpoint, runtime/GUI/common gates remain.
+
+[A-025](implementation-plan/revisions/R2/amendments/RP-027/A-025-credential-bound-folder-authority-transport.md)
+adds exact native credential-bound normal existing-Folder READ/CAS transport after
+A023/A024 functional qualification. Only its explicit fixed FOLDER_AUTHORITY call
+and private one-use correlated reply are allowed; unknown/lost-after-commit results
+require inspection without resend. Stale/forced election remains first-CAS with
+no former-owner ACK barrier, and ordinary UNKNOWN work is preserved. Default
+helper/probe/first-run/effect/activation paths remain; durable endpoint and typed
+first-run authority/runtime/GUI/current-source common qualification still apply.

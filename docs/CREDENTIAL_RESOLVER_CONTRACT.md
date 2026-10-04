@@ -106,3 +106,12 @@ images keep their meanings; a new four-scope image is explicit protected local
 metadata. This foundation supplies no authenticated authority transport, effect
 authorization, caller payload, migration or activation. Existing effect/runtime
 gates and separate actual Linux/current platform qualification remain required.
+
+RP-027 [A-025](implementation-plan/revisions/R2/amendments/RP-027/A-025-credential-bound-folder-authority-transport.md)
+supplies exact credential-bound normal Folder READ/CAS construction. Protected
+endpoint/native/store/binding pins, closed requests before credential IO, held
+key/known-host version and per-use checks feed only the fixed normal helper via
+FOLDER_AUTHORITY. A private one-use correlated reply keeps LocalStore/UseResult
+as closed outcomes; ACCEPTED requires readback and UNKNOWN never retries. Old
+probe/FETCHER scopes cannot grant it. Durable endpoint metadata, typed first-run
+authority and runtime/GUI activation remain separate qualified composition.
