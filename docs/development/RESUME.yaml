@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_REMOTE_FOLDER_FIRST_RUN_SOURCE_SAVED
+phase: STAGED_RECONFIGURATION_C2_REMOTE_FIRST_RUN_PREFLIGHT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 0911e84be7079715972abd6eb314b057c1233c52
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0284
+last_verified_event: RP-027-A001-0285
 last_completed: RP-026
-next_action: Publish default Windows/whole collection preflight INTENT; run new first-run
-  and relevant existing regression targets. Publish actual outcome before dependent
-  GitHub required Linux/full platform qualification; fix any failure under separate
-  intent.
-verification: 284 remote Folder first-run adapter source0911e84 saved, AST/diff/privacy
-  checked and exact remote readback. A021 linked; 28 new regressions await qualification.
-  All C1-C4 held.
+next_action: Run one Windows preflight/default collection, record exact result remotely.
+  If passing, separately trigger current required Linux588 and full platform gates;
+  otherwise record and repair the failing cause before new dependent work.
+verification: 285 current remote first-run source0911e84 Windows/default collection
+  preflight pending. Public implementation ongoing; all C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0285
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
