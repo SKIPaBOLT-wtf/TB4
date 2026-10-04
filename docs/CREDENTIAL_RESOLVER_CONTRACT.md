@@ -96,3 +96,13 @@ outcomes. Fresh endpoint/known-host version/key/session/trust/expiry checks and
 the exact opt-in helper precede a current typed proof, with no automatic fallback
 or retry. Durable endpoint reconstruction and normal authority/runtime/GUI remain
 separate qualification; no existing installation is migrated by this source.
+
+RP-027 [A-024](implementation-plan/revisions/R2/amendments/RP-027/A-024-closed-folder-authority-credential-purpose.md)
+adds explicit FOLDER_AUTHORITY for the normal existing-Folder READ/CAS fixed
+method, separately scoped from commissioning FOLDER_PROBE. Missing methods or
+ungranted/untyped use deny without fallback; per-use native/key/trust/expiry
+guards and closed UNKNOWN/no-retry outputs remain. Historical one/two/three-scope
+images keep their meanings; a new four-scope image is explicit protected local
+metadata. This foundation supplies no authenticated authority transport, effect
+authorization, caller payload, migration or activation. Existing effect/runtime
+gates and separate actual Linux/current platform qualification remain required.

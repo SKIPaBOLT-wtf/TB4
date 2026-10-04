@@ -76,7 +76,8 @@ def request():
 
 def test_actual_native_three_scope_image_restarts_with_one_borrowed_fixed_probe(fixture, capsys):
     root, settings = fixture
-    path, store, resolver, _, _, reference, handle = selected(root, purposes=frozenset(Purpose))
+    path, store, resolver, _, _, reference, handle = selected(root, purposes=frozenset({
+        Purpose.FETCHER_STATUS, Purpose.FETCHER_START, Purpose.FOLDER_PROBE}))
     image = export_private(store, resolver)
     settings.save({"registry": image}, expected_revision=0)
     before = native_settings(root).read()

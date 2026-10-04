@@ -306,3 +306,12 @@ canonical path while read-only sharing excludes changes. No config/agent/default
 identity/certificate/alternate auth/control/proxy/command/transport fallback.
 Actual source/native/isolated SSH tests are required; durable endpoint/profile,
 authority purposes, runtime/GUI/common/final acceptance remain held.
+
+[A-024](implementation-plan/revisions/R2/amendments/RP-027/A-024-closed-folder-authority-credential-purpose.md)
+defines an independent closed FOLDER_AUTHORITY credential/metadata foundation for
+the normal existing-Folder fixed READ/CAS helper. A commissioning FOLDER_PROBE
+binding cannot grant it, and old scope images never acquire it automatically.
+Only its explicit trusted callback is dispatched; native per-use checks, closed
+UNKNOWN/no-retry, historical metadata and FETCHER summary semantics remain.
+No normal authenticated transport, root effect or activation is implemented here;
+the pending probe qualification, durable endpoint, runtime/GUI/common gates remain.

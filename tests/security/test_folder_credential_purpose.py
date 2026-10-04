@@ -12,7 +12,7 @@ from tests.security.test_linux_credentials import Native, Runner, INSTALLATION, 
 from tests.security.test_private_settings import MemoryNative
 
 ONLY = frozenset({Purpose.FOLDER_PROBE})
-ALL = frozenset(Purpose)
+ALL = frozenset({Purpose.FETCHER_STATUS, Purpose.FETCHER_START, Purpose.FOLDER_PROBE})
 FOREIGN = "00000000-0000-4000-8000-000000000124"
 CANARY = "SYNTHETIC_PRIVATE_FOLDER_PROBE_CANARY"
 

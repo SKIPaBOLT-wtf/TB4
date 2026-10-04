@@ -155,7 +155,8 @@ class ExistingKeyStore:
                     return Outcome.DENIED
                 methods = {Purpose.FETCHER_STATUS: "fetcher_status",
                            Purpose.FETCHER_START: "fetcher_start",
-                           Purpose.FOLDER_PROBE: "folder_probe"}
+                           Purpose.FOLDER_PROBE: "folder_probe",
+                           Purpose.FOLDER_AUTHORITY: "folder_authority"}
                 if type(purpose) is not Purpose or purpose not in methods:
                     return Outcome.DENIED
                 call = getattr(self._runner, methods[purpose], None)
