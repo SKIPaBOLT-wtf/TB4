@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_WINDOWS_DEFAULT
+phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_LINUX27_TERMINAL
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 8c75d39a086164703abcb09828eef9b994eb2360
+source_commit: acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0388
+last_verified_event: RP-027-A001-0389
 last_completed: RP-026
-next_action: Inspect same owned test session9087 and saved private JUnit/result; compare
-  prior3333/current3388 exact node sets. Independently inspect immutable oldacc26
-  request27 terminal jobs under separate INTENT while this current test remains pending.
-verification: One actual A028 Windows44target test running session9087; whole default
-  collection3388/noerrors; no local test replay. Currentacc26 request27 terminal inspection
-  independent; C1-C4 held.
+next_action: Publish exact oldacc26 terminal milestone/outcome, retaining actual still-running
+  jobs; inspect same current Windows session9087 then publish current source outcome
+  before any dependent edit or Linux request.
+verification: A028 actualWindows session9087 running; collection3388/noerrors known.
+  Independently inspecting immutableacc26 request27 terminal results; no source conflation/C1-C4
+  acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0387
+- RP-027-A001-0389
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
