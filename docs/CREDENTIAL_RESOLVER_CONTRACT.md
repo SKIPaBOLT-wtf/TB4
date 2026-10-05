@@ -1,5 +1,9 @@
 # Local credential-reference resolver contract (RP-006)
 
+## RP-027 per-call protected selection
+
+[A030](implementation-plan/revisions/R2/amendments/RP-027/A-030-fresh-native-folder-connection.md) adds trusted native-profile connection processes. Each validated request rereads the actual immutable endpoint and selected pointer/operation purpose under native locks, then restores only the current protected image into the existing purpose-specific pair. Native key/trust/scope/expiry checks remain; a broader saved image never replaces the explicit selected purpose. No key selection, enrollment, image/profile rewrite or READY/activation grant occurs. Replies require unchanged complete frames; ambiguity never retries. Actual first-run prerequisite/runtime/GUI/common acceptance remains held.
+
 ## RP-027 native endpoint attachment remains metadata
 
 [A029](implementation-plan/revisions/R2/amendments/RP-027/A-029-native-endpoint-pointer-attachment.md) verifies the actual protected endpoint/profile/install/selected-handle/image/revocation before linking a private pointer. Attach/inspect/recovery never invoke a credential, open a key, create a grant or return READY. Full parent and exact pending semantics preserve history. Existing per-use native key/known-host/expiry/purpose checks and default activation remain required; trusted fresh first-run/authority/runtime/GUI composition is still held.

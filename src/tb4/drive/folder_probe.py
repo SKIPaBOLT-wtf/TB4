@@ -106,9 +106,10 @@ def _check_transport(transport, binding, spec, handle):
     # Local import keeps the opt-in credential runner's protocol dependency
     # acyclic. No duck type/subclass or arbitrary new transport is admitted.
     from .folder_probe_transport import CredentialProbeProcess
-    require(type(transport) in {FixedProcess, CredentialProbeProcess}
+    from .folder_connection import NativeFolderProbeProcess
+    require(type(transport) in {FixedProcess, CredentialProbeProcess, NativeFolderProbeProcess}
             and transport.binding == binding, "HELPER_BINDING")
-    if type(transport) is CredentialProbeProcess:
+    if type(transport) in {CredentialProbeProcess, NativeFolderProbeProcess}:
         require(transport.spec == spec and transport.authority == handle, "HELPER_BINDING")
         transport._current()
 

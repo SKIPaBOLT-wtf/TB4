@@ -104,6 +104,17 @@ class _Pending:
     reply: bytes | None = None
 
 
+def probe_request(binding, spec, authority, raw):
+    """Pure closed VERIFY validation, before any native or credential IO."""
+    value = flat_json(raw)
+    check_probe_header(value, binding)
+    require(set(value) == set(probe_header(binding, "")) |
+            {"operation", "blueprint", "authority"} and value["operation"] == "VERIFY"
+            and value["blueprint"] == spec.fingerprint
+            and value["authority"] == authority.seal, "PROBE_REQUEST")
+    return value
+
+
 class FolderProbeRunner:
     def __init__(self, native, endpoint, spec, handle):
         require(type(endpoint) is ProbeEndpoint and type(spec) is SetupSpec and spec.mode == MODE
@@ -134,13 +145,7 @@ class FolderProbeRunner:
             return False
 
     def _request(self, raw):
-        value = flat_json(raw)
-        check_probe_header(value, self.binding)
-        require(set(value) == set(probe_header(self.binding, "")) |
-                {"operation", "blueprint", "authority"} and value["operation"] == "VERIFY"
-                and value["blueprint"] == self.spec.fingerprint
-                and value["authority"] == self.authority.seal, "PROBE_REQUEST")
-        return value
+        return probe_request(self.binding, self.spec, self.authority, raw)
 
     def _response(self, raw, request):
         value = flat_json(raw)

@@ -1,5 +1,9 @@
 # Unreleased staged configuration changes
 
+## RP-027 fresh protected Folder connection
+
+[A030](implementation-plan/revisions/R2/amendments/RP-027/A-030-fresh-native-folder-connection.md) restores the actual current protected endpoint/profile selection for each existing fixed VERIFY or READ/CAS operation. Closed requests precede native IO; endpoint-before-profile locks cover the selected scope/image through one reply and full-frame rechecks. A hidden saved scope, old READY or metadata pointer grants nothing. Late change/loss remains UNKNOWN without resend; first-CAS stale/forced election has no local UNKNOWN or peer ACK barrier. Actual prerequisite/staged replacement/runtime/GUI/full-platform/common/C1-C4 integration remains required.
+
 ## RP-027 native private endpoint link
 
 [A029](implementation-plan/revisions/R2/amendments/RP-027/A-029-native-endpoint-pointer-attachment.md) attaches selected immutable native metadata with one pointer-only profile revision, preserving the full parent. New link requires explicit owner authorization, INCOMPLETE and no localUNKNOWN; same link preserves state/history through READY/UNKNOWN and grants no role/proof/key/activation. Inspect and exact pending recovery use actual protected frames and fresh bindings/selection with endpoint-before-profile lock order. Conflicting state stays held; no reconstruct/resave/replay or peerACK. Staged replacement/fresh connection/runtime/GUI/common/C1-C4 remain later qualified work.
