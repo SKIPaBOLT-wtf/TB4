@@ -7903,4 +7903,8 @@ defects:
       blocker. All actual failure evidence retained. Exact internal guard to be verified
       before correction; no generic exception-only acceptance. Exactcurrentinternalguard
       source-reviewed as FOLDER_ENDPOINT_CREDENTIAL; no guessed new guard introduced.
+      Minimaltest-only source940b34ac2c38e62a725fe29ab49d80de860569a6 nowexpects exact
+      FOLDER_ENDPOINT_CREDENTIAL internal andSETTINGS_STORE_UNAVAILABLE external;
+      forbids key/SSH, retainscurrentstage/Main/archive/work/default denial. Allother24/decorators/other3faults
+      AST unchanged; productionunchanged/tests0.
     legacy_record: null

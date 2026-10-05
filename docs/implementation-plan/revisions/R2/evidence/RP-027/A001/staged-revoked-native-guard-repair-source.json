@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0506",
+  "source": "940b34ac2c38e62a725fe29ab49d80de860569a6",
+  "base": "ca948779454bd70c25c72401b539cdbf48ff7605",
+  "local_preserved": "b32e7f15645b74b5c746f7ad2bd99d7c38e13e9a",
+  "result": "RECORDED",
+  "static": {
+    "schema_version": 1,
+    "base": "ca948779454bd70c25c72401b539cdbf48ff7605",
+    "result": "PASS",
+    "production": "EXACT_UNCHANGED",
+    "other24_cases_and_fixture_ast": "EXACT_UNCHANGED",
+    "all25_declarations": "EXACT_UNCHANGED",
+    "other3_fault_report_branches": "EXACT_UNCHANGED",
+    "revoked_guard": "FOLDER_ENDPOINT_CREDENTIAL",
+    "closed_public_error": "SETTINGS_STORE_UNAVAILABLE",
+    "staged_profile_main_archive_work_retained": true,
+    "forbidden_key_and_ssh": true,
+    "tests_executed": 0
+  },
+  "public_scan": "CLEAN",
+  "readback": "EXACT_ALL_FILES",
+  "tests_executed": 0,
+  "next": "Current source1107 required Linux/newnative4+SSH7/staged25; same37remainingterminal qualification. No acceptance or passing_source from static."
+}
