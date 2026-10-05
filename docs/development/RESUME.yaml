@@ -5,21 +5,21 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_NATIVE_ENDPOINT_POINTER_ATTACHMENT_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 71300423bfef733d11f6db07c098b0a8fda64af2
+source_commit: d168a74ed9ef55e77926be1ee3de8666f4216fc6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0405
+last_verified_event: RP-027-A001-0406
 last_completed: RP-026
-next_action: After exactINTENTreadback implementscopedunit, AST/diff/privacy/preserve/source
-  readback then sourceOUTCOME/A029manifest; separatelyauthorize actualWindowsnative/defaultcollection
-  and actualLinux/source-specific full proof. Inspectimmutable oldrequest28 withoutsourceconflation.
-verification: Same launch404 readback recovered exactly/no repeat update. IndependentA029
-  native-onlyattachment scopedINTENT fromqualifiedA026/A027; current5f80 helper905/fullpending/uninvoked;
-  C1-C4held.
+next_action: Publish separate actualWindows31native and original protected endpoint/pointer/credential/Setup/candidate
+  regression/default3419 collection INTENT with private failure capture and exactbaseline3388/add31/remove0.
+  Then source-specific nativeLinux/full qualification; separatelyinspect oldimmutable5f80
+  request28 terminal results.
+verification: A029native-onlyattachment source published/AST/diff/privacy tests0;
+  31newnative/default3419 expected needsactualtest. Old5f80 helperrequest28 source-distinct
+  pending; C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0405
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
