@@ -3,24 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_GUARD_DIAGNOSIS
+phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_GUARD_TEST_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: feb214963f5b7436469957102c42f3482d627b1f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0366
+last_verified_event: RP-027-A001-0367
 last_completed: RP-026
-next_action: 'Publish minimal test-only repair INTENT: transparently observe and assert
-  exact failed predicates, expect actual SettingsError SETTINGS_STORE_UNAVAILABLE,
-  preserve all pending/current/profile byte assertions and case IDs. Then source/readback
-  before current native/default qualification.'
-verification: Actual diagnostic365 confirms both precise endpoint guards before native
-  SETTINGS_STORE_UNAVAILABLE; original two tests still fail as retained. DEF096 test
-  expectations proven; minimal exact code/bytes/native-error repair next, all acceptance
-  held.
+next_action: Preserve and publish the minimal test-only source with DEF096 repair/rechecks;
+  then publish current 26-target Windows and whole-default collection INTENT. Require549PASS/22
+  declared Linux-only SKIP and3307 unchanged nodes before current Linux/full/package
+  qualification.
+verification: Actual native rejection366 recorded; test-only DEF096 repair367 retains
+  original predicate and exact normalized error plus byte invariants, no production
+  changes. Native/default/current Linux/full/package/common C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0367
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -64,6 +64,9 @@ known_open_defects:
 - DEF-091
 - DEF-092
 - DEF-093
+- DEF-094
+- DEF-095
+- DEF-096
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
