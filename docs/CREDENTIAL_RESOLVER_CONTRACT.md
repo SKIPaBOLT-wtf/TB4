@@ -1,5 +1,9 @@
 # Local credential-reference resolver contract (RP-006)
 
+## RP-027 fresh native first-run credential cache
+
+[A031](implementation-plan/revisions/R2/amendments/RP-027/A-031-fresh-native-folder-prerequisites.md) restores only the actual current protected image into fresh native pairs for each first-run review and final capability check. The default pair verifies the pinned Folder target; an optional trusted program factory may provide other already commissioned native targets. Saved profile data never selects a factory. Explicit current probe scope and every selected capability remain required; untyped pairs, late revocation/expiry/version/trust loss and changed frames refuse. No reselection/enrollment/image rewrite, hidden scope or activation grant occurs; failed attempts clear cached credentials. Legacy validation and runtime per-boundary requirements remain.
+
 ## RP-027 per-call protected selection
 
 [A030](implementation-plan/revisions/R2/amendments/RP-027/A-030-fresh-native-folder-connection.md) adds trusted native-profile connection processes. Each validated request rereads the actual immutable endpoint and selected pointer/operation purpose under native locks, then restores only the current protected image into the existing purpose-specific pair. Native key/trust/scope/expiry checks remain; a broader saved image never replaces the explicit selected purpose. No key selection, enrollment, image/profile rewrite or READY/activation grant occurs. Replies require unchanged complete frames; ambiguity never retries. Actual first-run prerequisite/runtime/GUI/common acceptance remains held.

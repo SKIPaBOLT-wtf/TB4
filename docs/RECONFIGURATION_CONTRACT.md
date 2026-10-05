@@ -1,5 +1,9 @@
 # Unreleased staged configuration changes
 
+## RP-027 fresh native first-run
+
+[A031](implementation-plan/revisions/R2/amendments/RP-027/A-031-fresh-native-folder-prerequisites.md) composes the exact existing Prerequisites with actual native Folder connection/proof. Every validation restores current selected native credentials, requires the caller's full payload to match the protected frame, repeats legacy checks and rechecks complete frames/capabilities before returning Validation. Late loss refuses; failed attempts clear the credential cache. Setup readiness writes retain their full parent and default activation remains denied. No routing/election/helper/authority change; staged replacement, mapped proof, runtime/GUI and all source-specific/common/C1-C4 gates remain.
+
 ## RP-027 fresh protected Folder connection
 
 [A030](implementation-plan/revisions/R2/amendments/RP-027/A-030-fresh-native-folder-connection.md) restores the actual current protected endpoint/profile selection for each existing fixed VERIFY or READ/CAS operation. Closed requests precede native IO; endpoint-before-profile locks cover the selected scope/image through one reply and full-frame rechecks. A hidden saved scope, old READY or metadata pointer grants nothing. Late change/loss remains UNKNOWN without resend; first-CAS stale/forced election has no local UNKNOWN or peer ACK barrier. Actual prerequisite/staged replacement/runtime/GUI/full-platform/common/C1-C4 integration remains required.

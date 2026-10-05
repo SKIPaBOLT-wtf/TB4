@@ -93,12 +93,27 @@ class CommissionedStorage:
 
 
 class Prerequisites:
-    def __init__(self, *, environment, storage, credentials, source, runtime, clock):
+    def __init__(self, *, environment, storage, credentials, source, runtime, clock,
+                 native_folder=None):
         self.environment, self.storage, self.credentials = environment, storage, credentials
         self.source, self.runtime, self.clock = source, runtime, clock
         self._pin = None
+        self._native_folder = native_folder
+        self._native_folder_required = native_folder is not None
 
     def validate(self, payload):
+        if self._native_folder is not None or self._native_folder_required:
+            from .drive.folder_prerequisites import NativeFolderFirstRun
+            try:
+                require(type(self._native_folder) is NativeFolderFirstRun
+                        and self._native_folder.checker is self, "STORAGE_UNAVAILABLE")
+                return NativeFolderFirstRun.validate(self._native_folder, payload)
+            except Exception:
+                self.credentials = None
+                raise
+        return self._validate(payload)
+
+    def _validate(self, payload):
         choices = payload["choices"]
         try:
             environment = self.environment()

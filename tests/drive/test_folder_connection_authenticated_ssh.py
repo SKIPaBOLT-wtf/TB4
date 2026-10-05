@@ -107,6 +107,63 @@ def test_real_current_selection_or_native_loss_refuses_both_uses_before_ssh(comb
     assert linked.profile.read() == saved and objects(v) == inventory
 
 
+def first_run_checker(v, linked):
+    from tb4.commissioning_checks import detect_environment
+    from tb4.drive.folder_prerequisites import native_folder_prerequisites
+    from tests.security.test_ballpark_contract import fixture as descriptor
+    from tests.security.test_first_run import Source, FACTS
+    current = linked.profile.read(); payload = current.payload
+    local = descriptor()
+    local.update(installation_id=payload["installation_id"], domain_id=v.spec.domain_id)
+    payload["choices"]["descriptor"] = local
+    linked.profile.save(validated(payload), expected_revision=current.revision)
+    linked.setup = Setup(native_settings(linked.root))
+    return native_folder_prerequisites(native_settings(linked.root), access=linked.access,
+        environment=lambda:detect_environment(launch_mode="EXTERNAL"),
+        source=Source(), runtime=FACTS, clock=lambda:v.now[0])
+
+
+def test_real_native_prerequisites_setup_restart_and_default_activation_are_fresh(combined, tmp_path, monkeypatch):
+    from tb4.commissioning_checks import Prerequisites
+    from tb4.commissioning_state import DenyActivation
+    v = combined; linked = connect(v, v.a, tmp_path/"owned-prerequisite-setup")
+    checker = first_run_checker(v, linked)
+    before, metadata, inventory, registry = linked.profile.read(), linked.metadata.read(), objects(v), v.profile.read()
+    original, calls = FixedProcess.call, []
+    def observe(transport, raw):
+        calls.append(transport.argv[-1])
+        return original(transport, raw)
+    monkeypatch.setattr(FixedProcess, "call", observe)
+    def forbidden(*_args, **_kwargs): pytest.fail("First-run selected or enrolled a key")
+    monkeypatch.setattr(v.a.store.__class__, "select", forbidden)
+    monkeypatch.setattr(CredentialResolver, "enroll", forbidden)
+    assert type(checker) is Prerequisites and linked.setup.review(checker)["settings_validated"]
+    ready = linked.profile.read()
+    assert ready.previous == before.payload and calls == ["tb4-folder-probe-v1"]
+    assert {k:x for k,x in ready.payload.items() if k not in {"state","reason"}} == {
+        k:x for k,x in before.payload.items() if k not in {"state","reason"}}
+    restarted = Setup(native_settings(linked.root))
+    assert not restarted.status()["settings_validated"] and restarted.review(checker)["settings_validated"]
+    assert restarted.activate(checker, DenyActivation())["reason"] == "ACTIVATION_NOT_AUTHORIZED"
+    assert linked.metadata.read() == metadata and objects(v) == inventory and v.profile.read() == registry
+    assert linked.profile.read().payload["credential_image"] == before.payload["credential_image"]
+
+
+def test_real_native_prerequisites_current_revocation_refuses_before_ssh(combined, tmp_path, monkeypatch):
+    v = combined; linked = connect(v, v.a, tmp_path/"owned-prerequisite-setup")
+    checker = first_run_checker(v, linked)
+    assert linked.setup.review(checker)["settings_validated"]
+    current = linked.profile.read(); payload = current.payload
+    payload["credential_image"]["bindings"][v.a.handle]["revoked"] = True
+    linked.profile.save(validated(payload), expected_revision=current.revision)
+    before, inventory = linked.profile.read(), objects(v)
+    def forbidden(*_args, **_kwargs): pytest.fail("Revoked first-run reached SSH")
+    monkeypatch.setattr(FixedProcess, "call", forbidden)
+    from tb4.private_settings import SettingsError
+    with pytest.raises(SettingsError, match="^STORAGE_UNAVAILABLE$"): checker.validate(before.payload)
+    assert linked.profile.read() == before and objects(v) == inventory and checker.credentials is None
+
+
 def test_real_lost_after_commit_reply_is_unknown_and_same_readback_never_replays(combined, tmp_path, monkeypatch):
     v = combined; linked = connect(v, v.a, tmp_path/"owned-setup-a")
     saved, inventory = linked.profile.read(), objects(v)
