@@ -7,13 +7,13 @@ phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_PREREQUISITES_WINDOWS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6436da86d4cd12853b1631a56b463c0a152889c6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0451
+last_verified_event: RP-027-A001-0452
 last_completed: RP-026
-next_action: Publish actual Windows/default source-specific qualification or defect
-  before dependent changes. Inspect same frozen older e8e8/request32 jobs under a
-  separate read-only INTENT while this test may run.
-verification: Current6436 actual Windows/native/default qualification43targets, expected35newnative/+37nodes;
-  all realSSH/staged/runtime/GUI/C1-C4 held.
+next_action: Inspect same source-specific older e8e8/request32 jobs under read-only
+  INTENT while current Windows test runs; then record actual native/default result
+  before dependent source changes.
+verification: Current6436 scoped Windows43targets actual session28580 running; default3510/noerrors
+  known, no actual scoped result/C1-C4 inferred.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
