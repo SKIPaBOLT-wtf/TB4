@@ -3,24 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_LINUX27_TERMINAL
+phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_WINDOWS_DEFAULT
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce
+source_commit: 8c75d39a086164703abcb09828eef9b994eb2360
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0390
+last_verified_event: RP-027-A001-0391
 last_completed: RP-026
-next_action: "Publish separate current8c75 Windows scoped test OUTCOME FAIL retaining19fixtureerrors\
-  \ and exact3333\u21923388 node-set/add55remove0. Inspect actual safe error signature\
-  \ and register defect before minimal scoped test-only repair; later inspect same\
-  \ oldacc26 Windowsjob111589722960 without relaunch."
-verification: Immutableacc26 requiredLinux850twice/fullCI/LinuxDesktop/both-roleLinuxpackages/Progress235
-  qualified; Windowspending. New8c75 currentWindows run19fixtureerrors separateoutcome
-  pending; C1-C4 held.
+next_action: Publish scoped test-only repair INTENT to supply raising=False for mocked
+  signal.alarm in portable fixture. Preserve original38portable/17Linux case IDs and
+  all assertions; no product/timeout/protocol/credential/native changes. Then separate
+  corrected44target/default collection recheck; only afterward launch current source
+  Linux/platform request.
+verification: Current8c75 Windows fixture19ERROR proven signal.alarm missing/DEF097;
+  762PASS/default3388add55remove0. Minimal test-only mock repair then exact recheck;
+  oldacc26 Windowspending; C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0387
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -67,6 +67,7 @@ known_open_defects:
 - DEF-094
 - DEF-095
 - DEF-096
+- DEF-097
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before

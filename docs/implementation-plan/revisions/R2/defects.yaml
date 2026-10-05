@@ -7080,3 +7080,53 @@ defects:
       remainheld. Lateracc26 optional pointer source has not qualified and is not
       inferred.
     legacy_record: null
+  DEF-097:
+    title: Portable helper dispatch fixture assumes signal.alarm exists on Windows
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 8c75d39a086164703abcb09828eef9b994eb2360
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-default-failed.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 8c75d39a086164703abcb09828eef9b994eb2360
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-default-failed.json
+    reproduction:
+      procedure: Exact normal Windows44target run reports762PASS/19ERROR/99Linux-onlySKIP;
+        every error is new main_io fixture monkeypatch.setattr signal.alarm default
+        raising=True on Windows which omits alarm. New19token cases pass, remaining19portable
+        main cases do not execute. Actual Linux17 declared skip. Default3388/add55remove0/noerrors.
+      failing_source: 8c75d39a086164703abcb09828eef9b994eb2360
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-default-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: The portable main_io fixture must explicitly permit creating its mocked
+        Linux-only alarm attribute; production helper already rejects non-Linux and
+        is unchanged.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-default-failed.json
+    repairs: []
+    issue: null
+    regression_test: All38 portable helper negative/order/legacy modes plus retained
+      original44target/native regressions; exact55new nodes/no removals; actual17Linux
+      combined credential/helper cases and full platform/packages/commonC1-C4.
+    resolution_evidence: []
+    notes: Actual Windows762PASS/19ERROR/0FAIL/99declared LinuxSKIP211.774s; all19
+      same attribute setup error. Source and failed evidence retained. Corrected test-only
+      rerun/nativeLinux/full/common pending. No weakened policy assertion or product
+      timeout change authorized.
+    legacy_record: null
