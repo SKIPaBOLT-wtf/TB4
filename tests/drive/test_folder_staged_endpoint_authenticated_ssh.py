@@ -15,6 +15,7 @@ from tb4.credential_persistence import restore_private
 from tb4.drive.docs_authority import AuthorityError
 from tb4.drive.folder_authority_transport import credential_authority_pair
 from tb4.drive.folder_endpoint import NativeFolderEndpoint
+import tb4.drive.folder_endpoint as endpoint_module
 import tb4.drive.folder_endpoint_attachment as attachment_module
 from tb4.drive.folder_endpoint_attachment import NativeFolderEndpointAttachment
 from tb4.drive.folder_prerequisites import native_folder_prerequisites
@@ -141,8 +142,21 @@ def test_new_pointer_metadata_does_not_hide_current_first_run_loss(staged, tmp_p
         v.profile.save(payload, expected_revision=current.revision)
     def forbidden(*_args, **_kwargs): pytest.fail('Lost current capability reached SSH')
     monkeypatch.setattr(FixedProcess, 'call', forbidden)
-    report=Candidate(v.s.candidate.context).review(checker(v))
-    assert not report['settings_validated'] and not report['runtime_active']
+    if fault=='revoked':
+        profile=v.profile.read(); failed=[]; original=endpoint_module.require
+        def observe(condition,code):
+            if not condition:failed.append(code)
+            return original(condition,code)
+        monkeypatch.setattr(endpoint_module,'require',observe)
+        monkeypatch.setattr(LinuxKeyNative,'open_key',forbidden)
+        with pytest.raises(SettingsError,match='^SETTINGS_STORE_UNAVAILABLE$'):
+            checker(v)
+        assert failed==['FOLDER_ENDPOINT_CREDENTIAL'] and v.profile.read()==profile
+        view=Candidate(v.s.candidate.context).view()
+        assert not view['settings_validated'] and not view['runtime_active']
+    else:
+        report=Candidate(v.s.candidate.context).review(checker(v))
+        assert not report['settings_validated'] and not report['runtime_active']
     assert retained(v)==before
 
 
