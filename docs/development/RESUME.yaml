@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_CANDIDATE_PLATFORM_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_NATIVE_CANDIDATE_C1_TEST_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: b8f08653e7285a8943b9ebcda7552e3960d9b67c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0473
+last_verified_event: RP-027-A001-0474
 last_completed: RP-026
-next_action: Minimal test-only expect exactC1 ConfigurationError codes before remotechecker
-  for two physicalloss cases; assert originalMain/archive/stagedprofile/sharedwork
-  retained and no ephemeral readiness/activation. Keep11passing traces/all13 IDs/restAST/production
-  unchanged. Separate source/static then requiredLinux requalification.
-verification: Actualnewmapped11PASS/2DEF104 testexpectation failures; original514
-  PASS, remaining1040 held. Frozen33 CI/Linuxpackages qualified, Windows pending,
-  C1-C4 held.
+next_action: Publish repairsource/static/defect record, collect exactsame3523/13 IDs
+  and launch one correctedsource requiredLinux1040/request35; inspect frozen33Windows/current34
+  oldfull terminal outcomes separately.
+verification: DEF104 provennewtest expectation only; exactearlyC1 guard held, minimal
+  two-case repair next, no passing_source/currentcommon acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0474
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
