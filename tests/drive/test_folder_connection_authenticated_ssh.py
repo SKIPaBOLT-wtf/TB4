@@ -133,11 +133,26 @@ def test_real_first_cas_stale_forced_takeover_preserves_local_unknown_without_pe
         payload["operations"]["d"*64] = "UNKNOWN"
         linked.profile.save(validated(payload), expected_revision=current.revision)
     saved = a.profile.read(), b.profile.read(), objects(v)
-    contender = Leadership(b.client, ENROLLMENT)
-    assert contender.claim(ACTORS[1], tid(270), clock(220), operation_id="native-stale").epoch == 2
-    assert contender.force(ACTORS[0], ACTORS[1], clock(221), operation_id="native-force") is WriteResult.ACCEPTED
-    successor = Leadership(a.client, ENROLLMENT)
-    assert successor.claim(ACTORS[0], tid(271), clock(221), operation_id="native-forced").epoch == 3
+    from tb4.drive.leadership import LEADER, FORCE
+    before = a.client.read().document()
+    contender = Leadership(b.client, actor=ACTORS[1], enrollment=ENROLLMENT)
+    stale = contender.acquire(contender.observe(clock(220)), transition=tid("native-stale"))
+    old_grant = contender.confirmed_grant(stale, contender.commit(stale, mode="START"))
+    assert old_grant.epoch == 2
+    successor = Leadership(a.client, actor=ACTORS[0], enrollment=ENROLLMENT)
+    request_id = tid("native-forced")
+    request = successor.request_force(successor.observe(clock(221)),
+        request_id=request_id, user_requested=True)
+    assert successor.commit(request, mode="START").outcome == "CONFIRMED"
+    assert not contender.current_before_dispatch(old_grant, clock(221))
+    claim = successor.claim_requested(successor.observe(clock(221)), request_id=request_id)
+    new_grant = successor.confirmed_grant(claim, successor.commit(claim, mode="START"))
+    assert new_grant.epoch == 3
+    after = a.client.read().document()
+    assert {k:v for k,v in after.items() if k != "records"} == {
+        k:v for k,v in before.items() if k != "records"}
+    assert {k:v for k,v in after["records"].items() if k not in {LEADER, FORCE}} == {
+        k:v for k,v in before["records"].items() if k not in {LEADER, FORCE}}
     assert (a.profile.read(), b.profile.read(), objects(v)) == saved
 
 
