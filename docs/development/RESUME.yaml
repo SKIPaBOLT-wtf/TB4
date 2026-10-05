@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_ENDPOINT_ATTACHMENT_WINDOWS_DEFAULT
+phase: STAGED_RECONFIGURATION_C2_COMBINED_SSH_EMPTY_COMMAND_TEST_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: d168a74ed9ef55e77926be1ee3de8666f4216fc6
+source_commit: 05f7a5b4f075f9490581f6e0abf9fe5533403bac
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0411
+last_verified_event: RP-027-A001-0412
 last_completed: RP-026
-next_action: Authorize exact1file DEF099 test boundary repair fromcurrent d168, retainingallfourcases/default3419
-  and no product/workflow changes. Source/test outcomes then currentcombined source
-  request29 requiredLinux936/fullplatform. No oldrequestreplay.
-verification: d168 actual native Windows704PASS/31new zero skip/default3419 exact31
-  additions zero removals. Current helper Linux failed DEF099; test-only correction
-  and current combined source/Linux936/full/platform/fresh runtime still pending.
+next_action: Publish minimal source outcome/DEF099 repair link, then normal current
+  Windows/native regression/default3419 and actual requiredLinux936/fullplatform source
+  qualification. Inspect remaining immutable request28 fulljobs separately withoutrepeat.
+verification: A029 actualWindows704PASS/all31new/default3419 retained; minimal onefile
+  provenDEF099 native boundary test correction pending, currentLinux936/full/platform/freshconnection
+  stillrequired.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0412
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
