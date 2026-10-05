@@ -3,11 +3,11 @@
   "item": "RP-027",
   "check": "RP-027.C2",
   "attempt": "A001",
-  "intent_event": "RP-027-A001-0429",
-  "source_commit": "2f43d0ed3e4510c95dc916f87545c53ced3d18aa",
+  "intent_event": "RP-027-A001-0437",
+  "source_commit": "10badf7bbe08f54cfaeef640c062d4ceae8e319c",
   "branch": "feat/rp027-staged-reconfiguration",
   "pr": 36,
-  "request_revision": 30,
+  "request_revision": 31,
   "required_workflow": "Folder reconfiguration",
   "required_cases": 990,
   "group_counts": {
@@ -18,7 +18,7 @@
     "original_native": 107,
     "docs_effect_admission": 327
   },
-  "scope": "A030 fresh protected per-call native Folder connection, currentWindows854/all42newnative/default3473 exact54 additions42native12SSH. RequiredLinux990 includes all54new and original936, real protected Setup restart/first-run/read/CAS/readback/currentpurpose/native-loss/lost-commit/stale-forced takeover. Disposable owned hosted fixtures only.",
-  "expected": "One exact current2f43 source request30 launch/provenance/readback, actualrequired990/CI/DesktopWindowsLinux/packages/Progress terminal proof required. Prerequisites/runtime/GUI/stagedreplacement/commonC1-C4 held.",
+  "scope": "A030 fresh protected native Folder connection with DEF-100 one-line transitive context fixture registration. All production/native42/SSH12 case IDs and assertions unchanged. Required Linux990 groups477/51/6/22/107/327, actual12 SSH must execute; hosted owned fixtures only.",
+  "expected": "One immutable corrected10bad source-linked launch and exact source/trigger/PR parent pins. Actual required990 twice/current CI/Desktop bothroles/packages/Progress required; fresh Prerequisites/runtime/GUI/C1-C4 held.",
   "acceptance": false
 }
