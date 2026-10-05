@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0367",
+  "source": "87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d",
+  "base": "0041a84bd1e7547cd35d7ab4efb1267ed01526e6",
+  "local_commit": "c2ea6af5c2f9e8dcd573a50c17e9b5d05ae88abf",
+  "result": "SOURCE_PRESERVED",
+  "changed_files": [
+    "tests/security/test_folder_endpoint_native.py"
+  ],
+  "static": {
+    "ast": "PASS",
+    "case_function_names": "13_UNCHANGED",
+    "diff_check": "PASS",
+    "human_privacy_review": "PASS",
+    "tests_executed": 0
+  },
+  "invariants": [
+    "Transparent observer invokes the original actual folder_endpoint.require with unchanged condition/code.",
+    "Actual SettingsError SETTINGS_STORE_UNAVAILABLE required for both native rejections.",
+    "One FOLDER_ENDPOINT_PROFILE false predicate required before rejected recovery.",
+    "Two FOLDER_ENDPOINT_RECOVERY_CONFLICT false predicates required for separately rejected inspect and recover.",
+    "Original pending/current/profile byte checks and zero credential/transport-use fixture guards retained.",
+    "Production src/protocol/existing workflows unchanged against feb214; full default3307 case IDs not yet recollected."
+  ],
+  "acceptance": "HELD",
+  "readback": "EXACT_ONE_SOURCE_FILE",
+  "next": "Publish current 26-target Windows/native/default3307 collection INTENT before running new-source tests; then current Linux/full/package gates."
+}

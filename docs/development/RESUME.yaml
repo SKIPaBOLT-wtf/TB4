@@ -5,22 +5,19 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_GUARD_TEST_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: feb214963f5b7436469957102c42f3482d627b1f
+source_commit: 87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0367
+last_verified_event: RP-027-A001-0368
 last_completed: RP-026
-next_action: Preserve and publish the minimal test-only source with DEF096 repair/rechecks;
-  then publish current 26-target Windows and whole-default collection INTENT. Require549PASS/22
-  declared Linux-only SKIP and3307 unchanged nodes before current Linux/full/package
-  qualification.
-verification: Actual native rejection366 recorded; test-only DEF096 repair367 retains
-  original predicate and exact normalized error plus byte invariants, no production
-  changes. Native/default/current Linux/full/package/common C1-C4 held.
+next_action: Publish current 26-target Windows/native/default3307 collection INTENT
+  before running new-source tests; then current Linux/full/package gates.
+verification: Test-only native guard repair source saved; exact closed native error/internal
+  codes and unchanged bytes required. AST/diff/privacy tests0; all applicable current
+  qualification and C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0367
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

@@ -7051,5 +7051,9 @@ defects:
       native fixtures, pytest1,0.466s; actual closed failed codes observed unchanged.
       Earlier diagnostic363 collection failed before native cases and is preserved.
       Expected native closed-error assertions require explicit internal-code and unchanged-byte
-      proof; production/native contract change is unnecessary.
+      proof; production/native contract change is unnecessary. Minimal test-only source
+      87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d preserved/read back; explicit false-code
+      proof and exact SettingsError replace only two erroneous AuthorityError expectations.
+      Original pending/current/profile byte assertions remain,13case function names
+      unchanged. AST/diff/privacy PASS,tests0; current qualification pending.
     legacy_record: null
