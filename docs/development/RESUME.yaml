@@ -3,24 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_FOCUSED_WINDOWS_DEFAULT
+phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_LINUX28_PLATFORM
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0402
+last_verified_event: RP-027-A001-0403
 last_completed: RP-026
-next_action: Authorize exactly one current5f80 source-linked request28 requiredLinux
-  groups392/51/6/22/107/327=905 and fullplatform/packages. Preserveoldrequest27/sourceacc26
-  qualified evidence separately; no workflowrerun. After launch provenance saved,
-  independently schedule metadata-only native pointer attachment from qualified A026/A027
-  without invoking unfinished A028 helper tests.
-verification: Current5f80 Windows108/all38newPASS/zero skip, default3388exactsame;
-  original743 source-equivalent. DEF097/098 scopedpassing only; launch905Linux/currentfull
-  next, metadataattachment laterindependent; C1-C4held.
+next_action: Launch once and inspect same trigger actualjobs/PRsource equivalence,
+  publish related outcome withrecoverableidentities; then independently schedule metadata-only
+  endpoint attachment fromfullyqualifiedA026/A027, without invoking unqualifiedA028.
+  Inspect actualcurrentterminal905/fullplatform before helper-dependent fresh connection
+  composition.
+verification: Current5f80 focusedWindows108/all38newPASS/default3388unchanged/scopedoriginal743samebytes.
+  One request28 required905/Linux/fullpackages launch intent; oldacc26 completed distinct;
+  C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0403
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
