@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_NATIVE_WINDOWS_PASS_MAPPING39_FAILURES
+phase: STAGED_RECONFIGURATION_C3_MAPPING_AFTER_REPLY_DIAGNOSTIC
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c000c0ded9a480172dd9e8269de9617df4224d09
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0521
+last_verified_event: RP-027-A001-0522
 last_completed: RP-026
-next_action: Publish/readback failures and frozen38 platform qualification. Bounded
-  diagnostic/repair INTENT for actual before-move fixture and fixed native SSH proof.
-  No replay of old39 jobs.
+next_action: Publish exact diagnostic OUTCOME/DEF110 proven cause if supported, then
+  separate minimal response validation and before-fixture repair INTENT. Keep old39
+  immutable; source40 will exercise allnewA036/A037 cases.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0522
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
