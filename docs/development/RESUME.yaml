@@ -3,22 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_MAPPING_AFTER_WINDOWS_AND_CURRENT38
+phase: STAGED_RECONFIGURATION_C4_REMOTE_MAPPING_AFTER_LINUX39
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: e095a52215bf416b1537a1b4ccd582602d57b0b6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0515
+last_verified_event: RP-027-A001-0516
 last_completed: RP-026
-next_action: Publishactualcheckpoint then onecurrent39/sourcee0951147/new40/LinuxnativeSSH/fullplatform
-  underseparateINTENT. Inspect same38terminal withoutreplay; qualifiedmappingproof
-  beforeRetainedC4/adoptionconsumer/stagedruntime integration.
+next_action: Publish launch OUTCOME. Inspect same39/same38 terminal source/logs withoutreplay
+  underseparateINTENT. Independently prepare native ACTIVE adoption source fromalreadyqualifiedA019/localadoption/currentA033normalproof
+  only, without invoking unqualifiedA036 or replacingmappedC4guard; dependentacceptance
+  held.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0516
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
