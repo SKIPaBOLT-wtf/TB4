@@ -7100,9 +7100,10 @@ defects:
         raising=True on Windows which omits alarm. New19token cases pass, remaining19portable
         main cases do not execute. Actual Linux17 declared skip. Default3388/add55remove0/noerrors.
       failing_source: 8c75d39a086164703abcb09828eef9b994eb2360
-      passing_source: null
+      passing_source: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-default-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-current-default-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7146,7 +7147,11 @@ defects:
       run764PASS/17assertionFAIL/0ERROR/99declaredLinuxSKIP209.491s: no alarm AttributeError
       recurs, all19 formerERRORcases nowexecute. Remaining17 stdout fixture failures
       separatelyproven DEF098; unchanged3388nodes/noerrors. No all-check acceptance
-      or currentLinux/fullqualification.'
+      or currentLinux/fullqualification. Current5f80 focused38newportable+70originalprotocol108PASS/0fail/0error/0skip1.242s;
+      default3388/noerrors1.795s/same3388nodes. Allstrictreply/order/preIO/nonLinux/legacy
+      assertions retained. Original743native/credential/candidate tests source-equivalent
+      unchanged proof400; actualcurrentLinux/full/packages/C1-C4 pending, OPEN. No
+      resolution evidence claimed.'
     legacy_record: null
   DEF-098:
     title: Portable helper dispatch fixture loses stdout monkeypatch between pytest
@@ -7170,9 +7175,10 @@ defects:
         Actual pytest per-phase sys.stdout resume replaces setup-time global fixture
         patch; original stdout line unchanged from8c75. Default3388 exactunchanged/noerrors.
       failing_source: f18e8cd1dbe57298b36bc5937697937ee8ae66fb
-      passing_source: null
+      passing_source: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-default-second-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-current-default-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7213,5 +7219,9 @@ defects:
       helper-local sys fixture source 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f preserved/readback,
       all38case definitions/assertions and original product/protocol/workflow/test
       blobs unchangedfromf18. AST/diff/privacy PASS/tests0; executionqualifiedsource
-      pending.
+      pending. Current5f80 focused38newportable+70originalprotocol108PASS/0fail/0error/0skip1.242s;
+      default3388/noerrors1.795s/same3388nodes. Allstrictreply/order/preIO/nonLinux/legacy
+      assertions retained. Original743native/credential/candidate tests source-equivalent
+      unchanged proof400; actualcurrentLinux/full/packages/C1-C4 pending, OPEN. No
+      resolution evidence claimed.
     legacy_record: null

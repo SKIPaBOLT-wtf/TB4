@@ -7,20 +7,20 @@ phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_FOCUSED_WINDOWS_DEFAULT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0401
+last_verified_event: RP-027-A001-0402
 last_completed: RP-026
-next_action: Publish focused Windows/default exact outcome; ifPASS record DEF097/098
-  currentpassing source scope and launch once source-linked request28 requiredLinux905/fullplatform.
-  Schedule metadata-only native attachment independently only from already qualified
-  A026/A027; actual helper composition waits actualrequiredproof.
-verification: 5f80 test-only isolation repair exactsource; focused38new+70original/default3388
-  recheck. Original743 native/credential/candidate proof reused only exactunchanged
-  product/testbytes; current905Linux/fullrequired; C1-C4held.
+next_action: Authorize exactly one current5f80 source-linked request28 requiredLinux
+  groups392/51/6/22/107/327=905 and fullplatform/packages. Preserveoldrequest27/sourceacc26
+  qualified evidence separately; no workflowrerun. After launch provenance saved,
+  independently schedule metadata-only native pointer attachment from qualified A026/A027
+  without invoking unfinished A028 helper tests.
+verification: Current5f80 Windows108/all38newPASS/zero skip, default3388exactsame;
+  original743 source-equivalent. DEF097/098 scopedpassing only; launch905Linux/currentfull
+  next, metadataattachment laterindependent; C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0401
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
