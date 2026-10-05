@@ -53,7 +53,8 @@ def system(fixture, monkeypatch):
     selected = [dict(handle=handle, target_id=TARGET, target_trust=TRUST,
         purposes=[Purpose.FOLDER_AUTHORITY.value])]
     setup.persist_credentials(store, resolver, selected)
-    metadata = native_settings(root.parent / "endpoint-metadata", create=True, owner_authorized=True)
+    metadata_root = root.parent / "endpoint-metadata"
+    metadata = native_settings(metadata_root, create=True, owner_authorized=True)
     selection = NativeFolderEndpoint(metadata, setup.installation_id)
     endpoint = ProbeEndpoint(TARGET, TRUST, str(Path(sys.executable).resolve()), "storage.invalid",
         22222, "synthetic-user", str(root.parent / "synthetic-endpoint-known"), 7)
@@ -62,7 +63,7 @@ def system(fixture, monkeypatch):
     monkeypatch.setattr(CredentialResolver, "invoke", denied)
     monkeypatch.setattr(FixedProcess, "call", denied)
     return SimpleNamespace(root=root, setup=setup, key=key, store=store, resolver=resolver,
-        handle=handle, selected=selected, now=now, metadata=metadata, selection=selection,
+        handle=handle, selected=selected, now=now, metadata=metadata, metadata_root=metadata_root, selection=selection,
         endpoint=endpoint, spec=spec, authority=authority)
 
 
@@ -78,14 +79,14 @@ def test_native_same_record_restart_lookup_preserves_profile_key_history_and_clo
     reference = prepare(v)
     snap = v.metadata.read()
     assert snap.revision == 1 and snap.previous is None
-    reopened = NativeFolderEndpoint(native_settings(v.metadata.native.root), v.setup.installation_id)
+    reopened = NativeFolderEndpoint(native_settings(v.metadata_root), v.setup.installation_id)
     profile = Setup(native_settings(v.root))
     facts = reopened.lookup(profile, reference)
     assert facts.reference == reference and facts.endpoint == v.endpoint and facts.credential_handle == v.handle
     assert facts.binding == BINDING and reopened.inspect() == dict(
         status="SELECTED", reference=reference, metadata_only=True, credential_ready=False)
     assert profile.store.read() == before and v.key.read_bytes() == CANARY
-    raw = (v.metadata.native.root / "settings.json").read_bytes()
+    raw = (v.metadata_root / "settings.json").read_bytes()
     assert CANARY not in raw and str(v.key).encode() not in raw
     with pytest.raises(AuthorityError, match="^FOLDER_ENDPOINT_EXISTS$"): prepare(v)
     assert v.metadata.read() == snap and capsys.readouterr() == ("","")
@@ -177,7 +178,7 @@ def test_native_setup_alias_and_stale_snapshot_refuse_without_another_selection(
 @pytest.mark.parametrize("change", ["protection", "revision"])
 def test_native_lost_metadata_protection_or_immutable_revision_refuses(fixture, monkeypatch, change):
     v = system(fixture, monkeypatch); reference = prepare(v); before = v.setup.store.read()
-    if change == "protection": protect_fixture(v.metadata.native.root / "settings.json", broad=True)
+    if change == "protection": protect_fixture(v.metadata_root / "settings.json", broad=True)
     else:
         snap = v.metadata.read()
         v.metadata.save(snap.payload, expected_revision=1)
@@ -224,28 +225,28 @@ def test_native_pending_cannot_be_promoted_after_profile_change(fixture, monkeyp
     monkeypatch.setattr(kind, "promote", stop)
     with pytest.raises(SettingsError): prepare(v)
     reference = v.selection.inspect()["reference"]
-    pending = (v.metadata.native.root / "settings.pending").read_bytes()
+    pending = (v.metadata_root / "settings.pending").read_bytes()
     monkeypatch.setattr(kind, "promote", original)
     storage = copy.deepcopy(v.setup.private_choices()["storage"])
     storage["authority"]["seal"] = "b"*64; v.setup.choose({"storage":storage})
     before = v.setup.store.read()
     with pytest.raises(AuthorityError):
         v.selection.recover(v.setup, reference, owner_authorized=True)
-    assert (v.metadata.native.root / "settings.pending").read_bytes() == pending
-    assert not (v.metadata.native.root / "settings.json").exists() and v.setup.store.read() == before
+    assert (v.metadata_root / "settings.pending").read_bytes() == pending
+    assert not (v.metadata_root / "settings.json").exists() and v.setup.store.read() == before
 
 
 def test_native_conflicting_pending_is_not_silently_repaired(fixture, monkeypatch):
     v = system(fixture, monkeypatch); reference = prepare(v); before = v.setup.store.read()
     with v.metadata.native.locked() as port:
         raw = port.read("settings.json"); port.stage(raw)
-    pending = (v.metadata.native.root / "settings.pending").read_bytes()
+    pending = (v.metadata_root / "settings.pending").read_bytes()
     with pytest.raises(AuthorityError, match="^FOLDER_ENDPOINT_RECOVERY_CONFLICT$"):
         v.selection.inspect()
     with pytest.raises(AuthorityError):
         v.selection.recover(v.setup, reference, owner_authorized=True)
-    assert (v.metadata.native.root / "settings.pending").read_bytes() == pending
-    assert (v.metadata.native.root / "settings.json").read_bytes() == raw
+    assert (v.metadata_root / "settings.pending").read_bytes() == pending
+    assert (v.metadata_root / "settings.json").read_bytes() == raw
     assert v.setup.store.read() == before
 
 
