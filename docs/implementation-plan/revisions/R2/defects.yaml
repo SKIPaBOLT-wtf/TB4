@@ -7471,7 +7471,18 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-prerequisites-windows-failed.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0454
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Actual bothWindows pending tests reach exactSTORAGE_UNAVAILABLE
       and preserve original pending; all35 nativecases and selected first-run/profile/endpoint/nativecredentials
@@ -7480,5 +7491,8 @@ defects:
     resolution_evidence: []
     notes: Proven new A031 test-only root type assumption, analogous prior DEF095
       retained. Production guard not reached in failedcases. Default3510/noerrors/exact37add/removal0.
-      No first-run/C1-C4 acceptance from33passes.
+      No first-run/C1-C4 acceptance from33passes. Test-only Path conversion source
+      ea4c2f72e471c7ab935fc2892e8551185d513ece preserved/readback; exactremainder
+      AST and product/prior854 unchanged. Passing_source null until actual correctedpending
+      execution.
     legacy_record: null
