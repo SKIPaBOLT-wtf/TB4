@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0468",
+  "source": "b8f08653e7285a8943b9ebcda7552e3960d9b67c",
+  "result": "PASS",
+  "collection": {
+    "schema_version": 1,
+    "source": "b8f08653e7285a8943b9ebcda7552e3960d9b67c",
+    "checkout": "b7d5176d965aafb8deb6f8c2b3e80ffd94f8b5a6",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.842,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3523,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "nodes": {
+    "baseline_count": 3510,
+    "current_count": 3523,
+    "added_count": 13,
+    "removed_count": 0,
+    "exact_baseline_preserved": true,
+    "added": [
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_candidate_review_restart_uses_mapped_ssh_and_retains_main_work[False]",
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_candidate_review_restart_uses_mapped_ssh_and_retains_main_work[True]",
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main[conflicting-source]",
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main[missing-artifact]",
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_ready_candidate_never_hides_current_loss_or_reaches_ssh[expired]",
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_ready_candidate_never_hides_current_loss_or_reaches_ssh[key-permission]",
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_ready_candidate_never_hides_current_loss_or_reaches_ssh[key-version]",
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_ready_candidate_never_hides_current_loss_or_reaches_ssh[known-version]",
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_ready_candidate_never_hides_current_loss_or_reaches_ssh[revoked]",
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_ready_candidate_never_hides_current_loss_or_reaches_ssh[selection-revoked]",
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_ready_candidate_never_hides_current_loss_or_reaches_ssh[unselected]",
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_staged_native_pending_is_preserved_without_ssh_or_recovery[endpoint]",
+      "tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_staged_native_pending_is_preserved_without_ssh_or_recovery[profile]"
+    ]
+  },
+  "tests_executed": 0,
+  "platform_qualification": "No Linuxexecution inferred. Windows native/product qualification unchanged scope from prior459/465, latestfullplatform separate.",
+  "next": "Launch exactlyone sourceb8f086 requiredLinux1040/request34 for actualnew13 mappedCandidate cases and requiredregressions. Inspect same frozenea4c33 fullplatform terminal results separately."
+}

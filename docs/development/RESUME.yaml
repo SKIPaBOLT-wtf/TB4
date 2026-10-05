@@ -7,17 +7,17 @@ phase: STAGED_RECONFIGURATION_C2_NATIVE_CANDIDATE_MAPPED_COLLECTION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: b8f08653e7285a8943b9ebcda7552e3960d9b67c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0468
+last_verified_event: RP-027-A001-0469
 last_completed: RP-026
-next_action: Publish exact collection outcome; ifpassed launch one immutable1040 requiredLinuxrequest34,
-  then inspect same frozen33 fullplatform terminal results.
-verification: A032 test-only source published; default3523 collection/actualLinux13
-  unverified, frozen33 fullplatform/C1-C4 held.
+next_action: Launch exactlyone sourceb8f086 requiredLinux1040/request34 for actualnew13
+  mappedCandidate cases and requiredregressions. Inspect same frozenea4c33 fullplatform
+  terminal results separately.
+verification: A032 default3523/noerrors/exact13new and3510 preserved, no actualtests
+  yet. ActualcurrentLinux1040 and frozen33 fullplatform/C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0468
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
