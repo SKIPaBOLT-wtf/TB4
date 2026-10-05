@@ -5,20 +5,19 @@ check: RP-027.C4
 attempt: A001
 phase: STAGED_RECONFIGURATION_C4_NATIVE_ADMISSION_ENROLLMENT_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 8719fe0c5bfde6436f3c5f6f6b5595a928636494
+source_commit: 18969f784e2e2431ed31f6a6c0a3eef62279e31d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0486
+last_verified_event: RP-027-A001-0487
 last_completed: RP-026
-next_action: Publishrepairsource OUTCOME; same226/default3554 actualWindows recheck
-  underseparateINTENT. Inspectsame35/34 and launchone correctedcurrentsource36 afterWindows.
+next_action: Same226actualWindows/default3554 unchangedIDs andsame35/old34 terminal
+  evidence underseparateINTENT. CurrentLinux1071/31 andfullplatform remainpending.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0486
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

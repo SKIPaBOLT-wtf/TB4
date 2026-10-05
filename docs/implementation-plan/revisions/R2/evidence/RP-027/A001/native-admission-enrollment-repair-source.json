@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0486",
+  "source": "18969f784e2e2431ed31f6a6c0a3eef62279e31d",
+  "base": "f70739068f23db59dc82891b3e4a35cdac88d8ad",
+  "local_preserved": "3c912ba194a16c95c07e59fcac3a36e019c68e65",
+  "result": "RECORDED",
+  "files": [
+    "tests/security/test_folder_runtime_native.py"
+  ],
+  "static": {
+    "schema_version": 1,
+    "base": "f70739068f23db59dc82891b3e4a35cdac88d8ad",
+    "python_ast": "PASS",
+    "all_other24_native_cases_and_fixture_ast": "EXACT_UNCHANGED",
+    "no_grant_assertions_ast": "EXACT_UNCHANGED",
+    "product_protocol_diff": [],
+    "tests_executed": 0
+  },
+  "public_scan": "CLEAN",
+  "readback": "EXACT_ALL_FILES/Gitparent/branch",
+  "tests_executed": 0,
+  "next": "Same226actualWindows/default3554 unchangedIDs andsame35/old34 terminal evidence underseparateINTENT. CurrentLinux1071/31 andfullplatform remainpending."
+}

@@ -7671,12 +7671,25 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-failed.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0486
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Actual typed current native context constructs matching actor/checkpoint
       and refuses missing leadership grant ADMISSION_LEADERSHIP_UNKNOWN, allsame226
       and3554 IDs plus currentLinux31/1071 and platform.
     resolution_evidence: []
     notes: Proven new fixture/test enrollment mismatch; ordinary debug, no external
-      blocker or production guard change.
+      blocker or production guard change. Minimaltestonlymatchingfixtureactor source
+      18969f784e2e2431ed31f6a6c0a3eef62279e31d preserved; allother24native AST/no-grant
+      assertion AST unchanged, production unchanged/tests0. Passing_source null untilactualrecheck.
     legacy_record: null
