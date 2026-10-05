@@ -7136,11 +7136,67 @@ defects:
       original44target/native regressions; exact55new nodes/no removals; actual17Linux
       combined credential/helper cases and full platform/packages/commonC1-C4.
     resolution_evidence: []
-    notes: Actual Windows762PASS/19ERROR/0FAIL/99declared LinuxSKIP211.774s; all19
+    notes: 'Actual Windows762PASS/19ERROR/0FAIL/99declared LinuxSKIP211.774s; all19
       same attribute setup error. Source and failed evidence retained. Corrected test-only
       rerun/nativeLinux/full/common pending. No weakened policy assertion or product
       timeout change authorized. One exact test-only alarm mock line repaired and
       preserved/read back at f18e8cd1dbe57298b36bc5937697937ee8ae66fb; seven portable
       function names and all55case definitions/assertions retained, product unchanged.
-      AST/diff/privacy PASS/tests0; corrected qualification pending.
+      AST/diff/privacy PASS/tests0; corrected qualification pending. Correctedf18
+      run764PASS/17assertionFAIL/0ERROR/99declaredLinuxSKIP209.491s: no alarm AttributeError
+      recurs, all19 formerERRORcases nowexecute. Remaining17 stdout fixture failures
+      separatelyproven DEF098; unchanged3388nodes/noerrors. No all-check acceptance
+      or currentLinux/fullqualification.'
+    legacy_record: null
+  DEF-098:
+    title: Portable helper dispatch fixture loses stdout monkeypatch between pytest
+      phases
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 8c75d39a086164703abcb09828eef9b994eb2360
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-default-second-failed.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 8c75d39a086164703abcb09828eef9b994eb2360
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-default-second-failed.json
+    reproduction:
+      procedure: Corrected f18 normal44target Windowsrun764PASS/17FAIL/0ERROR/99declaredLinuxSKIP.
+        All17newmain failures assert saved fixture BytesIO empty; same actual captured
+        call logs contain13UNKNOWN/2SYNTHETIC_NORMAL/2SYNTHETIC_PROBE expected tokens.
+        Actual pytest per-phase sys.stdout resume replaces setup-time global fixture
+        patch; original stdout line unchanged from8c75. Default3388 exactunchanged/noerrors.
+      failing_source: f18e8cd1dbe57298b36bc5937697937ee8ae66fb
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-default-second-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Use a helper-local fake sys namespace for simulated platform/stdin/stdout
+        so actual pytest global capture phase changes cannot redirect the tested buffer.
+        Keep actual argparse sys.argv patch and every original output/order/return
+        assertion.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-default-second-failed.json
+    repairs: []
+    issue: null
+    regression_test: All38portable dispatch exact/negative/beforeIO/order/legacy assertions
+      plus retained original probe/protocol/native regressions and exact3388nodeIDs;
+      actual17Linux and fullplatform/commonC1-C4 held.
+    resolution_evidence: []
+    notes: Actual764PASS/17FAIL/0ERROR/99declaredLinuxSKIP209.491s; all17 same lost
+      fixture buffer, actual helper tokens correct. No product/native/timeout/protocol
+      cause inferred. Existing failedruns preserved. All C1-C4 held.
     legacy_record: null

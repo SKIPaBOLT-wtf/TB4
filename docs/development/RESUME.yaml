@@ -3,25 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_LINUX27_WINDOWS_FINAL
+phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_CORRECTED_WINDOWS_DEFAULT
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce
+source_commit: f18e8cd1dbe57298b36bc5937697937ee8ae66fb
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0397
+last_verified_event: RP-027-A001-0398
 last_completed: RP-026
-next_action: Record currentf18 Windows17newportable assertion failures without product-cause
-  inference; inspect same saved captured stdout/local pytest capture source to prove
-  origin before scoped test-only repair. Then qualify corrected portable/current fullLinux
-  source. Native endpoint attachment may be scheduled independently from qualified
-  A026/A027, never bypassing actual composite/runtime/GUI/common gates.
-verification: Immutableacc26 allscheduledWindows/Linux/fullCI/Progress/bothrolepackagesqualified;
-  nativeendpoint/pointerfoundations ready only. Currentf18 helper17newportableassertionfail
-  separate; no C1-C4 acceptance.
+next_action: Publish exact test-only local helper.sys namespace fixture repair INTENT,
+  retain global sys.argv only for real argparse and all38portable55totalcases/assertions;
+  no real helper changes. Then separately run new portable/affected original probe+protocol
+  regressions/default3388 unchanged-node qualification before currentLinux905/fullplatform
+  launch.
+verification: Currentf18 exact44target secondWindows17newportableFAIL provenpytestglobalstdoutfixture
+  DEF098; formeralarmERRORnone. Oldacc26 allplatformqualified. Minimalhelper-local
+  test sys fixture then narrowportable/affected/default recheck; C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0394
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -69,6 +68,7 @@ known_open_defects:
 - DEF-095
 - DEF-096
 - DEF-097
+- DEF-098
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
