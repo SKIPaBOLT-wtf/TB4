@@ -3,23 +3,26 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_LINUX26_TERMINAL
+phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_DEFAULT_NATIVE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d
+source_commit: acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0378
+last_verified_event: RP-027-A001-0379
 last_completed: RP-026
-next_action: Publish A027 sourceacc26 focused26/new default3333 and affected private/native/first-run/candidate/seed/adoption/promotion
-  regression INTENT. Continue remaining same request26 CI/Desktop/packages; preserve
-  source separation and all C1-C4 holds.
-verification: Same87ca request26 required Linux824PASS twice/current native53zero
-  skip/checkouts proven; Win549/default3307 and Progress235 alreadyproven. A027acc26
-  source-only/newtests pending; remaining87ca full/packages plus attachment/composite/C1-C4
+next_action: Read actual same-source results and exact node diff; preserve any failure
+  before repair. On confirmed scope/default PASS publish/readback outcome then new-source
+  current Linux/full/platform/package qualification or a precisely documented independent
+  next foundation. Continue remaining immutable87ca request26 CI/Desktop/packages;
+  never infer later-source qualification.
+verification: Sourceacc26 A027 pointer/seed/rollback requires current35-target native/default3333
+  qualification379; expected673+22skip/all26new/add26/remove0 not yetobserved. Prior87ca
+  Win549/Linux824twice/Progress235 proven, remaining oldsourcepackages distinct; C1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0379
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
