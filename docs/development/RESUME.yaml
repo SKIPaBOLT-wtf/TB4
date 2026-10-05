@@ -3,24 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_DEFAULT_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_TEST_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: c381b7eb12dbd09a3d7b40bccc11c61e84ff5360
+source_commit: d55953cefa0071b94f150ecf6f7bce6bcb556b5e
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0357
+last_verified_event: RP-027-A001-0358
 last_completed: RP-026
-next_action: 'Publish test-only repair INTENT: retain original explicitly selected
-  metadata_root Path in the owned fixture and replace only new tests'' native.root
-  path assumptions. Preserve all assertions/native/production APIs, then save source
-  and rerun the same current scoped/default collection in new owned roots.'
-verification: Endpoint c381 preflight545PASS/4testfixtureFAIL/22declaredLinuxSKIP;
-  new49of53PASS, default3307/add53/rem0/noerrors. DEF095 proven Windows native.root
-  str/Path test mismatch; test-only repair next, all qualification/C1-C4held.
+next_action: Save/readback test-only repair OUTCOME, then publish corrected scoped/default
+  qualification INTENT and rerun once with new owned fixtures/result names.
+verification: DEF095 four actual Windows fixture path failures retained357, test-only
+  repair pending358; production/native/guard/assertions unchanged. Default3307/add53/rem0/noerrors
+  established; corrected current/Linux/full/C1-C4 qualification held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0352
+- RP-027-A001-0358
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
