@@ -8005,6 +8005,7 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/mapping-after-reply-mode-diagnostic.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/mapping-after-repair-windows-and-final39.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -8053,5 +8054,8 @@ defects:
       cause; no native/provider invocation or grant. Earlier H1 left UNTESTED as originally
       broad. Exact four-file repair now preserved/published; no passing_source until
       actual execution. Old normal AST/29portable/other10native unchanged; new16parser
-      tests declared, no tests executed.
+      tests declared, no tests executed. Actual currentrepairWindows225PASS/noFAIL/ERROR/SKIP6.469s;
+      allnew16pure credential runner/cross-mode/terminal cases pass. ActualLinux correctedSSH
+      stillpending, no passing_source assigned fromWindows. Same39 finalWindows3312/314SKIP/4XFAIL
+      andbothrolefourflagsPASS; original2Linux failures remain.
     legacy_record: null
