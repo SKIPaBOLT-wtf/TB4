@@ -5,21 +5,22 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_TEST_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: d55953cefa0071b94f150ecf6f7bce6bcb556b5e
+source_commit: feb214963f5b7436469957102c42f3482d627b1f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0358
+last_verified_event: RP-027-A001-0359
 last_completed: RP-026
-next_action: Save/readback test-only repair OUTCOME, then publish corrected scoped/default
-  qualification INTENT and rerun once with new owned fixtures/result names.
-verification: DEF095 four actual Windows fixture path failures retained357, test-only
-  repair pending358; production/native/guard/assertions unchanged. Default3307/add53/rem0/noerrors
-  established; corrected current/Linux/full/C1-C4 qualification held.
+next_action: Publish corrected-source scoped/default qualification INTENT, run once
+  with unique fresh owned result/fixture names, verify all53 new cases and549 scoped
+  PASS/default3307/no removed nodes if observed. Then current-source actual Linux824
+  and full/package qualification.
+verification: DEF095 test-only selectedPath source saved/read back; AST/diff/privacy
+  PASS, tests0. Corrected current scoped/default/Linux/full packages/common C1-C4
+  qualification remains pending; failedc381/old352 evidence retained.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0352
-- RP-027-A001-0358
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

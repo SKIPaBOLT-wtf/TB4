@@ -6954,9 +6954,12 @@ defects:
       cases without applicable skips, same 26-file native regression and default3307/no
       baseline removals, actual Linux/full/current packages and commonC1-C4 gates.
     resolution_evidence: []
-    notes: Windows545 PASS/4 FAIL/0 ERROR/22 inherited Linux-only SKIP20.845s; allnew49PASS/4FAIL/0skip.
+    notes: 'Windows545 PASS/4 FAIL/0 ERROR/22 inherited Linux-only SKIP20.845s; allnew49PASS/4FAIL/0skip.
       Default3307/no errors1.859s; exact3254baseline+53new nodes, zero removals. Raw
       fixture paths/key/profile data are not published; only closed errors and IDs.
       NativeSettings production remains unchanged; source c381 and failed run retained.
-      Common acceptance held.
+      Common acceptance held. Test-only source feb214963f5b7436469957102c42f3482d627b1f
+      saved/read back: original selected metadata_root Path retained and reused, all
+      case IDs/assertions and production/native guard bytes unchanged. AST/diff/privacy
+      PASS, tests0; corrected qualification not yet run.'
     legacy_record: null

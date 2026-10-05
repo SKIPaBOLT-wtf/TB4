@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0358",
+  "defect": "DEF-095",
+  "source_commit": "feb214963f5b7436469957102c42f3482d627b1f",
+  "local_preserved_commit": "b7977b472f1f52da953a8ad24c08d9775cf5ab60",
+  "base_commit": "6395e35a22cdb21ca0b45219a566b0b9aecb4846",
+  "paths": [
+    "tests/security/test_folder_endpoint_native.py"
+  ],
+  "repair": "Retain selected metadata_root Path in the fixture, use only that path for native restart and owned file checks; stop relying on internal native.root type.",
+  "case_ids_and_assertions": "UNCHANGED",
+  "production_diff": [],
+  "native_guards": "UNCHANGED",
+  "static": {
+    "ast": 1,
+    "diff": "PASS",
+    "public_privacy": "PASS",
+    "tests_executed": 0
+  },
+  "readback": "EXACT_ALL_FILES",
+  "acceptance": false,
+  "next_action": "Publish corrected-source scoped/default qualification INTENT, run once with unique fresh owned result/fixture names, verify all53 new cases and549 scoped PASS/default3307/no removed nodes if observed. Then current-source actual Linux824 and full/package qualification."
+}
