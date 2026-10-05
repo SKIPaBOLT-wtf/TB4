@@ -324,3 +324,16 @@ require inspection without resend. Stale/forced election remains first-CAS with
 no former-owner ACK barrier, and ordinary UNKNOWN work is preserved. Default
 helper/probe/first-run/effect/activation paths remain; durable endpoint and typed
 first-run authority/runtime/GUI/current-source common qualification still apply.
+
+## RP-027 A-026 immutable native endpoint selection
+
+Protected endpoint metadata uses one distinct immutable native record tied to the
+current installation, exact storage blueprint/authority and saved selected handle.
+Original Setup/choices/image/candidate formats and operation history remain intact.
+An interrupted native save is inspected as the same opaque reference and pending
+or completed frame; it is never recreated over uncertain data. Recovery refuses
+changed profile, aliases, contradictory frames or protection loss before promotion.
+Lookup is private metadata only and grants no proof, remote CAS, configuration
+activation or role. Default activation and first-CAS stale/forced election retain
+their existing meanings. First-run attachment/composite/runtime/GUI/common acceptance
+remain later qualified work.

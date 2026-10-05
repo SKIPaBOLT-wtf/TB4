@@ -43,7 +43,8 @@ jobs:
           sudo mkdir -p /run/sshd
       - name: Required read-only physical Folder probe and isolated SSH cases
         run: >-
-          python -m pytest tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py
+          python -m pytest tests/drive/test_folder_endpoint.py tests/security/test_folder_endpoint_native.py
+          tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py
           tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py
           tests/drive/test_folder_first_run_native.py tests/security/test_remote_folder_first_run_native.py
           tests/security/test_folder_credential_purpose.py tests/security/test_folder_credential_purpose_native.py

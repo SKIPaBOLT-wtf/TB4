@@ -115,3 +115,14 @@ FOLDER_AUTHORITY. A private one-use correlated reply keeps LocalStore/UseResult
 as closed outcomes; ACCEPTED requires readback and UNKNOWN never retries. Old
 probe/FETCHER scopes cannot grant it. Durable endpoint metadata, typed first-run
 authority and runtime/GUI activation remain separate qualified composition.
+
+## RP-027 A-026 private endpoint facts
+
+A distinct immutable actual native Folder endpoint frame binds existing saved
+installation/storage/authority and selected credential metadata to trusted endpoint
+and known-host facts. The opaque reference and closed metadata-only status grant
+no live key readiness or credential use. The resolver still performs fresh
+selection/version/permission/expiry/revocation/trust checks on every actual use;
+lookup never enrolls, reselects or broadens a purpose. Native pending recovery
+promotes only the same sealed bytes with fresh profile checks. Endpoint attachment
+and composite transport/first-run/runtime/GUI integration remain separately gated.
