@@ -7,18 +7,19 @@ phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_LINUX26_FULL_PLATFORM
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0383
+last_verified_event: RP-027-A001-0384
 last_completed: RP-026
-next_action: Inspect terminal results for same request26; publish exact outcome/evidence
-  and independent fixed helper dispatch scheduling if permitted by these foundations;
-  currentrequest27 stays separately pending.
-verification: Request27 launch/source equivalence recovered and saved; inspecting
-  source-distinct request26 full/platform/package terminal evidence. C1-C4 held.
+next_action: Record A028 scoped source INTENT for helper opt-in dispatch, portable
+  negative/order/compatibility tests and real Linux native credential combined forced-helper
+  cases. Execute no tests before separate test INTENT; later inspect immutable request27
+  acc26 terminal evidence.
+verification: Immutable87ca fullCI/Windows/Linux/bothrolepackages qualified plus Linux824
+  twice/Progress235; currentacc26 qualification pending. Independent A028 closedhelperdispatch
+  scheduled; actualattachment/composite/runtime/GUI/C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0383
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
