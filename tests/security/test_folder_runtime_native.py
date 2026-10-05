@@ -14,7 +14,6 @@ from tb4.drive.leadership import Leadership
 from tb4.private_settings import native_settings, SettingsError
 from tb4.reconfiguration_admission import AdmissionContext, ConfigurationAdmission
 from tb4.watchdog.checkpoint_store import NativeCheckpoint
-from tests.drive.test_native_leadership import ENROLLMENT
 from tests.security.test_first_run import FACTS
 from tests.security.test_folder_connection_native import commit, saved
 from tests.security.test_folder_prerequisites_native import system as first_run
@@ -144,7 +143,9 @@ def test_lost_normal_cas_is_unknown_once_and_read_inspects_existing_effect(fixtu
 
 def test_exact_native_admission_context_does_not_fabricate_ready_or_role(fixture, monkeypatch):
     v = system(fixture, monkeypatch)
-    leader = Leadership(v.port.authority(v.authority), actor=v.setup.installation_id, enrollment=ENROLLMENT)
+    actor = v.setup.installation_id
+    leader = Leadership(v.port.authority(v.authority), actor=actor,
+        enrollment={actor:"synthetic-native-runtime-computer"})
     store = native_settings(v.root.parent/"runtime-checkpoint", create=True, owner_authorized=True)
     cp = NativeCheckpoint(store, installation_id=v.setup.installation_id, binding=leader.backend.binding,
         create=True, owner_authorized=True)
