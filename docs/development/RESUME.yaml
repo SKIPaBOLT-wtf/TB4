@@ -7,21 +7,19 @@ phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_LINUX28_PLATFORM
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0403
+last_verified_event: RP-027-A001-0404
 last_completed: RP-026
-next_action: Launch once and inspect same trigger actualjobs/PRsource equivalence,
-  publish related outcome withrecoverableidentities; then independently schedule metadata-only
-  endpoint attachment fromfullyqualifiedA026/A027, without invoking unqualifiedA028.
-  Inspect actualcurrentterminal905/fullplatform before helper-dependent fresh connection
-  composition.
-verification: Current5f80 focusedWindows108/all38newPASS/default3388unchanged/scopedoriginal743samebytes.
-  One request28 required905/Linux/fullpackages launch intent; oldacc26 completed distinct;
-  C1-C4held.
+next_action: Publish scoped A029 source INTENT for exact native metadata pointer attachment/inspect/recovery
+  with real Windows/Linux private tests and unchanged endpoint format/defaultactivation.
+  Separate source/tests; no currentA028 inference. Inspect immutable request28 actual905/full/platform
+  after source-independent unit.
+verification: Current5f80 once-launched request28 trigger809/fiveworkflows/sixjobs/currentPRd0d/sourceeq
+  verified, terminal905/fullpending. Native-only A029 attachment independentfromqualifiedA026/A027
+  scheduled; C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0403
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
