@@ -1,25 +1,25 @@
 schema_version: 1
 revision: R2
 work_item: RP-027
-check: RP-027.C3
+check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_MAPPING_AFTER_REPAIR_WINDOWS_PASS
+phase: STAGED_RECONFIGURATION_C4_CURRENT_NATIVE_SOURCE40_LAUNCH
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d39bda8915af63ce621134aad0e703703c064301
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0527
+last_verified_event: RP-027-A001-0528
 last_completed: RP-026
-next_action: One exact source40 immutable hosted qualification request1176/new29/fullplatform/Progress/packages.
-  Independently inspect existing localLinux development environment for isolated actual
-  native test capability; no real homeLAN/service/profile. Source qualification remains
-  required before mappedconsumer/adoptionacceptance.
+next_action: Publish source40 launch and read-only environment OUTCOME. If verifiedlocalLinux
+  enables isolated ownfixtures, separateINTENT for ownedcheckout/venv/targetedactualtests;
+  otherwise same40terminalfirstgroup/remaining/fullplatform beforedependentnativeconsumer/recovery.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0528
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
