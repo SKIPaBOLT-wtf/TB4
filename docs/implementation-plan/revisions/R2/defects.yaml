@@ -7919,3 +7919,95 @@ defects:
       pass includingexact internalFOLDER_ENDPOINT_CREDENTIAL/publicSETTINGS_STORE_UNAVAILABLE/noKey/SSH/retention.
       Scopedpassing940b34ac only; completeplatform/commonheld.
     legacy_record: null
+  DEF-109:
+    title: Mapping AFTER before-move negative fixture reads absent terminal folder
+      plan
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: e095a52215bf416b1537a1b4ccd582602d57b0b6
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: e095a52215bf416b1537a1b4ccd582602d57b0b6
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
+    reproduction:
+      procedure: 'Same39 push/PR tests/drive/test_folder_mapping_after_probe_native.py::test_actual_after_proof_refuses_unfinished_or_lost_native_mapping_and_seal_without_writes[before]
+        fails at facts() with KeyError: folder_plan before handle_after_probe.'
+      failing_source: e095a52215bf416b1537a1b4ccd582602d57b0b6
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Negative fixture assumes terminal plan before physical relocation preparation
+        has published it; separate expected terminal witness from the actual pre-move
+        endpoint under test.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
+    repairs: []
+    issue: null
+    regression_test: Actual pre-move request must reach closed UNKNOWN without storage
+      writes; keep all11 native AFTER predicates.
+    resolution_evidence: []
+    notes: Ordinary debug. Actual same39 push/PR first group632PASS/2FAIL; fullCI3580PASS/2sameFAIL/27SKIP/4XFAIL,
+      LinuxDesktop3603PASS/2sameFAIL/21SKIP/4XFAIL. Subsequent required groups and
+      Linux packages not executed. No historical failure removed or acceptance asserted.
+    legacy_record: null
+  DEF-110:
+    title: Actual native mapping AFTER positive fixed SSH witness refuses current
+      proof
+    status: OPEN
+    detected_in: RP-027.C3
+    suspected_origin:
+      work_item: RP-027
+      source_ref: e095a52215bf416b1537a1b4ccd582602d57b0b6
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
+    proven_origin: null
+    reproduction:
+      procedure: Same39 push/PR tests/drive/test_folder_mapping_after_probe_native.py::test_actual_fixed_ssh_after_probe_returns_fresh_current_native_mapping_witness
+        refuses MAPPING_AFTER_UNAVAILABLE; actual direct native positive and remaining9
+        native cases pass.
+      failing_source: e095a52215bf416b1537a1b4ccd582602d57b0b6
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Failure may be in client request/credential reply correlation or helper
+        protected mapping stages; no internal source cause established from public
+        closed error.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
+    repairs: []
+    issue: null
+    regression_test: Actual selected native endpoint fixed SSH produces fresh correlated
+      mapping AFTER witness; preserves full native profile/archive/root/work and refuses
+      current loss without writes.
+    resolution_evidence: []
+    notes: Ordinary debug. Actual same39 push/PR first group632PASS/2FAIL; fullCI3580PASS/2sameFAIL/27SKIP/4XFAIL,
+      LinuxDesktop3603PASS/2sameFAIL/21SKIP/4XFAIL. Subsequent required groups and
+      Linux packages not executed. No historical failure removed or acceptance asserted.
+    legacy_record: null
