@@ -18,6 +18,7 @@ from .drive.commissioning_native import NativeCommissioning
 from .drive.commissioning_folder import FolderCommissioning
 from .drive.folder_authority import FolderBinding
 from .drive.folder_mapping import FolderMappedCommissioning
+from .drive.folder_runtime import NativeFolderCommissioning
 from .drive.docs_authority import AuthorityBinding,AuthorityError
 from .exchange_layout import MAX_GENERATION,empty_document,encoded,validate_document
 from .private_settings import PrivateSettings
@@ -166,7 +167,8 @@ class RetainedConfigurationCommit(ConfigurationCommit):
             and type(context.store) is PrivateSettings,"RETAINED_CONTEXT")
         self.context,self.candidate=context,context.candidate
         self.ctx=self.candidate.context.maintenance.context
-        require(type(self.ctx.storage_port) in {NativeCommissioning,FolderCommissioning,FolderMappedCommissioning}
+        require(type(self.ctx.storage_port) in {
+            NativeCommissioning,FolderCommissioning,FolderMappedCommissioning,NativeFolderCommissioning}
             and type(self.ctx.checkpoint) is NativeCheckpoint and self.ctx.effects is not None,"RETAINED_CONTEXT")
         self._bindings()
 

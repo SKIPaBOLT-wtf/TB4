@@ -2,6 +2,8 @@
 
 ## RP-027 fresh native first-run
 
+[A-035](implementation-plan/revisions/R2/amendments/RP-027/A-035-native-folder-retained-and-controller.md) permits exact native rootless retained C4 while keeping the original mapped AFTER qualifier. Trusted fresh controller/current Main admission composition uses existing protected profile/source/timing and grants no key use, checkpoint, role or activation. Factory failure clears ephemeral UI readiness before validation; all original C4/pending/owner/work/default denial semantics remain.
+
 [A-034](implementation-plan/revisions/R2/amendments/RP-027/A-034-staged-native-folder-endpoint.md) adds owner/current C1/expected-selection guarded pointer-only changes to the separate INCOMPLETE Candidate. Immutable metadata and full parent/history remain; original Main/archive/shared work are untouched. Exact pending recovery promotes the same child without keys, transport or resave. Selection grants no READY or activation; fresh new-endpoint proof and final platform/controller/common gates remain required.
 
 [A-033](implementation-plan/revisions/R2/amendments/RP-027/A-033-native-folder-normal-admission.md) adds an opt-in exact NativeFolderCommissioning for the same fresh physical proof and existing protected normal READ/CAS. Trusted normal_authority defaults False and saved data never selects it. Exact current admission retains profile/role/timing/source/configuration guards; no readiness/role/activation grant from construction. Server-local mapped AFTER C4 remains separately enforced.

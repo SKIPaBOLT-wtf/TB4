@@ -2,6 +2,8 @@
 
 ## RP-027 fresh native first-run credential cache
 
+[A-035](implementation-plan/revisions/R2/amendments/RP-027/A-035-native-folder-retained-and-controller.md) composes trusted fresh native Candidate/current Main factories without saved code selection, key use, image rewrite or role creation. Existing per-request selected-purpose/image/native/key/trust/expiry checks and admission remain; factory reconstruction grants nothing. A failure before validation clears ephemeral GUI readiness.
+
 [A-034](implementation-plan/revisions/R2/amendments/RP-027/A-034-staged-native-folder-endpoint.md) changes only a separate resolved Candidate's protected pointer after explicit owner/expected-selection checks. Existing immutable selected-handle/image/revocation facts remain; selection/recovery never open a key or send a request. Fresh native per-use capability and physical proof still decide availability. Original Main/credential history and default denial remain.
 
 [A-033](implementation-plan/revisions/R2/amendments/RP-027/A-033-native-folder-normal-admission.md) optionally exposes normal authority through an exact native commissioning port. Every request still rereads explicit FOLDER_AUTHORITY selection and restores its current native image/key/trust/expiry; proof uses separate FOLDER_PROBE. A trusted boolean selects code, grants no credentials and defaults to the previous read-only facade. Lost CAS remains UNKNOWN once, with read inspection and no resend.

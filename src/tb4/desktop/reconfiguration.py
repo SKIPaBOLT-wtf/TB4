@@ -17,9 +17,11 @@ class CandidateController:
         return self.candidate.choose(patch,owner_authorized=owner_authorized)
 
     def refresh(self):
+        self.candidate._reviewed_revision = None
         return self.candidate.review(self.checker_factory())
 
     def activate(self):
+        self.candidate._reviewed_revision = None
         checker = self.checker_factory()
         result = self.candidate.review(checker)
         if not result["settings_validated"]:
