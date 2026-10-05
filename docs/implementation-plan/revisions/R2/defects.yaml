@@ -7586,10 +7586,11 @@ defects:
         execute;11PASS. Two physical-loss cases raise exact ConfigurationError from
         existing C1/_proof before Setup.review. Newtest wrongly expects returned status.
       failing_source: b8f08653e7285a8943b9ebcda7552e3960d9b67c
-      passing_source: null
+      passing_source: cb9501f0e7d54601a06318e2de220d9d319070b4
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-mapped-linux34-failed.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-prerequisites-current-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/corrected-native-candidate-linux35-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7631,6 +7632,10 @@ defects:
       readiness assertions. ActualrestAST/13decorators/product unchanged; passing_source
       null untilcorrectedexecution. Olderb8f08634 actualfullCI3473PASS/2sameDEF104FAIL/27SKIP/4XFAIL1427.72s,
       noadditionalerrors/failures. Correctedcb95035 stillrunning; passing_source null.
+      Correctedcb950 request35 actualall1040 twice (527/51/6/22/107/327), all13mappedSSH/noERROR/SKIP
+      includingtwo exactearlyC1refusals, CI3475PASS/27SKIP/4XFAIL1823.88s andProgress235PASS6.14s;
+      old34Windows3254/265/4/bothrolesPASS andLinux3496/2sameFAIL/21/4 preserved.
+      Current35Desktop incomplete; scopedpassing_source cb950 only/no C1-C4 acceptance.
     legacy_record: null
   DEF-105:
     title: Native no-grant admission test supplies an unrelated actor enrollment
@@ -7652,9 +7657,10 @@ defects:
         enrollment and fails AuthorityError ENROLLMENT before checkpoint/admission
         no-grant assertion.
       failing_source: 8719fe0c5bfde6436f3c5f6f6b5595a928636494
-      passing_source: null
+      passing_source: 18969f784e2e2431ed31f6a6c0a3eef62279e31d
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7692,4 +7698,6 @@ defects:
       blocker or production guard change. Minimaltestonlymatchingfixtureactor source
       18969f784e2e2431ed31f6a6c0a3eef62279e31d preserved; allother24native AST/no-grant
       assertion AST unchanged, production unchanged/tests0. Passing_source null untilactualrecheck.
+      Actualsame226Windows PASS/noFAIL/ERROR/SKIP118.33s, all25newnative andexisting201.
+      Same3554 exactIDs/default1.802s; scopedpassing_source only, Linux/fullplatform/commonheld.
     legacy_record: null

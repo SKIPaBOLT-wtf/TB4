@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0488",
+  "result": "PASS_SCOPED",
+  "qualified_required": {
+    "source": "cb9501f0e7d54601a06318e2de220d9d319070b4",
+    "trigger": "af607d178c3aadc2b76821af6eebf080b7409ca7",
+    "pr_checkout": "3bd28da221270de22620ce472e1aa1b2c2130d46",
+    "previously_verified_parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "af607d178c3aadc2b76821af6eebf080b7409ca7"
+    ],
+    "actual": [
+      {
+        "run": 37279877475,
+        "job": 111665217623,
+        "name": "native-folder",
+        "conclusion": "success",
+        "checkout": "af607d178c3aadc2b76821af6eebf080b7409ca7",
+        "summaries": [
+          {
+            "counts": {
+              "passed": 527
+            },
+            "seconds": 168.42
+          },
+          {
+            "counts": {
+              "passed": 51
+            },
+            "seconds": 118.79
+          },
+          {
+            "counts": {
+              "passed": 6
+            },
+            "seconds": 51.83
+          },
+          {
+            "counts": {
+              "passed": 22
+            },
+            "seconds": 255.71
+          },
+          {
+            "counts": {
+              "passed": 107
+            },
+            "seconds": 16.7
+          },
+          {
+            "counts": {
+              "passed": 327
+            },
+            "seconds": 551.19
+          }
+        ],
+        "failures": [],
+        "packages": []
+      },
+      {
+        "run": 37279882752,
+        "job": 111665234588,
+        "name": "native-folder",
+        "conclusion": "success",
+        "checkout": "3bd28da221270de22620ce472e1aa1b2c2130d46",
+        "summaries": [
+          {
+            "counts": {
+              "passed": 527
+            },
+            "seconds": 93.91
+          },
+          {
+            "counts": {
+              "passed": 51
+            },
+            "seconds": 53.05
+          },
+          {
+            "counts": {
+              "passed": 6
+            },
+            "seconds": 22.61
+          },
+          {
+            "counts": {
+              "passed": 22
+            },
+            "seconds": 114.8
+          },
+          {
+            "counts": {
+              "passed": 107
+            },
+            "seconds": 9.02
+          },
+          {
+            "counts": {
+              "passed": 327
+            },
+            "seconds": 284.17
+          }
+        ],
+        "failures": [],
+        "packages": []
+      }
+    ],
+    "selectors": [
+      {
+        "job": 111665217623,
+        "actual_new_candidate_file_selected": true,
+        "actual_new_first_run_file_selected": true
+      },
+      {
+        "job": 111665234588,
+        "actual_new_candidate_file_selected": true,
+        "actual_new_first_run_file_selected": true
+      }
+    ],
+    "prior_cases": 1027,
+    "new_cases": 13,
+    "each_actual": 1040,
+    "scope": "Frozen corrected C1 expectation source cb950, exact13 meaningfulSSH cases, not newer18969 normalport."
+  },
+  "progress": {
+    "run": 37279882662,
+    "job": 111665234235,
+    "name": "ledger",
+    "conclusion": "success",
+    "checkout": "3bd28da221270de22620ce472e1aa1b2c2130d46",
+    "summaries": [
+      {
+        "counts": {
+          "passed": 235
+        },
+        "seconds": 6.14
+      }
+    ],
+    "failures": [],
+    "packages": []
+  },
+  "ci": {
+    "run": 37279882701,
+    "job": 111665234410,
+    "name": "test",
+    "conclusion": "success",
+    "checkout": "3bd28da221270de22620ce472e1aa1b2c2130d46",
+    "summaries": [
+      {
+        "counts": {
+          "passed": 43
+        },
+        "seconds": 0.18
+      },
+      {
+        "counts": {
+          "passed": 34
+        },
+        "seconds": 0.44
+      },
+      {
+        "counts": {
+          "passed": 2
+        },
+        "seconds": 0.04
+      },
+      {
+        "counts": {
+          "passed": 3475,
+          "skipped": 27,
+          "xfailed": 4
+        },
+        "seconds": 1823.88
+      }
+    ],
+    "failures": [],
+    "packages": []
+  },
+  "desktop35": [
+    {
+      "id": 111665234302,
+      "name": "desktop (windows-latest)",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 111665234478,
+      "name": "desktop (ubuntu-22.04)",
+      "status": "in_progress",
+      "conclusion": null
+    }
+  ],
+  "old34": {
+    "source": "b8f08653e7285a8943b9ebcda7552e3960d9b67c",
+    "pr_checkout": "5613f732fdd38d22c6fe13226e67189fc5c270ff",
+    "previous_parent_source_qualification": "Verified470/472 exact ed974/55ad parents and empty non-docdiff b8f086",
+    "windows": {
+      "run": 37277251292,
+      "job": 111656909954,
+      "name": "desktop (windows-latest)",
+      "conclusion": "success",
+      "checkout": "5613f732fdd38d22c6fe13226e67189fc5c270ff",
+      "summaries": [
+        {
+          "counts": {
+            "passed": 74,
+            "skipped": 20
+          },
+          "seconds": 3.88
+        },
+        {
+          "counts": {
+            "passed": 15
+          },
+          "seconds": 0.33
+        },
+        {
+          "counts": {
+            "passed": 30,
+            "skipped": 4
+          },
+          "seconds": 2.76
+        },
+        {
+          "counts": {
+            "passed": 2
+          },
+          "seconds": 8.55
+        },
+        {
+          "counts": {
+            "passed": 75
+          },
+          "seconds": 10.48
+        },
+        {
+          "counts": {
+            "passed": 79
+          },
+          "seconds": 19.59
+        },
+        {
+          "counts": {
+            "passed": 3254,
+            "skipped": 265,
+            "xfailed": 4
+          },
+          "seconds": 2514.09
+        }
+      ],
+      "failures": [],
+      "packages": [
+        [
+          {
+            "role": "watchdog",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          },
+          {
+            "role": "fetcher",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          }
+        ]
+      ]
+    },
+    "linux": {
+      "run": 37277251292,
+      "job": 111656910192,
+      "name": "desktop (ubuntu-22.04)",
+      "conclusion": "failure",
+      "checkout": "5613f732fdd38d22c6fe13226e67189fc5c270ff",
+      "summaries": [
+        {
+          "counts": {
+            "passed": 90,
+            "skipped": 4
+          },
+          "seconds": 2.78
+        },
+        {
+          "counts": {
+            "passed": 43
+          },
+          "seconds": 0.25
+        },
+        {
+          "counts": {
+            "passed": 34
+          },
+          "seconds": 0.64
+        },
+        {
+          "counts": {
+            "passed": 2
+          },
+          "seconds": 0.04
+        },
+        {
+          "counts": {
+            "passed": 75
+          },
+          "seconds": 9.55
+        },
+        {
+          "counts": {
+            "passed": 79
+          },
+          "seconds": 17.21
+        },
+        {
+          "counts": {
+            "failed": 2,
+            "passed": 3496,
+            "skipped": 21,
+            "xfailed": 4
+          },
+          "seconds": 2778
+        }
+      ],
+      "failures": [
+        "FAILED tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main[parameter] - tb4.configuration_contract.ConfigurationError: CONFIGURATION_CONTEXT_UNAVAILABLE",
+        "FAILED tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main[parameter] - tb4.configuration_contract.ConfigurationError: FOLDER_MAPPING_CONFLICT"
+      ],
+      "packages": []
+    },
+    "artifacts": [
+      {
+        "id": 11332348738,
+        "name": "tb4-desktop-Windows-5613f732fdd38d22c6fe13226e67189fc5c270ff",
+        "size_in_bytes": 120941859,
+        "digest": "sha256:1082edd08463fe8f35c15ebb3e9d6fa77d56a56bc7727620f3354dbc130ff7a0"
+      }
+    ],
+    "observed": "Windows3254PASS/265SKIP/4XFAIL and bothrole fourflagsPASS; Linux3496PASS/2sameDEF104FAIL/21SKIP/4XFAIL noadditionalFAIL/ERROR, package notexecuted."
+  },
+  "acceptance": false,
+  "next": "Same35 incompleteDesktop realterminal/sourceproof/packages. Current18969 newnormalport notqualifiedbyoldcb950 results."
+}
