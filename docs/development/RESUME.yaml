@@ -3,24 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_WINDOWS_DEFAULT
+phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 8c75d39a086164703abcb09828eef9b994eb2360
+source_commit: fa400301665166e74077adad6bc6af4ca0dcf83a
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0391
+last_verified_event: RP-027-A001-0392
 last_completed: RP-026
-next_action: Publish scoped test-only repair INTENT to supply raising=False for mocked
-  signal.alarm in portable fixture. Preserve original38portable/17Linux case IDs and
-  all assertions; no product/timeout/protocol/credential/native changes. Then separate
-  corrected44target/default collection recheck; only afterward launch current source
-  Linux/platform request.
-verification: Current8c75 Windows fixture19ERROR proven signal.alarm missing/DEF097;
-  762PASS/default3388add55remove0. Minimal test-only mock repair then exact recheck;
-  oldacc26 Windowspending; C1-C4held.
+next_action: Preserve/publish exact test-only repair, append related source OUTCOME/DEF097
+  repair link, then independently authorize and run corrected44target/default3388
+  same-node recheck.
+verification: DEF097 proven Windows-only testfixture alarm attribute; test-only exact
+  one-line mock repair under recorded INTENT, no product weakening; current actualLinux/full/common
+  held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0392
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
