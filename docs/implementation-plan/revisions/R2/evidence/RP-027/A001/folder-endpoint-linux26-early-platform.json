@@ -1,0 +1,456 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0373",
+  "source": "87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d",
+  "trigger": "63150974ae2ef8805a7e95ad27a93a579eec2035",
+  "pinned_pr_checkout": "8e3d78cc9c99b9b9f446ed43d6e79ccdfa227e01",
+  "result": "CURRENT_SOURCE_PARTIAL_MILESTONE",
+  "progress": {
+    "run": 37251072095,
+    "job": 111578631292,
+    "conclusion": "SUCCESS",
+    "actual_checkout": "8e3d78cc9c99b9b9f446ed43d6e79ccdfa227e01",
+    "groups": [
+      {
+        "passed": 235,
+        "deselected": 0,
+        "seconds": 8.32
+      }
+    ],
+    "ledger_step": "SUCCESS",
+    "append_only_history_step": "SUCCESS",
+    "privacy_scan_step": "SUCCESS"
+  },
+  "observed_jobs": [
+    {
+      "id": 37251072111,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111578631407,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null,
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Checkout",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Set up Python",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Install",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Public repository security scan",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Isolated folder helper prerequisites",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Native Linux credential boundary qualification",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Native protected first-run qualification",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Native scoped discovery qualification",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37251072101,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111578631553,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null,
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Linux Qt dependencies",
+              "conclusion": "skipped"
+            },
+            {
+              "number": 5,
+              "name": "Install development and desktop dependencies",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Desktop tests with real GUI and core imports",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Native Windows credential boundary qualification",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Native Linux credential boundary qualification",
+              "conclusion": "skipped"
+            },
+            {
+              "number": 9,
+              "name": "Native protected first-run qualification",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Native scoped discovery qualification",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Private BALLPARK and local owner review qualification",
+              "conclusion": "success"
+            },
+            {
+              "number": 12,
+              "name": "Distinct FETCHER enrollment and actual profile qualification",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 111578631823,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null,
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Linux Qt dependencies",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Install development and desktop dependencies",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Desktop tests with real GUI and core imports",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Native Windows credential boundary qualification",
+              "conclusion": "skipped"
+            },
+            {
+              "number": 8,
+              "name": "Native Linux credential boundary qualification",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Native protected first-run qualification",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Native scoped discovery qualification",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Private BALLPARK and local owner review qualification",
+              "conclusion": "success"
+            },
+            {
+              "number": 12,
+              "name": "Distinct FETCHER enrollment and actual profile qualification",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37251072095,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111578631292,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Run python -m pip install -e '.[dev]'",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Run python -m pytest tests/development -ra",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Run python -m tools.development.ledger",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Preserve published history",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Run python tools/scan_public_repo.py",
+              "conclusion": "success"
+            },
+            {
+              "number": 15,
+              "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+              "conclusion": "success"
+            },
+            {
+              "number": 16,
+              "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "conclusion": "success"
+            },
+            {
+              "number": 17,
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37251072099,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111578631279,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null,
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Install development dependencies",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Public repository security scan",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Isolated fixed-helper prerequisites",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Required read-only physical Folder probe and isolated SSH cases",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Required actual Linux mapping and relocation cases",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Required actual Linux retained Folder publication cases",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Required actual Linux current-role Folder ACTIVE adoption cases",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Original folder and native maintenance regressions",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37251069007,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 111578620553,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null,
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Install development dependencies",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Public repository security scan",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Isolated fixed-helper prerequisites",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Required read-only physical Folder probe and isolated SSH cases",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Required actual Linux mapping and relocation cases",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Required actual Linux retained Folder publication cases",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Required actual Linux current-role Folder ACTIVE adoption cases",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Original folder and native maintenance regressions",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "qualifies_only": "PROGRESS_CURRENT87CA",
+  "native_discovery": "WINDOWS_LINUX_STEP_METADATA_SUCCESS_ONLY",
+  "acceptance": "HELD",
+  "limitations": [
+    "Required Linux push/PR jobs have reached the final original Docs/effects group; no824 terminal count/case/skip qualification yet.",
+    "CI and both Desktop jobs are still executing complete suites. Windows native discovery step passed, but original DEF094 cause remains unproven.",
+    "Source equivalence to87ca and actual Progress checkout verified; no later source, whole suite or package qualification inferred."
+  ],
+  "scheduling": {
+    "permitted_independent_next_unit": "Capability-neutral closed optional protected endpoint pointer schema and candidate seed preservation.",
+    "reason": "This unit depends only on already accepted private Setup/candidate schema foundations. It does not invoke or change A026 native endpoint operations, lookup, key use, remote transport, first-run checker or runtime/GUI. Immutable request26 jobs remain pinned/source-distinct.",
+    "held_dependents": "Actual native pointer attachment, combined authenticated first-run/authority composition, runtime/GUI and all acceptance remain behind their required qualification."
+  },
+  "next": "Publish bounded independent optional pointer schema/seed INTENT and A027 amendment, preserve old frame bytes and current candidate schema digest. Continue same request26 terminal Linux/full/package inspection; debug any terminal failure without relaunch."
+}

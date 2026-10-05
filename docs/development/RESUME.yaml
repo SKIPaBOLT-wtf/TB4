@@ -7,20 +7,20 @@ phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_PLATFORM_MILESTONE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0373
+last_verified_event: RP-027-A001-0374
 last_completed: RP-026
-next_action: Publish the bounded actual milestone. Debug any terminal failure within
-  its documented scope; if remaining jobs are healthy/in progress, schedule only the
-  independent protected pointer schema/seed foundation, leaving native endpoint attachment/composite/current
-  source acceptance behind required Linux/full/package gates.
-verification: Request26 launch372 exact/source-equivalent; bounded terminal Progress/early
-  platform inspection373 pending. Current metadata/Linux/full/packages remain unqualified
-  until actual terminal logs; no source-dependent integration yet.
+next_action: Publish bounded independent optional pointer schema/seed INTENT and A027
+  amendment, preserve old frame bytes and current candidate schema digest. Continue
+  same request26 terminal Linux/full/package inspection; debug any terminal failure
+  without relaunch.
+verification: Current87ca Progress235 exactcheckoutPASS; Linux/CI/Desktop stillrunning,
+  WinDiscovery stepSUCCESS only. Independent capability-neutral protected pointer
+  schema/seed scheduling recorded; native attachment/composite/runtime/GUI/common
+  gates held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0373
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
