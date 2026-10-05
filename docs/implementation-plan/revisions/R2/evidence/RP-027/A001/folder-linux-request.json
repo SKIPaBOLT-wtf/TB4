@@ -1,24 +1,24 @@
 {
   "schema_version": 1,
   "item": "RP-027",
-  "check": "RP-027.C2",
+  "check": "RP-027.C4",
   "attempt": "A001",
-  "intent_event": "RP-027-A001-0500",
-  "source_commit": "b6288d53c5eb29d51708b1f6099114529f79a701",
+  "intent_event": "RP-027-A001-0508",
+  "source_commit": "940b34ac2c38e62a725fe29ab49d80de860569a6",
   "branch": "feat/rp027-staged-reconfiguration",
   "pr": 36,
-  "request_revision": 37,
+  "request_revision": 38,
   "required_workflow": "Folder reconfiguration",
-  "required_cases": 1096,
+  "required_cases": 1107,
   "group_counts": {
-    "physical_probe_and_first_run": 583,
+    "physical_probe_and_first_run": 594,
     "mapping_relocation": 51,
     "retained": 6,
     "current_role_folder": 22,
     "original_native": 107,
     "docs_effect_admission": 327
   },
-  "scope": "A034 stagednative pointer-only owner/currentC1/expectedselection andexactpendingrecovery; DEF106 unexecutedtest-onlyclosederrorcorrection. Default3579exactsame/allprior3554+25 preserved. Currentnormalport source18969 actual1071twice/new31/Windowsfullpackages qualified495/499.",
-  "expected": "One immutable37/source b628 launch/verifiedactualcheckouts/jobs; actual1096twice/all25staged andfullplatform mustpass. Same36 CI/Linux terminal separate, no acceptancefromlaunch.",
+  "scope": "A034 staged native endpoint25 with exact DEF108 internal/public guard repair; A035 current protected native factory4 and rootless retained/controller7. ActualWindows80 pass and3590 exactold3579+11 collection; frozenA033/full36 qualified.",
+  "expected": "One immutable current-source38 launch verified by actual checkouts/parents/non-docdiff; later1107 twice/new36 andfullplatform/Progress/rolepackages required.",
   "acceptance": false
 }
