@@ -7589,6 +7589,7 @@ defects:
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-mapped-linux34-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-prerequisites-current-platform-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7628,5 +7629,6 @@ defects:
       PASS, Windows stillbuilding. Minimal test-only source cb9501f0e7d54601a06318e2de220d9d319070b4
       preserved/readback, existingexactC1 errorcodes/noSSH/profile/Main/archive/work/ephemeral
       readiness assertions. ActualrestAST/13decorators/product unchanged; passing_source
-      null untilcorrectedexecution.
+      null untilcorrectedexecution. Olderb8f08634 actualfullCI3473PASS/2sameDEF104FAIL/27SKIP/4XFAIL1427.72s,
+      noadditionalerrors/failures. Correctedcb95035 stillrunning; passing_source null.
     legacy_record: null

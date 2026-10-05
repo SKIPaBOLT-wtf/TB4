@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0480",
+  "source": "ea4c2f72e471c7ab935fc2892e8551185d513ece",
+  "request_revision": 33,
+  "result": "PASS",
+  "checkout": "378d5010419cdea84a6b35f03031b3708fb0fa95",
+  "source_equivalence": "ActualfinalWindows checkout matches previously API/Git verified461/464/472 pin/main+trigger parents, no new checkout.",
+  "required_linux": "Actual1027 twice/noFAIL/ERROR/SKIP and235Progress proof465 retained.",
+  "ci": {
+    "job": 111645957204,
+    "checkout": "378d5010419cdea84a6b35f03031b3708fb0fa95",
+    "passed": 3462,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 27,
+    "xfailed": 4,
+    "seconds": 2590.62,
+    "failures": [],
+    "packages": []
+  },
+  "linux_desktop": {
+    "job": 111645958022,
+    "checkout": "378d5010419cdea84a6b35f03031b3708fb0fa95",
+    "passed": 3485,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 21,
+    "xfailed": 4,
+    "seconds": 1924.43,
+    "failures": [],
+    "packages": [
+      {
+        "role": "watchdog",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      },
+      {
+        "role": "fetcher",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      }
+    ]
+  },
+  "windows_desktop": {
+    "job": 111645957767,
+    "checkout": "378d5010419cdea84a6b35f03031b3708fb0fa95",
+    "passed": 3254,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 252,
+    "xfailed": 4,
+    "seconds": 2530.64,
+    "failures": [],
+    "packages": [
+      {
+        "role": "watchdog",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      },
+      {
+        "role": "fetcher",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "id": 11331525608,
+      "name": "tb4-desktop-Windows-378d5010419cdea84a6b35f03031b3708fb0fa95",
+      "size_in_bytes": 120952613,
+      "digest": "sha256:b8ed385b4fd031c281e2e8edec0178ba07fa55fa1fcb52a69f806b5f0ee7addd"
+    },
+    {
+      "id": 11330243617,
+      "name": "tb4-desktop-Linux-378d5010419cdea84a6b35f03031b3708fb0fa95",
+      "size_in_bytes": 314545427,
+      "digest": "sha256:e73e3e00ecef826d5668d968144a5eccbc6633dddfa68ea02556ddd58cabba8c"
+    }
+  ],
+  "older34": {
+    "source": "b8f08653e7285a8943b9ebcda7552e3960d9b67c",
+    "request_revision": 34,
+    "result": "FAIL",
+    "ci": {
+      "job": 111656909006,
+      "checkout": "5613f732fdd38d22c6fe13226e67189fc5c270ff",
+      "passed": 3473,
+      "failed": 2,
+      "errors": 0,
+      "skipped": 27,
+      "xfailed": 4,
+      "seconds": 1427.72,
+      "failures": [
+        "FAILED tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main[missing-artifact] - tb4.configuration_contract.ConfigurationError: CONFIGURATION_CONTEXT_UNAVAILABLE",
+        "FAILED tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main[conflicting-source] - tb4.configuration_contract.ConfigurationError: FOLDER_MAPPING_CONFLICT"
+      ],
+      "packages": []
+    },
+    "failure": "Only exact same two DEF104 test-expectation failures; no additionalerrors/failures. Linux package outcomes notinthisCIjob.",
+    "desktop": [
+      {
+        "id": 111656909954,
+        "name": "desktop (windows-latest)",
+        "status": "in_progress",
+        "conclusion": null
+      },
+      {
+        "id": 111656910192,
+        "name": "desktop (ubuntu-22.04)",
+        "status": "in_progress",
+        "conclusion": null
+      }
+    ]
+  },
+  "current35": {
+    "source": "cb9501f0e7d54601a06318e2de220d9d319070b4",
+    "runs": [
+      {
+        "run": 37279882752,
+        "jobs": [
+          {
+            "id": 111665234588,
+            "name": "native-folder",
+            "status": "in_progress",
+            "conclusion": null
+          }
+        ]
+      },
+      {
+        "run": 37279877475,
+        "jobs": [
+          {
+            "id": 111665217623,
+            "name": "native-folder",
+            "status": "in_progress",
+            "conclusion": null
+          }
+        ]
+      },
+      {
+        "run": 37279882701,
+        "jobs": [
+          {
+            "id": 111665234410,
+            "name": "test",
+            "status": "in_progress",
+            "conclusion": null
+          }
+        ]
+      },
+      {
+        "run": 37279882673,
+        "jobs": [
+          {
+            "id": 111665234302,
+            "name": "desktop (windows-latest)",
+            "status": "in_progress",
+            "conclusion": null
+          },
+          {
+            "id": 111665234478,
+            "name": "desktop (ubuntu-22.04)",
+            "status": "in_progress",
+            "conclusion": null
+          }
+        ]
+      }
+    ],
+    "execution": "None terminalinspected"
+  },
+  "privacy": "Closed source/counts/test failurecodes/packageflags/artifactmetadata only, no download/install/privateframes.",
+  "acceptance": "ea4c nativefirst-run source-specific fullplatform/bothrole packages qualified. Test-only b8/cb source products unchanged but current13/1040 and remainingstaged/runtime/GUI/commonC1-C4 stillrequired.",
+  "next": "Record native normal-authority/current-admission unit independently from corrected35 C1 test-only requalification: unchanged product has actual171/35Windows,1027Linux twice and bothfullplatform/package qualification, actualrole42/12 proof463, mappedCandidate11positive/guardproof473. No election/physical/route/C1 changes; current35 andfinalcommon remainheld."
+}
