@@ -7566,3 +7566,53 @@ defects:
       all35newnative; no source/PYTHONPATH/defaultconfig changes. Passing_sourceea4c
       scoped only; C1-C4 held.
     legacy_record: null
+  DEF-104:
+    title: Mapped Candidate negative test expects a status after C1 has already refused
+      physical loss
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: b8f08653e7285a8943b9ebcda7552e3960d9b67c
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-mapped-linux34-failed.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: b8f08653e7285a8943b9ebcda7552e3960d9b67c
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-mapped-linux34-failed.json
+    reproduction:
+      procedure: Sameimmutable34 push/PR each525PASS/2FAIL/noERROR/SKIP. Allnew13
+        execute;11PASS. Two physical-loss cases raise exact ConfigurationError from
+        existing C1/_proof before Setup.review. Newtest wrongly expects returned status.
+      failing_source: b8f08653e7285a8943b9ebcda7552e3960d9b67c
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-mapped-linux34-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Expect exact existing C1 ConfigurationError per fault before first-run
+        checker, retain fullMain/archive/stagedprofile/sharedwork and no ephemeral
+        readiness/activation. Do not weaken storage guard or add recovery/replay.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-mapped-linux34-failed.json
+    repairs: []
+    issue: null
+    regression_test: Both actual physical-loss cases reach exact early C1 refusal
+      and preserve all original/staged/work frames; all13mappedSSH and required1040
+      twice/currentplatform.
+    resolution_evidence: []
+    notes: Proven newtest-only expectation defect. Both initial reviews succeed, then
+      physical loss refuses before candidate validation. Productguard correct; no
+      runtime/C1-C4 acceptance from11passes. Frozen33 CI3462/27/4 and LinuxDesktop3485/21/4/bothrolefourflags
+      PASS, Windows stillbuilding.
+    legacy_record: null

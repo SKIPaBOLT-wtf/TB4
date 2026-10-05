@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0472",
+  "source": "b8f08653e7285a8943b9ebcda7552e3960d9b67c",
+  "request_revision": 34,
+  "result": "FAIL",
+  "trigger": "55ad0107e5b59a876bf5208b0c42612fc5e9d993",
+  "checkout": "5613f732fdd38d22c6fe13226e67189fc5c270ff",
+  "source_equivalence": "Actualterminal immutablepush55ad/PR5613 matches470 API/Git pins. ActualGit5613 same main/trigger and empty non-doc diff tob8f086 rechecked472.",
+  "required": [
+    {
+      "job": 111656899251,
+      "checkout": "55ad0107e5b59a876bf5208b0c42612fc5e9d993",
+      "passed": 525,
+      "failed": 2,
+      "errors": 0,
+      "skipped": 0,
+      "xfailed": 0,
+      "seconds": 174.92,
+      "failures": [
+        "FAILED tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main[missing-artifact] - tb4.configuration_contract.ConfigurationError: CONFIGURATION_CONTEXT_UNAVAILABLE",
+        "FAILED tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main[conflicting-source] - tb4.configuration_contract.ConfigurationError: FOLDER_MAPPING_CONFLICT"
+      ],
+      "packages": []
+    },
+    {
+      "job": 111656909864,
+      "checkout": "5613f732fdd38d22c6fe13226e67189fc5c270ff",
+      "passed": 525,
+      "failed": 2,
+      "errors": 0,
+      "skipped": 0,
+      "xfailed": 0,
+      "seconds": 164.07,
+      "failures": [
+        "FAILED tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main[missing-artifact] - tb4.configuration_contract.ConfigurationError: CONFIGURATION_CONTEXT_UNAVAILABLE",
+        "FAILED tests/drive/test_folder_candidate_authenticated_ssh.py::test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main[conflicting-source] - tb4.configuration_contract.ConfigurationError: FOLDER_MAPPING_CONFLICT"
+      ],
+      "packages": []
+    }
+  ],
+  "new_cases": {
+    "passed": 11,
+    "failed": 2,
+    "errors": 0,
+    "old_cases_passed": 514
+  },
+  "failure": {
+    "defect": "DEF-104",
+    "test": "test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main",
+    "cases": [
+      {
+        "parameter": "missing-artifact",
+        "closed_error": "CONFIGURATION_CONTEXT_UNAVAILABLE"
+      },
+      {
+        "parameter": "conflicting-source",
+        "closed_error": "FOLDER_MAPPING_CONFLICT"
+      }
+    ],
+    "trace": "Candidate.review->_proof->Maintenance.require_resolved->_proposal->_current. ExactC1 actualstorage guard refuses before Setup.review/remotechecker. Newtest incorrectly expects a returned settings status, after successful initialreview. Productionguards unchanged.",
+    "other_failures": []
+  },
+  "remaining_groups": "Not executed after first-group failure",
+  "progress": {
+    "job": 111656909844,
+    "checkout": "5613f732fdd38d22c6fe13226e67189fc5c270ff",
+    "passed": 235,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "xfailed": 0,
+    "seconds": 6.28,
+    "failures": [],
+    "packages": []
+  },
+  "frozen33": {
+    "source": "ea4c2f72e471c7ab935fc2892e8551185d513ece",
+    "checkout": "378d5010419cdea84a6b35f03031b3708fb0fa95",
+    "source_equivalence": "Matches API/Git verified461/464 pins.",
+    "ci": {
+      "job": 111645957204,
+      "checkout": "378d5010419cdea84a6b35f03031b3708fb0fa95",
+      "passed": 3462,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 27,
+      "xfailed": 4,
+      "seconds": 2590.62,
+      "failures": [],
+      "packages": []
+    },
+    "linux_desktop": {
+      "job": 111645958022,
+      "checkout": "378d5010419cdea84a6b35f03031b3708fb0fa95",
+      "passed": 3485,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 21,
+      "xfailed": 4,
+      "seconds": 1924.43,
+      "failures": [],
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "id": 11330243617,
+        "name": "tb4-desktop-Linux-378d5010419cdea84a6b35f03031b3708fb0fa95",
+        "size_in_bytes": 314545427,
+        "digest": "sha256:e73e3e00ecef826d5668d968144a5eccbc6633dddfa68ea02556ddd58cabba8c"
+      }
+    ],
+    "windows": {
+      "job": 111645957767,
+      "status": "in_progress",
+      "stage": "Build WATCHDOG",
+      "terminal_logs": "Not inspected"
+    }
+  },
+  "current34_platform": [
+    {
+      "run": 37277251134,
+      "jobs": [
+        {
+          "id": 111656909006,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 37277251292,
+      "jobs": [
+        {
+          "id": 111656909954,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111656910192,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "privacy": "Closed counts/trace/case parameters/source IDs and artifactmetadata; no rawframes/credentials/download/install.",
+  "next": "Minimal test-only expect exactC1 ConfigurationError codes before remotechecker for two physicalloss cases; assert originalMain/archive/stagedprofile/sharedwork retained and no ephemeral readiness/activation. Keep11passing traces/all13 IDs/restAST/production unchanged. Separate source/static then requiredLinux requalification."
+}

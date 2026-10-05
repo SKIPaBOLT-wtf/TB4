@@ -5,20 +5,21 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_NATIVE_CANDIDATE_PLATFORM_INSPECTION
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: ea4c2f72e471c7ab935fc2892e8551185d513ece
+source_commit: b8f08653e7285a8943b9ebcda7552e3960d9b67c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0472
+last_verified_event: RP-027-A001-0473
 last_completed: RP-026
-next_action: Publish actualqualified/failed/pending outcomes; debug newmappedcase
-  failure ifobserved, otherwise continue remaining staged endpoint/runtime/GUI integration
-  from verifiedscope.
-verification: Request34 launchedonce; inspecting frozen33platform and same34 terminalnewcase
-  results, no duplicateactions or C1-C4 acceptance.
+next_action: Minimal test-only expect exactC1 ConfigurationError codes before remotechecker
+  for two physicalloss cases; assert originalMain/archive/stagedprofile/sharedwork
+  retained and no ephemeral readiness/activation. Keep11passing traces/all13 IDs/restAST/production
+  unchanged. Separate source/static then requiredLinux requalification.
+verification: Actualnewmapped11PASS/2DEF104 testexpectation failures; original514
+  PASS, remaining1040 held. Frozen33 CI/Linuxpackages qualified, Windows pending,
+  C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0472
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -72,6 +73,7 @@ known_open_defects:
 - DEF-101
 - DEF-102
 - DEF-103
+- DEF-104
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
