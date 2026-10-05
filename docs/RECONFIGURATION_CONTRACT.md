@@ -2,6 +2,8 @@
 
 ## RP-027 fresh native first-run
 
+[A-034](implementation-plan/revisions/R2/amendments/RP-027/A-034-staged-native-folder-endpoint.md) adds owner/current C1/expected-selection guarded pointer-only changes to the separate INCOMPLETE Candidate. Immutable metadata and full parent/history remain; original Main/archive/shared work are untouched. Exact pending recovery promotes the same child without keys, transport or resave. Selection grants no READY or activation; fresh new-endpoint proof and final platform/controller/common gates remain required.
+
 [A-033](implementation-plan/revisions/R2/amendments/RP-027/A-033-native-folder-normal-admission.md) adds an opt-in exact NativeFolderCommissioning for the same fresh physical proof and existing protected normal READ/CAS. Trusted normal_authority defaults False and saved data never selects it. Exact current admission retains profile/role/timing/source/configuration guards; no readiness/role/activation grant from construction. Server-local mapped AFTER C4 remains separately enforced.
 
 Test-only [A-032](implementation-plan/revisions/R2/amendments/RP-027/A-032-native-candidate-mapped-ssh.md) composes actual native Candidate/C1 with the existing mapped fixed SSH helper before/after physical relocation. Original Main/archive/work and default activation must remain; current/pending/physical losses refuse. Required execution and remaining runtime/GUI/C1-C4 gates are separate.

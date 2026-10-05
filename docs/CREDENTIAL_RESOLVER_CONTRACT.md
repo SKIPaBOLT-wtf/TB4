@@ -2,6 +2,8 @@
 
 ## RP-027 fresh native first-run credential cache
 
+[A-034](implementation-plan/revisions/R2/amendments/RP-027/A-034-staged-native-folder-endpoint.md) changes only a separate resolved Candidate's protected pointer after explicit owner/expected-selection checks. Existing immutable selected-handle/image/revocation facts remain; selection/recovery never open a key or send a request. Fresh native per-use capability and physical proof still decide availability. Original Main/credential history and default denial remain.
+
 [A-033](implementation-plan/revisions/R2/amendments/RP-027/A-033-native-folder-normal-admission.md) optionally exposes normal authority through an exact native commissioning port. Every request still rereads explicit FOLDER_AUTHORITY selection and restores its current native image/key/trust/expiry; proof uses separate FOLDER_PROBE. A trusted boolean selects code, grants no credentials and defaults to the previous read-only facade. Lost CAS remains UNKNOWN once, with read inspection and no resend.
 
 Test-only [A-032](implementation-plan/revisions/R2/amendments/RP-027/A-032-native-candidate-mapped-ssh.md) restores the staged Candidate's actual native image for mapped SSH proof. Selection/enrollment occurs only during owned fixture setup; current revocation/key/trust/expiry loss after readiness must refuse without transport. No new product purpose or deployment permission.
