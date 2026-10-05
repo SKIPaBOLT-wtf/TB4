@@ -7667,6 +7667,7 @@ defects:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-qualified.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/staged-endpoint-collection-and-native36-qualified.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-platform-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-current-platform-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7711,6 +7712,9 @@ defects:
       completeplatform/CI stillrunning. Same36 source18969 actualfullWindows3279PASS/271SKIP/4XFAIL1431.27s
       andbothrolefourpackage/GUI/profileisolation flagsPASS, actualverifiedfa9checkout;
       artifactmetadataonly. CI/Linuxstillrunning/currentstagedsource/commonnotqualified.
+      Same36 actual CI3506/27SKIP/4XFAIL2746.67s andLinux3529/21SKIP/4XFAIL2867.85s,
+      bothroleLinuxfourpackage flagsPASS/actualfa9source; completefrozenA033platform
+      qualified, newerstaged/controller/commonheld.
     legacy_record: null
   DEF-106:
     title: Unexecuted staged endpoint tests expect raw exceptions across the native
@@ -7730,9 +7734,10 @@ defects:
         SettingsError. Existing native guards/regressions establish public and internal
         distinction. No staged25 test has run.'
       failing_source: 6f419f3092ebb22f9007152a42444ac4e0cada99
-      passing_source: null
+      passing_source: b6288d53c5eb29d51708b1f6099114529f79a701
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/staged-endpoint-collection-and-native36-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-retained-windows-and-staged37-failure.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7766,11 +7771,14 @@ defects:
       reach intendedguard, exactprofile/archive/work retained; all25 staged/current1096
       andplatform.
     resolution_evidence: []
-    notes: Static source-review finding only; no fabricatedfailed test/run or passing_source.
+    notes: 'Static source-review finding only; no fabricatedfailed test/run or passing_source.
       MinimaltestcorrectionbeforefirststagedCI, production unchanged. Minimaltest-onlysource
       b6288d53c5eb29d51708b1f6099114529f79a701 matchesclosednativeErrors andobservesexactinternalconflictguard;
       allothercases/fixtureAST and25decorators/retentionassertions unchanged, production/protocol
-      unchanged/tests0. No passing_source untilactual.
+      unchanged/tests0. No passing_source untilactual. Actualsame37 firstrequiredgroup583:
+      both582PASS/1differentrevokedexpectationFAIL; correctednativecuts/pending/ordinaryinternalconflict
+      cases among24stagedPASS. Scopedpassing_source b628 only for this sanitizer repair;
+      DEF108 newrevokedexpectation andfull1096/common remainheld.'
     legacy_record: null
   DEF-107:
     title: Candidate controller may retain obsolete UI readiness if its checker factory
@@ -7829,4 +7837,59 @@ defects:
     notes: Static source-order finding, suspectedorigin only; no fabricatedruntime
       reproduction/passing_source. Currentminimalprefactoryreset source 632fd1a0459b6ce64d6ccff4c90957cbabd26645
       preserved; newnative/SSH execution pending.
+    legacy_record: null
+  DEF-108:
+    title: Staged revoked-access test expects a review report after native construction
+      already refuses capability
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: b6288d53c5eb29d51708b1f6099114529f79a701
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-retained-windows-and-staged37-failure.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: b6288d53c5eb29d51708b1f6099114529f79a701
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-retained-windows-and-staged37-failure.json
+    reproduction:
+      procedure: 'Same37 required push and PR first group: 582PASS/1FAIL each, both
+        test_new_pointer_metadata_does_not_hide_current_first_run_loss[revoked] fail
+        at checker(v) constructor before Candidate.review. Actual current native connection
+        refuses revoked selected binding and locked native boundary sanitizes it as
+        SETTINGS_STORE_UNAVAILABLE. Other24 staged cases pass; laterrequiredgroups
+        notexecuted.'
+      failing_source: b6288d53c5eb29d51708b1f6099114529f79a701
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-retained-windows-and-staged37-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Expect the earlier closed SettingsError for revoked constructor and independently
+        observe exact internal FOLDER_ENDPOINT_CREDENTIAL guard from NativeFolderEndpoint._profile_payload.
+        Preserve forbidden transport, profile/archive/work/default-denial assertions;
+        production guard unchanged.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-retained-windows-and-staged37-failure.json
+    repairs: []
+    issue: null
+    regression_test: Actual new selected native endpoint revoked binding refuses at
+      current connection constructor before any transport; internal guard and closed
+      public error independently verified; retained original Main/archive/work andstagedprofile,
+      allotherstaged24 andcurrentLinux1107/fullplatform.
+    resolution_evidence: []
+    notes: Proven new test expectation mismatch in A034; ordinary debug, no external
+      blocker. All actual failure evidence retained. Exact internal guard to be verified
+      before correction; no generic exception-only acceptance. Exactcurrentinternalguard
+      source-reviewed as FOLDER_ENDPOINT_CREDENTIAL; no guessed new guard introduced.
     legacy_record: null
