@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_COMBINED_LINUX29_WINDOWS_FINAL
+phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_CONNECTION_LINUX30
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: a68893fa004b896695d5d22a83fa4c3016b6d516
+source_commit: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0432
+last_verified_event: RP-027-A001-0433
 last_completed: RP-026
-next_action: Authorize same current2f43 request30 native990/Progress terminal inspection.
-  Publish actual evidence or debug failure; only then source fresh native prerequisite
-  composition, with current fullpackages held.
-verification: Olda688 native/helper/fullplatform packages fully qualified. Current2f43
-  Windows854/default3473 known; Linux990/fullplatform and prerequisites/runtime/GUI/C1-C4
-  pending.
+next_action: Publish exact current qualification or reproducible defect outcome before
+  dependent fresh prerequisite source.
+verification: Inspect SAME current2f43/request30 required native990 and Progress actual
+  logs; source-specific foundations only, C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0433
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
