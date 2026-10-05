@@ -3,11 +3,11 @@
   "item": "RP-027",
   "check": "RP-027.C2",
   "attempt": "A001",
-  "intent_event": "RP-027-A001-0437",
-  "source_commit": "10badf7bbe08f54cfaeef640c062d4ceae8e319c",
+  "intent_event": "RP-027-A001-0445",
+  "source_commit": "e8e8e2142a93a95607cacd76a551a55113312ad7",
   "branch": "feat/rp027-staged-reconfiguration",
   "pr": 36,
-  "request_revision": 31,
+  "request_revision": 32,
   "required_workflow": "Folder reconfiguration",
   "required_cases": 990,
   "group_counts": {
@@ -18,7 +18,7 @@
     "original_native": 107,
     "docs_effect_admission": 327
   },
-  "scope": "A030 fresh protected native Folder connection with DEF-100 one-line transitive context fixture registration. All production/native42/SSH12 case IDs and assertions unchanged. Required Linux990 groups477/51/6/22/107/327, actual12 SSH must execute; hosted owned fixtures only.",
-  "expected": "One immutable corrected10bad source-linked launch and exact source/trigger/PR parent pins. Actual required990 twice/current CI/Desktop bothroles/packages/Progress required; fresh Prerequisites/runtime/GUI/C1-C4 held.",
+  "scope": "A030 current fresh protected native Folder connection with DEF100 exact fixture import and DEF101 exact existing Leadership API test trace. Production/native42/all12SSH case IDs unchanged; stronger priorgrant and non-election document preservation. Required990 groups477/51/6/22/107/327, owned actualLinux SSH fixtures only.",
+  "expected": "One immutable e8e8 source-linked launch and actual API/Git source/trigger/PR parents checked. Actual12SSH/990 twice, current CI/Desktop bothrole packages/Progress required; first-run/runtime/GUI/C1-C4 held.",
   "acceptance": false
 }
