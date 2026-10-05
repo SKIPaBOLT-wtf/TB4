@@ -7,21 +7,20 @@ phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_LINUX27_PLATFORM
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0381
+last_verified_event: RP-027-A001-0382
 last_completed: RP-026
-next_action: Record single launch trigger/run/job/merge/source-equivalence receipt
-  and exact readback. Inspect remaining old request26 terminal packages under separate
-  INTENT. Actual native pointer attachment/trusted fresh connection and fixed authenticated
-  helper dispatch require their own source/test checkpoints; all final acceptance
+next_action: Publish immutable old request26 full CI/Desktop/package terminal inspection
+  INTENT, preserving87ca source only. Current request27 acc26 terminal evidence stays
+  separately pending. Record an independent opt-in fixed helper dispatch foundation
+  before its source changes; actual attachment/composite/C1-C4 held.
+verification: One currentacc26 request27 triggeraf5/five workflows/sixjobs/merge24d/sourceequivalence
+  verified, terminal qualificationpending. Old87ca request26 full/packages needinspection;
+  independent closedhelperdispatch canbescheduled; actualattachment/composite/C1-C4
   held.
-verification: A027acc26 Windows673/all26new/all98affected/default3333 proven380; one
-  request27 currentLinux850/fullplatform launch381 pending. Old87ca request26 results
-  neverqualifyacc26; attachment/composite/runtime/GUI/C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0381
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

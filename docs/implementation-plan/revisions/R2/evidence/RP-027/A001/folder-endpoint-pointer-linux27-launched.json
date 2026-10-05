@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0381",
+  "source": "acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce",
+  "trigger": "af5b1b384441dba56da7701c968eccba33ba7c68",
+  "result": "ONE_CURRENT_SOURCE_LAUNCH_RECORDED",
+  "request_revision": 27,
+  "required_cases": 850,
+  "groups": {
+    "physical_probe_and_first_run": 337,
+    "mapping_relocation": 51,
+    "retained": 6,
+    "current_role_folder": 22,
+    "original_native": 107,
+    "docs_effect_admission": 327
+  },
+  "pr": 36,
+  "pinned_pr_checkout": "24d0c991aabe030cfa307a3f2a3d56f1c9b804d6",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "af5b1b384441dba56da7701c968eccba33ba7c68"
+  ],
+  "source_equivalence": "EMPTY_NON_DOC_DIFF_ACC26_TO_TRIGGER_AND_PR_MERGE",
+  "readback": "EXACT_REQUEST_FILE_AND_PUBLIC_REF",
+  "runs": [
+    {
+      "id": 37254884514,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111589722960,
+          "name": "desktop (windows-latest)",
+          "status_at_inspection": "in_progress",
+          "conclusion_at_inspection": null
+        },
+        {
+          "id": 111589723073,
+          "name": "desktop (ubuntu-22.04)",
+          "status_at_inspection": "in_progress",
+          "conclusion_at_inspection": null
+        }
+      ]
+    },
+    {
+      "id": 37254884585,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111589723211,
+          "name": "native-folder",
+          "status_at_inspection": "in_progress",
+          "conclusion_at_inspection": null
+        }
+      ]
+    },
+    {
+      "id": 37254884525,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111589722941,
+          "name": "test",
+          "status_at_inspection": "in_progress",
+          "conclusion_at_inspection": null
+        }
+      ]
+    },
+    {
+      "id": 37254884507,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111589722873,
+          "name": "ledger",
+          "status_at_inspection": "completed",
+          "conclusion_at_inspection": "success"
+        }
+      ]
+    },
+    {
+      "id": 37254880981,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 111589711833,
+          "name": "native-folder",
+          "status_at_inspection": "in_progress",
+          "conclusion_at_inspection": null
+        }
+      ]
+    }
+  ],
+  "terminal_actual_checkout": "PENDING_TERMINAL_LOG_VERIFICATION",
+  "acceptance": "HELD",
+  "notes": [
+    "Initial run list empty, inspected same trigger later without update/rerun; expected five workflows/six jobs found.",
+    "Actual merge parents match mained974/triggeraf5 and source-equivalence is empty.",
+    "Current Progress terminal metadataSUCCESS only, remainingLinux/CI/Desktop running; no850/full/package qualification claimed.",
+    "Local Git DNS failed during first source-equivalence read; launch was not repeated and failed candidate input retained. Fresh DNS READY then SAME immutable PR fetch and exact push/PR non-document Git diffs verified; preparation retried with unique owned filename."
+  ],
+  "next": "Publish immutable old request26 full CI/Desktop/package terminal inspection INTENT, preserving87ca source only. Current request27 acc26 terminal evidence stays separately pending. Record an independent opt-in fixed helper dispatch foundation before its source changes; actual attachment/composite/C1-C4 held."
+}
