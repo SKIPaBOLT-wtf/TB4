@@ -3,20 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_CORRECTED_MAPPED_CANDIDATE_COLLECTION
+phase: STAGED_RECONFIGURATION_C2_CORRECTED_NATIVE_CANDIDATE_LINUX35
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: cb9501f0e7d54601a06318e2de220d9d319070b4
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0477
+last_verified_event: RP-027-A001-0478
 last_completed: RP-026
-next_action: Launch one correctedcb950 request35 requiredLinux1040, all13actualmapped
-  cases and affectedregressions. Frozen33Windows/34 oldfull terminal results separate.
-verification: Correctedcb950 default3523 exactsameIDs confirmed, tests0. Actual1040/13
-  requalification andremainingcommonC1-C4 held.
+next_action: Publish exactlaunch checkpoint; inspect samefrozen33Windows and older34
+  terminal failures, then corrected35 actual1040/13/Progress. Independently scheduled
+  native runtime authority/admission unit only from explicitlyverified unchanged productdependencies.
+verification: Correctedcb950 same3523 IDs confirmed, one required1040 request35 next.
+  Priorfailed34 andfrozen33Windows preserved, commonC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0478
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
