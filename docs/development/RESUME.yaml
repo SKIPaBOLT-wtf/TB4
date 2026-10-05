@@ -7,18 +7,17 @@ phase: STAGED_RECONFIGURATION_C4_NATIVE_FOLDER_NORMAL_ADMISSION_WINDOWS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 8719fe0c5bfde6436f3c5f6f6b5595a928636494
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0484
+last_verified_event: RP-027-A001-0485
 last_completed: RP-026
-next_action: Publish actual Windows/defaultcollection outcome/evidence; preserve/debug
-  failures, then one current source Linux request36 and final integrations.
+next_action: Minimal test-only matching fixture enrollment then actual same226/currentdefault
+  recheck; currentLinux31/1071 and fullplatform pending.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0484
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

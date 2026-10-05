@@ -7632,3 +7632,51 @@ defects:
       null untilcorrectedexecution. Olderb8f08634 actualfullCI3473PASS/2sameDEF104FAIL/27SKIP/4XFAIL1427.72s,
       noadditionalerrors/failures. Correctedcb95035 stillrunning; passing_source null.
     legacy_record: null
+  DEF-105:
+    title: Native no-grant admission test supplies an unrelated actor enrollment
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 8719fe0c5bfde6436f3c5f6f6b5595a928636494
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-failed.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 8719fe0c5bfde6436f3c5f6f6b5595a928636494
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-failed.json
+    reproduction:
+      procedure: Actual Windows226 selection:225PASS/1FAIL/noERROR/SKIP. New typed
+        admission constructor test uses fixture installation_id with fixed other ACTORS
+        enrollment and fails AuthorityError ENROLLMENT before checkpoint/admission
+        no-grant assertion.
+      failing_source: 8719fe0c5bfde6436f3c5f6f6b5595a928636494
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Use exact current synthetic fixture actor in the closed WATCHDOG enrollment
+        list; retain no-grant refusal/native profile/checkpoint/default denial assertion.
+        Production/election unchanged.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-failed.json
+    repairs: []
+    issue: null
+    regression_test: Actual typed current native context constructs matching actor/checkpoint
+      and refuses missing leadership grant ADMISSION_LEADERSHIP_UNKNOWN, allsame226
+      and3554 IDs plus currentLinux31/1071 and platform.
+    resolution_evidence: []
+    notes: Proven new fixture/test enrollment mismatch; ordinary debug, no external
+      blocker or production guard change.
+    legacy_record: null
