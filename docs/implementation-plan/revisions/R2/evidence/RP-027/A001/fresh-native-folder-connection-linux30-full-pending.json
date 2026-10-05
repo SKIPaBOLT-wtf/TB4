@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0439",
+  "source": "2f43d0ed3e4510c95dc916f87545c53ced3d18aa",
+  "request_revision": 30,
+  "result": "RECORDED",
+  "pr_checkout": "f1a9aada09ab623ccf83fdc14bc314242fd9182f",
+  "observed_at": "2026-10-05T05:33:30.806Z",
+  "runs": [
+    {
+      "id": 37266280455,
+      "jobs": [
+        {
+          "id": 111623699309,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37266280518,
+      "jobs": [
+        {
+          "id": 111623699677,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111623699912,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "actual_logs": "None inspected; all jobs still running. No terminal counts/package outcome claimed.",
+  "acceptance": "No fullplatform acceptance; current corrected10bad/request31 separate.",
+  "next": "SAME current10bad/request31 required990/Progress inspection; preserve old2f43 full job identities for later terminal logs, no relaunch."
+}
