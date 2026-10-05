@@ -7976,7 +7976,12 @@ defects:
       source_ref: e095a52215bf416b1537a1b4ccd582602d57b0b6
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
-    proven_origin: null
+    proven_origin:
+      work_item: RP-027
+      source_ref: e095a52215bf416b1537a1b4ccd582602d57b0b6
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/mapping-after-reply-mode-diagnostic.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
     reproduction:
       procedure: Same39 push/PR tests/drive/test_folder_mapping_after_probe_native.py::test_actual_fixed_ssh_after_probe_returns_fresh_current_native_mapping_witness
         refuses MAPPING_AFTER_UNAVAILABLE; actual direct native positive and remaining9
@@ -7985,6 +7990,7 @@ defects:
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/mapping-after-reply-mode-diagnostic.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -8001,6 +8007,14 @@ defects:
       result: UNTESTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
+    - id: H2
+      claim: FolderProbeRunner._response unconditionally invokes old commissioning
+        check_probe_header even for the new exact AFTER request. Pure unchanged method
+        diagnostic accepts old normal and refuses validAFTER9 at PROBE_MODE before
+        response can reach caller.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/mapping-after-reply-mode-diagnostic.json
     repairs: []
     issue: null
     regression_test: Actual selected native endpoint fixed SSH produces fresh correlated
@@ -8010,4 +8024,7 @@ defects:
     notes: Ordinary debug. Actual same39 push/PR first group632PASS/2FAIL; fullCI3580PASS/2sameFAIL/27SKIP/4XFAIL,
       LinuxDesktop3603PASS/2sameFAIL/21SKIP/4XFAIL. Subsequent required groups and
       Linux packages not executed. No historical failure removed or acceptance asserted.
+      Exact pure diagnostic now proves unconditional old-mode reply guard is the client
+      cause; no native/provider invocation or grant. Earlier H1 left UNTESTED as originally
+      broad.
     legacy_record: null
