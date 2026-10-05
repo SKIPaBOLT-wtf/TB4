@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_MAPPING_AFTER_REPLY_CAUSE_PROVEN
+phase: STAGED_RECONFIGURATION_C3_MAPPING_AFTER_REPLY_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c000c0ded9a480172dd9e8269de9617df4224d09
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0523
+last_verified_event: RP-027-A001-0524
 last_completed: RP-026
-next_action: Minimal opt-in current-response validation branch and actual before-move
-  fixture repair. Retain old normal AST, all10 other native predicates, source40 executes
-  repaired40 +new13 andfullplatform.
+next_action: Publish repair source/static OUTCOME linked to DEF109/110; actualWindows
+  newresponse/affectedportable tests anddefaultcollection + current39 terminalWindows;
+  then one exact source40 required/fullplatform launch includingnew13.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0524
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
