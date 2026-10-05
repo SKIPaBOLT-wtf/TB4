@@ -1158,6 +1158,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-032-native-candidate-mapped-ssh.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-033-native-folder-normal-admission.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-034-staged-native-folder-endpoint.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-027/A-035-native-folder-retained-and-controller.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:

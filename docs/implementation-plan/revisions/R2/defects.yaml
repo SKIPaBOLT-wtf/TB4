@@ -7772,3 +7772,61 @@ defects:
       allothercases/fixtureAST and25decorators/retentionassertions unchanged, production/protocol
       unchanged/tests0. No passing_source untilactual.
     legacy_record: null
+  DEF-107:
+    title: Candidate controller may retain obsolete UI readiness if its checker factory
+      fails first
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: b6288d53c5eb29d51708b1f6099114529f79a701
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-retained-controller-source.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Source review only: refresh/activate invoke checker_factory before
+        Candidate.review clears the ephemeral reviewed revision. Native factory failure
+        can occur before that call. No historicalruntime failed test/run is asserted;
+        realSSH latependingmetadata regression prepared foractualqualification.'
+      failing_source: b6288d53c5eb29d51708b1f6099114529f79a701
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-retained-controller-source.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Clearing the candidate's ephemeral reviewed revision before both factory
+        invocations removes stale GUI readiness even when native metadata loss refuses
+        construction. Protected READY/profile/work/defaultdenial andothercontroller
+        AST remain unchanged.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-retained-controller-source.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0502
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: Actualpreviouslygreen native Candidate/controller after lateendpointpending;
+      refresh/activate factoryclosedfailure clears ephemeralreadiness, originalMain/archive/shared/profile
+      retained; generic/nativeCandidate andfullplatform.
+    resolution_evidence: []
+    notes: Static source-order finding, suspectedorigin only; no fabricatedruntime
+      reproduction/passing_source. Currentminimalprefactoryreset source 632fd1a0459b6ce64d6ccff4c90957cbabd26645
+      preserved; newnative/SSH execution pending.
+    legacy_record: null
