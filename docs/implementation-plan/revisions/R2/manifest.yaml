@@ -1150,6 +1150,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-024-closed-folder-authority-credential-purpose.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-025-credential-bound-folder-authority-transport.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-026-immutable-native-folder-endpoint.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-027/A-027-optional-protected-endpoint-pointer.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:
