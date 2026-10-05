@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0409",
+  "source": "5f80eec64e89fba848f5da1a78a1af4e2d37fb5f",
+  "trigger": "8092760f15fe0714d79436b19273c0c404dceacd",
+  "pr_checkout": "d0d5c05bbada4235e66a20d9dbb6a4583d969406",
+  "request_revision": 28,
+  "result": "FAIL",
+  "required_cases_expected": 905,
+  "required_groups_expected": [
+    392,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "runs": [
+    {
+      "id": 37259779791,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111604383754,
+          "name": "native-folder",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ]
+    },
+    {
+      "id": 37259779777,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111604383811,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37259779734,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111604383803,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37259779803,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111604383757,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111604383988,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37259776759,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 111604373120,
+          "name": "native-folder",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ]
+    }
+  ],
+  "required_actual": [
+    {
+      "run": 37259779791,
+      "job": 111604383754,
+      "checkout": "d0d5c05bbada4235e66a20d9dbb6a4583d969406",
+      "group": 1,
+      "passed": 391,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 54.62,
+      "exit_code": 1
+    },
+    {
+      "run": 37259776759,
+      "job": 111604373120,
+      "checkout": "8092760f15fe0714d79436b19273c0c404dceacd",
+      "group": 1,
+      "passed": 391,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 61.84,
+      "exit_code": 1
+    }
+  ],
+  "failure": {
+    "node": "tests/drive/test_folder_combined_authenticated_ssh.py::test_real_forced_helper_refuses_unknown_command_without_mutating_storage[]",
+    "closed_code": "HELPER_COMMAND",
+    "stage": "FixedProcess.__post_init__ during dataclasses.replace before pytest.raises and before transport.call/SSH",
+    "source_line": 149,
+    "client_invariant": "Existing FixedProcess requires every argv element nonempty. Production rejection correct; test expectation starts too late.",
+    "origin": "New A028 native test at source8c75 retained unchanged through5f80",
+    "other_new_native_cases": "16 other declared new native cases in the same executed group did not fail; not full905 evidence"
+  },
+  "progress": {
+    "job": 111604383803,
+    "checkout": "d0d5c05bbada4235e66a20d9dbb6a4583d969406",
+    "passed": 235,
+    "seconds": 12,
+    "result": "PASS"
+  },
+  "remaining": {
+    "required_groups": "Not executed after firstgroup fail",
+    "ci": "Running at inspection",
+    "desktop_windows": "Running at inspection",
+    "desktop_linux": "Running at inspection"
+  },
+  "privacy": "Only closed codes/counts/public identities published. Raw synthetic fixture/native frames not copied; terminal logs retained privately in tool state.",
+  "acceptance": {
+    "source_helper": "Unqualified",
+    "current_d168": "Separate Windows704PASS/31new native result pending publication; no source conflation",
+    "C1_C4": "HELD"
+  },
+  "next": "Record native Windows407 outcome; minimal test-only repair captures empty fixed argv rejection before transport, asserts exact boundary/call counts for all4 preserved cases; requalify combined current source/default/Linux/full/platform."
+}

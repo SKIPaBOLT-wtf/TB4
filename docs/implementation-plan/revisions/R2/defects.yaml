@@ -7225,3 +7225,54 @@ defects:
       unchanged proof400; actualcurrentLinux/full/packages/C1-C4 pending, OPEN. No
       resolution evidence claimed.
     legacy_record: null
+  DEF-099:
+    title: Combined native SSH negative test expects empty command rejection after
+      fixed argv construction
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 8c75d39a086164703abcb09828eef9b994eb2360
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-linux28-failed.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 8c75d39a086164703abcb09828eef9b994eb2360
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-linux28-failed.json
+    reproduction:
+      procedure: Same immutable5f80 request28 push/PR group1 actual391PASS/1FAIL/noERROR/SKIP;
+        sole empty-command case raises HELPER_COMMAND in FixedProcess.__post_init__
+        via dataclasses.replace outside pytest.raises before any transport.call/SSH.
+        Source requires nonempty argv; original A028 test unchanged from8c75.
+      failing_source: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-linux28-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: 'Move construction into exact boundary expectation and observe actual
+        FixedProcess.call: empty has HELPER_COMMAND/calls0, three nonempty unrecognized
+        commands reach real SSH once and refuse HELPER_UNAVAILABLE; retain allfour
+        cases and storage/profile/inventory preservation.'
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-linux28-failed.json
+    repairs: []
+    issue: null
+    regression_test: Retain all4 command cases; exact empty client rejection/zero
+      transport, realSSH rejection for three nonempty commands/one actual call, all17combined
+      native/38portable/native704/default3419/source-specific required936/fullplatform.
+    resolution_evidence: []
+    notes: Proven test-only placement error. Production HELPER_COMMAND nonempty guard
+      must remain unchanged. Remaining required groups not executed; fullCI/Desktop
+      running at inspection. No current A028/helper/native connection/C1-C4 acceptance.
+    legacy_record: null

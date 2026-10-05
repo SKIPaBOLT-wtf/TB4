@@ -7,20 +7,20 @@ phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_LINUX28_TERMINAL
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0409
+last_verified_event: RP-027-A001-0410
 last_completed: RP-026
-next_action: Publish exact old5f80 terminal outcome and current next task; separately
-  publish Windowsd168 related407 outcome then launch native current request29, fixing
-  actual defects before dependent connection composition.
-verification: Actual Windowsd168 native regression process17442 pending; read-only
-  SAME immutable5f80 request28 terminal evidence inspection pending. Source scopes
-  remain separate.
+next_action: Publish separate terminal d168 Windows/default407 outcome, then authorize
+  minimal1file native test boundary correction withall4cases/strictclosedcodes/actualcallcounts
+  retained. Requalify corrected current combined source/default/nativeLinux936/fullplatform;
+  no productionguard weakening or oldrequestrepeat.
+verification: Immutable5f80 request28 requiredLinux fails in one empty-command native
+  test before transport; DEF099 proven test-only boundary expectation. Currentd168
+  Windows704PASS/default3419 separately pending publication.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0407
-- RP-027-A001-0409
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -69,6 +69,7 @@ known_open_defects:
 - DEF-096
 - DEF-097
 - DEF-098
+- DEF-099
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
