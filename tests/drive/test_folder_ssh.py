@@ -29,7 +29,8 @@ def run_owned(argv):
 
 
 class Server:
-    def __init__(self, root, helper_config, sshd, ssh, *, probe=False):
+    def __init__(self, root, helper_config, sshd, ssh, *, probe=False, dispatch=False):
+        assert not (probe and dispatch), "Synthetic helper mode conflict"
         self.root,self.sshd,self.ssh=root,sshd,ssh
         self.child=None
         with socket.socket() as port:
@@ -44,7 +45,8 @@ class Server:
         host_key=(root/"host.pub").read_text().split()[:2]
         (root/"known").write_text(f"[127.0.0.1]:{self.port} "+" ".join(host_key)+"\n")
         helper=shlex.join([sys.executable,"-X","utf8","-m","tb4.drive.folder_helper","--config",str(helper_config)]
-                         + (["--commissioning-probe"] if probe else []))
+                         + (["--commissioning-probe"] if probe else [])
+                         + (["--credential-dispatch"] if dispatch else []))
         # StrictModes=no is confined to generated fixture keys under pytest's
         # temporary parent. It is not a supported deployment recommendation.
         configuration=f"""ListenAddress 127.0.0.1

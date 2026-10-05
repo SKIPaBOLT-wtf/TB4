@@ -35,21 +35,32 @@ def load_config(path, *, mapping_store=None):
     return FolderPathMapping(native_settings(Path(mapping_store))).select(expected)
 
 
+def dispatch_mode(command):
+    # Treat the server-provided original command as a closed token, never code.
+    require(type(command) is str and command in {"tb4-folder-probe-v1", "tb4-folder-v1"},
+            "HELPER_COMMAND")
+    return command == "tb4-folder-probe-v1"
+
+
 def main():
     # A dedicated SSH forced command supplies this one fixed path. No client path.
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True)
     parser.add_argument("--mapping-store")  # Explicit protected server-local commissioning pointer.
-    parser.add_argument("--commissioning-probe", action="store_true")
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument("--commissioning-probe", action="store_true")
+    modes.add_argument("--credential-dispatch", action="store_true")
     args = parser.parse_args()
     if sys.platform != "linux":
         return 2
     signal.signal(signal.SIGALRM, lambda *_: os._exit(2))
     signal.alarm(8)  # Includes config, bounded stdin, recovery, CAS and reply.
     try:
+        probe = (dispatch_mode(os.environ.get("SSH_ORIGINAL_COMMAND"))
+                 if args.credential_dispatch else args.commissioning_probe)
         config = load_config(args.config,mapping_store=args.mapping_store)
         raw = sys.stdin.buffer.read(MAX_WIRE + 1)
-        if args.commissioning_probe:
+        if probe:
             from .folder_probe import handle_probe
             reply = handle_probe(config, raw)
         else:

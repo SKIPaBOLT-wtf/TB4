@@ -1,5 +1,9 @@
 # Unreleased staged configuration changes
 
+## RP-027 fixed helper dispatch foundation
+
+[A028](implementation-plan/revisions/R2/amendments/RP-027/A-028-opt-in-fixed-folder-helper-dispatch.md) adds an opt-in exact two-token dispatcher to the existing server helper; command/payload confusion remains refused by the original protocols. ACCEPTED still requires readback, UNKNOWN never permits resend, and stale/forced takeover remains first-CAS without former-owner or all-peer ACK. Old helper/probe/activation paths and protected history remain. This helper-only foundation is independent of immutable current pointer qualification; endpoint attachment/composite/runtime/GUI/C1-C4/common acceptance remains held.
+
 RP-027 changes the configuration of one existing installation and one existing
 authority. It does not reset work, migrate between backends/domains, provision a
 router, deploy a build or authorize any live operation. Its active amendment is

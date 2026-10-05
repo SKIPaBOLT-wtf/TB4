@@ -1,5 +1,9 @@
 # Local credential-reference resolver contract (RP-006)
 
+## RP-027 opt-in fixed helper dispatch
+
+[A028](implementation-plan/revisions/R2/amendments/RP-027/A-028-opt-in-fixed-folder-helper-dispatch.md) permits one explicitly configured server forced helper to dispatch only the exact qualified probe or normal command. FOLDER_PROBE and FOLDER_AUTHORITY retain separate explicit grants and trusted purpose-specific native factories; the dispatcher enrolls, selects or broadens nothing. Missing/malformed command tokens fail before protected config/stdin/storage access and are never executed. Old helper modes and native per-use key/trust checks remain; native pointer attachment/fresh Setup composition/runtime/GUI/common acceptance stays held.
+
 `tb4.credential_contract` defines a local-only enrollment/capability/fixed-use
 interface. It contains no implementation that reads a real key, OS secret store,
 OAuth file or SSH profile. Tests use a synthetic in-memory adapter. Native secure
