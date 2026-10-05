@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0443",
+  "source": "e8e8e2142a93a95607cacd76a551a55113312ad7",
+  "local_source": "0bd7269d4ae354c3a7f1b00169779f10e76efad1",
+  "base": "e9cd46b24a4bd73121e474d31010614083184bb0",
+  "result": "RECORDED",
+  "paths": [
+    "tests/drive/test_folder_connection_authenticated_ssh.py"
+  ],
+  "change": "Only existing takeover function body; exact actual Leadership actor/enrollment keywords, observe/acquire/commit/grant, forcedrequest/claim trace and string transition labels. Native localUNKNOWN/saved profiles retained; stale grant refusal and all non-election document fields/records preservation asserted. Other11 SSH and all42 native/production/helper/workflow unchanged.",
+  "verification": {
+    "ast": "PASS remaining module AST/function arguments/decorators identical",
+    "api_signatures": "PASS exact actual production AST method signatures/string tid labels, no application import",
+    "diff": "PASS one function only",
+    "privacy": "PASS synthetic labels and typed production constants only",
+    "tests": 0
+  },
+  "qualification": "Actual corrected Linux12/required990/fullplatform and C1-C4 pending",
+  "next": "Launch current source required990 request32 once; inspect same olderfulljobs and actual current12/990 before first-run source."
+}

@@ -7404,7 +7404,18 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux31-failed.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0443
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: All12 actual newSSH execute with no errors/failure; actual first-CAS
       stale epoch2/forced epoch3, previous grant refusal and protected localUNKNOWN
@@ -7413,5 +7424,7 @@ defects:
     notes: Proven test-only incorrect constructor before election. Static downstream
       API defects are recorded, not claimed as executed failures. All42 native and11
       other newSSH PASS in both jobs. Production leadership unchanged; no peer ACK/UNKNOWN
-      barrier added. C1-C4 held.
+      barrier added. C1-C4 held. Minimal test-only source e8e8e2142a93a95607cacd76a551a55113312ad7
+      preserved/readback, actual production AST signatures verified; passing_source
+      null pending execution.
     legacy_record: null

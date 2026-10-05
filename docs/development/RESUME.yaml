@@ -5,19 +5,19 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_TAKEOVER_TEST_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 10badf7bbe08f54cfaeef640c062d4ceae8e319c
+source_commit: e8e8e2142a93a95607cacd76a551a55113312ad7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0443
+last_verified_event: RP-027-A001-0444
 last_completed: RP-026
-next_action: Publish source-only repair outcome then launch same current required
-  Linux990/fullplatform qualification once.
-verification: Minimal DEF101 actual Leadership API test repair, preserve all12cases/localUNKNOWN/first-CAS2-3;
-  production unchanged, actualqualification pending.
+next_action: Launch corrected current source required Linux990 request32 once, pin
+  actual parents/source; then same prior/full terminal inspections and actual12/990
+  qualification.
+verification: DEF101 one-function actual API test repair source-only/static PASS;
+  actual Linux12/required990/fullplatform pending, C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0443
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
