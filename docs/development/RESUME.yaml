@@ -7,18 +7,19 @@ phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_GUARD_DIAGNOSIS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: feb214963f5b7436469957102c42f3482d627b1f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0364
+last_verified_event: RP-027-A001-0365
 last_completed: RP-026
-next_action: Publish corrected same-source diagnostic intent; preserve the failed
-  harness, establish normal repository import context, persist transparent observer
-  codes before report formatting, execute the same two cases in new owned fixtures.
-verification: Diagnostic363 harness collection ERROR before native cases; actual internal
-  guard UNTESTED, original failed preflight retained. Correct owned harness import/capture
-  before any test expectation change.
+next_action: Execute corrected bounded same-source diagnostic with durable closed-code
+  capture, then publish its actual result and defect hypothesis before a minimal test-only
+  repair.
+verification: Harness363 failed before native cases and exact record364 preserved.
+  Corrected diagnostic365 retains original predicates/native contexts/expectations;
+  internal code proof required before repair.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0365
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
