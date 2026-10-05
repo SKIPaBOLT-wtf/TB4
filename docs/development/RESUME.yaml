@@ -7,18 +7,19 @@ phase: STAGED_RECONFIGURATION_C2_COMBINED_CURRENT_WINDOWS_DEFAULT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: a68893fa004b896695d5d22a83fa4c3016b6d516
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0414
+last_verified_event: RP-027-A001-0415
 last_completed: RP-026
-next_action: Publish exact focused/default outcome then once launch source-linkedrequest29
-  requiredLinux936/currentfullCI/bothDesktopplatforms/packages/Progress. If failure
-  correct actualcause underjournal; no test deletion.
-verification: a688 currentWindows139/default3419 pending with original704 unchanged
-  native proof413; actualLinux936/currentfull/platform/freshconnection/C1-C4held.
+next_action: Authorize/publish once source-linked request29 a688/nativeLinux936 plus
+  CI/Desktop/packages/Progress. Inspect actual trigger jobs/PRmerge/sourceequivalence
+  and publish launch checkpoint; independently inspect old5f80 terminalfullresults
+  before new dependentwork.
+verification: Currenta688 Windows139PASS/all31native+38portable/default3419 sameIDs;
+  original704 scoped product-equivalence. ActualLinux936/fullplatform/freshSetup/C1-C4
+  held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0414
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
