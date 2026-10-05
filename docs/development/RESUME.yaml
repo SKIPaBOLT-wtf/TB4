@@ -5,20 +5,18 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_NATIVE_CANDIDATE_C1_TEST_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: b8f08653e7285a8943b9ebcda7552e3960d9b67c
+source_commit: cb9501f0e7d54601a06318e2de220d9d319070b4
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0474
+last_verified_event: RP-027-A001-0475
 last_completed: RP-026
-next_action: Publish repairsource/static/defect record, collect exactsame3523/13 IDs
-  and launch one correctedsource requiredLinux1040/request35; inspect frozen33Windows/current34
-  oldfull terminal outcomes separately.
-verification: DEF104 provennewtest expectation only; exactearlyC1 guard held, minimal
-  two-case repair next, no passing_source/currentcommon acceptance.
+next_action: Defaultcollection exactsame3523/13IDs, then one correctedsource request35
+  requiredLinux1040. No passing_source untilactualcorrected two cases/full1040.
+verification: DEF104 singlefile source preserved, exactrestAST/product unchanged,
+  passing_source null. Same3523/currentLinux1040 andcommonC1-C4 stillheld.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0474
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

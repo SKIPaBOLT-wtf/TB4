@@ -7625,5 +7625,8 @@ defects:
     notes: Proven newtest-only expectation defect. Both initial reviews succeed, then
       physical loss refuses before candidate validation. Productguard correct; no
       runtime/C1-C4 acceptance from11passes. Frozen33 CI3462/27/4 and LinuxDesktop3485/21/4/bothrolefourflags
-      PASS, Windows stillbuilding.
+      PASS, Windows stillbuilding. Minimal test-only source cb9501f0e7d54601a06318e2de220d9d319070b4
+      preserved/readback, existingexactC1 errorcodes/noSSH/profile/Main/archive/work/ephemeral
+      readiness assertions. ActualrestAST/13decorators/product unchanged; passing_source
+      null untilcorrectedexecution.
     legacy_record: null
