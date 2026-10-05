@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0353",
+  "source_commit": "c381b7eb12dbd09a3d7b40bccc11c61e84ff5360",
+  "local_preserved_commit": "989fde4b6c0a5bdcb9a39a716f3a93714e2c4e18",
+  "base_commit": "17c1654ac9a651a98ee85d4cdcbaeca035be3612",
+  "paths": [
+    "src/tb4/drive/folder_endpoint.py",
+    "tests/drive/test_folder_endpoint.py",
+    "tests/security/test_folder_endpoint_native.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-026-immutable-native-folder-endpoint.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/CREDENTIAL_RESOLVER_CONTRACT.md",
+    "docs/RECONFIGURATION_CONTRACT.md"
+  ],
+  "amendment": "amendments/RP-027/A-026-immutable-native-folder-endpoint.md",
+  "source_readback": "EXACT_ALL_FILES",
+  "static": {
+    "ast_files": 3,
+    "diff": "PASS",
+    "public_privacy": "PASS",
+    "tests_executed": 0
+  },
+  "authoring_failure": {
+    "phase": "PRE_COMMIT_DIFF_CHECK",
+    "observed": "Two newly appended documentation blocks had an extra blank line at EOF. Scoped preservation stopped at diff --check before staging/commit. Removed only owned trailing newlines, verified no staged source and unchanged source HEAD, then saved the corrected unit once.",
+    "effect": "No prior failed commit or remote mutation."
+  },
+  "native_record": "One closed immutable version-1 frame at a distinct actual private store, installation/native/blueprint/authority/selected-handle/target/trust pins, no key bytes/path, no capability grant.",
+  "recovery": "Inspect opaque reference/status; explicit owner recovery promotes only same sealed pending revision-1/previous-null frame after fresh current profile and exact reference, refuses contradictory frames.",
+  "unchanged": [
+    "Setup payload/choices",
+    "credential image",
+    "candidate schema SHA",
+    "original source/approval history",
+    "existing fixed probe/authority transport and helper",
+    "runtime allowlists",
+    "default activation",
+    "first-CAS stale/forced transfer",
+    "operation UNKNOWN history"
+  ],
+  "pending": [
+    "Targeted Windows native/default collection",
+    "Actual Linux metadata/824 required cases if observed count matches planned expansion",
+    "Current-source full/package qualification",
+    "Endpoint attachment/composite first-run/runtime/GUI",
+    "Common C1-C4"
+  ],
+  "acceptance": false,
+  "next_action": "Publish/readback targeted new endpoint and existing scoped Windows/default collection test INTENT, run once in fresh owned roots, preserve actual failures before repair. Independently inspect immutable prior jobs 348/352; no source cross-qualification.",
+  "checkpoint_candidate_failure": {
+    "code": "RECORD_SCHEMA_INVALID",
+    "cause": "Relative amendment path fails the canonical docs/ manifest path schema.",
+    "effect": "No checkpoint publication or source/test repetition.",
+    "correction": "Use canonical docs/implementation-plan/revisions/R2/amendments/RP-027/A-026-immutable-native-folder-endpoint.md, preserving original failed candidate."
+  }
+}

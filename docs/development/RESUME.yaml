@@ -5,24 +5,22 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 136704c1f9fd2a7d6a010dbfdc2c4c74fc0df16f
+source_commit: c381b7eb12dbd09a3d7b40bccc11c61e84ff5360
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0353
+last_verified_event: RP-027-A001-0354
 last_completed: RP-026
-next_action: Save scoped endpoint source/A-026 and publish/readback source OUTCOME
-  before targeted native/default collection tests. Inspect existing immutable 348/352
-  jobs independently; no cancellation/retrigger or cause inference.
-verification: Native endpoint metadata source pending353 with explicit independent
-  scheduling. Current d7 Linux771 twice qualified, fresh Windows required native discovery
-  metadata PASS but full inspections348/352 pending. Old profiles/choices/candidate/image
-  meanings and C1-C4 holds retained.
+next_action: Publish/readback targeted new endpoint and existing scoped Windows/default
+  collection test INTENT, run once in fresh owned roots, preserve actual failures
+  before repair. Independently inspect immutable prior jobs 348/352; no source cross-qualification.
+verification: A026 endpoint metadata source c381b7 saved/read back; AST3/diff/privacy
+  PASS, tests0, actual native/default/Linux qualification pending. No grants or existing
+  profile/schema changes. Prior348/352 and C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0348
 - RP-027-A001-0352
-- RP-027-A001-0353
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
