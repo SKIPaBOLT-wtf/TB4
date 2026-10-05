@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_CONNECTION_LINUX30_PLATFORM
+phase: STAGED_RECONFIGURATION_C2_COMBINED_LINUX29_WINDOWS_FINAL
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
+source_commit: a68893fa004b896695d5d22a83fa4c3016b6d516
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0430
+last_verified_event: RP-027-A001-0431
 last_completed: RP-026
-next_action: Separate read-only INTENT to inspect SAME olda688 Windows final; preserve
-  source-distinct result. Then current2f43 required990/Progress before fresh protected
-  first-run prerequisite composition, with full current packages held.
-verification: Current2f43 request30 launched once, exact trigger/actualPR f1a9/source
-  pins. Required990/fullplatform pending. Olda688 Windows final distinct; prerequisites/runtime/GUI/C1-C4
-  held.
+next_action: Publish source-specific a688 final result. Then current2f43 native990/Progress
+  inspection under separate INTENT before fresh prerequisite implementation.
+verification: Current2f43 request30 native990/full pending. Inspect olda688 Windows
+  final to settle its source qualification separately.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0431
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
