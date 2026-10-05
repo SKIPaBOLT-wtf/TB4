@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "step": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "source": "feb214963f5b7436469957102c42f3482d627b1f",
+  "checkout": "012e954c0fa796163d5dc17292a626367ed6a53d",
+  "intent": "RP-027-A001-0363",
+  "result": "HARNESS_COLLECTION_FAILED",
+  "tests_ran": 0,
+  "collection_errors": 1,
+  "failed_predicates_observed": [],
+  "implementation_changed": false,
+  "native_guards_changed": false,
+  "guard_hypothesis": "UNTESTED",
+  "notes": [
+    "pytest collection could not import the repository-local tests namespace when pytest.main ran from the owned external script.",
+    "Harness closed-message serializer then refused the unexpected collection error; original local XML/log retained.",
+    "No endpoint native case or fixture operation executed. No production diagnosis is inferred; fresh owned fixture capture and normal repository import context are required."
+  ],
+  "next": "Publish corrected same-source diagnostic intent; preserve the failed harness, establish normal repository import context, persist transparent observer codes before report formatting, execute the same two cases in new owned fixtures.",
+  "closed_collection_error": "ModuleNotFoundError: No module named tests",
+  "checkpoint_preparation": "Initial candidate rejected locally because outcome FAILED is outside the ledger enum; corrected to FAIL. Original rejected input retained and never published."
+}

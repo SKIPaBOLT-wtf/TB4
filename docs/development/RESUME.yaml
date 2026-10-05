@@ -7,20 +7,18 @@ phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_GUARD_DIAGNOSIS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: feb214963f5b7436469957102c42f3482d627b1f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0363
+last_verified_event: RP-027-A001-0364
 last_completed: RP-026
-next_action: Run exactly two original cases with transparent code observer, record
-  actual internal/outward results and publish/readback. Only if supported, publish
-  minimal test-only repair INTENT retaining explicit guard-code plus native-error/unchanged-byte
-  assertions.
-verification: SecondendpointFAIL retained362/DEF096H1untested. Same-source two-case
-  actual guard/native-normalization diagnostic pending363; no expectation/native/source
-  change untilobserved. Allcurrentqualification/C1-C4held.
+next_action: Publish corrected same-source diagnostic intent; preserve the failed
+  harness, establish normal repository import context, persist transparent observer
+  codes before report formatting, execute the same two cases in new owned fixtures.
+verification: Diagnostic363 harness collection ERROR before native cases; actual internal
+  guard UNTESTED, original failed preflight retained. Correct owned harness import/capture
+  before any test expectation change.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0363
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
