@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0371",
+  "result": "ONE_QUALIFICATION_LAUNCH_RECORDED",
+  "source": "87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d",
+  "trigger": "63150974ae2ef8805a7e95ad27a93a579eec2035",
+  "request_revision": 26,
+  "required_cases": 824,
+  "group_counts": {
+    "physical_probe_and_first_run": 311,
+    "mapping_relocation": 51,
+    "retained": 6,
+    "current_role_folder": 22,
+    "original_native": 107,
+    "docs_effect_admission": 327
+  },
+  "branch": "feat/rp027-staged-reconfiguration",
+  "pr": 36,
+  "base": "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+  "pinned_pr_checkout": "8e3d78cc9c99b9b9f446ed43d6e79ccdfa227e01",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "63150974ae2ef8805a7e95ad27a93a579eec2035"
+  ],
+  "source_equivalence": "EMPTY_NON_DOC_DIFF_SOURCE_TO_TRIGGER_AND_PINNED_PR_MERGE",
+  "readback": "EXACT_REQUEST_FILE_AND_PUBLIC_REF",
+  "runs": [
+    {
+      "id": 37251072111,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111578631407,
+          "name": "test",
+          "status_at_inspection": "in_progress",
+          "conclusion_at_inspection": null
+        }
+      ]
+    },
+    {
+      "id": 37251072101,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111578631553,
+          "name": "desktop (windows-latest)",
+          "status_at_inspection": "in_progress",
+          "conclusion_at_inspection": null
+        },
+        {
+          "id": 111578631823,
+          "name": "desktop (ubuntu-22.04)",
+          "status_at_inspection": "in_progress",
+          "conclusion_at_inspection": null
+        }
+      ]
+    },
+    {
+      "id": 37251072095,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111578631292,
+          "name": "ledger",
+          "status_at_inspection": "completed",
+          "conclusion_at_inspection": "success"
+        }
+      ]
+    },
+    {
+      "id": 37251072099,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111578631279,
+          "name": "native-folder",
+          "status_at_inspection": "in_progress",
+          "conclusion_at_inspection": null
+        }
+      ]
+    },
+    {
+      "id": 37251069007,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 111578620553,
+          "name": "native-folder",
+          "status_at_inspection": "in_progress",
+          "conclusion_at_inspection": null
+        }
+      ]
+    }
+  ],
+  "terminal_actual_checkout": "PENDING_TERMINAL_LOG_VERIFICATION",
+  "acceptance": "HELD",
+  "notes": [
+    "Immediate first run list was empty; no repeated update or launch performed. The same trigger later exposed all five expected workflows/six jobs.",
+    "Pinned PR merge has exact current main and trigger parents; terminal actual checkout must still be verified against logs.",
+    "Progress job is terminal metadata SUCCESS; its actual count/log qualification remains separately required.",
+    "Required Linux and CI/Desktop jobs in progress at inspection. No actual final Linux824 or full/package result claimed."
+  ],
+  "next": "Publish terminal required-Linux/current-platform inspection INTENTs referencing these exact run/jobs. Inspect actual terminal checkout, closed counts/cases, failures/skips and package/Progress evidence before any qualification claim."
+}

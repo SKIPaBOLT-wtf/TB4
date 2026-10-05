@@ -7,19 +7,18 @@ phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_LINUX_PLATFORM_QUALIFICA
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0371
+last_verified_event: RP-027-A001-0372
 last_completed: RP-026
-next_action: Record the single launch's actual trigger/run/job/merge/source identities
-  and exact readback. Inspect terminal groups/platform/package/Progress under separate
-  INTENTs; retain any failed evidence and debug before source-dependent work.
-verification: Current source87ca Windows549/all53new/default3307 verified370. Single
-  request26 currentLinux824/fullplatform/packages launch371 pending; old source results
-  never qualify current metadata, commonC1-C4 held.
+next_action: Publish terminal required-Linux/current-platform inspection INTENTs referencing
+  these exact run/jobs. Inspect actual terminal checkout, closed counts/cases, failures/skips
+  and package/Progress evidence before any qualification claim.
+verification: Request26 one trigger63150974/five workflows/six jobs and source-equivalent
+  exact merge8e3d78 verified; Linux/CI/Desktop running, no terminal qualification.
+  Current87ca Windows549/default3307 proven; all acceptance held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0371
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
