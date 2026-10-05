@@ -37,7 +37,7 @@ def native_binding(store):
 def seed(base):
     value = {k:copy.deepcopy(base[k]) for k in (
         "schema_version", "installation_id", "setup_nonce", "choices", "operations")}
-    for key in ("credential_image", "network_table"):
+    for key in ("credential_image", "network_table", "folder_endpoint"):
         if key in base:
             value[key] = copy.deepcopy(base[key])
     value.update(state="INCOMPLETE", reason="REVALIDATION_REQUIRED")

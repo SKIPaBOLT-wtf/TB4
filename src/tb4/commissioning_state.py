@@ -97,7 +97,7 @@ def validated(payload):
         fields = {"schema_version", "installation_id", "setup_nonce", "state", "reason", "choices", "operations"}
         require(type(payload) is dict and fields <= set(payload)
                 and set(payload) <= fields | {"credential_image", "discovery", "ballpark_draft", "ballpark_publication",
-                                             "enrollments", "fetcher_enrollment", "network_table"},
+                                             "enrollments", "fetcher_enrollment", "network_table", "folder_endpoint"},
             "SETUP_SCHEMA")
         require(type(payload["schema_version"]) is int and payload["schema_version"] == 1
                 and identity(payload["installation_id"])
@@ -105,6 +105,9 @@ def validated(payload):
         require(type(payload["state"]) is str and payload["state"] in STATES
                 and type(payload["reason"]) is str and payload["reason"] in REASONS, "SETUP_STATE")
         validate_choices(payload["choices"], payload["installation_id"])
+        if payload.get("folder_endpoint") is not None:
+            from .drive.folder_endpoint_selection import selection as endpoint_selection
+            endpoint_selection(payload["folder_endpoint"])
         if payload.get("network_table") is not None:
             from .network_table_store import selection
             selection(payload["network_table"], payload)
@@ -387,6 +390,7 @@ class Setup:
                 and previous.get("ballpark_publication") == self._payload.get("ballpark_publication")
                 and previous.get("enrollments") == self._payload.get("enrollments")
                 and previous.get("fetcher_enrollment") == self._payload.get("fetcher_enrollment")
+                and previous.get("folder_endpoint") == self._payload.get("folder_endpoint")
                 and previous["choices"]["storage"] == self._payload["choices"]["storage"],
                 "SETUP_ROLLBACK_UNSAFE")
         self._save({**previous, "state": "INCOMPLETE", "reason": "REVALIDATION_REQUIRED"})

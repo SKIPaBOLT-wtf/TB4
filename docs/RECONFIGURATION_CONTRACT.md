@@ -337,3 +337,7 @@ Lookup is private metadata only and grants no proof, remote CAS, configuration
 activation or role. Default activation and first-CAS stale/forced election retain
 their existing meanings. First-run attachment/composite/runtime/GUI/common acceptance
 remain later qualified work.
+
+## RP-027 optional private endpoint pointer preservation
+
+[A027](implementation-plan/revisions/R2/amendments/RP-027/A-027-optional-protected-endpoint-pointer.md) preserves an existing optional private pointer in candidate seeds and retains old absent-field encoding/hash semantics. Ordinary stopped rollback cannot silently change that pointer; identity/storage/history/credential guards remain. Pointer syntax grants no native availability, first-run proof, role, authority or activation. Actual attachment/composite/runtime/GUI and current-source/platform/common acceptance remain held.

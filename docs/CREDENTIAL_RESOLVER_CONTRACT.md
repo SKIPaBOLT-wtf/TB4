@@ -126,3 +126,7 @@ selection/version/permission/expiry/revocation/trust checks on every actual use;
 lookup never enrolls, reselects or broadens a purpose. Native pending recovery
 promotes only the same sealed bytes with fresh profile checks. Endpoint attachment
 and composite transport/first-run/runtime/GUI integration remain separately gated.
+
+## RP-027 optional protected endpoint pointer
+
+[A027](implementation-plan/revisions/R2/amendments/RP-027/A-027-optional-protected-endpoint-pointer.md) defines only bounded private root/reference/binding syntax in optional Setup metadata. It copies no key or endpoint values and performs no lookup, selection/enrollment or credential use. A valid pointer or saved READY flag is not a grant; actual native attachment/composite and fresh protected selection/key/trust checks remain required.
