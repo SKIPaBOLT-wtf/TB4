@@ -3,21 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_FOLDER_CONNECTION_SOURCE
+phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_CONNECTION_WINDOWS_DEFAULT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0423
+last_verified_event: RP-027-A001-0424
 last_completed: RP-026
-next_action: Publish separate Windows native/related original regression/default3473
-  INTENT and execute new owned fixtures with private raw capture. Then source-specific
-  actualLinux990/fullplatform. Inspect immutable request29 remaining results separately.
-verification: A030 source2f43 preserved and statically reviewed;42native/12SSH/default3473/currentLinux990/fullplatform
-  unqualified. Existing request29 pending remains immutable; C1-C4 held.
+next_action: Publish actual Windows/default outcome and debug any failure under the
+  journal. Inspect current source-distinct request29 terminal results under separate
+  INTENT, then launch current request30 once for nativeLinux990/fullplatform if Windows
+  passes.
+verification: A030 source2f43 actual Windows854/default3473 pending;42new native cases
+  must execute. Existing request29 sourcea688 full evidence remains distinct, currentLinux990/runtime/GUI/C1-C4
+  held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0424
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
