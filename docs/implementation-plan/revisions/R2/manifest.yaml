@@ -1160,6 +1160,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-034-staged-native-folder-endpoint.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-035-native-folder-retained-and-controller.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-036-readonly-remote-mapping-after-proof.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-027/A-037-native-current-role-active-adoption.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:

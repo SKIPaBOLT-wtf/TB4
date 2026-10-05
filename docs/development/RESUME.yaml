@@ -5,22 +5,20 @@ check: RP-027.C3
 attempt: A001
 phase: STAGED_RECONFIGURATION_C3_NATIVE_CURRENT_ROLE_ACTIVE_ADOPTION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: e095a52215bf416b1537a1b4ccd582602d57b0b6
+source_commit: c000c0ded9a480172dd9e8269de9617df4224d09
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0518
+last_verified_event: RP-027-A001-0519
 last_completed: RP-026
-next_action: Publish source/static OUTCOME then actualWindowsaffectedoldadoption/currentfactory
-  pluscurrentdefaultcollection/same38-39terminal inspection. Qualify newnativeSSH/currentrole/transactioncuts
-  undernextimmutablehostedrequest; thenmappedC4consumer/native originalMain recovery
-  andcomplete stagedruntime.
+next_action: Publishcoordinatedsource/static/amendmentcheckpoint. ActualWindowsaffectedoldadoption/currentfactory/default3643
+  exactold3630+13 andsame38/39terminal checksunderseparateINTENT; thennew13hostedLinux
+  sourcequalified beforedependentnativeadoption acceptance/originalMainrecovery.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0518
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
