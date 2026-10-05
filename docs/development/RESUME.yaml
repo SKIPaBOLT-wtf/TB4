@@ -7,18 +7,17 @@ phase: STAGED_RECONFIGURATION_C2_NATIVE_CANDIDATE_MAPPED_LINUX34
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: b8f08653e7285a8943b9ebcda7552e3960d9b67c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0470
+last_verified_event: RP-027-A001-0471
 last_completed: RP-026
-next_action: Publish launch provenance/runIDs; inspect SAMEea4c33 terminal fullplatform;
-  then SAMEb8f08634 actualnative1040/13/Progress and debug observedfailure before
-  dependentwork.
-verification: A032 default3523 exactbaseline+13 collected; one requiredLinux1040 launch
-  next, no execution acceptance. Frozen33 platform/commonC1-C4 held.
+next_action: Read-only inspect same frozen ea4c33 terminalfullplatform/packageflags
+  and retain jobs ifpending. Then same b8f08634 actual13/1040/Progress; debug any
+  observedfail beforedependentwork.
+verification: A032 request34 launched once exactsource-equivalent55ad/PR5613. Actual13/1040/Progress/fullplatform
+  uninspected; frozen33/C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0470
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
