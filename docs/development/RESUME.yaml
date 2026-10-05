@@ -7,18 +7,19 @@ phase: STAGED_RECONFIGURATION_C2_COMBINED_LINUX29_PR_FULL_PLATFORM
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: a68893fa004b896695d5d22a83fa4c3016b6d516
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0426
+last_verified_event: RP-027-A001-0427
 last_completed: RP-026
-next_action: Publish exact a688 outcome. Inspect same2f43 Windows report under existing424;
-  then current990 Linux/fullplatform launch only after actual local result.
-verification: Current2f43 native Windows51710 pending, default3473 exact54 additions.
-  Read-only olda688 request29 PR/fullplatform inspection pending; source scopes distinct.
+next_action: Publish related424 current2f43 Windows854/default3473 exact outcome then
+  once source-specific request30 Linux990/fullplatform. Preserve olda688 Windows identity
+  for later terminal inspection.
+verification: Olda688 PR936/CI/Linux packages qualified; Windows final pending. Current2f43
+  Windows854/default3473 terminal proof not yet published; Linux990/fresh runtime/GUI/C1-C4
+  held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0424
-- RP-027-A001-0426
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
