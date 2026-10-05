@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_FINAL_COMPOSITION_GAP_REVIEW
+phase: STAGED_RECONFIGURATION_C4_REMOTE_MAPPING_AFTER_PROOF_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 940b34ac2c38e62a725fe29ab49d80de860569a6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0511
+last_verified_event: RP-027-A001-0512
 last_completed: RP-026
-next_action: Independent minimal readonly fixedhelper mapping-AFTER proof foundation
-  undernextINTENT usingalreadyqualifiedprobe/actualmapping primitives; preserveoldVERIFY/READ/CAS/election.
-  Inspect same38terminal withoutreplay, debuganyfailure, thenextendmappedC4/adoption
-  andcomplete stagedruntime onlyafterqualification.
+next_action: Publish source/static OUTCOME, then actual default portable/native/currentcollection
+  andsame38terminal inspection underseparateINTENT. Qualify new actualmapping/SSH
+  before adding RetainedC4 consumer; native current-role adoption andcomplete staged/runtime
+  follow without old-host/all-peer ACK.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0512
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
