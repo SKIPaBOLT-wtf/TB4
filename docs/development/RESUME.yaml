@@ -3,24 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_LINUX27_PLATFORM
+phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_LINUX26_FULL_PLATFORM
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce
+source_commit: 87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0382
+last_verified_event: RP-027-A001-0383
 last_completed: RP-026
-next_action: Publish immutable old request26 full CI/Desktop/package terminal inspection
-  INTENT, preserving87ca source only. Current request27 acc26 terminal evidence stays
-  separately pending. Record an independent opt-in fixed helper dispatch foundation
-  before its source changes; actual attachment/composite/C1-C4 held.
-verification: One currentacc26 request27 triggeraf5/five workflows/sixjobs/merge24d/sourceequivalence
-  verified, terminal qualificationpending. Old87ca request26 full/packages needinspection;
-  independent closedhelperdispatch canbescheduled; actualattachment/composite/C1-C4
-  held.
+next_action: Inspect terminal results for same request26; publish exact outcome/evidence
+  and independent fixed helper dispatch scheduling if permitted by these foundations;
+  currentrequest27 stays separately pending.
+verification: Request27 launch/source equivalence recovered and saved; inspecting
+  source-distinct request26 full/platform/package terminal evidence. C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0383
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
