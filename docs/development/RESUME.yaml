@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C3_MAPPING_AFTER_REPLY_REPAIR_SOURCE
+phase: STAGED_RECONFIGURATION_C3_MAPPING_AFTER_REPAIR_WINDOWS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d39bda8915af63ce621134aad0e703703c064301
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0525
+last_verified_event: RP-027-A001-0526
 last_completed: RP-026
-next_action: ActualWindowsportable45+affectednormal native transports/firstRun, collection3659
-  exact3643+16, same39terminalWindows. Then current source40 required1176 (663/51/6/22/107/327),
-  allA03611/A03713 andfullplatform/Progress/packages.
+next_action: Publish actualWindows/default/same39 terminal OUTCOME; debugfailures.
+  One current source40 required1176/new29/fullplatform/Progress launch, then qualifiednativeconsumer/Mainpending/fullstagedcomposition.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0526
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
