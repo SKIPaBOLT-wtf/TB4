@@ -6924,9 +6924,10 @@ defects:
         Existing WindowsSettingsNative validates Path input then stores canonical
         local_path(str(root)); Linux retains Path.'
       failing_source: c381b7eb12dbd09a3d7b40bccc11c61e84ff5360
-      passing_source: null
+      passing_source: 87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-current-default-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6971,7 +6972,11 @@ defects:
       run547PASS/2FAIL/22declaredLinuxSKIP21.411s, new51of53PASS, collection3307/same3307nodes/noerrors.
       No path invalid/str division failure recurred. Two remaining tests now reach
       a native closed exception mismatch, separately tracked DEF-096; not resolved
-      or silently weakened.'
+      or silently weakened. Current source87ca Windows native/default preflight549PASS/0FAIL/0ERROR/22declaredLinux-onlySKIP20.757s;
+      all53newPASS/zero skip, exact3307default nodes/noerrors1.791s. Both retained
+      internal-policy/exact-native-error/byte negative tests nowPASS. Passing source
+      is scoped Windows proof only; OPEN pending current Linux/full/packages/commonC1-C4.
+      No resolution evidence claimed.'
     legacy_record: null
   DEF-096:
     title: New endpoint tests expect a domain exception through the native context
@@ -6996,10 +7001,11 @@ defects:
         original cases: exact failed predicates separately observed before native
         normalization, both retained expectations fail with SETTINGS_STORE_UNAVAILABLE.'
       failing_source: feb214963f5b7436469957102c42f3482d627b1f
-      passing_source: null
+      passing_source: 87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-second-failed.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-guard-diagnostic-observed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-current-default-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7055,5 +7061,10 @@ defects:
       87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d preserved/read back; explicit false-code
       proof and exact SettingsError replace only two erroneous AuthorityError expectations.
       Original pending/current/profile byte assertions remain,13case function names
-      unchanged. AST/diff/privacy PASS,tests0; current qualification pending.
+      unchanged. AST/diff/privacy PASS,tests0; current qualification pending. Current
+      source87ca Windows native/default preflight549PASS/0FAIL/0ERROR/22declaredLinux-onlySKIP20.757s;
+      all53newPASS/zero skip, exact3307default nodes/noerrors1.791s. Both retained
+      internal-policy/exact-native-error/byte negative tests nowPASS. Passing source
+      is scoped Windows proof only; OPEN pending current Linux/full/packages/commonC1-C4.
+      No resolution evidence claimed.
     legacy_record: null
