@@ -3,24 +3,30 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_NATIVE_MAPPING_ADOPTION_LINUX40_STARTED
+phase: PAUSED_BY_OWNER_AFTER_SOURCE40_DISPATCH
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 22c4de1f60a70119791c062acd23403883eab0ac
+source_commit: d39bda8915af63ce621134aad0e703703c064301
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0529
+last_verified_event: RP-027-A001-0530
 last_completed: RP-026
-next_action: Inspect same40 first required group/new29 when terminal; allothergroups/platform
-  pending. Independently review exact nativeMainpending recovery/static locks and
-  currentmappedC4 consumer againstqualified38 +readsource, withno new dependent mutation
-  until actual required40 qualification.
-verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
-  optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
-  held.
+next_action: Wait for explicit owner continuation. Then re-read CURRENT/WORK_INSTRUCTION/manifest/RESUME/this
+  checkpoint and actual branch/PR36 refs; inspect the SAME source40 runs/jobs, fetch
+  terminal logs only and verify actual checkout/parents/non-documentation source diff.
+  Do not create a new request or replay old39/40. Record actual new29 outcomes/defects/fullplatform
+  qualification before any dependent mapped C4 consumer or own Main pending recovery/source
+  implementation. The unpublished review INTENT candidate was not executed or published;
+  reconsider scope only after current results.
+verification: Current d39bda Windows225PASS/default3659 exactlegacy3643+16; A037affectedWindows62PASS.
+  Frozen940b34ac source38 required1107twice/fullCI/Windows/Linux/bothrolespackages
+  qualified. Same40 actual Linux/new29/currentplatform results remain unqualified;
+  allRP027 C1-C4/common held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents: []
-expected_user_action: null
+expected_user_action: Owner must explicitly request continuation before any further
+  development, test, workflow launch, source change or qualification. Existing source40
+  hosted jobs must be inspected as the same operation after continuation.
 blocking_decisions: []
 known_open_defects:
 - DEF-001
@@ -74,6 +80,12 @@ known_open_defects:
 - DEF-102
 - DEF-103
 - DEF-104
+- DEF-105
+- DEF-106
+- DEF-107
+- DEF-108
+- DEF-109
+- DEF-110
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
