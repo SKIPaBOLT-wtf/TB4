@@ -6982,17 +6982,24 @@ defects:
       source_ref: c381b7eb12dbd09a3d7b40bccc11c61e84ff5360
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-second-failed.json
-    proven_origin: null
+    proven_origin:
+      work_item: RP-027
+      source_ref: feb214963f5b7436469957102c42f3482d627b1f
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-guard-diagnostic-observed.json
     reproduction:
       procedure: 'Exact corrected feb214 Windows scoped preflight retains two native
         failures: pending-after-profile-change and contradictory-pending tests demand
         AuthorityError, but the actual Windows native locked context returns SETTINGS_STORE_UNAVAILABLE.
         Internal failed policy codes are not yet directly observed; default3307/no
-        errors and node IDs unchanged.'
+        errors and node IDs unchanged. Corrected diagnostic365 actually executed both
+        original cases: exact failed predicates separately observed before native
+        normalization, both retained expectations fail with SETTINGS_STORE_UNAVAILABLE.'
       failing_source: feb214963f5b7436469957102c42f3482d627b1f
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-second-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-guard-diagnostic-observed.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7010,6 +7017,14 @@ defects:
       result: UNTESTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-second-failed.json
+    - id: H2
+      claim: Transparent unchanged require observation in fresh actual Windows native
+        cases proves FOLDER_ENDPOINT_PROFILE and FOLDER_ENDPOINT_RECOVERY_CONFLICT
+        fail as intended; actual native locked boundary then exposes SETTINGS_STORE_UNAVAILABLE.
+        Existing test AuthorityError expectations cause these two failures.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-guard-diagnostic-observed.json
     repairs: []
     issue: null
     regression_test: Actual closed internal failed predicate code plus native outward
@@ -7021,5 +7036,9 @@ defects:
       Default3307/noerrors1.753s, exact3307node IDs unchanged. Path-only repair preserved
       all assertions; no current SETTINGS_PATH_INVALID or str/Path TypeError. No production
       guard or native error contract change inferred. Original failures/evidence retained;
-      all acceptance held.
+      all acceptance held. Diagnostic365 two original cases actually ran in fresh
+      native fixtures, pytest1,0.466s; actual closed failed codes observed unchanged.
+      Earlier diagnostic363 collection failed before native cases and is preserved.
+      Expected native closed-error assertions require explicit internal-code and unchanged-byte
+      proof; production/native contract change is unnecessary.
     legacy_record: null

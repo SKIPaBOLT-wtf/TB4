@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0365",
+  "result": "ACTUAL_POLICY_REJECTIONS_CONFIRMED",
+  "source": "feb214963f5b7436469957102c42f3482d627b1f",
+  "checkout": "50eb611df4db0098962357aa114b918c66d6418e",
+  "platform": "Windows",
+  "python": "3.11.9",
+  "pytest_exit": 1,
+  "elapsed_seconds": 0.466,
+  "original_require_unchanged": true,
+  "production_source_unchanged": true,
+  "helper_pythonpath": false,
+  "owned_absent_fixture_root": true,
+  "failed_predicates": [
+    {
+      "case": "tests/security/test_folder_endpoint_native.py::test_native_pending_cannot_be_promoted_after_profile_change",
+      "code": "FOLDER_ENDPOINT_PROFILE"
+    },
+    {
+      "case": "tests/security/test_folder_endpoint_native.py::test_native_conflicting_pending_is_not_silently_repaired",
+      "code": "FOLDER_ENDPOINT_RECOVERY_CONFLICT"
+    }
+  ],
+  "cases": [
+    {
+      "name": "test_native_pending_cannot_be_promoted_after_profile_change",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "FAILURE",
+      "message": "tb4.private_settings.SettingsError: SETTINGS_STORE_UNAVAILABLE"
+    },
+    {
+      "name": "test_native_conflicting_pending_is_not_silently_repaired",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "FAILURE",
+      "message": "tb4.private_settings.SettingsError: SETTINGS_STORE_UNAVAILABLE"
+    }
+  ],
+  "acceptance": "HELD",
+  "limitations": [
+    "Original two test expectations still fail as deliberately retained; no expectation/native/production edit performed.",
+    "This Windows diagnostic proves the actual failed predicates and actual normalized outward errors. It does not substitute for post-repair byte invariants or Linux/full/package qualification."
+  ]
+}

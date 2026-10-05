@@ -7,19 +7,20 @@ phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_GUARD_DIAGNOSIS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: feb214963f5b7436469957102c42f3482d627b1f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0365
+last_verified_event: RP-027-A001-0366
 last_completed: RP-026
-next_action: Execute corrected bounded same-source diagnostic with durable closed-code
-  capture, then publish its actual result and defect hypothesis before a minimal test-only
-  repair.
-verification: Harness363 failed before native cases and exact record364 preserved.
-  Corrected diagnostic365 retains original predicates/native contexts/expectations;
-  internal code proof required before repair.
+next_action: 'Publish minimal test-only repair INTENT: transparently observe and assert
+  exact failed predicates, expect actual SettingsError SETTINGS_STORE_UNAVAILABLE,
+  preserve all pending/current/profile byte assertions and case IDs. Then source/readback
+  before current native/default qualification.'
+verification: Actual diagnostic365 confirms both precise endpoint guards before native
+  SETTINGS_STORE_UNAVAILABLE; original two tests still fail as retained. DEF096 test
+  expectations proven; minimal exact code/bytes/native-error repair next, all acceptance
+  held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0365
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
