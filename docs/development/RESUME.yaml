@@ -7,14 +7,14 @@ phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_WINDOWS_DEFAULT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 8c75d39a086164703abcb09828eef9b994eb2360
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0387
+last_verified_event: RP-027-A001-0388
 last_completed: RP-026
-next_action: Inspect closed actual Windows/JUnit/default node comparison, debug proven
-  failures under new INTENT if necessary, then publish outcome. Launch one current
-  source-linked Linux/platform request only after this outcome; separately inspect
-  oldacc26 immutable request27.
-verification: A028 source8c75 scopedreadback/staticreview tests0; executing separate44targetWindows/defaultcollection
-  guard. Currentacc26 request27 pending distinct; C1-C4 held.
+next_action: Inspect same owned test session9087 and saved private JUnit/result; compare
+  prior3333/current3388 exact node sets. Independently inspect immutable oldacc26
+  request27 terminal jobs under separate INTENT while this current test remains pending.
+verification: One actual A028 Windows44target test running session9087; whole default
+  collection3388/noerrors; no local test replay. Currentacc26 request27 terminal inspection
+  independent; C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
