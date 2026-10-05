@@ -7,19 +7,19 @@ phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_DEFAULT_RECHECK
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: feb214963f5b7436469957102c42f3482d627b1f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0361
+last_verified_event: RP-027-A001-0362
 last_completed: RP-026
-next_action: Run one new-root corrected qualification and inspect actual results/node-ID
-  equivalence; publish exact PASS or retained failure. If successful, publish current-source
-  request26 Linux824/full/platform launch INTENT and pin new real jobs.
-verification: Earlier91bad7 exactWindows/Linux/core/requiredLinux/bothrolepackages
-  qualified360, neverlaterendpoint source. Corrected feb214 Windows scoped/default
-  recheck pending361, all53retainedcases required; actualLinux824/currentfull/commonC1-C4held.
+next_action: Publish bounded same-source two-case diagnostic INTENT. Observe only
+  closed failed require codes while executing the original require and actual native
+  contexts unchanged, in fresh owned fixtures. Record which exact policy rejected
+  before altering expected native error types or code.
+verification: Correctedfeb214 secondrun547PASS/2native-exceptionFAIL/22declaredLinuxSKIP;
+  new51/53PASS, default3307/samenodes/noerrors. DEF096 internalguard diagnostic required
+  beforeexpectationrepair; all currentqualification/C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0361
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

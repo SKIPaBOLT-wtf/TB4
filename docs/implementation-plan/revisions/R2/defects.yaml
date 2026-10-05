@@ -6967,5 +6967,59 @@ defects:
       Common acceptance held. Test-only source feb214963f5b7436469957102c42f3482d627b1f
       saved/read back: original selected metadata_root Path retained and reused, all
       case IDs/assertions and production/native guard bytes unchanged. AST/diff/privacy
-      PASS, tests0; corrected qualification not yet run.'
+      PASS, tests0; corrected qualification not yet run. Corrected feb214 second actual
+      run547PASS/2FAIL/22declaredLinuxSKIP21.411s, new51of53PASS, collection3307/same3307nodes/noerrors.
+      No path invalid/str division failure recurred. Two remaining tests now reach
+      a native closed exception mismatch, separately tracked DEF-096; not resolved
+      or silently weakened.'
+    legacy_record: null
+  DEF-096:
+    title: New endpoint tests expect a domain exception through the native context
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c381b7eb12dbd09a3d7b40bccc11c61e84ff5360
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-second-failed.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Exact corrected feb214 Windows scoped preflight retains two native
+        failures: pending-after-profile-change and contradictory-pending tests demand
+        AuthorityError, but the actual Windows native locked context returns SETTINGS_STORE_UNAVAILABLE.
+        Internal failed policy codes are not yet directly observed; default3307/no
+        errors and node IDs unchanged.'
+      failing_source: feb214963f5b7436469957102c42f3482d627b1f
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-second-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: The expected endpoint policy rejects inside the actual native locked
+        context, whose documented exception boundary normalizes non-SettingsError
+        exceptions; the two new test expectations are too specific. Internal rejection
+        must be separately observed before widening expected types.
+      result: UNTESTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-second-failed.json
+    repairs: []
+    issue: null
+    regression_test: Actual closed internal failed predicate code plus native outward
+      closed error, with original pending/current/profile bytes unchanged and zero
+      credential/remote operation; all53 new/current native/default/Linux/full/common
+      checks retained.
+    resolution_evidence: []
+    notes: Windows547PASS/2FAIL/0ERROR/22inherited Linux-onlySKIP21.411s; new51PASS/2FAIL/0SKIP.
+      Default3307/noerrors1.753s, exact3307node IDs unchanged. Path-only repair preserved
+      all assertions; no current SETTINGS_PATH_INVALID or str/Path TypeError. No production
+      guard or native error contract change inferred. Original failures/evidence retained;
+      all acceptance held.
     legacy_record: null
