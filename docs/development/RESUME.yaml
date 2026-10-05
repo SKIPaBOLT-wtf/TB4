@@ -7,20 +7,21 @@ phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_LINUX27_WINDOWS_FINAL
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0396
+last_verified_event: RP-027-A001-0397
 last_completed: RP-026
-next_action: Record immutableacc26 actualWindows outcome/complete qualification; inspect
-  same currentf18 Windows session50564 and publish related result before currentrequest28
-  Linux/platform launch.
-verification: Newf18 correctedWindows session50564 running/default3388exactunchangednodes;
-  independentlyinspect oldacc26 Windowsjob111589722960 terminal, no source conflation;
-  C1-C4held.
+next_action: Record currentf18 Windows17newportable assertion failures without product-cause
+  inference; inspect same saved captured stdout/local pytest capture source to prove
+  origin before scoped test-only repair. Then qualify corrected portable/current fullLinux
+  source. Native endpoint attachment may be scheduled independently from qualified
+  A026/A027, never bypassing actual composite/runtime/GUI/common gates.
+verification: Immutableacc26 allscheduledWindows/Linux/fullCI/Progress/bothrolepackagesqualified;
+  nativeendpoint/pointerfoundations ready only. Currentf18 helper17newportableassertionfail
+  separate; no C1-C4 acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0394
-- RP-027-A001-0396
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0396",
+  "source": "acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce",
+  "result": "IMMUTABLE_SOURCE_ALL_LINUX_CI_DESKTOP_PROGRESS_AND_BOTH_ROLE_PACKAGES_QUALIFIED",
+  "trigger": "af5b1b384441dba56da7701c968eccba33ba7c68",
+  "actual_pr_checkout": "24d0c991aabe030cfa307a3f2a3d56f1c9b804d6",
+  "windows": {
+    "run": 37254884514,
+    "job": 111589722960,
+    "checkout": "24d0c991aabe030cfa307a3f2a3d56f1c9b804d6",
+    "full": [
+      {
+        "passed": 3108,
+        "skipped": 221,
+        "xfailed": 4,
+        "seconds": 2523.85
+      }
+    ],
+    "packages": [
+      [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    ]
+  },
+  "windows_terminal_status": "completed",
+  "windows_conclusion": "success",
+  "artifacts_metadata": [
+    {
+      "id": 11323666455,
+      "name": "tb4-desktop-Windows-24d0c991aabe030cfa307a3f2a3d56f1c9b804d6",
+      "digest": "sha256:4604426697860f0ae2827fed3937f5562077893d9b9b13a108cd2ea6334ab44b",
+      "size_in_bytes": 120945929,
+      "expired": false
+    },
+    {
+      "id": 11322364566,
+      "name": "tb4-desktop-Linux-24d0c991aabe030cfa307a3f2a3d56f1c9b804d6",
+      "digest": "sha256:be76164147e6a9ab79b8508da6a48876c17599e8223fb8f7e6fb263ad374d0e9",
+      "size_in_bytes": 314535270,
+      "expired": false
+    }
+  ],
+  "already_qualified": {
+    "required_linux": "850 PASS twice/0fail/0error/0skip; documented1 predeclaredcapacitydeselected separate per lastgroup; event390",
+    "CI": "3285PASS/27declaredskip/4existingxfail event390",
+    "linux_desktop": "3308PASS/21declaredskip/4existingxfail/bothrolesallfourpackageflagsPASS event390",
+    "Progress": "235PASS/event390",
+    "local_windows": "673PASS/22declaredLinuxskip/new26portable/all98affectedPASS/default3333add26remove0 event380"
+  },
+  "limits": [
+    "All evidence sourceacc26 only; new helper sourcef18/currentWindows test result stays separate.",
+    "Metadata/pointer format/seed preservation qualified; attachment/fresh Setup connection/runtime/GUI/C1-C4 common integration still held.",
+    "No private values/download/install/live migration/network configuration/replay; artifactmetadataonly.",
+    "Sourceequivalence382 exactnon-docdiff and actualterminal checkout pins remain true; C1-C4 noacceptance."
+  ],
+  "next": "Record currentf18 Windows17newportable assertion failures without product-cause inference; inspect same saved captured stdout/local pytest capture source to prove origin before scoped test-only repair. Then qualify corrected portable/current fullLinux source. Native endpoint attachment may be scheduled independently from qualified A026/A027, never bypassing actual composite/runtime/GUI/common gates."
+}
