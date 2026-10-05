@@ -37,9 +37,10 @@ def main_io(monkeypatch):
             events.append(("stdin", limit))
             return b"synthetic-closed-request"
     output = BytesIO()
-    monkeypatch.setattr(sys, "platform", "linux")
-    monkeypatch.setattr(sys, "stdin", SimpleNamespace(buffer=Input()))
-    monkeypatch.setattr(sys, "stdout", SimpleNamespace(buffer=output))
+    # Pytest resumes global sys.stdout between fixture setup and test call.
+    # Keep only this helper's simulated IO private to the tested program.
+    monkeypatch.setattr(helper, "sys", SimpleNamespace(platform="linux",
+        stdin=SimpleNamespace(buffer=Input()), stdout=SimpleNamespace(buffer=output)))
     monkeypatch.setattr(helper.signal, "SIGALRM", 999, raising=False)
     monkeypatch.setattr(helper.signal, "signal", lambda *_: events.append(("signal",)))
     monkeypatch.setattr(helper.signal, "alarm", lambda value: events.append(("alarm", value)), raising=False)
@@ -121,7 +122,7 @@ def test_both_modes_are_refused_before_any_helper_io(main_io, monkeypatch):
 def test_non_linux_does_not_enter_dispatch_or_config(main_io, monkeypatch):
     events, output = main_io
     arguments(monkeypatch, "--credential-dispatch")
-    monkeypatch.setattr(sys, "platform", "win32")
+    monkeypatch.setattr(helper.sys, "platform", "win32")
     monkeypatch.setenv("SSH_ORIGINAL_COMMAND", "tb4-folder-v1")
     assert helper.main() == 2 and events == [] and output.getvalue() == b""
 
