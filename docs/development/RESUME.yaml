@@ -7,22 +7,19 @@ phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_DEFAULT_NATIVE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0379
+last_verified_event: RP-027-A001-0380
 last_completed: RP-026
-next_action: Read actual same-source results and exact node diff; preserve any failure
-  before repair. On confirmed scope/default PASS publish/readback outcome then new-source
-  current Linux/full/platform/package qualification or a precisely documented independent
-  next foundation. Continue remaining immutable87ca request26 CI/Desktop/packages;
-  never infer later-source qualification.
-verification: Sourceacc26 A027 pointer/seed/rollback requires current35-target native/default3333
-  qualification379; expected673+22skip/all26new/add26/remove0 not yetobserved. Prior87ca
-  Win549/Linux824twice/Progress235 proven, remaining oldsourcepackages distinct; C1-C4
-  held.
+next_action: Publish a single request27 currentacc26 required native Linux850/fullCI/Desktop/both-role
+  packages/Progress qualification INTENT; continue inspecting same old request26 terminal
+  packages with source separation. Actual native attachment/composite/C1-C4 remains
+  behind source-linked requirements.
+verification: A027acc26 Windows673PASS/all26new/all98affected/default3333add26rem0
+  proven; required currentLinux850/fullplatform/packages stillneeded. Prior87ca824twice
+  full/packages staydistinct; actual nativeattachment/composite/C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0379
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
