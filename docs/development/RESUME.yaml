@@ -1,25 +1,25 @@
 schema_version: 1
 revision: R2
 work_item: RP-027
-check: RP-027.C4
+check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_NATIVE_RETAINED_CONTROLLER_WINDOWS_AND_HOSTED
+phase: STAGED_RECONFIGURATION_C2_REVOKED_CONSTRUCTOR_TEST_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 632fd1a0459b6ce64d6ccff4c90957cbabd26645
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0505
+last_verified_event: RP-027-A001-0506
 last_completed: RP-026
-next_action: Publish verified failure checkpoint; minimaltest-only DEF108 correction
-  with exact intended internal guard, preserve other24 andforbidden transport/retention
-  assertions. Then one current1107Linux/newA03511+staged25 underseparateINTENT; same37remainingterminals
-  inspected without replay.
+next_action: Publish source/static OUTCOME then current Linux1107/new11+staged25 under
+  separate INTENT. Inspect same37 remaining terminal jobs without rerun; complete
+  staged/current runtime integration after qualification.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0506
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
