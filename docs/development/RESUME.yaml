@@ -3,22 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_ENDPOINT_ATTACHMENT_WINDOWS_DEFAULT
+phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_LINUX28_TERMINAL
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: d168a74ed9ef55e77926be1ee3de8666f4216fc6
+source_commit: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0408
+last_verified_event: RP-027-A001-0409
 last_completed: RP-026
-next_action: Inspect this same process/report, compare default3388 baseline exactnode
-  IDs then publish terminal result/defects. Separately authorized read-only inspection
-  of immutable source5f80 request28; no rerun/relaunch.
-verification: Actual d168 native Windows regression running once process17442; default3419
-  collected and exact31 additions/zero removals verified. No check accepted.
+next_action: Publish exact old5f80 terminal outcome and current next task; separately
+  publish Windowsd168 related407 outcome then launch native current request29, fixing
+  actual defects before dependent connection composition.
+verification: Actual Windowsd168 native regression process17442 pending; read-only
+  SAME immutable5f80 request28 terminal evidence inspection pending. Source scopes
+  remain separate.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0407
+- RP-027-A001-0409
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
