@@ -3,25 +3,26 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_DIAGNOSTIC_SOURCE_PLATFORM_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 91bad7a54916766417a882ef537ca812a08bfb05
+source_commit: 136704c1f9fd2a7d6a010dbfdc2c4c74fc0df16f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0352
+last_verified_event: RP-027-A001-0353
 last_completed: RP-026
-next_action: Inspect the same fresh five jobs to terminal and record exact receipts.
-  Independently record and implement protected endpoint metadata foundation using
-  accepted native credential/profile rules and qualified transport, without runtime
-  authority or dependency bypass.
-verification: 'Closed diagnostic recorded351: first/second identity4.250/0.562s, allqueriesREADY,
-  originalfailure/causeunproven. Fresh source91bad7 full/requiredLinux/platform inspection
-  pending352; original348 pending, C1-C4 held.'
+next_action: Save scoped endpoint source/A-026 and publish/readback source OUTCOME
+  before targeted native/default collection tests. Inspect existing immutable 348/352
+  jobs independently; no cancellation/retrigger or cause inference.
+verification: Native endpoint metadata source pending353 with explicit independent
+  scheduling. Current d7 Linux771 twice qualified, fresh Windows required native discovery
+  metadata PASS but full inspections348/352 pending. Old profiles/choices/candidate/image
+  meanings and C1-C4 holds retained.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0348
 - RP-027-A001-0352
+- RP-027-A001-0353
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
