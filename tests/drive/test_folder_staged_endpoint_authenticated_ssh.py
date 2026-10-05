@@ -15,6 +15,7 @@ from tb4.credential_persistence import restore_private
 from tb4.drive.docs_authority import AuthorityError
 from tb4.drive.folder_authority_transport import credential_authority_pair
 from tb4.drive.folder_endpoint import NativeFolderEndpoint
+import tb4.drive.folder_endpoint_attachment as attachment_module
 from tb4.drive.folder_endpoint_attachment import NativeFolderEndpointAttachment
 from tb4.drive.folder_prerequisites import native_folder_prerequisites
 from tb4.drive.folder_transport import FixedProcess
@@ -22,7 +23,6 @@ from tb4.linux_key_native import LinuxKeyNative
 from tb4.private_settings import SettingsError, encoded, native_settings
 from tb4.reconfiguration_candidate import Candidate
 from tb4.reconfiguration_folder_endpoint import StagedFolderEndpoint
-from tb4.reconfiguration_maintenance import sha
 from test_folder_candidate_authenticated_ssh import staged, retained, SCOPES, TARGET, TRUST
 from test_folder_commissioning import context
 from test_folder_ssh import Server
@@ -74,7 +74,7 @@ def cut(v, r, monkeypatch, *, after=False):
             port.promote = stop
             yield port
     monkeypatch.setattr(v.profile.native, 'locked', interrupted)
-    with pytest.raises(OSError, match='^SYNTHETIC_STAGED_ENDPOINT_COMMIT_CUT$'):
+    with pytest.raises(SettingsError, match='^SETTINGS_STORE_UNAVAILABLE$'):
         r.port.select(r.reference, expected_selection=r.expected, owner_authorized=True)
     monkeypatch.setattr(v.profile.native, 'locked', locked)
 
@@ -222,8 +222,14 @@ def test_ordinary_attachment_cannot_replace_and_staged_context_cannot_use_origin
     v=staged;r=replacement(v,tmp_path);before,profile=retained(v),v.profile.read()
     no_transport(monkeypatch)
     ordinary=NativeFolderEndpointAttachment(r.endpoint,v.profile)
-    with pytest.raises(AuthorityError,match='^FOLDER_ENDPOINT_ATTACHMENT_CONFLICT$'):
+    failed=[]; original=attachment_module.require
+    def observe(condition,code):
+        if not condition:failed.append(code)
+        return original(condition,code)
+    monkeypatch.setattr(attachment_module,'require',observe)
+    with pytest.raises(SettingsError,match='^SETTINGS_STORE_UNAVAILABLE$'):
         ordinary.attach(Setup(v.profile),r.reference,owner_authorized=True)
+    assert failed==['FOLDER_ENDPOINT_ATTACHMENT_CONFLICT']
     with pytest.raises(AuthorityError,match='^STAGED_FOLDER_ENDPOINT_CONTEXT$'):
         StagedFolderEndpoint(Setup(v.s.ctx.setup.store),r.endpoint)
     assert v.profile.read()==profile and retained(v)==before
