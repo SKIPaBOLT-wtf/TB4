@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0447",
+  "source": "2f43d0ed3e4510c95dc916f87545c53ced3d18aa",
+  "request_revision": 30,
+  "result": "FAIL",
+  "checkout": "f1a9aada09ab623ccf83fdc14bc314242fd9182f",
+  "source_equivalence": "Actual terminal checkout matches API/Git verified430 main/trigger parents and empty non-doc source diff.",
+  "full_actual": [
+    {
+      "run": 37266280455,
+      "job": 111623699309,
+      "passed": 3413,
+      "errors": 12,
+      "failed": 0,
+      "skipped": 27,
+      "xfailed": 4,
+      "seconds": 2556.17,
+      "conclusion": "failure"
+    },
+    {
+      "run": 37266280518,
+      "job": 111623699677,
+      "passed": 3436,
+      "errors": 12,
+      "failed": 0,
+      "skipped": 21,
+      "xfailed": 4,
+      "seconds": 2676.66,
+      "conclusion": "failure"
+    }
+  ],
+  "failure": {
+    "defect": "DEF-100",
+    "message": "fixture 'context' not found",
+    "cases": 12,
+    "stage": "Fixture resolution before SSH/native setup",
+    "other_failures": []
+  },
+  "packages": "Linux package steps not executed after fullpytest error; no role/flags/artifact proof. Windows samejob111623699912 still running at inspection.",
+  "source10bad_request31": {
+    "ci": {
+      "run": 37267930105,
+      "job": 111628577320,
+      "status": "in_progress"
+    },
+    "desktop": [
+      {
+        "run": 37267930078,
+        "job": 111628576712,
+        "platform": "WINDOWS",
+        "status": "in_progress"
+      },
+      {
+        "run": 37267930078,
+        "job": 111628577035,
+        "platform": "LINUX",
+        "status": "in_progress"
+      }
+    ],
+    "terminal_logs": "None inspected"
+  },
+  "current_e8e8_request32": "Separate running required/full qualification; no reuse of older failed Linux counts as success.",
+  "privacy": "Closed counts/source IDs/fixed error only; no raw fixtures/native frames/artifact downloads.",
+  "next": "Record scheduling independence of first-run local guard using actual42 native and11 realSSH first-run cases from source-equivalent current production. Role test/current990/fullplatform still required before common/C1-C4 acceptance."
+}

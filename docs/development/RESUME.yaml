@@ -7,18 +7,19 @@ phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_OLD_FULL_RESULTS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0447
+last_verified_event: RP-027-A001-0448
 last_completed: RP-026
-next_action: Publish precise oldsource outcomes. First-run local guard may be scheduled
-  independently only with explicit native42 and real first-run11 source-equivalent
-  evidence and role/fullplatform acceptance held; otherwise samecurrent32 actualqualification.
-verification: Inspect same old2f43/10bad fullplatform exactterminal results; currente8e8/request32
-  separate; first-run independence requires recorded evidence/scope.
+next_action: Schedule A031 local fresh first-run guard independently using actual
+  native42 and first-run11 SSH evidence442/source-equivalent production; it does not
+  change role/transport/helper/routing. Current32 role12/required990/fullplatform
+  remain mandatory before common/C1-C4 acceptance.
+verification: Oldsource2f43 fullLinux only12knownDEF100errors; currente8e8 role990/fullplatform
+  pending. A031 localfirst-run independently schedulable from native42 and actual11first-run
+  SSH, no commonacceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0447
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

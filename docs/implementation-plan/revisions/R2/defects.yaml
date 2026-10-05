@@ -7322,6 +7322,7 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux30-failed.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux31-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux30-full-failed.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7361,7 +7362,10 @@ defects:
       Minimal one-line source repair 10badf7bbe08f54cfaeef640c062d4ceae8e319c published/readback;
       actual Linux passing_source remains null until execution. Actualrequest31 all12
       cases execute with no fixture errors; 11PASS/1 independent DEF101FAIL. Fixture
-      repair passing_source10bad scoped only; commonC1-C4 held.
+      repair passing_source10bad scoped only; commonC1-C4 held. Actual old2f43 full
+      CI3413PASS/27SKIP/4XFAIL/12samefixtureERROR2556.17s, LinuxDesktop3436PASS/21SKIP/4XFAIL/12sameERROR2676.66s;
+      no additional failure. Windows/source10bad full stillrunning. Currente8e8 request32
+      separate.
     legacy_record: null
   DEF-101:
     title: Fresh native SSH takeover test invokes the Leadership API incorrectly
