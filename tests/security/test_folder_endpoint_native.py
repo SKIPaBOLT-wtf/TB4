@@ -15,6 +15,7 @@ from tb4.drive.commissioning import SetupSpec
 from tb4.drive.commissioning_bootstrap import AuthorityHandle
 from tb4.drive.docs_authority import AuthorityError
 from tb4.drive.folder_authority import FolderBinding
+import tb4.drive.folder_endpoint as endpoint_module
 from tb4.drive.folder_endpoint import NativeFolderEndpoint
 from tb4.drive.folder_probe_transport import ProbeEndpoint
 from tb4.drive.folder_transport import FixedProcess
@@ -69,6 +70,18 @@ def system(fixture, monkeypatch):
 
 def prepare(v):
     return v.selection.prepare(v.setup, v.endpoint, v.handle, owner_authorized=True)
+
+
+def failed_endpoint_guards(monkeypatch):
+    """Observe actual policy failures while preserving the original rejection."""
+    failed = []
+    original = endpoint_module.require
+    def observe(condition, code):
+        if not condition:
+            failed.append(code)
+        return original(condition, code)
+    monkeypatch.setattr(endpoint_module, "require", observe)
+    return failed
 
 
 def test_native_same_record_restart_lookup_preserves_profile_key_history_and_closed_status(fixture, monkeypatch, capsys):
@@ -230,8 +243,10 @@ def test_native_pending_cannot_be_promoted_after_profile_change(fixture, monkeyp
     storage = copy.deepcopy(v.setup.private_choices()["storage"])
     storage["authority"]["seal"] = "b"*64; v.setup.choose({"storage":storage})
     before = v.setup.store.read()
-    with pytest.raises(AuthorityError):
+    failed = failed_endpoint_guards(monkeypatch)
+    with pytest.raises(SettingsError, match="^SETTINGS_STORE_UNAVAILABLE$"):
         v.selection.recover(v.setup, reference, owner_authorized=True)
+    assert failed == ["FOLDER_ENDPOINT_PROFILE"]
     assert (v.metadata_root / "settings.pending").read_bytes() == pending
     assert not (v.metadata_root / "settings.json").exists() and v.setup.store.read() == before
 
@@ -241,10 +256,13 @@ def test_native_conflicting_pending_is_not_silently_repaired(fixture, monkeypatc
     with v.metadata.native.locked() as port:
         raw = port.read("settings.json"); port.stage(raw)
     pending = (v.metadata_root / "settings.pending").read_bytes()
-    with pytest.raises(AuthorityError, match="^FOLDER_ENDPOINT_RECOVERY_CONFLICT$"):
+    failed = failed_endpoint_guards(monkeypatch)
+    with pytest.raises(SettingsError, match="^SETTINGS_STORE_UNAVAILABLE$"):
         v.selection.inspect()
-    with pytest.raises(AuthorityError):
+    assert failed == ["FOLDER_ENDPOINT_RECOVERY_CONFLICT"]
+    with pytest.raises(SettingsError, match="^SETTINGS_STORE_UNAVAILABLE$"):
         v.selection.recover(v.setup, reference, owner_authorized=True)
+    assert failed == ["FOLDER_ENDPOINT_RECOVERY_CONFLICT"] * 2
     assert (v.metadata_root / "settings.pending").read_bytes() == pending
     assert (v.metadata_root / "settings.json").read_bytes() == raw
     assert v.setup.store.read() == before
