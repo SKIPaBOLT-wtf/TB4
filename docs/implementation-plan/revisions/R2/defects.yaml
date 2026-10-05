@@ -7388,9 +7388,10 @@ defects:
         Static inspection also shows nonexistent claim/force test calls and integer
         transition labels incompatible with existing tid(label.encode).
       failing_source: 10badf7bbe08f54cfaeef640c062d4ceae8e319c
-      passing_source: null
+      passing_source: e8e8e2142a93a95607cacd76a551a55113312ad7
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux31-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-terminal-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7430,7 +7431,9 @@ defects:
       other newSSH PASS in both jobs. Production leadership unchanged; no peer ACK/UNKNOWN
       barrier added. C1-C4 held. Minimal test-only source e8e8e2142a93a95607cacd76a551a55113312ad7
       preserved/readback, actual production AST signatures verified; passing_source
-      null pending execution.
+      null pending execution. Actual e8e8/request32 both990/noFAIL/ERROR/SKIP, first-CAS
+      role test executed successfully in completefirstgroup; allcurrentplatform/bothrolepackageflags
+      PASS. Passing_source e8e8 scoped only; C1-C4 held.
     legacy_record: null
   DEF-102:
     title: Native first-run pending test assumes Windows native root is a Path

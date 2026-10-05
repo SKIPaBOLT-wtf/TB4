@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0462",
+  "source": "e8e8e2142a93a95607cacd76a551a55113312ad7",
+  "result": "PASS",
+  "request_revision": 32,
+  "source_equivalence": {
+    "actual_git_non_doc_diff": {
+      "trigger": [],
+      "pr": []
+    },
+    "baseline": "e8e8e2142a93a95607cacd76a551a55113312ad7"
+  },
+  "checkout": "f2e37102a0f0c743a23c0616c9dc2cbe30bbb77b",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "16248c90c1736afa742da464ee911c8c5f46d192"
+  ],
+  "provenance": "Actual terminal checkout matches API/Git verified446 main/trigger. Actual Git f2e parents and empty non-doc diff to e8e8 rechecked under462. Older actual631/f1a9 match previously verified441/430 pins.",
+  "required": [
+    {
+      "job": 111632895178,
+      "checkout": "16248c90c1736afa742da464ee911c8c5f46d192",
+      "groups": [
+        {
+          "passed": 477,
+          "seconds": 86.89,
+          "deselected": 0
+        },
+        {
+          "passed": 51,
+          "seconds": 117.58,
+          "deselected": 0
+        },
+        {
+          "passed": 6,
+          "seconds": 50.79,
+          "deselected": 0
+        },
+        {
+          "passed": 22,
+          "seconds": 254.8,
+          "deselected": 0
+        },
+        {
+          "passed": 107,
+          "seconds": 16.68,
+          "deselected": 0
+        },
+        {
+          "passed": 327,
+          "seconds": 555.75,
+          "deselected": 1
+        }
+      ],
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "job": 111632902826,
+      "checkout": "f2e37102a0f0c743a23c0616c9dc2cbe30bbb77b",
+      "groups": [
+        {
+          "passed": 477,
+          "seconds": 74.92,
+          "deselected": 0
+        },
+        {
+          "passed": 51,
+          "seconds": 89.71,
+          "deselected": 0
+        },
+        {
+          "passed": 6,
+          "seconds": 36.86,
+          "deselected": 0
+        },
+        {
+          "passed": 22,
+          "seconds": 190.41,
+          "deselected": 0
+        },
+        {
+          "passed": 107,
+          "seconds": 14.36,
+          "deselected": 0
+        },
+        {
+          "passed": 327,
+          "seconds": 469.16,
+          "deselected": 1
+        }
+      ],
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "new_native42_and_ssh12": "Both actual complete first-group command selectors include both entire files;477 PASS/noFAIL/ERROR/SKIP. Includes actual first-CAS stale2/forced3, previousgrant refusal, localUNKNOWN preserved/nopeer ACK; percase JUnit artifacts retained by workflow, not downloaded.",
+  "progress": {
+    "job": 111632903369,
+    "checkout": "f2e37102a0f0c743a23c0616c9dc2cbe30bbb77b",
+    "passed": 235,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "xfailed": 0,
+    "seconds": 6.81,
+    "failures": [],
+    "packages": []
+  },
+  "platform": [
+    {
+      "job": 111632902729,
+      "checkout": "f2e37102a0f0c743a23c0616c9dc2cbe30bbb77b",
+      "passed": 3425,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 27,
+      "xfailed": 4,
+      "seconds": 2572.97,
+      "failures": [],
+      "packages": []
+    },
+    {
+      "job": 111632903256,
+      "checkout": "f2e37102a0f0c743a23c0616c9dc2cbe30bbb77b",
+      "passed": 3219,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 250,
+      "xfailed": 4,
+      "seconds": 1447.91,
+      "failures": [],
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    },
+    {
+      "job": 111632903431,
+      "checkout": "f2e37102a0f0c743a23c0616c9dc2cbe30bbb77b",
+      "passed": 3448,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 21,
+      "xfailed": 4,
+      "seconds": 1397.18,
+      "failures": [],
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11328423375,
+      "name": "tb4-desktop-Linux-f2e37102a0f0c743a23c0616c9dc2cbe30bbb77b",
+      "size_in_bytes": 314539365,
+      "digest": "sha256:c3aa3d8cc6e0d65de04b1d3e891da4119d9688893ee4525a2325829bbe6e936f"
+    },
+    {
+      "id": 11327589572,
+      "name": "tb4-desktop-Windows-f2e37102a0f0c743a23c0616c9dc2cbe30bbb77b",
+      "size_in_bytes": 120954850,
+      "digest": "sha256:f34e931578e6521bf4b24cebc19d69277f8585cfd1b27c0c68ad46fb7f6d9c7f"
+    }
+  ],
+  "older31": {
+    "source": "10badf7bbe08f54cfaeef640c062d4ceae8e319c",
+    "result": "FAIL",
+    "full": [
+      {
+        "job": 111628577320,
+        "checkout": "631edc6d1a31691aa379413c767d43d89d773fb1",
+        "passed": 3424,
+        "failed": 1,
+        "errors": 0,
+        "skipped": 27,
+        "xfailed": 4,
+        "seconds": 1813.75,
+        "failures": [
+          "FAILED tests/drive/test_folder_connection_authenticated_ssh.py::test_real_first_cas_stale_forced_takeover_preserves_local_unknown_without_peer_ack - TypeError: Leadership.__init__() takes 2 positional arguments but 3 were given"
+        ],
+        "packages": []
+      },
+      {
+        "job": 111628577035,
+        "checkout": "631edc6d1a31691aa379413c767d43d89d773fb1",
+        "passed": 3447,
+        "failed": 1,
+        "errors": 0,
+        "skipped": 21,
+        "xfailed": 4,
+        "seconds": 2681.17,
+        "failures": [
+          "FAILED tests/drive/test_folder_connection_authenticated_ssh.py::test_real_first_cas_stale_forced_takeover_preserves_local_unknown_without_peer_ack - TypeError: Leadership.__init__() takes 2 positional arguments but 3 were given"
+        ],
+        "packages": []
+      }
+    ],
+    "windows": {
+      "job": 111628576712,
+      "checkout": "631edc6d1a31691aa379413c767d43d89d773fb1",
+      "passed": 3219,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 250,
+      "xfailed": 4,
+      "seconds": 2505.2,
+      "failures": [],
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "id": 11327843809,
+        "name": "tb4-desktop-Windows-631edc6d1a31691aa379413c767d43d89d773fb1",
+        "size_in_bytes": 120954388,
+        "digest": "sha256:2c7ba40efb4c7ceff0bb8bb09720bdb2c66001dc06c8780b460eb6bc91854146"
+      }
+    ],
+    "failure": "Only same DEF-101 wrong Leadership positional constructor; Linux package steps not executed. Windows bothroles/allfourflags PASS."
+  },
+  "older30_windows": {
+    "source": "2f43d0ed3e4510c95dc916f87545c53ced3d18aa",
+    "actual": {
+      "job": 111623699912,
+      "checkout": "f1a9aada09ab623ccf83fdc14bc314242fd9182f",
+      "passed": 3219,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 250,
+      "xfailed": 4,
+      "seconds": 2508.5,
+      "failures": [],
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "id": 11328445602,
+        "name": "tb4-desktop-Windows-f1a9aada09ab623ccf83fdc14bc314242fd9182f",
+        "size_in_bytes": 120950185,
+        "digest": "sha256:372390a517c0aa4a95fee021ceb4291e188f4096bcc551d0a818dba8ca5fa5d6"
+      }
+    ],
+    "linux": "Previous448 actual12DEF100 errors preserved; no additional failures."
+  },
+  "privacy": "Closed source/counts/fixed failure/role flags and artifact metadata only; no logs/private frames/download/install.",
+  "acceptance": "e8e8 connection scope qualified. Currentea4c37/1027/fullplatform and staged/runtime/GUI/C1-C4 remain separately held.",
+  "next": "Inspect same currentea4c/request33 actualrequired1027/37/Progress; record actual outcomes, then complete missing staged/mapped/runtime/GUI integration."
+}

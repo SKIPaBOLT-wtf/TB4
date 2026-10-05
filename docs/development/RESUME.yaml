@@ -7,18 +7,16 @@ phase: STAGED_RECONFIGURATION_C2_OLD_NATIVE_CONNECTION_TERMINAL_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: e8e8e2142a93a95607cacd76a551a55113312ad7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0462
+last_verified_event: RP-027-A001-0463
 last_completed: RP-026
-next_action: Publish exact oldsource outcome and passingsources/remaining jobs; then
-  inspect SAME currentea4c/request33 actual37/1027/Progress before dependent staged/runtime/GUI
-  implementation.
-verification: Read-only same frozen olde8e8/32 role990/full and10bad/31/2f43/30Windows
-  terminal outcomes; currentea4c33 actual1027 separate, C1-C4 held.
+next_action: Inspect same currentea4c/request33 actualrequired1027/37/Progress; record
+  actual outcomes, then complete missing staged/mapped/runtime/GUI integration.
+verification: e8e8 source-specific990 twice/fullplatform/bothrole packages qualified;
+  older failures retained. Currentea4c/request33 separate, C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0462
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
