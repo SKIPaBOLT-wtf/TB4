@@ -7209,5 +7209,9 @@ defects:
     resolution_evidence: []
     notes: Actual764PASS/17FAIL/0ERROR/99declaredLinuxSKIP209.491s; all17 same lost
       fixture buffer, actual helper tokens correct. No product/native/timeout/protocol
-      cause inferred. Existing failedruns preserved. All C1-C4 held.
+      cause inferred. Existing failedruns preserved. All C1-C4 held. Minimal onefile
+      helper-local sys fixture source 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f preserved/readback,
+      all38case definitions/assertions and original product/protocol/workflow/test
+      blobs unchangedfromf18. AST/diff/privacy PASS/tests0; executionqualifiedsource
+      pending.
     legacy_record: null

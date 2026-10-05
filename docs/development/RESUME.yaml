@@ -5,21 +5,20 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_OUTPUT_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 3c05afa170a74ca29da7aa23521ec4dd1c0aff22
+source_commit: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0399
+last_verified_event: RP-027-A001-0400
 last_completed: RP-026
-next_action: Preserve/publish exact fixture-only source and related OUTCOME/DEF098
-  repair link; then focused newportable/probe/protocol/defaultsame3388 recheck and
-  one immutable currentsourceLinux905/fullplatform launch.
-verification: DEF098 provenpurefixture globalcapture interference; minimalhelper-local
-  sys test repair with unchangedassertions and focused recheck scheduled. ActualcurrentLinux/full/common
-  stillrequired; C1-C4held.
+next_action: Separate38portable plus70affected original probe/protocol focused Windows/default3388
+  unchanged-node recheck; ifPASS publish one source-linked request28 requiredLinux905/fullplatform.
+  Native attachment may later be scheduled independently from qualified A026/A027.
+verification: DEF098 onefile helper-local sys fixture repaired/published; originalproduct/tests
+  exactunchangedfromf18, tests0. Focusedportable/protocol/default thencurrent905Linux/full
+  required; C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0399
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

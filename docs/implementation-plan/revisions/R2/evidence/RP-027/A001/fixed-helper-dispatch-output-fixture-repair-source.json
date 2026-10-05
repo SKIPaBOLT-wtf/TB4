@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0399",
+  "source": "5f80eec64e89fba848f5da1a78a1af4e2d37fb5f",
+  "base": "02f1f865a0bdbbe68db73b58dbc9d62d2b32287a",
+  "local_preservation": "91711fb26b57df77a7997c85e107fe325e531834",
+  "result": "TEST_ONLY_LOCAL_OUTPUT_FIXTURE_REPAIR_PUBLISHED",
+  "defect": "DEF-098",
+  "changed_files": [
+    "tests/drive/test_folder_helper_dispatch.py"
+  ],
+  "change": "Helper-local simulated sys namespace owns platform/stdin/stdout instead of global pytest captured sys; real argparse still reads original monkeypatched sys.argv. NonLinux case changes only the helper-local platform. Prior signal.alarm raisingFalse repair remains.",
+  "review": {
+    "AST": "Onefile/seven retained testfunctions PASS",
+    "diff": "Only one portable fixture file differs from f18; src/protocol/workflows/all original tests exact unchanged via actual Git diff.",
+    "privacy": "PASS; synthetic mocked IO only, no real native/signal/network operation.",
+    "assertions": "All38portable/55totalnew case definitions and exact reply/order/nonLinux/oldmode assertions retained.",
+    "tests_executed": 0
+  },
+  "source_equivalent_original_evidence": "Original743applicable native/credential/endpoint/candidate/helper regressions PASS on f18 event398; all corresponding product/originaltest blobs unchanged. This is preserved scoped evidence, not current full/common acceptance.",
+  "next": "Separate38portable plus70affected original probe/protocol focused Windows/default3388 unchanged-node recheck; ifPASS publish one source-linked request28 requiredLinux905/fullplatform. Native attachment may later be scheduled independently from qualified A026/A027."
+}
