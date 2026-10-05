@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_ENDPOINT_POINTER_ATTACHMENT_SOURCE
+phase: STAGED_RECONFIGURATION_C2_NATIVE_ENDPOINT_ATTACHMENT_WINDOWS_DEFAULT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d168a74ed9ef55e77926be1ee3de8666f4216fc6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0406
+last_verified_event: RP-027-A001-0407
 last_completed: RP-026
-next_action: Publish separate actualWindows31native and original protected endpoint/pointer/credential/Setup/candidate
-  regression/default3419 collection INTENT with private failure capture and exactbaseline3388/add31/remove0.
-  Then source-specific nativeLinux/full qualification; separatelyinspect oldimmutable5f80
-  request28 terminal results.
-verification: A029native-onlyattachment source published/AST/diff/privacy tests0;
-  31newnative/default3419 expected needsactualtest. Old5f80 helperrequest28 source-distinct
-  pending; C1-C4held.
+next_action: Publish Windows/default exact result and defects if any; inspect immutable
+  request28 under a separate read-only INTENT, then qualify current d168 native/Linux/full/platform
+  before dependent connection composition.
+verification: A029 source preserved; actual 31 native Windows cases and original regression/default3419
+  collection pending; immutable request28 is separate.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0407
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
