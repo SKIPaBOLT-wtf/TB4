@@ -7249,6 +7249,7 @@ defects:
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-linux28-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-linux28-full-failed.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7289,5 +7290,7 @@ defects:
       Minimal onefile source a68893fa004b896695d5d22a83fa4c3016b6d516 preserved/readback;
       transparent originalcall observer/precise code expectation retains all4cases
       and unchanged production. AST/static reviews tests0; actualLinux/default/full/C1-C4
-      pending.
+      pending. Old5f80 full CI3339PASS/1sameDEF099FAIL/27SKIP/4XFAIL2525.04s and LinuxDesktop3362PASS/1sameFAIL/21SKIP/4XFAIL2654.93s.
+      Windows3146PASS/238SKIP/4XFAIL2494.24s plus bothroles/fourpackageflagsPASS.
+      No extra failure identified; currenta688 required/full separate.
     legacy_record: null
