@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0494",
+  "source": "6f419f3092ebb22f9007152a42444ac4e0cada99",
+  "result": "RECORDED",
+  "default_collection": {
+    "schema_version": 1,
+    "source": "6f419f3092ebb22f9007152a42444ac4e0cada99",
+    "checkout": "c0b1aaf813afe58980ca74a933b4291349989497",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.826,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3579,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "exact_case_ids": {
+    "baseline_count": 3554,
+    "current_count": 3579,
+    "added_count": 25,
+    "removed_count": 0,
+    "exact_baseline_preserved": true
+  },
+  "existing_windows_reuse": {
+    "qualified_source": "18969f784e2e2431ed31f6a6c0a3eef62279e31d",
+    "evidence": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-qualified.json",
+    "actual226_preserved": true,
+    "exact_existing_product_tests_diff": [],
+    "exclusions": [
+      "new staged endpoint module/test",
+      "workflow selector",
+      "docs"
+    ],
+    "new_staged25_windows_executed": false
+  },
+  "native36": {
+    "source": "18969f784e2e2431ed31f6a6c0a3eef62279e31d",
+    "trigger": "c69dd69f56ee29fa03c592e0fe12027ab8391e33",
+    "pr_checkout": "fa9e872f7fcf3621fb9f8f16145ef3f8327a10ac",
+    "parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "c69dd69f56ee29fa03c592e0fe12027ab8391e33"
+    ],
+    "previous_actual_git_non_doc_diff": {
+      "trigger": [],
+      "pr": []
+    },
+    "required": [
+      {
+        "run": 37285029711,
+        "job": 111681782985,
+        "conclusion": "success",
+        "checkout": "c69dd69f56ee29fa03c592e0fe12027ab8391e33",
+        "summaries": [
+          {
+            "counts": {
+              "passed": 558
+            },
+            "seconds": 284.09
+          },
+          {
+            "counts": {
+              "passed": 51
+            },
+            "seconds": 112.77
+          },
+          {
+            "counts": {
+              "passed": 6
+            },
+            "seconds": 46.3
+          },
+          {
+            "counts": {
+              "passed": 22
+            },
+            "seconds": 234.28
+          },
+          {
+            "counts": {
+              "passed": 107
+            },
+            "seconds": 16.26
+          },
+          {
+            "counts": {
+              "passed": 327
+            },
+            "seconds": 438.73
+          }
+        ],
+        "failures": [],
+        "selectors": {
+          "native25": true,
+          "ssh6": true
+        }
+      },
+      {
+        "run": 37285034737,
+        "job": 111681800003,
+        "conclusion": "success",
+        "checkout": "fa9e872f7fcf3621fb9f8f16145ef3f8327a10ac",
+        "summaries": [
+          {
+            "counts": {
+              "passed": 558
+            },
+            "seconds": 272.74
+          },
+          {
+            "counts": {
+              "passed": 51
+            },
+            "seconds": 110.67
+          },
+          {
+            "counts": {
+              "passed": 6
+            },
+            "seconds": 47.97
+          },
+          {
+            "counts": {
+              "passed": 22
+            },
+            "seconds": 245.53
+          },
+          {
+            "counts": {
+              "passed": 107
+            },
+            "seconds": 16.01
+          },
+          {
+            "counts": {
+              "passed": 327
+            },
+            "seconds": 507.48
+          }
+        ],
+        "failures": [],
+        "selectors": {
+          "native25": true,
+          "ssh6": true
+        }
+      }
+    ],
+    "all_new31_actual": "PASS_BOTH_RUNS",
+    "progress": {
+      "run": 37285034712,
+      "job": 111681800135,
+      "name": "ledger",
+      "conclusion": "success",
+      "checkout": "fa9e872f7fcf3621fb9f8f16145ef3f8327a10ac",
+      "summaries": [
+        {
+          "counts": {
+            "passed": 235
+          },
+          "seconds": 13.14
+        }
+      ],
+      "failures": [],
+      "packages": []
+    },
+    "pending": [
+      {
+        "run": 37285034773,
+        "jobs": [
+          {
+            "id": 111681799849,
+            "name": "test",
+            "status": "in_progress",
+            "conclusion": null
+          }
+        ]
+      },
+      {
+        "run": 37285034705,
+        "jobs": [
+          {
+            "id": 111681799722,
+            "name": "desktop (windows-latest)",
+            "status": "in_progress",
+            "conclusion": null
+          },
+          {
+            "id": 111681799978,
+            "name": "desktop (ubuntu-22.04)",
+            "status": "in_progress",
+            "conclusion": null
+          }
+        ]
+      }
+    ]
+  },
+  "unexecuted_source_review": {
+    "source": "6f419f3092ebb22f9007152a42444ac4e0cada99",
+    "tests_executed": 0,
+    "detected": "Two unexecuted staged-test expectations disregard the existing native sanitizer.",
+    "source_methods": [
+      "src/tb4/private_settings_linux.py:51",
+      "src/tb4/private_settings_windows.py:123"
+    ],
+    "existing_regressions": "tests/security/test_folder_endpoint_attachment_native.py exact public SETTINGS_STORE_UNAVAILABLE plus observed internal FOLDER_ENDPOINT_ATTACHMENT_CONFLICT.",
+    "mismatches": [
+      "cut helper expects raw OSError inside native locked context; native catches it into SettingsError SETTINGS_STORE_UNAVAILABLE, affects2cut+4alteredpending cases.",
+      "ordinary attach conflict test expects raw AuthorityError; native public error is SETTINGS_STORE_UNAVAILABLE while internalguardremains FOLDER_ENDPOINT_ATTACHMENT_CONFLICT."
+    ],
+    "hypothesis": "Minimaltest-only correction toclosedpublic SettingsError, separatelyobserveactualinternalconflict guard; no product change. Unexecuted source review is not runtime failure/PASS evidence."
+  },
+  "acceptance": false,
+  "next": "Minimal staged test-only exception expectations correction before firstLinux37. Product guards remain; same36fullplatform/CI terminal later, commonC1-C4 held."
+}

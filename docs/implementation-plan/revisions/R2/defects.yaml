@@ -7591,6 +7591,7 @@ defects:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-candidate-mapped-linux34-failed.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-prerequisites-current-platform-qualified.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/corrected-native-candidate-linux35-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/corrected-native-candidate-current-platform-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7636,6 +7637,9 @@ defects:
       includingtwo exactearlyC1refusals, CI3475PASS/27SKIP/4XFAIL1823.88s andProgress235PASS6.14s;
       old34Windows3254/265/4/bothrolesPASS andLinux3496/2sameFAIL/21/4 preserved.
       Current35Desktop incomplete; scopedpassing_source cb950 only/no C1-C4 acceptance.
+      Corrected35 completeplatform actualWindows3254/265/4 2483.85s andLinux3498/21/4
+      2769.68s, bothroles fourpackage/GUI/profileisolation flagsPASS; exactverified3bd28checkout,
+      metadataonlyartifacts. Frozenoldsource qualified, RP027 common held.
     legacy_record: null
   DEF-105:
     title: Native no-grant admission test supplies an unrelated actor enrollment
@@ -7661,6 +7665,7 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-failed.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/staged-endpoint-collection-and-native36-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7700,4 +7705,53 @@ defects:
       assertion AST unchanged, production unchanged/tests0. Passing_source null untilactualrecheck.
       Actualsame226Windows PASS/noFAIL/ERROR/SKIP118.33s, all25newnative andexisting201.
       Same3554 exactIDs/default1.802s; scopedpassing_source only, Linux/fullplatform/commonheld.
+      Source18969 newnative25+realSSH6 actualrequired1071twice/noFAIL/ERROR/SKIP (558/51/6/22/107/327),
+      includinglatekey/revocation/force/timingworkdenial/defaultDeny. Same36Progress235PASS13.14s;
+      completeplatform/CI stillrunning.
+    legacy_record: null
+  DEF-106:
+    title: Unexecuted staged endpoint tests expect raw exceptions across the native
+      sanitizer
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 6f419f3092ebb22f9007152a42444ac4e0cada99
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/staged-endpoint-collection-and-native36-qualified.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Read-only source review, not runtime execution: staged cut helper
+        expects OSError but actual locked native sanitizer catches Exception into
+        SETTINGS_STORE_UNAVAILABLE; ordinary attach conflict likewise exposes closed
+        SettingsError. Existing native guards/regressions establish public and internal
+        distinction. No staged25 test has run.'
+      failing_source: 6f419f3092ebb22f9007152a42444ac4e0cada99
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/staged-endpoint-collection-and-native36-qualified.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Match closed public SettingsError; observe exact original conflict guard
+        independently. Product/source-native sanitizer unchanged. Source-controlflow
+        review supports expectation correction; actualstagedexecution stillrequired.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/staged-endpoint-collection-and-native36-qualified.json
+    repairs: []
+    issue: null
+    regression_test: Actual2nativecuts/4alteredpending andordinaryreplacementconflict
+      reach intendedguard, exactprofile/archive/work retained; all25 staged/current1096
+      andplatform.
+    resolution_evidence: []
+    notes: Static source-review finding only; no fabricatedfailed test/run or passing_source.
+      MinimaltestcorrectionbeforefirststagedCI, production unchanged.
     legacy_record: null

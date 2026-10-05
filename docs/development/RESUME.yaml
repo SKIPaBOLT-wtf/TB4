@@ -7,19 +7,17 @@ phase: STAGED_RECONFIGURATION_C2_STAGED_ENDPOINT_COLLECTION_TERMINALS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6f419f3092ebb22f9007152a42444ac4e0cada99
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0494
+last_verified_event: RP-027-A001-0495
 last_completed: RP-026
-next_action: Publishdefaultcollection/same35/36actualOUTCOME. Debug36 failurebeforedependentcurrentcomposition;
-  otherwiselaunchone stagedsource37/1096/new25 underseparateINTENT. FinalcoherentruntimeGUI/common
-  remains.
+next_action: Minimal staged test-only exception expectations correction before firstLinux37.
+  Product guards remain; same36fullplatform/CI terminal later, commonC1-C4 held.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0494
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
