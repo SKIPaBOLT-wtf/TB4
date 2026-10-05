@@ -12,6 +12,7 @@ import pytest
 
 from tb4.commissioning_checks import Prerequisites, detect_environment
 from tb4.commissioning_state import Setup, DenyActivation
+from tb4.configuration_contract import ConfigurationError
 from tb4.credential_contract import Purpose
 from tb4.drive.docs_authority import AuthorityError
 from tb4.drive.folder_authority import DB, JOURNAL, FolderStore, identity
@@ -197,10 +198,11 @@ def test_actual_staged_native_pending_is_preserved_without_ssh_or_recovery(stage
 
 
 @pytest.mark.parametrize("fault", ["missing-artifact", "conflicting-source"])
-def test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main(staged, fault):
+def test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main(staged, fault, monkeypatch):
     v = staged
     assert v.s.candidate.review(v.checker)["settings_validated"]
     main, archive = v.s.ctx.setup.store.read(), v.s.candidate.context.archive.read()
+    profile = v.profile.read()
     shared = FolderStore(v.current).read()
     if fault == "missing-artifact":
         key = v.port.spec.artifact_keys[0]
@@ -209,8 +211,13 @@ def test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main(st
     else:
         assert not v.port.expected.root.exists()
         v.port.expected.root.mkdir(mode=0o700)
-    report = Candidate(v.s.candidate.context).review(v.checker)
-    assert not report["settings_validated"] and not report["runtime_active"]
-    assert v.profile.read().payload["reason"] == "STORAGE_UNAVAILABLE"
+    def forbidden(*_args, **_kwargs): pytest.fail("Early C1 refusal reached SSH")
+    monkeypatch.setattr(FixedProcess, "call", forbidden)
+    code = "CONFIGURATION_CONTEXT_UNAVAILABLE" if fault == "missing-artifact" else "FOLDER_MAPPING_CONFLICT"
+    with pytest.raises(ConfigurationError, match="^" + code + "$"):
+        v.s.candidate.review(v.checker)
+    view = v.s.candidate.view()
+    assert not view["settings_validated"] and not view["runtime_active"]
+    assert v.profile.read() == profile
     assert v.s.ctx.setup.store.read() == main and v.s.candidate.context.archive.read() == archive
     assert FolderStore(v.current).read() == shared
