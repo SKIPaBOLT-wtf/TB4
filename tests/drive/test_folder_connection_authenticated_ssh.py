@@ -20,6 +20,7 @@ from tb4.drive.leadership import Leadership
 from tb4.private_settings import native_settings
 from tb4.timing_contract import TimingProfile
 from test_folder_combined_authenticated_ssh import combined, objects, desired
+from test_folder_commissioning import context
 from test_native_leadership import ACTORS, ENROLLMENT, clock, tid
 
 pytestmark = pytest.mark.skipif(sys.platform != "linux",
