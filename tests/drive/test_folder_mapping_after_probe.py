@@ -117,3 +117,53 @@ def test_default_authority_handler_rejects_after_probe_without_cas():
     _,plan=terminal();port=SyntheticPort()
     assert flat_json(handle(port,encoded(request(plan))))==dict(result='UNKNOWN') and port.commits==0
 
+
+def runner_response():
+    # Pure parser boundary only; no key, native runner or SSH invocation.
+    from tb4.drive.folder_probe_transport import FolderProbeRunner
+    doc,plan=terminal()
+    runner=object.__new__(FolderProbeRunner)
+    runner.binding,runner.spec,runner.authority=BINDING,SPEC,HANDLE
+    reply={**after_header(BINDING,'a'*32), 'result':'VERIFIED', 'revision':7,
+        'body':base64.b64encode(document_bytes(doc)).decode(), 'mapping_sha256':plan['mapping_sha256']}
+    return runner,doc,plan,reply
+
+
+def test_actual_runner_validates_after_pair_and_retains_old_normal_response_guard():
+    from tb4.drive.folder_probe import probe_header
+    runner,_,plan,reply=runner_response()
+    runner._response(encoded(reply),request(plan))
+    normal={**probe_header(BINDING,'a'*32), 'result':'VERIFIED', 'revision':7,
+        'body':reply['body'], 'blueprint':SPEC.fingerprint, 'authority':HANDLE.seal}
+    normal_request={**probe_header(BINDING,'a'*32), 'operation':'VERIFY',
+        'blueprint':SPEC.fingerprint, 'authority':HANDLE.seal}
+    runner._response(encoded(normal),normal_request)
+    with pytest.raises(AuthorityError,match='^PROBE_MODE$'):
+        runner._response(encoded(reply),normal_request)
+    with pytest.raises(AuthorityError,match='^MAPPING_AFTER_RESPONSE$'):
+        runner._response(encoded(normal),request(plan))
+
+
+@pytest.mark.parametrize('field,value',[('mode','FOLDER_SQLITE_V1'),('nonce','b'*32),
+    ('root',DOMAIN),('domain',BINDING.root_id),('mapping_sha256','b'*64),
+    ('revision',True),('revision',0),('result','UNKNOWN'),('body','bad'),
+    ('path','SYNTHETIC_PRIVATE_CANARY'),('blueprint',SPEC.fingerprint),('authority',HANDLE.seal)])
+def test_actual_runner_refuses_malformed_or_uncorrelated_after_reply(field,value):
+    runner,_,plan,reply=runner_response()
+    with pytest.raises(AuthorityError):
+        runner._response(encoded({**reply,field:value}),request(plan))
+
+
+@pytest.mark.parametrize('fault',['identity-unknown','configuration-active','handle'])
+def test_actual_runner_after_reply_requires_terminal_exact_current_plan(fault):
+    runner,doc,plan,reply=runner_response()
+    if fault=='identity-unknown':
+        doc['records'][SLOT]['body'][KEY]['entries'][Action.IDENTITY.value]['outcome']='UNKNOWN'
+        doc['records'][SLOT]['retention']='UNKNOWN'
+    elif fault=='configuration-active':
+        doc['records']['global.settings']['body']['configuration']['phase']='ACTIVE'
+    else:
+        doc['records'][SLOT]['body'][KEY]['folder_plan']['handle_sha256']='b'*64
+    reply['body']=base64.b64encode(document_bytes(doc)).decode()
+    with pytest.raises(AuthorityError):runner._response(encoded(reply),request(plan))
+

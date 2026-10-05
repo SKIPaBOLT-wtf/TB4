@@ -50,6 +50,30 @@ def terminal_plan(document, binding, expected):
     return expected
 
 
+def after_response(binding, spec, authority, raw, request):
+    """Validate the exact private runner's correlated AFTER reply."""
+    after_request(binding, spec, authority, encoded(request))
+    value = flat_json(raw)
+    require(value.get("mode") == MODE, "MAPPING_AFTER_RESPONSE")
+    check_probe_header({**value, "mode": probe_header(binding, "")["mode"]},
+                       binding, request["nonce"])
+    require(set(value) == set(after_header(binding, "")) |
+        {"result", "revision", "body", "mapping_sha256"}
+        and value["result"] == "VERIFIED"
+        and value["mapping_sha256"] == request["mapping_sha256"]
+        and type(value["revision"]) is int and 1 <= value["revision"] <= MAX_GENERATION,
+        "MAPPING_AFTER_RESPONSE")
+    document, actual = checked_document(body_bytes(value["body"], binding), binding, spec.fingerprint)
+    require(actual == spec, "MAPPING_AFTER_RESPONSE")
+    summary = ledger(document["records"][SLOT])
+    require(summary is not None and summary.get("folder_plan") is not None, "MAPPING_AFTER_PLAN")
+    expected = terminal_plan(document, binding, summary["folder_plan"])
+    require(expected["mapping_sha256"] == request["mapping_sha256"]
+        and expected["blueprint_sha256"] == spec.fingerprint
+        and expected["handle_sha256"] == digest(authority.record()), "MAPPING_AFTER_PLAN")
+    return value
+
+
 def handle_after_probe(config, raw, *, mapping_store=None):
     """Inspect the server's protected pointer; the request supplies no path."""
     reply = None

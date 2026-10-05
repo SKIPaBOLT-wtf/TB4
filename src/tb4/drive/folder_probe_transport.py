@@ -151,6 +151,10 @@ class FolderProbeRunner:
         return probe_request(self.binding, self.spec, self.authority, raw)
 
     def _response(self, raw, request):
+        from .folder_mapping_after_probe import MODE as AFTER_MODE, after_response
+        if request.get("mode") == AFTER_MODE:
+            after_response(self.binding, self.spec, self.authority, raw, request)
+            return
         value = flat_json(raw)
         check_probe_header(value, self.binding, request["nonce"])
         require(set(value) == set(probe_header(self.binding, "")) |

@@ -23,10 +23,10 @@ from test_folder_commissioning import context
 pytestmark=pytest.mark.skipif(sys.platform!='linux',reason='Actual native mapping AFTER/physical/fixed SSH')
 
 
-def facts(s):
+def facts(s, *, expected=None):
     port=s.ctx.storage_port;config=port._config()
     row=FolderStore(config).read();doc=s.ctx.leadership.backend.read().document()
-    plan=ledger(doc['records'][SLOT])['folder_plan']
+    plan=ledger(doc['records'][SLOT])['folder_plan'] if expected is None else expected
     _,handle=storage_spec(s.ctx.setup.private_choices()['storage'])
     req={**after_header(config.binding,'a'*32),'operation':'VERIFY_AFTER',
         'blueprint':port.spec.fingerprint,'authority':handle.seal,'mapping_sha256':plan['mapping_sha256']}
@@ -53,9 +53,11 @@ def test_actual_after_proof_refuses_unfinished_or_lost_native_mapping_and_seal_w
     if fault=='before':
         s=relocation_system(context,tmp_path)
         assert s.relocation.begin(owner_authorized=True)=='PREPARED'
+        expected=s.relocation._intent(s.relocation._state()[0])
     else:
         s=system(context,tmp_path)
-    config,row,plan,req=facts(s)
+        expected=None
+    config,row,plan,req=facts(s,expected=expected)
     mapping=s.ctx.storage_port.mapping.store
     if fault=='hash':req['mapping_sha256']='c'*64
     if fault=='pending':
