@@ -5,19 +5,18 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
+source_commit: 10badf7bbe08f54cfaeef640c062d4ceae8e319c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0435
+last_verified_event: RP-027-A001-0436
 last_completed: RP-026
-next_action: Publish source-only repair outcome, then schedule actual corrected Linux/native/default/platform
-  verification.
-verification: DEF-100 test-only context fixture import repair; all12 cases retained,
-  source-only then actual Linux required.
+next_action: Launch corrected required Linux990 request31 once; pin exact source-equivalent
+  push/PR checkouts. Inspect same old request30 fullplatform without replay.
+verification: One-line DEF-100 context import corrected; actual Linux12/default/fullplatform
+  pending, C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0435
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

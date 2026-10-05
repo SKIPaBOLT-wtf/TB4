@@ -7337,7 +7337,18 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux30-failed.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0435
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: All12 new authenticated SSH cases execute under actual Linux;
       all42 new native cases, full required990 twice, original source-specific platform/default
@@ -7346,4 +7357,6 @@ defects:
     notes: Proven test fixture composition error before native or SSH execution. Windows854
       and native42 PASS do not prove Linux12. Required groups2-6 not executed. Current
       full CI/Desktop not yet inspected. C1-C4 held; no production guard weakening.
+      Minimal one-line source repair 10badf7bbe08f54cfaeef640c062d4ceae8e319c published/readback;
+      actual Linux passing_source remains null until execution.
     legacy_record: null
