@@ -5,22 +5,20 @@ check: RP-027.C4
 attempt: A001
 phase: STAGED_RECONFIGURATION_C4_NATIVE_FOLDER_NORMAL_ADMISSION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 6775d05523da8732a1f77725e9bba885c3810428
+source_commit: 8719fe0c5bfde6436f3c5f6f6b5595a928636494
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0482
+last_verified_event: RP-027-A001-0483
 last_completed: RP-026
-next_action: Publish scoped source/static outcome; actualWindows/native/defaultcollection
-  and currentLinux/fullplatform tests underseparateINTENT. Same35 and34 oldfull terminal
-  results retained. Staged endpointreplacement/coherentfinalruntime/GUI/commonC1-C4
-  remainrequired.
+next_action: Actual Windows new25native and affected regressions/defaultcollection,
+  corrected35/old34 terminal evidence, current source Linux/platform/package qualification;
+  staged endpoint/coherentGUI/common C1-C4 held.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0482
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
