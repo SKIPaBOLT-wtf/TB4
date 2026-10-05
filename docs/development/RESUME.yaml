@@ -3,24 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_LINUX28_TERMINAL
+phase: STAGED_RECONFIGURATION_C2_NATIVE_ENDPOINT_ATTACHMENT_WINDOWS_DEFAULT
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
+source_commit: d168a74ed9ef55e77926be1ee3de8666f4216fc6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0410
+last_verified_event: RP-027-A001-0411
 last_completed: RP-026
-next_action: Publish separate terminal d168 Windows/default407 outcome, then authorize
-  minimal1file native test boundary correction withall4cases/strictclosedcodes/actualcallcounts
-  retained. Requalify corrected current combined source/default/nativeLinux936/fullplatform;
-  no productionguard weakening or oldrequestrepeat.
-verification: Immutable5f80 request28 requiredLinux fails in one empty-command native
-  test before transport; DEF099 proven test-only boundary expectation. Currentd168
-  Windows704PASS/default3419 separately pending publication.
+next_action: Authorize exact1file DEF099 test boundary repair fromcurrent d168, retainingallfourcases/default3419
+  and no product/workflow changes. Source/test outcomes then currentcombined source
+  request29 requiredLinux936/fullplatform. No oldrequestreplay.
+verification: d168 actual native Windows704PASS/31new zero skip/default3419 exact31
+  additions zero removals. Current helper Linux failed DEF099; test-only correction
+  and current combined source/Linux936/full/platform/fresh runtime still pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0407
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
