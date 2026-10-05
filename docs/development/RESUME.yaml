@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_CONNECTION_LINUX31_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_TAKEOVER_TEST_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 10badf7bbe08f54cfaeef640c062d4ceae8e319c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0442
+last_verified_event: RP-027-A001-0443
 last_completed: RP-026
-next_action: Publish onefile test-only actual Leadership API repair INTENT; preserve
-  localUNKNOWN, first-CAS2/3 and add priorgrant dispatch refusal; production unchanged.
-  Requalify current nativeLinux/fullplatform.
-verification: Correctedrequest31 all12 SSH execute; 11PASS/1 testAPI FAIL, all42native
-  PASS, DEF100 scoped confirmed. Minimal DEF101 test repair required; C1-C4 held.
+next_action: Publish source-only repair outcome then launch same current required
+  Linux990/fullplatform qualification once.
+verification: Minimal DEF101 actual Leadership API test repair, preserve all12cases/localUNKNOWN/first-CAS2-3;
+  production unchanged, actualqualification pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0443
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
