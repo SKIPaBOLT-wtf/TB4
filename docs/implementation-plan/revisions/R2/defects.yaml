@@ -7746,12 +7746,26 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/staged-endpoint-collection-and-native36-qualified.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0496
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Actual2nativecuts/4alteredpending andordinaryreplacementconflict
       reach intendedguard, exactprofile/archive/work retained; all25 staged/current1096
       andplatform.
     resolution_evidence: []
     notes: Static source-review finding only; no fabricatedfailed test/run or passing_source.
-      MinimaltestcorrectionbeforefirststagedCI, production unchanged.
+      MinimaltestcorrectionbeforefirststagedCI, production unchanged. Minimaltest-onlysource
+      b6288d53c5eb29d51708b1f6099114529f79a701 matchesclosednativeErrors andobservesexactinternalconflictguard;
+      allothercases/fixtureAST and25decorators/retentionassertions unchanged, production/protocol
+      unchanged/tests0. No passing_source untilactual.
     legacy_record: null

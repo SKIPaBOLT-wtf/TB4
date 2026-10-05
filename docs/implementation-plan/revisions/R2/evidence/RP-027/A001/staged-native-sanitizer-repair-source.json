@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0496",
+  "source": "b6288d53c5eb29d51708b1f6099114529f79a701",
+  "base": "4030989940043f4a1542379c950c36f4f69784cd",
+  "local_preserved": "93dbbbc97c99646b701a8f7de0de98bfc7e94bd0",
+  "result": "RECORDED",
+  "files": [
+    "tests/drive/test_folder_staged_endpoint_authenticated_ssh.py"
+  ],
+  "static": {
+    "schema_version": 1,
+    "base": "4030989940043f4a1542379c950c36f4f69784cd",
+    "python_ast": "PASS",
+    "other_cases_and_fixture_ast": "EXACT_UNCHANGED",
+    "same25_case_declarations_and_retention_assertions": true,
+    "product_protocol_diff": [],
+    "tests_executed": 0
+  },
+  "public_scan": "CLEAN",
+  "readback": "EXACT_ALL_FILES/Gitparent/branch",
+  "tests_executed": 0,
+  "next": "Same3579 defaultcollection; correctedfirststaged37/1096/new25 actualLinux underseparateINTENT. Same36fullplatform/CI terminalscope later; finalcoherentruntimeGUI/common held."
+}
