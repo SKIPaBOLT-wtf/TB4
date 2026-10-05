@@ -3,20 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_CONNECTION_LINUX31
+phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_CONNECTION_LINUX30_FULL
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 10badf7bbe08f54cfaeef640c062d4ceae8e319c
+source_commit: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0438
+last_verified_event: RP-027-A001-0439
 last_completed: RP-026
-next_action: Separate read-only old2f43 request30 fullplatform inspection; then same
-  current10bad request31 native990/Progress terminal qualification.
-verification: Corrected10bad request31 launched once, actualPR0c89 and push6fce source-equivalent;
-  required990/fullplatform pending.
+next_action: Record oldsource results; then same corrected10bad request31 native990/Progress
+  terminal inspection and dependent source as permitted.
+verification: Read-only same old2f43/request30 full/platform outcome; corrected10bad/request31
+  separate, C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0439
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
