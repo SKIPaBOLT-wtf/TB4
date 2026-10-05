@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0466",
+  "source": "b8f08653e7285a8943b9ebcda7552e3960d9b67c",
+  "local_preserved": "4baa1b650d0ef1441fb2a7395eeaa36bdbb60da3",
+  "base": "696017c514593edb0be16b363edb6045b4736c0b",
+  "result": "RECORDED",
+  "files": [
+    "tests/drive/test_folder_ssh.py",
+    "tests/drive/test_folder_candidate_authenticated_ssh.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-032-native-candidate-mapped-ssh.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/CREDENTIAL_RESOLVER_CONTRACT.md"
+  ],
+  "static": {
+    "schema_version": 1,
+    "base": "696017c514593edb0be16b363edb6045b4736c0b",
+    "python_ast": "PASS",
+    "old_server_default_and_remainder_ast": "EXACT_UNCHANGED",
+    "product_and_protocol_diff": [],
+    "declared_cases": {
+      "test_actual_candidate_review_restart_uses_mapped_ssh_and_retains_main_work": 2,
+      "test_actual_ready_candidate_never_hides_current_loss_or_reaches_ssh": 7,
+      "test_actual_staged_native_pending_is_preserved_without_ssh_or_recovery": 2,
+      "test_actual_mapped_physical_loss_cannot_validate_candidate_or_change_main": 2
+    },
+    "tests_executed": 0
+  },
+  "public_scan": "CLEAN",
+  "readback": "Exactallseven immutableGitbytes and ref/parent verified.",
+  "test_execution": 0,
+  "declared_new_cases": 13,
+  "expected_default_collection": 3523,
+  "expected_groups": [
+    527,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "expected_required": 1040,
+  "compatibility": "Actualproduction/protocol diffempty; original ServerAST exact after removing one optionalNone argument and corresponding command suffix. Current33 fullplatform separatelyheld.",
+  "next": "Default fullcollection and exactnew13caseID difference; launch one requiredactualLinux1040 request34. Frozen33 terminalplatform inspection separate."
+}

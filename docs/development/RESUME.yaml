@@ -5,21 +5,18 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_NATIVE_CANDIDATE_MAPPED_PROOF_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 63ab7cba3a22aaa89bed45c7ae855a9f1b75e2f5
+source_commit: b8f08653e7285a8943b9ebcda7552e3960d9b67c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0466
+last_verified_event: RP-027-A001-0467
 last_completed: RP-026
-next_action: Publish scoped source/static outcome, then execute portable fixture regression/currentdefaultcollection
-  and required actualLinux integration under separateINTENT; inspect same33 fullplatform
-  before commonacceptance.
-verification: Currentea4c1027 twice/171Windows qualified; independently scheduled
-  test-only actualCandidate/mappedSSH integration. Frozen33 fullplatform pending;
-  C1-C4 held.
+next_action: Default fullcollection and exactnew13caseID difference; launch one requiredactualLinux1040
+  request34. Frozen33 terminalplatform inspection separate.
+verification: A032 test-only mappednativeCandidate source preserved; old Server defaults/product/protocol
+  exactunchanged, tests0. Currentea4c qualification retained, C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0466
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
