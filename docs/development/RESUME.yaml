@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_DEFAULT_RECHECK
+phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_LINUX_PLATFORM_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0370
+last_verified_event: RP-027-A001-0371
 last_completed: RP-026
-next_action: Publish request26 qualification launch INTENT, update exact folder-linux-request
-  with current source and311/51/6/22/107/327 groups, inspect same push/PR runs and
-  actual merge parents/checkout without replay.
-verification: Current87ca Windows549PASS/22declaredLinuxSKIP/all53newPASS; default3307
-  exactsameIDs/noerrors, internal guards/bytes proven. Request26 currentLinux824/fullCI/Desktop/packages
-  needed, all acceptance held.
+next_action: Record the single launch's actual trigger/run/job/merge/source identities
+  and exact readback. Inspect terminal groups/platform/package/Progress under separate
+  INTENTs; retain any failed evidence and debug before source-dependent work.
+verification: Current source87ca Windows549/all53new/default3307 verified370. Single
+  request26 currentLinux824/fullplatform/packages launch371 pending; old source results
+  never qualify current metadata, commonC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0371
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
