@@ -7496,3 +7496,53 @@ defects:
       AST and product/prior854 unchanged. Passing_source null until actual correctedpending
       execution.
     legacy_record: null
+  DEF-103:
+    title: Focused native first-run test selection omits drive helper imports
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: ea4c2f72e471c7ab935fc2892e8551185d513ece
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/corrected-native-prerequisites-focused-collection-failed.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: ea4c2f72e471c7ab935fc2892e8551185d513ece
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/corrected-native-prerequisites-focused-collection-failed.json
+    reproduction:
+      procedure: INTENT456 seven security-directory targets fail collection with missing
+        test_folder_probe before tests execute. Existing remote native first-run imports
+        drive helpers directly; full default3510/noerrors and prior43targets includingdrive
+        pass import. This is selection composition, not product code.
+      failing_source: ea4c2f72e471c7ab935fc2892e8551185d513ece
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/corrected-native-prerequisites-focused-collection-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Select existing tests/drive/test_folder_first_run.py before the same
+        seven security targets to initialize normal pytest drive import path. Preserve
+        all35/native assertions and no custom helperPYTHONPATH; source/default configuration
+        unchanged.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/corrected-native-prerequisites-focused-collection-failed.json
+    repairs: []
+    issue: null
+    regression_test: Corrected eight-target default pytest selection executes all35
+      pending/native and affected legacy cases with no collection errors; default3510
+      exactunchanged IDs; prior854 scoped evidence preserved.
+    resolution_evidence: []
+    notes: Proven test command selection issue under456; no execution and no production
+      source change. Default collection3510/noerrors1.772s. DEF102 guard execution
+      stillpending; C1-C4 held.
+    legacy_record: null
