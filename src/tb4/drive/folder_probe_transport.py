@@ -107,6 +107,9 @@ class _Pending:
 def probe_request(binding, spec, authority, raw):
     """Pure closed VERIFY validation, before any native or credential IO."""
     value = flat_json(raw)
+    from .folder_mapping_after_probe import MODE as AFTER_MODE, after_request
+    if value.get("mode") == AFTER_MODE:
+        return after_request(binding, spec, authority, raw)
     check_probe_header(value, binding)
     require(set(value) == set(probe_header(binding, "")) |
             {"operation", "blueprint", "authority"} and value["operation"] == "VERIFY"

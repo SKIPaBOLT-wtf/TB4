@@ -61,8 +61,16 @@ def main():
         config = load_config(args.config,mapping_store=args.mapping_store)
         raw = sys.stdin.buffer.read(MAX_WIRE + 1)
         if probe:
-            from .folder_probe import handle_probe
-            reply = handle_probe(config, raw)
+            from .folder_mapping_after_probe import MODE as AFTER_MODE, handle_after_probe
+            try:
+                after = flat_json(raw).get("mode") == AFTER_MODE
+            except Exception:
+                after = False
+            if after:
+                reply = handle_after_probe(config, raw, mapping_store=args.mapping_store)
+            else:
+                from .folder_probe import handle_probe
+                reply = handle_probe(config, raw)
         else:
             reply = handle(FolderStore(config), raw)
         sys.stdout.buffer.write(reply)
