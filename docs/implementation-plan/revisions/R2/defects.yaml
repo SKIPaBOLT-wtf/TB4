@@ -7432,3 +7432,53 @@ defects:
       preserved/readback, actual production AST signatures verified; passing_source
       null pending execution.
     legacy_record: null
+  DEF-102:
+    title: Native first-run pending test assumes Windows native root is a Path
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 6436da86d4cd12853b1631a56b463c0a152889c6
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-prerequisites-windows-failed.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 6436da86d4cd12853b1631a56b463c0a152889c6
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-prerequisites-windows-failed.json
+    reproduction:
+      procedure: Actual Windows targeted43 files887PASS/2FAIL/53declaredLinuxSKIP221.109s.
+        Both newpending profile/endpoint cases stage ownedpending then use store.native.root
+        / filename; Windows root is str, raising TypeError before guard validation.
+        All other33 newnative and prior854 PASS.
+      failing_source: 6436da86d4cd12853b1631a56b463c0a152889c6
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-prerequisites-windows-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Convert native root with pathlib.Path at the two test pending reads,
+        retaining actualstaging/fullbyte preservation/closedguard/no-recovery/no-transport
+        assertions and all35 caseIDs; production unchanged.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-prerequisites-windows-failed.json
+    repairs: []
+    issue: null
+    regression_test: Actual bothWindows pending tests reach exactSTORAGE_UNAVAILABLE
+      and preserve original pending; all35 nativecases and selected first-run/profile/endpoint/nativecredentials
+      regressions, exactdefault3510 IDs retained, actualLinux/fullplatform before
+      C1-C4.
+    resolution_evidence: []
+    notes: Proven new A031 test-only root type assumption, analogous prior DEF095
+      retained. Production guard not reached in failedcases. Default3510/noerrors/exact37add/removal0.
+      No first-run/C1-C4 acceptance from33passes.
+    legacy_record: null

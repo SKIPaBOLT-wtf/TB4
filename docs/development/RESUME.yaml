@@ -7,18 +7,18 @@ phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_PREREQUISITES_WINDOWS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6436da86d4cd12853b1631a56b463c0a152889c6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0452
+last_verified_event: RP-027-A001-0453
 last_completed: RP-026
-next_action: Inspect same source-specific older e8e8/request32 jobs under read-only
-  INTENT while current Windows test runs; then record actual native/default result
-  before dependent source changes.
-verification: Current6436 scoped Windows43targets actual session28580 running; default3510/noerrors
-  known, no actual scoped result/C1-C4 inferred.
+next_action: Publish minimal test-only Path(native.root) repair INTENT; preserve all35cases/pending/fullbytes/assertions/production.
+  Then focused actualnative/default verification and same older frozenrequest32 source-specific
+  terminal inspection.
+verification: Current6436 actualWin887PASS/2newtest Path TypeError/53LinuxSKIP; default3510
+  exact+37/no removal. Minimaltestfix before nativepending/actualLinux/fullplatform/C1-C4
+  acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0451
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -70,6 +70,7 @@ known_open_defects:
 - DEF-099
 - DEF-100
 - DEF-101
+- DEF-102
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
