@@ -3,20 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_CANDIDATE_C1_TEST_REPAIR
+phase: STAGED_RECONFIGURATION_C2_CORRECTED_MAPPED_CANDIDATE_COLLECTION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: cb9501f0e7d54601a06318e2de220d9d319070b4
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0475
+last_verified_event: RP-027-A001-0476
 last_completed: RP-026
-next_action: Defaultcollection exactsame3523/13IDs, then one correctedsource request35
-  requiredLinux1040. No passing_source untilactualcorrected two cases/full1040.
-verification: DEF104 singlefile source preserved, exactrestAST/product unchanged,
-  passing_source null. Same3523/currentLinux1040 andcommonC1-C4 stillheld.
+next_action: Publish collectionoutcome then launch correctedsource immutable1040 request35
+  once; separately inspect frozen33Windows and34oldfull terminal results.
+verification: MinimalDEF104 repairsourcecb950 saved; same3523 collection/currentLinux1040
+  unverified, oldfailure preserved, C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0476
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
