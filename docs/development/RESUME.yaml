@@ -7,13 +7,13 @@ phase: STAGED_RECONFIGURATION_C2_NATIVE_ENDPOINT_ATTACHMENT_WINDOWS_DEFAULT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d168a74ed9ef55e77926be1ee3de8666f4216fc6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0407
+last_verified_event: RP-027-A001-0408
 last_completed: RP-026
-next_action: Publish Windows/default exact result and defects if any; inspect immutable
-  request28 under a separate read-only INTENT, then qualify current d168 native/Linux/full/platform
-  before dependent connection composition.
-verification: A029 source preserved; actual 31 native Windows cases and original regression/default3419
-  collection pending; immutable request28 is separate.
+next_action: Inspect this same process/report, compare default3388 baseline exactnode
+  IDs then publish terminal result/defects. Separately authorized read-only inspection
+  of immutable source5f80 request28; no rerun/relaunch.
+verification: Actual d168 native Windows regression running once process17442; default3419
+  collected and exact31 additions/zero removals verified. No check accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
