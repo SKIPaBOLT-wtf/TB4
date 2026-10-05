@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_SCHEMA
+phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_LINUX26_TERMINAL
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce
+source_commit: 87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0376
+last_verified_event: RP-027-A001-0377
 last_completed: RP-026
-next_action: Publish source376 coordinated amendment/manifest/step/cursor. Before
-  new-source tests inspect the same immutable request26 required Linux terminal outcomes
-  and preserve qualification for87ca only; then publish A027 focused/default/affected
-  native-candidate test INTENT.
-verification: A027 source saved/read back; optional pointer/seed/rollback static AST/diff/privacy
-  tests0, candidate schema unchanged. Request26 source87ca same jobs awaitterminalqualification;
-  new source native/default/platform and attachment/composite/C1-C4 held.
+next_action: Publish actual terminal Linux outcomes/defect notes for87ca or retained
+  failure/running-only checkpoint. Then publish A027 sourceacc26 focused26 plus original
+  private/first-run/candidate/native/default3333 qualification INTENT. Remaining request26
+  full CI/Desktop/platform packages stay separately held.
+verification: A027 sourceacc26/pointer/seed/rollback/amendment28 saved tests0. Inspect
+  same immutable87ca request26 required Linux terminal IDs377 before A027 tests; all
+  new-source/full/package/common acceptance held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0377
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
