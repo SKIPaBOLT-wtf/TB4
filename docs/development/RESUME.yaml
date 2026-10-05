@@ -7,17 +7,17 @@ phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_CONNECTION_LINUX31_INSPECTION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 10badf7bbe08f54cfaeef640c062d4ceae8e319c
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0441
+last_verified_event: RP-027-A001-0442
 last_completed: RP-026
-next_action: Publish source-specific actual proof or reproducible defect; then fresh
-  native Prerequisites composition under its own source INTENT when dependencies permit.
-verification: Inspect SAME corrected10bad request31 required990/Progress terminal
-  actual evidence; fullplatform/fresh first-run/runtime/GUI/C1-C4 held.
+next_action: Publish onefile test-only actual Leadership API repair INTENT; preserve
+  localUNKNOWN, first-CAS2/3 and add priorgrant dispatch refusal; production unchanged.
+  Requalify current nativeLinux/fullplatform.
+verification: Correctedrequest31 all12 SSH execute; 11PASS/1 testAPI FAIL, all42native
+  PASS, DEF100 scoped confirmed. Minimal DEF101 test repair required; C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0441
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -68,6 +68,7 @@ known_open_defects:
 - DEF-098
 - DEF-099
 - DEF-100
+- DEF-101
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before

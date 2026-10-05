@@ -7318,9 +7318,10 @@ defects:
         fixture; none of the12 new authenticated SSH cases execute. New file imports
         combined but not its required existing context fixture.
       failing_source: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
-      passing_source: null
+      passing_source: 10badf7bbe08f54cfaeef640c062d4ceae8e319c
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux30-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux31-failed.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7358,5 +7359,59 @@ defects:
       and native42 PASS do not prove Linux12. Required groups2-6 not executed. Current
       full CI/Desktop not yet inspected. C1-C4 held; no production guard weakening.
       Minimal one-line source repair 10badf7bbe08f54cfaeef640c062d4ceae8e319c published/readback;
-      actual Linux passing_source remains null until execution.
+      actual Linux passing_source remains null until execution. Actualrequest31 all12
+      cases execute with no fixture errors; 11PASS/1 independent DEF101FAIL. Fixture
+      repair passing_source10bad scoped only; commonC1-C4 held.
+    legacy_record: null
+  DEF-101:
+    title: Fresh native SSH takeover test invokes the Leadership API incorrectly
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux31-failed.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux31-failed.json
+    reproduction:
+      procedure: Same immutable request31 push6fce and actualPR631 each476PASS/1FAIL/0ERROR/SKIP.
+        All12 new actualSSH cases execute; only takeover case raises constructor positional-argument
+        TypeError before election. Constructor requires keyword actor/enrollment.
+        Static inspection also shows nonexistent claim/force test calls and integer
+        transition labels incompatible with existing tid(label.encode).
+      failing_source: 10badf7bbe08f54cfaeef640c062d4ceae8e319c
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux31-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Use the same actual observe/acquire/commit/confirmed_grant/request_force/claim_requested
+        trace as previously passing combined SSH tests, with explicit actor/enrollment
+        and string transition IDs. Preserve local UNKNOWN/profile/metadata and epoch2/3;
+        assert previous grant refuses dispatch immediately after forced request.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux31-failed.json
+    repairs: []
+    issue: null
+    regression_test: All12 actual newSSH execute with no errors/failure; actual first-CAS
+      stale epoch2/forced epoch3, previous grant refusal and protected localUNKNOWN
+      unchanged; all990 twice/current fullplatform.
+    resolution_evidence: []
+    notes: Proven test-only incorrect constructor before election. Static downstream
+      API defects are recorded, not claimed as executed failures. All42 native and11
+      other newSSH PASS in both jobs. Production leadership unchanged; no peer ACK/UNKNOWN
+      barrier added. C1-C4 held.
     legacy_record: null
