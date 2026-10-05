@@ -17,6 +17,7 @@ from .configuration_contract import configuration, require
 from .drive.commissioning_native import NativeCommissioning
 from .drive.commissioning_folder import FolderCommissioning
 from .drive.folder_mapping import FolderMappedCommissioning
+from .drive.folder_runtime import NativeFolderCommissioning
 from .drive.leadership import ClockSample, Grant, Leadership
 from .instructions import check_boundary
 from .private_settings import PrivateSettings
@@ -45,7 +46,8 @@ class ConfigurationAdmission:
                 and type(context.checkpoint) is NativeCheckpoint and isinstance(context.leadership, Leadership)
                 and type(context.checker) is Prerequisites
                 and type(context.checker.storage) is CommissionedStorage
-                and type(context.checker.storage.port) in {NativeCommissioning, FolderCommissioning, FolderMappedCommissioning}
+                and type(context.checker.storage.port) in {
+                    NativeCommissioning, FolderCommissioning, FolderMappedCommissioning, NativeFolderCommissioning}
                 and callable(context.capabilities) and callable(context.clock), "ADMISSION_CONTEXT")
         require(context.checkpoint.installation_id == context.leadership.actor
                 and context.checkpoint.binding == context.leadership.backend.binding, "ADMISSION_CONTEXT")

@@ -49,6 +49,7 @@ jobs:
           tests/security/test_folder_connection_native.py tests/drive/test_folder_connection_authenticated_ssh.py
           tests/security/test_folder_prerequisites_native.py
           tests/drive/test_folder_candidate_authenticated_ssh.py
+          tests/security/test_folder_runtime_native.py tests/drive/test_folder_runtime_authenticated_ssh.py
           tests/drive/test_folder_helper_dispatch.py tests/drive/test_folder_combined_authenticated_ssh.py
           tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py
           tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py

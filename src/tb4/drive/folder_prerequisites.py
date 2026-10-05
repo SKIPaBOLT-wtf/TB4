@@ -13,17 +13,24 @@ from .folder_probe_transport import credential_probe_pair
 
 class NativeFolderFirstRun:
     def __init__(self, profile, *, access, environment, source, runtime, clock,
-                 credential_factory=None):
+                 credential_factory=None, normal_authority=False):
+        require(type(normal_authority) is bool, "STORAGE_UNAVAILABLE")
         require(credential_factory is None or callable(credential_factory),
                 "CREDENTIAL_UNAVAILABLE")
         connection = NativeFolderConnection(profile, clock=clock)
         self.connection = connection
         self._factory = credential_factory
-        self.storage = CommissionedStorage(RemoteFolderCommissioning(connection.probe(access)))
+        self._normal_authority = normal_authority
+        if normal_authority:
+            from .folder_runtime import NativeFolderCommissioning
+            port = NativeFolderCommissioning(connection, access)
+        else:
+            port = RemoteFolderCommissioning(connection.probe(access))
+        self.storage = CommissionedStorage(port)
         self.checker = Prerequisites(environment=environment, storage=self.storage,
             credentials=None, source=source, runtime=runtime, clock=clock, native_folder=self)
         self._pins = (connection, self.storage, self.storage.port, self.checker,
-                      environment, source, runtime, clock, credential_factory)
+                      environment, source, runtime, clock, credential_factory, normal_authority)
 
     def _current(self):
         c = self.checker
@@ -31,7 +38,8 @@ class NativeFolderFirstRun:
             and c._native_folder is self and c._native_folder_required is True
             and c.storage is self.storage
             and (self.connection, self.storage, self.storage.port, c,
-                 c.environment, c.source, c.runtime, c.clock, self._factory) == self._pins,
+                 c.environment, c.source, c.runtime, c.clock, self._factory,
+                 self._normal_authority) == self._pins,
                 "STORAGE_UNAVAILABLE")
         self.connection._current()
 
@@ -102,8 +110,8 @@ class NativeFolderFirstRun:
 
 
 def native_folder_prerequisites(profile, *, access, environment, source, runtime,
-                                clock, credential_factory=None):
+                                clock, credential_factory=None, normal_authority=False):
     """Return the exact existing checker; saved metadata grants no readiness."""
     return NativeFolderFirstRun(profile, access=access, environment=environment,
         source=source, runtime=runtime, clock=clock,
-        credential_factory=credential_factory).checker
+        credential_factory=credential_factory, normal_authority=normal_authority).checker

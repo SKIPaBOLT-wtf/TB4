@@ -2,6 +2,8 @@
 
 ## RP-027 fresh native first-run
 
+[A-033](implementation-plan/revisions/R2/amendments/RP-027/A-033-native-folder-normal-admission.md) adds an opt-in exact NativeFolderCommissioning for the same fresh physical proof and existing protected normal READ/CAS. Trusted normal_authority defaults False and saved data never selects it. Exact current admission retains profile/role/timing/source/configuration guards; no readiness/role/activation grant from construction. Server-local mapped AFTER C4 remains separately enforced.
+
 Test-only [A-032](implementation-plan/revisions/R2/amendments/RP-027/A-032-native-candidate-mapped-ssh.md) composes actual native Candidate/C1 with the existing mapped fixed SSH helper before/after physical relocation. Original Main/archive/work and default activation must remain; current/pending/physical losses refuse. Required execution and remaining runtime/GUI/C1-C4 gates are separate.
 
 [A031](implementation-plan/revisions/R2/amendments/RP-027/A-031-fresh-native-folder-prerequisites.md) composes the exact existing Prerequisites with actual native Folder connection/proof. Every validation restores current selected native credentials, requires the caller's full payload to match the protected frame, repeats legacy checks and rechecks complete frames/capabilities before returning Validation. Late loss refuses; failed attempts clear the credential cache. Setup readiness writes retain their full parent and default activation remains denied. No routing/election/helper/authority change; staged replacement, mapped proof, runtime/GUI and all source-specific/common/C1-C4 gates remain.
