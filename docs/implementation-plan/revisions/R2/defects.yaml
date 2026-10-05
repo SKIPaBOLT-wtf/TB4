@@ -7266,7 +7266,18 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-linux28-failed.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0412
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Retain all4 command cases; exact empty client rejection/zero
       transport, realSSH rejection for three nonempty commands/one actual call, all17combined
@@ -7275,4 +7286,8 @@ defects:
     notes: Proven test-only placement error. Production HELPER_COMMAND nonempty guard
       must remain unchanged. Remaining required groups not executed; fullCI/Desktop
       running at inspection. No current A028/helper/native connection/C1-C4 acceptance.
+      Minimal onefile source a68893fa004b896695d5d22a83fa4c3016b6d516 preserved/readback;
+      transparent originalcall observer/precise code expectation retains all4cases
+      and unchanged production. AST/static reviews tests0; actualLinux/default/full/C1-C4
+      pending.
     legacy_record: null
