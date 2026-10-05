@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_OLD_FULL_RESULTS
+phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_FOLDER_PREREQUISITES
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
+source_commit: e8e8e2142a93a95607cacd76a551a55113312ad7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0448
+last_verified_event: RP-027-A001-0449
 last_completed: RP-026
-next_action: Schedule A031 local fresh first-run guard independently using actual
-  native42 and first-run11 SSH evidence442/source-equivalent production; it does not
-  change role/transport/helper/routing. Current32 role12/required990/fullplatform
-  remain mandatory before common/C1-C4 acceptance.
-verification: Oldsource2f43 fullLinux only12knownDEF100errors; currente8e8 role990/fullplatform
-  pending. A031 localfirst-run independently schedulable from native42 and actual11first-run
-  SSH, no commonacceptance.
+next_action: Publish exact source/amendment outcome tests0, then actual Windows/native/default/required
+  Linux first-run qualification and same prior running terminal evidence.
+verification: A031 local first-run independent from currentrole/fullplatform; native42
+  and11actualfirst-run SSH qualified source-equivalent. Newsource tests0 until separateactualtestINTENT,
+  allC1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0449
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
