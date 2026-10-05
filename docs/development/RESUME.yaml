@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_FIXTURE_REPAIR
+phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_CORRECTED_WINDOWS_DEFAULT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: f18e8cd1dbe57298b36bc5937697937ee8ae66fb
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0393
+last_verified_event: RP-027-A001-0394
 last_completed: RP-026
-next_action: Authorize separate corrected same44target Windows/default3388 no-node-change
-  rerun with private raw output capture; then one current source-linked Linux/platform
-  launch.
-verification: DEF097 exact one-line test-only mock repair source published/readback;
-  tests0. Corrected44target/default3388 unchangednode recheck and currentLinux/full
-  held; C1-C4held.
+next_action: Inspect same corrected Windows process/default nodes, append exact outcome
+  and DEF097 passing source scoped only. OncePASS publish one source-linked request28
+  for requiredLinux905/fullplatform; oldacc26 Windows remains separately inspected
+  without relaunch.
+verification: Corrected f18e exact test-only mock source; same44target/default3388
+  recheck under separateINTENT, originalfailedrun retained; actualLinux/full/C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0394
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
