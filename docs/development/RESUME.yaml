@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_FOLDER_PREREQUISITES
+phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_PREREQUISITES_WINDOWS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6436da86d4cd12853b1631a56b463c0a152889c6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0450
+last_verified_event: RP-027-A001-0451
 last_completed: RP-026
-next_action: Publish actual Windows/default qualification INTENT for current6436,
-  then current source native/default proof and same frozen e8e8/request32 terminal
-  source-specific inspection.
-verification: A031 source-only/staticPASS, new35native+2SSH/default3510 declared notexecuted;
-  current source actualqualification and staged/runtime/GUI/C1-C4 held.
+next_action: Publish actual Windows/default source-specific qualification or defect
+  before dependent changes. Inspect same frozen older e8e8/request32 jobs under a
+  separate read-only INTENT while this test may run.
+verification: Current6436 actual Windows/native/default qualification43targets, expected35newnative/+37nodes;
+  all realSSH/staged/runtime/GUI/C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0451
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
