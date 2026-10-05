@@ -7298,3 +7298,52 @@ defects:
       strict empty0/nonempty1 transport boundary execute; all31native+38portable PASS.
       CurrentPR/fullplatform/CommonC1-C4 held; OPEN/no resolution.
     legacy_record: null
+  DEF-100:
+    title: Fresh native SSH connection tests omit the transitive context fixture
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux30-failed.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux30-failed.json
+    reproduction:
+      procedure: SAME immutable request30 push5df3 and PRf1a9 first group465PASS/12ERROR.
+        Pytest reports fixture 'context' not found while resolving imported combined
+        fixture; none of the12 new authenticated SSH cases execute. New file imports
+        combined but not its required existing context fixture.
+      failing_source: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux30-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Import the exact existing context fixture into the new test module. Preserve
+        production source, all12 case identities and assertions, and actual SSH prerequisite
+        enforcement.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux30-failed.json
+    repairs: []
+    issue: null
+    regression_test: All12 new authenticated SSH cases execute under actual Linux;
+      all42 new native cases, full required990 twice, original source-specific platform/default
+      gates.
+    resolution_evidence: []
+    notes: Proven test fixture composition error before native or SSH execution. Windows854
+      and native42 PASS do not prove Linux12. Required groups2-6 not executed. Current
+      full CI/Desktop not yet inspected. C1-C4 held; no production guard weakening.
+    legacy_record: null

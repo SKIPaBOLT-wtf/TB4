@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0433",
+  "source": "2f43d0ed3e4510c95dc916f87545c53ced3d18aa",
+  "trigger": "5df3dab1052ab9a1a5fa1e1a946fad46aa5ae584",
+  "pr_checkout": "f1a9aada09ab623ccf83fdc14bc314242fd9182f",
+  "request_revision": 30,
+  "result": "FAIL",
+  "required_groups_expected": [
+    477,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "required_cases_expected": 990,
+  "required_actual": [
+    {
+      "run": 37266277632,
+      "job": 111623691240,
+      "checkout": "5df3dab1052ab9a1a5fa1e1a946fad46aa5ae584",
+      "group": 1,
+      "passed": 465,
+      "errors": 12,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 68.79
+    },
+    {
+      "run": 37266280531,
+      "job": 111623699812,
+      "checkout": "f1a9aada09ab623ccf83fdc14bc314242fd9182f",
+      "group": 1,
+      "passed": 465,
+      "errors": 12,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 69.52
+    }
+  ],
+  "failure": {
+    "closed_message": "fixture 'context' not found",
+    "cases": 12,
+    "file": "tests/drive/test_folder_connection_authenticated_ssh.py",
+    "stage": "Fixture resolution before combined fixture/native profile/SSH setup",
+    "origin": "A030 new file imports combined fixture without its transitive context fixture from test_folder_commissioning. All12 new actual SSH cases error before execution; production source not implicated.",
+    "other_new_native_cases": "All42 current native cases executed and passed in group1.",
+    "remaining_groups": "Not executed after first group errors."
+  },
+  "progress": {
+    "run": 37266280443,
+    "job": 111623699223,
+    "checkout": "f1a9aada09ab623ccf83fdc14bc314242fd9182f",
+    "passed": 235,
+    "seconds": 13.27,
+    "result": "PASS"
+  },
+  "current_windows": {
+    "passed": 854,
+    "declared_linux_skip": 51,
+    "evidence": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-windows-qualified.json"
+  },
+  "privacy": "Closed counts/message/public identities only; raw native/fixture frames not published.",
+  "acceptance": "C1-C4 held. Full CI/Desktop still separate, not inspected.",
+  "next": "Minimal test-only import of exact existing context fixture; preserve all12 native case identities and assertions, source/static review then actual required Linux and full platform qualification."
+}
