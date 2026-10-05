@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0348",
+  "source_commit": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25",
+  "trigger_commit": "72a436ffc7e3962210fcea52f295ebc88d4828be",
+  "actual_checkout": {
+    "sha": "47d287692af8430db880b1f7fc923ae726d1f2a1",
+    "parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "72a436ffc7e3962210fcea52f295ebc88d4828be"
+    ],
+    "source_commit": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25"
+  },
+  "actual_checkout_confirmed_all_terminal_logs": true,
+  "non_doc_source_diff": [],
+  "required_linux_cases_per_job": 771,
+  "required_linux_both_zero_skip": true,
+  "ci": {
+    "run_id": 37243309444,
+    "job_id": 111556175303,
+    "conclusion": "success",
+    "passed": 3206,
+    "skipped": 27,
+    "xfailed": 4,
+    "elapsed_s": 2274.06
+  },
+  "desktop_linux": {
+    "run_id": 37243309484,
+    "job_id": 111556175645,
+    "conclusion": "success",
+    "passed": 3229,
+    "skipped": 21,
+    "xfailed": 4,
+    "elapsed_s": 2643.42,
+    "packages": [
+      {
+        "role": "watchdog",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      },
+      {
+        "role": "fetcher",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      }
+    ]
+  },
+  "progress": {
+    "run_id": 37243309437,
+    "job_id": 111556175282,
+    "conclusion": "success",
+    "passed": 235,
+    "elapsed_s": 10.35
+  },
+  "desktop_windows": {
+    "run_id": 37243309484,
+    "job_id": 111556175517,
+    "conclusion": "failure",
+    "defect": "DEF-094",
+    "failed_step": "Native scoped discovery qualification",
+    "passed": 1,
+    "failed": 1,
+    "elapsed_s": 13.47,
+    "full_regression": "NOT_EXECUTED",
+    "packages": "NOT_EXECUTED"
+  },
+  "artifacts_metadata_only": [
+    {
+      "id": 11319620669,
+      "name": "tb4-desktop-Linux-47d287692af8430db880b1f7fc923ae726d1f2a1",
+      "size_bytes": 314531960,
+      "digest": "sha256:14a148053dcb9f2b96a1d754fa192df4f6070ff8a6a9fc1140f3eea80abb0d1a",
+      "expired": false
+    }
+  ],
+  "qualification": "LINUX_AND_CORE_QUALIFIED_WINDOWS_FAILED",
+  "cross_platform_acceptance": false,
+  "acceptance": false,
+  "next_action": "Run separately authorized current endpoint source Windows/native/default tests after INTENT. Continue fresh 91bad7 same platform inspection352; preserve this failed request25 and unproven cause. No source cross-qualification or installed package/deployment."
+}

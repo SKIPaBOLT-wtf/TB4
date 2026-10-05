@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_SOURCE
+phase: STAGED_RECONFIGURATION_C2_AUTHENTICATED_FOLDER_AUTHORITY_PLATFORM_INSPECTION
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: c381b7eb12dbd09a3d7b40bccc11c61e84ff5360
+source_commit: d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0354
+last_verified_event: RP-027-A001-0355
 last_completed: RP-026
-next_action: Publish/readback targeted new endpoint and existing scoped Windows/default
-  collection test INTENT, run once in fresh owned roots, preserve actual failures
-  before repair. Independently inspect immutable prior jobs 348/352; no source cross-qualification.
-verification: A026 endpoint metadata source c381b7 saved/read back; AST3/diff/privacy
-  PASS, tests0, actual native/default/Linux qualification pending. No grants or existing
-  profile/schema changes. Prior348/352 and C1-C4 held.
+next_action: Run separately authorized current endpoint source Windows/native/default
+  tests after INTENT. Continue fresh 91bad7 same platform inspection352; preserve
+  this failed request25 and unproven cause. No source cross-qualification or installed
+  package/deployment.
+verification: 'Original request25 reconciled355: requiredLinux771twice/coreCI3206/LinuxDesktop3229/bothrolepackages/Progress235
+  PASS; WindowsnativeidentityFAIL/remainingstagesNOT_EXECUTED retained. New endpoint
+  sourcec381b7 tests pending; fresh352/DEF094/C1-C4held.'
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
-- RP-027-A001-0348
 - RP-027-A001-0352
 expected_user_action: null
 blocking_decisions: []
