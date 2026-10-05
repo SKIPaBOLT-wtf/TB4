@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_PREREQUISITES_WINDOWS
+phase: STAGED_RECONFIGURATION_C2_NATIVE_PENDING_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 6436da86d4cd12853b1631a56b463c0a152889c6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0453
+last_verified_event: RP-027-A001-0454
 last_completed: RP-026
-next_action: Publish minimal test-only Path(native.root) repair INTENT; preserve all35cases/pending/fullbytes/assertions/production.
-  Then focused actualnative/default verification and same older frozenrequest32 source-specific
-  terminal inspection.
-verification: Current6436 actualWin887PASS/2newtest Path TypeError/53LinuxSKIP; default3510
-  exact+37/no removal. Minimaltestfix before nativepending/actualLinux/fullplatform/C1-C4
-  acceptance.
+next_action: Publish source-only test repair outcome, then actualfocused native35/legacy/default
+  qualification; reuse prior854 only with exact unchanged product/test blob proof.
+verification: DEF102 minimal Path(native.root) test-only repair; actual35/native/default/Linux/fullplatform/C1-C4
+  stillrequired.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0454
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
