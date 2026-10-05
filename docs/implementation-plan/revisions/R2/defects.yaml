@@ -7864,6 +7864,7 @@ defects:
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-retained-windows-and-staged37-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/final-staged-current-composition-gap-review.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7906,5 +7907,7 @@ defects:
       Minimaltest-only source940b34ac2c38e62a725fe29ab49d80de860569a6 nowexpects exact
       FOLDER_ENDPOINT_CREDENTIAL internal andSETTINGS_STORE_UNAVAILABLE external;
       forbids key/SSH, retainscurrentstage/Main/archive/work/default denial. Allother24/decorators/other3faults
-      AST unchanged; productionunchanged/tests0.
+      AST unchanged; productionunchanged/tests0. Same37 fullCI3530PASS/1sameDEF108FAIL/27SKIP/4XFAIL2059.67s
+      andLinux3553PASS/1sameFAIL/21SKIP/4XFAIL2590.17s; no newfailures. Windows3279PASS/296SKIP/4XFAIL1864.55s/bothrole4flagsPASS
+      cannotqualifystagedLinuxcase. Current38repair executionstillpending.
     legacy_record: null

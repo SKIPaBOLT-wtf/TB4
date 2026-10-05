@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0510",
+  "source": "940b34ac2c38e62a725fe29ab49d80de860569a6",
+  "result": "RECORDED",
+  "source_review": {
+    "rootless_native": "A035 exact Native port and current protected factory implement rootless C4/promotion; actual4 Windows passed, SSH7/current38 pending. Complete selected replacement -> Main -> ordinary current runtime path still requires integration execution.",
+    "mapped_native": "RetainedConfigurationCommit._checker still correctly requires exact FolderMappedCommissioning and current protected mapping hash/transition/target path for a terminal folder_plan. Native remote port is refused; ordinary FolderProbe VERIFY proves physical seals/current body but returns no current native mapping/terminal-AFTER evidence. Server-local path is qualified; remote final mapped publication is not implemented or accepted.",
+    "current_role_adoption": "FolderActiveAdoption/current_folder_admission admit exact local FolderCommissioning/FolderMappedCommissioning only and call check_root/inspect_authority/private location. Native remote current-role ACTIVE adoption is not provided by A035 factory; do not claim old-host-independent remote adoption from local tests.",
+    "owner_constraint": "Lease expiry/first successful conditional takeover must remain available without former host/all-peer ACK. UNKNOWN prohibits dependent routing/effect replay, not role takeover.",
+    "next_minimal_unit": "Independent opt-in read-only fixed helper/native mapping-AFTER proof foundation, using qualified physical probe/actual mapped identity/protected image foundations. Preserve old VERIFY/READ/CAS, fixed command tokens/election/default denial; trusted program consumes a fresh exact mapping hash/transition/terminal plan attestation, no private paths or arbitrary callback/code in protocol. Qualify before extending RetainedC4 or native ACTIVE adoption. Complete staged/current runtime integration and common acceptance afterwards."
+  },
+  "same37": {
+    "source": "b6288d53c5eb29d51708b1f6099114529f79a701",
+    "actual_pr": "afbdc102d229353857913383a5eba91ca0b73519",
+    "non_documentation_diff": "EMPTY_REVERIFIED_BY_GIT",
+    "ci": {
+      "job": 111696145955,
+      "checkout": "afbdc102d229353857913383a5eba91ca0b73519",
+      "summaries": [
+        "43 passed in 0.20s",
+        "34 passed in 0.49s",
+        "2 passed in 0.03s",
+        "1 failed, 3530 passed, 27 skipped, 4 xfailed in 2059.67s (0:34:19)"
+      ],
+      "failures": [
+        "FAILED tests/drive/test_folder_staged_endpoint_authenticated_ssh.py::test_new_pointer_metadata_does_not_hide_current_first_run_loss[synthetic-parameter] - tb4.private_settings.SettingsError: SETTINGS_STORE_UNAVAILABLE"
+      ],
+      "packages": []
+    },
+    "linux": {
+      "job": 111696144816,
+      "checkout": "afbdc102d229353857913383a5eba91ca0b73519",
+      "summaries": [
+        "90 passed, 4 skipped in 2.98s",
+        "43 passed in 0.38s",
+        "34 passed in 0.87s",
+        "2 passed in 0.04s",
+        "75 passed in 7.96s",
+        "79 passed in 14.34s",
+        "1 failed, 3553 passed, 21 skipped, 4 xfailed in 2590.17s (0:43:10)"
+      ],
+      "failures": [
+        "FAILED tests/drive/test_folder_staged_endpoint_authenticated_ssh.py::test_new_pointer_metadata_does_not_hide_current_first_run_loss[synthetic-parameter] - tb4.private_settings.SettingsError: SETTINGS_STORE_UNAVAILABLE"
+      ],
+      "packages": []
+    },
+    "windows": {
+      "job": 111696145070,
+      "checkout": "afbdc102d229353857913383a5eba91ca0b73519",
+      "summaries": [
+        "74 passed, 20 skipped in 6.24s",
+        "15 passed in 0.12s",
+        "30 passed, 4 skipped in 1.79s",
+        "2 passed in 8.52s",
+        "75 passed in 10.31s",
+        "79 passed in 16.62s",
+        "3279 passed, 296 skipped, 4 xfailed in 1864.55s (0:31:04)"
+      ],
+      "failures": [],
+      "packages": [
+        [
+          {
+            "role": "watchdog",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          },
+          {
+            "role": "fetcher",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          }
+        ]
+      ]
+    },
+    "artifact_metadata": [
+      {
+        "id": 11336839813,
+        "name": "tb4-desktop-Windows-afbdc102d229353857913383a5eba91ca0b73519",
+        "size_in_bytes": 120959630,
+        "digest": "sha256:721cb75a8ea04943c0f8aac526d5a71979f3f0300306974e12937fb0ad2d7a75"
+      }
+    ],
+    "finding": "CI3530PASS/1sameDEF108FAIL/27SKIP/4XFAIL andLinux3553PASS/1sameDEF108FAIL/21SKIP/4XFAIL; no additionalfailures. Windows3279PASS/296SKIP/4XFAIL andbothroles4packageflagsPASS. Allfailed37sources preserved; currentrepair notqualified byold37."
+  },
+  "same38": {
+    "source": "940b34ac2c38e62a725fe29ab49d80de860569a6",
+    "actual_pr": "561f5b0028ef4f3ecca57095769f224dfcc169d1",
+    "non_documentation_diff": "EMPTY_REVERIFIED_BY_GIT",
+    "required": [
+      {
+        "run": 37293516713,
+        "jobs": [
+          {
+            "id": 111709268177,
+            "status": "in_progress",
+            "conclusion": null
+          }
+        ]
+      },
+      {
+        "run": 37293511911,
+        "jobs": [
+          {
+            "id": 111709251874,
+            "status": "in_progress",
+            "conclusion": null
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "job": 111709268065,
+      "checkout": "561f5b0028ef4f3ecca57095769f224dfcc169d1",
+      "summaries": [
+        "235 passed in 12.90s"
+      ],
+      "failures": [],
+      "packages": []
+    },
+    "acceptance": false
+  },
+  "public_scan": "CLEAN",
+  "next": "Prepare exact read-only mapping-AFTER qualifier source under a separate INTENT; current38/source and allcommon C1-C4 held untilactualtests. Currentroleadoption/stagedruntime remain explicit subsequent gaps."
+}
