@@ -7,7 +7,7 @@ import re
 import secrets
 import sys
 
-from tb4.commissioning_state import Setup, storage_spec
+from tb4.commissioning_state import Setup, storage_spec, validated
 from tb4.credential_contract import Purpose, identity
 from tb4.credential_persistence import validate_image
 from tb4.private_settings import PrivateSettings, encoded
@@ -99,14 +99,21 @@ class NativeFolderEndpoint:
             and setup.store is not self.store, "FOLDER_ENDPOINT_PROFILE")
         require(native_binding(setup.store) != self._binding, "FOLDER_ENDPOINT_STORE_ALIAS")
         setup._fresh()
-        spec, handle = storage_spec(setup.private_choices()["storage"])
+        return self._profile_payload(setup._payload, credential_handle)
+
+    def _profile_payload(self, payload, credential_handle):
+        # Field extraction only. Callers must first check actual native locks,
+        # bindings and freshness; an arbitrary dictionary is never a grant.
+        payload = validated(payload)
+        require(payload["installation_id"] == self.installation_id, "FOLDER_ENDPOINT_PROFILE")
+        spec, handle = storage_spec(payload["choices"]["storage"])
         require(spec.mode == "FOLDER_SQLITE_V1", "FOLDER_ENDPOINT_MODE")
         binding = FolderBinding(spec.root_id, spec.domain_id)
-        matches = [c for c in setup.private_choices()["credentials"]
+        matches = [c for c in payload["choices"]["credentials"]
             if c["handle"] == credential_handle]
         require(len(matches) == 1 and ({Purpose.FOLDER_PROBE.value, Purpose.FOLDER_AUTHORITY.value}
             & set(matches[0]["purposes"])), "FOLDER_ENDPOINT_CREDENTIAL")
-        image = setup._payload.get("credential_image")
+        image = payload.get("credential_image")
         require(image is not None, "FOLDER_ENDPOINT_CREDENTIAL")
         image = validate_image(image, self.installation_id)
         saved = image["bindings"][credential_handle]

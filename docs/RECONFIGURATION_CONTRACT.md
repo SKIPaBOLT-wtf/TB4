@@ -1,5 +1,9 @@
 # Unreleased staged configuration changes
 
+## RP-027 native private endpoint link
+
+[A029](implementation-plan/revisions/R2/amendments/RP-027/A-029-native-endpoint-pointer-attachment.md) attaches selected immutable native metadata with one pointer-only profile revision, preserving the full parent. New link requires explicit owner authorization, INCOMPLETE and no localUNKNOWN; same link preserves state/history through READY/UNKNOWN and grants no role/proof/key/activation. Inspect and exact pending recovery use actual protected frames and fresh bindings/selection with endpoint-before-profile lock order. Conflicting state stays held; no reconstruct/resave/replay or peerACK. Staged replacement/fresh connection/runtime/GUI/common/C1-C4 remain later qualified work.
+
 ## RP-027 fixed helper dispatch foundation
 
 [A028](implementation-plan/revisions/R2/amendments/RP-027/A-028-opt-in-fixed-folder-helper-dispatch.md) adds an opt-in exact two-token dispatcher to the existing server helper; command/payload confusion remains refused by the original protocols. ACCEPTED still requires readback, UNKNOWN never permits resend, and stale/forced takeover remains first-CAS without former-owner or all-peer ACK. Old helper/probe/activation paths and protected history remain. This helper-only foundation is independent of immutable current pointer qualification; endpoint attachment/composite/runtime/GUI/C1-C4/common acceptance remains held.

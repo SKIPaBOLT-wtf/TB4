@@ -1,5 +1,9 @@
 # Local credential-reference resolver contract (RP-006)
 
+## RP-027 native endpoint attachment remains metadata
+
+[A029](implementation-plan/revisions/R2/amendments/RP-027/A-029-native-endpoint-pointer-attachment.md) verifies the actual protected endpoint/profile/install/selected-handle/image/revocation before linking a private pointer. Attach/inspect/recovery never invoke a credential, open a key, create a grant or return READY. Full parent and exact pending semantics preserve history. Existing per-use native key/known-host/expiry/purpose checks and default activation remain required; trusted fresh first-run/authority/runtime/GUI composition is still held.
+
 ## RP-027 opt-in fixed helper dispatch
 
 [A028](implementation-plan/revisions/R2/amendments/RP-027/A-028-opt-in-fixed-folder-helper-dispatch.md) permits one explicitly configured server forced helper to dispatch only the exact qualified probe or normal command. FOLDER_PROBE and FOLDER_AUTHORITY retain separate explicit grants and trusted purpose-specific native factories; the dispatcher enrolls, selects or broadens nothing. Missing/malformed command tokens fail before protected config/stdin/storage access and are never executed. Old helper modes and native per-use key/trust checks remain; native pointer attachment/fresh Setup composition/runtime/GUI/common acceptance stays held.
