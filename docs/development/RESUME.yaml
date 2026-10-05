@@ -7,18 +7,17 @@ phase: STAGED_RECONFIGURATION_C2_CORRECTED_NATIVE_CANDIDATE_LINUX35
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: cb9501f0e7d54601a06318e2de220d9d319070b4
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0478
+last_verified_event: RP-027-A001-0479
 last_completed: RP-026
-next_action: Publish exactlaunch checkpoint; inspect samefrozen33Windows and older34
-  terminal failures, then corrected35 actual1040/13/Progress. Independently scheduled
-  native runtime authority/admission unit only from explicitlyverified unchanged productdependencies.
-verification: Correctedcb950 same3523 IDs confirmed, one required1040 request35 next.
-  Priorfailed34 andfrozen33Windows preserved, commonC1-C4 held.
+next_action: Inspect same frozen33Windows and34 oldfull terminalsource-specific results,
+  then independentlyschedule native runtime authority/admission foundation from verifiedunchanged
+  native/role/first-run product. Same35 actual1040 stillrequired beforecommon.
+verification: Correctedcb950 request35 launchedonce exactsource/provenance. Actual13/1040/Progress/platform
+  pending; frozen33Windows/34fail preserved, C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0478
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
