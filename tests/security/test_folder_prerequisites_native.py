@@ -1,5 +1,6 @@
 """Actual protected native profiles and keys with synthetic fixed proof replies."""
 import copy
+from pathlib import Path
 
 import pytest
 
@@ -175,12 +176,12 @@ def test_existing_pending_is_preserved_without_recovery_or_transport(fixture, mo
     v = system(fixture, monkeypatch)
     store = v.settings if which == "profile" else v.metadata
     with store.native.locked() as port: port.stage(b"synthetic-incomplete-pending")
-    before = (store.native.root/"settings.pending").read_bytes()
+    before = (Path(store.native.root)/"settings.pending").read_bytes()
     def forbidden(*_args, **_kwargs): pytest.fail("Pending first-run reached proof")
     monkeypatch.setattr(FixedProcess, "call", forbidden)
     with pytest.raises(SettingsError, match="^STORAGE_UNAVAILABLE$"):
         v.checker.validate(v.setup._payload)
-    assert (store.native.root/"settings.pending").read_bytes() == before and not v.calls
+    assert (Path(store.native.root)/"settings.pending").read_bytes() == before and not v.calls
 
 
 @pytest.mark.parametrize("loss", ["expiry", "key-version", "known-version"])
