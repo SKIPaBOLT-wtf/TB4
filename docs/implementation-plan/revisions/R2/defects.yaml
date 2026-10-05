@@ -7246,10 +7246,11 @@ defects:
         via dataclasses.replace outside pytest.raises before any transport.call/SSH.
         Source requires nonempty argv; original A028 test unchanged from8c75.
       failing_source: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
-      passing_source: null
+      passing_source: a68893fa004b896695d5d22a83fa4c3016b6d516
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-linux28-failed.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fixed-helper-dispatch-linux28-full-failed.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-attachment-corrected-helper-linux29-push-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7292,5 +7293,8 @@ defects:
       and unchanged production. AST/static reviews tests0; actualLinux/default/full/C1-C4
       pending. Old5f80 full CI3339PASS/1sameDEF099FAIL/27SKIP/4XFAIL2525.04s and LinuxDesktop3362PASS/1sameFAIL/21SKIP/4XFAIL2654.93s.
       Windows3146PASS/238SKIP/4XFAIL2494.24s plus bothroles/fourpackageflagsPASS.
-      No extra failure identified; currenta688 required/full separate.
+      No extra failure identified; currenta688 required/full separate. Actual currenta688
+      push request29 all936PASS/noFAIL/ERROR/applicableSKIP. All17combined cases including
+      strict empty0/nonempty1 transport boundary execute; all31native+38portable PASS.
+      CurrentPR/fullplatform/CommonC1-C4 held; OPEN/no resolution.
     legacy_record: null
