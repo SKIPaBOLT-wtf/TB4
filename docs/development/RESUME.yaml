@@ -3,22 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_NATIVE_ROOTLESS_RETAINED_CONTROLLER_SOURCE
+phase: STAGED_RECONFIGURATION_C4_NATIVE_RETAINED_CONTROLLER_WINDOWS_AND_HOSTED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 632fd1a0459b6ce64d6ccff4c90957cbabd26645
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0503
+last_verified_event: RP-027-A001-0504
 last_completed: RP-026
-next_action: ActualWindows newnative4/affectedCandidate-controller/retained regressions
-  anddefault3590, same36/37 terminals. New7SSH/rootless/mapdenial/UI-factoryloss andcurrentfullplatform
-  pending; staged/common held.
+next_action: Publish actual Windows/collection/same36-37 OUTCOME and retain any failure
+  under its defect. Then one current source Linux request38 under separate published
+  INTENT; integrate staged endpoint/current native C4/runtime after the relevant invariants
+  are qualified.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0504
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
