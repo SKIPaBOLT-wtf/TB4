@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0516",
+  "source": "e095a52215bf416b1537a1b4ccd582602d57b0b6",
+  "result": "STARTED",
+  "request": 39,
+  "trigger": "b8a51488f27997587f3a94d048a1ca7fc04173f7",
+  "actual_pr": "0c3ee936ebcca283f5cba155355cf1b7558bf295",
+  "verified_parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "b8a51488f27997587f3a94d048a1ca7fc04173f7"
+  ],
+  "non_documentation_diff": "EMPTY_FOR_TRIGGER_AND_PR_VERIFIED_BY_GIT",
+  "required_cases": 1147,
+  "group_counts": {
+    "physical_probe_and_first_run": 634,
+    "mapping_relocation": 51,
+    "retained": 6,
+    "current_role_folder": 22,
+    "original_native": 107,
+    "docs_effect_admission": 327
+  },
+  "legacy_required_selector_excludes": "actual_max_capacity129_fixed_objects; one deselected only in required last group, default CI/desktop unchanged",
+  "runs": [
+    {
+      "id": 37297688944,
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111722701879,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111722702185,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37297688937,
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111722701832,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37297689182,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111722702817,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37297689153,
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "completed",
+      "jobs": [
+        {
+          "id": 111722703013,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37297683791,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111722685160,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "initial_observation": "Initial runs empty/PR merge989588 obsolete; same immutable trigger re-inspected once, current0c3ee9 parents exact. No relaunch.",
+  "tests_executed": 0,
+  "acceptance": false,
+  "next": "Actual1147twice/new40/fullplatform/source/Progress; same38remainingterminal independently. Native ACTIVE adoption source mayusealreadyqualifiedcurrentnormalphysical/localadoption foundations only, nounqualifiedmappingproof consumer."
+}
