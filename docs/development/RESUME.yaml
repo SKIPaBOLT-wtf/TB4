@@ -3,23 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_DEFAULT_NATIVE
+phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_LINUX27_PLATFORM
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0380
+last_verified_event: RP-027-A001-0381
 last_completed: RP-026
-next_action: Publish a single request27 currentacc26 required native Linux850/fullCI/Desktop/both-role
-  packages/Progress qualification INTENT; continue inspecting same old request26 terminal
-  packages with source separation. Actual native attachment/composite/C1-C4 remains
-  behind source-linked requirements.
-verification: A027acc26 Windows673PASS/all26new/all98affected/default3333add26rem0
-  proven; required currentLinux850/fullplatform/packages stillneeded. Prior87ca824twice
-  full/packages staydistinct; actual nativeattachment/composite/C1-C4 held.
+next_action: Record single launch trigger/run/job/merge/source-equivalence receipt
+  and exact readback. Inspect remaining old request26 terminal packages under separate
+  INTENT. Actual native pointer attachment/trusted fresh connection and fixed authenticated
+  helper dispatch require their own source/test checkpoints; all final acceptance
+  held.
+verification: A027acc26 Windows673/all26new/all98affected/default3333 proven380; one
+  request27 currentLinux850/fullplatform launch381 pending. Old87ca request26 results
+  neverqualifyacc26; attachment/composite/runtime/GUI/C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0381
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
