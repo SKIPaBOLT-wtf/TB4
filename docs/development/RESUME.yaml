@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_CONNECTION_WINDOWS_DEFAULT
+phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_CONNECTION_LINUX30_PLATFORM
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0428
+last_verified_event: RP-027-A001-0429
 last_completed: RP-026
-next_action: Authorize once current source2f43 request30 actualLinux990/fullCI/Desktop/packages/Progress;
-  pin source/trigger/actualPRparents and publish launch. Inspect same olda688 Windows
-  separately.
-verification: Current2f43 Windows854/all42new native PASS/default3473 exact54 additions
-  zero removals. Public synthetic parameter redactions preserve private exact evidence;
-  Linux990/fullplatform/C1-C4 held.
+next_action: Launch once and publish source/job checkpoint. Separately inspect same
+  olda688 Windows final. Then current actual nativeLinux990 before implementing fresh
+  prerequisite composition; preserve currentfull packages for later terminal evidence.
+verification: Current2f43 Windows854/default3473 qualified; once currentLinux990/fullplatform
+  request30 launch pending. Runtime/GUI/prerequisites/C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0429
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
