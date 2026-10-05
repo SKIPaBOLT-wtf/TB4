@@ -6928,6 +6928,7 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-failed.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-current-default-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-linux26-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -6976,7 +6977,12 @@ defects:
       all53newPASS/zero skip, exact3307default nodes/noerrors1.791s. Both retained
       internal-policy/exact-native-error/byte negative tests nowPASS. Passing source
       is scoped Windows proof only; OPEN pending current Linux/full/packages/commonC1-C4.
-      No resolution evidence claimed.'
+      No resolution evidence claimed. Actual required native Linux request26 source87ca824PASS
+      twice/zero failures/errors/skips;311firstgroup includes all53new endpoint cases
+      with retained original require/native-error and pending/current/profile invariants.
+      Final originalgroup1predeclared deselected separately labeled; full CI/Desktop/packages/commonC1-C4
+      remainheld. Lateracc26 optional pointer source has not qualified and is not
+      inferred.'
     legacy_record: null
   DEF-096:
     title: New endpoint tests expect a domain exception through the native context
@@ -7006,6 +7012,7 @@ defects:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-second-failed.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-guard-diagnostic-observed.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-current-default-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-linux26-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7066,5 +7073,10 @@ defects:
       all53newPASS/zero skip, exact3307default nodes/noerrors1.791s. Both retained
       internal-policy/exact-native-error/byte negative tests nowPASS. Passing source
       is scoped Windows proof only; OPEN pending current Linux/full/packages/commonC1-C4.
-      No resolution evidence claimed.
+      No resolution evidence claimed. Actual required native Linux request26 source87ca824PASS
+      twice/zero failures/errors/skips;311firstgroup includes all53new endpoint cases
+      with retained original require/native-error and pending/current/profile invariants.
+      Final originalgroup1predeclared deselected separately labeled; full CI/Desktop/packages/commonC1-C4
+      remainheld. Lateracc26 optional pointer source has not qualified and is not
+      inferred.
     legacy_record: null
