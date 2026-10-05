@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_DIAGNOSTIC_SOURCE_PLATFORM_INSPECTION
+phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_DEFAULT_RECHECK
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 91bad7a54916766417a882ef537ca812a08bfb05
+source_commit: feb214963f5b7436469957102c42f3482d627b1f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0360
+last_verified_event: RP-027-A001-0361
 last_completed: RP-026
-next_action: Publish corrected endpoint source feb214 scoped/default qualification
-  INTENT and run once with new owned result/fixture names. Preserve original DEF094
-  unknown cause and DEF095 failed fixture evidence. Current endpoint Linux/full/composite/runtime/GUI/common
-  gates remain.
-verification: Exact source91bad7 full/core/requiredLinux771/bothplatform bothrole
-  packages/Progress allPASS360; priorWindowsfailureandunproven cause retained. Corrected
-  endpointfeb214 tests/newLinux/full/commonC1-C4held; no cross-source acceptance.
+next_action: Run one new-root corrected qualification and inspect actual results/node-ID
+  equivalence; publish exact PASS or retained failure. If successful, publish current-source
+  request26 Linux824/full/platform launch INTENT and pin new real jobs.
+verification: Earlier91bad7 exactWindows/Linux/core/requiredLinux/bothrolepackages
+  qualified360, neverlaterendpoint source. Corrected feb214 Windows scoped/default
+  recheck pending361, all53retainedcases required; actualLinux824/currentfull/commonC1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0361
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
