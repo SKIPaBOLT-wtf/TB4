@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_COMBINED_NATIVE_ATTACHMENT_HELPER_LINUX29_PLATFORM
+phase: STAGED_RECONFIGURATION_C2_OLD_HELPER_LINUX28_FULL_PLATFORM
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: a68893fa004b896695d5d22a83fa4c3016b6d516
+source_commit: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0417
+last_verified_event: RP-027-A001-0418
 last_completed: RP-026
-next_action: Read-only separate INTENT to inspect SAME old5f80 request28 remaining
-  CI/Desktop terminal results; publish exact outcome. Inspect SAME currenta688 request29
-  required936 and Progress under another INTENT when terminal; use actualproof before
-  dependent fresh connection source.
-verification: Once launched currenta688 request29 requiredLinux936/fullplatform; exactactualPR021d/source
-  equivalence pinned. Terminal evidence pending; old5f80 request28 distinct.
+next_action: Publish original5f80 outcome. Then inspect same a688 request29 required936
+  and Progress under separate INTENT; use actual qualification for fresh protected
+  connection implementation.
+verification: Current a688 request29 exact source/PR pinned; actual936/full platform
+  pending. Inspect old immutable5f80 remaining full jobs separately.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0418
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
