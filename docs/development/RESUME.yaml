@@ -3,21 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_NATIVE_ADMISSION_RECHECK_AND_TERMINALS
+phase: STAGED_RECONFIGURATION_C4_NATIVE_NORMAL_ADMISSION_LINUX36
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 18969f784e2e2431ed31f6a6c0a3eef62279e31d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0489
+last_verified_event: RP-027-A001-0490
 last_completed: RP-026
-next_action: Launchone current18969source Linux36 required1071/31; same35/Desktopterminal
-  results later. Thenstagedendpoint/coherentruntimeGUI/common C1-C4 remains.
+next_action: Publishlaunch OUTCOME/source/jobs. Independentstagedendpoint replacementunit
+  only afterdocumentedscheduling fromexistingactualC1/Candidate/pointer/native qualified;
+  inspect36terminal beforedependentcommon/finalcomposition.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0490
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
