@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_STAGED_TEST_NATIVE_SANITIZER_REPAIR
+phase: STAGED_RECONFIGURATION_C2_CORRECTED_STAGED_COLLECTION_PLATFORM36
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: b6288d53c5eb29d51708b1f6099114529f79a701
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0497
+last_verified_event: RP-027-A001-0498
 last_completed: RP-026
-next_action: Same3579 defaultcollection; correctedfirststaged37/1096/new25 actualLinux
-  underseparateINTENT. Same36fullplatform/CI terminalscope later; finalcoherentruntimeGUI/common
-  held.
+next_action: Publishcollection/same36actualOUTCOME; one correctedstagedsource37 Linux1096/new25
+  underseparateINTENT, thennativeC4/controller integration onlyfromqualified invariants.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0498
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
