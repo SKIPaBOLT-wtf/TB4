@@ -3,21 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_CURRENT_NATIVE_PREREQUISITES_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C2_NATIVE_CANDIDATE_MAPPED_PROOF_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: ea4c2f72e471c7ab935fc2892e8551185d513ece
+source_commit: 63ab7cba3a22aaa89bed45c7ae855a9f1b75e2f5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0465
+last_verified_event: RP-027-A001-0466
 last_completed: RP-026
-next_action: Read exact current mapped Folder proof/commissioning contracts and tests.
-  Record independently scheduled read-only proof compatibility source unit, preserving
-  immutable current33 fullplatform inspection before common acceptance.
-verification: Currentea4c both1027/35native/14SSH and235Progress actualPASS. Windows171/default3510
-  retained. Fullplatform/stagedmapped/runtimeGUI/C1-C4 held.
+next_action: Publish scoped source/static outcome, then execute portable fixture regression/currentdefaultcollection
+  and required actualLinux integration under separateINTENT; inspect same33 fullplatform
+  before commonacceptance.
+verification: Currentea4c1027 twice/171Windows qualified; independently scheduled
+  test-only actualCandidate/mappedSSH integration. Frozen33 fullplatform pending;
+  C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0466
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
