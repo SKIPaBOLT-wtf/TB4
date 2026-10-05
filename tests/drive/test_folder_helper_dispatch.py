@@ -42,7 +42,7 @@ def main_io(monkeypatch):
     monkeypatch.setattr(sys, "stdout", SimpleNamespace(buffer=output))
     monkeypatch.setattr(helper.signal, "SIGALRM", 999, raising=False)
     monkeypatch.setattr(helper.signal, "signal", lambda *_: events.append(("signal",)))
-    monkeypatch.setattr(helper.signal, "alarm", lambda value: events.append(("alarm", value)))
+    monkeypatch.setattr(helper.signal, "alarm", lambda value: events.append(("alarm", value)), raising=False)
     config = object()
     def load(path, *, mapping_store):
         assert path == "synthetic-server-config" and mapping_store is None
