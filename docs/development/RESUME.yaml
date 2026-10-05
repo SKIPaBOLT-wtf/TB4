@@ -7,18 +7,18 @@ phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_CONNECTION_LINUX30_PLATFORM
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0429
+last_verified_event: RP-027-A001-0430
 last_completed: RP-026
-next_action: Launch once and publish source/job checkpoint. Separately inspect same
-  olda688 Windows final. Then current actual nativeLinux990 before implementing fresh
-  prerequisite composition; preserve currentfull packages for later terminal evidence.
-verification: Current2f43 Windows854/default3473 qualified; once currentLinux990/fullplatform
-  request30 launch pending. Runtime/GUI/prerequisites/C1-C4 held.
+next_action: Separate read-only INTENT to inspect SAME olda688 Windows final; preserve
+  source-distinct result. Then current2f43 required990/Progress before fresh protected
+  first-run prerequisite composition, with full current packages held.
+verification: Current2f43 request30 launched once, exact trigger/actualPR f1a9/source
+  pins. Required990/fullplatform pending. Olda688 Windows final distinct; prerequisites/runtime/GUI/C1-C4
+  held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0429
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
