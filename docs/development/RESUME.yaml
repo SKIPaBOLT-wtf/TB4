@@ -5,21 +5,20 @@ check: RP-027.C4
 attempt: A001
 phase: STAGED_RECONFIGURATION_C4_NATIVE_NORMAL_ADMISSION_LINUX36
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 18969f784e2e2431ed31f6a6c0a3eef62279e31d
+source_commit: c69dd69f56ee29fa03c592e0fe12027ab8391e33
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0490
+last_verified_event: RP-027-A001-0491
 last_completed: RP-026
-next_action: Publishlaunch OUTCOME/source/jobs. Independentstagedendpoint replacementunit
-  only afterdocumentedscheduling fromexistingactualC1/Candidate/pointer/native qualified;
-  inspect36terminal beforedependentcommon/finalcomposition.
+next_action: IndependentstagedCandidate endpointreplacement source underseparateINTENT
+  groundedexistingnative endpoint/C1/Candidate contracts; current36/source/fullplatform/common
+  held untilactualtests. Frozen35Desktopsamejobs terminal later.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0490
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
