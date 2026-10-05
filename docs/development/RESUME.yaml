@@ -5,22 +5,21 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_STAGED_ENDPOINT_LINUX37
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: b6288d53c5eb29d51708b1f6099114529f79a701
+source_commit: 3d737f0dda5204dd1f17d8ebffb727825a8cb977
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0500
+last_verified_event: RP-027-A001-0501
 last_completed: RP-026
-next_action: PublishlaunchOUTCOME. Inspect37/36samejobs underseparateINTENT. An independentnative
-  rootless retained-C4/current-profile factory/controller sourceunit mayusealreadyqualifiedC1/Candidate13/normal31
-  andoldretainedcontracts only, leavingmappedAFTER andnewstaged25 integration/common
-  held.
+next_action: Same37actual1096/new25/pending/secondserver/closedguards andsame36CI/Linuxplatform
+  terminal inspection. IndependentnativeRootless C4/currentprofile factory/controller
+  source onlyfromalreadyqualifiednativeC1/Candidate13/normal31/retained contracts;
+  newstaged integration/common held.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0500
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0500",
+  "source": "b6288d53c5eb29d51708b1f6099114529f79a701",
+  "trigger": "3d737f0dda5204dd1f17d8ebffb727825a8cb977",
+  "request_revision": 37,
+  "result": "LAUNCHED",
+  "groups": {
+    "physical_probe_and_first_run": 583,
+    "mapping_relocation": 51,
+    "retained": 6,
+    "current_role_folder": 22,
+    "original_native": 107,
+    "docs_effect_admission": 327
+  },
+  "required_cases": 1096,
+  "pr": 36,
+  "launch_pr_checkout": "afbdc102d229353857913383a5eba91ca0b73519",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "3d737f0dda5204dd1f17d8ebffb727825a8cb977"
+  ],
+  "source_equivalence": {
+    "actual_git_non_doc_diff": {
+      "trigger": [],
+      "pr": []
+    },
+    "baseline": "b6288d53c5eb29d51708b1f6099114529f79a701"
+  },
+  "runs": [
+    {
+      "id": 37289451151,
+      "name": "CI",
+      "event": "pull_request",
+      "head": "3d737f0dda5204dd1f17d8ebffb727825a8cb977",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111696145955,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37289450957,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "head": "3d737f0dda5204dd1f17d8ebffb727825a8cb977",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111696145872,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37289450954,
+      "name": "Desktop",
+      "event": "pull_request",
+      "head": "3d737f0dda5204dd1f17d8ebffb727825a8cb977",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111696144816,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111696145070,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37289450924,
+      "name": "Progress",
+      "event": "pull_request",
+      "head": "3d737f0dda5204dd1f17d8ebffb727825a8cb977",
+      "status": "completed",
+      "jobs": [
+        {
+          "id": 111696145402,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37289445864,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "head": "3d737f0dda5204dd1f17d8ebffb727825a8cb977",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111696128593,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "readback": "EXACT request/file/ref/API+Gitparents/empty non-docdiff",
+  "notes": "Initialemptyruns/stale5c0 merge inspected againstsame3d737 trigger, no relaunch. Fiveexactruns/sixjobs, Progressstatusnotactualexecutionproof.",
+  "acceptance": false,
+  "next": "Same37actual1096/new25/pending/secondserver/closedguards andsame36CI/Linuxplatform terminal inspection. IndependentnativeRootless C4/currentprofile factory/controller source onlyfromalreadyqualifiednativeC1/Candidate13/normal31/retained contracts; newstaged integration/common held."
+}
