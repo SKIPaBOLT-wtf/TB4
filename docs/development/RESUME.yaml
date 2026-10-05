@@ -3,23 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_OLD_HELPER_LINUX28_FULL_PLATFORM
+phase: STAGED_RECONFIGURATION_C2_COMBINED_LINUX29_NATIVE_PROGRESS
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
+source_commit: a68893fa004b896695d5d22a83fa4c3016b6d516
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0419
+last_verified_event: RP-027-A001-0420
 last_completed: RP-026
-next_action: Authorize same currentrequest29 required936/Progress terminal inspection;
-  publish actual evidence and DEF099 passing_source only if strict corrected cases
-  execute. Independently schedule bounded fresh protected Folder connection after
-  actual current native/helper foundations pass; full currentplatform/common acceptance
-  held.
-verification: Old5f80 fullLinux fails only known DEF099; oldWindows full/packages
-  pass. Currenta688 request29 actual936/full proof pending and source-distinct.
+next_action: Publish actual current native/helper outcome and either debug failure
+  or implement bounded fresh protected Folder connection; full current source packages
+  and common checks remain required.
+verification: Currenta688 exact request29 pending actual nativeLinux936/Progress inspection.
+  Old5f80 full results settled419; packages/currentconnection/C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0420
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
