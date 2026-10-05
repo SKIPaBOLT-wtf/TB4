@@ -3,24 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_CORRECTED_WINDOWS_DEFAULT
+phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_OUTPUT_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: f18e8cd1dbe57298b36bc5937697937ee8ae66fb
+source_commit: 3c05afa170a74ca29da7aa23521ec4dd1c0aff22
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0398
+last_verified_event: RP-027-A001-0399
 last_completed: RP-026
-next_action: Publish exact test-only local helper.sys namespace fixture repair INTENT,
-  retain global sys.argv only for real argparse and all38portable55totalcases/assertions;
-  no real helper changes. Then separately run new portable/affected original probe+protocol
-  regressions/default3388 unchanged-node qualification before currentLinux905/fullplatform
-  launch.
-verification: Currentf18 exact44target secondWindows17newportableFAIL provenpytestglobalstdoutfixture
-  DEF098; formeralarmERRORnone. Oldacc26 allplatformqualified. Minimalhelper-local
-  test sys fixture then narrowportable/affected/default recheck; C1-C4held.
+next_action: Preserve/publish exact fixture-only source and related OUTCOME/DEF098
+  repair link; then focused newportable/probe/protocol/defaultsame3388 recheck and
+  one immutable currentsourceLinux905/fullplatform launch.
+verification: DEF098 provenpurefixture globalcapture interference; minimalhelper-local
+  sys test repair with unchangedassertions and focused recheck scheduled. ActualcurrentLinux/full/common
+  stillrequired; C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0399
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
