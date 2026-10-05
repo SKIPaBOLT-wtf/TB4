@@ -7666,6 +7666,7 @@ defects:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-failed.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-qualified.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/staged-endpoint-collection-and-native36-qualified.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-platform-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7707,7 +7708,9 @@ defects:
       Same3554 exactIDs/default1.802s; scopedpassing_source only, Linux/fullplatform/commonheld.
       Source18969 newnative25+realSSH6 actualrequired1071twice/noFAIL/ERROR/SKIP (558/51/6/22/107/327),
       includinglatekey/revocation/force/timingworkdenial/defaultDeny. Same36Progress235PASS13.14s;
-      completeplatform/CI stillrunning.
+      completeplatform/CI stillrunning. Same36 source18969 actualfullWindows3279PASS/271SKIP/4XFAIL1431.27s
+      andbothrolefourpackage/GUI/profileisolation flagsPASS, actualverifiedfa9checkout;
+      artifactmetadataonly. CI/Linuxstillrunning/currentstagedsource/commonnotqualified.
     legacy_record: null
   DEF-106:
     title: Unexecuted staged endpoint tests expect raw exceptions across the native

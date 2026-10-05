@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0498",
+  "source": "18969f784e2e2431ed31f6a6c0a3eef62279e31d",
+  "result": "PASS_SCOPED",
+  "trigger": "c69dd69f56ee29fa03c592e0fe12027ab8391e33",
+  "actual_pr_checkout": "fa9e872f7fcf3621fb9f8f16145ef3f8327a10ac",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "c69dd69f56ee29fa03c592e0fe12027ab8391e33"
+  ],
+  "source_equivalence": {
+    "actual_git_non_doc_diff": {
+      "trigger": [],
+      "pr": []
+    },
+    "baseline": "18969f784e2e2431ed31f6a6c0a3eef62279e31d"
+  },
+  "previous_actual1071_twice": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/staged-endpoint-collection-and-native36-qualified.json",
+  "windows": {
+    "run": 37285034705,
+    "job": 111681799722,
+    "conclusion": "success",
+    "checkout": "fa9e872f7fcf3621fb9f8f16145ef3f8327a10ac",
+    "summaries": [
+      {
+        "counts": {
+          "passed": 74,
+          "skipped": 20
+        },
+        "seconds": 2.94
+      },
+      {
+        "counts": {
+          "passed": 15
+        },
+        "seconds": 0.12
+      },
+      {
+        "counts": {
+          "passed": 30,
+          "skipped": 4
+        },
+        "seconds": 1.34
+      },
+      {
+        "counts": {
+          "passed": 2
+        },
+        "seconds": 9.64
+      },
+      {
+        "counts": {
+          "passed": 75
+        },
+        "seconds": 6.27
+      },
+      {
+        "counts": {
+          "passed": 79
+        },
+        "seconds": 11.82
+      },
+      {
+        "counts": {
+          "passed": 3279,
+          "skipped": 271,
+          "xfailed": 4
+        },
+        "seconds": 1431.27
+      }
+    ],
+    "packages": [
+      [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    ],
+    "failures": []
+  },
+  "artifacts": [
+    {
+      "id": 11334853588,
+      "name": "tb4-desktop-Windows-fa9e872f7fcf3621fb9f8f16145ef3f8327a10ac",
+      "size_in_bytes": 120950655,
+      "digest": "sha256:18f8c1f7895cb7bd0d4e26f4b5af2ad7d318d2753d5f1369479223e72a17aff5"
+    }
+  ],
+  "ci": [
+    {
+      "id": 111681799849,
+      "status": "in_progress",
+      "conclusion": null
+    }
+  ],
+  "linux": [
+    {
+      "id": 111681799978,
+      "status": "in_progress",
+      "conclusion": null
+    }
+  ],
+  "acceptance": false,
+  "next": "Same36completeCI/LinuxDesktop terminal actualcounts/packages; newstagedsourceb628 andcommonC1-C4 notqualifiedbythisWindows report."
+}
