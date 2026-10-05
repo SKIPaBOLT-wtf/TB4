@@ -7139,5 +7139,8 @@ defects:
     notes: Actual Windows762PASS/19ERROR/0FAIL/99declared LinuxSKIP211.774s; all19
       same attribute setup error. Source and failed evidence retained. Corrected test-only
       rerun/nativeLinux/full/common pending. No weakened policy assertion or product
-      timeout change authorized.
+      timeout change authorized. One exact test-only alarm mock line repaired and
+      preserved/read back at f18e8cd1dbe57298b36bc5937697937ee8ae66fb; seven portable
+      function names and all55case definitions/assertions retained, product unchanged.
+      AST/diff/privacy PASS/tests0; corrected qualification pending.
     legacy_record: null

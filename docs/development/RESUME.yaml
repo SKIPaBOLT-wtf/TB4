@@ -5,21 +5,20 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: fa400301665166e74077adad6bc6af4ca0dcf83a
+source_commit: f18e8cd1dbe57298b36bc5937697937ee8ae66fb
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0392
+last_verified_event: RP-027-A001-0393
 last_completed: RP-026
-next_action: Preserve/publish exact test-only repair, append related source OUTCOME/DEF097
-  repair link, then independently authorize and run corrected44target/default3388
-  same-node recheck.
-verification: DEF097 proven Windows-only testfixture alarm attribute; test-only exact
-  one-line mock repair under recorded INTENT, no product weakening; current actualLinux/full/common
-  held.
+next_action: Authorize separate corrected same44target Windows/default3388 no-node-change
+  rerun with private raw output capture; then one current source-linked Linux/platform
+  launch.
+verification: DEF097 exact one-line test-only mock repair source published/readback;
+  tests0. Corrected44target/default3388 unchangednode recheck and currentLinux/full
+  held; C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0392
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
