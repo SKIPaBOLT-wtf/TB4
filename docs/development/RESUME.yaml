@@ -1,24 +1,26 @@
 schema_version: 1
 revision: R2
 work_item: RP-027
-check: RP-027.C4
+check: RP-027.C3
 attempt: A001
-phase: STAGED_RECONFIGURATION_C4_REMOTE_MAPPING_AFTER_LINUX39
+phase: STAGED_RECONFIGURATION_C3_NATIVE_CURRENT_ROLE_ACTIVE_ADOPTION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: b8a51488f27997587f3a94d048a1ca7fc04173f7
+source_commit: e095a52215bf416b1537a1b4ccd582602d57b0b6
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0517
+last_verified_event: RP-027-A001-0518
 last_completed: RP-026
-next_action: Publishlaunchcheckpoint; same39/same38terminal inspection underseparateINTENT.
-  IndependentnativeACTIVEadoption source fromqualifiedlocalA019/currentnormalA033physical
-  proof mayproceedwithoutA036consumer; current39/commonheld untilactualqualification.
+next_action: Publish source/static OUTCOME then actualWindowsaffectedoldadoption/currentfactory
+  pluscurrentdefaultcollection/same38-39terminal inspection. Qualify newnativeSSH/currentrole/transactioncuts
+  undernextimmutablehostedrequest; thenmappedC4consumer/native originalMain recovery
+  andcomplete stagedruntime.
 verification: Frozenea4c bothplatform/packages/1027twice/171native qualified. Independentlyscheduled
   optin native normalport/admission foundation; current35/remainingintegration/commonC1-C4
   held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0518
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
