@@ -3,21 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_CONNECTION_LINUX30
+phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_FIXTURE_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0434
+last_verified_event: RP-027-A001-0435
 last_completed: RP-026
-next_action: Publish minimal onefile test fixture import repair INTENT; retain all12
-  SSH case IDs/assertions and then qualify actual Linux/current source. Full/platform/C1-C4
-  remain held.
-verification: Current2f43 request30 required group1 465PASS/12ERROR from missing context
-  fixture; Progress235PASS. Minimal test-only repair required, C1-C4 held.
+next_action: Publish source-only repair outcome, then schedule actual corrected Linux/native/default/platform
+  verification.
+verification: DEF-100 test-only context fixture import repair; all12 cases retained,
+  source-only then actual Linux required.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0435
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
