@@ -7,17 +7,17 @@ phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_CONNECTION_LINUX32
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: e8e8e2142a93a95607cacd76a551a55113312ad7
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0445
+last_verified_event: RP-027-A001-0446
 last_completed: RP-026
-next_action: Record exact launch then bounded same older30/31 full jobs and current32
-  terminal required proof; dependent first-run source follows actual foundations.
-verification: Currente8e8 request32 qualification once; allproduction/Windows source
-  unchanged, actual12SSH/990/fullplatform/C1-C4 pending.
+next_action: Inspect same older30/31 fullplatform terminal logs/source-equivalence
+  without replay, then same current32 actual native990/Progress before fresh prerequisite
+  source.
+verification: Currente8e8/request32 launched once; actualsource-equivalent push16248/PRf2e
+  known, native990/fullplatform/first-run/GUI/C1-C4 pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0445
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
