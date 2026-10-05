@@ -3,22 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_CORRECTED_NATIVE_PREREQUISITES_WINDOWS
+phase: STAGED_RECONFIGURATION_C2_NATIVE_PREREQUISITES_CORRECT_SELECTION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: ea4c2f72e471c7ab935fc2892e8551185d513ece
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0457
+last_verified_event: RP-027-A001-0458
 last_completed: RP-026
-next_action: 'Correct test selection under newINTENT: existing drive first-run target
-  first then same seven native/security targets, no customPYTHONPATH; actual35/defaultsameIDs
-  qualification.'
-verification: Focused selection collectionfailed beforeexecution due drivehelperomission;
-  default3510/noerrors. Correct defaulttargetselection, sourceunchanged; Linux/staged/runtime/GUI/C1-C4
-  held.
+next_action: Publish actualfocused/default result, then currentea4c requiredLinux1027
+  launch once and same immutable old32/30/31 terminal source-specific inspection.
+verification: Corrected eight-target defaultpytest drive dependency first, no source/PYTHONPATH
+  changes; actualnative35/default3510 qualification pending, C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0458
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
