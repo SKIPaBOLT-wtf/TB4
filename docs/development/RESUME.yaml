@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_DEFAULT_RECHECK
+phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_GUARD_DIAGNOSIS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: feb214963f5b7436469957102c42f3482d627b1f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0362
+last_verified_event: RP-027-A001-0363
 last_completed: RP-026
-next_action: Publish bounded same-source two-case diagnostic INTENT. Observe only
-  closed failed require codes while executing the original require and actual native
-  contexts unchanged, in fresh owned fixtures. Record which exact policy rejected
-  before altering expected native error types or code.
-verification: Correctedfeb214 secondrun547PASS/2native-exceptionFAIL/22declaredLinuxSKIP;
-  new51/53PASS, default3307/samenodes/noerrors. DEF096 internalguard diagnostic required
-  beforeexpectationrepair; all currentqualification/C1-C4held.
+next_action: Run exactly two original cases with transparent code observer, record
+  actual internal/outward results and publish/readback. Only if supported, publish
+  minimal test-only repair INTENT retaining explicit guard-code plus native-error/unchanged-byte
+  assertions.
+verification: SecondendpointFAIL retained362/DEF096H1untested. Same-source two-case
+  actual guard/native-normalization diagnostic pending363; no expectation/native/source
+  change untilobserved. Allcurrentqualification/C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0363
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
