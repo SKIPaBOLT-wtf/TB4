@@ -7797,9 +7797,10 @@ defects:
         can occur before that call. No historicalruntime failed test/run is asserted;
         realSSH latependingmetadata regression prepared foractualqualification.'
       failing_source: b6288d53c5eb29d51708b1f6099114529f79a701
-      passing_source: null
+      passing_source: 940b34ac2c38e62a725fe29ab49d80de860569a6
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-retained-controller-source.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-staged-retained-native38-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7836,7 +7837,10 @@ defects:
     resolution_evidence: []
     notes: Static source-order finding, suspectedorigin only; no fabricatedruntime
       reproduction/passing_source. Currentminimalprefactoryreset source 632fd1a0459b6ce64d6ccff4c90957cbabd26645
-      preserved; newnative/SSH execution pending.
+      preserved; newnative/SSH execution pending. Current38actualall7 retained/controller
+      casesPASSbothrequiredjobs includingrefresh/activate latefactoryloss/defaultUIdenial,
+      rootlessnativeC4/Main/currentadmission/work, mappedguard andforce/revocationrefusal.
+      Scopedpassing940b34ac only; nohistoricalruntimefailedrun asserted, platforms/commonheld.
     legacy_record: null
   DEF-108:
     title: Staged revoked-access test expects a review report after native construction
@@ -7861,10 +7865,11 @@ defects:
         SETTINGS_STORE_UNAVAILABLE. Other24 staged cases pass; laterrequiredgroups
         notexecuted.'
       failing_source: b6288d53c5eb29d51708b1f6099114529f79a701
-      passing_source: null
+      passing_source: 940b34ac2c38e62a725fe29ab49d80de860569a6
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-retained-windows-and-staged37-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/final-staged-current-composition-gap-review.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-staged-retained-native38-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7909,5 +7914,8 @@ defects:
       forbids key/SSH, retainscurrentstage/Main/archive/work/default denial. Allother24/decorators/other3faults
       AST unchanged; productionunchanged/tests0. Same37 fullCI3530PASS/1sameDEF108FAIL/27SKIP/4XFAIL2059.67s
       andLinux3553PASS/1sameFAIL/21SKIP/4XFAIL2590.17s; no newfailures. Windows3279PASS/296SKIP/4XFAIL1864.55s/bothrole4flagsPASS
-      cannotqualifystagedLinuxcase. Current38repair executionstillpending.
+      cannotqualifystagedLinuxcase. Current38repair executionstillpending. Current38actual1107twice/noFAIL/ERROR/SKIP
+      (594/51/6/22/107/327, oneexplicitdeselected inlastlegacyselection); stagedall25
+      pass includingexact internalFOLDER_ENDPOINT_CREDENTIAL/publicSETTINGS_STORE_UNAVAILABLE/noKey/SSH/retention.
+      Scopedpassing940b34ac only; completeplatform/commonheld.
     legacy_record: null

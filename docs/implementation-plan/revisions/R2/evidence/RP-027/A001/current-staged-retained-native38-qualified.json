@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0514",
+  "source": "940b34ac2c38e62a725fe29ab49d80de860569a6",
+  "result": "PASS",
+  "scope": "A034 owner/currentC1/pointer-only/native pending recovery+25 and A035 native current factory4/rootless C4/controller7, actual required1107twice. Fullplatform/common acceptance remains held.",
+  "evidence": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/mapping-after-windows-and-current38-native-qualified.json",
+  "windows_native_evidence": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-retained-windows-and-staged37-failure.json",
+  "required": [
+    {
+      "job": 111709251874,
+      "checkout": "455559f6d861e625f14b376ce918bc759a46c1d5",
+      "summaries": [
+        "594 passed in 519.15s (0:08:39)",
+        "51 passed in 119.63s (0:01:59)",
+        "6 passed in 51.36s",
+        "22 passed in 257.46s (0:04:17)",
+        "107 passed in 16.73s",
+        "327 passed, 1 deselected in 559.98s (0:09:19)"
+      ],
+      "failures": [],
+      "commands": [
+        "##[group]Run python -m pytest tests/drive/test_folder_endpoint.py tests/security/test_folder_endpoint_native.py tests/security/test_folder_endpoint_selection.py tests/security/test_folder_endpoint_attachment_native.py tests/security/test_folder_connection_native.py tests/drive/test_folder_connection_authenticated_ssh.py tests/security/test_folder_prerequisites_native.py tests/drive/test_folder_candidate_authenticated_ssh.py tests/security/test_folder_runtime_native.py tests/drive/test_folder_runtime_authenticated_ssh.py tests/drive/test_folder_staged_endpoint_authenticated_ssh.py tests/security/test_folder_runtime_factory_native.py tests/drive/test_folder_retained_authenticated_ssh.py tests/drive/test_folder_helper_dispatch.py tests/drive/test_folder_combined_authenticated_ssh.py tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py tests/drive/test_folder_first_run_native.py tests/security/test_remote_folder_first_run_native.py tests/security/test_folder_credential_purpose.py tests/security/test_folder_credential_purpose_native.py tests/security/test_folder_authority_purpose.py tests/security/test_folder_authority_purpose_native.py tests/drive/test_folder_authority_transport.py tests/security/test_folder_authority_transport_native.py tests/drive/test_folder_authority_authenticated_ssh.py tests/drive/test_folder_probe_transport.py tests/security/test_folder_probe_transport_native.py tests/drive/test_folder_probe_authenticated_ssh.py -ra --junitxml=folder-probe-results.xml",
+        "python -m pytest tests/drive/test_folder_endpoint.py tests/security/test_folder_endpoint_native.py tests/security/test_folder_endpoint_selection.py tests/security/test_folder_endpoint_attachment_native.py tests/security/test_folder_connection_native.py tests/drive/test_folder_connection_authenticated_ssh.py tests/security/test_folder_prerequisites_native.py tests/drive/test_folder_candidate_authenticated_ssh.py tests/security/test_folder_runtime_native.py tests/drive/test_folder_runtime_authenticated_ssh.py tests/drive/test_folder_staged_endpoint_authenticated_ssh.py tests/security/test_folder_runtime_factory_native.py tests/drive/test_folder_retained_authenticated_ssh.py tests/drive/test_folder_helper_dispatch.py tests/drive/test_folder_combined_authenticated_ssh.py tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py tests/drive/test_folder_first_run_native.py tests/security/test_remote_folder_first_run_native.py tests/security/test_folder_credential_purpose.py tests/security/test_folder_credential_purpose_native.py tests/security/test_folder_authority_purpose.py tests/security/test_folder_authority_purpose_native.py tests/drive/test_folder_authority_transport.py tests/security/test_folder_authority_transport_native.py tests/drive/test_folder_authority_authenticated_ssh.py tests/drive/test_folder_probe_transport.py tests/security/test_folder_probe_transport_native.py tests/drive/test_folder_probe_authenticated_ssh.py -ra --junitxml=folder-probe-results.xml",
+        "##[group]Run python -m pytest tests/drive/test_folder_mapping.py tests/drive/test_folder_relocation.py -ra --junitxml=folder-mapping-results.xml",
+        "python -m pytest tests/drive/test_folder_mapping.py tests/drive/test_folder_relocation.py -ra --junitxml=folder-mapping-results.xml",
+        "##[group]Run python -m pytest tests/drive/test_folder_retained.py -ra --junitxml=folder-retained-results.xml",
+        "python -m pytest tests/drive/test_folder_retained.py -ra --junitxml=folder-retained-results.xml",
+        "##[group]Run python -m pytest tests/drive/test_folder_active_adoption.py -ra --junitxml=folder-active-adoption-results.xml",
+        "python -m pytest tests/drive/test_folder_active_adoption.py -ra --junitxml=folder-active-adoption-results.xml",
+        "##[group]Run python -m pytest tests/drive/test_folder_commissioning.py tests/drive/test_folder_store.py tests/drive/test_folder_protocol.py tests/drive/test_folder_lock_order.py tests/security/test_private_settings_native.py tests/security/test_reconfiguration_maintenance_native.py tests/security/test_reconfiguration_evidence_native.py tests/security/test_reconfiguration_effects_native.py -ra --junitxml=folder-regression-results.xml",
+        "python -m pytest tests/drive/test_folder_commissioning.py tests/drive/test_folder_store.py tests/drive/test_folder_protocol.py tests/drive/test_folder_lock_order.py tests/security/test_private_settings_native.py tests/security/test_reconfiguration_maintenance_native.py tests/security/test_reconfiguration_evidence_native.py tests/security/test_reconfiguration_effects_native.py -ra --junitxml=folder-regression-results.xml"
+      ],
+      "all_new36_files_selected": true,
+      "sums": [
+        {
+          "passed": 594,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "deselected": 0
+        },
+        {
+          "passed": 51,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "deselected": 0
+        },
+        {
+          "passed": 6,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "deselected": 0
+        },
+        {
+          "passed": 22,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "deselected": 0
+        },
+        {
+          "passed": 107,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "deselected": 0
+        },
+        {
+          "passed": 327,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "deselected": 1
+        }
+      ]
+    },
+    {
+      "job": 111709268177,
+      "checkout": "561f5b0028ef4f3ecca57095769f224dfcc169d1",
+      "summaries": [
+        "594 passed in 514.69s (0:08:34)",
+        "51 passed in 121.52s (0:02:01)",
+        "6 passed in 52.35s",
+        "22 passed in 265.59s (0:04:25)",
+        "107 passed in 17.26s",
+        "327 passed, 1 deselected in 559.96s (0:09:19)"
+      ],
+      "failures": [],
+      "commands": [
+        "##[group]Run python -m pytest tests/drive/test_folder_endpoint.py tests/security/test_folder_endpoint_native.py tests/security/test_folder_endpoint_selection.py tests/security/test_folder_endpoint_attachment_native.py tests/security/test_folder_connection_native.py tests/drive/test_folder_connection_authenticated_ssh.py tests/security/test_folder_prerequisites_native.py tests/drive/test_folder_candidate_authenticated_ssh.py tests/security/test_folder_runtime_native.py tests/drive/test_folder_runtime_authenticated_ssh.py tests/drive/test_folder_staged_endpoint_authenticated_ssh.py tests/security/test_folder_runtime_factory_native.py tests/drive/test_folder_retained_authenticated_ssh.py tests/drive/test_folder_helper_dispatch.py tests/drive/test_folder_combined_authenticated_ssh.py tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py tests/drive/test_folder_first_run_native.py tests/security/test_remote_folder_first_run_native.py tests/security/test_folder_credential_purpose.py tests/security/test_folder_credential_purpose_native.py tests/security/test_folder_authority_purpose.py tests/security/test_folder_authority_purpose_native.py tests/drive/test_folder_authority_transport.py tests/security/test_folder_authority_transport_native.py tests/drive/test_folder_authority_authenticated_ssh.py tests/drive/test_folder_probe_transport.py tests/security/test_folder_probe_transport_native.py tests/drive/test_folder_probe_authenticated_ssh.py -ra --junitxml=folder-probe-results.xml",
+        "python -m pytest tests/drive/test_folder_endpoint.py tests/security/test_folder_endpoint_native.py tests/security/test_folder_endpoint_selection.py tests/security/test_folder_endpoint_attachment_native.py tests/security/test_folder_connection_native.py tests/drive/test_folder_connection_authenticated_ssh.py tests/security/test_folder_prerequisites_native.py tests/drive/test_folder_candidate_authenticated_ssh.py tests/security/test_folder_runtime_native.py tests/drive/test_folder_runtime_authenticated_ssh.py tests/drive/test_folder_staged_endpoint_authenticated_ssh.py tests/security/test_folder_runtime_factory_native.py tests/drive/test_folder_retained_authenticated_ssh.py tests/drive/test_folder_helper_dispatch.py tests/drive/test_folder_combined_authenticated_ssh.py tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py tests/drive/test_folder_first_run_native.py tests/security/test_remote_folder_first_run_native.py tests/security/test_folder_credential_purpose.py tests/security/test_folder_credential_purpose_native.py tests/security/test_folder_authority_purpose.py tests/security/test_folder_authority_purpose_native.py tests/drive/test_folder_authority_transport.py tests/security/test_folder_authority_transport_native.py tests/drive/test_folder_authority_authenticated_ssh.py tests/drive/test_folder_probe_transport.py tests/security/test_folder_probe_transport_native.py tests/drive/test_folder_probe_authenticated_ssh.py -ra --junitxml=folder-probe-results.xml",
+        "##[group]Run python -m pytest tests/drive/test_folder_mapping.py tests/drive/test_folder_relocation.py -ra --junitxml=folder-mapping-results.xml",
+        "python -m pytest tests/drive/test_folder_mapping.py tests/drive/test_folder_relocation.py -ra --junitxml=folder-mapping-results.xml",
+        "##[group]Run python -m pytest tests/drive/test_folder_retained.py -ra --junitxml=folder-retained-results.xml",
+        "python -m pytest tests/drive/test_folder_retained.py -ra --junitxml=folder-retained-results.xml",
+        "##[group]Run python -m pytest tests/drive/test_folder_active_adoption.py -ra --junitxml=folder-active-adoption-results.xml",
+        "python -m pytest tests/drive/test_folder_active_adoption.py -ra --junitxml=folder-active-adoption-results.xml",
+        "##[group]Run python -m pytest tests/drive/test_folder_commissioning.py tests/drive/test_folder_store.py tests/drive/test_folder_protocol.py tests/drive/test_folder_lock_order.py tests/security/test_private_settings_native.py tests/security/test_reconfiguration_maintenance_native.py tests/security/test_reconfiguration_evidence_native.py tests/security/test_reconfiguration_effects_native.py -ra --junitxml=folder-regression-results.xml",
+        "python -m pytest tests/drive/test_folder_commissioning.py tests/drive/test_folder_store.py tests/drive/test_folder_protocol.py tests/drive/test_folder_lock_order.py tests/security/test_private_settings_native.py tests/security/test_reconfiguration_maintenance_native.py tests/security/test_reconfiguration_evidence_native.py tests/security/test_reconfiguration_effects_native.py -ra --junitxml=folder-regression-results.xml"
+      ],
+      "all_new36_files_selected": true,
+      "sums": [
+        {
+          "passed": 594,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "deselected": 0
+        },
+        {
+          "passed": 51,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "deselected": 0
+        },
+        {
+          "passed": 6,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "deselected": 0
+        },
+        {
+          "passed": 22,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "deselected": 0
+        },
+        {
+          "passed": 107,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "deselected": 0
+        },
+        {
+          "passed": 327,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "deselected": 1
+        }
+      ]
+    }
+  ],
+  "acceptance": false
+}
