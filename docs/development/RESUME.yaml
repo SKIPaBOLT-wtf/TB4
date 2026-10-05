@@ -5,22 +5,19 @@ check: RP-027.C2
 attempt: A001
 phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_FOLDER_CONNECTION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: b6efd064dfa643ebbb45e6f3e3dc38d25efad14d
+source_commit: 2f43d0ed3e4510c95dc916f87545c53ced3d18aa
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0422
+last_verified_event: RP-027-A001-0423
 last_completed: RP-026
-next_action: Implement bounded source unit, statically review and preserve/publish
-  exact bytes; related source outcome/A030 manifest. Then separately authorize actual
-  native Windows/default and actual Linux/source-specific proof. Keep pending immutable
-  request29 PR/full jobs for separate inspection.
-verification: Actual current push936 and Windows31/139 qualified. A030 fresh protected
-  Folder connection source unit pending; current PR/full packages and common C1-C4
-  held.
+next_action: Publish separate Windows native/related original regression/default3473
+  INTENT and execute new owned fixtures with private raw capture. Then source-specific
+  actualLinux990/fullplatform. Inspect immutable request29 remaining results separately.
+verification: A030 source2f43 preserved and statically reviewed;42native/12SSH/default3473/currentLinux990/fullplatform
+  unqualified. Existing request29 pending remains immutable; C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0422
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
