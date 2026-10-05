@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0492",
+  "source": "6f419f3092ebb22f9007152a42444ac4e0cada99",
+  "base": "d9a1fadbe0eb227367d7801f3c9a261a58f7b169",
+  "local_preserved": "a4d647d1db6e336b633c0a231453a46aa001d606",
+  "result": "RECORDED",
+  "files": [
+    "src/tb4/reconfiguration_folder_endpoint.py",
+    "tests/drive/test_folder_staged_endpoint_authenticated_ssh.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-034-staged-native-folder-endpoint.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/CREDENTIAL_RESOLVER_CONTRACT.md"
+  ],
+  "static": {
+    "schema_version": 1,
+    "base": "d9a1fadbe0eb227367d7801f3c9a261a58f7b169",
+    "python_ast": "PASS",
+    "old_product_protocol_tests_diff": [],
+    "scoped_files": [
+      "src/tb4/reconfiguration_folder_endpoint.py",
+      "tests/drive/test_folder_staged_endpoint_authenticated_ssh.py",
+      ".github/workflows/folder-reconfiguration.yml",
+      "docs/implementation-plan/revisions/R2/amendments/RP-027/A-034-staged-native-folder-endpoint.md",
+      "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+      "docs/RECONFIGURATION_CONTRACT.md",
+      "docs/CREDENTIAL_RESOLVER_CONTRACT.md"
+    ],
+    "declared_cases": {
+      "test_actual_candidate_switches_to_second_server_only_after_fresh_proof": 2,
+      "test_new_pointer_metadata_does_not_hide_current_first_run_loss": 4,
+      "test_actual_native_cut_recovers_same_child_without_resave_key_or_transport": 2,
+      "test_staged_pointer_refuses_missing_current_permission_identity_or_resolution": 8,
+      "test_altered_native_pending_child_refuses_recovery_without_promotion": 4,
+      "test_ordinary_attachment_cannot_replace_and_staged_context_cannot_use_original_main": 1,
+      "test_staged_composition_or_store_alias_cannot_change_native_pointer": 4
+    },
+    "tests_executed": 0
+  },
+  "public_scan": "CLEAN",
+  "readback": "EXACT_ALL_FILES/Gitparent/branch",
+  "tests_executed": 0,
+  "next": "Defaultcollection exact3579(+25Linux)/legacy226Windows attachment/admission regressions. Same35/36 terminal diagnostics, thenone stagedsourceLinux37/1096 afterexisting36 actualresults. CoherentruntimeGUI/commonC1-C4 remains."
+}
