@@ -7976,6 +7976,9 @@ defects:
     notes: Ordinary debug. Actual same39 push/PR first group632PASS/2FAIL; fullCI3580PASS/2sameFAIL/27SKIP/4XFAIL,
       LinuxDesktop3603PASS/2sameFAIL/21SKIP/4XFAIL. Subsequent required groups and
       Linux packages not executed. No historical failure removed or acceptance asserted.
+      Exact four-file repair now preserved/published; no passing_source until actual
+      execution. Old normal AST/29portable/other10native unchanged; new16parser tests
+      declared, no tests executed.
     legacy_record: null
   DEF-110:
     title: Actual native mapping AFTER positive fixed SSH witness refuses current
@@ -8048,5 +8051,7 @@ defects:
       Linux packages not executed. No historical failure removed or acceptance asserted.
       Exact pure diagnostic now proves unconditional old-mode reply guard is the client
       cause; no native/provider invocation or grant. Earlier H1 left UNTESTED as originally
-      broad.
+      broad. Exact four-file repair now preserved/published; no passing_source until
+      actual execution. Old normal AST/29portable/other10native unchanged; new16parser
+      tests declared, no tests executed.
     legacy_record: null
