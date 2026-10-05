@@ -7,18 +7,18 @@ phase: STAGED_RECONFIGURATION_C2_COMBINED_NATIVE_ATTACHMENT_HELPER_LINUX29_PLATF
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: a68893fa004b896695d5d22a83fa4c3016b6d516
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0416
+last_verified_event: RP-027-A001-0417
 last_completed: RP-026
-next_action: Launch once/pinSAMEjobs/source/PRparents andpublish checkpoint. Independently
-  inspect old5f80 fulljobs undernewread-only INTENT; then samea688 required/fullterminal
-  evidence before dependentactualfreshconnection composition.
-verification: Currenta688 Windows139/all31native+38portable/default3419same; once
-  source-linked nativeLinux936/fullplatform request29 pending. C1-C4 held.
+next_action: Read-only separate INTENT to inspect SAME old5f80 request28 remaining
+  CI/Desktop terminal results; publish exact outcome. Inspect SAME currenta688 request29
+  required936 and Progress under another INTENT when terminal; use actualproof before
+  dependent fresh connection source.
+verification: Once launched currenta688 request29 requiredLinux936/fullplatform; exactactualPR021d/source
+  equivalence pinned. Terminal evidence pending; old5f80 request28 distinct.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0416
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
