@@ -3,22 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_OUTPUT_FIXTURE_REPAIR
+phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_FOCUSED_WINDOWS_DEFAULT
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0400
+last_verified_event: RP-027-A001-0401
 last_completed: RP-026
-next_action: Separate38portable plus70affected original probe/protocol focused Windows/default3388
-  unchanged-node recheck; ifPASS publish one source-linked request28 requiredLinux905/fullplatform.
-  Native attachment may later be scheduled independently from qualified A026/A027.
-verification: DEF098 onefile helper-local sys fixture repaired/published; originalproduct/tests
-  exactunchangedfromf18, tests0. Focusedportable/protocol/default thencurrent905Linux/full
-  required; C1-C4held.
+next_action: Publish focused Windows/default exact outcome; ifPASS record DEF097/098
+  currentpassing source scope and launch once source-linked request28 requiredLinux905/fullplatform.
+  Schedule metadata-only native attachment independently only from already qualified
+  A026/A027; actual helper composition waits actualrequiredproof.
+verification: 5f80 test-only isolation repair exactsource; focused38new+70original/default3388
+  recheck. Original743 native/credential/candidate proof reused only exactunchanged
+  product/testbytes; current905Linux/fullrequired; C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0401
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
