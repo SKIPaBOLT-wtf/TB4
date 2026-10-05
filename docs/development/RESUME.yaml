@@ -3,20 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_OLD_NATIVE_CONNECTION_TERMINAL_QUALIFICATION
+phase: STAGED_RECONFIGURATION_C2_CURRENT_NATIVE_PREREQUISITES_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: e8e8e2142a93a95607cacd76a551a55113312ad7
+source_commit: ea4c2f72e471c7ab935fc2892e8551185d513ece
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0463
+last_verified_event: RP-027-A001-0464
 last_completed: RP-026
-next_action: Inspect same currentea4c/request33 actualrequired1027/37/Progress; record
-  actual outcomes, then complete missing staged/mapped/runtime/GUI integration.
-verification: e8e8 source-specific990 twice/fullplatform/bothrole packages qualified;
-  older failures retained. Currentea4c/request33 separate, C1-C4 held.
+next_action: Publish current source outcome; repair any observed failure with same
+  cycle, otherwise proceed exact missing staged/mapped/runtime/GUI integration from
+  verified dependencies.
+verification: e8e8 previoussource fullyqualified; inspecting currentea4c/33 actual37/1027/Progress
+  separately, C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0464
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
