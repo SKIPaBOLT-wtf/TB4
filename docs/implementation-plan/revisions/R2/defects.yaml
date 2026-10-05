@@ -6897,3 +6897,55 @@ defects:
       untested, proven_origin remains null. No unproven production repair, automatic
       retry or accepted Windows packages.
     legacy_record: null
+  DEF-095:
+    title: New endpoint native tests assume a pathlib native root on Windows
+    status: OPEN
+    detected_in: RP-027.C2
+    suspected_origin:
+      work_item: RP-027
+      source_ref: c381b7eb12dbd09a3d7b40bccc11c61e84ff5360
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-failed.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: c381b7eb12dbd09a3d7b40bccc11c61e84ff5360
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-failed.json
+    reproduction:
+      procedure: 'Current default 26-file Windows preflight: endpoint restart receives
+        native.root str instead of required pathlib.Path; three endpoint-file operations
+        perform str / str. Four named actual native tests fail, all other 545 pass.
+        Existing WindowsSettingsNative validates Path input then stores canonical
+        local_path(str(root)); Linux retains Path.'
+      failing_source: c381b7eb12dbd09a3d7b40bccc11c61e84ff5360
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-failed.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: The new endpoint tests incorrectly treat both platforms' internal native.root
+        representation as the same pathlib API; use the actual originally selected
+        fixture Path instead. No production native-root change is required.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-endpoint-default-failed.json
+    repairs: []
+    issue: null
+    regression_test: All four actual failed assertions retained, all53 new portable/native
+      cases without applicable skips, same 26-file native regression and default3307/no
+      baseline removals, actual Linux/full/current packages and commonC1-C4 gates.
+    resolution_evidence: []
+    notes: Windows545 PASS/4 FAIL/0 ERROR/22 inherited Linux-only SKIP20.845s; allnew49PASS/4FAIL/0skip.
+      Default3307/no errors1.859s; exact3254baseline+53new nodes, zero removals. Raw
+      fixture paths/key/profile data are not published; only closed errors and IDs.
+      NativeSettings production remains unchanged; source c381 and failed run retained.
+      Common acceptance held.
+    legacy_record: null

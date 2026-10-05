@@ -7,20 +7,20 @@ phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_DEFAULT_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: c381b7eb12dbd09a3d7b40bccc11c61e84ff5360
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0356
+last_verified_event: RP-027-A001-0357
 last_completed: RP-026
-next_action: Run one guarded current-source scoped/default collection qualification
-  and inspect actual results. Publish PASS or exact failure/reproduction before repair
-  or current-source required-Linux launch.
-verification: Endpoint sourcec381b7 registered354; exact default/native qualification
-  pending356, planned new53/default3307 must be observed. Required current Linux/full/platform/composite/runtime/GUI/C1-C4
-  gates held. Old request25 fully reconciled355, fresh352 pending.
+next_action: 'Publish test-only repair INTENT: retain original explicitly selected
+  metadata_root Path in the owned fixture and replace only new tests'' native.root
+  path assumptions. Preserve all assertions/native/production APIs, then save source
+  and rerun the same current scoped/default collection in new owned roots.'
+verification: Endpoint c381 preflight545PASS/4testfixtureFAIL/22declaredLinuxSKIP;
+  new49of53PASS, default3307/add53/rem0/noerrors. DEF095 proven Windows native.root
+  str/Path test mismatch; test-only repair next, all qualification/C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0352
-- RP-027-A001-0356
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
