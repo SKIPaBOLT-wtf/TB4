@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0512",
+  "source": "e095a52215bf416b1537a1b4ccd582602d57b0b6",
+  "base": "37630037c2086a48580d6e1e58ac9b15c577397e",
+  "local_preserved": "1ed6ba3a8a440164bbf6dbf9c7323579a8b77c7e",
+  "result": "RECORDED",
+  "files": [
+    "src/tb4/drive/folder_mapping_after_probe.py",
+    "src/tb4/drive/folder_probe_transport.py",
+    "src/tb4/drive/folder_helper.py",
+    "tests/drive/test_folder_mapping_after_probe.py",
+    "tests/drive/test_folder_mapping_after_probe_native.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-036-readonly-remote-mapping-after-proof.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/FIXED_FOLDER_AUTHORITY.md",
+    "docs/RECONFIGURATION_CONTRACT.md"
+  ],
+  "static": {
+    "schema_version": 1,
+    "base": "37630037c2086a48580d6e1e58ac9b15c577397e",
+    "result": "PASS",
+    "python_ast": "PASS",
+    "old_probe_request_except_exact_new_mode_branch": "EXACT_UNCHANGED",
+    "old_helper_except_exact_new_mode_branch": "EXACT_UNCHANGED",
+    "old_verify_read_cas_retained_and_adoption_source": "EXACT_UNCHANGED",
+    "fixed_command_tokens": "EXACT_UNCHANGED",
+    "request_reply_field_counts": [
+      9,
+      9
+    ],
+    "old_flat_max_fields": 10,
+    "declared_cases": {
+      "tests/drive/test_folder_mapping_after_probe.py": {
+        "test_exact_fresh_hash_attestation_has_no_mutating_or_activation_api": 1,
+        "test_old_reply_cannot_attest_next_observation": 1,
+        "test_unmatched_or_untyped_reply_cannot_attest": 9,
+        "test_closed_request_refuses_before_transport_or_mapping_io": 10,
+        "test_invalid_expected_plan_refuses_before_transport": 4,
+        "test_changed_trusted_composition_refuses_before_transport": 3,
+        "test_default_authority_handler_rejects_after_probe_without_cas": 1
+      },
+      "tests/drive/test_folder_mapping_after_probe_native.py": {
+        "test_actual_native_after_attestation_retains_mapping_payload_and_physical_objects": 1,
+        "test_actual_after_proof_refuses_unfinished_or_lost_native_mapping_and_seal_without_writes": 6,
+        "test_actual_fixed_ssh_after_probe_returns_fresh_current_native_mapping_witness": 1,
+        "test_actual_fixed_ssh_after_proof_refuses_late_current_capability_or_mapping_loss": 3
+      }
+    },
+    "tests_executed": 0
+  },
+  "source_preflights": [
+    "One multi-file patch rejected atomically because its last documentation heading did not match; no partial changes, verified status then exact-heading patch applied.",
+    "Initial static case counter tried literal_eval on multiplication/name parameters and raised ValueError after old AST preservation had passed. Counter changed to count declared AST list elements without executing/evaluating product/tests; same40 declaration counts then verified."
+  ],
+  "public_scan": "CLEAN",
+  "diff_check": "PASS",
+  "readback": "EXACT_ALL_FILES",
+  "tests_executed": 0,
+  "acceptance": false,
+  "next": "ActualWindows portable29/affectedlegacy+native defaultenvironment and default3630 exact3590+40 collection; same38 terminal qualification underseparateINTENT. NewactualLinux11/SSH andcurrent1147/fullplatform before any remoteRetained/adoptionconsumer."
+}
