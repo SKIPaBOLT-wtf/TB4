@@ -7,20 +7,20 @@ phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_LINUX27_TERMINAL
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0389
+last_verified_event: RP-027-A001-0390
 last_completed: RP-026
-next_action: Publish exact oldacc26 terminal milestone/outcome, retaining actual still-running
-  jobs; inspect same current Windows session9087 then publish current source outcome
-  before any dependent edit or Linux request.
-verification: A028 actualWindows session9087 running; collection3388/noerrors known.
-  Independently inspecting immutableacc26 request27 terminal results; no source conflation/C1-C4
-  acceptance.
+next_action: "Publish separate current8c75 Windows scoped test OUTCOME FAIL retaining19fixtureerrors\
+  \ and exact3333\u21923388 node-set/add55remove0. Inspect actual safe error signature\
+  \ and register defect before minimal scoped test-only repair; later inspect same\
+  \ oldacc26 Windowsjob111589722960 without relaunch."
+verification: Immutableacc26 requiredLinux850twice/fullCI/LinuxDesktop/both-roleLinuxpackages/Progress235
+  qualified; Windowspending. New8c75 currentWindows run19fixtureerrors separateoutcome
+  pending; C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0387
-- RP-027-A001-0389
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
