@@ -1154,6 +1154,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-028-opt-in-fixed-folder-helper-dispatch.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-029-native-endpoint-pointer-attachment.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-030-fresh-native-folder-connection.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-027/A-031-fresh-native-folder-prerequisites.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:
