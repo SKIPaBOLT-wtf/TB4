@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0437",
+  "source": "10badf7bbe08f54cfaeef640c062d4ceae8e319c",
+  "trigger": "6fce5938d34f236dcd8b34e00909cc1135cf0649",
+  "request_revision": 31,
+  "result": "RECORDED",
+  "groups": [
+    477,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "required_cases": 990,
+  "pr": 36,
+  "pinned_pr_checkout": "0c89f9a3546fa206b4e5a66b1e11ff8d325b2551",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "6fce5938d34f236dcd8b34e00909cc1135cf0649"
+  ],
+  "source_equivalence": {
+    "actual_git_non_doc_diff": {
+      "trigger": [],
+      "pr": []
+    },
+    "baseline": "10badf7bbe08f54cfaeef640c062d4ceae8e319c"
+  },
+  "runs": [
+    {
+      "id": 37267930125,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111628577118,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37267930105,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111628577320,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37267930113,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111628576752,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37267930078,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111628576712,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111628577035,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37267927530,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 111628568852,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "readback": "Exact request/ref bytes verified; one launch. Actual API and Git parents verified; source-equivalent push/PR actual Git diff empty.",
+  "notes": "Initial run list empty. Initial7ee3 merge parent was olderINTENT4161, not used as pin. SAME trigger later actual0c89 merge. Progress SUCCESS metadata only; actual235 not yet inspected.",
+  "acceptance": "Corrected native Linux990/fullplatform/actual prerequisites/runtime/GUI/C1-C4 held.",
+  "next": "Separately inspect same failed source2f43 request30 fullplatform results; inspect current10bad request31 required990/Progress terminal evidence."
+}
