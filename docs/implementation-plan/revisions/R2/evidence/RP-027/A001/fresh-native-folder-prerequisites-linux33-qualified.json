@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0464",
+  "source": "ea4c2f72e471c7ab935fc2892e8551185d513ece",
+  "request_revision": 33,
+  "result": "PASS",
+  "trigger": "afbd2de60cacbcbba31d9ef8f2e976b9a6dc1400",
+  "checkout": "378d5010419cdea84a6b35f03031b3708fb0fa95",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "afbd2de60cacbcbba31d9ef8f2e976b9a6dc1400"
+  ],
+  "source_equivalence": "Actual terminal checkouts match API/Git verified461 source-equivalent pins; actualGit378d parents and empty non-doc diff to ea4c rechecked464.",
+  "required": [
+    {
+      "job": 111645944639,
+      "checkout": "afbd2de60cacbcbba31d9ef8f2e976b9a6dc1400",
+      "groups": [
+        {
+          "passed": 514,
+          "seconds": 93.99,
+          "deselected": 0
+        },
+        {
+          "passed": 51,
+          "seconds": 117.82,
+          "deselected": 0
+        },
+        {
+          "passed": 6,
+          "seconds": 50.47,
+          "deselected": 0
+        },
+        {
+          "passed": 22,
+          "seconds": 252.05,
+          "deselected": 0
+        },
+        {
+          "passed": 107,
+          "seconds": 16.39,
+          "deselected": 0
+        },
+        {
+          "passed": 327,
+          "seconds": 545.87,
+          "deselected": 1
+        }
+      ],
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "job": 111645957098,
+      "checkout": "378d5010419cdea84a6b35f03031b3708fb0fa95",
+      "groups": [
+        {
+          "passed": 514,
+          "seconds": 94.65,
+          "deselected": 0
+        },
+        {
+          "passed": 51,
+          "seconds": 117.6,
+          "deselected": 0
+        },
+        {
+          "passed": 6,
+          "seconds": 50.92,
+          "deselected": 0
+        },
+        {
+          "passed": 22,
+          "seconds": 255.4,
+          "deselected": 0
+        },
+        {
+          "passed": 107,
+          "seconds": 16.88,
+          "deselected": 0
+        },
+        {
+          "passed": 327,
+          "seconds": 561.92,
+          "deselected": 1
+        }
+      ],
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "new_cases": "Both complete514-case first-group commands include entire35native prerequisites file and14realSSH file includingtwo new first-run cases, allPASS/noFAIL/ERROR/SKIP. Not inferred from defaultcollection.",
+  "progress": {
+    "job": 111645957717,
+    "checkout": "378d5010419cdea84a6b35f03031b3708fb0fa95",
+    "passed": 235,
+    "seconds": 11.68
+  },
+  "windows": "Actual all35native within171PASS and prior854 scoped unchanged production/priorfiles proof459. Default3510 exactIDs retained; no repeated check.",
+  "pending_platform": [
+    {
+      "run": 37273694670,
+      "jobs": [
+        {
+          "id": 111645957204,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 37273694812,
+      "jobs": [
+        {
+          "id": 111645957767,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111645958022,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "acceptance": "Current native first-run/requiredLinux scope qualified. Fullplatform/packages and stagedmapped/coherentadmission/runtimeGUI/commonC1-C4 held.",
+  "next": "Read exact current mapped Folder proof/commissioning contracts and tests. Record independently scheduled read-only proof compatibility source unit, preserving immutable current33 fullplatform inspection before common acceptance."
+}
