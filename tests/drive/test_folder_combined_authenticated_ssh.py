@@ -142,14 +142,23 @@ def test_same_protected_image_restarts_probe_read_cas_and_preserves_key_history_
 
 @pytest.mark.parametrize("command", ["", "tb4-folder-v1 extra", "tb4-folder-v1;synthetic-command",
                                      "tb4-folder-probe-v1 extra"])
-def test_real_forced_helper_refuses_unknown_command_without_mutating_storage(combined, command):
+def test_real_forced_helper_refuses_unknown_command_without_mutating_storage(combined, monkeypatch, command):
     v = combined
     saved, before, inventory = v.profile.read(), FolderStore(v.config).read(), objects(v)
     transport = v.server.transport("client-a")
-    transport = replace(transport, argv=(*transport.argv[:-1], command))
     raw = encoded({**header(v.port.binding, "a" * 32), "operation": "READ"})
-    with pytest.raises(AuthorityError):
+    original, calls = FixedProcess.call, []
+    def observe(actual, request):
+        calls.append(actual.argv[-1])
+        return original(actual, request)
+    monkeypatch.setattr(FixedProcess, "call", observe)
+    # Empty argv is refused by the existing client constructor before SSH.
+    # Nonempty invalid tokens reach the actual forced helper once.
+    code = "HELPER_COMMAND" if command == "" else "HELPER_UNAVAILABLE"
+    with pytest.raises(AuthorityError, match="^" + code + "$"):
+        transport = replace(transport, argv=(*transport.argv[:-1], command))
         transport.call(raw)
+    assert calls == ([] if command == "" else [command])
     assert FolderStore(v.config).read() == before and objects(v) == inventory and v.profile.read() == saved
 
 
