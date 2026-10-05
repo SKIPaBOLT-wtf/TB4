@@ -3,22 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_FIXED_HELPER_DISPATCH_CORRECTED_WINDOWS_DEFAULT
+phase: STAGED_RECONFIGURATION_C2_PRIVATE_ENDPOINT_POINTER_LINUX27_WINDOWS_FINAL
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: f18e8cd1dbe57298b36bc5937697937ee8ae66fb
+source_commit: acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0395
+last_verified_event: RP-027-A001-0396
 last_completed: RP-026
-next_action: Inspect same corrected local process and exact3388node-set comparison;
-  independently inspect old immutableacc26 Windowsjob111589722960 under separate INTENT,
-  no relaunch/sourceconflation.
-verification: Actual correctedWindows same44target session50564 running; default3388/noerror
-  known. Oldacc26 Windows terminal independent; actualcurrentLinux/full/common held.
+next_action: Record immutableacc26 actualWindows outcome/complete qualification; inspect
+  same currentf18 Windows session50564 and publish related result before currentrequest28
+  Linux/platform launch.
+verification: Newf18 correctedWindows session50564 running/default3388exactunchangednodes;
+  independentlyinspect oldacc26 Windowsjob111589722960 terminal, no source conflation;
+  C1-C4held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0394
+- RP-027-A001-0396
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
