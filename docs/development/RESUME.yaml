@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_COMBINED_LINUX29_NATIVE_PROGRESS
+phase: STAGED_RECONFIGURATION_C2_FRESH_NATIVE_FOLDER_CONNECTION_SOURCE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: a68893fa004b896695d5d22a83fa4c3016b6d516
+source_commit: b6efd064dfa643ebbb45e6f3e3dc38d25efad14d
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0421
+last_verified_event: RP-027-A001-0422
 last_completed: RP-026
-next_action: Publish scoped A030 source INTENT for per-call native endpoint/profile
-  lock/check, explicit selected purpose, fresh image restore into existing fixed transports.
-  Separate source/native/realSSH tests; inspect same pendingPR/full platform later
-  without repeat.
-verification: Currenta688 actualLinux push936/all31native+17SSH+38portable PASS; Progress235PASS.
-  CurrentPR/fullpackages held. Independently schedule bounded A030 fresh native connection
-  from qualified transport/metadata foundations.
+next_action: Implement bounded source unit, statically review and preserve/publish
+  exact bytes; related source outcome/A030 manifest. Then separately authorize actual
+  native Windows/default and actual Linux/source-specific proof. Keep pending immutable
+  request29 PR/full jobs for separate inspection.
+verification: Actual current push936 and Windows31/139 qualified. A030 fresh protected
+  Folder connection source unit pending; current PR/full packages and common C1-C4
+  held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0422
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
