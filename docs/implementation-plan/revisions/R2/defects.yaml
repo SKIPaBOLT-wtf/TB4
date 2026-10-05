@@ -6895,7 +6895,13 @@ defects:
       COMPLETE, no live child stopped or raw native values disclosed. First/second
       identity timings 4.250/0.562s establish overhead only; both original H1/H2 remain
       untested, proven_origin remains null. No unproven production repair, automatic
-      retry or accepted Windows packages.
+      retry or accepted Windows packages. Fresh immutable source91bad7/trigger10cbb7/actual614e8d
+      required Windows native discovery step passed and complete Windows3029/221/4in2553.04s
+      plus bothrole packages allfour flagsPASS; Linux3229/21/4in2640.25s, CI3206/27/4in2496.73s
+      and requiredLinux771/Progress235 alsoPASS. Production deadlines/behavior unchanged,
+      no automatic retry. Exact current-source full qualification does not prove the
+      hidden original failure cause; H1/H2/proven_origin remain unchanged. Later endpoint
+      sources unqualified.
     legacy_record: null
   DEF-095:
     title: New endpoint native tests assume a pathlib native root on Windows

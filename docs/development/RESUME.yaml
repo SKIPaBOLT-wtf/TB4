@@ -3,24 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C2
 attempt: A001
-phase: STAGED_RECONFIGURATION_C2_NATIVE_FOLDER_ENDPOINT_TEST_REPAIR
+phase: STAGED_RECONFIGURATION_C2_DIAGNOSTIC_SOURCE_PLATFORM_INSPECTION
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: feb214963f5b7436469957102c42f3482d627b1f
+source_commit: 91bad7a54916766417a882ef537ca812a08bfb05
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0359
+last_verified_event: RP-027-A001-0360
 last_completed: RP-026
-next_action: Publish corrected-source scoped/default qualification INTENT, run once
-  with unique fresh owned result/fixture names, verify all53 new cases and549 scoped
-  PASS/default3307/no removed nodes if observed. Then current-source actual Linux824
-  and full/package qualification.
-verification: DEF095 test-only selectedPath source saved/read back; AST/diff/privacy
-  PASS, tests0. Corrected current scoped/default/Linux/full packages/common C1-C4
-  qualification remains pending; failedc381/old352 evidence retained.
+next_action: Publish corrected endpoint source feb214 scoped/default qualification
+  INTENT and run once with new owned result/fixture names. Preserve original DEF094
+  unknown cause and DEF095 failed fixture evidence. Current endpoint Linux/full/composite/runtime/GUI/common
+  gates remain.
+verification: Exact source91bad7 full/core/requiredLinux771/bothplatform bothrole
+  packages/Progress allPASS360; priorWindowsfailureandunproven cause retained. Corrected
+  endpointfeb214 tests/newLinux/full/commonC1-C4held; no cross-source acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0352
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
