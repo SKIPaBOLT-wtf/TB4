@@ -3,21 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: REQUIRED_LINUX_BUDGET_REPAIR
+phase: REQUIRED_LINUX_BUDGET_SOURCE_SAVED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: a5df3727c3b05525a62165de8afe7d6fb497a8ef
+source_commit: 1395294b4bb938f5c32158043b8340f872041faf
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0533
+last_verified_event: RP-027-A001-0534
 last_completed: RP-026
-next_action: Publish source-only OUTCOME then a separate exact-source request41 INTENT;
-  retain both cancelled source40 jobs and all acceptance holds.
+next_action: Publish request41 qualification INTENT then new immutable request. Record
+  exact trigger/PR merge parents and run identities; inspect same jobs to terminal.
+  Independently integrate remote mapped C4 using source40 scoped passing foundations;
+  acceptance remains held.
 verification: Source40 scoped cases and packages qualified; workflow final327 held.
   Source-only finite budget repair now pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0533
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

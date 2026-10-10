@@ -1,0 +1,9 @@
+{
+  "event": "RP-027-A001-0534",
+  "source": "1395294b4bb938f5c32158043b8340f872041faf",
+  "local_source": "507992b0be367eaf3726b7b7c238d027ed25fe6c",
+  "defect": "DEF-111",
+  "static": "PASS: exact single scalar30to60; YAML value60; all other bytes unchanged",
+  "tests_run": 0,
+  "acceptance": false
+}
