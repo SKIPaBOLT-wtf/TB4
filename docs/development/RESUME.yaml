@@ -3,23 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: DIFF_CLASSIFICATION_AND_CURRENT_ACCEPTANCE_REVIEW
+phase: RP027_VERIFIED_CURRENT_SOURCE_AND_COMMON_GATES
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: e9d3af33a6a2d0325eedd3e83029b2df73a8320a
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0570
-last_completed: RP-026
-next_action: Classify every exact diagnostic and finish the bounded current-source
-  review. Publish reviewed PASS receipts and justified status transition only after
-  concrete predicate/common review; preserve cumulative whitespace exit2 visibly.
-verification: All source43 qualificationPASS; final review resumes with explicit exhaustive
-  whitespace classification and unchanged common/behavioral gates. Preliminary diff-check
-  exit2 remains historical.
+last_verified_event: RP-027-A001-0571
+last_completed: RP-027
+next_action: Publish/read back RP-028/A001 administrative handoff INTENT to verify
+  accepted RP-027 receipts and close only its56 qualified repair records, preserving
+  DEF001/002/088/094. Publish that registry OUTCOME and verify readback. Then separately
+  INTENT current PR36 metadata/rules/source qualification and ordinary expected-head
+  merge; record exact outcome on main before RP-028 implementation.
+verification: RP-027 original C1-C4/common gates accepted on exact source43; all jobs/packagesPASS.
+  All60 registry defects remainOPEN until next administrative handoff closes56 qualified
+  repairs; DEF001/002/088/094 remain unresolved. Reviewed whitespace exit2 preserved;
+  no live permissions.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0570
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -87,5 +89,5 @@ rollback: Public owned source branch only. Preserve all accepted sources, prior 
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
   repair.
-next_implementation_step: RP-027
-next_implementation_check: RP-027.C1
+next_implementation_step: RP-028
+next_implementation_check: RP-028.C1
