@@ -3,18 +3,18 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: SOURCE43_REPAIRED_NATIVE_AND_PLATFORM_QUALIFICATION
+phase: SOURCE43_IMMUTABLE_QUEUED_JOB_IDENTITIES_RECORDED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: e9d3af33a6a2d0325eedd3e83029b2df73a8320a
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0558
+last_verified_event: RP-027-A001-0559
 last_completed: RP-026
-next_action: Read back PR metadata and request43 trigger, record exact immutable job
-  identities, inspect same43 and remaining42 to terminal, then apply final C1-C4/common
-  evidence review only if actual predicates pass.
-verification: Source43e9d3af33 test-only repair preserved/default3717. Immutable1234/native/platform
-  request43 and current PR metadata update planned; original42 full jobs pending;
-  C1-C4 unaccepted.
+next_action: Inspect these same source43 jobs to terminal and compare actual checkouts/code;
+  preserve zero-skip required1234 predicates, full platforms and package evidence.
+  Inspect remaining original42 and recorded redundant jobs without replay.
+verification: Request43e9d3af33/trigger3ddb/merge0c33 exact source proof and six queued
+  job IDs recorded; execution pending. Source42 native720/1 twice, full42 still pending;
+  allchecks held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
