@@ -3,16 +3,15 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: NATIVE_MAPPED_C4_WINDOWS_AND_DEFAULT_COLLECTION
+phase: NATIVE_MAPPED_C4_WINDOWS_TESTS_STARTED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 1d0bf6e6f96ea60b18bb9b40b297cb6be3838596
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0539
+last_verified_event: RP-027-A001-0540
 last_completed: RP-026
-next_action: Publish actual outcomes and failures before repair. If portable/affected
-  validation passes, independently implement own native adoption Main pending recovery
-  under separate INTENT; then request full native/platform qualification for the combined
-  exactsource.
+next_action: Read the same local wrapper/result to terminal; run the already-intended
+  separate full default collection once, then publish source-specific actual results
+  before dependent repair/source work.
 verification: Immutable source41 running; independent A038 uses fully executed source40
   mapping/native foundations. Native mapped consumer/source tests not yet executed.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
