@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0535",
+  "source": "1395294b4bb938f5c32158043b8340f872041faf",
+  "trigger": "09be1e6ead16bf0f3ebaeec1679cc617ae523be6",
+  "actual_pr_merge": "eb713b33adb9010fbff208bcfa091425a0c1e099",
+  "merge_parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "09be1e6ead16bf0f3ebaeec1679cc617ae523be6"
+  ],
+  "non_documentation_diff": [],
+  "required_evidence": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source41-required-qualified.json",
+  "required": {
+    "push": {
+      "run": 38073293590,
+      "job": 114274964436,
+      "passed": 1176,
+      "failed": 0,
+      "skipped": 0
+    },
+    "pull_request": {
+      "run": 38073297389,
+      "job": 114274976207,
+      "passed": 1176,
+      "failed": 0,
+      "skipped": 0
+    },
+    "groups": [
+      663,
+      51,
+      6,
+      22,
+      107,
+      327
+    ],
+    "excluded_from_last_group": "One maximum129 fixture, included in complete platform/CI suites."
+  },
+  "progress": {
+    "run": 38073297310,
+    "job": 114274975447,
+    "passed": 235,
+    "seconds": 12.81
+  },
+  "ci": {
+    "run": 38073297406,
+    "job": 114274975969,
+    "conclusion": "success",
+    "checkout": "eb713b33adb9010fbff208bcfa091425a0c1e099",
+    "summaries": [
+      "43 passed in 0.65s",
+      "34 passed in 0.65s",
+      "2 passed in 0.04s",
+      "3611 passed, 27 skipped, 4 xfailed in 3297.00s (0:54:57)"
+    ]
+  },
+  "desktop": {
+    "run": 38073297302,
+    "linux": {
+      "job": 114274975548,
+      "checkout": "eb713b33adb9010fbff208bcfa091425a0c1e099",
+      "summaries": [
+        "90 passed, 4 skipped in 2.29s",
+        "43 passed in 0.20s",
+        "34 passed in 0.58s",
+        "2 passed in 0.03s",
+        "75 passed in 6.96s",
+        "79 passed in 13.20s",
+        "3634 passed, 21 skipped, 4 xfailed in 2577.87s (0:42:57)"
+      ],
+      "packages": [
+        [
+          {
+            "role": "watchdog",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          },
+          {
+            "role": "fetcher",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          }
+        ]
+      ]
+    },
+    "windows": {
+      "job": 114274975411,
+      "checkout": "eb713b33adb9010fbff208bcfa091425a0c1e099",
+      "summaries": [
+        "74 passed, 20 skipped in 3.15s\r",
+        "15 passed in 0.15s\r",
+        "30 passed, 4 skipped in 1.72s\r",
+        "2 passed in 8.60s\r",
+        "75 passed in 10.36s\r",
+        "79 passed in 19.32s\r",
+        "3328 passed, 327 skipped, 4 xfailed in 2507.55s (0:41:47)\r"
+      ],
+      "packages": [
+        [
+          {
+            "role": "watchdog",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          },
+          {
+            "role": "fetcher",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          }
+        ]
+      ]
+    }
+  },
+  "artifacts_metadata_only": [
+    {
+      "id": 11679291003,
+      "name": "tb4-desktop-Windows-eb713b33adb9010fbff208bcfa091425a0c1e099",
+      "size": 121997677,
+      "digest": "sha256:f39d1e43b18341b90ad32b7d8a1c691e8962b5c61eccddbaf404040f8467e202"
+    },
+    {
+      "id": 11679030521,
+      "name": "tb4-desktop-Linux-eb713b33adb9010fbff208bcfa091425a0c1e099",
+      "size": 316788187,
+      "digest": "sha256:da79ee383d161badce1bd7c37431c9feea76614f8ae60cd5bc21394284e2fc49"
+    }
+  ],
+  "limits": "All immutable source41 jobs now terminal success. Exact commands are frozen in that source workflows; counts do not alone accept a step. Platform skips retain declared OS/Qt capability bounds. Four strict xfails are two parameterized cancellation regressions explicitly assigned to RP044-046; not passing acceptance. Artifacts metadata/digests are provider declarations, not independent download/hash or deployment. Source42 new native mapped/cold Main paths remain separately pending.",
+  "privacy": "Only allowlisted public commit/run IDs, synthetic counts and closed package flags. No raw private frames, topology or secrets, and no artifact download/install.",
+  "acceptance": false,
+  "next": "Continue the same immutable source42 jobs, record actual new21 SSH predicates and full current platforms before final C1-C4/common decisions."
+}

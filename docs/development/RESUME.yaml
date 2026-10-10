@@ -3,18 +3,17 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: CURRENT_CHECK_MAP_REVIEWED_EXECUTION_PENDING
+phase: SOURCE41_ALL_IMMUTABLE_JOBS_QUALIFIED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 564bc157d2f7d9bd41fa946add887daf81faeea5
+source_commit: 1395294b4bb938f5c32158043b8340f872041faf
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0551
+last_verified_event: RP-027-A001-0552
 last_completed: RP-026
-next_action: Continue the same immutable jobs. Preserve any new failure in a defect
-  and scoped repair cycle. When terminal current evidence exists, review the matrix
-  against observed predicates before accepting any check.
-verification: Current four-check/common map reviewed, no acceptance. Source41 required1176twice
-  and both Desktop packages qualified, sameCI pending. Source42 required1234/new21
-  SSH/fullplatform pending.
+next_action: Continue the same immutable source42 jobs, record actual new21 SSH predicates
+  and full current platforms before final C1-C4/common decisions.
+verification: Source41 all immutable required/native/CI/Progress/Desktop/package jobs
+  qualified. Source42 combined1234/new21 SSH and current fullplatform still running;
+  common map reviewed but no C1-C4 acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
