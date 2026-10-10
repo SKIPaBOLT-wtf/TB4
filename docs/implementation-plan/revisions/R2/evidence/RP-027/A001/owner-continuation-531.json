@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "owner_instruction": "tesk vystyma",
+  "instruction_date": "2026-10-10",
+  "supersedes_pause_event": "RP-027-A001-0530",
+  "paused_by_owner": false,
+  "continue_automatically": true,
+  "authority": "Existing PUBLIC_IMPLEMENTATION_AUTHORIZED; no live, reset, network, migration or unknown-effect replay authority added.",
+  "checkpoint": "04ee4708f32457691f3299dd4fbc20138da51de0",
+  "branch": "feat/rp027-staged-reconfiguration",
+  "pr": 36,
+  "cold_start": {
+    "working_copy": "Clean Windows AMD64 checkout matches remote branch",
+    "main": "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "other_active_step_executor": false,
+    "prior_progress": "RP-026 verified; RP-027 IN_PROGRESS, C1-C4 unaccepted"
+  },
+  "existing_request": 40,
+  "source": "d39bda8915af63ce621134aad0e703703c064301",
+  "operation_policy": "Read the same immutable jobs; no relaunch. The abandoned unpublished review530 candidate remains unexecuted.",
+  "preliminary_status": "Both special Folder jobs cancelled; Progress, CI and both Desktop jobs report success. Terminal logs, source qualification and reason remain to be checked.",
+  "private_reader_preflight": "Chunk concatenation initially included an output newline and failed JSON parsing before any mutation; corrected by JSON-encoded chunks.",
+  "next": "Inspect terminal same40 logs, actual checkouts, source diff, package flags and failures/cancellation reason. Publish actual OUTCOME before dependent changes."
+}

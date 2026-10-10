@@ -3,19 +3,15 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: PAUSED_BY_OWNER_AFTER_SOURCE40_DISPATCH
+phase: OWNER_CONTINUATION_SAME_SOURCE40_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d39bda8915af63ce621134aad0e703703c064301
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0530
+last_verified_event: RP-027-A001-0531
 last_completed: RP-026
-next_action: Wait for explicit owner continuation. Then re-read CURRENT/WORK_INSTRUCTION/manifest/RESUME/this
-  checkpoint and actual branch/PR36 refs; inspect the SAME source40 runs/jobs, fetch
-  terminal logs only and verify actual checkout/parents/non-documentation source diff.
-  Do not create a new request or replay old39/40. Record actual new29 outcomes/defects/fullplatform
-  qualification before any dependent mapped C4 consumer or own Main pending recovery/source
-  implementation. The unpublished review INTENT candidate was not executed or published;
-  reconsider scope only after current results.
+next_action: Inspect terminal same40 logs, actual checkouts, source diff, package
+  flags and failures/cancellation reason. Publish actual OUTCOME before dependent
+  changes.
 verification: Current d39bda Windows225PASS/default3659 exactlegacy3643+16; A037affectedWindows62PASS.
   Frozen940b34ac source38 required1107twice/fullCI/Windows/Linux/bothrolespackages
   qualified. Same40 actual Linux/new29/currentplatform results remain unqualified;
@@ -23,10 +19,9 @@ verification: Current d39bda Windows225PASS/default3659 exactlegacy3643+16; A037
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
-expected_user_action: Owner must explicitly request continuation before any further
-  development, test, workflow launch, source change or qualification. Existing source40
-  hosted jobs must be inspected as the same operation after continuation.
+unsettled_intents:
+- RP-027-A001-0531
+expected_user_action: null
 blocking_decisions: []
 known_open_defects:
 - DEF-001
