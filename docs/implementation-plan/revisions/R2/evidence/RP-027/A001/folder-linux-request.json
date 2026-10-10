@@ -3,11 +3,11 @@
   "item": "RP-027",
   "check": "RP-027.C4",
   "attempt": "A001",
-  "intent_event": "RP-027-A001-0547",
-  "source_commit": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "intent_event": "RP-027-A001-0558",
+  "source_commit": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
   "branch": "feat/rp027-staged-reconfiguration",
   "pr": 36,
-  "request_revision": 42,
+  "request_revision": 43,
   "required_workflow": "Folder reconfiguration",
   "required_cases": 1234,
   "group_counts": {
@@ -18,7 +18,7 @@
     "original_native": 107,
     "docs_effect_admission": 327
   },
-  "scope": "Combined A038 opt-in mapped C4/ACTIVE proof and A039 own native cold Main recovery. New37portable passed in Windows305; existing adoption/current factory62PASS; default3717=3659+58. Required native21 and whole-source full platforms/packages remain held. Source41 samejobs retained.",
-  "expected": "One immutable trigger/PR checkout/parents/source; actual1234twice/all58new/currentplatform/Progress/bothrolefourflags need terminal facts. No launch or collection acceptance.",
+  "scope": "Exact one-file DEF113 repair: original late-child guard, closed native error and full Main/pending/shared preservation. Production/protocol/workflows unchanged from564bc157. Default3717 collection unchanged; actual repaired native and fullplatform remain pending.",
+  "expected": "Capture one immutable trigger/actual PR checkout/parents/source, require1234twice/all21native/currentplatform/Progress/bothrolefourflags with terminal evidence. Preserve original42 failures and all records; no launch or collection acceptance.",
   "acceptance": false
 }
