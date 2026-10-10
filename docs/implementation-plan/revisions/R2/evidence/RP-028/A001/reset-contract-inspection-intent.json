@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "item": "RP-028",
+  "attempt": "A001",
+  "intent_event": "RP-028-A001-0005",
+  "source_ref": "4217f542331f7088cdbbad7169490fc32f06f96f",
+  "work_branch": "work/rp-028-a001",
+  "procedure": "Verify clean current main, exact remote origin/main and absence of an existing target branch/active conflicting work. Create work/rp-028-a001 at the remotely verified INTENT commit with non-force expected state; read back exact branch and use its clean local checkout. Inspect RP028 C1-C4, R12/R13/R14/R16 and accepted RP006/RP012/RP019/RP025/RP027 plus only actual identity/credential/private-profile/first-run/work-evidence/maintenance/activation adapters and tests needed for reset. Record present capabilities and concrete gaps, selectable own-installation scope, irreversible consequences, quiescence/evidence/old-identity fencing/reenrollment invariants, rollback and smallest deterministic synthetic test/source unit. Amend canonical scope only by explicit linked amendment; do not invent a live reset authorization or relax immediate takeover.",
+  "expected": "A clean uniquely owned branch and source-linked inspectable reset contract/gap map. Exact original C1-C4 and dependencies preserved; no real peer/shared network/root deletion or secret exposure. The next implementation unit and negative cases are concrete; no RP028 check accepted from design alone.",
+  "rollback": "No destructive operations or product-source changes in this unit. Preserve existing branch/work and all qualified histories; if the target branch exists, inspect/reuse its identity instead of overwriting. Unknown branch creation is resolved by reading that same ref, not creating a duplicate.",
+  "acceptance": false,
+  "live_reset_authorized": false
+}

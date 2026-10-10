@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-028
 check: RP-028.C1
 attempt: A001
-phase: PR36_MERGED_MAIN_VERIFIED
+phase: RESET_CONTRACT_AND_SOURCE_INSPECTION
 source_branch: main
-source_commit: 4295bb1bc9eabcae8273f88b3f437247679d0790
+source_commit: 4217f542331f7088cdbbad7169490fc32f06f96f
 journal: docs/development/journal/RP-028/A001/events.jsonl
-last_verified_event: RP-028-A001-0004
+last_verified_event: RP-028-A001-0005
 last_completed: RP-027
-next_action: Publish/read back RP028.C1 contract/source-inspection INTENT and an isolated
-  work/rp-028-a001 branch from this verified main checkpoint. Inspect accepted identity/credential/commissioning/work-evidence/reconfiguration
-  boundaries; document selectable reset scope, irreversible effects, invariants and
-  a bounded synthetic implementation/test unit before editing product source.
-verification: PR36 merged once/main4295bb1b exact parents/tree and local clean main
-  verified; same qualified source43. RP027 accepted,56 repairs closed, four retainedOPEN.
-  RP028 reset implementation remains pending; next bounded contract/source inspection.
+next_action: Verify/create/read back the one owned branch, inspect the selected accepted
+  source boundaries and publish an OUTCOME with exact reset invariants/gaps and a
+  bounded proposed source/test unit.
+verification: Verified PR36 merge/main outcome saved at4217f542. RP028C1 bounded contract/source
+  inspection and one owned work-branch creation pending. All four reset checks remain
+  unaccepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-028-A001-0005
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
