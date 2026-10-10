@@ -1,0 +1,11 @@
+{
+  "event": "RP-027-A001-0545",
+  "intent": "RP-027-A001-0544",
+  "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "checkout": "ceb3aa1dc7e2dc209851077f942b75b593e1e6be",
+  "wrapper": "rp27-private-scoped-test-capture-018.py",
+  "result_basename": "rp27-native-own-main-windows-default-001-result.json",
+  "session_observed": 74782,
+  "raw_output": "Private owned local only",
+  "acceptance": false
+}

@@ -3,15 +3,14 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: NATIVE_OWN_MAIN_WINDOWS_AND_DEFAULT_COLLECTION
+phase: NATIVE_OWN_MAIN_WINDOWS_TESTS_STARTED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 564bc157d2f7d9bd41fa946add887daf81faeea5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0544
+last_verified_event: RP-027-A001-0545
 last_completed: RP-026
-next_action: Publish actual test/collection outcomes before repair or request42. If
-  clean, publish separate exact-source required1234twice/Progress/CI/Desktop request42
-  INTENT; recover source41 same run results, never rerun old jobs.
+next_action: Read the same wrapper/result to terminal, run already-intended full default
+  collection once, then publish actual outcome before combined request42 qualification.
 verification: A038 new37+old268 Windows PASS/default3705 imports; actual native9 and
   full source platform gates held. Source41 same immutable jobs running. No C1-C4
   acceptance.
