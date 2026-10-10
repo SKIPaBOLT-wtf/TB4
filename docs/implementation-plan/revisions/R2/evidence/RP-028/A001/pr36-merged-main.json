@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "item": "RP-028",
+  "attempt": "A001",
+  "intent_event": "RP-028-A001-0003",
+  "outcome_event": "RP-028-A001-0004",
+  "source_ref": "4295bb1bc9eabcae8273f88b3f437247679d0790",
+  "result": "PASS",
+  "merge": {
+    "merge": "4295bb1bc9eabcae8273f88b3f437247679d0790",
+    "expected_head": "ae79cf7c28f78eef84376188ba1763972beecb21",
+    "base": "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "ae79cf7c28f78eef84376188ba1763972beecb21"
+    ],
+    "tree": "f2b428dc11f8424160e17b7e551fe47206d0f8f7",
+    "pr_merged": true,
+    "main_matches": true,
+    "head_tree_matches": true,
+    "merged_at": "2026-10-10T20:57:45Z"
+  },
+  "preflight": {
+    "schema_version": 1,
+    "item": "RP-028",
+    "attempt": "A001",
+    "intent": "RP-028-A001-0003",
+    "head": "ae79cf7c28f78eef84376188ba1763972beecb21",
+    "main": "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+    "qualified_checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+    "result": "PASS",
+    "non_documentation_exact": true,
+    "acceptance_unchanged": true,
+    "repair_closure_unchanged": true,
+    "open_defects": [
+      "DEF-001",
+      "DEF-002",
+      "DEF-088",
+      "DEF-094"
+    ],
+    "diff_review": {
+      "exit_code": 2,
+      "diagnostics_unchanged": 33,
+      "new_findings": 0,
+      "review": "Previously classified format-only; not an exit-zero claim"
+    },
+    "ledger_history": {
+      "revision": "R2",
+      "steps": 64,
+      "verified": 27,
+      "unsettled_intents": [
+        "RP-028-A001-0003"
+      ],
+      "result": "PASS"
+    },
+    "public_scan_exit": 0,
+    "clean_checkout": true,
+    "implementation_acceptance": false
+  },
+  "visible_rules": {
+    "main_protected": false,
+    "rulesets": [],
+    "reviews": [],
+    "review_threads": [],
+    "merge_commits_enabled": true,
+    "detailed_protection": "Previously403 integration scope; no bypass or configuration change. Ordinary merge API accepted exact expected head."
+  },
+  "qualification_runs": [
+    {
+      "id": 38078394779,
+      "status": "completed",
+      "conclusion": "success",
+      "attempt": 1,
+      "head": "3ddb43327697f823a51967b33f71863c573da636"
+    },
+    {
+      "id": 38078398145,
+      "status": "completed",
+      "conclusion": "success",
+      "attempt": 1,
+      "head": "3ddb43327697f823a51967b33f71863c573da636"
+    },
+    {
+      "id": 38078398186,
+      "status": "completed",
+      "conclusion": "success",
+      "attempt": 1,
+      "head": "3ddb43327697f823a51967b33f71863c573da636"
+    },
+    {
+      "id": 38078398146,
+      "status": "completed",
+      "conclusion": "success",
+      "attempt": 1,
+      "head": "3ddb43327697f823a51967b33f71863c573da636"
+    },
+    {
+      "id": 38078398151,
+      "status": "completed",
+      "conclusion": "success",
+      "attempt": 1,
+      "head": "3ddb43327697f823a51967b33f71863c573da636"
+    }
+  ],
+  "local_readback": {
+    "branch": "main",
+    "head": "4295bb1bc9eabcae8273f88b3f437247679d0790",
+    "clean": true,
+    "non_documentation_equals": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a"
+  },
+  "acceptance_checkpoint": "464a717e9bb91e8f708a595d19f3dd75d333e80a",
+  "repair_closure_checkpoint": "fc4ca02786c025fb9487726a5fdc06c663412543",
+  "qualified_packages": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json",
+  "implementation_acceptance": false,
+  "next": "Publish/read back RP028.C1 contract/source-inspection INTENT and an isolated work/rp-028-a001 branch from this verified main checkpoint. Inspect accepted identity/credential/commissioning/work-evidence/reconfiguration boundaries; document selectable reset scope, irreversible effects, invariants and a bounded synthetic implementation/test unit before editing product source."
+}

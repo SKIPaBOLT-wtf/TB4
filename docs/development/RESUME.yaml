@@ -3,24 +3,23 @@ revision: R2
 work_item: RP-028
 check: RP-028.C1
 attempt: A001
-phase: DEPENDENCY_READY_PR36_MERGE
-source_branch: feat/rp027-staged-reconfiguration
-source_commit: fc4ca02786c025fb9487726a5fdc06c663412543
+phase: PR36_MERGED_MAIN_VERIFIED
+source_branch: main
+source_commit: 4295bb1bc9eabcae8273f88b3f437247679d0790
 journal: docs/development/journal/RP-028/A001/events.jsonl
-last_verified_event: RP-028-A001-0003
+last_verified_event: RP-028-A001-0004
 last_completed: RP-027
-next_action: Verify the exact current source/progress/rules/PR evidence, finalize
-  PR36 metadata/readiness and perform the one expected-head merge if all current gates
-  hold; inspect/read back the same operation and publish exact main OUTCOME before
-  RP028 implementation inspection.
-verification: RP027 accepted;56 repairs closed atfc4ca027 with exact readback; four
-  defects retainedOPEN. Separate PR36 merge operation now pending; recover it by PR/head/main/parents/tree,
-  never blind repeat.
+next_action: Publish/read back RP028.C1 contract/source-inspection INTENT and an isolated
+  work/rp-028-a001 branch from this verified main checkpoint. Inspect accepted identity/credential/commissioning/work-evidence/reconfiguration
+  boundaries; document selectable reset scope, irreversible effects, invariants and
+  a bounded synthetic implementation/test unit before editing product source.
+verification: PR36 merged once/main4295bb1b exact parents/tree and local clean main
+  verified; same qualified source43. RP027 accepted,56 repairs closed, four retainedOPEN.
+  RP028 reset implementation remains pending; next bounded contract/source inspection.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-028-A001-0003
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
