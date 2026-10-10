@@ -3,22 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: SOURCE41_REQUIRED_GROUPS_QUALIFIED_PLATFORM_PENDING
+phase: CURRENT_C1_C4_COMMON_EVIDENCE_AUDIT
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 1395294b4bb938f5c32158043b8340f872041faf
+source_commit: 564bc157d2f7d9bd41fa946add887daf81faeea5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0549
+last_verified_event: RP-027-A001-0550
 last_completed: RP-026
-next_action: Inspect source41 fullCI/Desktop and source42 exact1234/native/platform
-  jobs to terminal without replay. Complete read-only current R27 acceptance-scope/evidence
-  audit before any acceptance.
-verification: Source41 required1176twice/Progress235 qualified; full platform running.
-  Source42 combined native1234/platform runs pending; all C1-C4 unaccepted.
+next_action: Prepare explicit current-source evidence map and gap report. Continue
+  inspecting same41/42 jobs. If any gap is demonstrated, publish its outcome/defect
+  and a new scoped repair INTENT.
+verification: Read-only current C1-C4/common audit pending; source41 required1176twice
+  qualified/platform pending, source42 all58new native/source/platform pending. No
+  check accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0547
+- RP-027-A001-0550
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

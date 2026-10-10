@@ -1,0 +1,17 @@
+{
+  "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "checks": [
+    "RP-027.C1",
+    "RP-027.C2",
+    "RP-027.C3",
+    "RP-027.C4"
+  ],
+  "scope": "Read-only invariant/evidence audit while immutable41/42 runs continue. No source edit, test replay, acceptance or live operation.",
+  "method": [
+    "Map R09/R13/R15/R16 and amendments to current real mechanisms and assertions, current platform selectors, fault/negative and rollback boundaries.",
+    "Review source diff/privacy/legacy protocol compatibility, full-profile/archive/current-role/no-replay boundaries and predecessor acceptance.",
+    "Separate actual CandidateController API composition from later RP-053 Qt UI and RP-030 broader interruption matrix, without waiving any RP-027 C1-C4 invariant.",
+    "Review all relevant open RP-027 defects and their original failure/passing regression links; identify missing exact-source evidence before any final acceptance."
+  ],
+  "expected": "An explicit check-to-source/test/evidence matrix, unresolved predicates and precisely scoped platform/UI/real-provider limits. Any new actual gap gets a separate documented source/test action."
+}
