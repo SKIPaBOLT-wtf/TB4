@@ -1,27 +1,25 @@
 schema_version: 1
 revision: R2
-work_item: RP-027
-check: RP-027.C4
+work_item: RP-028
+check: RP-028.C1
 attempt: A001
-phase: RP027_VERIFIED_CURRENT_SOURCE_AND_COMMON_GATES
+phase: DEPENDENCY_READY_RP027_DEFECT_HANDOFF
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: e9d3af33a6a2d0325eedd3e83029b2df73a8320a
-journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0571
+source_commit: 464a717e9bb91e8f708a595d19f3dd75d333e80a
+journal: docs/development/journal/RP-028/A001/events.jsonl
+last_verified_event: RP-028-A001-0001
 last_completed: RP-027
-next_action: Publish/read back RP-028/A001 administrative handoff INTENT to verify
-  accepted RP-027 receipts and close only its56 qualified repair records, preserving
-  DEF001/002/088/094. Publish that registry OUTCOME and verify readback. Then separately
-  INTENT current PR36 metadata/rules/source qualification and ordinary expected-head
-  merge; record exact outcome on main before RP-028 implementation.
-verification: RP-027 original C1-C4/common gates accepted on exact source43; all jobs/packagesPASS.
-  All60 registry defects remainOPEN until next administrative handoff closes56 qualified
-  repairs; DEF001/002/088/094 remain unresolved. Reviewed whitespace exit2 preserved;
-  no live permissions.
+next_action: Verify the exact accepted receipts and unchanged current registry/source,
+  prepare scoped56-record closure with full guards, publish OUTCOME and verify remote
+  readback before separate PR36 merge handoff.
+verification: RP027C1-C4 accepted and exact remote readback confirmed at464a717. RP028
+  dependency handoff only:56 qualified defect records await explicit closure; all60
+  remainOPEN until OUTCOME. No reset implementation accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-028-A001-0001
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
