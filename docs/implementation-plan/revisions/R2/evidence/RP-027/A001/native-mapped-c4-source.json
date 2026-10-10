@@ -1,0 +1,30 @@
+{
+  "event": "RP-027-A001-0538",
+  "source": "1d0bf6e6f96ea60b18bb9b40b297cb6be3838596",
+  "local_source": "9c5891177b0b37011ab414948d5ad72ecc4bd73f",
+  "paths": [
+    ".github/workflows/folder-reconfiguration.yml",
+    "src/tb4/drive/folder_mapping_active_probe.py",
+    "src/tb4/drive/folder_probe_transport.py",
+    "src/tb4/drive/folder_helper.py",
+    "src/tb4/reconfiguration_retained.py",
+    "tests/drive/test_folder_mapping_active_probe.py",
+    "tests/drive/test_folder_mapped_c4_authenticated_ssh.py",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-038-native-mapped-retained-publication.md",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/FIXED_FOLDER_AUTHORITY.md"
+  ],
+  "static": {
+    "python_ast": "PASS",
+    "diff": "PASS",
+    "privacy": "PASS",
+    "old_after_bytes": "UNCHANGED",
+    "old_parsers_ast": "UNCHANGED_EXCEPT_EXPLICIT_NEW_MODE_BRANCH",
+    "declared_portable": 37,
+    "declared_actual_native": 9
+  },
+  "preflight": "Inline static count command quote SyntaxError before execution; owned file identical intended static checks passed.",
+  "tests_run": 0,
+  "acceptance": false
+}
