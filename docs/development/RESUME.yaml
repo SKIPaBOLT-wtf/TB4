@@ -3,23 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: NATIVE_MAPPED_C4_WINDOWS_TESTS_STARTED
+phase: NATIVE_MAPPED_C4_WINDOWS_PASS_NATIVE_PENDING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 1d0bf6e6f96ea60b18bb9b40b297cb6be3838596
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0540
+last_verified_event: RP-027-A001-0541
 last_completed: RP-026
-next_action: Read the same local wrapper/result to terminal; run the already-intended
-  separate full default collection once, then publish source-specific actual results
-  before dependent repair/source work.
-verification: Immutable source41 running; independent A038 uses fully executed source40
-  mapping/native foundations. Native mapped consumer/source tests not yet executed.
+next_action: Preserve actual305/default3705 evidence. Independently implement A037
+  own native original-Main pending recovery under new source INTENT, retaining exact
+  parent/stage/endpoint pins and ordinary Main pending denial. Then run appropriate
+  regressions and combined actual Linux/current platform qualification. Inspect immutable
+  source41 samejobs; all C1-C4 held.
+verification: A038 new37+old268 Windows PASS/default3705 imports; actual native9 and
+  full source platform gates held. Source41 same immutable jobs running. No C1-C4
+  acceptance.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0535
-- RP-027-A001-0539
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
