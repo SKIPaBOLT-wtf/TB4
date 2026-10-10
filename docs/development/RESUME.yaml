@@ -3,24 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: OWNER_CONTINUATION_SAME_SOURCE40_QUALIFICATION
+phase: SOURCE40_SCOPED_NATIVE_PASS_REQUIRED_BUDGET_INCOMPLETE
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: d39bda8915af63ce621134aad0e703703c064301
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0531
+last_verified_event: RP-027-A001-0532
 last_completed: RP-026
-next_action: Inspect terminal same40 logs, actual checkouts, source diff, package
-  flags and failures/cancellation reason. Publish actual OUTCOME before dependent
-  changes.
-verification: Current d39bda Windows225PASS/default3659 exactlegacy3643+16; A037affectedWindows62PASS.
-  Frozen940b34ac source38 required1107twice/fullCI/Windows/Linux/bothrolespackages
-  qualified. Same40 actual Linux/new29/currentplatform results remain unqualified;
-  allRP027 C1-C4/common held.
+next_action: Publish this partial outcome. Repair only the special workflow time budget
+  under a new INTENT, keep all selectors/cases and old cancelled runs. Qualify a new
+  exact source request. Independently proceed with source-reviewed native mapped C4/own
+  Main pending integration using the fully executed scoped native foundations; whole-step
+  acceptance stays held.
+verification: Source40 native first663 and other completed groups pass twice; repairedA03611/A03713
+  scoped foundations qualified. Full CI and Windows/Linux packaged roles pass for
+  exactd39bda. Last327 special group cancelled at30minutes; required workflow/common
+  C1-C4 and remaining integrations held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0531
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
@@ -81,6 +82,7 @@ known_open_defects:
 - DEF-108
 - DEF-109
 - DEF-110
+- DEF-111
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before

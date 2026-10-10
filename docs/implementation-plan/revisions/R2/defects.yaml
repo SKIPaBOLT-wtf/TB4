@@ -7938,9 +7938,10 @@ defects:
       procedure: 'Same39 push/PR tests/drive/test_folder_mapping_after_probe_native.py::test_actual_after_proof_refuses_unfinished_or_lost_native_mapping_and_seal_without_writes[before]
         fails at facts() with KeyError: folder_plan before handle_after_probe.'
       failing_source: e095a52215bf416b1537a1b4ccd582602d57b0b6
-      passing_source: null
+      passing_source: d39bda8915af63ce621134aad0e703703c064301
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source40-resumed-qualification.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -7978,7 +7979,12 @@ defects:
       Linux packages not executed. No historical failure removed or acceptance asserted.
       Exact four-file repair now preserved/published; no passing_source until actual
       execution. Old normal AST/29portable/other10native unchanged; new16parser tests
-      declared, no tests executed.
+      declared, no tests executed. Source40 first663 group passed twice with complete
+      native mapping11 and portable45 selections, no skipped cases, independently
+      matched immutable source. DEF109/110 scoped regressions pass at d39bda. Full
+      CI3611PASS/27SKIP/4XFAIL, Linux3634/21/4, Windows3328/327/4 and both-role package
+      checks pass. Last327 special group was cancelled at the 30-minute budget, so
+      common acceptance and defect status remain OPEN.
     legacy_record: null
   DEF-110:
     title: Actual native mapping AFTER positive fixed SSH witness refuses current
@@ -8001,11 +8007,12 @@ defects:
         refuses MAPPING_AFTER_UNAVAILABLE; actual direct native positive and remaining9
         native cases pass.
       failing_source: e095a52215bf416b1537a1b4ccd582602d57b0b6
-      passing_source: null
+      passing_source: d39bda8915af63ce621134aad0e703703c064301
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-adoption-windows-and-mapping39-failures.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/mapping-after-reply-mode-diagnostic.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/mapping-after-repair-windows-and-final39.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source40-resumed-qualification.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -8057,5 +8064,54 @@ defects:
       tests declared, no tests executed. Actual currentrepairWindows225PASS/noFAIL/ERROR/SKIP6.469s;
       allnew16pure credential runner/cross-mode/terminal cases pass. ActualLinux correctedSSH
       stillpending, no passing_source assigned fromWindows. Same39 finalWindows3312/314SKIP/4XFAIL
-      andbothrolefourflagsPASS; original2Linux failures remain.
+      andbothrolefourflagsPASS; original2Linux failures remain. Source40 first663
+      group passed twice with complete native mapping11 and portable45 selections,
+      no skipped cases, independently matched immutable source. DEF109/110 scoped
+      regressions pass at d39bda. Full CI3611PASS/27SKIP/4XFAIL, Linux3634/21/4, Windows3328/327/4
+      and both-role package checks pass. Last327 special group was cancelled at the
+      30-minute budget, so common acceptance and defect status remain OPEN.
+    legacy_record: null
+  DEF-111:
+    title: Required Folder qualification exceeds its finite 30-minute workflow budget
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: d39bda8915af63ce621134aad0e703703c064301
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source40-resumed-qualification.json
+    proven_origin: null
+    reproduction:
+      procedure: Same40 immutable push and PR jobs both complete663/51/6/22/107 groups,
+        then cancel in final327 group after1816.626s and1814.235s of job log time.
+        Workflow budget is30minutes. No test failures are reported; full CI and both
+        Desktop suites for identical code pass.
+      failing_source: d39bda8915af63ce621134aad0e703703c064301
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source40-resumed-qualification.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Accumulated current suite duration exceeds the fixed30-minute job budget;
+        increasing the finite job allowance preserves required selectors while enabling
+        a complete final327 result.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source40-resumed-qualification.json
+    repairs: []
+    issue: null
+    regression_test: Both exact current-source required Folder runs finish all six
+      unchanged groups with no failure or skip; final327 selection remains explicit
+      and full CI covers its excluded maximum-capacity case.
+    resolution_evidence: []
+    notes: Preserve cancelled jobs as PARTIAL. Provider annotation unavailable; timing/configuration
+      support budget cause but are not a fabricated scheduler annotation. This is
+      ordinary test infrastructure repair, not an external blocker.
     legacy_record: null
