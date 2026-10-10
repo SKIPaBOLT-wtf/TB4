@@ -3,24 +3,28 @@ revision: R2
 work_item: RP-028
 check: RP-028.C1
 attempt: A001
-phase: RESET_CONTRACT_AND_SOURCE_INSPECTION
-source_branch: main
-source_commit: 4217f542331f7088cdbbad7169490fc32f06f96f
+phase: OWNER_PAUSED_AFTER_RP028_CONTRACT_INSPECTION
+source_branch: work/rp-028-a001
+source_commit: ca070043e919d87a2e30b044891213cc06350695
 journal: docs/development/journal/RP-028/A001/events.jsonl
-last_verified_event: RP-028-A001-0005
+last_verified_event: RP-028-A001-0006
 last_completed: RP-027
-next_action: Verify/create/read back the one owned branch, inspect the selected accepted
-  source boundaries and publish an OUTCOME with exact reset invariants/gaps and a
-  bounded proposed source/test unit.
-verification: Verified PR36 merge/main outcome saved at4217f542. RP028C1 bounded contract/source
-  inspection and one owned work-branch creation pending. All four reset checks remain
-  unaccepted.
+next_action: 'Wait for the owner''s explicit continue. Then read this checkpoint and
+  publish a new RP028.C1 INTENT for the smallest nonmutating reset-review unit: exact
+  own-role scope, deterministic consequence/prerequisite summary and stale/cross-installation/secret-leakage
+  refusal tests. First record its linked amendment; later units must qualify retirement
+  fencing, protected evidence, partial-reset recovery and fresh reenrollment before
+  any RP028 check is accepted.'
+verification: Owner pause at a completed RP028C1 contract/source inspection. RP027
+  is VERIFIED/merged inmain;56 repairs closed; DEF001/002/088/094 OPEN. Work branchwork/rp-028-a001
+  contains no new product code or tests. No unsettled intents/running tests; exact
+  next proposed unit is documented.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-028-A001-0005
-expected_user_action: null
+unsettled_intents: []
+expected_user_action: Say continue when ready to resume RP028 from the documented
+  next INTENT.
 blocking_decisions: []
 known_open_defects:
 - DEF-001

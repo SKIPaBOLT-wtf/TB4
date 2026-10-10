@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "item": "RP-028",
+  "attempt": "A001",
+  "intent_event": "RP-028-A001-0005",
+  "outcome_event": "RP-028-A001-0006",
+  "source_ref": "ca070043e919d87a2e30b044891213cc06350695",
+  "result": "RECORDED",
+  "acceptance": false,
+  "branch": {
+    "name": "work/rp-028-a001",
+    "base": "ca070043e919d87a2e30b044891213cc06350695",
+    "created_once": true,
+    "remote_readback": true,
+    "local_clean": true,
+    "pr_created": false
+  },
+  "dependencies": {
+    "RP-006": "VERIFIED",
+    "RP-012": "VERIFIED",
+    "RP-019": "VERIFIED",
+    "RP-025": "VERIFIED",
+    "RP-027": "VERIFIED"
+  },
+  "inspected": [
+    {
+      "path": "src/tb4/commissioning_state.py",
+      "symbols": [
+        "Setup.__init__",
+        "Setup.cancel",
+        "Setup.resume",
+        "Setup.persist_credentials",
+        "Setup.restore_credentials",
+        "Setup.rollback_choices"
+      ],
+      "finding": "First creation generates a new installation identity; ordinary cancellation/resume/reconfiguration keeps identity and history. Saved READY is not activation. No separately confirmed reset/replacement workflow exists here."
+    },
+    {
+      "path": "src/tb4/private_settings.py",
+      "symbols": [
+        "PrivateSettings.save",
+        "PrivateSettings._save_locked",
+        "PrivateSettings.recover_pending"
+      ],
+      "finding": "Native binding, revision, parent image, staging/promotion and exact readback provide reusable protected-state primitives. Generic pending promotion alone is not a reset safety or authority proof."
+    },
+    {
+      "path": "src/tb4/credential_contract.py",
+      "symbols": [
+        "CredentialResolver.revoke",
+        "CredentialResolver.rotate"
+      ],
+      "finding": "Resolver revocation is installation-bound local metadata, not deletion or remote revocation of the underlying key and not by itself a durable reset transaction."
+    },
+    {
+      "path": "src/tb4/credential_persistence.py",
+      "symbols": [
+        "preserve_prior_authority",
+        "export_private",
+        "restore_private"
+      ],
+      "finding": "Protected images retain selections/bindings and may only gain revocation; fresh restore preserves revoked status. A reset must retain required evidence and revoke only owned references without copying another installation's credentials."
+    },
+    {
+      "path": "src/tb4/enrollment_workflow.py",
+      "symbols": [
+        "transition",
+        "Enrollment.register",
+        "Enrollment.revoke",
+        "Enrollment.inspect"
+      ],
+      "finding": "Current owner-controlled REVOKE preserves the catalogue/profile and increases its revision. REGISTER with any previous binding is deliberately refused; there is no controlled new-installation replacement mode. Lost replies inspect exact pending after-image. Existing revocation may preserve unresolved work; it is not proof that full reset may discard it."
+    },
+    {
+      "path": "src/tb4/fetcher_enrollment.py",
+      "symbols": [
+        "FetcherEnrollment.select",
+        "FetcherEnrollment.capture",
+        "FetcherEnrollment.inspect"
+      ],
+      "finding": "A distinct installation and approved target are required; initial selection refuses any existing binding. Shared revocation inspection is supported; fresh reenrollment after reset needs a separately qualified transition."
+    },
+    {
+      "path": "src/tb4/drive/leadership.py",
+      "symbols": [
+        "Leadership.__init__",
+        "Leadership.acquire",
+        "Leadership.claim_requested",
+        "Leadership.current_before_dispatch"
+      ],
+      "finding": "Current actor/name enrollment is static in each instance. Stale/forced takeover is immediate conditional acquisition; old grants lose current ownership. Permanent reset retirement is not established by an epoch change alone and needs a fresh qualified guard without peer/old-host ACK."
+    },
+    {
+      "path": "src/tb4/watchdog/leadership_runtime.py",
+      "symbols": [
+        "NativeWatchdogRuntime.tick",
+        "NativeWatchdogRuntime._admit"
+      ],
+      "finding": "Role election and fresh ordinary dispatch use capability/current owner checks; local maintenance holds work. A reset must integrate its retirement/quiescence guard at actual boundaries, not rely on a saved UI flag."
+    },
+    {
+      "path": "src/tb4/reconfiguration_inspection.py",
+      "symbols": [
+        "inspect",
+        "Inspection.public_summary"
+      ],
+      "finding": "Existing typed snapshots retain shared BUSY/UNREAD/UNKNOWN, setup pending/UNKNOWN, election/mutation and effect evidence. Safe summaries expose fixed counts, not identities. Reset-specific scope and current facts still need qualification."
+    },
+    {
+      "path": "src/tb4/reconfiguration_maintenance.py",
+      "symbols": [
+        "Maintenance._current",
+        "Maintenance.resolve",
+        "Maintenance.require_resolved"
+      ],
+      "finding": "Current-role and explicit zero-blocker proof are reusable for controlled coordination; reset must preserve immediate takeover independently."
+    },
+    {
+      "path": "src/tb4/reconfiguration_candidate.py",
+      "symbols": [
+        "Candidate",
+        "seed"
+      ],
+      "finding": "Reconfiguration deliberately retains installation identity, nonce, operation history and original archive. It must not silently become a full reset."
+    }
+  ],
+  "required_invariants": [
+    "An owner selects the exact local installation/role and sees irreversible identity/enrollment/reference consequences before explicit confirmation; no implied reset of peers, shared network or root.",
+    "Full reset preserves required original/pending/work evidence and refuses unsafe unread/unknown effects. An existing low-level revoke/cancel call is not a quiescence certificate.",
+    "Revoke only this installation's scoped references/enrollment; no unrelated secret deletion or copied fallback identity.",
+    "Old cooperative processes must fail fresh retirement/identity/epoch checks before new actions after reenrollment. A cached profile, old grant or zero-blocker UI view cannot grant execution.",
+    "Partial/unknown reset effects are inspected as the same operation; no blind replay or generation rollback. Irreversible revocation cannot be undone by restoring an old profile.",
+    "Fresh commissioning collects facts and produces a distinct installation identity while retaining the same canonical shared objects/work/history; no whole-root deletion.",
+    "Stale/forced WATCHDOG first-CAS takeover remains available without an old-host or all-peer acknowledgement barrier."
+  ],
+  "next_bounded_unit": {
+    "status": "PROPOSED_NOT_IMPLEMENTED",
+    "check": "RP-028.C1",
+    "purpose": "A deterministic nonmutating review of the selected own WATCHDOG or FETCHER installation, with fixed consequence/prerequisite wording and a private current-profile binding for later explicit confirmation.",
+    "candidate_paths": [
+      "src/tb4/reset_review.py",
+      "tests/security/test_reset_review.py"
+    ],
+    "negative_checks": [
+      "Malformed/unselected/foreign-role scope",
+      "Stale or pending native profile",
+      "Copied/cross-installation review context",
+      "False executable/authorization or quiescence claim",
+      "Private identity, paths, reference or provider-canary leakage"
+    ],
+    "boundaries": "No reset executor, shared mutation, credential use/revocation, local identity replacement, GUI activation or network/provider operation. Any implementation must first have a separate published/read-back INTENT and linked scope amendment. This unit alone accepts no C1-C4 check."
+  },
+  "remaining_work": "Complete reset transaction/owned binding and role retirement, actual native state and current shared proof, interrupted/unknown recovery, old-process refusal, controlled FETCHER replacement and fresh first-run composition; then original C1-C4/common platform/privacy/rollback acceptance. Full GUI integration follows its canonical plan scope.",
+  "owner_pause": {
+    "requested": true,
+    "reason": "Owner asked to stop at a completed resumable work boundary and briefly report this run.",
+    "pending_actions": [],
+    "resume_condition": "Explicit owner request to continue",
+    "next_action": "Wait for the owner's explicit continue. Then read this checkpoint and publish a new RP028.C1 INTENT for the smallest nonmutating reset-review unit: exact own-role scope, deterministic consequence/prerequisite summary and stale/cross-installation/secret-leakage refusal tests. First record its linked amendment; later units must qualify retirement fencing, protected evidence, partial-reset recovery and fresh reenrollment before any RP028 check is accepted."
+  },
+  "tests_executed_in_this_unit": 0,
+  "product_source_changed": false,
+  "live_actions": false
+}
