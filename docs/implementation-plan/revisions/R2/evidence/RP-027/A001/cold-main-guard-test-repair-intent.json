@@ -1,0 +1,11 @@
+{
+  "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "files": [
+    "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py"
+  ],
+  "scope": "Test-only correction of one existing Linux late-child predicate; production recovery/sanitizer unchanged. Static source preservation and one default whole collection are part of this bounded unit; no test case execution.",
+  "invariant": "After fresh qualified proof, the exact injected pending-child change reaches internal ACTIVE_ADOPTION_RECOVERY, exits through the established SETTINGS_STORE_UNAVAILABLE boundary, and retains original Main, altered pending evidence and shared state exactly.",
+  "procedure": "Instrument the original require function within the recovery module only inside this test, recording failed closed codes before delegating unchanged. Capture exactly one post-proof altered pending frame. Expect the native SettingsError, assert the internal code list and complete Main/pending/shared equality. Keep all other function ASTs/parameterization unchanged. Syntax/diff/privacy review; preserve a one-file commit with skip-ci and exact readback; reacquire a clean tracking checkout without reset, then run default pytest --collect-only once with fresh owned absent --basetemp and no injected PYTHONPATH. Expect3717 cases, no errors, no tests executed. Preserve any failure. Actual Linux and full platform qualification follows a separate INTENT.",
+  "expected": "One stronger negative predicate, zero production-byte change, unchanged3717-case collection. No actual native pass claimed until fresh required execution.",
+  "rollback": "Revert the single test edit with a new commit if wrong. Preserve original failed sources/jobs and all production guards; no runtime/credential/network change or original job replay."
+}
