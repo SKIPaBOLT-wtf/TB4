@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: FINAL_CURRENT_SOURCE_ACCEPTANCE_REVIEW
+phase: FINAL_REVIEW_DIFF_WHITESPACE_CLASSIFICATION_REQUIRED
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: e9d3af33a6a2d0325eedd3e83029b2df73a8320a
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0568
+last_verified_event: RP-027-A001-0569
 last_completed: RP-026
-next_action: Perform this bounded final current-source review and publish PASS with
-  per-check receipts only if concrete predicates and common gates hold; otherwise
-  preserve the exact failed review without accepting a check.
-verification: All current source43 jobs complete PASS; final original-check/common/defect
-  review is pending under this exact INTENT.
+next_action: Publish/read back a bounded classification-and-final-review INTENT. Classify
+  all33 exact whitespace diagnostics, preserve the literal diff-check exit2, and review
+  compatibility/privacy/history and original C1-C4. Do not modify or rerun the already-qualified
+  implementation solely to normalize historical whitespace.
+verification: Final task-only review stopped at cumulative whitespace diff exit2;
+  all source43 qualification remainsPASS. No checks accepted; classify exact formatting
+  diagnostics before completing common review.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0568
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
