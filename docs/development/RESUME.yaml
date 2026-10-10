@@ -3,24 +3,24 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: ALL_ACCIDENTAL_DOCUMENTATION_CI_JOBS_RECONCILED
+phase: SOURCE43_ALL_QUALIFICATION_JOBS_COMPLETE_PASS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: e9d3af33a6a2d0325eedd3e83029b2df73a8320a
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0566
+last_verified_event: RP-027-A001-0567
 last_completed: RP-026
-next_action: Only original source43 Linux Desktop job114290072918 in run38078398151
-  still needs terminal full/platform/package evidence. Inspect it without retry, then
-  finish source43 common C1-C4 acceptance review.
-verification: All old accidental25jobs reconciled without rerun/cancel, current docs
-  guard zero new workflows. Source43 native1234 twice/fullCI3669/Progress235/Windows3365
-  and packagesPASS. Only current Linux Desktop/full/package remains pending; allC1-C4
-  held.
+next_action: Publish/read back a final RP-027 current-source acceptance-review INTENT.
+  Verify exact current branch/main/qualified-code equivalence, unchanged ledger and
+  main-history/public scan/diff guards, each original invariant, retained defect/coverage/rollback
+  limits and current dependencies. Only then publish reviewed C1-C4 receipts and the
+  justified manifest/defect transition.
+verification: 'Source43 all five runs/six jobs SUCCESS: native1234 twice, CI3669,
+  Windows3365, Linux3692, Progress235; bothroles/allfourpackage flags bothplatforms
+  PASS. Current C1-C4/common receipt review still required; no tests remain running.'
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0558
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

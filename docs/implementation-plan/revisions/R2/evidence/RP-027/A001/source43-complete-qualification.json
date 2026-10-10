@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0558",
+  "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "trigger": "3ddb43327697f823a51967b33f71863c573da636",
+  "actual_pr_checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+  "result": "PASS",
+  "acceptance": false,
+  "scope": "All immutable source43 qualification jobs and declared package checks are complete. Final per-check/common acceptance review and manifest transition are separate.",
+  "runs": [
+    {
+      "id": 38078398151,
+      "name": "Desktop",
+      "event": "pull_request",
+      "head": "3ddb43327697f823a51967b33f71863c573da636",
+      "status": "completed",
+      "conclusion": "success",
+      "attempt": 1
+    },
+    {
+      "id": 38078398145,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "head": "3ddb43327697f823a51967b33f71863c573da636",
+      "status": "completed",
+      "conclusion": "success",
+      "attempt": 1
+    },
+    {
+      "id": 38078398146,
+      "name": "CI",
+      "event": "pull_request",
+      "head": "3ddb43327697f823a51967b33f71863c573da636",
+      "status": "completed",
+      "conclusion": "success",
+      "attempt": 1
+    },
+    {
+      "id": 38078398186,
+      "name": "Progress",
+      "event": "pull_request",
+      "head": "3ddb43327697f823a51967b33f71863c573da636",
+      "status": "completed",
+      "conclusion": "success",
+      "attempt": 1
+    },
+    {
+      "id": 38078394779,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "head": "3ddb43327697f823a51967b33f71863c573da636",
+      "status": "completed",
+      "conclusion": "success",
+      "attempt": 1
+    }
+  ],
+  "required_native": {
+    "push": {
+      "job": 114290063680,
+      "checkout": "3ddb43327697f823a51967b33f71863c573da636",
+      "summaries": [
+        "721 passed in 1309.63s (0:21:49)",
+        "51 passed in 85.46s (0:01:25)",
+        "6 passed in 36.97s",
+        "22 passed in 187.92s (0:03:07)",
+        "107 passed in 12.79s",
+        "327 passed, 1 deselected in 397.70s (0:06:37)"
+      ],
+      "failed": [],
+      "codes": [],
+      "packages": []
+    },
+    "pull_request": {
+      "job": 114290072704,
+      "checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+      "summaries": [
+        "721 passed in 903.32s (0:15:03)",
+        "51 passed in 52.43s",
+        "6 passed in 22.45s",
+        "22 passed in 112.09s (0:01:52)",
+        "107 passed in 8.76s",
+        "327 passed, 1 deselected in 270.25s (0:04:30)"
+      ],
+      "failed": [],
+      "codes": [],
+      "packages": []
+    },
+    "total_each": 1234,
+    "failed_each": 0,
+    "skipped_each": 0
+  },
+  "progress": {
+    "job": 114290073309,
+    "checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+    "summaries": [
+      "235 passed in 7.18s"
+    ]
+  },
+  "ci": {
+    "job": 114290072986,
+    "checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+    "summaries": [
+      "43 passed in 0.19s",
+      "34 passed in 0.56s",
+      "2 passed in 0.04s",
+      "3669 passed, 27 skipped, 4 xfailed in 3231.12s (0:53:51)"
+    ],
+    "failed": [],
+    "codes": [],
+    "packages": []
+  },
+  "linux": {
+    "job": 114290072918,
+    "checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+    "summaries": [
+      "90 passed, 4 skipped in 2.76s",
+      "43 passed in 0.26s",
+      "34 passed in 0.90s",
+      "2 passed in 0.23s",
+      "75 passed in 10.12s",
+      "79 passed in 17.15s",
+      "3692 passed, 21 skipped, 4 xfailed in 4170.20s (1:09:30)"
+    ],
+    "failed": [],
+    "codes": [],
+    "packages": [
+      {
+        "role": "watchdog",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      },
+      {
+        "role": "fetcher",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      }
+    ]
+  },
+  "windows": {
+    "job": 114290073008,
+    "checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+    "summaries": [
+      "74 passed, 20 skipped in 3.07s",
+      "15 passed in 0.15s",
+      "30 passed, 4 skipped in 1.66s",
+      "2 passed in 8.94s",
+      "75 passed in 10.55s",
+      "79 passed in 19.24s",
+      "3365 passed, 348 skipped, 4 xfailed in 2547.42s (0:42:27)"
+    ],
+    "failed": [],
+    "codes": [],
+    "packages": [
+      {
+        "role": "watchdog",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      },
+      {
+        "role": "fetcher",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      }
+    ]
+  },
+  "artifacts_metadata_only": [
+    {
+      "id": 11681528055,
+      "name": "tb4-desktop-Linux-0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+      "size": 316797152,
+      "digest": "sha256:c05bfdb4335361b7eeec1fc6d6ebecef4803c938643caf61953086af05f30d7d"
+    },
+    {
+      "id": 11680712155,
+      "name": "tb4-desktop-Windows-0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+      "size": 121982145,
+      "digest": "sha256:e7d4f31b96345eb14f0f8fd99fdf62dac2e3f09fd18121a77b5e584edb656e40"
+    }
+  ],
+  "source_review": "Actual six job logs prove the push3ddb or PR0c332 checkout. The saved Git parent/non-documentation proof matches e9d3af33. Source43 changes only the exact negative-test expectation/witness from564bc157; production, protocol and workflow bytes are unchanged. Source40 preexisting tests are retained verbatim. Current source-linked collection lists3717 cases/1729 function names and exact required groups; it is collection evidence, not execution proof.",
+  "scope_review": "All required native cases, actual cold/pending/fallback/credential/source/physical negative assertions and full current suites completed. The default full suites include the one maximum129-object case deselected only from the bounded required last group. Windows/Linux each passed both-role package self-test, GUI/setup smoke and installation/uninstallation profile isolation.",
+  "retained_limits": "Windows348/Linux21/CI27 skips and four strict expected failures are retained verbatim and not called passing tests. Four existing cancellation/runtime xfails remain assigned to RP-044/045/046. Historical discovery failures DEF088/094 retain unknown causes. Physical native Folder/SSH qualification is Linux; Docs adapters are commissioned synthetic fixtures. Full Qt reconfiguration exposure remains RP053.C2 under A040; authorized field/pilot, other hardware/topologies and live migration are not inferred.",
+  "prior_failures": "Every original42 and accidental docs-only job is terminal and separately reconciled. No prior failure or cancellation became a pass, no original job was rerun, and no cancellation was claimed. The current source43 request was a separately recorded immutable repaired-test qualification.",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-started.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-required-native-qualified.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-windows-qualified.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-ci-qualified.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-collected-functions.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-checks-common-audit.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/acceptance-scope-reconciled.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicates-all-terminal.json"
+  ],
+  "next": "Publish/read back a final RP-027 current-source acceptance-review INTENT. Verify exact current branch/main/qualified-code equivalence, unchanged ledger and main-history/public scan/diff guards, each original invariant, retained defect/coverage/rollback limits and current dependencies. Only then publish reviewed C1-C4 receipts and the justified manifest/defect transition."
+}
