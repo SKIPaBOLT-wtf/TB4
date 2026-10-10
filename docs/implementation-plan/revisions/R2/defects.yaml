@@ -8087,9 +8087,10 @@ defects:
         Workflow budget is30minutes. No test failures are reported; full CI and both
         Desktop suites for identical code pass.
       failing_source: d39bda8915af63ce621134aad0e703703c064301
-      passing_source: null
+      passing_source: 1395294b4bb938f5c32158043b8340f872041faf
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source40-resumed-qualification.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source41-required-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -8105,7 +8106,18 @@ defects:
       result: SUPPORTED
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source40-resumed-qualification.json
-    repairs: []
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0533
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
     issue: null
     regression_test: Both exact current-source required Folder runs finish all six
       unchanged groups with no failure or skip; final327 selection remains explicit
@@ -8113,5 +8125,7 @@ defects:
     resolution_evidence: []
     notes: Preserve cancelled jobs as PARTIAL. Provider annotation unavailable; timing/configuration
       support budget cause but are not a fabricated scheduler annotation. This is
-      ordinary test infrastructure repair, not an external blocker.
+      ordinary test infrastructure repair, not an external blocker. Finite60-minute
+      allowance qualified by both unchanged1176 groups on source1395294; whole-platform/common
+      scope still pending.
     legacy_record: null
