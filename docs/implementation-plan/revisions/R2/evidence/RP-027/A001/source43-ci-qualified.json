@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0558",
+  "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "trigger": "3ddb43327697f823a51967b33f71863c573da636",
+  "result": "PASS",
+  "acceptance": false,
+  "run": 38078398146,
+  "job": 114290072986,
+  "checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+  "summaries": [
+    "43 passed in 0.19s",
+    "34 passed in 0.56s",
+    "2 passed in 0.04s",
+    "3669 passed, 27 skipped, 4 xfailed in 3231.12s (0:53:51)"
+  ],
+  "failed": [],
+  "codes": [],
+  "packages": [],
+  "scope": "Original current-source CI completed the default full pytest selection, including the maximum129-object case excluded only from the required native last group. There was no -k exclusion in this full workflow; source-linked current collection and existing test predicates are retained.",
+  "collection_inventory": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-collected-functions.json",
+  "collection_scope": {
+    "desktop_default": 3717,
+    "ci_result_cases": 3700,
+    "optional_qt_cases": 21,
+    "absent_qt_module_skips": 4,
+    "explanation": "CI installs dev without the desktop extra. The four optional Qt modules contribute21 collected cases with Qt available, versus4 import-skip records without it, explaining the17-case total difference. The required native job selections match721/51/6/22/107/327 exactly in the existing collection; no new collection/test was executed to prepare the public function inventory."
+  },
+  "known_limits": "The27 skipped cases and four strict expected failures are not passing evidence. Real GUI/platform package checks are separate; four existing cancellation/runtime xfails remain RP-044/045/046. Current source43 Linux Desktop/full/package job is still pending. Full Qt reconfiguration exposure remains RP-053.C2 as clarified by A040.",
+  "next": "Inspect the same Desktop38078398151/Linux114290072918 to terminal; fetch actual checkout/full results, both role package flags and artifact metadata. Reconcile the last recorded redundant Linux job without replay, then complete actual current-source/common review and acceptance receipts."
+}
