@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0558",
+  "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "trigger": "3ddb43327697f823a51967b33f71863c573da636",
+  "result": "PASS",
+  "acceptance": false,
+  "platform": "GitHub Actions isolated windows-latest, Python3.11, actual native protected stores and offscreen Qt",
+  "run": 38078398151,
+  "job": 114290073008,
+  "checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+  "summaries": [
+    "74 passed, 20 skipped in 3.07s",
+    "15 passed in 0.15s",
+    "30 passed, 4 skipped in 1.66s",
+    "2 passed in 8.94s",
+    "75 passed in 10.55s",
+    "79 passed in 19.24s",
+    "3365 passed, 348 skipped, 4 xfailed in 2547.42s (0:42:27)"
+  ],
+  "failed": [],
+  "codes": [],
+  "packages": [
+    {
+      "role": "watchdog",
+      "bundle_self_test": "PASS",
+      "gui_smoke": "PASS",
+      "setup_gui_smoke": "PASS",
+      "install_uninstall_profile_isolation": "PASS"
+    },
+    {
+      "role": "fetcher",
+      "bundle_self_test": "PASS",
+      "gui_smoke": "PASS",
+      "setup_gui_smoke": "PASS",
+      "install_uninstall_profile_isolation": "PASS"
+    }
+  ],
+  "artifacts_metadata_only": [
+    {
+      "id": 11680712155,
+      "name": "tb4-desktop-Windows-0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+      "size": 121982145,
+      "digest": "sha256:e7d4f31b96345eb14f0f8fd99fdf62dac2e3f09fd18121a77b5e584edb656e40"
+    }
+  ],
+  "source_proof": "Actual0c332 log checkout matches the captured PR merge/non-documentation equality proof for e9d3af33. Entire source40 test set remains unchanged and the source43-only late-child test change is Linux-specific.",
+  "scope": "Complete Windows3365 passed,348 skipped,4 strict xfailed; native key15, protected first-run30 with4 Linux skips, actual discovery2, BALLPARK75 and FETCHER enrollment79 all passed. Both WATCHDOG and FETCHER have four PASS package acceptance flags. Skipped Linux-specific predicates are not Windows passes; both required Linux1234 runs separately passed with zero skip. Existing four cancellation/runtime strict xfails remain assigned to RP-044/045/046 and are not fixed by RP-027.",
+  "limitations": "Package smoke validates the existing packaged entrypoints and profile isolation, not the later RP-053 complete Qt reconfiguration feature. Historical hosted discovery failures remain unexplained. Current CI/Linux full/package gates still pending; no check or defect closure from Windows alone.",
+  "next": "Finish inspecting the existing source43 CI and Linux Desktop jobs; verify final source-linked/common evidence and resolve only justified defect scopes before per-check acceptance."
+}
