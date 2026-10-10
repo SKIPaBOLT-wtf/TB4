@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0550",
+  "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "result": "RECORDED",
+  "acceptance": false,
+  "method": "Read canonical requirements, RP-027 and its amendments, RP-030/RP-053 boundaries, current mechanisms and representative positive/fault assertions. Read-only inventory parsed exact source564bc157 from Git:171 changed non-documentation paths,58 directly relevant test modules. The 41 named representative assertions below were checked against actual source; this is a coverage map, not a replacement for complete execution.",
+  "dependencies": {
+    "RP-011": "VERIFIED",
+    "RP-017": "VERIFIED",
+    "RP-022": "VERIFIED",
+    "RP-024": "VERIFIED",
+    "RP-025": "VERIFIED",
+    "RP-026": "VERIFIED"
+  },
+  "checks": [
+    {
+      "check": "RP-027.C1",
+      "requirements": [
+        "R09",
+        "R16"
+      ],
+      "invariant": "Current-role maintenance preserves BUSY, UNREAD, UNKNOWN and local pending/effect evidence. Explicit fresh zero-blocker resolution is needed for routing changes. Role takeover remains first successful CAS without former-host or sink ACK.",
+      "mechanisms": [
+        "src/tb4/reconfiguration_inspection.py",
+        "src/tb4/reconfiguration_evidence.py",
+        "src/tb4/reconfiguration_maintenance.py",
+        "src/tb4/reconfiguration_effects.py",
+        "src/tb4/watchdog/leadership_runtime.py"
+      ],
+      "tests": {
+        "tests/drive/test_reconfiguration_maintenance.py": [
+          "test_enter_is_one_settings_cas_after_native_wal_and_preserves_every_other_record",
+          "test_explicit_checkbox_cannot_resolve_retained_work_or_erase_its_evidence",
+          "test_unknown_local_effect_blocks_resolution_without_blocking_role_takeover",
+          "test_resolution_is_explicit_fresh_and_invalidated_by_new_work_not_heartbeat",
+          "test_lost_shared_reply_restarts_in_inspect_only_and_confirms_after_takeover",
+          "test_unknown_before_apply_is_not_replayed_by_inspection"
+        ],
+        "tests/test_reconfiguration_foundation.py": [
+          "test_inspection_preserves_unread_unknown_and_local_effects_without_leaking_identities",
+          "test_stable_unknown_facts_and_retained_metadata_are_not_work_blockers",
+          "test_shared_plan_prepared_before_maintenance_cannot_cross_cas_race"
+        ]
+      }
+    },
+    {
+      "check": "RP-027.C2",
+      "requirements": [
+        "R13",
+        "R15",
+        "R16"
+      ],
+      "invariant": "Separate native stage and immutable full archive retain the old Main until fresh actual first-run/source/credential/storage checks succeed. Persisted READY and arbitrary checker callbacks grant neither readiness nor activation.",
+      "mechanisms": [
+        "src/tb4/reconfiguration_candidate.py",
+        "src/tb4/drive/folder_prerequisites.py",
+        "src/tb4/reconfiguration_folder_endpoint.py",
+        "src/tb4/desktop/reconfiguration.py"
+      ],
+      "tests": {
+        "tests/drive/test_reconfiguration_candidate.py": [
+          "test_original_complete_payload_and_history_retained_with_one_authority",
+          "test_actual_first_run_choice_review_restart_and_descriptor_timing_change",
+          "test_arbitrary_ready_checker_and_saved_ready_flag_do_not_qualify_access",
+          "test_exact_candidate_credentials_rechecked_after_ready_without_execution",
+          "test_new_access_readback_and_pin_failure_never_promotes_original",
+          "test_default_desktop_activation_remains_denied_and_old_profile_unchanged"
+        ],
+        "tests/security/test_reconfiguration_candidate_native.py": [
+          "test_actual_native_candidate_retains_original_frames_and_requires_restart_review",
+          "test_actual_native_cut_recovery_preserves_exact_candidate_and_never_sends",
+          "test_copied_native_staged_profile_cannot_replace_original_or_qualify",
+          "test_broad_native_candidate_protection_refuses_review_without_provider_write"
+        ]
+      }
+    },
+    {
+      "check": "RP-027.C3",
+      "requirements": [
+        "R09",
+        "R13",
+        "R16"
+      ],
+      "invariant": "Same-object Docs relocation and same-inode Folder relocation retain the sole authority and work. Lost replies, cut writes and fallback inspect original operations; only proved non-dispatch permits a separately armed operation. Topology/launcher and selected endpoint changes pass actual first-run.",
+      "mechanisms": [
+        "src/tb4/reconfiguration_roots.py",
+        "src/tb4/reconfiguration_root_resume.py",
+        "src/tb4/reconfiguration_root_settlement.py",
+        "src/tb4/drive/folder_relocation.py",
+        "src/tb4/drive/folder_mapping.py",
+        "src/tb4/reconfiguration_promotion.py"
+      ],
+      "tests": {
+        "tests/drive/test_reconfiguration_roots.py": [
+          "test_existing_objects_move_once_and_original_profile_work_and_media_are_preserved",
+          "test_response_loss_inspects_same_item_and_never_reissues_move",
+          "test_first_cas_stale_fallback_needs_no_ack_and_old_root_sender_stops"
+        ],
+        "tests/drive/test_folder_relocation.py": [
+          "test_actual_first_run_current_role_one_syscall_same_inodes_used_bytes_and_persistent_authority",
+          "test_kernel_no_replace_rejects_destination_created_at_the_actual_syscall",
+          "test_actual_native_pending_cut_recovery_inspects_exact_frame_and_never_repeats",
+          "test_actual_stale_first_cas_takeover_needs_no_old_host_and_settles_only_exact_after",
+          "test_force_arriving_after_preflight_is_refused_inside_the_actual_database_lock"
+        ],
+        "tests/drive/test_reconfiguration_promotion.py": [
+          "test_actual_topology_launcher_candidate_is_promoted_from_its_qualified_first_run"
+        ]
+      }
+    },
+    {
+      "check": "RP-027.C4",
+      "requirements": [
+        "R09",
+        "R15",
+        "R16"
+      ],
+      "invariant": "Coherent monotonic descriptor/ACTIVE publication, exact conditional Main promotion and fresh per-use current admission preserve identities/history and work generations. Obsolete timing/source/profile/role denies, inherited UNKNOWN never grants replay. Restart uses current Main, not obsolete private staging files.",
+      "mechanisms": [
+        "src/tb4/reconfiguration_commit.py",
+        "src/tb4/reconfiguration_retained.py",
+        "src/tb4/reconfiguration_admission.py",
+        "src/tb4/reconfiguration_native_folder_adoption.py",
+        "src/tb4/drive/folder_mapping_active_probe.py"
+      ],
+      "tests": {
+        "tests/drive/test_reconfiguration_commit.py": [
+          "test_actual_publication_advances_coherent_descriptor_configuration_and_preserves_work_profile_media",
+          "test_actual_lost_reply_restarts_inspect_only_without_same_operation_repeat",
+          "test_actual_compact64_slot_plan_preserves_all_command_generations_and_terminal_receipts"
+        ],
+        "tests/drive/test_reconfiguration_admission.py": [
+          "test_actual_release_changes_only_native_reservation_and_ordinary_runtime_uses_fresh_admission",
+          "test_actual_restarted_admission_allows_new_work_without_old_frozen_transaction_proof",
+          "test_stale_actual_runtime_timing_refuses_work_before_receipt_or_external_effect"
+        ],
+        "tests/drive/test_folder_mapped_c4_authenticated_ssh.py": [
+          "test_actual_mapped_c4_staged_endpoint_main_promotion_and_restart_preserve_work",
+          "test_actual_mapped_promotion_needs_fresh_physical_mapping_and_role_after_publication",
+          "test_actual_mapped_main_cut_recovers_exact_child_without_resave_or_shared_cas"
+        ],
+        "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py": [
+          "test_actual_cold_recovery_uses_frozen_own_stage_without_pending_main_connection_or_resave",
+          "test_actual_cold_recovery_keeps_pending_and_parent_when_current_facts_no_longer_qualify",
+          "test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof",
+          "test_native_adoption_cannot_silently_change_own_endpoint_in_stage"
+        ]
+      }
+    }
+  ],
+  "compatibility_review": [
+    "Configuration marker absence preserves legacy meaning; present markers gate ordinary work and preserve workload generations. Installation/domain/backend/layout/sole authority cannot be replaced by this transaction.",
+    "A038 introduces a distinct nine-field ACTIVE mapping mode. Existing VERIFY, AFTER, READ and CAS modes and default denial retain their contracts. The old stable-record fingerprint is not reused after control rows change; fresh physical/native mapping proof must match the exact frozen publication and current revision/body.",
+    "A039 reads the exact prepared own stage/archive/parent/child before constructing fresh native proof. Normal pending Main connection still refuses. Transaction-before-Main lock order and same-byte final comparison allow promotion without resaving, sending a CAS, acquiring a role or clearing the local reservation.",
+    "Current runtime uses protected Main with fresh source, native credential, physical storage, timing and role checks. Missing former staging/WAL files are not a role-availability dependency. UNKNOWN remains inspect-only."
+  ],
+  "rollback_review": "Before publication original Main and full immutable archive remain. Pending recovery promotes only exact already-written bytes with fresh predicates. After a possibly applied root or shared change, inspect the same operation and retain UNKNOWN; restoring an old path/profile is not safe rollback. A reverse change must be a new monotonic same-authority transaction, not an epoch/generation rewind. Destination collision, source/role/capability loss and native cuts have explicit negative assertions; no destructive cleanup or rollback performed.",
+  "privacy_review": "Only public source/test paths, synthetic declarations, closed outcomes, counts and public run/commit IDs are recorded. Private topology, credential material and raw provider/OS output are absent. Fixed helper envelopes contain no arbitrary command, private path or executable payload. Public scan remains required in current immutable jobs.",
+  "gui_scope": "CandidateController is a tested trusted API using actual Candidate/Prerequisites; it clears old readiness on factory failure and retains DenyActivation. It is not wired as a complete Qt reconfiguration screen. Canonical RP-053.C2 explicitly owns that GUI exposure and correlated feedback; RP-030 owns the later expanded interruption matrix. No completed GUI, deployed runtime or pilot is inferred from controller or package smoke checks.",
+  "platform_scope": "Native protected state is exercised on Windows and Linux. The physical same-filesystem no-replace move and actual fixed-helper loopback SSH scenarios are Linux fixtures; Windows checks native profiles/credentials and portable logic. Docs SDK behavior uses commissioned synthetic provider adapters. Real Google deployment, remote production Windows SSH, ARM64 and filesystem families beyond declared fixtures, physical power loss and live migration remain unqualified. These are explicit later field/pilot limits, not fabricated passes.",
+  "defect_review": {
+    "open_count": 56,
+    "ids": [
+      "DEF-056",
+      "DEF-057",
+      "DEF-058",
+      "DEF-059",
+      "DEF-060",
+      "DEF-061",
+      "DEF-062",
+      "DEF-063",
+      "DEF-064",
+      "DEF-065",
+      "DEF-066",
+      "DEF-067",
+      "DEF-068",
+      "DEF-069",
+      "DEF-070",
+      "DEF-071",
+      "DEF-072",
+      "DEF-073",
+      "DEF-074",
+      "DEF-075",
+      "DEF-076",
+      "DEF-077",
+      "DEF-078",
+      "DEF-079",
+      "DEF-080",
+      "DEF-081",
+      "DEF-082",
+      "DEF-083",
+      "DEF-084",
+      "DEF-085",
+      "DEF-086",
+      "DEF-087",
+      "DEF-088",
+      "DEF-089",
+      "DEF-090",
+      "DEF-091",
+      "DEF-092",
+      "DEF-093",
+      "DEF-094",
+      "DEF-095",
+      "DEF-096",
+      "DEF-097",
+      "DEF-098",
+      "DEF-099",
+      "DEF-100",
+      "DEF-101",
+      "DEF-102",
+      "DEF-103",
+      "DEF-104",
+      "DEF-105",
+      "DEF-106",
+      "DEF-107",
+      "DEF-108",
+      "DEF-109",
+      "DEF-110",
+      "DEF-111"
+    ],
+    "finding": "54 records have a recorded passing source and original repair link; DEF-088/094 preserve intermittent hosted Windows identity-query failures with unproven underlying cause. Later unchanged-boundary runs passed. No production timeout/retry is changed and positive reruns do not prove the hidden cause. Current full native/platform and deterministic bounded-failure predicates must be reviewed before any scope resolution; all records remain OPEN now."
+  },
+  "source41_milestone": {
+    "source": "1395294b4bb938f5c32158043b8340f872041faf",
+    "actual_pr_merge": "eb713b33adb9010fbff208bcfa091425a0c1e099",
+    "linux": {
+      "job": 114274975548,
+      "checkout": "eb713b33adb9010fbff208bcfa091425a0c1e099",
+      "summaries": [
+        "90 passed, 4 skipped in 2.29s",
+        "43 passed in 0.20s",
+        "34 passed in 0.58s",
+        "2 passed in 0.03s",
+        "75 passed in 6.96s",
+        "79 passed in 13.20s",
+        "3634 passed, 21 skipped, 4 xfailed in 2577.87s (0:42:57)"
+      ],
+      "packages": [
+        [
+          {
+            "role": "watchdog",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          },
+          {
+            "role": "fetcher",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          }
+        ]
+      ]
+    },
+    "windows": {
+      "job": 114274975411,
+      "checkout": "eb713b33adb9010fbff208bcfa091425a0c1e099",
+      "summaries": [
+        "74 passed, 20 skipped in 3.15s\r",
+        "15 passed in 0.15s\r",
+        "30 passed, 4 skipped in 1.72s\r",
+        "2 passed in 8.60s\r",
+        "75 passed in 10.36s\r",
+        "79 passed in 19.32s\r",
+        "3328 passed, 327 skipped, 4 xfailed in 2507.55s (0:41:47)\r"
+      ],
+      "packages": [
+        [
+          {
+            "role": "watchdog",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          },
+          {
+            "role": "fetcher",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          }
+        ]
+      ]
+    },
+    "artifacts_metadata_only": [
+      {
+        "id": 11679291003,
+        "name": "tb4-desktop-Windows-eb713b33adb9010fbff208bcfa091425a0c1e099",
+        "size": 121997677,
+        "digest": "sha256:f39d1e43b18341b90ad32b7d8a1c691e8962b5c61eccddbaf404040f8467e202"
+      },
+      {
+        "id": 11679030521,
+        "name": "tb4-desktop-Linux-eb713b33adb9010fbff208bcfa091425a0c1e099",
+        "size": 316788187,
+        "digest": "sha256:da79ee383d161badce1bd7c37431c9feea76614f8ae60cd5bc21394284e2fc49"
+      }
+    ],
+    "ci": "Same run38073297406/job114274975969 still pending; original535 run not repeated."
+  },
+  "remaining": [
+    "Source42 actual required1234 twice including all21 new SSH cases and37 new portable cases.",
+    "Source42 terminal CI and complete Windows/Linux suites, skipped/xfail reasons, both-role packages and actual checkout equivalence.",
+    "Source41 same unfinished CI terminal record.",
+    "Final current-source per-check acceptance receipts, defect scope decisions, coherent manifest/projections/RESUME and required PR checks. No merge or next dependent step before these gates."
+  ],
+  "next": "Continue the same immutable jobs. Preserve any new failure in a defect and scoped repair cycle. When terminal current evidence exists, review the matrix against observed predicates before accepting any check."
+}
