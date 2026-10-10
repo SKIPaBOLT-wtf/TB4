@@ -2,6 +2,8 @@
 
 ## RP-027 fresh native first-run
 
+[A-038](implementation-plan/revisions/R2/amendments/RP-027/A-038-native-mapped-retained-publication.md) adds explicit trusted native mapped C4 composition. Fresh A036 MAINTENANCE proof precedes publication; a separate nine-field ACTIVE mapping mode proves current physical facts against the exact frozen publication afterward. Default server-local guard and old modes remain. Full archive/Main history, current restart and UNKNOWN/no-replay remain; native adoption Main pending recovery and current platform/common acceptance are separate gates.
+
 [A-037](implementation-plan/revisions/R2/amendments/RP-027/A-037-native-current-role-active-adoption.md) adds an exact opt-in native current-role ACTIVE adoption using this installation's Main/stage/endpoint/image. Fresh physical proof and stage/current Main factories preserve full history/private configuration/current timing without former client files or ACK. Existing local adoption/schema/election and default denial remain; construction grants no role/replay. Native original-Main pending recovery, remote mapped C4, full staged/runtime/current platform/common gates remain required.
 
 [A-036](implementation-plan/revisions/R2/amendments/RP-027/A-036-readonly-remote-mapping-after-proof.md) adds an opt-in read-only mapping AFTER witness over the same fixed probe command. The exact native mapping digest/target, terminal shared plan, physical seals and coherent current readback must agree. Nine-field envelopes contain no path/key/code; old VERIFY/READ/CAS and the strict server-local RetainedC4 guard remain. The witness grants no role or replay and needs no former-host ACK. Remote consumers/native ACTIVE adoption/staged runtime/current platforms/common acceptance remain held.

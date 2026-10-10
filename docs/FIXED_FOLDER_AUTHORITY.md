@@ -39,6 +39,14 @@ new root or replacement journal is created by normal operations.
 
 ## Publication and ownership
 
+Unreleased RP-027 A-038 adds a separate FOLDER_MAPPING_ACTIVE_PROBE_V1 observation
+on that same fixed command, with nine closed fields and no private client path.
+The server's exact protected target, seals and coherent ACTIVE transition/revision
+must match the completed mapping operation. An explicitly opted-in retained C4
+consumer also verifies its frozen publication and protected work. This does not
+reuse the prepublication stable-record digest after control rows change. Old
+modes/default refusal remain; no grant, replay, automatic fallback or live upgrade.
+
 Unreleased RP-027 A-036 adds an opt-in FOLDER_MAPPING_AFTER_PROBE_V1 observation
 on the existing fixed probe command. Nine closed flat request/reply fields bind
 a current protected mapping digest, terminal shared plan and physical proof.

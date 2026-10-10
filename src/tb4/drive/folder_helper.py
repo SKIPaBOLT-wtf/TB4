@@ -62,11 +62,14 @@ def main():
         raw = sys.stdin.buffer.read(MAX_WIRE + 1)
         if probe:
             from .folder_mapping_after_probe import MODE as AFTER_MODE, handle_after_probe
+            from .folder_mapping_active_probe import MODE as ACTIVE_MODE, handle_active_probe
             try:
-                after = flat_json(raw).get("mode") == AFTER_MODE
+                mode = flat_json(raw).get("mode")
             except Exception:
-                after = False
-            if after:
+                mode = None
+            if mode == ACTIVE_MODE:
+                reply = handle_active_probe(config, raw, mapping_store=args.mapping_store)
+            elif mode == AFTER_MODE:
                 reply = handle_after_probe(config, raw, mapping_store=args.mapping_store)
             else:
                 from .folder_probe import handle_probe

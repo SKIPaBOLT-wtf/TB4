@@ -158,6 +158,7 @@ class RetainedConfigurationMutation(ConfigurationMutation):
 class RetainedCommitContext:
     candidate: Candidate
     store: PrivateSettings
+    native_mapping_after: bool = False
 
 
 class RetainedConfigurationCommit(ConfigurationCommit):
@@ -167,6 +168,8 @@ class RetainedConfigurationCommit(ConfigurationCommit):
             and type(context.store) is PrivateSettings,"RETAINED_CONTEXT")
         self.context,self.candidate=context,context.candidate
         self.ctx=self.candidate.context.maintenance.context
+        require(type(context.native_mapping_after) is bool and (not context.native_mapping_after
+            or type(self.ctx.storage_port) is NativeFolderCommissioning),"RETAINED_CONTEXT")
         require(type(self.ctx.storage_port) in {
             NativeCommissioning,FolderCommissioning,FolderMappedCommissioning,NativeFolderCommissioning}
             and type(self.ctx.checkpoint) is NativeCheckpoint and self.ctx.effects is not None,"RETAINED_CONTEXT")
@@ -246,12 +249,37 @@ class RetainedConfigurationCommit(ConfigurationCommit):
             folder=summary.get("folder_plan")
             if folder is not None:
                 port=checked.storage.port
+                if self.context.native_mapping_after:
+                    self._native_after(port,folder,plan)
+                    return checked
                 require(type(port) is FolderMappedCommissioning,"RETAINED_FOLDER_AFTER_REQUIRED")
                 mapping=port.mapping.read()
                 require(mapping is not None and digest(mapping)==folder["mapping_sha256"]
                     and mapping["transition_id"]==state["transition_id"]
                     and str(port._config().root)==mapping["target_path"],"RETAINED_FOLDER_AFTER_REQUIRED")
         return checked
+
+    def _native_after(self,port,folder,plan):
+        # A fresh physical observation and the frozen mutation agree at the same
+        # revision. ACTIVE control rows cannot reuse the old stable-record hash.
+        from .drive.folder_mapping_after_probe import FolderMappingAfterProbe
+        from .drive.folder_mapping_active_probe import FolderMappingActiveProbe
+        from .drive.folder_protocol import FolderSnapshot
+        require(type(port) is NativeFolderCommissioning,"RETAINED_FOLDER_AFTER_REQUIRED")
+        port._current()
+        _,before,_,_=plan._validate()
+        _,handle=storage_spec(before["storage"])
+        backend=port.authority(handle)
+        status=plan.evaluate(backend.read())[0]
+        require(status in {"READY","CONFIRMED"},"RETAINED_FOLDER_AFTER_REQUIRED")
+        probe=port._connection.probe(port._access)
+        observer=(FolderMappingAfterProbe if status=="READY" else FolderMappingActiveProbe)(probe)
+        proof=observer.verify(folder)
+        observed=FolderSnapshot(proof.binding,proof.revision,proof.raw,proof._origin)
+        fresh=backend.read()
+        require(plan.evaluate(observed)[0]==status and fresh.revision==observed.revision
+            and fresh.raw==observed.raw,"RETAINED_FOLDER_AFTER_REQUIRED")
+        port._current()
 
     def _before(self,state,checker,*,commit_binding=None):
         self._schema(state,commit_binding=commit_binding);self._source(state)

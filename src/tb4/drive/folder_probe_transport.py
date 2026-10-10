@@ -107,6 +107,9 @@ class _Pending:
 def probe_request(binding, spec, authority, raw):
     """Pure closed VERIFY validation, before any native or credential IO."""
     value = flat_json(raw)
+    from .folder_mapping_active_probe import MODE as ACTIVE_MODE, active_request
+    if value.get("mode") == ACTIVE_MODE:
+        return active_request(binding, spec, authority, raw)
     from .folder_mapping_after_probe import MODE as AFTER_MODE, after_request
     if value.get("mode") == AFTER_MODE:
         return after_request(binding, spec, authority, raw)
@@ -151,6 +154,10 @@ class FolderProbeRunner:
         return probe_request(self.binding, self.spec, self.authority, raw)
 
     def _response(self, raw, request):
+        from .folder_mapping_active_probe import MODE as ACTIVE_MODE, active_response
+        if request.get("mode") == ACTIVE_MODE:
+            active_response(self.binding, self.spec, self.authority, raw, request)
+            return
         from .folder_mapping_after_probe import MODE as AFTER_MODE, after_response
         if request.get("mode") == AFTER_MODE:
             after_response(self.binding, self.spec, self.authority, raw, request)
