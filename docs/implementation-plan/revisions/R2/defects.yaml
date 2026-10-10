@@ -8191,3 +8191,53 @@ defects:
       cancellation capability absent; no cancellations attempted and duplicates preserved.
       Common C1-C4 remains held.
     legacy_record: null
+  DEF-113:
+    title: Cold Main late-child test expects an internal exception across the native
+      sanitizer
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 564bc157d2f7d9bd41fa946add887daf81faeea5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source42-native-late-child-failure.json
+    proven_origin: null
+    reproduction:
+      procedure: 'Both original immutable first groups executed721 cases:720 passed
+        and the same single case failed, no skip. Later required groups were not executed.
+        A038 portable37/mappedSSH9 and eleven of twelve A039 coldMain cases passed
+        within this group; the late-child negative assertion did not finish. tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof
+        expects ConfigurationError: ACTIVE_ADOPTION_RECOVERY but receives SettingsError:
+        SETTINGS_STORE_UNAVAILABLE.'
+      failing_source: 564bc157d2f7d9bd41fa946add887daf81faeea5
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source42-native-late-child-failure.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R09
+    - R13
+    - R16
+    hypotheses:
+    - id: H1
+      claim: Test expectation crosses the native sanitizer incorrectly. No product
+        guard repair is justified by this evidence; retain sanitizer and actual recovery
+        implementation while strengthening the exact negative predicate.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source42-native-late-child-failure.json
+    repairs: []
+    issue: null
+    regression_test: Actual Linux late-child negative test witnesses successful fresh
+      proof, exactly one subsequent child mutation and internal ACTIVE_ADOPTION_RECOVERY,
+      then the established opaque native SettingsError; original Main, altered pending
+      evidence and shared authority remain byte-identical. All1234 required and full
+      platform/common gates remain.
+    resolution_evidence: []
+    notes: Both original42 first groups720PASS/1FAIL, later required groups not run.
+      FullCI/Desktop pending. No source assertion or native sanitizer weakened; suspected
+      test boundary not yet proved by internal guard witness.
+    legacy_record: null

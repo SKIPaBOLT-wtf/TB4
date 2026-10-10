@@ -3,23 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: DOCS_PUBLICATION_GUARD_VERIFIED_CLEANUP_UNAVAILABLE
+phase: SOURCE42_NATIVE_LATE_CHILD_NEGATIVE_FAILED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 440dadf3770680a9914e2217fbc82ffda9c4fa0e
+source_commit: 564bc157d2f7d9bd41fa946add887daf81faeea5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0554
+last_verified_event: RP-027-A001-0555
 last_completed: RP-026
-next_action: Register source42 failure with exact guarded native exception evidence
-  and a separate repair intent. Inspect existing source42 full jobs and accidental
-  run terminal status as available.
-verification: Docs-only publication guard verified;15 duplicatefull jobs remain because
-  no existing cancellation capability. Original42 push/PR720PASS/1FAIL same pending-child
-  exception test; full source42 running; C1-C4 held.
+next_action: Publish a bounded test-only repair INTENT. Observe exact internal ACTIVE_ADOPTION_RECOVERY
+  after successful fresh proof and deliberate pending mutation; expect the closed
+  native SettingsError and require unchanged Main/altered-pending/shared bytes. Preserve
+  every other case, then qualify fresh source.
+verification: Source42 both original Linux groups720PASS/1FAIL at late-child test
+  native exception boundary. Remaining groups not executed; fullCI/Desktop pending.
+  DEF113 open; source41 full PASS and docsguard verified. C1-C4 held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0547
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
