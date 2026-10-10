@@ -1,0 +1,617 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "original_intent": "RP-027-A001-0553",
+  "result": "RECORDED",
+  "acceptance": false,
+  "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "scope": "Reconcile only the five accidental documentation-head full-PR workflow sets previously identified in553/554. No workflow was retried or canceled.",
+  "run_count": 20,
+  "job_count": 25,
+  "job_conclusions": {
+    "success": 10,
+    "failure": 15
+  },
+  "groups": [
+    {
+      "head": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+      "merge": "33c3085e92a8d54a875ddd4895bacf42bddfc09d",
+      "runs": [
+        {
+          "id": 38077203332,
+          "name": "Folder reconfiguration",
+          "event": "pull_request"
+        },
+        {
+          "id": 38077203354,
+          "name": "CI",
+          "event": "pull_request"
+        },
+        {
+          "id": 38077203362,
+          "name": "Desktop",
+          "event": "pull_request"
+        },
+        {
+          "id": 38077203307,
+          "name": "Progress",
+          "event": "pull_request"
+        }
+      ],
+      "jobs": [
+        {
+          "id": 114286560757,
+          "name": "native-folder",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114286560864,
+          "name": "test",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114286560850,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114286560993,
+          "name": "desktop (windows-latest)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 114286560684,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "failure_proofs": [
+        {
+          "job": 114286560757,
+          "checkout": "33c3085e92a8d54a875ddd4895bacf42bddfc09d",
+          "summaries": [
+            "1 failed, 720 passed in 1259.22s (0:20:59)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        },
+        {
+          "job": 114286560864,
+          "checkout": "33c3085e92a8d54a875ddd4895bacf42bddfc09d",
+          "summaries": [
+            "43 passed in 0.16s",
+            "34 passed in 0.42s",
+            "2 passed in 0.18s",
+            "1 failed, 3668 passed, 27 skipped, 4 xfailed in 2718.71s (0:45:18)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        },
+        {
+          "job": 114286560850,
+          "checkout": "33c3085e92a8d54a875ddd4895bacf42bddfc09d",
+          "summaries": [
+            "90 passed, 4 skipped in 3.01s",
+            "43 passed in 0.26s",
+            "34 passed in 0.64s",
+            "2 passed in 0.04s",
+            "75 passed in 9.53s",
+            "79 passed in 17.33s",
+            "1 failed, 3691 passed, 21 skipped, 4 xfailed in 4162.96s (1:09:22)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        }
+      ],
+      "parents": [
+        "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+        "9ec2b7db576d6d622d7e8aa10ddd607b375f5142"
+      ],
+      "head_tree": "d3367df0bfebb6ab7c814113b02c7fa4ca7e0567",
+      "merge_tree": "d3367df0bfebb6ab7c814113b02c7fa4ca7e0567",
+      "whole_tree_matches": true
+    },
+    {
+      "head": "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "merge": "fa980d2a870ba4b64b739e39cc3ab1955a76d55d",
+      "runs": [
+        {
+          "id": 38076771951,
+          "name": "Folder reconfiguration",
+          "event": "pull_request"
+        },
+        {
+          "id": 38076771920,
+          "name": "Progress",
+          "event": "pull_request"
+        },
+        {
+          "id": 38076771871,
+          "name": "CI",
+          "event": "pull_request"
+        },
+        {
+          "id": 38076771893,
+          "name": "Desktop",
+          "event": "pull_request"
+        }
+      ],
+      "jobs": [
+        {
+          "id": 114285282826,
+          "name": "native-folder",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114285282761,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 114285282909,
+          "name": "test",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114285282851,
+          "name": "desktop (windows-latest)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 114285283003,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "failure_proofs": [
+        {
+          "job": 114285282826,
+          "checkout": "fa980d2a870ba4b64b739e39cc3ab1955a76d55d",
+          "summaries": [
+            "1 failed, 720 passed in 1623.27s (0:27:03)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        },
+        {
+          "job": 114285282909,
+          "checkout": "fa980d2a870ba4b64b739e39cc3ab1955a76d55d",
+          "summaries": [
+            "43 passed in 0.27s",
+            "34 passed in 0.67s",
+            "2 passed in 0.06s",
+            "1 failed, 3668 passed, 27 skipped, 4 xfailed in 4249.81s (1:10:49)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        },
+        {
+          "job": 114285283003,
+          "checkout": "fa980d2a870ba4b64b739e39cc3ab1955a76d55d",
+          "summaries": [
+            "90 passed, 4 skipped in 2.29s",
+            "43 passed in 0.27s",
+            "34 passed in 0.63s",
+            "2 passed in 0.03s",
+            "75 passed in 9.72s",
+            "79 passed in 17.34s",
+            "1 failed, 3691 passed, 21 skipped, 4 xfailed in 4206.62s (1:10:06)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        }
+      ],
+      "parents": [
+        "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+        "146991bb8a04a20d2df488e85553862d05f12e4c"
+      ],
+      "head_tree": "27200067280e9c2d012af8158ae470a39e9ff7f1",
+      "merge_tree": "27200067280e9c2d012af8158ae470a39e9ff7f1",
+      "whole_tree_matches": true
+    },
+    {
+      "head": "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "merge": "91e9acc57fc860753a9de65b646e6bd386ab5154",
+      "runs": [
+        {
+          "id": 38076432708,
+          "name": "CI",
+          "event": "pull_request"
+        },
+        {
+          "id": 38076432723,
+          "name": "Folder reconfiguration",
+          "event": "pull_request"
+        },
+        {
+          "id": 38076432734,
+          "name": "Progress",
+          "event": "pull_request"
+        },
+        {
+          "id": 38076432805,
+          "name": "Desktop",
+          "event": "pull_request"
+        }
+      ],
+      "jobs": [
+        {
+          "id": 114284255339,
+          "name": "test",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114284255571,
+          "name": "native-folder",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114284255569,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 114284255735,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114284256050,
+          "name": "desktop (windows-latest)",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "failure_proofs": [
+        {
+          "job": 114284255571,
+          "checkout": "91e9acc57fc860753a9de65b646e6bd386ab5154",
+          "summaries": [
+            "1 failed, 720 passed in 1632.42s (0:27:12)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        },
+        {
+          "job": 114284255339,
+          "checkout": "91e9acc57fc860753a9de65b646e6bd386ab5154",
+          "summaries": [
+            "43 passed in 0.28s",
+            "34 passed in 0.67s",
+            "2 passed in 0.05s",
+            "1 failed, 3668 passed, 27 skipped, 4 xfailed in 4250.60s (1:10:50)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        },
+        {
+          "job": 114284255735,
+          "checkout": "91e9acc57fc860753a9de65b646e6bd386ab5154",
+          "summaries": [
+            "90 passed, 4 skipped in 2.75s",
+            "43 passed in 0.26s",
+            "34 passed in 0.61s",
+            "2 passed in 0.04s",
+            "75 passed in 9.99s",
+            "79 passed in 17.13s",
+            "1 failed, 3691 passed, 21 skipped, 4 xfailed in 4130.79s (1:08:50)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        }
+      ],
+      "parents": [
+        "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+        "33c2407e2f5cb1a580739f75ca0c63dfabac3d64"
+      ],
+      "head_tree": "b12f6a3781c4d3cfc9ef8e9af05da2602a570a4f",
+      "merge_tree": "b12f6a3781c4d3cfc9ef8e9af05da2602a570a4f",
+      "whole_tree_matches": true
+    },
+    {
+      "head": "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "merge": "f8a9574d8ead0449eb6071217b92bb5491e618c5",
+      "runs": [
+        {
+          "id": 38076335137,
+          "name": "Folder reconfiguration",
+          "event": "pull_request"
+        },
+        {
+          "id": 38076335146,
+          "name": "Desktop",
+          "event": "pull_request"
+        },
+        {
+          "id": 38076335152,
+          "name": "CI",
+          "event": "pull_request"
+        },
+        {
+          "id": 38076335119,
+          "name": "Progress",
+          "event": "pull_request"
+        }
+      ],
+      "jobs": [
+        {
+          "id": 114283943637,
+          "name": "native-folder",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114283943024,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114283943208,
+          "name": "desktop (windows-latest)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 114283943188,
+          "name": "test",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114283943037,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "failure_proofs": [
+        {
+          "job": 114283943637,
+          "checkout": "f8a9574d8ead0449eb6071217b92bb5491e618c5",
+          "summaries": [
+            "1 failed, 720 passed in 1622.64s (0:27:02)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        },
+        {
+          "job": 114283943024,
+          "checkout": "f8a9574d8ead0449eb6071217b92bb5491e618c5",
+          "summaries": [
+            "90 passed, 4 skipped in 3.60s",
+            "43 passed in 0.19s",
+            "34 passed in 1.14s",
+            "2 passed in 0.05s",
+            "75 passed in 7.04s",
+            "79 passed in 12.77s",
+            "1 failed, 3691 passed, 21 skipped, 4 xfailed in 3184.67s (0:53:04)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        },
+        {
+          "job": 114283943188,
+          "checkout": "f8a9574d8ead0449eb6071217b92bb5491e618c5",
+          "summaries": [
+            "43 passed in 0.26s",
+            "34 passed in 0.63s",
+            "2 passed in 0.15s",
+            "1 failed, 3668 passed, 27 skipped, 4 xfailed in 3941.76s (1:05:41)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        }
+      ],
+      "parents": [
+        "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+        "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a"
+      ],
+      "head_tree": "4f4eb323ff04453a93407b64ff48644c9e1cc84b",
+      "merge_tree": "4f4eb323ff04453a93407b64ff48644c9e1cc84b",
+      "whole_tree_matches": true
+    },
+    {
+      "head": "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "merge": "db5b8639bdbee7f1d916166edfc4c4a5deca3ebf",
+      "runs": [
+        {
+          "id": 38076127533,
+          "name": "Desktop",
+          "event": "pull_request"
+        },
+        {
+          "id": 38076127591,
+          "name": "CI",
+          "event": "pull_request"
+        },
+        {
+          "id": 38076127549,
+          "name": "Folder reconfiguration",
+          "event": "pull_request"
+        },
+        {
+          "id": 38076127574,
+          "name": "Progress",
+          "event": "pull_request"
+        }
+      ],
+      "jobs": [
+        {
+          "id": 114283319962,
+          "name": "desktop (windows-latest)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 114283320236,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114283320255,
+          "name": "test",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114283320139,
+          "name": "native-folder",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 114283320307,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "failure_proofs": [
+        {
+          "job": 114283320236,
+          "checkout": "db5b8639bdbee7f1d916166edfc4c4a5deca3ebf",
+          "summaries": [
+            "90 passed, 4 skipped in 1.38s",
+            "43 passed in 0.13s",
+            "34 passed in 0.28s",
+            "2 passed in 0.02s",
+            "75 passed in 5.82s",
+            "79 passed in 9.19s",
+            "1 failed, 3691 passed, 21 skipped, 4 xfailed in 2246.11s (0:37:26)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        },
+        {
+          "job": 114283320139,
+          "checkout": "db5b8639bdbee7f1d916166edfc4c4a5deca3ebf",
+          "summaries": [
+            "1 failed, 720 passed in 1623.94s (0:27:03)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        },
+        {
+          "job": 114283320255,
+          "checkout": "db5b8639bdbee7f1d916166edfc4c4a5deca3ebf",
+          "summaries": [
+            "43 passed in 0.20s",
+            "34 passed in 0.65s",
+            "2 passed in 0.03s",
+            "1 failed, 3668 passed, 27 skipped, 4 xfailed in 3220.99s (0:53:40)"
+          ],
+          "failed": [
+            "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+          ],
+          "codes": [
+            "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+          ],
+          "packages": []
+        }
+      ],
+      "parents": [
+        "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+        "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d"
+      ],
+      "head_tree": "64176f84c9f081a6c9174434d994549850fee4e5",
+      "merge_tree": "64176f84c9f081a6c9174434d994549850fee4e5",
+      "whole_tree_matches": true
+    }
+  ],
+  "source_proof": "For each actual log checkout, GitHub Git commit metadata confirms parents ed974c57 plus that exact recorded documentation head and a whole tree identical to that head. The earlier reconciled receipt verified all five heads have no non-documentation difference from source564bc157. These are original pre-repair jobs, not source43 qualification.",
+  "failure_interpretation": "All15 failed jobs contain exactly the same late-child test failure with SETTINGS_STORE_UNAVAILABLE, already recorded as DEF-113 and now tested successfully on source43. The original failures remain FAIL. Each complete CI/Linux suite reports no other failed test; required native runs stopped after the first721 group and cannot imply later-group passes.",
+  "success_interpretation": "The five original Windows jobs and five Progress jobs are terminal SUCCESS by job metadata. They are retained as reconciliation facts, not reused as current-source acceptance or a replacement for source43 exact full/package evidence.",
+  "publication_guard": {
+    "head": "3c0c0aec61f0fbd31edfc25e18527c92956a21d8",
+    "workflow_count": 0
+  },
+  "cancellation": "No cancellation endpoint was available to this task; no cancellation was attempted or claimed. All25 jobs completed naturally. Existing publication guard uses skip-ci for routine documentation while explicit source43 qualification remains separate.",
+  "next": "Only original source43 Linux Desktop job114290072918 in run38078398151 still needs terminal full/platform/package evidence. Inspect it without retry, then finish source43 common C1-C4 acceptance review."
+}

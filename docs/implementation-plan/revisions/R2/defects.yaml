@@ -8153,6 +8153,7 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicate-intent.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicate-reconciled.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicates-all-terminal.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -8185,11 +8186,16 @@ defects:
       qualification remains available and unchanged.
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicate-reconciled.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicates-all-terminal.json
     notes: Task publication repair, not application change. Preserve all accidental
       run IDs and actual cleanup state; no false no-duplicate claim. Guarded checkpoint0fcd
       has zero workflow runs and WORK_INSTRUCTION440dad documents prevention. Existing
       cancellation capability absent; no cancellations attempted and duplicates preserved.
-      Common C1-C4 remains held.
+      Common C1-C4 remains held. All20 accidental runs/25jobs now terminal naturally:10SUCCESS
+      and15FAIL. Every failure names only the original pre-repair late-child test;
+      exact merge parents/whole-tree equality verify provenance. No run was canceled
+      or retried. Guarded documentation head3c0c0aec has zero workflow runs. Keep
+      OPEN until common acceptance.
     legacy_record: null
   DEF-113:
     title: Cold Main late-child test expects an internal exception across the native
