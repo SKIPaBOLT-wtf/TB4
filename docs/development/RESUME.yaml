@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: COLD_MAIN_NEGATIVE_TEST_REPAIR_AND_COLLECTION
+phase: COLD_MAIN_NATIVE_TEST_REPAIR_PRESERVED_COLLECTION_PASSED
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 564bc157d2f7d9bd41fa946add887daf81faeea5
+source_commit: e9d3af33a6a2d0325eedd3e83029b2df73a8320a
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0556
+last_verified_event: RP-027-A001-0557
 last_completed: RP-026
-next_action: Preserve/read back the exact one-file repaired source and default collection
-  result, then launch one new immutable qualification request43 under a separate intent.
-verification: Both42 native failures preserved; exact one-file test boundary repair/default
-  collection planned. No production change or native success inferred; same42 full
-  jobs remain pending and all checks held.
+next_action: Publish a fresh immutable request43 qualification intent for this repaired
+  test source. Require both1234 native groups and source-specific fullCI/Windows/Linux/Desktop/package
+  facts. Inspect original42 remaining jobs, do not replay.
+verification: Sourcee9d3af33 single-test repair exact/public preserved; default3717/noerrors,
+  no tests executed. Production/workflow/protocol unchanged. New required Linux/source
+  qualification needed; original42 full jobs pending; allchecks held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents:
-- RP-027-A001-0556
+unsettled_intents: []
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

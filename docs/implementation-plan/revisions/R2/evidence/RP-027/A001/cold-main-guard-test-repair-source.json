@@ -1,0 +1,39 @@
+{
+  "intent": "RP-027-A001-0556",
+  "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "previous_application_source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "local_preserved_commit": "cd7d20f892e26f9c0f13adc61c6ba44366d7ce63",
+  "files": [
+    "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py"
+  ],
+  "diff": {
+    "insertions": 12,
+    "deletions": 3,
+    "changed_test_functions": 1,
+    "unchanged_other_top_level_functions": 7,
+    "production_protocol_workflow_tool_diff": []
+  },
+  "change": "Only the existing late-child test now observes failed internal require codes while delegating unchanged, captures exactly one altered pending child after qualified proof, expects the actual native SettingsError, and requires exact original Main/altered-pending/shared state preservation. All other functions/parameterization are unchanged.",
+  "static": "Syntax, single-file/single-function AST, diff check and actual public scan passed. Source published with skip-ci and exact file readback. Original local source retained on local/rp027-cold-main-native-guard; fresh clean tracking source acquired without reset.",
+  "collection": {
+    "schema_version": 1,
+    "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+    "checkout": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.82,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3717,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "command": "python -X utf8 -m pytest --collect-only --basetemp=<fresh-owned-absent-fixture-directory> using default pytest configuration with no injected PYTHONPATH",
+  "actual_native_case": "NOT_EXECUTED_ON_REPAIRED_SOURCE",
+  "acceptance": false,
+  "next": "Publish a fresh immutable request43 qualification intent for this repaired test source. Require both1234 native groups and source-specific fullCI/Windows/Linux/Desktop/package facts. Inspect original42 remaining jobs, do not replay."
+}

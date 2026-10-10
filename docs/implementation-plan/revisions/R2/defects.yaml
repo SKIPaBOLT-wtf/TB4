@@ -8213,6 +8213,7 @@ defects:
       passing_source: null
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source42-native-late-child-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/cold-main-guard-test-repair-source.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -8250,5 +8251,9 @@ defects:
     resolution_evidence: []
     notes: Both original42 first groups720PASS/1FAIL, later required groups not run.
       FullCI/Desktop pending. No source assertion or native sanitizer weakened; suspected
-      test boundary not yet proved by internal guard witness.
+      test boundary not yet proved by internal guard witness. Exact one-file test
+      repair e9d3af33 now records internal guard and strengthens full pending-frame
+      preservation. Static/public scan and default3717 collection pass; zero test
+      cases executed and no passing_source assigned. Production/protocol/workflow
+      bytes are unchanged from564bc157.
     legacy_record: null
