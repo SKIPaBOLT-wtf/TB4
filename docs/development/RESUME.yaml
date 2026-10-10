@@ -3,18 +3,18 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: SOURCE43_IMMUTABLE_QUEUED_JOB_IDENTITIES_RECORDED
+phase: SOURCE43_CURRENT_COMMON_REVIEW_AND_LEDGER_PASS
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: e9d3af33a6a2d0325eedd3e83029b2df73a8320a
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0559
+last_verified_event: RP-027-A001-0560
 last_completed: RP-026
-next_action: Inspect these same source43 jobs to terminal and compare actual checkouts/code;
-  preserve zero-skip required1234 predicates, full platforms and package evidence.
-  Inspect remaining original42 and recorded redundant jobs without replay.
-verification: Request43e9d3af33/trigger3ddb/merge0c33 exact source proof and six queued
-  job IDs recorded; execution pending. Source42 native720/1 twice, full42 still pending;
-  allchecks held.
+next_action: Inspect the same original42 Linux and all source43 jobs to terminal.
+  Preserve current fail/pass summaries, actual checkout equivalence and package flags
+  before final receipts; no run is repeated.
+verification: Current43 ledger235PASS actual0c332; original42 CI same known single
+  failure, Windows42 complete PASS. Exact preservation and unchanged-test review recorded;
+  current native/full/platform/common acceptance remains held.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
@@ -81,6 +81,8 @@ known_open_defects:
 - DEF-109
 - DEF-110
 - DEF-111
+- DEF-112
+- DEF-113
 rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
   records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
   mutation. If any compatibility assumption fails, preserve its reproduction before
