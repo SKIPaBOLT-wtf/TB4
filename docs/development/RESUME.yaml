@@ -3,22 +3,22 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: REQUIRED_LINUX_BUDGET_SOURCE_SAVED
+phase: SOURCE41_REQUIRED_NATIVE_AND_PLATFORM_QUALIFICATION
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 1395294b4bb938f5c32158043b8340f872041faf
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0534
+last_verified_event: RP-027-A001-0535
 last_completed: RP-026
-next_action: Publish request41 qualification INTENT then new immutable request. Record
-  exact trigger/PR merge parents and run identities; inspect same jobs to terminal.
-  Independently integrate remote mapped C4 using source40 scoped passing foundations;
-  acceptance remains held.
+next_action: Publish request41, bind run IDs in STARTED, then independently implement
+  fresh remote mapped C4/promotion under a separate source INTENT while immutable
+  qualification runs.
 verification: Source40 scoped cases and packages qualified; workflow final327 held.
   Source-only finite budget repair now pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0535
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
