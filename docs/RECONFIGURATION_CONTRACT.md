@@ -2,6 +2,8 @@
 
 ## RP-027 fresh native first-run
 
+[A-039](implementation-plan/revisions/R2/amendments/RP-027/A-039-native-own-main-pending-recovery.md) adds narrow cold restart of an existing own native Main pending child. Exact PREPARED/stage/archive/parent hashes precede fresh proof from the frozen own stage; transaction-before-Main locks protect conditional promotion of the same bytes. Ordinary pending Main access still denies, full history and reservation remain, and no save/CAS/role/replay occurs. Other recovery paths and schemas remain; actual native/current platform/common acceptance is required.
+
 [A-038](implementation-plan/revisions/R2/amendments/RP-027/A-038-native-mapped-retained-publication.md) adds explicit trusted native mapped C4 composition. Fresh A036 MAINTENANCE proof precedes publication; a separate nine-field ACTIVE mapping mode proves current physical facts against the exact frozen publication afterward. Default server-local guard and old modes remain. Full archive/Main history, current restart and UNKNOWN/no-replay remain; native adoption Main pending recovery and current platform/common acceptance are separate gates.
 
 [A-037](implementation-plan/revisions/R2/amendments/RP-027/A-037-native-current-role-active-adoption.md) adds an exact opt-in native current-role ACTIVE adoption using this installation's Main/stage/endpoint/image. Fresh physical proof and stage/current Main factories preserve full history/private configuration/current timing without former client files or ACK. Existing local adoption/schema/election and default denial remain; construction grants no role/replay. Native original-Main pending recovery, remote mapped C4, full staged/runtime/current platform/common gates remain required.

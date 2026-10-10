@@ -55,6 +55,7 @@ jobs:
           tests/drive/test_folder_mapping_after_probe.py tests/drive/test_folder_mapping_after_probe_native.py
           tests/drive/test_folder_mapping_active_probe.py tests/drive/test_folder_mapped_c4_authenticated_ssh.py
           tests/drive/test_native_folder_active_adoption_authenticated_ssh.py
+          tests/drive/test_native_folder_main_recovery_authenticated_ssh.py
           tests/drive/test_folder_helper_dispatch.py tests/drive/test_folder_combined_authenticated_ssh.py
           tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py
           tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py
