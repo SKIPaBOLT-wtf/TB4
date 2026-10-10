@@ -3,23 +3,25 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: NATIVE_OWN_MAIN_WINDOWS_TESTS_STARTED
+phase: NATIVE_OWN_MAIN_WINDOWS_PASS_REQUIRED_NATIVE_PENDING
 source_branch: feat/rp027-staged-reconfiguration
 source_commit: 564bc157d2f7d9bd41fa946add887daf81faeea5
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0545
+last_verified_event: RP-027-A001-0546
 last_completed: RP-026
-next_action: Read the same wrapper/result to terminal, run already-intended full default
-  collection once, then publish actual outcome before combined request42 qualification.
-verification: A038 new37+old268 Windows PASS/default3705 imports; actual native9 and
-  full source platform gates held. Source41 same immutable jobs running. No C1-C4
-  acceptance.
+next_action: 'Publish request42 INTENT for exact combined564bc157 source: required1234twice
+  in groups721/51/6/22/107/327, including all58newdeclared cases, fullCI/Progress/Desktop/bothrole
+  flags. Bind exact trigger/PR source/parents and same run IDs, inspect to terminal.
+  Also finish same source41 qualification; no old job replay. Final C1-C4/common evidence
+  review remains.'
+verification: A039 affected62 Windows PASS/default3717 imports; A038305/new37 PASS.
+  All21newactual native and combined source platforms pending; source41 same jobs
+  remain recoverable; C1-C4 not accepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0535
-- RP-027-A001-0544
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
