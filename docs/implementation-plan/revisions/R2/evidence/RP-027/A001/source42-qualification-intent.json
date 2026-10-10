@@ -1,0 +1,28 @@
+{
+  "event": "RP-027-A001-0547",
+  "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "request_revision": 42,
+  "required_cases": 1234,
+  "groups": [
+    721,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "new_cases": {
+    "portable": 37,
+    "mapped_ssh": 9,
+    "cold_main_ssh": 12
+  },
+  "current_local": {
+    "mapped_windows": 305,
+    "adoption_windows": 62,
+    "default_collection": 3717
+  },
+  "required_native": true,
+  "budget_minutes": 60,
+  "prior_request41": "Same jobs recorded in source41-started.json; no replay/cancellation",
+  "acceptance": false
+}
