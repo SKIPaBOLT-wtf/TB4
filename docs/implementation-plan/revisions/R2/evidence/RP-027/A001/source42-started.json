@@ -1,0 +1,88 @@
+{
+  "event": "RP-027-A001-0548",
+  "intent": "RP-027-A001-0547",
+  "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "trigger": "12740484281b9f0b8e333eab0e462e653ed970da",
+  "git_merge": "ef020ad81ca8c7afefa59596baf86945ec72d9ec",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "12740484281b9f0b8e333eab0e462e653ed970da"
+  ],
+  "nondoc_source_diff": [],
+  "initial_api_merge_preview": "47cbd960e39f2c683674d8f17325c9b6b1203f38",
+  "actual_checkout_logs": "PENDING: preview not accepted",
+  "runs": [
+    {
+      "run": 38075692321,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 114282061540,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 114282061681,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 38075692376,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 114282061718,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 38075692326,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 114282061713,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 38075692331,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 114282061545,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "run": 38075689367,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 114282053261,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "acceptance": false
+}
