@@ -3,23 +3,24 @@ revision: R2
 work_item: RP-028
 check: RP-028.C1
 attempt: A001
-phase: ACCEPTED_RP027_REPAIR_RECORDS_CLOSED
+phase: DEPENDENCY_READY_PR36_MERGE
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 464a717e9bb91e8f708a595d19f3dd75d333e80a
+source_commit: fc4ca02786c025fb9487726a5fdc06c663412543
 journal: docs/development/journal/RP-028/A001/events.jsonl
-last_verified_event: RP-028-A001-0002
+last_verified_event: RP-028-A001-0003
 last_completed: RP-027
-next_action: Publish/read back separate RP028 PR36 merge-handoff INTENT. Reverify
-  fresh exact refs/reviews/rules/qualified non-doc equality and current history/privacy
-  gates; update PR metadata/readiness, merge once at exact expected head, and record
-  verified main outcome before RP028 reset architecture/source work.
-verification: RP027 accepted at464a717;56 original repair records now resolved from
-  unchanged reviewed evidence; DEF001/002/088/094 retainedOPEN. RP028 administrative
-  handoff only; next separate PR36 merge INTENT.
+next_action: Verify the exact current source/progress/rules/PR evidence, finalize
+  PR36 metadata/readiness and perform the one expected-head merge if all current gates
+  hold; inspect/read back the same operation and publish exact main OUTCOME before
+  RP028 implementation inspection.
+verification: RP027 accepted;56 repairs closed atfc4ca027 with exact readback; four
+  defects retainedOPEN. Separate PR36 merge operation now pending; recover it by PR/head/main/parents/tree,
+  never blind repeat.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-028-A001-0003
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
