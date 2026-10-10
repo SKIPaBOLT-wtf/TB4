@@ -8129,3 +8129,60 @@ defects:
       allowance qualified by both unchanged1176 groups on source1395294; whole-platform/common
       scope still pending.
     legacy_record: null
+  DEF-112:
+    title: Documentation-only checkpoint messages enqueue redundant full PR workflows
+    status: OPEN
+    detected_in: RP-027.C4
+    suspected_origin:
+      work_item: RP-027
+      source_ref: 9ec2b7db576d6d622d7e8aa10ddd607b375f5142
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicate-intent.json
+    proven_origin:
+      work_item: RP-027
+      source_ref: 9ec2b7db576d6d622d7e8aa10ddd607b375f5142
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicate-intent.json
+    reproduction:
+      procedure: Five documentation-only checkpoint commit messages omitted the existing
+        skip-ci directive; cumulative PR changed-file filters started full workflows.
+        This is the author's publication error. Actual run/head identities confirm
+        duplication; no product source differs.
+      failing_source: 9ec2b7db576d6d622d7e8aa10ddd607b375f5142
+      passing_source: null
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicate-intent.json
+    repair_steps:
+    - RP-027
+    affected_acceptance:
+    - RP-027
+    affected_requirements:
+    - R19
+    - R20
+    hypotheses:
+    - id: H1
+      claim: Missing skip-ci directive allows cumulative PR path filters to rerun
+        unchanged application qualification on documentation sync.
+      result: SUPPORTED
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicate-intent.json
+    repairs:
+    - item: RP-027
+      attempt: A001
+      intent_event: RP-027-A001-0553
+      rechecks:
+        RP-027:
+          attempt: A001
+          checks:
+          - RP-027.C1
+          - RP-027.C2
+          - RP-027.C3
+          - RP-027.C4
+    issue: null
+    regression_test: A documentation-only checkpoint carries [skip ci], exact remote
+      readback and zero full-workflow runs at that head; original source42 explicit
+      qualification remains available and unchanged.
+    resolution_evidence: []
+    notes: Task publication repair, not application change. Preserve all accidental
+      run IDs and actual cleanup state; no false no-duplicate claim.
+    legacy_record: null

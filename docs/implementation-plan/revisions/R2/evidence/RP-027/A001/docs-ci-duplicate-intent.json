@@ -1,0 +1,253 @@
+{
+  "source": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+  "unchanged_application_source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "observed_runs": [
+    {
+      "id": 38077203332,
+      "head": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "queued",
+      "conclusion": null
+    },
+    {
+      "id": 38077203354,
+      "head": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+      "name": "CI",
+      "event": "pull_request",
+      "status": "queued",
+      "conclusion": null
+    },
+    {
+      "id": 38077203362,
+      "head": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "queued",
+      "conclusion": null
+    },
+    {
+      "id": 38077203307,
+      "head": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "queued",
+      "conclusion": null
+    },
+    {
+      "id": 38076771951,
+      "head": "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076771920,
+      "head": "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 38076771871,
+      "head": "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076771893,
+      "head": "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076432708,
+      "head": "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076432723,
+      "head": "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076432734,
+      "head": "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 38076432805,
+      "head": "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076335137,
+      "head": "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076335146,
+      "head": "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076335152,
+      "head": "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076335119,
+      "head": "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 38076127533,
+      "head": "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076127591,
+      "head": "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076127549,
+      "head": "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076127574,
+      "head": "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "cancel_allowlist": [
+    {
+      "run": 38077203332,
+      "head": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+      "name": "Folder reconfiguration"
+    },
+    {
+      "run": 38077203354,
+      "head": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+      "name": "CI"
+    },
+    {
+      "run": 38077203362,
+      "head": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+      "name": "Desktop"
+    },
+    {
+      "run": 38076771951,
+      "head": "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "name": "Folder reconfiguration"
+    },
+    {
+      "run": 38076771871,
+      "head": "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "name": "CI"
+    },
+    {
+      "run": 38076771893,
+      "head": "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "name": "Desktop"
+    },
+    {
+      "run": 38076432708,
+      "head": "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "name": "CI"
+    },
+    {
+      "run": 38076432723,
+      "head": "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "name": "Folder reconfiguration"
+    },
+    {
+      "run": 38076432805,
+      "head": "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "name": "Desktop"
+    },
+    {
+      "run": 38076335137,
+      "head": "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "name": "Folder reconfiguration"
+    },
+    {
+      "run": 38076335146,
+      "head": "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "name": "Desktop"
+    },
+    {
+      "run": 38076335152,
+      "head": "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "name": "CI"
+    },
+    {
+      "run": 38076127533,
+      "head": "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "name": "Desktop"
+    },
+    {
+      "run": 38076127591,
+      "head": "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "name": "CI"
+    },
+    {
+      "run": 38076127549,
+      "head": "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "name": "Folder reconfiguration"
+    }
+  ],
+  "preserve_runs": [
+    38075689367,
+    38075692326,
+    38075692376,
+    38075692321,
+    38075692331
+  ],
+  "cause": "Five documentation-only checkpoint commit messages omitted the existing skip-ci directive; cumulative PR changed-file filters started full workflows. This is the author's publication error. Actual run/head identities confirm duplication; no product source differs.",
+  "procedure": "Publish this checkpoint with [skip ci] and exact readback. Guard future documentation-only publication messages to append that directive. Verify the five heads have empty non-documentation diff to source564bc157. Use any already available authorized Actions capability only: inspect each exact allowlisted run/head/repository/event before requesting ordinary cancellation; never cancel explicit source41/42 or Progress runs. Check existing local Git credential capability privately with noninteractive helper; never reveal credentials. No gh installation, token scope change, browser/account change, force cancellation or rerun. If Actions write is unavailable, preserve the duplication and let existing isolated jobs finish while continuing original source42.",
+  "expected": "No new full workflows from docs checkpoints. Redundant allowlisted jobs cancelled only if existing capability permits and readback confirms; otherwise precise unavailable state, without claiming cancellation or blocking unrelated qualification."
+}
