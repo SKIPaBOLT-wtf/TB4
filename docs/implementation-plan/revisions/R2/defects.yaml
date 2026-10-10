@@ -3783,7 +3783,7 @@ defects:
       remain immutable. Field/runtime release limits are unchanged.
   DEF-056:
     title: Default pytest session cleanup reaches denied preexisting temporary state
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C1
     suspected_origin:
       work_item: RP-027
@@ -3847,16 +3847,27 @@ defects:
     regression_test: Repeat exact recorded631-case target set with a fresh owned absent
       --basetemp child, actual exit0 and identical predicate collection; preserve
       existing denied global state.
-    resolution_evidence: []
-    notes: Test harness isolation only. No product assertion failure or application-source
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Test harness isolation only. No product assertion failure or application-source
       origin is proven. Accepted predecessor hosted/native qualification is not invalidated
       by this unfinished RP027 local runner fault. No deletion/ACL repair of preexisting
       global temp state. Exact same-source/same-predicate isolated repeat exits0;
       retain OPEN only for mandatory full affected C1-C4 rechecks at final RP027 acceptance.
+      Final current-source/common acceptance 2026-10-10: linked repair and original
+      negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-057:
     title: Fallback test fixtures replace the enrolled incumbent computer label
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C1
     suspected_origin:
       work_item: RP-027
@@ -3926,17 +3937,28 @@ defects:
     regression_test: Existing three failed takeover/inspection/adoption cases plus
       a negative wrong-incumbent-name refusal; keep all original effect/epoch/preservation
       assertions.
-    resolution_evidence: []
-    notes: Fixture-only provenance fault in unaccepted RP027. Accepted leadership
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Fixture-only provenance fault in unaccepted RP027. Accepted leadership
       identity checks correctly reject the mismatch; no application-source or predecessor
       acceptance defect is claimed. Keep full required C1-C4 rechecks held under the
       unchanged registry. Exact fixture-only repair repeat passes all intended predicates;
-      final mandatory C1-C4 rechecks remain held.
+      final mandatory C1-C4 rechecks remain held. Final current-source/common acceptance
+      2026-10-10: linked repair and original negative/regression predicates qualify
+      on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted
+      together. Historical detection/hypothesis/first passing source retained. No
+      live-system repair or deployment claimed.'
     legacy_record: null
   DEF-058:
     title: New guard fixtures fail coverage prerequisites and a native closed-code
       expectation
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C1
     suspected_origin:
       work_item: RP-027
@@ -4022,8 +4044,15 @@ defects:
     issue: null
     regression_test: All16 failed predicate cases, exact same24-target prior regressions
       and truthful initial-coverage versus later-owner negative fixtures.
-    resolution_evidence: []
-    notes: Unaccepted new RP027 scope only; no accepted predecessor failure is observed.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Unaccepted new RP027 scope only; no accepted predecessor failure is observed.
       Do not weaken initial-epoch coverage, rewind a live/evaluated authority, hide
       unknown work or drop failed assertions. Preserve source and all actual results;
       inspect the exact failed native fixture/factory before repair. Full C1-C4 rechecks
@@ -4032,11 +4061,15 @@ defects:
       through existing bootstrap/commissioning adapters without changing or rewinding
       the failed authority. Initial coverage/coded-refusal fixture remedy supported
       by actual683-case repeat; a separately tracked fixed stale-clock fixture fault
-      remains, so final C1-C4 rechecks stay held.
+      remains, so final C1-C4 rechecks stay held. Final current-source/common acceptance
+      2026-10-10: linked repair and original negative/regression predicates qualify
+      on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted
+      together. Historical detection/hypothesis/first passing source retained. No
+      live-system repair or deployment claimed.'
     legacy_record: null
   DEF-059:
     title: Fallback fixture uses a fixed clock after renewing the incumbent heartbeat
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C1
     suspected_origin:
       work_item: RP-027
@@ -4103,16 +4136,27 @@ defects:
     regression_test: Existing test_external_unknown_survives_fallback_without_acknowledgements_or_replay
       with actual freshly stale timestamp, retaining unknown/preservation/acquisition/no-replay
       assertions; all24-target regressions.
-    resolution_evidence: []
-    notes: New test clock only. Initial coverage source/pins, native epoch/owner/clock/timing
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'New test clock only. Initial coverage source/pins, native epoch/owner/clock/timing
       guards and prior accepted sources stay unchanged. Preserve the failed fresh-incumbent
       result; no live timer advance or operation replay. Exact heartbeat-derived repeat
-      exits0; final mandatory C1-C4 rechecks remain held.
+      exits0; final mandatory C1-C4 rechecks remain held. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-060:
     title: Native candidate interruption fixture expects the outer portable commit
       code
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -4198,18 +4242,29 @@ defects:
     regression_test: Same three actual-native metadata/archive/profile interruption
       predicates with accepted closed-code expectation and unchanged exact pending/readback/owner/resume/original
       byte/no-provider-send assertions; all inherited683 predicates retained.
-    resolution_evidence: []
-    notes: New unaccepted C2 native test expectation. Original native protection/error
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'New unaccepted C2 native test expectation. Original native protection/error
       translation and all application guards remain unchanged. Pending frame facts
       and post-cut recovery are not yet qualified; C1-C4 rechecks held. Same failed
       native frames are proven intact; post-cut recovery assertions await repeated
       unchanged tests. Preserve the earlier untested hypothesis and append supported
       facts. Exact27-target/720-predicate Windows repeat exits0 with716PASS/4Linuxskip;
-      mandatory final C1-C4 rechecks held.
+      mandatory final C1-C4 rechecks held. Final current-source/common acceptance
+      2026-10-10: linked repair and original negative/regression predicates qualify
+      on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted
+      together. Historical detection/hypothesis/first passing source retained. No
+      live-system repair or deployment claimed.'
     legacy_record: null
   DEF-061:
     title: Dedicated root move effect admission fails under its own maintenance configuration
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -4285,18 +4340,28 @@ defects:
     regression_test: All nine exact failed root predicates plus inherited720 cases,
       and explicit ordinary dispatch refusal while a strictly scoped effect operation
       is admitted.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Unaccepted C3 source only. Preserve failed tests and prior accepted predicates.
       Inspect exact failed traces/current adapter before naming a proven origin or
       making a scoped repair. Final C1-C4 rechecks remain held. Diagnosis disproves
       inheritance as the exact mechanism: EffectMutation overrides prepare/evaluate;
       its own START guard is proved. No repair or repeat yet. Scoped root gate/access
       remedy supported; final acceptance held and separate owner projection failure
-      tracked.'
+      tracked. Final current-source/common acceptance 2026-10-10: linked repair and
+      original negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-062:
     title: Root access negative fixture excludes the actual closed authority refusal
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -4370,18 +4435,28 @@ defects:
     issue: null
     regression_test: Exact target-access predicate with actual closed refusal and
       unchanged no-send/profile preservation assertions; full root and inherited regressions.
-    resolution_evidence: []
-    notes: Unaccepted C3 source only. Preserve failed tests and prior accepted predicates.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Unaccepted C3 source only. Preserve failed tests and prior accepted predicates.
       Inspect exact failed traces/current adapter before naming a proven origin or
       making a scoped repair. Final C1-C4 rechecks remain held. Actual closed target-root
       refusal proved before SDK move; fixture expectation is the fault. Scoped root
       gate/access remedy supported; final acceptance held and separate owner projection
-      failure tracked.
+      failure tracked. Final current-source/common acceptance 2026-10-10: linked repair
+      and original negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-063:
     title: Root supersession projects an unenrolled replacement owner as a raw leadership
       identity refusal
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -4458,19 +4533,30 @@ defects:
     issue: null
     regression_test: Exact before-send first-CAS takeover predicate, retaining OWNER_SUPERSEDED/no-send/epoch/UNKNOWN/single-authority/original-profile
       assertions; all763 predicates retained.
-    resolution_evidence: []
-    notes: New C3 owner-outcome integration only; stale first-CAS election remains
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'New C3 owner-outcome integration only; stale first-CAS election remains
       available. No safety success or no-send assertion inferred solely from unexpected
       class. Diagnose exact trace and guarded source. Final C1-C4 held. Exact trace
       proves old-roster validation precedes explicit owner refusal; ordinary Leadership/enrollment
       stays unchanged. Minimal early rejection grants no dispatch. Exact original763
       predicates pass on one-path root owner preflight; all before-send retained assertions
-      reached; final C1-C4 held.
+      reached; final C1-C4 held. Final current-source/common acceptance 2026-10-10:
+      linked repair and original negative/regression predicates qualify on source
+      e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted together.
+      Historical detection/hypothesis/first passing source retained. No live-system
+      repair or deployment claimed.'
     legacy_record: null
   DEF-064:
     title: No-send negative fixture conflates another reader of the same native root
       with a different protected root
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -4553,16 +4639,26 @@ defects:
     issue: null
     regression_test: Retain all original791 predicates, complete all19 no-send cases
       and actual no-SDK/UNKNOWN/profile assertions; final mandatory C1-C4 rechecks.
-    resolution_evidence: []
-    notes: Unaccepted C3 qualification failure; inspect actual trace/native identity
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Unaccepted C3 qualification failure; inspect actual trace/native identity
       before proving a cause or changing safety/fixture expectations. Bounded same-source
       diagnostic proves fixture assumptions; no product guard change is required.
       Exact811-case Windows repeat supports the fixture repair; final C1-C4 rechecks
-      remain held.
+      remain held. Final current-source/common acceptance 2026-10-10: linked repair
+      and original negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-065:
     title: No-send force negative fixture excludes actual closed authority refusal
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -4641,17 +4737,27 @@ defects:
     issue: null
     regression_test: Retain all original791 predicates, complete all19 no-send cases
       and actual no-SDK/UNKNOWN/profile assertions; final mandatory C1-C4 rechecks.
-    resolution_evidence: []
-    notes: Unaccepted C3 qualification failure; inspect actual trace/native identity
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Unaccepted C3 qualification failure; inspect actual trace/native identity
       before proving a cause or changing safety/fixture expectations. Bounded same-source
       diagnostic proves fixture assumptions; no product guard change is required.
       Exact811-case Windows repeat supports the fixture repair; final C1-C4 rechecks
-      remain held.
+      remain held. Final current-source/common acceptance 2026-10-10: linked repair
+      and original negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-066:
     title: Different root-plan collision reaches prior resolution invalidation before
       target-specific refusal
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -4733,17 +4839,28 @@ defects:
     issue: null
     regression_test: Retain all original791 predicates, complete all19 no-send cases
       and actual no-SDK/UNKNOWN/profile assertions; final mandatory C1-C4 rechecks.
-    resolution_evidence: []
-    notes: New unaccepted C3 qualification failure. Preserve exact full result and
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'New unaccepted C3 qualification failure. Preserve exact full result and
       inspect source/current snapshot provenance before minimal repair; no guard weakened.
       Mandatory final C1-C4 held. Bounded exact-source diagnostic proves the call
       order/baseline cause; no existing resolution/metadata guard relaxation justified.
       Full original839-case qualification supports repair; final C1-C4 remains held.
+      Final current-source/common acceptance 2026-10-10: linked repair and original
+      negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-067:
     title: Partial root metadata-witness fixture compares a stale document reference
       after legitimate setup CAS
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -4824,17 +4941,28 @@ defects:
     issue: null
     regression_test: Retain all original791 predicates, complete all19 no-send cases
       and actual no-SDK/UNKNOWN/profile assertions; final mandatory C1-C4 rechecks.
-    resolution_evidence: []
-    notes: New unaccepted C3 qualification failure. Preserve exact full result and
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'New unaccepted C3 qualification failure. Preserve exact full result and
       inspect source/current snapshot provenance before minimal repair; no guard weakened.
       Mandatory final C1-C4 held. Bounded exact-source diagnostic proves the call
       order/baseline cause; no existing resolution/metadata guard relaxation justified.
       Full original839-case qualification supports repair; final C1-C4 remains held.
+      Final current-source/common acceptance 2026-10-10: linked repair and original
+      negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-068:
     title: Root-plan denial preflight reads global.summary at authority document top
       level
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -4921,16 +5049,27 @@ defects:
     regression_test: Preserve every original839 predicate and all101 failed root/inherited/no-send/plan/native
       predicates; first exact short root regression then full36-target qualification
       including actual129-object native budget. Final C1-C4 held.
-    resolution_evidence: []
-    notes: Actual repeat failure preserved; counts are not acceptance and no later
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Actual repeat failure preserved; counts are not acceptance and no later
       assertion inferred. Existing DEF066/067 repairs remain unqualified. No provider/live
       changes or guard weakening. Full original839-case qualification supports repair;
-      final C1-C4 remains held.
+      final C1-C4 remains held. Final current-source/common acceptance 2026-10-10:
+      linked repair and original negative/regression predicates qualify on source
+      e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted together.
+      Historical detection/hypothesis/first passing source retained. No live-system
+      repair or deployment claimed.'
     legacy_record: null
   DEF-069:
     title: Adopted pending operation is rejected by actual root evidence proof before
       metadata SDK
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -5021,20 +5160,31 @@ defects:
     regression_test: Preserve all original100 and all36 new adoption/native/Unicode
       predicates; exact new/native/original related repeat plus final C1-C4/platform/common
       gates.
-    resolution_evidence: []
-    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Actual unaccepted source qualification failure retained. Diagnose exact
       source/fixture before minimal repair; no later predicates inferred or guards
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
       Full original139 related recheck passed, final all4checks/platforms still required.
       Actual ordinary full native/platform/frozen qualification supports current repair;
-      missing folder/rebind/C4 behavior and final acceptance remain.
+      missing folder/rebind/C4 behavior and final acceptance remain. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-070:
     title: Complete adopted root first-run refusal fixture expects a different exception
       class
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -5121,19 +5271,30 @@ defects:
     regression_test: Preserve all original100 and all36 new adoption/native/Unicode
       predicates; exact new/native/original related repeat plus final C1-C4/platform/common
       gates.
-    resolution_evidence: []
-    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Actual unaccepted source qualification failure retained. Diagnose exact
       source/fixture before minimal repair; no later predicates inferred or guards
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
       Full original139 related recheck passed, final all4checks/platforms still required.
       Actual ordinary full native/platform/frozen qualification supports current repair;
-      missing folder/rebind/C4 behavior and final acceptance remain.
+      missing folder/rebind/C4 behavior and final acceptance remain. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-071:
     title: Adoption source-fault fixture may set an unused source adapter attribute
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -5223,20 +5384,31 @@ defects:
     regression_test: Preserve all original100 and all36 new adoption/native/Unicode
       predicates; exact new/native/original related repeat plus final C1-C4/platform/common
       gates.
-    resolution_evidence: []
-    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Actual unaccepted source qualification failure retained. Diagnose exact
       source/fixture before minimal repair; no later predicates inferred or guards
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
       Full original139 related recheck passed, final all4checks/platforms still required.
       Actual ordinary full native/platform/frozen qualification supports current repair;
-      missing folder/rebind/C4 behavior and final acceptance remain.
+      missing folder/rebind/C4 behavior and final acceptance remain. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-072:
     title: Synthetic inherited external UNKNOWN fault may omit actual summary envelope
       binding
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -5325,19 +5497,30 @@ defects:
     regression_test: Preserve all original100 and all36 new adoption/native/Unicode
       predicates; exact new/native/original related repeat plus final C1-C4/platform/common
       gates.
-    resolution_evidence: []
-    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Actual unaccepted source qualification failure retained. Diagnose exact
       source/fixture before minimal repair; no later predicates inferred or guards
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
       Full original139 related recheck passed, final all4checks/platforms still required.
       Actual ordinary full native/platform/frozen qualification supports current repair;
-      missing folder/rebind/C4 behavior and final acceptance remain.
+      missing folder/rebind/C4 behavior and final acceptance remain. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-073:
     title: Second fallback fixture reuses original election transition identity
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -5425,20 +5608,31 @@ defects:
     regression_test: Preserve all original100 and all36 new adoption/native/Unicode
       predicates; exact new/native/original related repeat plus final C1-C4/platform/common
       gates.
-    resolution_evidence: []
-    notes: Actual unaccepted source qualification failure retained. Diagnose exact
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Actual unaccepted source qualification failure retained. Diagnose exact
       source/fixture before minimal repair; no later predicates inferred or guards
       weakened. Exact bounded source/fixture provenance supports the smallest scoped
       repair; final allchecks held. Exact3-path proven repair preserved; original136
       predicates plus three actual post-own-pending denial predicates await recheck.
       Full original139 related recheck passed, final all4checks/platforms still required.
       Actual ordinary full native/platform/frozen qualification supports current repair;
-      missing folder/rebind/C4 behavior and final acceptance remain.
+      missing folder/rebind/C4 behavior and final acceptance remain. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-074:
     title: RP027 unqualified fixture imports prevent default full suite collection
       on both platforms
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -5515,18 +5709,29 @@ defects:
     regression_test: Unmodified ordinary full pytest collection without custom helper
       PYTHONPATH, then actual native Linux/Windows full regression/Qt/build/frozen
       and final C1-C4/common gates.
-    resolution_evidence: []
-    notes: Earlier partial139 and historic broad839 remain actual past results, not
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Earlier partial139 and historic broad839 remain actual past results, not
       default/platform qualification. Exact full CI failure saved. No production dependency
       or guard weakened. Final allchecks held. Exactly5 fixture paths/seven import
       lines repaired and source saved; no assertion/production/protocol/PYTHONPATH/workflow
       change. Actual ordinary full native/platform/frozen qualification supports current
-      repair; missing folder/rebind/C4 behavior and final acceptance remain.
+      repair; missing folder/rebind/C4 behavior and final acceptance remain. Final
+      current-source/common acceptance 2026-10-10: linked repair and original negative/regression
+      predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4
+      rechecks accepted together. Historical detection/hypothesis/first passing source
+      retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-075:
     title: Folder mapping changed-profile negative fixture violates an existing frozen
       setup binding before reaching its gate
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -5597,18 +5802,29 @@ defects:
       revision change, prove it advanced, then actual creator refusal/no mapping/authority/root/profile
       effects. Required original folder/native regressions and final full/native/platform/frozen/C1-C4
       gates.
-    resolution_evidence: []
-    notes: Twenty actual positive/refusal/pending/helper cases executed on native
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Twenty actual positive/refusal/pending/helper cases executed on native
       Linux. Failure is the test precondition, never authorization to weaken a production
       Setup freeze. Original regressions not executed in targeted jobs after prior
       step failure; automatically triggered full CI/Desktop still pending and cannot
       be claimed. Actual126 native cases on both push/PR now pass at exact f98ddf
-      repair source; final acceptance held.
+      repair source; final acceptance held. Final current-source/common acceptance
+      2026-10-10: linked repair and original negative/regression predicates qualify
+      on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted
+      together. Historical detection/hypothesis/first passing source retained. No
+      live-system repair or deployment claimed.'
     legacy_record: null
   DEF-076:
     title: Native folder transaction compares its own UNKNOWN operation digest to
       an action label
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -5673,17 +5889,28 @@ defects:
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-qualified.json
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-qualified.md
-    notes: Initial source-only physical checkpoint not qualified. All21 existing actual
-      mapping cases remain passing; failed native cut/late-force assertions are unreachable
-      behind the same prior guard. Keep assertions and no-replay/current-role/source/native
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Initial source-only physical checkpoint not qualified. All21 existing
+      actual mapping cases remain passing; failed native cut/late-force assertions
+      are unreachable behind the same prior guard. Keep assertions and no-replay/current-role/source/native
       boundaries. No guard broadening or accepted check. Required actual51 native
       and262 original regression cases now pass twice on exact sourceb90713351a910341da0454f8f7b4d82e144e22b2.
       All RP027 checks still held; no source/test result alone closes this defect.
+      Final current-source/common acceptance 2026-10-10: linked repair and original
+      negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-077:
     title: Native folder refusal tests expect an internal exception across opaque
       helper/native boundaries
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -5747,16 +5974,27 @@ defects:
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-qualified.json
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-physical-qualified.md
-    notes: Do not broaden production guards or claim hidden force proof reason. Keep
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Do not broaden production guards or claim hidden force proof reason. Keep
       native pending/no-replay/current-role boundaries and OPEN until final acceptance.
       Required actual51 native and262 original regression cases now pass twice on
       exact sourceb90713351a910341da0454f8f7b4d82e144e22b2. All RP027 checks still
-      held; no source/test result alone closes this defect.
+      held; no source/test result alone closes this defect. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-078:
     title: Initial remote-rebind qualification fails at inherited error import and
       invalid test prerequisites
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -5823,7 +6061,14 @@ defects:
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-qualified.json
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-rebind-qualified.md
-    notes: Preserve original c140 failure. No new rebind/native pass inferred; native/final
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Preserve original c140 failure. No new rebind/native pass inferred; native/final
       composition remains held. Keep OPEN until source-linked final acceptance. Same27
       failures reproduced on both exact-source Linux jobs after all51+107 pass/zeroSkip.
       Repaired4b66 actual Windows27 yields25PASS2FAIL; missing import/final physical
@@ -5832,12 +6077,16 @@ defects:
       under the same RP-027/A001 repair chain; original repair record retained once.
       Exactsource28952 actual Windows27/181/default2825 and bothLinux339/zeroSkip
       now qualify the exact repairs and new rebind unit; retain OPEN/all checks held
-      until final C4/composition/acceptance.
+      until final C4/composition/acceptance. Final current-source/common acceptance
+      2026-10-10: linked repair and original negative/regression predicates qualify
+      on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted
+      together. Historical detection/hypothesis/first passing source retained. No
+      live-system repair or deployment claimed.'
     legacy_record: null
   DEF-079:
     title: Shared-publication qualification fixtures violate existing profile and
       closed catalogue prerequisites
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -5893,18 +6142,29 @@ defects:
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-qualified.json
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/shared-configuration-qualified.md
-    notes: Preserve initial5d6116 and all3 closed-code failures. No original/runtime/media/work
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Preserve initial5d6116 and all3 closed-code failures. No original/runtime/media/work
       reset or repeated request occurred. Original/Linux dependent qualification was
       not started after this targeted failure; allC1-C4 held. Onefile valid fixture
       source c5c77d9cea6b5b4804a399b8ed208d33e2724de8 preserved under185; production
       unchanged, passing_source pending actual requalification. Exactc5c77d Windows23/254/default2868
       and bothLinux382 now pass0Skip, validating onefile correction. Retain OPEN until
-      complete final C1-C4/composition acceptance.
+      complete final C1-C4/composition acceptance. Final current-source/common acceptance
+      2026-10-10: linked repair and original negative/regression predicates qualify
+      on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted
+      together. Historical detection/hypothesis/first passing source retained. No
+      live-system repair or deployment claimed.'
     legacy_record: null
   DEF-080:
     title: Repeated configured Desktop time limit cancels Windows packaging after
       passing full tests
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -5957,19 +6217,30 @@ defects:
       be actual.
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/desktop-budget-qualified.json
-    notes: a2cb9 promotion Windows18/272/Linux400 groups qualified independently,
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'a2cb9 promotion Windows18/272/Linux400 groups qualified independently,
       allC1-C4 remain held; no cancelled packaging acceptance or app defect inferred.
       Historical c5 Linux Desktop2843PASS/21SKIP/4XFAIL and both packagesPASS; Windows
       full2706PASS/158SKIP/4XFAIL does not replace canceled package acceptance. Actual923741e
       immutable-source90minute Desktop both platforms, both-rolepackages/GUI/setup/installisolation/upload
       qualified; Windows terminal2629.107s exceeds old2400bound. No test/gate weakened.
       Current14nativeadmissionsource separately qualified component, full/currentcomposition
-      stillheld; DEF080OPENuntilcommonC4acceptance.
+      stillheld; DEF080OPENuntilcommonC4acceptance. Final current-source/common acceptance
+      2026-10-10: linked repair and original negative/regression predicates qualify
+      on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted
+      together. Historical detection/hypothesis/first passing source retained. No
+      live-system repair or deployment claimed.'
     legacy_record: null
   DEF-081:
     title: Admission credential-revocation fixture uses a foreign installation and
       unsupported preparation API
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -6024,15 +6295,26 @@ defects:
       qualify.
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-admission-qualified.json
-    notes: Actual failure retained, unsupported later API source-inspected only; production
-      origin unproven and binding guard unchanged. AllC1-C4 held until final composition/qualification.
-      Actual corrected14a53a8 qualification23new/295originalWindows and bothactualLinux423PASS0Skip.
-      Production96b95ba unchanged; source-local fixture mismatch/supporting enrollment
-      API repair verified. RemainsOPEN/allC1-C4held for fullcomposition.
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Actual failure retained, unsupported later API source-inspected only;
+      production origin unproven and binding guard unchanged. AllC1-C4 held until
+      final composition/qualification. Actual corrected14a53a8 qualification23new/295originalWindows
+      and bothactualLinux423PASS0Skip. Production96b95ba unchanged; source-local fixture
+      mismatch/supporting enrollment API repair verified. RemainsOPEN/allC1-C4held
+      for fullcomposition. Final current-source/common acceptance 2026-10-10: linked
+      repair and original negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-082:
     title: Current ACTIVE adoption source refusal leaves a different exception boundary
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -6086,6 +6368,13 @@ defects:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-targeted-qualified.json
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-qualified.json
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-full-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Actual237 initial30:21PASS9FAIL0ERROR0SKIP70.056s. Failure chronology
       retained; ordinary debugging, no external blocker. AllC1-C4/full composition
       held; no dependent regressions started. Corrected6d actualdefault30PASS0Skip74.161s,
@@ -6096,11 +6385,14 @@ defects:
 
       Original immutable source6d request13 CI/Desktop full/package terminal SUCCESS
       under220/223; current newer retained source417 unqualified and common C4 still
-      held.'
+      held. Final current-source/common acceptance 2026-10-10: linked repair and original
+      negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-083:
     title: ACTIVE adoption credential-image test passes an unsupported fixture store
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -6154,6 +6446,13 @@ defects:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-targeted-qualified.json
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-qualified.json
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-full-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Actual237 initial30:21PASS9FAIL0ERROR0SKIP70.056s. Failure chronology
       retained; ordinary debugging, no external blocker. AllC1-C4/full composition
       held; no dependent regressions started. Corrected6d actualdefault30PASS0Skip74.161s,
@@ -6164,11 +6463,14 @@ defects:
 
       Original immutable source6d request13 CI/Desktop full/package terminal SUCCESS
       under220/223; current newer retained source417 unqualified and common C4 still
-      held.'
+      held. Final current-source/common acceptance 2026-10-10: linked repair and original
+      negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-084:
     title: Retained configuration publication omitted its configuration reader import
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -6217,6 +6519,13 @@ defects:
       assertions after same exact source pin.
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Actual default Windows source417/b4e9 new25 qualification:0PASS25FAIL0ERROR0SKIP19.593s.
       Failure chronology and exact owned native fixture results retained; ordinary
       debugging, no external blocker. Later boundary assertions not reached; allC1-C4/fullcomposition
@@ -6227,12 +6536,16 @@ defects:
       whole-case evidence or common acceptance.
 
       Current1f2381 same25 actualdefaultWindows PASS0skip38.596s reaches all18 rootless/SDK/admission
-      and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.'
+      and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.
+      Final current-source/common acceptance 2026-10-10: linked repair and original
+      negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-085:
     title: Retained synthetic fixture reuses native identities for distinct protected
       stores
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -6282,6 +6595,13 @@ defects:
       and actual OS-native fixtures remain intact.
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Actual default Windows source417/b4e9 new25 qualification:0PASS25FAIL0ERROR0SKIP19.593s.
       Failure chronology and exact owned native fixture results retained; ordinary
       debugging, no external blocker. Later boundary assertions not reached; allC1-C4/fullcomposition
@@ -6292,11 +6612,15 @@ defects:
       whole-case evidence or common acceptance.
 
       Current1f2381 same25 actualdefaultWindows PASS0skip38.596s reaches all18 rootless/SDK/admission
-      and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.'
+      and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.
+      Final current-source/common acceptance 2026-10-10: linked repair and original
+      negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-086:
     title: Retained final first-run proof mutates its already frozen stage revision
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -6347,6 +6671,13 @@ defects:
       refusals remain, no shared writes before frozen proof.
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-targeted-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Actual0170/b4e9 corrected25:0PASS25FAIL0ERROR0SKIP28.185s;24COMMIT_CHANGED
       and one native-cut missing pending after earlier COMMIT_CHANGED. Initial417
       missing import/fixture alias fixed at reached immediate boundaries, but no passing
@@ -6355,11 +6686,15 @@ defects:
       external blocker.
 
       Current1f2381 same25 actualdefaultWindows PASS0skip38.596s reaches all18 rootless/SDK/admission
-      and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.'
+      and7 actualnative protection/crash/noresend assertions. RemainsOPEN until actualLinuxFolder/affected/default/currentfull/runtimeGUI/remotehelper/commonC4.
+      Final current-source/common acceptance 2026-10-10: linked repair and original
+      negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-087:
     title: Required retained Folder negative fixture selects a nonexistent GC record
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -6411,6 +6746,13 @@ defects:
       remain.
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/retained-authority-scoped-qualified-windows-discovery-failure.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Actual1f source:Windowsnew25PASS38.596s +affected472PASS446.059s +defaultcollect2970tests0.
       Both actualLinux51PASS +new5PASS1FAIL at nonexistent .gc selector; no107/320
       whole qualification. Code/source kernel positiveFolder paths and nativeadmission
@@ -6418,7 +6760,10 @@ defects:
       stilltracked. No external blocker; allC1-C4held. Current corrected source28ade:
       both actual Linux push/PR required484PASS0fail/error/skip, including artifact_generation
       negative case; original failing1f CI/Desktop retained. Remains OPEN until whole
-      common C4.'
+      common C4. Final current-source/common acceptance 2026-10-10: linked repair
+      and original negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-088:
     title: Windows native loopback qualification fails before platform regression
@@ -6483,7 +6828,7 @@ defects:
   DEF-089:
     title: Folder ACTIVE source schema hash is not synchronized in the unreleased
       compatibility catalogue
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -6534,7 +6879,14 @@ defects:
     regression_test: Actual existingrepository-profile hash assertion/BALLPARK and
       affected native/receipt/admission regressions; actual corrected-sourceLinux506/fullplatform
       gates. Closure membership16+ENTRY remains same.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'NewactualWindows55PASS113.767s and wholecollection2992PASS1.773s/tests0;
       schemae567 additive definitions preserveexisting meanings, but metadata coherence
       fails bothactualDesktop jobs. Source static review247 did not qualify repository
@@ -6545,12 +6897,16 @@ defects:
       stillpending; no oldrun replay/currentqualification substitution. Current-source
       qualification 262: Windows497 and both required Linux506 pass, including all22
       functional adoption cases; full CI and both Desktop build/package gates pass.
-      Status remains OPEN pending complete RP-027 C1-C4 acceptance.'
+      Status remains OPEN pending complete RP-027 C1-C4 acceptance. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-090:
     title: New Folder ACTIVE fixture bypasses the separate actual first storage-selection
       contract
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -6601,7 +6957,14 @@ defects:
     regression_test: RequiredactualLinuxsame22 cases now reach actual role/adoption/pendingcut/negative/noreplay
       assertions withactualselection; wholeprior484/currentfull/common. Windows55
       productionunchanged qualification remains exact103d source.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Fixturefirstrequest/binding guard failure, notanexternalstorage/accessproblem.
       ActualnewFolderproductionpath notyetqualified; no skippedcasescounted. RawpublicLinuxfixturetrace
       keptinGitHubjoblogs; reportomits ephemeralpaths. C1-C4held. Originalimmutable103d
@@ -6611,11 +6974,15 @@ defects:
       stillpending; no oldrun replay/currentqualification substitution. Current-source
       qualification 262: Windows497 and both required Linux506 pass, including all22
       functional adoption cases; full CI and both Desktop build/package gates pass.
-      Status remains OPEN pending complete RP-027 C1-C4 acceptance.'
+      Status remains OPEN pending complete RP-027 C1-C4 acceptance. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-091:
     title: Current configuration admission accepts a stale Leadership timing profile
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -6676,6 +7043,13 @@ defects:
       state preservation and restored-profile admission.'
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-timing-admission-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Independent diagnostic against unchanged A016 admission code while immutable
       probe265 runs continue. Synthetic SDK/MemoryNative only, 7.302 seconds, no pytest
       or native/live qualification. Expected BLOCKED, observed ADMITTED in all three
@@ -6695,11 +7069,15 @@ defects:
       skip, both Linux560 zero skip, CI2995/WindowsDesktop2840/LinuxDesktop3018 passed
       with documented existing skip/xfail scopes, both role packages passed. Scoped
       passing_source recorded; defect remains OPEN until affected common RP027 acceptance.
-      New owner continue instruction supersedes earlier future pause wait.'
+      New owner continue instruction supersedes earlier future pause wait. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-092:
     title: Remote Folder first-run tests depend on security test collection order
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -6752,6 +7130,13 @@ defects:
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-folder-first-run-default-qualified.json
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/remote-folder-first-run-platform-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Selected preflight exits2 with one collection error and zero executed
       cases; whole collection exits2 with two errors and partial3046. Failed source/logs
       retained. Historical introduction was not bisected and no product runtime failure
@@ -6762,11 +7147,15 @@ defects:
       acceptance still pending. Request21 source119e518 fully qualified: bothLinux588
       zero skip, CI3023, WindowsDesktop2864/LinuxDesktop3046 and both role distributions
       pass; defect stays OPEN only pending affected common RP027 acceptance. Newer
-      A022 source has separate gates.'
+      A022 source has separate gates. Final current-source/common acceptance 2026-10-10:
+      linked repair and original negative/regression predicates qualify on source
+      e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted together.
+      Historical detection/hypothesis/first passing source retained. No live-system
+      repair or deployment claimed.'
     legacy_record: null
   DEF-093:
     title: Legacy Windows credential test enumerates a newly unauthorized Folder purpose
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -6817,7 +7206,14 @@ defects:
       platform gates remain.
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/folder-credential-purpose-default-qualified.json
-    notes: Windows356 PASS/one legacy synthetic FAIL/zero ERROR/four existing actual
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Windows356 PASS/one legacy synthetic FAIL/zero ERROR/four existing actual
       Linux-only SKIP16.879s; all25 new cases pass without skips. Default3097/no errors1.744s;
       +1 unintended old enum parameter, no removed baseline nodeids. No new production
       failure inferred. Correct overbroad Windows zero-skip expectation in later intent,
@@ -6827,7 +7223,11 @@ defects:
       sourced19639c selected Windows356 PASS/zero fail/error and exactly four unchanged
       Linux-only skips16.675s; all25 new cases pass zero skip. Default3096/no errors1.709s.
       Original baseline retained, unselected Folder scope remains denied; current
-      Linux/final-source/common acceptance pending.
+      Linux/final-source/common acceptance pending. Final current-source/common acceptance
+      2026-10-10: linked repair and original negative/regression predicates qualify
+      on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted
+      together. Historical detection/hypothesis/first passing source retained. No
+      live-system repair or deployment claimed.'
     legacy_record: null
   DEF-094:
     title: Hosted Windows native loopback qualification fails before identity proof
@@ -6905,7 +7305,7 @@ defects:
     legacy_record: null
   DEF-095:
     title: New endpoint native tests assume a pathlib native root on Windows
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -6961,7 +7361,14 @@ defects:
     regression_test: All four actual failed assertions retained, all53 new portable/native
       cases without applicable skips, same 26-file native regression and default3307/no
       baseline removals, actual Linux/full/current packages and commonC1-C4 gates.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Windows545 PASS/4 FAIL/0 ERROR/22 inherited Linux-only SKIP20.845s; allnew49PASS/4FAIL/0skip.
       Default3307/no errors1.859s; exact3254baseline+53new nodes, zero removals. Raw
       fixture paths/key/profile data are not published; only closed errors and IDs.
@@ -6982,11 +7389,14 @@ defects:
       with retained original require/native-error and pending/current/profile invariants.
       Final originalgroup1predeclared deselected separately labeled; full CI/Desktop/packages/commonC1-C4
       remainheld. Lateracc26 optional pointer source has not qualified and is not
-      inferred.'
+      inferred. Final current-source/common acceptance 2026-10-10: linked repair and
+      original negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-096:
     title: New endpoint tests expect a domain exception through the native context
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -7055,8 +7465,15 @@ defects:
       closed error, with original pending/current/profile bytes unchanged and zero
       credential/remote operation; all53 new/current native/default/Linux/full/common
       checks retained.
-    resolution_evidence: []
-    notes: Windows547PASS/2FAIL/0ERROR/22inherited Linux-onlySKIP21.411s; new51PASS/2FAIL/0SKIP.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Windows547PASS/2FAIL/0ERROR/22inherited Linux-onlySKIP21.411s; new51PASS/2FAIL/0SKIP.
       Default3307/noerrors1.753s, exact3307node IDs unchanged. Path-only repair preserved
       all assertions; no current SETTINGS_PATH_INVALID or str/Path TypeError. No production
       guard or native error contract change inferred. Original failures/evidence retained;
@@ -7078,11 +7495,14 @@ defects:
       with retained original require/native-error and pending/current/profile invariants.
       Final originalgroup1predeclared deselected separately labeled; full CI/Desktop/packages/commonC1-C4
       remainheld. Lateracc26 optional pointer source has not qualified and is not
-      inferred.
+      inferred. Final current-source/common acceptance 2026-10-10: linked repair and
+      original negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-097:
     title: Portable helper dispatch fixture assumes signal.alarm exists on Windows
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -7136,7 +7556,14 @@ defects:
     regression_test: All38 portable helper negative/order/legacy modes plus retained
       original44target/native regressions; exact55new nodes/no removals; actual17Linux
       combined credential/helper cases and full platform/packages/commonC1-C4.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Actual Windows762PASS/19ERROR/0FAIL/99declared LinuxSKIP211.774s; all19
       same attribute setup error. Source and failed evidence retained. Corrected test-only
       rerun/nativeLinux/full/common pending. No weakened policy assertion or product
@@ -7151,12 +7578,16 @@ defects:
       default3388/noerrors1.795s/same3388nodes. Allstrictreply/order/preIO/nonLinux/legacy
       assertions retained. Original743native/credential/candidate tests source-equivalent
       unchanged proof400; actualcurrentLinux/full/packages/C1-C4 pending, OPEN. No
-      resolution evidence claimed.'
+      resolution evidence claimed. Final current-source/common acceptance 2026-10-10:
+      linked repair and original negative/regression predicates qualify on source
+      e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted together.
+      Historical detection/hypothesis/first passing source retained. No live-system
+      repair or deployment claimed.'
     legacy_record: null
   DEF-098:
     title: Portable helper dispatch fixture loses stdout monkeypatch between pytest
       phases
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -7212,8 +7643,15 @@ defects:
     regression_test: All38portable dispatch exact/negative/beforeIO/order/legacy assertions
       plus retained original probe/protocol/native regressions and exact3388nodeIDs;
       actual17Linux and fullplatform/commonC1-C4 held.
-    resolution_evidence: []
-    notes: Actual764PASS/17FAIL/0ERROR/99declaredLinuxSKIP209.491s; all17 same lost
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Actual764PASS/17FAIL/0ERROR/99declaredLinuxSKIP209.491s; all17 same lost
       fixture buffer, actual helper tokens correct. No product/native/timeout/protocol
       cause inferred. Existing failedruns preserved. All C1-C4 held. Minimal onefile
       helper-local sys fixture source 5f80eec64e89fba848f5da1a78a1af4e2d37fb5f preserved/readback,
@@ -7223,12 +7661,16 @@ defects:
       default3388/noerrors1.795s/same3388nodes. Allstrictreply/order/preIO/nonLinux/legacy
       assertions retained. Original743native/credential/candidate tests source-equivalent
       unchanged proof400; actualcurrentLinux/full/packages/C1-C4 pending, OPEN. No
-      resolution evidence claimed.
+      resolution evidence claimed. Final current-source/common acceptance 2026-10-10:
+      linked repair and original negative/regression predicates qualify on source
+      e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted together.
+      Historical detection/hypothesis/first passing source retained. No live-system
+      repair or deployment claimed.'
     legacy_record: null
   DEF-099:
     title: Combined native SSH negative test expects empty command rejection after
       fixed argv construction
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -7284,8 +7726,15 @@ defects:
     regression_test: Retain all4 command cases; exact empty client rejection/zero
       transport, realSSH rejection for three nonempty commands/one actual call, all17combined
       native/38portable/native704/default3419/source-specific required936/fullplatform.
-    resolution_evidence: []
-    notes: Proven test-only placement error. Production HELPER_COMMAND nonempty guard
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Proven test-only placement error. Production HELPER_COMMAND nonempty guard
       must remain unchanged. Remaining required groups not executed; fullCI/Desktop
       running at inspection. No current A028/helper/native connection/C1-C4 acceptance.
       Minimal onefile source a68893fa004b896695d5d22a83fa4c3016b6d516 preserved/readback;
@@ -7296,11 +7745,15 @@ defects:
       No extra failure identified; currenta688 required/full separate. Actual currenta688
       push request29 all936PASS/noFAIL/ERROR/applicableSKIP. All17combined cases including
       strict empty0/nonempty1 transport boundary execute; all31native+38portable PASS.
-      CurrentPR/fullplatform/CommonC1-C4 held; OPEN/no resolution.
+      CurrentPR/fullplatform/CommonC1-C4 held; OPEN/no resolution. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-100:
     title: Fresh native SSH connection tests omit the transitive context fixture
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -7355,21 +7808,31 @@ defects:
     regression_test: All12 new authenticated SSH cases execute under actual Linux;
       all42 new native cases, full required990 twice, original source-specific platform/default
       gates.
-    resolution_evidence: []
-    notes: Proven test fixture composition error before native or SSH execution. Windows854
-      and native42 PASS do not prove Linux12. Required groups2-6 not executed. Current
-      full CI/Desktop not yet inspected. C1-C4 held; no production guard weakening.
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Proven test fixture composition error before native or SSH execution.
+      Windows854 and native42 PASS do not prove Linux12. Required groups2-6 not executed.
+      Current full CI/Desktop not yet inspected. C1-C4 held; no production guard weakening.
       Minimal one-line source repair 10badf7bbe08f54cfaeef640c062d4ceae8e319c published/readback;
       actual Linux passing_source remains null until execution. Actualrequest31 all12
       cases execute with no fixture errors; 11PASS/1 independent DEF101FAIL. Fixture
       repair passing_source10bad scoped only; commonC1-C4 held. Actual old2f43 full
       CI3413PASS/27SKIP/4XFAIL/12samefixtureERROR2556.17s, LinuxDesktop3436PASS/21SKIP/4XFAIL/12sameERROR2676.66s;
       no additional failure. Windows/source10bad full stillrunning. Currente8e8 request32
-      separate.
+      separate. Final current-source/common acceptance 2026-10-10: linked repair and
+      original negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-101:
     title: Fresh native SSH takeover test invokes the Leadership API incorrectly
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -7425,19 +7888,30 @@ defects:
     regression_test: All12 actual newSSH execute with no errors/failure; actual first-CAS
       stale epoch2/forced epoch3, previous grant refusal and protected localUNKNOWN
       unchanged; all990 twice/current fullplatform.
-    resolution_evidence: []
-    notes: Proven test-only incorrect constructor before election. Static downstream
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Proven test-only incorrect constructor before election. Static downstream
       API defects are recorded, not claimed as executed failures. All42 native and11
       other newSSH PASS in both jobs. Production leadership unchanged; no peer ACK/UNKNOWN
       barrier added. C1-C4 held. Minimal test-only source e8e8e2142a93a95607cacd76a551a55113312ad7
       preserved/readback, actual production AST signatures verified; passing_source
       null pending execution. Actual e8e8/request32 both990/noFAIL/ERROR/SKIP, first-CAS
       role test executed successfully in completefirstgroup; allcurrentplatform/bothrolepackageflags
-      PASS. Passing_source e8e8 scoped only; C1-C4 held.
+      PASS. Passing_source e8e8 scoped only; C1-C4 held. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-102:
     title: Native first-run pending test assumes Windows native root is a Path
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -7492,19 +7966,29 @@ defects:
       and preserve original pending; all35 nativecases and selected first-run/profile/endpoint/nativecredentials
       regressions, exactdefault3510 IDs retained, actualLinux/fullplatform before
       C1-C4.
-    resolution_evidence: []
-    notes: Proven new A031 test-only root type assumption, analogous prior DEF095
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Proven new A031 test-only root type assumption, analogous prior DEF095
       retained. Production guard not reached in failedcases. Default3510/noerrors/exact37add/removal0.
       No first-run/C1-C4 acceptance from33passes. Test-only Path conversion source
       ea4c2f72e471c7ab935fc2892e8551185d513ece preserved/readback; exactremainder
       AST and product/prior854 unchanged. Passing_source null until actual correctedpending
       execution. Actual corrected bothWindows pending cases and all35 native PASS
       within171/noFAIL/ERROR/SKIP15.191s. Default3510 exactsameIDs retained; requiredLinux/currentfull/C1-C4
-      held.
+      held. Final current-source/common acceptance 2026-10-10: linked repair and original
+      negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-103:
     title: Focused native first-run test selection omits drive helper imports
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -7559,17 +8043,28 @@ defects:
     regression_test: Corrected eight-target default pytest selection executes all35
       pending/native and affected legacy cases with no collection errors; default3510
       exactunchanged IDs; prior854 scoped evidence preserved.
-    resolution_evidence: []
-    notes: Proven test command selection issue under456; no execution and no production
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Proven test command selection issue under456; no execution and no production
       source change. Default collection3510/noerrors1.772s. DEF102 guard execution
       stillpending; C1-C4 held. Corrected normal eight-target selection actual171PASS/noFAIL/ERROR/SKIP,
       all35newnative; no source/PYTHONPATH/defaultconfig changes. Passing_sourceea4c
-      scoped only; C1-C4 held.
+      scoped only; C1-C4 held. Final current-source/common acceptance 2026-10-10:
+      linked repair and original negative/regression predicates qualify on source
+      e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted together.
+      Historical detection/hypothesis/first passing source retained. No live-system
+      repair or deployment claimed.'
     legacy_record: null
   DEF-104:
     title: Mapped Candidate negative test expects a status after C1 has already refused
       physical loss
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -7624,10 +8119,17 @@ defects:
     regression_test: Both actual physical-loss cases reach exact early C1 refusal
       and preserve all original/staged/work frames; all13mappedSSH and required1040
       twice/currentplatform.
-    resolution_evidence: []
-    notes: Proven newtest-only expectation defect. Both initial reviews succeed, then
-      physical loss refuses before candidate validation. Productguard correct; no
-      runtime/C1-C4 acceptance from11passes. Frozen33 CI3462/27/4 and LinuxDesktop3485/21/4/bothrolefourflags
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Proven newtest-only expectation defect. Both initial reviews succeed,
+      then physical loss refuses before candidate validation. Productguard correct;
+      no runtime/C1-C4 acceptance from11passes. Frozen33 CI3462/27/4 and LinuxDesktop3485/21/4/bothrolefourflags
       PASS, Windows stillbuilding. Minimal test-only source cb9501f0e7d54601a06318e2de220d9d319070b4
       preserved/readback, existingexactC1 errorcodes/noSSH/profile/Main/archive/work/ephemeral
       readiness assertions. ActualrestAST/13decorators/product unchanged; passing_source
@@ -7639,11 +8141,15 @@ defects:
       Current35Desktop incomplete; scopedpassing_source cb950 only/no C1-C4 acceptance.
       Corrected35 completeplatform actualWindows3254/265/4 2483.85s andLinux3498/21/4
       2769.68s, bothroles fourpackage/GUI/profileisolation flagsPASS; exactverified3bd28checkout,
-      metadataonlyartifacts. Frozenoldsource qualified, RP027 common held.
+      metadataonlyartifacts. Frozenoldsource qualified, RP027 common held. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-105:
     title: Native no-grant admission test supplies an unrelated actor enrollment
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -7700,8 +8206,15 @@ defects:
     regression_test: Actual typed current native context constructs matching actor/checkpoint
       and refuses missing leadership grant ADMISSION_LEADERSHIP_UNKNOWN, allsame226
       and3554 IDs plus currentLinux31/1071 and platform.
-    resolution_evidence: []
-    notes: Proven new fixture/test enrollment mismatch; ordinary debug, no external
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Proven new fixture/test enrollment mismatch; ordinary debug, no external
       blocker or production guard change. Minimaltestonlymatchingfixtureactor source
       18969f784e2e2431ed31f6a6c0a3eef62279e31d preserved; allother24native AST/no-grant
       assertion AST unchanged, production unchanged/tests0. Passing_source null untilactualrecheck.
@@ -7714,12 +8227,16 @@ defects:
       artifactmetadataonly. CI/Linuxstillrunning/currentstagedsource/commonnotqualified.
       Same36 actual CI3506/27SKIP/4XFAIL2746.67s andLinux3529/21SKIP/4XFAIL2867.85s,
       bothroleLinuxfourpackage flagsPASS/actualfa9source; completefrozenA033platform
-      qualified, newerstaged/controller/commonheld.
+      qualified, newerstaged/controller/commonheld. Final current-source/common acceptance
+      2026-10-10: linked repair and original negative/regression predicates qualify
+      on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted
+      together. Historical detection/hypothesis/first passing source retained. No
+      live-system repair or deployment claimed.'
     legacy_record: null
   DEF-106:
     title: Unexecuted staged endpoint tests expect raw exceptions across the native
       sanitizer
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -7770,7 +8287,14 @@ defects:
     regression_test: Actual2nativecuts/4alteredpending andordinaryreplacementconflict
       reach intendedguard, exactprofile/archive/work retained; all25 staged/current1096
       andplatform.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Static source-review finding only; no fabricatedfailed test/run or passing_source.
       MinimaltestcorrectionbeforefirststagedCI, production unchanged. Minimaltest-onlysource
       b6288d53c5eb29d51708b1f6099114529f79a701 matchesclosednativeErrors andobservesexactinternalconflictguard;
@@ -7778,12 +8302,16 @@ defects:
       unchanged/tests0. No passing_source untilactual. Actualsame37 firstrequiredgroup583:
       both582PASS/1differentrevokedexpectationFAIL; correctednativecuts/pending/ordinaryinternalconflict
       cases among24stagedPASS. Scopedpassing_source b628 only for this sanitizer repair;
-      DEF108 newrevokedexpectation andfull1096/common remainheld.'
+      DEF108 newrevokedexpectation andfull1096/common remainheld. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-107:
     title: Candidate controller may retain obsolete UI readiness if its checker factory
       fails first
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -7834,18 +8362,29 @@ defects:
     regression_test: Actualpreviouslygreen native Candidate/controller after lateendpointpending;
       refresh/activate factoryclosedfailure clears ephemeralreadiness, originalMain/archive/shared/profile
       retained; generic/nativeCandidate andfullplatform.
-    resolution_evidence: []
-    notes: Static source-order finding, suspectedorigin only; no fabricatedruntime
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Static source-order finding, suspectedorigin only; no fabricatedruntime
       reproduction/passing_source. Currentminimalprefactoryreset source 632fd1a0459b6ce64d6ccff4c90957cbabd26645
       preserved; newnative/SSH execution pending. Current38actualall7 retained/controller
       casesPASSbothrequiredjobs includingrefresh/activate latefactoryloss/defaultUIdenial,
       rootlessnativeC4/Main/currentadmission/work, mappedguard andforce/revocationrefusal.
       Scopedpassing940b34ac only; nohistoricalruntimefailedrun asserted, platforms/commonheld.
+      Final current-source/common acceptance 2026-10-10: linked repair and original
+      negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-108:
     title: Staged revoked-access test expects a review report after native construction
       already refuses capability
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C2
     suspected_origin:
       work_item: RP-027
@@ -7904,8 +8443,15 @@ defects:
       current connection constructor before any transport; internal guard and closed
       public error independently verified; retained original Main/archive/work andstagedprofile,
       allotherstaged24 andcurrentLinux1107/fullplatform.
-    resolution_evidence: []
-    notes: Proven new test expectation mismatch in A034; ordinary debug, no external
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Proven new test expectation mismatch in A034; ordinary debug, no external
       blocker. All actual failure evidence retained. Exact internal guard to be verified
       before correction; no generic exception-only acceptance. Exactcurrentinternalguard
       source-reviewed as FOLDER_ENDPOINT_CREDENTIAL; no guessed new guard introduced.
@@ -7917,12 +8463,16 @@ defects:
       cannotqualifystagedLinuxcase. Current38repair executionstillpending. Current38actual1107twice/noFAIL/ERROR/SKIP
       (594/51/6/22/107/327, oneexplicitdeselected inlastlegacyselection); stagedall25
       pass includingexact internalFOLDER_ENDPOINT_CREDENTIAL/publicSETTINGS_STORE_UNAVAILABLE/noKey/SSH/retention.
-      Scopedpassing940b34ac only; completeplatform/commonheld.
+      Scopedpassing940b34ac only; completeplatform/commonheld. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-109:
     title: Mapping AFTER before-move negative fixture reads absent terminal folder
       plan
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -7973,8 +8523,15 @@ defects:
     issue: null
     regression_test: Actual pre-move request must reach closed UNKNOWN without storage
       writes; keep all11 native AFTER predicates.
-    resolution_evidence: []
-    notes: Ordinary debug. Actual same39 push/PR first group632PASS/2FAIL; fullCI3580PASS/2sameFAIL/27SKIP/4XFAIL,
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Ordinary debug. Actual same39 push/PR first group632PASS/2FAIL; fullCI3580PASS/2sameFAIL/27SKIP/4XFAIL,
       LinuxDesktop3603PASS/2sameFAIL/21SKIP/4XFAIL. Subsequent required groups and
       Linux packages not executed. No historical failure removed or acceptance asserted.
       Exact four-file repair now preserved/published; no passing_source until actual
@@ -7984,12 +8541,16 @@ defects:
       matched immutable source. DEF109/110 scoped regressions pass at d39bda. Full
       CI3611PASS/27SKIP/4XFAIL, Linux3634/21/4, Windows3328/327/4 and both-role package
       checks pass. Last327 special group was cancelled at the 30-minute budget, so
-      common acceptance and defect status remain OPEN.
+      common acceptance and defect status remain OPEN. Final current-source/common
+      acceptance 2026-10-10: linked repair and original negative/regression predicates
+      qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks
+      accepted together. Historical detection/hypothesis/first passing source retained.
+      No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-110:
     title: Actual native mapping AFTER positive fixed SSH witness refuses current
       proof
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C3
     suspected_origin:
       work_item: RP-027
@@ -8053,8 +8614,15 @@ defects:
     regression_test: Actual selected native endpoint fixed SSH produces fresh correlated
       mapping AFTER witness; preserves full native profile/archive/root/work and refuses
       current loss without writes.
-    resolution_evidence: []
-    notes: Ordinary debug. Actual same39 push/PR first group632PASS/2FAIL; fullCI3580PASS/2sameFAIL/27SKIP/4XFAIL,
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Ordinary debug. Actual same39 push/PR first group632PASS/2FAIL; fullCI3580PASS/2sameFAIL/27SKIP/4XFAIL,
       LinuxDesktop3603PASS/2sameFAIL/21SKIP/4XFAIL. Subsequent required groups and
       Linux packages not executed. No historical failure removed or acceptance asserted.
       Exact pure diagnostic now proves unconditional old-mode reply guard is the client
@@ -8069,11 +8637,15 @@ defects:
       no skipped cases, independently matched immutable source. DEF109/110 scoped
       regressions pass at d39bda. Full CI3611PASS/27SKIP/4XFAIL, Linux3634/21/4, Windows3328/327/4
       and both-role package checks pass. Last327 special group was cancelled at the
-      30-minute budget, so common acceptance and defect status remain OPEN.
+      30-minute budget, so common acceptance and defect status remain OPEN. Final
+      current-source/common acceptance 2026-10-10: linked repair and original negative/regression
+      predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4
+      rechecks accepted together. Historical detection/hypothesis/first passing source
+      retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-111:
     title: Required Folder qualification exceeds its finite 30-minute workflow budget
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -8122,16 +8694,26 @@ defects:
     regression_test: Both exact current-source required Folder runs finish all six
       unchanged groups with no failure or skip; final327 selection remains explicit
       and full CI covers its excluded maximum-capacity case.
-    resolution_evidence: []
-    notes: Preserve cancelled jobs as PARTIAL. Provider annotation unavailable; timing/configuration
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Preserve cancelled jobs as PARTIAL. Provider annotation unavailable; timing/configuration
       support budget cause but are not a fabricated scheduler annotation. This is
       ordinary test infrastructure repair, not an external blocker. Finite60-minute
       allowance qualified by both unchanged1176 groups on source1395294; whole-platform/common
-      scope still pending.
+      scope still pending. Final current-source/common acceptance 2026-10-10: linked
+      repair and original negative/regression predicates qualify on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a;
+      RP-027.C1-C4 rechecks accepted together. Historical detection/hypothesis/first
+      passing source retained. No live-system repair or deployment claimed.'
     legacy_record: null
   DEF-112:
     title: Documentation-only checkpoint messages enqueue redundant full PR workflows
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -8187,7 +8769,14 @@ defects:
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicate-reconciled.json
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicates-all-terminal.json
-    notes: Task publication repair, not application change. Preserve all accidental
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
+    notes: 'Task publication repair, not application change. Preserve all accidental
       run IDs and actual cleanup state; no false no-duplicate claim. Guarded checkpoint0fcd
       has zero workflow runs and WORK_INSTRUCTION440dad documents prevention. Existing
       cancellation capability absent; no cancellations attempted and duplicates preserved.
@@ -8195,12 +8784,16 @@ defects:
       and15FAIL. Every failure names only the original pre-repair late-child test;
       exact merge parents/whole-tree equality verify provenance. No run was canceled
       or retried. Guarded documentation head3c0c0aec has zero workflow runs. Keep
-      OPEN until common acceptance.
+      OPEN until common acceptance. Final current-source/common acceptance 2026-10-10:
+      linked repair and original negative/regression predicates qualify on source
+      e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted together.
+      Historical detection/hypothesis/first passing source retained. No live-system
+      repair or deployment claimed.'
     legacy_record: null
   DEF-113:
     title: Cold Main late-child test expects an internal exception across the native
       sanitizer
-    status: OPEN
+    status: RESOLVED
     detected_in: RP-027.C4
     suspected_origin:
       work_item: RP-027
@@ -8263,6 +8856,13 @@ defects:
       platform/common gates remain.
     resolution_evidence:
     - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-required-native-qualified.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C1.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C2.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C3.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/RP-027.C4.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json
+    - docs/implementation-plan/revisions/R2/evidence/RP-028/A001/accepted-rp027-defect-handoff.json
     notes: 'Both original42 first groups720PASS/1FAIL, later required groups not run.
       FullCI/Desktop pending. No source assertion or native sanitizer weakened; suspected
       test boundary not yet proved by internal guard witness. Exact one-file test
@@ -8277,5 +8877,9 @@ defects:
       andPR0c332 checkouts match pinned source. The strengthened late-child internal/outward
       guard and exact pending/frame preservation assertions completed, proving the
       test expectation mismatch without changing production. Status remains OPEN pending
-      current full/platform/common acceptance.'
+      current full/platform/common acceptance. Final current-source/common acceptance
+      2026-10-10: linked repair and original negative/regression predicates qualify
+      on source e9d3af33a6a2d0325eedd3e83029b2df73a8320a; RP-027.C1-C4 rechecks accepted
+      together. Historical detection/hypothesis/first passing source retained. No
+      live-system repair or deployment claimed.'
     legacy_record: null
