@@ -1,0 +1,76 @@
+{
+  "event": "RP-027-A001-0546",
+  "intent": "RP-027-A001-0544",
+  "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "checkout": "ceb3aa1dc7e2dc209851077f942b75b593e1e6be",
+  "platform": "Windows",
+  "architecture": "AMD64",
+  "python": "3.11.9",
+  "targets": [
+    "tests/drive/test_folder_first_run.py",
+    "tests/drive/test_reconfiguration_active_adoption.py",
+    "tests/security/test_reconfiguration_active_adoption_native.py",
+    "tests/security/test_folder_runtime_factory_native.py",
+    "tests/security/test_reconfiguration_admission_native.py"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 125.578,
+  "counts": {
+    "PASS": 62,
+    "FAILURE": 0,
+    "ERROR": 0,
+    "SKIPPED": 0
+  },
+  "groups": {
+    "tests.drive.test_folder_first_run": {
+      "PASS": 21,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.drive.test_reconfiguration_active_adoption": {
+      "PASS": 22,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.security.test_reconfiguration_active_adoption_native": {
+      "PASS": 8,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.security.test_folder_runtime_factory_native": {
+      "PASS": 4,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.security.test_reconfiguration_admission_native": {
+      "PASS": 7,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    }
+  },
+  "collection": {
+    "schema_version": 1,
+    "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+    "checkout": "f89d7adf0e88d122ac47e25d44613e23a10a1da8",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.848,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3717,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "unchanged_A038_windows": "305PASS including37newportable at1d0bf6e6",
+  "new_actual_native": "9mapped+12cold recovery pending required Linux execution",
+  "acceptance": false
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0197",
+  "source": "923741e9027a2fa6e0289f42cfd59149f8c33d3d",
+  "qualified_application_source": "a2cb9dc0d0baf1812dfec9d5baa12b7e52db9fd9",
+  "trigger": "83ac271e46e3095af0493438f1ea9a2440df9d3c",
+  "runs": [
+    {
+      "run": 37120998436,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111196923979,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ],
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37120998436"
+    },
+    {
+      "run": 37120998494,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111196924074,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ],
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37120998494"
+    },
+    {
+      "run": 37120998439,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111196923903,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111196923951,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ],
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37120998439"
+    },
+    {
+      "run": 37120995350,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 111196914601,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ],
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37120995350"
+    }
+  ],
+  "scheduling": "Native current-role admission source development is independent of this workflow-only budget change; it consumes promotion qualification194 and uses separate verified INTENT. Immutable-source CI continues on exact recorded checkout; all acceptance/package claims await terminal and final source proof.",
+  "acceptance": false
+}

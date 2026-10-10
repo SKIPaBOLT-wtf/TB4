@@ -1,0 +1,125 @@
+{
+  "event": "RP-027-A001-0541",
+  "intent": "RP-027-A001-0539",
+  "source": "1d0bf6e6f96ea60b18bb9b40b297cb6be3838596",
+  "checkout": "e33dbdc4e6928f9165e309e1279069fd72ce8eb5",
+  "platform": "Windows",
+  "architecture": "AMD64",
+  "python": "3.11.9",
+  "targets": [
+    "tests/drive/test_folder_first_run.py",
+    "tests/drive/test_folder_mapping_active_probe.py",
+    "tests/drive/test_folder_mapping_after_probe.py",
+    "tests/drive/test_folder_helper_dispatch.py",
+    "tests/drive/test_folder_probe.py",
+    "tests/security/test_folder_connection_native.py",
+    "tests/security/test_folder_probe_transport_native.py",
+    "tests/drive/test_folder_probe_transport.py",
+    "tests/drive/test_reconfiguration_retained.py",
+    "tests/security/test_reconfiguration_retained_native.py",
+    "tests/drive/test_reconfiguration_promotion.py",
+    "tests/security/test_reconfiguration_promotion_native.py"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 102.004,
+  "counts": {
+    "PASS": 305,
+    "FAILURE": 0,
+    "ERROR": 0,
+    "SKIPPED": 0
+  },
+  "groups": {
+    "tests.drive.test_folder_first_run": {
+      "PASS": 21,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.drive.test_folder_mapping_active_probe": {
+      "PASS": 37,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.drive.test_folder_mapping_after_probe": {
+      "PASS": 45,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.drive.test_folder_helper_dispatch": {
+      "PASS": 38,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.drive.test_folder_probe": {
+      "PASS": 31,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.security.test_folder_connection_native": {
+      "PASS": 42,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.security.test_folder_probe_transport_native": {
+      "PASS": 20,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.drive.test_folder_probe_transport": {
+      "PASS": 28,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.drive.test_reconfiguration_retained": {
+      "PASS": 18,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.security.test_reconfiguration_retained_native": {
+      "PASS": 7,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.drive.test_reconfiguration_promotion": {
+      "PASS": 14,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    },
+    "tests.security.test_reconfiguration_promotion_native": {
+      "PASS": 4,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    }
+  },
+  "collection": {
+    "schema_version": 1,
+    "source": "1d0bf6e6f96ea60b18bb9b40b297cb6be3838596",
+    "checkout": "12dbc915a86fa144d59c5a28acb4f3d0385c198f",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 2.029,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3705,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "native_mapped_ssh": "9 cases collected only; required Linux execution pending",
+  "readback_recovery": "STARTED540 single samecommit readback resumed after transient git exit128; exact bytes confirmed, no mutation replay.",
+  "acceptance": false
+}

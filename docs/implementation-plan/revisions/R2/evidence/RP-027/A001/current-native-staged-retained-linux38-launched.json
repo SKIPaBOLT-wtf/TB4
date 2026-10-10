@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0508",
+  "result": "STARTED",
+  "source": "940b34ac2c38e62a725fe29ab49d80de860569a6",
+  "request": 38,
+  "trigger": "455559f6d861e625f14b376ce918bc759a46c1d5",
+  "actual_pr": "561f5b0028ef4f3ecca57095769f224dfcc169d1",
+  "verified_parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "455559f6d861e625f14b376ce918bc759a46c1d5"
+  ],
+  "non_documentation_diff": "EMPTY_FOR_TRIGGER_AND_PR_VERIFIED_BY_GIT",
+  "required_cases": 1107,
+  "group_counts": {
+    "physical_probe_and_first_run": 594,
+    "mapping_relocation": 51,
+    "retained": 6,
+    "current_role_folder": 22,
+    "original_native": 107,
+    "docs_effect_admission": 327
+  },
+  "runs": [
+    {
+      "id": 37293516713,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111709268177,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37293516705,
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "completed",
+      "jobs": [
+        {
+          "id": 111709268065,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37293516676,
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111709268355,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37293516711,
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111709268497,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111709268704,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37293511911,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111709251874,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "initial_observation": "Initial query had empty runs and obsolete PR merge98141f; same trigger re-inspected once, current561f5b parents verified. No relaunch/rerun.",
+  "tests_executed": 0,
+  "acceptance": false,
+  "next": "Terminal same38/same37 read-only inspection; final staged/current runtime composition only from relevant qualified invariants.",
+  "documentation_preflight": "Initial unpublished STARTED candidate used numeric run_id against string schema and was rejected RECORD_SCHEMA_INVALID before publication; launch completion is recorded as OUTCOME RECORDED, execution remains pending. Same request38 retained, no replay."
+}

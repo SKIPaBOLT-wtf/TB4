@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0547",
+  "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "trigger": "12740484281b9f0b8e333eab0e462e653ed970da",
+  "actual_pr_checkout": "ef020ad81ca8c7afefa59596baf86945ec72d9ec",
+  "result": "FAIL",
+  "acceptance": false,
+  "ci": {
+    "job": 114282061718,
+    "checkout": "ef020ad81ca8c7afefa59596baf86945ec72d9ec",
+    "summary": [
+      "43 passed in 0.20s",
+      "34 passed in 0.59s",
+      "2 passed in 0.03s",
+      "1 failed, 3668 passed, 27 skipped, 4 xfailed in 3215.56s (0:53:35)"
+    ],
+    "failed": [
+      "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+    ],
+    "codes": [
+      "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+    ]
+  },
+  "linux": {
+    "job": 114282061681,
+    "checkout": "ef020ad81ca8c7afefa59596baf86945ec72d9ec",
+    "summaries": [
+      "90 passed, 4 skipped in 2.18s",
+      "43 passed in 0.20s",
+      "34 passed in 0.52s",
+      "2 passed in 0.03s",
+      "75 passed in 8.86s",
+      "79 passed in 15.71s",
+      "1 failed, 3691 passed, 21 skipped, 4 xfailed in 3730.93s (1:02:10)"
+    ],
+    "failed": [
+      "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+    ],
+    "codes": [
+      "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+    ],
+    "packages": []
+  },
+  "windows": {
+    "job": 114282061540,
+    "checkout": "ef020ad81ca8c7afefa59596baf86945ec72d9ec",
+    "summaries": [
+      "74 passed, 20 skipped in 4.34s",
+      "15 passed in 0.40s",
+      "30 passed, 4 skipped in 1.76s",
+      "2 passed in 8.81s",
+      "75 passed in 10.67s",
+      "79 passed in 19.22s",
+      "3365 passed, 348 skipped, 4 xfailed in 2555.51s (0:42:35)"
+    ],
+    "packages": [
+      [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    ]
+  },
+  "required": {
+    "push": {
+      "run": 38075689367,
+      "job": 114282053261,
+      "result": "FAIL",
+      "passed": 720,
+      "failed": 1,
+      "seconds": 1326.4
+    },
+    "pr": {
+      "run": 38075692326,
+      "job": 114282061713,
+      "result": "FAIL",
+      "passed": 720,
+      "failed": 1,
+      "seconds": 1579.01
+    },
+    "later_groups": "Not executed after the same first-group failure; no implied pass."
+  },
+  "progress": {
+    "run": 38075692331,
+    "job": 114282061545,
+    "result": "PASS",
+    "passed": 235,
+    "seconds": 6.59
+  },
+  "artifacts_metadata_only": [
+    {
+      "id": 11679755706,
+      "name": "tb4-desktop-Windows-ef020ad81ca8c7afefa59596baf86945ec72d9ec",
+      "size": 121994955,
+      "digest": "sha256:f957f59e6099437133da4d5d13a2636683c0421944786ea07af7a73146954159"
+    }
+  ],
+  "analysis": "Every source42 native/full Linux failure names the same new late-child assertion and closed SettingsError. No additional failed case appears. Its internal guard witness was not proved in this source; source43 has the separately recorded test-only repair. Windows42 passed the complete declared Windows suite and both-role package checks; Linux42 builds/packages were skipped following its test failure. Source42 cannot be accepted.",
+  "continuity": "All original source42 jobs are terminal. No run or potentially mutating action was repeated. Original INTENT547 already received OUTCOME/FAIL555; this is a later OBSERVATION, not a second closing outcome.",
+  "next": "Inspect the existing source43 native push/PR, full CI and Linux/Windows Desktop jobs. Current acceptance and defect closure remain held until exact repaired predicates and all common gates pass."
+}

@@ -1,0 +1,1241 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C3",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0526",
+  "source": "d39bda8915af63ce621134aad0e703703c064301",
+  "checkout": "d6f6d282cdead8ff817b17dcf75393bca1b622e1",
+  "result": "PASS",
+  "windows": {
+    "source": "d39bda8915af63ce621134aad0e703703c064301",
+    "checkout": "d6f6d282cdead8ff817b17dcf75393bca1b622e1",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 6.469,
+    "owned_absent_fixture_root": true,
+    "targets": [
+      "tests/drive/test_folder_first_run.py",
+      "tests/drive/test_folder_mapping_after_probe.py",
+      "tests/drive/test_folder_helper_dispatch.py",
+      "tests/drive/test_folder_probe.py",
+      "tests/security/test_folder_connection_native.py",
+      "tests/security/test_folder_probe_transport_native.py",
+      "tests/drive/test_folder_probe_transport.py"
+    ],
+    "cases": [
+      {
+        "name": "test_actual_first_run_consumes_one_new_proof_per_review_and_keeps_default_activation_closed",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[root]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[domain]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[setup]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[actor]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[capacity]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[mode]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[authority]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[authority-root]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[tab]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[root-transition]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[extra]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[missing]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[spec]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[handle]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[transport]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[origin]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[binding]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_saved_success_is_not_new_first_run_readiness",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_remote_error_is_closed_and_does_not_retry_or_disclose_private_canary",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_only_exact_probe_type_can_construct_read_only_port",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_fresh_hash_attestation_has_no_mutating_or_activation_api",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_old_reply_cannot_attest_next_observation",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_unmatched_or_untyped_reply_cannot_attest[mode-FOLDER_SQLITE_V1]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_unmatched_or_untyped_reply_cannot_attest[nonce-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_unmatched_or_untyped_reply_cannot_attest[root-10000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_unmatched_or_untyped_reply_cannot_attest[mapping_sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_unmatched_or_untyped_reply_cannot_attest[revision-True]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_unmatched_or_untyped_reply_cannot_attest[revision-0]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_unmatched_or_untyped_reply_cannot_attest[result-UNKNOWN]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_unmatched_or_untyped_reply_cannot_attest[body-bad]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_unmatched_or_untyped_reply_cannot_attest[path-SYNTHETIC_PRIVATE_CANARY]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_request_refuses_before_transport_or_mapping_io[operation-CAS]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_request_refuses_before_transport_or_mapping_io[path-SYNTHETIC_PRIVATE_CANARY]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_request_refuses_before_transport_or_mapping_io[blueprint-bad]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_request_refuses_before_transport_or_mapping_io[authority-bad]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_request_refuses_before_transport_or_mapping_io[mapping_sha256-bad]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_request_refuses_before_transport_or_mapping_io[mapping_sha256-True]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_request_refuses_before_transport_or_mapping_io[mode-FOLDER_SQLITE_V1]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_request_refuses_before_transport_or_mapping_io[root-10000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_request_refuses_before_transport_or_mapping_io[domain-40000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_request_refuses_before_transport_or_mapping_io[nonce-invalid]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_expected_plan_refuses_before_transport[blueprint_sha256]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_expected_plan_refuses_before_transport[handle_sha256]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_expected_plan_refuses_before_transport[authority]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_expected_plan_refuses_before_transport[schema_version]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_composition_refuses_before_transport[probe]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_composition_refuses_before_transport[transport]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_composition_refuses_before_transport[origin]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_default_authority_handler_rejects_after_probe_without_cas",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_validates_after_pair_and_retains_old_normal_response_guard",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply[mode-FOLDER_SQLITE_V1]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply[nonce-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply[root-10000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply[domain-40000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply[mapping_sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply[revision-True]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply[revision-0]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply[result-UNKNOWN]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply[body-bad]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply[path-SYNTHETIC_PRIVATE_CANARY]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply[blueprint-de2ac79ca1a76c5b1853cd842fd29e05382bd491cf8de7bdf11c0f4490a4bff2]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply[authority-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_after_reply_requires_terminal_exact_current_plan[identity-unknown]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_after_reply_requires_terminal_exact_current_plan[configuration-active]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_runner_after_reply_requires_terminal_exact_current_plan[handle]",
+        "classname": "tests.drive.test_folder_mapping_after_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_two_fixed_tokens_select_only_the_existing_mode[tb4-folder-v1-False]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_two_fixed_tokens_select_only_the_existing_mode[tb4-folder-probe-v1-True]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[None]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[ tb4-folder-v1]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[tb4-folder-v1 ]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[tb4-folder-v1\\n]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[tb4-folder-v1 extra]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[tb4-folder-probe-v1 extra]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[TB4-FOLDER-V1]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[tb4-folder-v2]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[tb4-folder-v1;synthetic-command]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[synthetic-command]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[$(synthetic-command)]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[\\x00tb4-folder-v1]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[redacted-synthetic-parameter-81]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[1]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[tb4-folder-v1]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_other_values_never_select_a_helper_mode[command16]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[None]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[ tb4-folder-v1]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[tb4-folder-v1 ]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[tb4-folder-v1\\n]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[tb4-folder-v1 extra]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[tb4-folder-probe-v1 extra]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[TB4-FOLDER-V1]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[tb4-folder-v2]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[tb4-folder-v1;synthetic-command]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[synthetic-command]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[$(synthetic-command)]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_rejects_before_config_stdin_store_or_handler[redacted-synthetic-parameter-97]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_routes_one_bounded_request_to_only_one_handler[tb4-folder-v1-False]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_opt_in_routes_one_bounded_request_to_only_one_handler[tb4-folder-probe-v1-True]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_original_modes_ignore_untrusted_original_command[False]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_original_modes_ignore_untrusted_original_command[True]",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_both_modes_are_refused_before_any_helper_io",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_non_linux_does_not_enter_dispatch_or_config",
+        "classname": "tests.drive.test_folder_helper_dispatch",
+        "status": "PASS"
+      },
+      {
+        "name": "test_portable_exact_observation_is_fresh_and_has_no_mutating_api",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[root-10000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[domain-40000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[nonce-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[mode-FOLDER_SQLITE_V1]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[version-2]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[revision-True]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[revision-0]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[revision-1208925819614629174706176]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[body-***]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[redacted-synthetic-parameter-114]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[blueprint-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[authority-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[extra-SYNTHETIC_PRIVATE_CANARY]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[result-SNAPSHOT]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[result-UNKNOWN]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_saved_reply_cannot_qualify_next_observation",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[duck]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[no-access]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[wrong-root]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[tab]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[mode]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[operation-CAS]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[path-SYNTHETIC_PRIVATE_CANARY]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[blueprint-bad]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[authority-bad]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[mode-FOLDER_SQLITE_V1]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[root-10000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[domain-40000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[nonce-invalid]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_default_read_cas_handler_does_not_accept_probe",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_constructor_and_each_operation_preserve_profile_image_history_and_key",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_existing_pending_profile_is_held_without_recovery_or_transport",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_immutable_endpoint_frame_is_refused_without_repair",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_hardlinked_frame_is_never_a_selection_grant[profile]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_hardlinked_frame_is_never_a_selection_grant[endpoint]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_mutated_cached_pins_are_refused_before_native_io[pointer]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_mutated_cached_pins_are_refused_before_native_io[endpoint]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_mutated_cached_pins_are_refused_before_native_io[profile]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_mutated_cached_pins_are_refused_before_native_io[clock]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_untyped_store_or_connection_never_acquires_protected_io",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_restored_hidden_scope_cannot_override_explicit_current_selection[FOLDER_PROBE-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_restored_hidden_scope_cannot_override_explicit_current_selection[FOLDER_AUTHORITY-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[unselected]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[revoked]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[selection-revoked]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[key-version]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[known-version]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[key-permission]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[known-permission]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[expired]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[operation-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[operation-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[root-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[root-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[nonce-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[nonce-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[extra-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[extra-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[raw-type-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[raw-type-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[duplicate-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[duplicate-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_current_pointer_never_reuses_previously_constructed_connection[reference]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_current_pointer_never_reuses_previously_constructed_connection[root]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_current_pointer_never_reuses_previously_constructed_connection[binding_digest]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_current_pointer_never_reuses_previously_constructed_connection[null]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_held_lock_refuses_immediately_without_transport_or_profile_change[profile]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_held_lock_refuses_immediately_without_transport_or_profile_change[endpoint]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_lost_reply_after_cas_is_unknown_once_then_read_inspects_same_effect",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_protected_frame_after_reply_is_not_returned_as_success[READ]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_protected_frame_after_reply_is_not_returned_as_success[CAS]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_local_unknown_history_does_not_block_existing_proof_or_authority",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_borrowed_paths_are_closed_and_public_fixed_use_never_returns_proof",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_prior_success_cannot_authorize_later_key_trust_or_binding_loss[key-version-REVOKED]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_prior_success_cannot_authorize_later_key_trust_or_binding_loss[key-permission-DENIED]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_prior_success_cannot_authorize_later_key_trust_or_binding_loss[known-version-DENIED]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_prior_success_cannot_authorize_later_key_trust_or_binding_loss[known-permission-DENIED]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_prior_success_cannot_authorize_later_key_trust_or_binding_loss[expired-EXPIRED]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_prior_success_cannot_authorize_later_key_trust_or_binding_loss[revoked-REVOKED]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_restart_keeps_same_registry_and_requires_a_new_credential_bound_proof",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_lost_partial_or_replayed_reply_discards_private_slot_without_retry[lost]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_lost_partial_or_replayed_reply_discards_private_slot_without_retry[unknown]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_lost_partial_or_replayed_reply_discards_private_slot_without_retry[nonce]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_lost_partial_or_replayed_reply_discards_private_slot_without_retry[extra]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_lost_partial_or_replayed_reply_discards_private_slot_without_retry[replay]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_wrong_or_mutating_request_refuses_before_any_native_use[operation-CAS]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_wrong_or_mutating_request_refuses_before_any_native_use[extra-SYNTHETIC_PRIVATE_CANARY]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_wrong_or_mutating_request_refuses_before_any_native_use[blueprint-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_wrong_or_mutating_request_refuses_before_any_native_use[authority-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_parallel_private_slot_refuses_promptly_without_a_second_resolver_or_helper_use",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fetcher_only_selected_key_cannot_be_used_for_private_folder_probe",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_native_transport_enters_read_only_first_run_and_refuses_changed_pins",
+        "classname": "tests.security.test_folder_probe_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[target]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[trust]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[relative-client]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[host-option]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[host-shell]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[host-empty-label]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[host-label-length]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[host-control]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[bool-port]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[zero-port]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[large-port]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[user-control]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[relative-known]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[bool-version]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[zero-version]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[bool-timeout]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[zero-timeout]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[large-timeout]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_private_endpoint_is_closed_before_native_io[nan-timeout]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_private_dns_ipv4_ipv6_and_scoped_address_inputs[storage.invalid]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_private_dns_ipv4_ipv6_and_scoped_address_inputs[127.0.0.1]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_private_dns_ipv4_ipv6_and_scoped_address_inputs[::1]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_private_dns_ipv4_ipv6_and_scoped_address_inputs[fe80::1%synthetic0]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fixed_args_disable_other_identity_and_command_sources_and_preserve_spaces_percent",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_file_directive_cannot_select_an_interpolated_or_control_path[newline]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_file_directive_cannot_select_an_interpolated_or_control_path[return]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_file_directive_cannot_select_an_interpolated_or_control_path[tab]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_file_directive_cannot_select_an_interpolated_or_control_path[environment]",
+        "classname": "tests.drive.test_folder_probe_transport",
+        "status": "PASS"
+      }
+    ],
+    "failures": [],
+    "counts": {
+      "PASS": 225,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    }
+  },
+  "collection": {
+    "schema_version": 1,
+    "source": "d39bda8915af63ce621134aad0e703703c064301",
+    "checkout": "d6f6d282cdead8ff817b17dcf75393bca1b622e1",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.836,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3659,
+    "errors": [],
+    "tests_executed": 0,
+    "old_ids": 3643,
+    "new_ids": 3659,
+    "added": 16,
+    "removed": 0,
+    "legacy_exact": true,
+    "linux_tests_executed": 0
+  },
+  "defects": {
+    "DEF-109": "Actual Linux before scenario still awaiting corrected execution",
+    "DEF-110": "New actual pure runner16 Windows PASS; Linux fixed SSH still awaiting corrected execution"
+  },
+  "same39_windows": {
+    "job": 111722702185,
+    "checkout": "0c3ee936ebcca283f5cba155355cf1b7558bf295",
+    "summaries": [
+      "74 passed, 20 skipped in 2.80s\r",
+      "15 passed in 0.15s\r",
+      "30 passed, 4 skipped in 2.19s\r",
+      "2 passed in 5.68s\r",
+      "75 passed in 9.76s\r",
+      "79 passed in 17.83s\r",
+      "3312 passed, 314 skipped, 4 xfailed in 2275.41s (0:37:55)\r"
+    ],
+    "failures": [],
+    "packages": [
+      [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    ]
+  },
+  "same39_artifacts": [
+    {
+      "id": 11342039497,
+      "name": "tb4-desktop-Windows-0c3ee936ebcca283f5cba155355cf1b7558bf295",
+      "size_in_bytes": 120955963,
+      "digest": "sha256:b7592021d527b6904a7d2272e5e4a38f39b7399c5089cfdb397d299df09dcd7d"
+    }
+  ],
+  "same39_status": "TERMINAL_ALL_JOBS; immutable original2Linux failures retained, remainingrequiredgroups/Linuxpackages NOT_EXECUTED. Windows packages allPASS do not qualify skippednativeLinuxcases.",
+  "local_linux": {
+    "common_development_distribution_present": true,
+    "container_internal_distribution_present": true,
+    "guest_execution": "NOT_ATTEMPTED",
+    "preflight": "Initial PowerShell char replacement overload failed before guest execution; corrected string-overload private parsing. Initial count0 not accepted.",
+    "names_published": false
+  },
+  "acceptance": false,
+  "next": "One exact source40 immutable hosted qualification request1176/new29/fullplatform/Progress/packages. Independently inspect existing localLinux development environment for isolated actual native test capability; no real homeLAN/service/profile. Source qualification remains required before mappedconsumer/adoptionacceptance."
+}

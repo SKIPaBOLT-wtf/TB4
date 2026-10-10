@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C3",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0524",
+  "source": "d39bda8915af63ce621134aad0e703703c064301",
+  "base": "a1d59882779f63ddb761e8e1e02191a51464b6d4",
+  "local_preserved": "8fb0212a7d23b2a6e5b8431abf9b2475ba25f51b",
+  "result": "RECORDED",
+  "files": [
+    "src/tb4/drive/folder_mapping_after_probe.py",
+    "src/tb4/drive/folder_probe_transport.py",
+    "tests/drive/test_folder_mapping_after_probe.py",
+    "tests/drive/test_folder_mapping_after_probe_native.py"
+  ],
+  "static": {
+    "schema_version": 1,
+    "base": "a1d59882779f63ddb761e8e1e02191a51464b6d4",
+    "python_ast": "PASS",
+    "old_normal_response_ast": "EXACT_UNCHANGED",
+    "old_mapping_server_and_client_ast": "EXACT_UNCHANGED",
+    "old_portable29": "EXACT_UNCHANGED",
+    "native_other10_predicates": "EXACT_UNCHANGED",
+    "schema_election_and_allother_source": "EXACT_UNCHANGED",
+    "portable_cases": {
+      "test_exact_fresh_hash_attestation_has_no_mutating_or_activation_api": 1,
+      "test_old_reply_cannot_attest_next_observation": 1,
+      "test_unmatched_or_untyped_reply_cannot_attest": 9,
+      "test_closed_request_refuses_before_transport_or_mapping_io": 10,
+      "test_invalid_expected_plan_refuses_before_transport": 4,
+      "test_changed_trusted_composition_refuses_before_transport": 3,
+      "test_default_authority_handler_rejects_after_probe_without_cas": 1,
+      "test_actual_runner_validates_after_pair_and_retains_old_normal_response_guard": 1,
+      "test_actual_runner_refuses_malformed_or_uncorrelated_after_reply": 12,
+      "test_actual_runner_after_reply_requires_terminal_exact_current_plan": 3
+    },
+    "native_cases": {
+      "test_actual_native_after_attestation_retains_mapping_payload_and_physical_objects": 1,
+      "test_actual_after_proof_refuses_unfinished_or_lost_native_mapping_and_seal_without_writes": 6,
+      "test_actual_fixed_ssh_after_probe_returns_fresh_current_native_mapping_witness": 1,
+      "test_actual_fixed_ssh_after_proof_refuses_late_current_capability_or_mapping_loss": 3
+    },
+    "added_cases": 16,
+    "expected_collection": 3659,
+    "expected_required": 1176,
+    "tests_executed": 0,
+    "result": "PASS"
+  },
+  "public_scan": "CLEAN",
+  "readback": "EXACT_ALL_FILES",
+  "tests_executed": 0,
+  "defects": [
+    "DEF-109",
+    "DEF-110"
+  ],
+  "scope": "Pure exact9 correlated current AFTER response only, old normalAST unchanged; prepared actual before fixture reaches production. Old29portable/all10other nativepredicates unchanged. New16 closed/cross-mode/terminal negative cases; no election/schema/grant widening.",
+  "next": "ActualWindowsportable45+affectednormal native transports/firstRun, collection3659 exact3643+16, same39terminalWindows. Then current source40 required1176 (663/51/6/22/107/327), allA03611/A03713 andfullplatform/Progress/packages.",
+  "preflights": [
+    {
+      "result": "TASK_GIT_FAILED",
+      "cause": "Local preserved source and API source have distinct commits; automatic FF was correctly refused before checkpoint preparation. Preserved local source branch and acquired clean exact published branch without reset/force before retry.",
+      "mutations": "No checkpoint files or published source were altered by failed preflight."
+    }
+  ]
+}

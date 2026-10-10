@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0276",
+  "source_commit": "bf5c34f9fc79fcc6784ccd71009e2551608522a7",
+  "trigger_commit": "dcf61d2bebc1183ff38c2d28e25fcf036dabf2ad",
+  "pr_checkout": "ece1b431a1e855d4de18693db04419351dbbdcf2",
+  "source_equivalence": "Exact PR checkout fetched and git diff bf5c34f/ece1b43 returned docs-only paths; product/tests/workflows/schema/catalogue bytes match.",
+  "required_linux": {
+    "pass_per_run": 560,
+    "failures": 0,
+    "skips": 0,
+    "scope_counts": [
+      47,
+      51,
+      6,
+      22,
+      107,
+      327
+    ],
+    "jobs": [
+      {
+        "run_id": 37162934072,
+        "job_id": 111319945967,
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37162934072/job/111319945967",
+        "name": "native-folder",
+        "status": "completed",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install development dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Public repository security scan",
+            "conclusion": "success"
+          },
+          {
+            "name": "Isolated fixed-helper prerequisites",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required read-only physical Folder probe and isolated SSH cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux mapping and relocation cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux retained Folder publication cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux current-role Folder ACTIVE adoption cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Original folder and native maintenance regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Original Docs and effect regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Preserve source-linked case results",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "test_summaries": [
+          "47 passed in 9.49s",
+          "51 passed in 56.79s",
+          "6 passed in 22.37s",
+          "22 passed in 115.47s (0:01:55)",
+          "107 passed in 9.43s",
+          "327 passed, 1 deselected in 299.25s (0:04:59)"
+        ],
+        "skip_reasons": [],
+        "package_acceptance": []
+      },
+      {
+        "run_id": 37162931531,
+        "job_id": 111319938467,
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37162931531/job/111319938467",
+        "name": "native-folder",
+        "status": "completed",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install development dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Public repository security scan",
+            "conclusion": "success"
+          },
+          {
+            "name": "Isolated fixed-helper prerequisites",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required read-only physical Folder probe and isolated SSH cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux mapping and relocation cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux retained Folder publication cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Required actual Linux current-role Folder ACTIVE adoption cases",
+            "conclusion": "success"
+          },
+          {
+            "name": "Original folder and native maintenance regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Original Docs and effect regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Preserve source-linked case results",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "test_summaries": [
+          "47 passed in 13.12s",
+          "51 passed in 91.74s (0:01:31)",
+          "6 passed in 37.85s",
+          "22 passed in 189.16s (0:03:09)",
+          "107 passed in 14.10s",
+          "327 passed, 1 deselected in 470.03s (0:07:50)"
+        ],
+        "skip_reasons": [],
+        "package_acceptance": []
+      }
+    ],
+    "artifacts": [
+      {
+        "id": 11288029136,
+        "name": "folder-reconfiguration-ece1b431a1e855d4de18693db04419351dbbdcf2",
+        "size_in_bytes": 14318,
+        "digest": "sha256:7f210e0b6f9702e235a7765c3e1786dcc89bd6da8e577c33768d0fd72ae75d48",
+        "expired": false,
+        "run_id": 37162934072
+      },
+      {
+        "id": 11288024634,
+        "name": "folder-reconfiguration-dcf61d2bebc1183ff38c2d28e25fcf036dabf2ad",
+        "size_in_bytes": 14345,
+        "digest": "sha256:2b3e10112994790bcf30f1c23f9cf44704a1b79159af351e40e7723e16294daa",
+        "expired": false,
+        "run_id": 37162931531
+      }
+    ]
+  },
+  "current_progress": {
+    "run_id": 37162934096,
+    "job_id": 111319946055,
+    "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37162934096/job/111319946055",
+    "name": "ledger",
+    "status": "completed",
+    "conclusion": "success",
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pip install -e '.[dev]'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pytest tests/development -ra",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m tools.development.ledger",
+        "conclusion": "success"
+      },
+      {
+        "name": "Preserve published history",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python tools/scan_public_repo.py",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "test_summaries": [
+      "235 passed in 12.30s"
+    ],
+    "skip_reasons": [],
+    "package_acceptance": []
+  },
+  "remaining": "Current request20 full CI/Desktop builds/packages and original request19 full terminal reconciliation; no reruns or new implementation.",
+  "acceptance": false
+}

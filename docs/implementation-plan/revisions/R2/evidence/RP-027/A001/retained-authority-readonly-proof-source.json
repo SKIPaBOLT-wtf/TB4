@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "kind": "RETAINED_AUTHORITY_READONLY_FINAL_PROOF_SOURCE",
+  "intent": "RP-027-A001-0230",
+  "failing_source": "0170f12287c03242026280bb1c79253c19b44908",
+  "source_ref": "1f238122cf44681a4617ed4ef5807cfee6f8f370",
+  "local_source": "f9596cce28c3a7359cfd174af53548a2775f7ae1",
+  "paths": [
+    "src/tb4/reconfiguration_retained.py"
+  ],
+  "schema_sha256": "b4e9aefd0d9e88c02d462745632c1853cf4b7ba05b146be17a598c11f9ab0498",
+  "changes": "Actual read-only Prerequisites.validate over exact frozen native stage snapshot replaces mutating Candidate UI review in final_before only; actual Validation/pin/stage/transaction equality and all current source/storage/C1/nativebinding/role/force/caps/clock/UNKNOWN/profile/lastCAS checks remain. Initial owner Candidate review before freeze remains.",
+  "static_review": "PASS: AST/diff/exactonefile/schema unchanged/tests0",
+  "acceptance": false,
+  "runtime_active": false,
+  "next": "New-source same25 actual Windows/default/native qualification INTENT."
+}

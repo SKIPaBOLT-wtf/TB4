@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0392",
+  "source": "f18e8cd1dbe57298b36bc5937697937ee8ae66fb",
+  "base": "8f9163ef4181987c6cb4f6c525861f4f7549fb97",
+  "local_preservation": "38f3c3bbc45234ab33333814d9d0d372341733f8",
+  "result": "MINIMAL_TEST_ONLY_REPAIR_PUBLISHED",
+  "defect": "DEF-097",
+  "changed_files": [
+    "tests/drive/test_folder_helper_dispatch.py"
+  ],
+  "change": "Only signal.alarm mock gains raising=False; permits portable simulated Linux main on Windows where alarm absent. Existing SIGALRM mock already uses same rule.",
+  "review": {
+    "AST": "Onefile/seven retained testfunctions PASS",
+    "diff": "One exact test-only line; all parameter definitions/assertions and production source unchanged from8c75.",
+    "privacy": "PASS; no real/native signal timer started by mocked fixture",
+    "compatibility": "Old helper/probe/native/timeout/protocol/credential/endpoint/pointer/workflow/runtime/GUI meanings unchanged.",
+    "tests_executed": 0
+  },
+  "limits": [
+    "Not current qualification or all-check acceptance; failed8c75 test remains immutable.",
+    "Default3388 node equality/Windows44target/currentLinux17combined/fullplatform proof required."
+  ],
+  "next": "Authorize separate corrected same44target Windows/default3388 no-node-change rerun with private raw output capture; then one current source-linked Linux/platform launch."
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0474",
+  "source": "cb9501f0e7d54601a06318e2de220d9d319070b4",
+  "local_preserved": "71df2c6e1b5ed63ba6d96ad0b5790367ea58b70c",
+  "base": "9aff509644a832ab1f6da838005af3b5ed4d20e9",
+  "result": "RECORDED",
+  "files": [
+    "tests/drive/test_folder_candidate_authenticated_ssh.py"
+  ],
+  "static": {
+    "schema_version": 1,
+    "base": "b8f08653e7285a8943b9ebcda7552e3960d9b67c",
+    "python_ast": "PASS",
+    "all_other11_cases_and_fixture_ast": "EXACT_UNCHANGED",
+    "two_case_decorators": "EXACT_UNCHANGED",
+    "product_protocol_diff": [],
+    "declared_cases": 13,
+    "tests_executed": 0
+  },
+  "public_scan": "CLEAN",
+  "readback": "Exactsingle immutableGitbytes/ref/parent verified.",
+  "tests_executed": 0,
+  "repair": "Existing exactC1 ConfigurationError per fault; same previouslygreen Candidate clears ephemeral readiness, nativeprofile/Main/archive/shared remain; SSH forbidden. Allother11/fixtureAST and13caseIDs declarations unchanged, production/protocol unchanged.",
+  "next": "Defaultcollection exactsame3523/13IDs, then one correctedsource request35 requiredLinux1040. No passing_source untilactualcorrected two cases/full1040."
+}

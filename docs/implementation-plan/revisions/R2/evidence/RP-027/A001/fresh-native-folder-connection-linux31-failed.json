@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0441",
+  "source": "10badf7bbe08f54cfaeef640c062d4ceae8e319c",
+  "request_revision": 31,
+  "result": "FAIL",
+  "trigger": "6fce5938d34f236dcd8b34e00909cc1135cf0649",
+  "launch_pr_pin": "0c89f9a3546fa206b4e5a66b1e11ff8d325b2551",
+  "actual_pr_checkout": "631edc6d1a31691aa379413c767d43d89d773fb1",
+  "actual_pr_parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "6fce5938d34f236dcd8b34e00909cc1135cf0649"
+  ],
+  "actual_git_non_doc_diff_to_source": [],
+  "provenance_note": "PR checkout was recomputed631 with same verified main/trigger parents; launch0c89 retained as prior observation, no conflation. Actual631 API/Git parents and empty non-doc source diff verified under441.",
+  "required_groups_expected": [
+    477,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "required_cases_expected": 990,
+  "actual": [
+    {
+      "run": 37267927530,
+      "job": 111628568852,
+      "checkout": "6fce5938d34f236dcd8b34e00909cc1135cf0649",
+      "group": 1,
+      "passed": 476,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 84.16
+    },
+    {
+      "run": 37267930125,
+      "job": 111628577118,
+      "checkout": "631edc6d1a31691aa379413c767d43d89d773fb1",
+      "group": 1,
+      "passed": 476,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 84.83
+    }
+  ],
+  "failure": {
+    "file": "tests/drive/test_folder_connection_authenticated_ssh.py",
+    "node": "test_real_first_cas_stale_forced_takeover_preserves_local_unknown_without_peer_ack",
+    "closed_message": "TypeError: Leadership.__init__() takes 2 positional arguments but 3 were given",
+    "stage": "After actual two protected native connections and UNKNOWN setup, before leadership construction/election",
+    "origin": "New A030 test invokes existing Leadership API incorrectly. Existing constructor requires keyword actor/enrollment; claim/force test calls also do not correspond to existing methods. Production leadership unchanged."
+  },
+  "native42": "All42 new actual Linux native cases PASS",
+  "new_ssh12": {
+    "passed": 11,
+    "failed": 1,
+    "errors": 0
+  },
+  "progress": {
+    "run": 37267930113,
+    "job": 111628576752,
+    "checkout": "631edc6d1a31691aa379413c767d43d89d773fb1",
+    "passed": 235,
+    "seconds": 7.89,
+    "result": "PASS"
+  },
+  "remaining_groups": "Not executed after group1 failure",
+  "def100": "Fixture registration confirmed: all12 execute, no fixture errors. Passing_source10bad scoped to DEF100, remains OPEN/C1-C4 held.",
+  "next": "Minimal test-only use of actual Leadership keyword actor/enrollment and existing observe/acquire/commit/confirmed_grant/request_force/claim_requested API with string transition labels. Preserve UNKNOWN and first-CAS epoch2/3 assertions, add stale grant refusal after forced request. Source/static review then actual Linux/current full qualification."
+}

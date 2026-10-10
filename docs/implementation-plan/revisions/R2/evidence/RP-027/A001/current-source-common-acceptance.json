@@ -1,0 +1,765 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "source_ref": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "result": "PASS",
+  "reviewed": true,
+  "intent_event": "RP-027-A001-0570",
+  "outcome_event": "RP-027-A001-0571",
+  "review_method": "Concrete original-check/requirement and compatibility/privacy/rollback review, source-level assertions and exact immutable completed qualification; not test-count-only acceptance.",
+  "source_proof": {
+    "head": "3e4d0ceaae532a44b2b162c0e4caa5b05590e740",
+    "main": "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "trigger": "3ddb43327697f823a51967b33f71863c573da636",
+    "qualified_pr": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+    "parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "3ddb43327697f823a51967b33f71863c573da636"
+    ],
+    "non_documentation_equal": {
+      "current_head": true,
+      "qualified_pr": true,
+      "trigger": true
+    },
+    "clean_checkout": true
+  },
+  "dependencies": {
+    "RP-011": "VERIFIED",
+    "RP-017": "VERIFIED",
+    "RP-022": "VERIFIED",
+    "RP-024": "VERIFIED",
+    "RP-025": "VERIFIED",
+    "RP-026": "VERIFIED"
+  },
+  "checks": [
+    {
+      "check": "RP-027.C1",
+      "invariant": "Current-role maintenance preserves BUSY, UNREAD, UNKNOWN and local pending/effect evidence. Explicit fresh zero-blocker resolution is needed for routing changes. Role takeover remains first successful CAS without former-host or sink ACK.",
+      "requirements": [
+        "R09",
+        "R16"
+      ],
+      "functions": [
+        {
+          "path": "tests/drive/test_reconfiguration_maintenance.py",
+          "function": "test_enter_is_one_settings_cas_after_native_wal_and_preserves_every_other_record",
+          "assertions": 8,
+          "negative_contexts": 0
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_maintenance.py",
+          "function": "test_explicit_checkbox_cannot_resolve_retained_work_or_erase_its_evidence",
+          "assertions": 5,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_maintenance.py",
+          "function": "test_unknown_local_effect_blocks_resolution_without_blocking_role_takeover",
+          "assertions": 4,
+          "negative_contexts": 2
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_maintenance.py",
+          "function": "test_resolution_is_explicit_fresh_and_invalidated_by_new_work_not_heartbeat",
+          "assertions": 6,
+          "negative_contexts": 2
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_maintenance.py",
+          "function": "test_lost_shared_reply_restarts_in_inspect_only_and_confirms_after_takeover",
+          "assertions": 5,
+          "negative_contexts": 2
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_maintenance.py",
+          "function": "test_unknown_before_apply_is_not_replayed_by_inspection",
+          "assertions": 3,
+          "negative_contexts": 0
+        },
+        {
+          "path": "tests/test_reconfiguration_foundation.py",
+          "function": "test_inspection_preserves_unread_unknown_and_local_effects_without_leaking_identities",
+          "assertions": 3,
+          "negative_contexts": 0
+        },
+        {
+          "path": "tests/test_reconfiguration_foundation.py",
+          "function": "test_stable_unknown_facts_and_retained_metadata_are_not_work_blockers",
+          "assertions": 2,
+          "negative_contexts": 0
+        },
+        {
+          "path": "tests/test_reconfiguration_foundation.py",
+          "function": "test_shared_plan_prepared_before_maintenance_cannot_cross_cas_race",
+          "assertions": 2,
+          "negative_contexts": 1
+        }
+      ],
+      "mechanisms": [
+        "src/tb4/reconfiguration_inspection.py",
+        "src/tb4/reconfiguration_evidence.py",
+        "src/tb4/reconfiguration_maintenance.py",
+        "src/tb4/reconfiguration_effects.py",
+        "src/tb4/watchdog/leadership_runtime.py"
+      ]
+    },
+    {
+      "check": "RP-027.C2",
+      "invariant": "Separate native stage and immutable full archive retain the old Main until fresh actual first-run/source/credential/storage checks succeed. Persisted READY and arbitrary checker callbacks grant neither readiness nor activation.",
+      "requirements": [
+        "R13",
+        "R15",
+        "R16"
+      ],
+      "functions": [
+        {
+          "path": "tests/drive/test_reconfiguration_candidate.py",
+          "function": "test_original_complete_payload_and_history_retained_with_one_authority",
+          "assertions": 10,
+          "negative_contexts": 0
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_candidate.py",
+          "function": "test_actual_first_run_choice_review_restart_and_descriptor_timing_change",
+          "assertions": 7,
+          "negative_contexts": 0
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_candidate.py",
+          "function": "test_arbitrary_ready_checker_and_saved_ready_flag_do_not_qualify_access",
+          "assertions": 3,
+          "negative_contexts": 2
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_candidate.py",
+          "function": "test_exact_candidate_credentials_rechecked_after_ready_without_execution",
+          "assertions": 4,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_candidate.py",
+          "function": "test_new_access_readback_and_pin_failure_never_promotes_original",
+          "assertions": 2,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_candidate.py",
+          "function": "test_default_desktop_activation_remains_denied_and_old_profile_unchanged",
+          "assertions": 4,
+          "negative_contexts": 0
+        },
+        {
+          "path": "tests/security/test_reconfiguration_candidate_native.py",
+          "function": "test_actual_native_candidate_retains_original_frames_and_requires_restart_review",
+          "assertions": 6,
+          "negative_contexts": 0
+        },
+        {
+          "path": "tests/security/test_reconfiguration_candidate_native.py",
+          "function": "test_actual_native_cut_recovery_preserves_exact_candidate_and_never_sends",
+          "assertions": 5,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/security/test_reconfiguration_candidate_native.py",
+          "function": "test_copied_native_staged_profile_cannot_replace_original_or_qualify",
+          "assertions": 1,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/security/test_reconfiguration_candidate_native.py",
+          "function": "test_broad_native_candidate_protection_refuses_review_without_provider_write",
+          "assertions": 2,
+          "negative_contexts": 1
+        }
+      ],
+      "mechanisms": [
+        "src/tb4/reconfiguration_candidate.py",
+        "src/tb4/drive/folder_prerequisites.py",
+        "src/tb4/reconfiguration_folder_endpoint.py",
+        "src/tb4/desktop/reconfiguration.py"
+      ]
+    },
+    {
+      "check": "RP-027.C3",
+      "invariant": "Same-object Docs relocation and same-inode Folder relocation retain the sole authority and work. Lost replies, cut writes and fallback inspect original operations; only proved non-dispatch permits a separately armed operation. Topology/launcher and selected endpoint changes pass actual first-run.",
+      "requirements": [
+        "R09",
+        "R13",
+        "R16"
+      ],
+      "functions": [
+        {
+          "path": "tests/drive/test_reconfiguration_roots.py",
+          "function": "test_existing_objects_move_once_and_original_profile_work_and_media_are_preserved",
+          "assertions": 12,
+          "negative_contexts": 0
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_roots.py",
+          "function": "test_response_loss_inspects_same_item_and_never_reissues_move",
+          "assertions": 7,
+          "negative_contexts": 0
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_roots.py",
+          "function": "test_first_cas_stale_fallback_needs_no_ack_and_old_root_sender_stops",
+          "assertions": 8,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_folder_relocation.py",
+          "function": "test_actual_first_run_current_role_one_syscall_same_inodes_used_bytes_and_persistent_authority",
+          "assertions": 10,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_folder_relocation.py",
+          "function": "test_kernel_no_replace_rejects_destination_created_at_the_actual_syscall",
+          "assertions": 3,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_folder_relocation.py",
+          "function": "test_actual_native_pending_cut_recovery_inspects_exact_frame_and_never_repeats",
+          "assertions": 4,
+          "negative_contexts": 2
+        },
+        {
+          "path": "tests/drive/test_folder_relocation.py",
+          "function": "test_actual_stale_first_cas_takeover_needs_no_old_host_and_settles_only_exact_after",
+          "assertions": 6,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_folder_relocation.py",
+          "function": "test_force_arriving_after_preflight_is_refused_inside_the_actual_database_lock",
+          "assertions": 6,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_promotion.py",
+          "function": "test_actual_topology_launcher_candidate_is_promoted_from_its_qualified_first_run",
+          "assertions": 4,
+          "negative_contexts": 0
+        }
+      ],
+      "mechanisms": [
+        "src/tb4/reconfiguration_roots.py",
+        "src/tb4/reconfiguration_root_resume.py",
+        "src/tb4/reconfiguration_root_settlement.py",
+        "src/tb4/drive/folder_relocation.py",
+        "src/tb4/drive/folder_mapping.py",
+        "src/tb4/reconfiguration_promotion.py"
+      ]
+    },
+    {
+      "check": "RP-027.C4",
+      "invariant": "Coherent monotonic descriptor/ACTIVE publication, exact conditional Main promotion and fresh per-use current admission preserve identities/history and work generations. Obsolete timing/source/profile/role denies, inherited UNKNOWN never grants replay. Restart uses current Main, not obsolete private staging files.",
+      "requirements": [
+        "R09",
+        "R15",
+        "R16"
+      ],
+      "functions": [
+        {
+          "path": "tests/drive/test_reconfiguration_commit.py",
+          "function": "test_actual_publication_advances_coherent_descriptor_configuration_and_preserves_work_profile_media",
+          "assertions": 13,
+          "negative_contexts": 2
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_commit.py",
+          "function": "test_actual_lost_reply_restarts_inspect_only_without_same_operation_repeat",
+          "assertions": 5,
+          "negative_contexts": 0
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_commit.py",
+          "function": "test_actual_compact64_slot_plan_preserves_all_command_generations_and_terminal_receipts",
+          "assertions": 5,
+          "negative_contexts": 0
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_admission.py",
+          "function": "test_actual_release_changes_only_native_reservation_and_ordinary_runtime_uses_fresh_admission",
+          "assertions": 11,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_admission.py",
+          "function": "test_actual_restarted_admission_allows_new_work_without_old_frozen_transaction_proof",
+          "assertions": 5,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_reconfiguration_admission.py",
+          "function": "test_stale_actual_runtime_timing_refuses_work_before_receipt_or_external_effect",
+          "assertions": 4,
+          "negative_contexts": 2
+        },
+        {
+          "path": "tests/drive/test_folder_mapped_c4_authenticated_ssh.py",
+          "function": "test_actual_mapped_c4_staged_endpoint_main_promotion_and_restart_preserve_work",
+          "assertions": 17,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_folder_mapped_c4_authenticated_ssh.py",
+          "function": "test_actual_mapped_promotion_needs_fresh_physical_mapping_and_role_after_publication",
+          "assertions": 3,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_folder_mapped_c4_authenticated_ssh.py",
+          "function": "test_actual_mapped_main_cut_recovers_exact_child_without_resave_or_shared_cas",
+          "assertions": 6,
+          "negative_contexts": 2
+        },
+        {
+          "path": "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py",
+          "function": "test_actual_cold_recovery_uses_frozen_own_stage_without_pending_main_connection_or_resave",
+          "assertions": 11,
+          "negative_contexts": 2
+        },
+        {
+          "path": "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py",
+          "function": "test_actual_cold_recovery_keeps_pending_and_parent_when_current_facts_no_longer_qualify",
+          "assertions": 3,
+          "negative_contexts": 2
+        },
+        {
+          "path": "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py",
+          "function": "test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof",
+          "assertions": 4,
+          "negative_contexts": 1
+        },
+        {
+          "path": "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py",
+          "function": "test_native_adoption_cannot_silently_change_own_endpoint_in_stage",
+          "assertions": 2,
+          "negative_contexts": 1
+        }
+      ],
+      "mechanisms": [
+        "src/tb4/reconfiguration_commit.py",
+        "src/tb4/reconfiguration_retained.py",
+        "src/tb4/reconfiguration_admission.py",
+        "src/tb4/reconfiguration_native_folder_adoption.py",
+        "src/tb4/drive/folder_mapping_active_probe.py"
+      ]
+    }
+  ],
+  "current_runs": [
+    {
+      "id": 38078394779,
+      "status": "completed",
+      "conclusion": "success",
+      "head": "3ddb43327697f823a51967b33f71863c573da636",
+      "attempt": 1
+    },
+    {
+      "id": 38078398145,
+      "status": "completed",
+      "conclusion": "success",
+      "head": "3ddb43327697f823a51967b33f71863c573da636",
+      "attempt": 1
+    },
+    {
+      "id": 38078398186,
+      "status": "completed",
+      "conclusion": "success",
+      "head": "3ddb43327697f823a51967b33f71863c573da636",
+      "attempt": 1
+    },
+    {
+      "id": 38078398146,
+      "status": "completed",
+      "conclusion": "success",
+      "head": "3ddb43327697f823a51967b33f71863c573da636",
+      "attempt": 1
+    },
+    {
+      "id": 38078398151,
+      "status": "completed",
+      "conclusion": "success",
+      "head": "3ddb43327697f823a51967b33f71863c573da636",
+      "attempt": 1
+    }
+  ],
+  "qualification": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json",
+  "ledger_history": {
+    "revision": "R2",
+    "steps": 64,
+    "verified": 26,
+    "unsettled_intents": [
+      "RP-027-A001-0570"
+    ],
+    "result": "PASS"
+  },
+  "public_scan": {
+    "result": "PASS",
+    "exit_code": 0
+  },
+  "diff_review": {
+    "command": "git diff --check ed974c57ce99e54b3a28da79d212c86f07951ec7 HEAD",
+    "exit_code": 2,
+    "result": "REVIEWED_NONBLOCKING_FORMAT_ONLY",
+    "diagnostics": [
+      {
+        "path": ".github/workflows/native-discovery-diagnostic.yml",
+        "line": 25,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "docs/development/WORK_INSTRUCTION.md",
+        "line": 146,
+        "diagnostic": "trailing whitespace.",
+        "classification": "CRLF_CARRIAGE_RETURN_ONLY"
+      },
+      {
+        "path": "docs/implementation-plan/revisions/R2/amendments/RP-027/A-024-closed-folder-authority-credential-purpose.md",
+        "line": 60,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "docs/implementation-plan/revisions/R2/amendments/RP-027/A-025-credential-bound-folder-authority-transport.md",
+        "line": 71,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "docs/implementation-plan/revisions/R2/amendments/RP-027/A-028-opt-in-fixed-folder-helper-dispatch.md",
+        "line": 49,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "docs/implementation-plan/revisions/R2/amendments/RP-027/A-029-native-endpoint-pointer-attachment.md",
+        "line": 62,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "docs/implementation-plan/revisions/R2/amendments/RP-027/A-030-fresh-native-folder-connection.md",
+        "line": 62,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "docs/implementation-plan/revisions/R2/amendments/RP-027/A-038-native-mapped-retained-publication.md",
+        "line": 49,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "docs/implementation-plan/revisions/R2/amendments/RP-027/A-039-native-own-main-pending-recovery.md",
+        "line": 42,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "src/tb4/drive/folder_authority_transport.py",
+        "line": 188,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "src/tb4/drive/folder_connection.py",
+        "line": 155,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "src/tb4/drive/folder_endpoint_attachment.py",
+        "line": 142,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "src/tb4/drive/folder_mapping_active_probe.py",
+        "line": 154,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "src/tb4/drive/folder_mapping_after_probe.py",
+        "line": 193,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "src/tb4/reconfiguration_native_folder_adoption.py",
+        "line": 184,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "src/tb4/reconfiguration_retained_promotion.py",
+        "line": 93,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/drive/test_folder_authority_authenticated_ssh.py",
+        "line": 151,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/drive/test_folder_authority_transport.py",
+        "line": 95,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/drive/test_folder_combined_authenticated_ssh.py",
+        "line": 275,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/drive/test_folder_connection_authenticated_ssh.py",
+        "line": 237,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/drive/test_folder_helper_dispatch.py",
+        "line": 128,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/drive/test_folder_mapped_c4_authenticated_ssh.py",
+        "line": 186,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/drive/test_folder_mapping_active_probe.py",
+        "line": 146,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/drive/test_folder_mapping_after_probe.py",
+        "line": 169,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/drive/test_folder_mapping_after_probe_native.py",
+        "line": 108,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/drive/test_native_folder_active_adoption_authenticated_ssh.py",
+        "line": 181,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py",
+        "line": 171,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/security/test_folder_authority_purpose.py",
+        "line": 172,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/security/test_folder_authority_purpose_native.py",
+        "line": 181,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/security/test_folder_authority_transport_native.py",
+        "line": 223,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/security/test_folder_connection_native.py",
+        "line": 314,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tests/security/test_folder_endpoint_attachment_native.py",
+        "line": 328,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      },
+      {
+        "path": "tools/diagnose_native_discovery.py",
+        "line": 142,
+        "diagnostic": "new blank line at EOF.",
+        "classification": "EMPTY_TRAILING_LINES_ONLY"
+      }
+    ],
+    "source_modified": false,
+    "history_modified": false,
+    "reason": "All32 EOF diagnostics contain only empty trailing lines; the remaining documentation line has a CRLF carriage return only. Public source AST/YAML remains valid. No behavioral token or required invariant changes. Preserve exact qualified source and historical records; this is not an exit-zero diff claim."
+  },
+  "compatibility_review": [
+    "Configuration marker absence preserves legacy meaning; present markers gate ordinary work and preserve workload generations. Installation/domain/backend/layout/sole authority cannot be replaced by this transaction.",
+    "A038 introduces a distinct nine-field ACTIVE mapping mode. Existing VERIFY, AFTER, READ and CAS modes and default denial retain their contracts. The old stable-record fingerprint is not reused after control rows change; fresh physical/native mapping proof must match the exact frozen publication and current revision/body.",
+    "A039 reads the exact prepared own stage/archive/parent/child before constructing fresh native proof. Normal pending Main connection still refuses. Transaction-before-Main lock order and same-byte final comparison allow promotion without resaving, sending a CAS, acquiring a role or clearing the local reservation.",
+    "Current runtime uses protected Main with fresh source, native credential, physical storage, timing and role checks. Missing former staging/WAL files are not a role-availability dependency. UNKNOWN remains inspect-only."
+  ],
+  "rollback_review": "Before publication original Main and full immutable archive remain. Pending recovery promotes only exact already-written bytes with fresh predicates. After a possibly applied root or shared change, inspect the same operation and retain UNKNOWN; restoring an old path/profile is not safe rollback. A reverse change must be a new monotonic same-authority transaction, not an epoch/generation rewind. Destination collision, source/role/capability loss and native cuts have explicit negative assertions; no destructive cleanup or rollback performed.",
+  "privacy_review": "Only public source/test paths, synthetic declarations, closed outcomes, counts and public run/commit IDs are recorded. Private topology, credential material and raw provider/OS output are absent. Fixed helper envelopes contain no arbitrary command, private path or executable payload. Public scan remains required in current immutable jobs.",
+  "gui_scope": "CandidateController is a tested trusted API using actual Candidate/Prerequisites; it clears old readiness on factory failure and retains DenyActivation. It is not wired as a complete Qt reconfiguration screen. Canonical RP-053.C2 explicitly owns that GUI exposure and correlated feedback; RP-030 owns the later expanded interruption matrix. No completed GUI, deployed runtime or pilot is inferred from controller or package smoke checks.",
+  "platform_scope": "Native protected state is exercised on Windows and Linux. The physical same-filesystem no-replace move and actual fixed-helper loopback SSH scenarios are Linux fixtures; Windows checks native profiles/credentials and portable logic. Docs SDK behavior uses commissioned synthetic provider adapters. Real Google deployment, remote production Windows SSH, ARM64 and filesystem families beyond declared fixtures, physical power loss and live migration remain unqualified. These are explicit later field/pilot limits, not fabricated passes.",
+  "retained_limits": "Windows348/Linux21/CI27 skips and four strict expected failures are retained verbatim and not called passing tests. Four existing cancellation/runtime xfails remain assigned to RP-044/045/046. Historical discovery failures DEF088/094 retain unknown causes. Physical native Folder/SSH qualification is Linux; Docs adapters are commissioned synthetic fixtures. Full Qt reconfiguration exposure remains RP053.C2 under A040; authorized field/pilot, other hardware/topologies and live migration are not inferred.",
+  "defect_resolution": {
+    "remaining_open": [
+      "DEF-001",
+      "DEF-002",
+      "DEF-088",
+      "DEF-094"
+    ],
+    "method": "Each resolved record retains its original detection, hypothesis, repair INTENT and passing source. All original regression and common rechecks now qualify on identical current source43. Resolution does not invent a proven origin for historical null fields. Registry status remains OPEN in this acceptance checkpoint. After exact acceptance readback, the dependency-ready RP-028 handoff will publish the administrative closure using these receipts; no diagnosis or requirement is deferred.",
+    "unproven_discovery": "DEF088/094 remain OPEN with no cause, production retry or timeout change. The current actual positive/wrong-identity loopback qualification passed on both platforms; unchanged deterministic BoundedRead nonzero/oversize/timeout/child-cleanup predicates pass in the full suites. This establishes current scoped admission/refusal, not absence of intermittent field availability failures.",
+    "legacy": "DEF001/002 and four strict cancellation/runtime xfails remain assigned to later execution work; not relabeled PASS.",
+    "eligible_for_resolution_after_receipt_readback": [
+      "DEF-056",
+      "DEF-057",
+      "DEF-058",
+      "DEF-059",
+      "DEF-060",
+      "DEF-061",
+      "DEF-062",
+      "DEF-063",
+      "DEF-064",
+      "DEF-065",
+      "DEF-066",
+      "DEF-067",
+      "DEF-068",
+      "DEF-069",
+      "DEF-070",
+      "DEF-071",
+      "DEF-072",
+      "DEF-073",
+      "DEF-074",
+      "DEF-075",
+      "DEF-076",
+      "DEF-077",
+      "DEF-078",
+      "DEF-079",
+      "DEF-080",
+      "DEF-081",
+      "DEF-082",
+      "DEF-083",
+      "DEF-084",
+      "DEF-085",
+      "DEF-086",
+      "DEF-087",
+      "DEF-089",
+      "DEF-090",
+      "DEF-091",
+      "DEF-092",
+      "DEF-093",
+      "DEF-095",
+      "DEF-096",
+      "DEF-097",
+      "DEF-098",
+      "DEF-099",
+      "DEF-100",
+      "DEF-101",
+      "DEF-102",
+      "DEF-103",
+      "DEF-104",
+      "DEF-105",
+      "DEF-106",
+      "DEF-107",
+      "DEF-108",
+      "DEF-109",
+      "DEF-110",
+      "DEF-111",
+      "DEF-112",
+      "DEF-113"
+    ],
+    "current_open": [
+      "DEF-001",
+      "DEF-002",
+      "DEF-056",
+      "DEF-057",
+      "DEF-058",
+      "DEF-059",
+      "DEF-060",
+      "DEF-061",
+      "DEF-062",
+      "DEF-063",
+      "DEF-064",
+      "DEF-065",
+      "DEF-066",
+      "DEF-067",
+      "DEF-068",
+      "DEF-069",
+      "DEF-070",
+      "DEF-071",
+      "DEF-072",
+      "DEF-073",
+      "DEF-074",
+      "DEF-075",
+      "DEF-076",
+      "DEF-077",
+      "DEF-078",
+      "DEF-079",
+      "DEF-080",
+      "DEF-081",
+      "DEF-082",
+      "DEF-083",
+      "DEF-084",
+      "DEF-085",
+      "DEF-086",
+      "DEF-087",
+      "DEF-088",
+      "DEF-089",
+      "DEF-090",
+      "DEF-091",
+      "DEF-092",
+      "DEF-093",
+      "DEF-094",
+      "DEF-095",
+      "DEF-096",
+      "DEF-097",
+      "DEF-098",
+      "DEF-099",
+      "DEF-100",
+      "DEF-101",
+      "DEF-102",
+      "DEF-103",
+      "DEF-104",
+      "DEF-105",
+      "DEF-106",
+      "DEF-107",
+      "DEF-108",
+      "DEF-109",
+      "DEF-110",
+      "DEF-111",
+      "DEF-112",
+      "DEF-113"
+    ]
+  },
+  "collection": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-collected-functions.json",
+  "prior_failures": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source42-all-original-jobs-terminal.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicates-all-terminal.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/final-review-whitespace-observation.json"
+  ],
+  "amendment": "docs/implementation-plan/revisions/R2/amendments/RP-027/A-040-acceptance-scope-and-evidence.md",
+  "next": "Publish/read back RP-028/A001 administrative handoff INTENT to verify accepted RP-027 receipts and close only its56 qualified repair records, preserving DEF001/002/088/094. Publish that registry OUTCOME and verify readback. Then separately INTENT current PR36 metadata/rules/source qualification and ordinary expected-head merge; record exact outcome on main before RP-028 implementation.",
+  "live_runtime_authorized": false,
+  "publication_boundary": "The first prospective combined acceptance/56-defect transaction was rejected locally by unchanged Plan.check with CHECKPOINT_SIZE_INVALID before publication. Journal1553918 plus candidate registry450931, manifest65828 and evidence49934 already exceeded2000000 bytes before projections. Preserve this guard and all histories: publish coherent RP-027 receipts/manifest/projections/cursor first with all defects still OPEN, then close the56 qualified records in the small new RP-028 administrative handoff journal before merge. No runtime/test/code change and no unpublished acceptance claim."
+}

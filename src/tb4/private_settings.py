@@ -95,27 +95,34 @@ class PrivateSettings:
         try:
             payload = copy.deepcopy(payload)
             with self.native.locked() as port:
-                before = port.read("settings.json")
-                current = None if before is None else self._decode(before, port.binding)
-                require((current.revision if current else 0) == expected_revision,
-                        "SETTINGS_CHANGED_RELOAD_REQUIRED")
-                require(port.read("settings.pending") is None, "SETTINGS_RECOVERY_REQUIRED")
-                require(expected_revision < 2**63 - 1, "SETTINGS_REVISION_EXHAUSTED")
-                frame = dict(schema_version=1, binding=port.binding,
-                             revision=expected_revision + 1, payload=payload,
-                             previous=None if current is None else current.payload)
-                frame["digest"] = hashlib.sha256(encoded(frame)).hexdigest()
-                raw = encoded(frame)
-                # Native exclusive-create prevents an unknown staging write being
-                # overwritten. Flush before atomic promotion, then exact readback.
-                port.stage(raw)
-                port.promote()
-                require(port.read("settings.json") == raw, "SETTINGS_READBACK_UNCONFIRMED")
-                return self._decode(raw, port.binding)
+                return self._save_locked(port,payload,expected_revision=expected_revision)
         except SettingsError:
             raise
         except Exception:
             raise SettingsError("SETTINGS_COMMIT_UNCONFIRMED") from None
+
+    def _save_locked(self, port, payload, *, expected_revision):
+        """Internal primitive only for a caller holding this actual native lock.
+
+        Retain the same exact frame/revision/flush/promote/readback checks. This
+        neither opens a native port nor supplies any authorization to its caller.
+        """
+        require(type(payload) is dict and type(expected_revision) is int and expected_revision >= 0)
+        before = port.read("settings.json")
+        current = None if before is None else self._decode(before, port.binding)
+        require((current.revision if current else 0) == expected_revision,
+                "SETTINGS_CHANGED_RELOAD_REQUIRED")
+        require(port.read("settings.pending") is None, "SETTINGS_RECOVERY_REQUIRED")
+        require(expected_revision < 2**63 - 1, "SETTINGS_REVISION_EXHAUSTED")
+        frame = dict(schema_version=1, binding=port.binding,
+                     revision=expected_revision + 1, payload=copy.deepcopy(payload),
+                     previous=None if current is None else current.payload)
+        frame["digest"] = hashlib.sha256(encoded(frame)).hexdigest()
+        raw = encoded(frame)
+        port.stage(raw)
+        port.promote()
+        require(port.read("settings.json") == raw, "SETTINGS_READBACK_UNCONFIRMED")
+        return self._decode(raw, port.binding)
 
     def recover_pending(self):
         """Inspect the same complete candidate; never reconstruct a lost payload."""

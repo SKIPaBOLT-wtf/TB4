@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0291",
+  "source": "119e518cc7adee8f5226d61cce38b05d351d8bad",
+  "trigger": "7995903e1896c222176933a140124a6c54d06fc7",
+  "request_revision": 21,
+  "pr": 36,
+  "pr_checkout": "9627097041813d1b3615153e54c0617ee6fea722",
+  "source_equivalence": "Pinned PR merge fetched; its second parent equals trigger7995903. Diff from implementation119e518 contains only docs/development and docs/implementation-plan files. Production/tests/workflows match current source.",
+  "runs": [
+    {
+      "id": 37229999898,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "head_sha": "7995903e1896c222176933a140124a6c54d06fc7",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37229999898",
+      "jobs": [
+        {
+          "id": 111517494070,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37229999983,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "7995903e1896c222176933a140124a6c54d06fc7",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37229999983",
+      "jobs": [
+        {
+          "id": 111517494115,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37229999848,
+      "name": "Progress",
+      "event": "pull_request",
+      "head_sha": "7995903e1896c222176933a140124a6c54d06fc7",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37229999848",
+      "jobs": [
+        {
+          "id": 111517493733,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37229999818,
+      "name": "Desktop",
+      "event": "pull_request",
+      "head_sha": "7995903e1896c222176933a140124a6c54d06fc7",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37229999818",
+      "jobs": [
+        {
+          "id": 111517493523,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111517493664,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37229996683,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "head_sha": "7995903e1896c222176933a140124a6c54d06fc7",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37229996683",
+      "jobs": [
+        {
+          "id": 111517483867,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "status": "STARTED",
+  "acceptance": false,
+  "next_action": "Inspect these same immutable jobs; record terminal requiredLinux588/full CI/Desktop/Progress with cases, native/package evidence and documented platform skip scopes. No duplicate dispatch or further dependent source."
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0195",
+  "source": "923741e9027a2fa6e0289f42cfd59149f8c33d3d",
+  "local_preserved": "bda499006ec6110bff1e600b74bf6f2435c02170",
+  "files": [
+    ".github/workflows/desktop.yml"
+  ],
+  "changes": {
+    "timeout_minutes": {
+      "before": 40,
+      "after": 90
+    }
+  },
+  "unchanged": "All application/protocol/test/dependency/matrix/native/full/package/upload commands and fail-fast:false unchanged; no activation/deployment authority changed.",
+  "static_review": "Exact one-line diff and git diff --check pass; protected source preserved/non-force remote ref/file readback verified.",
+  "tests_executed": 0,
+  "qualification": "Required separate actual full Windows/Linux Desktop jobs; source edit alone no PASS/acceptance.",
+  "defect": "DEF-080",
+  "acceptance": false
+}

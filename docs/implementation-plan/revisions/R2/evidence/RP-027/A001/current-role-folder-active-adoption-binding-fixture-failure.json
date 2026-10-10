@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "REQUIRED_FOLDER_ACTIVE_FIXTURE_BINDING_FAILURE",
+  "source_ref": "103d0eb2009880a7e76ac4604e611ce6958060da",
+  "original_intent": "RP-027-A001-0248",
+  "run_id": 37136405594,
+  "job_id": 111241724971,
+  "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37136405594",
+  "conclusion": "failure",
+  "check_summaries": [
+    "51 passed in 55.00s",
+    "6 passed in 22.57s",
+    "22 failed in 102.20s (0:01:42)"
+  ],
+  "new_folder_active": {
+    "passed": 0,
+    "failed": 22,
+    "skipped": 0,
+    "error": "SettingsError: SETUP_BINDING_UNVERIFIED",
+    "location": "tests/drive/folder_active_adoption_support.py system() -> model.choose(choices), commissioning_state.py choose request/binding guard",
+    "phase": "Before new role/controller/native cut assertions; no22-case functional qualification"
+  },
+  "case_names": [
+    "test_actual_new_folder_role_adopts_without_old_host_mapping_wal_ack_and_preserves_objects[False]",
+    "test_actual_new_folder_role_adopts_without_old_host_mapping_wal_ack_and_preserves_objects[True]",
+    "test_actual_inherited_folder_work_and_unknown_effect_remain_without_old_ack_or_replay[BUSY]",
+    "test_actual_inherited_folder_work_and_unknown_effect_remain_without_old_ack_or_replay[UNREAD]",
+    "test_actual_inherited_folder_work_and_unknown_effect_remain_without_old_ack_or_replay[UNKNOWN]",
+    "test_actual_folder_current_fact_loss_refuses_main_promotion_with_no_shared_mutation[source]",
+    "test_actual_folder_current_fact_loss_refuses_main_promotion_with_no_shared_mutation[profile]",
+    "test_actual_folder_current_fact_loss_refuses_main_promotion_with_no_shared_mutation[force]",
+    "test_actual_folder_current_fact_loss_refuses_main_promotion_with_no_shared_mutation[artifact]",
+    "test_actual_folder_current_fact_loss_refuses_main_promotion_with_no_shared_mutation[clock]",
+    "test_actual_folder_current_fact_loss_refuses_main_promotion_with_no_shared_mutation[caps]",
+    "test_actual_change_during_folder_first_run_refuses_local_confirmation[stage]",
+    "test_actual_change_during_folder_first_run_refuses_local_confirmation[role]",
+    "test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[intent]",
+    "test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[archive]",
+    "test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[stage]",
+    "test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[staged]",
+    "test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[prepared]",
+    "test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[original]",
+    "test_actual_folder_native_cut_recovers_only_same_pending_frame_without_shared_send[confirmed]",
+    "test_actual_folder_closed_kinds_receipts_alias_owner_and_default_activation",
+    "test_actual_own_local_unknown_refuses_adoption_after_immediate_role_acquisition"
+  ],
+  "cause": "New fixture provides storage_request and storage binding together to fresh Setup.choose, correctly refused by existing first-selection guard. A real BoundFolderSelection must verify actual configured root before persisting its selected record.",
+  "next": "Verified distinct repair INTENT changes exactly fixture selection sequence and existing UNRELEASED catalogue schemahash. Keep guard and22 cases unchanged; corrected-source actual Linux506 must execute all assertions. No production change/no Windows55 repeat needed beyond affected full regression.",
+  "acceptance": false,
+  "runtime_active": false
+}

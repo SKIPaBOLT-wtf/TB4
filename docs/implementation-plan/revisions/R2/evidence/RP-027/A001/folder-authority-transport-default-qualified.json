@@ -1,0 +1,461 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0335",
+  "source_commit": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25",
+  "checkout": "8914ca3e427aff0a6b4b33ec16feeae7ad3ddf15",
+  "qualification": {
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 18.101,
+    "counts": {
+      "PASS": 496,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 22
+    },
+    "targets": [
+      "tests/security/test_folder_credential_purpose.py",
+      "tests/security/test_folder_credential_purpose_native.py",
+      "tests/security/test_credential_contract.py",
+      "tests/security/test_windows_credentials.py",
+      "tests/security/test_linux_credentials.py",
+      "tests/security/test_windows_key_native.py",
+      "tests/security/test_credential_persistence.py",
+      "tests/security/test_credential_persistence_native.py",
+      "tests/security/test_setup_credentials_native.py",
+      "tests/security/test_private_settings.py",
+      "tests/security/test_private_settings_native.py",
+      "tests/security/test_first_run.py",
+      "tests/security/test_first_run_native.py",
+      "tests/drive/test_fetcher_enrollment.py",
+      "tests/drive/test_folder_first_run.py",
+      "tests/security/test_remote_folder_first_run_native.py",
+      "tests/drive/test_folder_probe_transport.py",
+      "tests/security/test_folder_probe_transport_native.py",
+      "tests/drive/test_folder_probe_authenticated_ssh.py",
+      "tests/security/test_folder_authority_purpose.py",
+      "tests/security/test_folder_authority_purpose_native.py",
+      "tests/drive/test_folder_authority_transport.py",
+      "tests/security/test_folder_authority_transport_native.py",
+      "tests/drive/test_folder_authority_authenticated_ssh.py"
+    ],
+    "new_case_counts": {
+      "pure_protocol": 30,
+      "actual_native_windows": 23,
+      "all_pass": 53,
+      "skips": 0
+    },
+    "new_cases": [
+      {
+        "name": "test_normal_authority_argv_changes_only_the_fixed_command_and_accepts_no_caller_command",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_only_closed_normal_requests_and_correlated_replies_are_accepted[READ]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_only_closed_normal_requests_and_correlated_replies_are_accepted[CAS]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[verify]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[extra]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[root]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[domain]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[nonce]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[mode]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[expected-bool]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[expected-zero]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[expected-max]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[expected-string]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[body-invalid]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[body-foreign]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_authority_requests_refuse_before_the_transport_boundary[read-body]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_malformed_lost_or_unrelated_reply_cannot_be_a_private_receipt[READ-nonce]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_malformed_lost_or_unrelated_reply_cannot_be_a_private_receipt[READ-extra]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_malformed_lost_or_unrelated_reply_cannot_be_a_private_receipt[READ-revision-bool]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_malformed_lost_or_unrelated_reply_cannot_be_a_private_receipt[READ-revision-zero]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_malformed_lost_or_unrelated_reply_cannot_be_a_private_receipt[READ-revision-max]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_malformed_lost_or_unrelated_reply_cannot_be_a_private_receipt[READ-body]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_malformed_lost_or_unrelated_reply_cannot_be_a_private_receipt[READ-unknown]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_malformed_lost_or_unrelated_reply_cannot_be_a_private_receipt[CAS-nonce]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_malformed_lost_or_unrelated_reply_cannot_be_a_private_receipt[CAS-extra]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_malformed_lost_or_unrelated_reply_cannot_be_a_private_receipt[CAS-unknown]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_malformed_lost_or_unrelated_reply_cannot_be_a_private_receipt[CAS-foreign-result]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_correlated_cas_reply_keeps_existing_protocol_semantics_without_inventing_confirmation[ACCEPTED]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_correlated_cas_reply_keeps_existing_protocol_semantics_without_inventing_confirmation[REJECTED]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_correlated_cas_reply_keeps_existing_protocol_semantics_without_inventing_confirmation[UNAVAILABLE]",
+        "classname": "tests.drive.test_folder_authority_transport",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_borrowed_key_paths_one_use_reply_nonce_and_closed_public_outcome",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_previous_success_cannot_authorize_later_credential_or_trust_loss[key-version-REVOKED]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_previous_success_cannot_authorize_later_credential_or_trust_loss[key-permission-DENIED]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_previous_success_cannot_authorize_later_credential_or_trust_loss[known-version-DENIED]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_previous_success_cannot_authorize_later_credential_or_trust_loss[known-permission-DENIED]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_previous_success_cannot_authorize_later_credential_or_trust_loss[expired-EXPIRED]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_previous_success_cannot_authorize_later_credential_or_trust_loss[revoked-REVOKED]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_private_restart_restores_same_selection_without_enrollment_or_profile_rewrite",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_ambiguous_after_cas_reply_is_unknown_once_and_later_read_inspects_same_effect[lost]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_ambiguous_after_cas_reply_is_unknown_once_and_later_read_inspects_same_effect[unknown]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_ambiguous_after_cas_reply_is_unknown_once_and_later_read_inspects_same_effect[nonce]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_ambiguous_after_cas_reply_is_unknown_once_and_later_read_inspects_same_effect[extra]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_ambiguous_after_cas_reply_is_unknown_once_and_later_read_inspects_same_effect[replay]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_invalid_request_refuses_before_any_native_credential_access[verify]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_invalid_request_refuses_before_any_native_credential_access[extra]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_invalid_request_refuses_before_any_native_credential_access[root]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_invalid_request_refuses_before_any_native_credential_access[cas-body]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_trusted_composition_pin_refuses_without_another_process_call[endpoint]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_trusted_composition_pin_refuses_without_another_process_call[binding]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_trusted_composition_pin_refuses_without_another_process_call[store]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_pending_authority_slot_refuses_parallel_reader_without_replacing_first",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_historical_probe_or_fetcher_scope_cannot_invoke_normal_authority[purposes0]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_historical_probe_or_fetcher_scope_cannot_invoke_normal_authority[purposes1]",
+        "classname": "tests.security.test_folder_authority_transport_native",
+        "status": "PASS"
+      }
+    ],
+    "declared_actual_linux_only_skips": [
+      {
+        "name": "test_linux_special_objects_fail_without_opening_or_blocking[symlink]",
+        "classname": "tests.security.test_private_settings_native",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_linux_special_objects_fail_without_opening_or_blocking[fifo]",
+        "classname": "tests.security.test_private_settings_native",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_linux_special_objects_fail_without_opening_or_blocking[directory]",
+        "classname": "tests.security.test_private_settings_native",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_linux_directory_replacement_during_transaction_fails",
+        "classname": "tests.security.test_private_settings_native",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_sealed_parent_key_authenticates_then_restart_repeats_first_run_without_mutation",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[key-version]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[key-permission]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[known-version]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[known-permission]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[expired]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[revoked]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[disconnect]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_prior_proof_does_not_allow_later_key_trust_or_physical_loss[physical-missing]",
+        "classname": "tests.drive.test_folder_probe_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_parent_key_paths_native_restart_and_one_cas_winner_preserve_files",
+        "classname": "tests.drive.test_folder_authority_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_stale_and_forced_takeover_need_no_previous_owner_ack_and_preserve_unknown",
+        "classname": "tests.drive.test_folder_authority_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_lost_after_commit_reply_is_unknown_and_inspection_never_resends",
+        "classname": "tests.drive.test_folder_authority_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_later_credential_loss_refuses_cas_without_process_or_profile_reset[key-version]",
+        "classname": "tests.drive.test_folder_authority_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_later_credential_loss_refuses_cas_without_process_or_profile_reset[key-permission]",
+        "classname": "tests.drive.test_folder_authority_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_later_credential_loss_refuses_cas_without_process_or_profile_reset[known-version]",
+        "classname": "tests.drive.test_folder_authority_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_later_credential_loss_refuses_cas_without_process_or_profile_reset[known-permission]",
+        "classname": "tests.drive.test_folder_authority_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_later_credential_loss_refuses_cas_without_process_or_profile_reset[expired]",
+        "classname": "tests.drive.test_folder_authority_authenticated_ssh",
+        "status": "SKIPPED"
+      },
+      {
+        "name": "test_actual_authenticated_later_credential_loss_refuses_cas_without_process_or_profile_reset[revoked]",
+        "classname": "tests.drive.test_folder_authority_authenticated_ssh",
+        "status": "SKIPPED"
+      }
+    ],
+    "skip_boundary": "Exactly22 declared actualLinux-only cases: inherited4 native filesystem/9authenticated proof plus9newauthenticated normalSSH. All53applicable newpure/nativeWindowsPASS, no actualSSH authenticity claim from synthetic native callbacks.",
+    "fresh_owned_fixture_root": true,
+    "custom_pythonpath": false,
+    "public_failures": []
+  },
+  "default_collection": {
+    "schema_version": 1,
+    "source": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25",
+    "checkout": "8914ca3e427aff0a6b4b33ec16feeae7ad3ddf15",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.734,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3254,
+    "errors": [],
+    "tests_executed": 0,
+    "prior": 3192,
+    "added": 62,
+    "removed": 0,
+    "all_added_from_three_new_authority_files": true
+  },
+  "acceptance": false,
+  "held": "Required currentLinux771(258/51/6/22/107/327), including62new actual cases without skips; completecurrentplatform/packages and durableendpoint/typedfirst-run authority/runtimeGUI/C1-C4 common.",
+  "next_action": "Publish onecurrentd7 request25 launch intent/readback andtriggeronce; saveactualrun/job/merge/source identities, separate functional/fullinspection intents. Reconcile sameA024495full330; no later-source inference from earlierqualifiedA0239a6c336."
+}

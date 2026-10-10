@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0405",
+  "source": "d168a74ed9ef55e77926be1ee3de8666f4216fc6",
+  "base": "db9bce49fa6d54d5350adcf47d3213732c8d4d18",
+  "local_preservation": "b1185cf12017addb743321ccbc0df0d306152542",
+  "result": "NATIVE_METADATA_ATTACHMENT_SOURCE_PUBLISHED_REVIEWED",
+  "changed_files": [
+    "src/tb4/drive/folder_endpoint.py",
+    "src/tb4/drive/folder_endpoint_attachment.py",
+    "tests/security/test_folder_endpoint_attachment_native.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-029-native-endpoint-pointer-attachment.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/CREDENTIAL_RESOLVER_CONTRACT.md"
+  ],
+  "review": {
+    "AST": "3PythonfilesPASS",
+    "declared_new_native_case_functions": 17,
+    "declared_parameterized_cases": 31,
+    "diff": "PASS; existing _profile keeps actual native/Setup/fresh/nonalias checks; pure extracted fields now validate actual protectedpayload before reuse. Native/image/Setup/frame/pointer/candidate/protocol formats unchanged.",
+    "privacy": "Synthetic owned actual native fixtures only; no real endpoint/key/topology values published. Private payloads and key bytes stay fixture-local.",
+    "rollback": "Opt-in metadataAPI only; priorfullparent preserved; existingpointer not replaced/erased, ordinaryrollback remainsclosed.",
+    "tests_executed": 0
+  },
+  "native_invariants": [
+    "Exact actualnative endpoint/profile bindings and install/storage/authority/selectedhandle/revocation fields under endpoint→profile locks.",
+    "ExplicitownerTrue/INCOMPLETE/noUNKNOWN firstattachment adds only private root/ref/binding pointer; samepointer idempotent preservesstate/history evenUNKNOWN.",
+    "Only sameprotectedexistingpending revision+1/fullprevious/pointer-only child recovery; no reconstruction/resave/keyopen/RPC/shared mutation or activation.",
+    "Closedmetadata_only status, never READY/proof/role grant; no former-owner/allpeerACK election barrier."
+  ],
+  "notes": [
+    "Static review corrected synthetic pending tamper helper to alter its own existing file instead of calling exclusive create-only native stage again; no test executed, no native stage semantics changed.",
+    "Current immutable5f80 request28 helper905/full proof remains source-distinct and uninvolved."
+  ],
+  "held": [
+    "CurrentnativeWindows/Linux31+existing53/26 endpoint/profile regressions and default3419 collection",
+    "Currentfull/platform/packages/Progress",
+    "TrustedfreshSetup helper/credential connection/stagedreplacement/runtime/GUI/C1-C4/common acceptance"
+  ],
+  "next": "Publish separate actualWindows31native and original protected endpoint/pointer/credential/Setup/candidate regression/default3419 collection INTENT with private failure capture and exactbaseline3388/add31/remove0. Then source-specific nativeLinux/full qualification; separatelyinspect oldimmutable5f80 request28 terminal results."
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0385",
+  "source": "8c75d39a086164703abcb09828eef9b994eb2360",
+  "base": "3f754c0e16bf4e6f22f6aab2c6085a5d15001087",
+  "local_preservation": "9b518e24d366ddce39e8345736045fd963fd2f6a",
+  "result": "SCOPED_SOURCE_PUBLISHED_AND_STATIC_REVIEWED",
+  "changed_files": [
+    "src/tb4/drive/folder_helper.py",
+    "tests/drive/test_folder_ssh.py",
+    "tests/drive/test_folder_helper_dispatch.py",
+    "tests/drive/test_folder_combined_authenticated_ssh.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-028-opt-in-fixed-folder-helper-dispatch.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/CREDENTIAL_RESOLVER_CONTRACT.md"
+  ],
+  "review": {
+    "AST": "4 Python files PASS",
+    "declared_test_functions": 14,
+    "diff": "PASS",
+    "privacy": "Synthetic owned loopback fixture only; private selected native key/image files retained local; no real host/topology/credential data included.",
+    "compatibility": "Old default/probe-only flags ignore original command; new opt-in flag mutually exclusive; unchanged config/protocol/endpoint/pointer/native credential/runtime/GUI/default activation meanings.",
+    "rollback": "New mode disabled by default; public preserved scope commits, no live mutation.",
+    "tests_executed": 0
+  },
+  "acceptance": "HELD",
+  "notes": [
+    "Failed multi-file documentation patch matching attempts were local atomic refusals; corrected exact discovered anchors before source preservation; no remote history overwritten.",
+    "Exact malformed-command refusal precedes config/stdin/storage; original limits and protocols preserved.",
+    "Actual Linux combined tests use real native dual-purpose image restored into existing exact purpose-specific factories; source is not a grant or test evidence."
+  ],
+  "next": "Publish separate Windows scoped/default collection INTENT at exact current source, use private failure-output capture. Currentacc26 request27 terminal results remain distinct; actual native attachment/fresh Setup composition/runtime/GUI/C1-C4 held."
+}

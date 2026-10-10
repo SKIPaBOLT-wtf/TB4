@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "kind": "ACTIVE_ADOPTION_BOUNDARY_REPAIR_SOURCE",
+  "intent": "RP-027-A001-0213",
+  "failing_source": "237994f7b97151304ddbb7efaa52522252996702",
+  "source_ref": "6d061a3af4c31e72fbc1c806ff04d66bfc89f80e",
+  "local_source": "770649df7a1b4eb05a80ef761e0eeef7772a3e94",
+  "parent": "f2c982a79b26f32f5105a2756c834bac4ca3aaae",
+  "paths": [
+    "src/tb4/reconfiguration_active_adoption.py",
+    "tests/drive/test_reconfiguration_active_adoption.py"
+  ],
+  "static_checks": {
+    "ast": "PASS",
+    "diff": "PASS",
+    "whitelist": "PASS",
+    "tests_executed": 0
+  },
+  "changes": {
+    "source": "Only actual InstructionError/BallparkError at current select/restore and late check_boundary normalized to ConfigurationError ACTIVE_ADOPTION_INSTRUCTIONS; identical source validation refusal/pin checks/pending byte checks retained",
+    "credential": "Actual LinuxKeyStore with canonical synthetic Native/Runner and installation-bound select/enroll/persist/exported protected image then actual resolver revoke; assertions retain own image/refs, unchanged Main and zero runner use; policy fixture, not actual Linux key IO"
+  },
+  "unchanged": {
+    "schema_hash": "7effe67c48a4d8abc904586607c84347f7a779d6ace0fbb6350b0faae84c0081",
+    "native_cuts": true,
+    "pins": true,
+    "role_and_effect_guards": true,
+    "default_DenyActivation": true
+  },
+  "remote_readback": "VERIFIED",
+  "qualification": "NOT_YET_EXECUTED",
+  "acceptance": false,
+  "next_action": "Publish corrected-source qualification INTENT then actual new30; onlyPASS original295+affected BALLPARK/configuration/credential persistence/default collection/actual Linux453."
+}

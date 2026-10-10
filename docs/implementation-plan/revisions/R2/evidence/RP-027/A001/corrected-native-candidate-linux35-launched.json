@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0478",
+  "source": "cb9501f0e7d54601a06318e2de220d9d319070b4",
+  "trigger": "af607d178c3aadc2b76821af6eebf080b7409ca7",
+  "request_revision": 35,
+  "result": "RECORDED",
+  "groups": [
+    527,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "required_cases": 1040,
+  "pr": 36,
+  "launch_pr_checkout": "3bd28da221270de22620ce472e1aa1b2c2130d46",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "af607d178c3aadc2b76821af6eebf080b7409ca7"
+  ],
+  "source_equivalence": {
+    "actual_git_non_doc_diff": {
+      "trigger": [],
+      "pr": []
+    },
+    "baseline": "cb9501f0e7d54601a06318e2de220d9d319070b4"
+  },
+  "runs": [
+    {
+      "id": 37279882752,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111665234588,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37279882701,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111665234410,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37279882673,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111665234302,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111665234478,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37279882662,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111665234235,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37279877475,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 111665217623,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "readback": "Exactrequest/ref verified, one launch, actualAPI/Git main/trigger parents and source diffs checked.",
+  "notes": "Initialemptylist and407b3 stale merge notused. Actualterminalcheckout must matchverifiedpin or newlyverifiedsameparents/source. MetadataProgress only; no actualoutcomes inspected.",
+  "acceptance": "Correctednew13/1040/currentplatform/Progress/runtimeGUI/C1-C4 pending.",
+  "next": "Inspect same frozen33Windows and34 oldfull terminalsource-specific results, then independentlyschedule native runtime authority/admission foundation from verifiedunchanged native/role/first-run product. Same35 actual1040 stillrequired beforecommon."
+}

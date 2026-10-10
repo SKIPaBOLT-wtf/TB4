@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0375",
+  "source": "acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce",
+  "base": "fc028df0b01f93539abf717c9c377a76a659f694",
+  "local_commit": "51ca56daa22f73e1f7ca4df784e9bdc025e9c027",
+  "result": "SOURCE_PRESERVED",
+  "changed_files": [
+    "src/tb4/drive/folder_endpoint_selection.py",
+    "src/tb4/commissioning_state.py",
+    "src/tb4/reconfiguration_candidate.py",
+    "tests/security/test_folder_endpoint_selection.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-027-optional-protected-endpoint-pointer.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/CREDENTIAL_RESOLVER_CONTRACT.md",
+    "docs/RECONFIGURATION_CONTRACT.md"
+  ],
+  "amendment": "docs/implementation-plan/revisions/R2/amendments/RP-027/A-027-optional-protected-endpoint-pointer.md",
+  "static": {
+    "ast_files": 4,
+    "portable_cases": 26,
+    "diff_check": "PASS",
+    "human_privacy_review": "PASS",
+    "candidate_schema_sha256": "e56758941bbc7907414409e04bcb0bb3a1f211e5d50cd96839e33dd34ea05e82",
+    "tests_executed": 0
+  },
+  "scope": [
+    "Closed capability-neutral optional folder_endpoint metadata; no IO/native lookup, private endpoint/key/credential duplication or availability/activation proof.",
+    "Old absent-field Setup/seed meanings preserved; explicit null permits no selection and profile creation stays unchanged.",
+    "Candidate.seed deep-copies existing pointer, identity/nonce/choices/operations; previous full archival and derived-cache semantics remain.",
+    "Existing ordinary rollback guard now requires same optional pointer in addition to all original safety equalities.",
+    "26 new portable structural/compatibility/UNKNOWN-copy/no-grant/rollback-negative cases added; existing required workflow includes them."
+  ],
+  "independence": "Record374 schedules this format/seed-only unit independently of immutable request26 source87ca. A026 native endpoint/transport/first-run/runtime/GUI operations remain unchanged.",
+  "acceptance": "HELD",
+  "readback": "EXACT_NINE_SOURCE_FILES",
+  "notes": [
+    "An initial unsubmitted375 candidate was revised before publication to explicitly include changed-pointer rollback refusal; both local candidate inputs retained, only the final exact375 INTENT was published.",
+    "Owned new file EOFs normalized before static diff check; no source/test action repeated.",
+    "Source only; no new case, old profile byte, default3333 or native/candidate/platform/package qualification claimed."
+  ],
+  "next": "Publish source376 coordinated amendment/manifest/step/cursor. Before new-source tests inspect the same immutable request26 required Linux terminal outcomes and preserve qualification for87ca only; then publish A027 focused/default/affected native-candidate test INTENT."
+}

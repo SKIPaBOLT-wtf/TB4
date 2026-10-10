@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0498",
+  "source": "b6288d53c5eb29d51708b1f6099114529f79a701",
+  "result": "PASS_COLLECTION_ONLY",
+  "default_collection": {
+    "schema_version": 1,
+    "source": "b6288d53c5eb29d51708b1f6099114529f79a701",
+    "checkout": "6704d418b777064b920d9928ace2958c0c788078",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.832,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3579,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "exact_case_ids": {
+    "baseline_count": 3579,
+    "current_count": 3579,
+    "added_count": 0,
+    "removed_count": 0,
+    "exact_baseline_preserved": true
+  },
+  "tests_executed": 0,
+  "next": "One correctedstagedsource37 requiredLinux1096/new25, sourceb628, actualguard/pending/fullplatform qualification; current36sameCI/Linuxterminal separately."
+}

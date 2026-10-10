@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0333",
+  "source_commit": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25",
+  "source_parent": "13239e8fc82d8b34480b4888de9a234149958c8e",
+  "local_preserved_commit": "5528a551b2ccae8560aa371791e76b2acfbd40d8",
+  "files": [
+    "src/tb4/drive/folder_authority_transport.py",
+    "tests/drive/test_folder_authority_transport.py",
+    "tests/security/test_folder_authority_transport_native.py",
+    "tests/drive/test_folder_authority_authenticated_ssh.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-025-credential-bound-folder-authority-transport.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/CREDENTIAL_RESOLVER_CONTRACT.md",
+    "docs/RECONFIGURATION_CONTRACT.md"
+  ],
+  "readback": "EXACT_ALL_9_COMMITTED_FILES",
+  "amendment": "docs/implementation-plan/revisions/R2/amendments/RP-027/A-025-credential-bound-folder-authority-transport.md",
+  "prerequisites": {
+    "probe_source": "9a6c6923bfd64c5a5a0b125582c7c5808d3465d4",
+    "probe_linux_event": "RP-027-A001-0327",
+    "authority_purpose_source": "4951204c062cd422467fb6661e146b5d978011c3",
+    "authority_linux_event": "RP-027-A001-0332",
+    "pending_full_platform_inspections": [
+      "RP-027-A001-0321",
+      "RP-027-A001-0330"
+    ]
+  },
+  "static": {
+    "python_files_ast_parsed": 4,
+    "syntax": "PASS",
+    "diff": "PASS",
+    "public_repository_privacy": "CLEAN",
+    "tests_executed": 0
+  },
+  "behavior": "Exact native/resolver/store/endpoint/binding pins validate closed READ/CAS before credential IO. Only FOLDER_AUTHORITY fixed callback and normal tb4-folder-v1 command, borrowed held key/known paths and one private correlated slot. CAS ACCEPTED needs caller readback; UNKNOWN/lost/parallel/malformed replies never retry; public UseResult/LocalStore remain Outcome only.",
+  "unchanged": [
+    "Default normal/probe helper and A023 proof/RemoteFolderCommissioning",
+    "Setup/image/candidate/protocol/instruction schemas and hashes",
+    "Default activation and runtime/GUI port allowlists",
+    "Existing native effect/operation/leadership/maintenance gates",
+    "Any installed key/profile/network/authority/workload"
+  ],
+  "static_conformance_choice": "Unexecuted actual two-client CAS fixture retains existing provider outcomes ACCEPTED/REJECTED/UNAVAILABLE with exactly one winner; fresh readback precedes separate stale conditional refusal, no unproven effect replay.",
+  "qualification": "NOT_RUN",
+  "acceptance": false,
+  "next_action": "Publish scoped Windows/native/pure/inherited regression plus default whole-tree collection qualification intent before tests. Later requiredLinux/current fullplatform and durable endpoint/first-run authority/runtime/GUI/common remain held."
+}

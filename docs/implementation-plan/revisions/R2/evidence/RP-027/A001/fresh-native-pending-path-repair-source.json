@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0454",
+  "source": "ea4c2f72e471c7ab935fc2892e8551185d513ece",
+  "local_source": "6cf08631cb7395ea2ed2cbbb3faba04322fa8bdd",
+  "base": "75949bb723035166129295ef178696d54adcf3ae",
+  "result": "RECORDED",
+  "paths": [
+    "tests/security/test_folder_prerequisites_native.py"
+  ],
+  "verification": {
+    "changes": "One pathlib.Path import and two Path(store.native.root) wrappers",
+    "ast": "PASS exact remaining AST/function/decorators/assertions unchanged",
+    "diff": "PASS only native first-run test file, 3insertions/2deletions",
+    "privacy": "Static path conversion only; no actual values",
+    "tests": 0
+  },
+  "reuse_limits": "Actual prior854 PASS at source6436 may be retained only because actual non-doc diff from6436 contains solely new native testfile. New35/default/current Linux/fullplatform still require qualification.",
+  "next": "Focused35 plus affected native/legacy regression/default3510 actual check; no C1-C4 acceptance."
+}

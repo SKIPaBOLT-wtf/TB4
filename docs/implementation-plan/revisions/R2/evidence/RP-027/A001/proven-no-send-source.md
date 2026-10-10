@@ -1,0 +1,9 @@
+# RP-027.C3 A001 — native proven no-send settlement source
+
+Source `6a7337e887dd2f63fcc9c1cf953c0893d4dc3427`; ten owned source/test/schema/catalogue/amendment paths preserved/read back. Static/diff/privacy review only; no tests/import/build/native fixtures/live actions.
+
+ROOT_CANCEL uses actual still-current native RootRevocation previous PREPARED/current REVOKED/binding/revision/BEFORE metadata proof plus exact original spec/key/op/owner/epoch and current role/source/clock/capabilities/reservation. Shared strict CAS changes only UNKNOWN to NOT_DISPATCHED, protecting settings/commissioning/relevant catalogue and retaining historical operation fields. Same-owner resume saves only the local revoked cursor after exact proof/confirmed unsent receipt; a later newly armed ROOT_RETRY accepts the same identity only from this exact NOT_DISPATCHED receipt. New PREPARED/INVOKING intent remains required. INVOKING/legacy/before-only/forged/stale/other-controller/unavailable proofs never grant retry. Ordinary START still refuses same-operation reuse.
+
+Original791 predicates retained;19 new predicates cover same/current/fallback owner summary-only settlement, immutable original profile, default/forged/foreign/stale/source/action/clock/force/unavailable proof refusal, same-live prepared sender fencing, one separately armed request, lost receipt, actual native RootRevocation and cancellation promotion cut byte-exact recovery without CAS reissue. These have not run.
+
+Effects SHA `bddcddeabfa7d79cf96ad89e748a62cc34136bea2c332e01989f4ddceb2ffbf9`, closed ROOT_CANCEL/ROOT_RETRY in UNRELEASED only.64KiB effects,128KiB root,1MiB native budgets unchanged. [Amendment A-007](../../../amendments/RP-027/A-007-proven-no-send-settlement.md). No C1-C4 accepted. Next:34-target fresh native/offscreenQt Windows suite; then cross-host partial plan, folder, remote rebind/C4/full gates.

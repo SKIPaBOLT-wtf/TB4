@@ -1,0 +1,22 @@
+{
+  "intent": "RP-027-A001-0533",
+  "defect": "DEF-111",
+  "prior_source": "d39bda8915af63ce621134aad0e703703c064301",
+  "old_minutes": 30,
+  "new_minutes": 60,
+  "prior_elapsed_seconds": [
+    1816.626,
+    1814.235
+  ],
+  "completed_case_groups": [
+    663,
+    51,
+    6,
+    22,
+    107
+  ],
+  "remaining_case_group": 327,
+  "tests_to_change": [],
+  "authorization": "Existing ordinary implementation authorization; no runtime action.",
+  "acceptance": false
+}

@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "kind": "RETAINED_AUTHORITY_SCOPED_QUALIFIED_PLATFORM_FAILURE_RECORDED",
+  "intent": "RP-027-A001-0240",
+  "source_ref": "28ade36af1d6c98e7402ced9e19510ca58aa14fa",
+  "schema_sha256": "b4e9aefd0d9e88c02d462745632c1853cf4b7ba05b146be17a598c11f9ab0498",
+  "trigger_commit": "0a7d93007bcd65f13b881d8201734b773b0428a3",
+  "required_linux": [
+    {
+      "run_id": 37133654513,
+      "job_id": 111233627997,
+      "event": "push",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37133654513",
+      "checkout": "0a7d93007bcd65f13b881d8201734b773b0428a3",
+      "conclusion": "success",
+      "case_summaries": [
+        {
+          "passed": 51,
+          "deselected": 0,
+          "duration_seconds": 78.73,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "duration_seconds": 32.16,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "duration_seconds": 12.21,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "passed": 320,
+          "deselected": 1,
+          "duration_seconds": 383.78,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "artifact": {
+        "id": 11278090629,
+        "name": "folder-reconfiguration-0a7d93007bcd65f13b881d8201734b773b0428a3",
+        "size_in_bytes": 11422,
+        "digest": "sha256:3e8e4222fcccf10c92d7193f3d6527c39ae0545ef9d3dd12fc13a5a8f6cfeefa",
+        "expired": false
+      }
+    },
+    {
+      "run_id": 37133658459,
+      "job_id": 111233639980,
+      "event": "pull_request",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37133658459",
+      "checkout": "c2d00366c61e45ba7af7a9c44c1d7120e4df0835",
+      "conclusion": "success",
+      "case_summaries": [
+        {
+          "passed": 51,
+          "deselected": 0,
+          "duration_seconds": 119.7,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "duration_seconds": 51.41,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "duration_seconds": 16.74,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "passed": 320,
+          "deselected": 1,
+          "duration_seconds": 525.82,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "artifact": {
+        "id": 11278246211,
+        "name": "folder-reconfiguration-c2d00366c61e45ba7af7a9c44c1d7120e4df0835",
+        "size_in_bytes": 11589,
+        "digest": "sha256:88e2d0ce488e624b85ca81d7456e9c676454a2b2288d6d1ade427b45b660db05",
+        "expired": false
+      }
+    }
+  ],
+  "default_collection": {
+    "schema_version": 1,
+    "source": "28ade36af1d6c98e7402ced9e19510ca58aa14fa",
+    "checkout": "0a7d93007bcd65f13b881d8201734b773b0428a3",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.683,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 2970,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "production_windows": {
+    "source": "1f238122cf44681a4617ed4ef5807cfee6f8f370",
+    "new_cases": 25,
+    "affected_regressions": 472,
+    "failed": 0,
+    "skipped": 0,
+    "qualification_scope": "Previously actual Windows-qualified production and schema byte-unchanged by current fixture-only source; no invented current targeted execution."
+  },
+  "windows_failure": {
+    "run_id": 37133658458,
+    "job_id": 111233640009,
+    "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37133658458",
+    "conclusion": "failure",
+    "step": "Native scoped discovery qualification",
+    "test": "tests/discovery/test_native_loopback.py::test_actual_loopback_identity_and_cache_read_only",
+    "exception": "DiscoveryError: DISCOVERY_UNAVAILABLE",
+    "passed": 1,
+    "failed": 1,
+    "duration_seconds": 11.43,
+    "location": "loopback() -> BoundedRead.run existing read-only Windows loopback interface query, timeout=10; failure before collect_neighbors.",
+    "cause": "UNKNOWN: BoundedRead normalizes exceptions; raw log does not distinguish timeout, exit code, reader or process error.",
+    "unchanged_source": "Discovery implementation and native loopback fixture are byte-unchanged from prior passing sources; previous immutable source1f same native discovery step passed. This does not prove a transient cause.",
+    "not_executed": [
+      "Complete platform regression suite",
+      "Build WATCHDOG",
+      "Build FETCHER",
+      "Packaged application and installer acceptance"
+    ],
+    "next": "Publish/verify a distinct INTENT, then rerun only this known failed job once using same immutable checkout. Inspect actual new attempt/job identity; if it fails again, preserve and diagnose, no blind retry or weakened limit."
+  },
+  "current_full_remainder": {
+    "ci_run": 37133658457,
+    "ci_job": 111233640090,
+    "desktop_run": 37133658458,
+    "linux_job": 111233640149,
+    "status": "in_progress; immutable actual jobs retained, no cancellation",
+    "progress_run": 37133658456,
+    "progress_job": 111233639910,
+    "progress_conclusion": "success"
+  },
+  "old_full_remainder": {
+    "intent": "RP-027-A001-0237",
+    "source": "1f238122cf44681a4617ed4ef5807cfee6f8f370",
+    "ci_run": 37132232335,
+    "ci_job": 111229456265,
+    "ci_conclusion": "failure",
+    "ci_summary": {
+      "passed": 2921,
+      "failed": 1,
+      "skipped": 27,
+      "xfailed": 4,
+      "duration_seconds": 2204.6
+    },
+    "failure": "Only old .gc fixture StopIteration (DEF-087), already corrected on current28ade source; no failed immutable source re-run.",
+    "desktop_run": 37132232396,
+    "linux_job": 111229456678,
+    "linux_conclusion": "failure",
+    "linux_summary": {
+      "passed": 2944,
+      "failed": 1,
+      "skipped": 21,
+      "xfailed": 4,
+      "duration_seconds": 1605.66
+    },
+    "windows_job": 111229456497,
+    "windows_status": "full regression succeeded; WATCHDOG build in progress at inspection; not terminal-qualified"
+  },
+  "scheduling_independence": "Required Linux484 and unchanged production Windows25/472 scoped dependency now qualified. Subsequent separately logged public source composition unit may proceed while current/old immutable full jobs finish and one bounded known failed Windows CI job is retried. Source edits cannot change existing job checkouts. All current full gates remain required on final candidate source before acceptance/merge.",
+  "acceptance": false,
+  "runtime_active": false
+}

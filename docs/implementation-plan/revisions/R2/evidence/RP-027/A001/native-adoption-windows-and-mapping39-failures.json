@@ -1,0 +1,504 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C3",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0520",
+  "source": "c000c0ded9a480172dd9e8269de9617df4224d09",
+  "checkout": "14b0b0085c6889507e262da081bf5cdd0b5de860",
+  "result": "FAIL",
+  "windows": {
+    "source": "c000c0ded9a480172dd9e8269de9617df4224d09",
+    "checkout": "14b0b0085c6889507e262da081bf5cdd0b5de860",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 122.827,
+    "owned_absent_fixture_root": true,
+    "targets": [
+      "tests/drive/test_folder_first_run.py",
+      "tests/drive/test_reconfiguration_active_adoption.py",
+      "tests/security/test_reconfiguration_active_adoption_native.py",
+      "tests/security/test_folder_runtime_factory_native.py",
+      "tests/security/test_reconfiguration_admission_native.py"
+    ],
+    "cases": [
+      {
+        "name": "test_actual_first_run_consumes_one_new_proof_per_review_and_keeps_default_activation_closed",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[root]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[domain]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[setup]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[actor]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[capacity]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[mode]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[authority]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[authority-root]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[tab]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[root-transition]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[extra]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[missing]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[spec]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[handle]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[transport]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[origin]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[binding]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_saved_success_is_not_new_first_run_readiness",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_remote_error_is_closed_and_does_not_retry_or_disclose_private_canary",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_only_exact_probe_type_can_construct_read_only_port",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_current_role_adopts_without_former_host_wal_or_ack_and_retains_own_profile",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_inherited_shared_work_does_not_require_old_peer_ack_or_change_work[BUSY]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_inherited_shared_work_does_not_require_old_peer_ack_or_change_work[UNREAD]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_inherited_shared_work_does_not_require_old_peer_ack_or_change_work[UNKNOWN]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_inherited_shared_unknown_effect_never_replays_but_current_role_can_observe",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[source]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[permission]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[environment]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[profile]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[role]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[force]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[timing]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[barrier]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[setup-unknown]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[local-effect]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[clock]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[caps]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[identities]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_selected_own_credential_is_preserved_and_fresh_revocation_refuses_promotion",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_change_during_first_run_never_promotes_main[stage]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_change_during_first_run_never_promotes_main[takeover]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_receipt_named_schema_owner_alias_and_default_activation_are_not_saved_grants",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[intent]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[archive]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[stage]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[staged]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[prepared]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[original]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[confirmed]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_copied_transaction_and_broad_main_permissions_refuse",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_current_profile_factory_has_no_key_proof_save_or_role_and_denies_missing_grant",
+        "classname": "tests.security.test_folder_runtime_factory_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_factory_rebuilds_timing_from_current_protected_choices_without_grant",
+        "classname": "tests.security.test_folder_runtime_factory_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_current_factory_refuses_lost_native_selection_before_transport_or_profile_write[unselected]",
+        "classname": "tests.security.test_folder_runtime_factory_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_current_factory_refuses_lost_native_selection_before_transport_or_profile_write[pending-endpoint]",
+        "classname": "tests.security.test_folder_runtime_factory_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_release_pending_recovers_only_current_exact_frame_without_remote_repeat[False]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_release_pending_recovers_only_current_exact_frame_without_remote_repeat[True]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_admission_profile_copy_and_checkpoint_broad_permissions_refuse",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames[release]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames[revision]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames[late-first-run]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames[pending]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      }
+    ],
+    "failures": [],
+    "counts": {
+      "PASS": 62,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    }
+  },
+  "collection": {
+    "schema_version": 1,
+    "source": "c000c0ded9a480172dd9e8269de9617df4224d09",
+    "checkout": "14b0b0085c6889507e262da081bf5cdd0b5de860",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.88,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3643,
+    "errors": [],
+    "tests_executed": 0,
+    "old_ids": 3630,
+    "new_ids": 3643,
+    "added": 13,
+    "removed": 0,
+    "legacy_exact": true,
+    "added_file": "tests/drive/test_native_folder_active_adoption_authenticated_ssh.py",
+    "native_linux_tests_executed": 0
+  },
+  "current38": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/staged-retained-current38-platform-qualified.json",
+  "current39": {
+    "source": "e095a52215bf416b1537a1b4ccd582602d57b0b6",
+    "trigger": "b8a51488f27997587f3a94d048a1ca7fc04173f7",
+    "merge": "0c3ee936ebcca283f5cba155355cf1b7558bf295",
+    "source_relation": "Actual current checkouts exactly match independently verified parents and complete empty non-documentation source diff at launch517.",
+    "jobs": [
+      {
+        "job": 111722685160,
+        "error": false,
+        "checkout": "b8a51488f27997587f3a94d048a1ca7fc04173f7",
+        "summaries": [
+          "2 failed, 632 passed in 469.20s (0:07:49)"
+        ],
+        "failures": [
+          "FAILED tests/drive/test_folder_mapping_after_probe_native.py::test_actual_after_proof_refuses_unfinished_or_lost_native_mapping_and_seal_without_writes[parameter] - KeyError: 'folder_plan'",
+          "FAILED tests/drive/test_folder_mapping_after_probe_native.py::test_actual_fixed_ssh_after_probe_returns_fresh_current_native_mapping_witness - tb4.drive.docs_authority.AuthorityError: MAPPING_AFTER_UNAVAILABLE"
+        ],
+        "commands": [
+          "##[group]Run python -m pytest tests/drive/test_folder_endpoint.py tests/security/test_folder_endpoint_native.py tests/security/test_folder_endpoint_selection.py tests/security/test_folder_endpoint_attachment_native.py tests/security/test_folder_connection_native.py tests/drive/test_folder_connection_authenticated_ssh.py tests/security/test_folder_prerequisites_native.py tests/drive/test_folder_candidate_authenticated_ssh.py tests/security/test_folder_runtime_native.py tests/drive/test_folder_runtime_authenticated_ssh.py tests/drive/test_folder_staged_endpoint_authenticated_ssh.py tests/security/test_folder_runtime_factory_native.py tests/drive/test_folder_retained_authenticated_ssh.py tests/drive/test_folder_mapping_after_probe.py tests/drive/test_folder_mapping_after_probe_native.py tests/drive/test_folder_helper_dispatch.py tests/drive/test_folder_combined_authenticated_ssh.py tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py tests/drive/test_folder_first_run_native.py tests/security/test_remote_folder_first_run_native.py tests/security/test_folder_credential_purpose.py tests/security/test_folder_credential_purpose_native.py tests/security/test_folder_authority_purpose.py tests/security/test_folder_authority_purpose_native.py tests/drive/test_folder_authority_transport.py tests/security/test_folder_authority_transport_native.py tests/drive/test_folder_authority_authenticated_ssh.py tests/drive/test_folder_probe_transport.py tests/security/test_folder_probe_transport_native.py tests/drive/test_folder_probe_authenticated_ssh.py -ra --junitxml=folder-probe-results.xml",
+          "python -m pytest tests/drive/test_folder_endpoint.py tests/security/test_folder_endpoint_native.py tests/security/test_folder_endpoint_selection.py tests/security/test_folder_endpoint_attachment_native.py tests/security/test_folder_connection_native.py tests/drive/test_folder_connection_authenticated_ssh.py tests/security/test_folder_prerequisites_native.py tests/drive/test_folder_candidate_authenticated_ssh.py tests/security/test_folder_runtime_native.py tests/drive/test_folder_runtime_authenticated_ssh.py tests/drive/test_folder_staged_endpoint_authenticated_ssh.py tests/security/test_folder_runtime_factory_native.py tests/drive/test_folder_retained_authenticated_ssh.py tests/drive/test_folder_mapping_after_probe.py tests/drive/test_folder_mapping_after_probe_native.py tests/drive/test_folder_helper_dispatch.py tests/drive/test_folder_combined_authenticated_ssh.py tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py tests/drive/test_folder_first_run_native.py tests/security/test_remote_folder_first_run_native.py tests/security/test_folder_credential_purpose.py tests/security/test_folder_credential_purpose_native.py tests/security/test_folder_authority_purpose.py tests/security/test_folder_authority_purpose_native.py tests/drive/test_folder_authority_transport.py tests/security/test_folder_authority_transport_native.py tests/drive/test_folder_authority_authenticated_ssh.py tests/drive/test_folder_probe_transport.py tests/security/test_folder_probe_transport_native.py tests/drive/test_folder_probe_authenticated_ssh.py -ra --junitxml=folder-probe-results.xml"
+        ]
+      },
+      {
+        "job": 111722702817,
+        "error": false,
+        "checkout": "0c3ee936ebcca283f5cba155355cf1b7558bf295",
+        "summaries": [
+          "2 failed, 632 passed in 546.93s (0:09:06)"
+        ],
+        "failures": [
+          "FAILED tests/drive/test_folder_mapping_after_probe_native.py::test_actual_after_proof_refuses_unfinished_or_lost_native_mapping_and_seal_without_writes[parameter] - KeyError: 'folder_plan'",
+          "FAILED tests/drive/test_folder_mapping_after_probe_native.py::test_actual_fixed_ssh_after_probe_returns_fresh_current_native_mapping_witness - tb4.drive.docs_authority.AuthorityError: MAPPING_AFTER_UNAVAILABLE"
+        ],
+        "commands": [
+          "##[group]Run python -m pytest tests/drive/test_folder_endpoint.py tests/security/test_folder_endpoint_native.py tests/security/test_folder_endpoint_selection.py tests/security/test_folder_endpoint_attachment_native.py tests/security/test_folder_connection_native.py tests/drive/test_folder_connection_authenticated_ssh.py tests/security/test_folder_prerequisites_native.py tests/drive/test_folder_candidate_authenticated_ssh.py tests/security/test_folder_runtime_native.py tests/drive/test_folder_runtime_authenticated_ssh.py tests/drive/test_folder_staged_endpoint_authenticated_ssh.py tests/security/test_folder_runtime_factory_native.py tests/drive/test_folder_retained_authenticated_ssh.py tests/drive/test_folder_mapping_after_probe.py tests/drive/test_folder_mapping_after_probe_native.py tests/drive/test_folder_helper_dispatch.py tests/drive/test_folder_combined_authenticated_ssh.py tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py tests/drive/test_folder_first_run_native.py tests/security/test_remote_folder_first_run_native.py tests/security/test_folder_credential_purpose.py tests/security/test_folder_credential_purpose_native.py tests/security/test_folder_authority_purpose.py tests/security/test_folder_authority_purpose_native.py tests/drive/test_folder_authority_transport.py tests/security/test_folder_authority_transport_native.py tests/drive/test_folder_authority_authenticated_ssh.py tests/drive/test_folder_probe_transport.py tests/security/test_folder_probe_transport_native.py tests/drive/test_folder_probe_authenticated_ssh.py -ra --junitxml=folder-probe-results.xml",
+          "python -m pytest tests/drive/test_folder_endpoint.py tests/security/test_folder_endpoint_native.py tests/security/test_folder_endpoint_selection.py tests/security/test_folder_endpoint_attachment_native.py tests/security/test_folder_connection_native.py tests/drive/test_folder_connection_authenticated_ssh.py tests/security/test_folder_prerequisites_native.py tests/drive/test_folder_candidate_authenticated_ssh.py tests/security/test_folder_runtime_native.py tests/drive/test_folder_runtime_authenticated_ssh.py tests/drive/test_folder_staged_endpoint_authenticated_ssh.py tests/security/test_folder_runtime_factory_native.py tests/drive/test_folder_retained_authenticated_ssh.py tests/drive/test_folder_mapping_after_probe.py tests/drive/test_folder_mapping_after_probe_native.py tests/drive/test_folder_helper_dispatch.py tests/drive/test_folder_combined_authenticated_ssh.py tests/drive/test_folder_probe.py tests/drive/test_folder_probe_native.py tests/drive/test_folder_ssh.py tests/drive/test_folder_first_run.py tests/drive/test_folder_first_run_native.py tests/security/test_remote_folder_first_run_native.py tests/security/test_folder_credential_purpose.py tests/security/test_folder_credential_purpose_native.py tests/security/test_folder_authority_purpose.py tests/security/test_folder_authority_purpose_native.py tests/drive/test_folder_authority_transport.py tests/security/test_folder_authority_transport_native.py tests/drive/test_folder_authority_authenticated_ssh.py tests/drive/test_folder_probe_transport.py tests/security/test_folder_probe_transport_native.py tests/drive/test_folder_probe_authenticated_ssh.py -ra --junitxml=folder-probe-results.xml"
+        ]
+      },
+      {
+        "job": 111722703013,
+        "error": false,
+        "checkout": "0c3ee936ebcca283f5cba155355cf1b7558bf295",
+        "summaries": [
+          "235 passed in 8.66s"
+        ],
+        "failures": [],
+        "commands": [
+          "##[group]Run python -m pytest tests/development -ra",
+          "python -m pytest tests/development -ra"
+        ]
+      },
+      {
+        "job": 111722701832,
+        "error": false,
+        "checkout": "0c3ee936ebcca283f5cba155355cf1b7558bf295",
+        "summaries": [
+          "43 passed in 0.16s",
+          "34 passed in 0.40s",
+          "2 passed in 0.04s",
+          "2 failed, 3580 passed, 27 skipped, 4 xfailed in 1597.82s (0:26:37)"
+        ],
+        "failures": [
+          "FAILED tests/drive/test_folder_mapping_after_probe_native.py::test_actual_after_proof_refuses_unfinished_or_lost_native_mapping_and_seal_without_writes[parameter] - KeyError: 'folder_plan'",
+          "FAILED tests/drive/test_folder_mapping_after_probe_native.py::test_actual_fixed_ssh_after_probe_returns_fresh_current_native_mapping_witness - tb4.drive.docs_authority.AuthorityError: MAPPING_AFTER_UNAVAILABLE"
+        ],
+        "commands": [
+          "##[group]Run python -m pytest tests/security/test_linux_key_native.py -ra",
+          "python -m pytest tests/security/test_linux_key_native.py -ra",
+          "##[group]Run python -m pytest tests/security/test_private_settings_native.py tests/security/test_first_run_native.py tests/security/test_credential_persistence_native.py tests/security/test_setup_credentials_native.py -ra",
+          "python -m pytest tests/security/test_private_settings_native.py tests/security/test_first_run_native.py tests/security/test_credential_persistence_native.py tests/security/test_setup_credentials_native.py -ra",
+          "##[group]Run python -m pytest tests/discovery/test_native_loopback.py -ra",
+          "python -m pytest tests/discovery/test_native_loopback.py -ra"
+        ]
+      },
+      {
+        "job": 111722701879,
+        "error": false,
+        "checkout": "0c3ee936ebcca283f5cba155355cf1b7558bf295",
+        "summaries": [
+          "90 passed, 4 skipped in 1.90s",
+          "43 passed in 0.13s",
+          "34 passed in 0.28s",
+          "2 passed in 0.02s",
+          "75 passed in 6.36s",
+          "79 passed in 9.09s",
+          "2 failed, 3603 passed, 21 skipped, 4 xfailed in 1638.18s (0:27:18)"
+        ],
+        "failures": [
+          "FAILED tests/drive/test_folder_mapping_after_probe_native.py::test_actual_after_proof_refuses_unfinished_or_lost_native_mapping_and_seal_without_writes[parameter] - KeyError: 'folder_plan'",
+          "FAILED tests/drive/test_folder_mapping_after_probe_native.py::test_actual_fixed_ssh_after_probe_returns_fresh_current_native_mapping_witness - tb4.drive.docs_authority.AuthorityError: MAPPING_AFTER_UNAVAILABLE"
+        ],
+        "commands": [
+          "##[group]Run python -m pytest tests/desktop -ra",
+          "python -m pytest tests/desktop -ra",
+          "##[group]Run python -m pytest tests/security/test_linux_key_native.py -ra",
+          "python -m pytest tests/security/test_linux_key_native.py -ra",
+          "##[group]Run python -m pytest tests/security/test_private_settings_native.py tests/security/test_first_run_native.py tests/security/test_credential_persistence_native.py tests/security/test_setup_credentials_native.py -ra",
+          "python -m pytest tests/security/test_private_settings_native.py tests/security/test_first_run_native.py tests/security/test_credential_persistence_native.py tests/security/test_setup_credentials_native.py -ra",
+          "##[group]Run python -m pytest tests/discovery/test_native_loopback.py -ra",
+          "python -m pytest tests/discovery/test_native_loopback.py -ra",
+          "##[group]Run python -m pytest tests/drive/test_ballpark_setup.py tests/drive/test_ballpark_publication.py -ra",
+          "python -m pytest tests/drive/test_ballpark_setup.py tests/drive/test_ballpark_publication.py -ra",
+          "##[group]Run python -m pytest tests/drive/test_fetcher_profile.py tests/drive/test_fetcher_enrollment.py -ra",
+          "python -m pytest tests/drive/test_fetcher_profile.py tests/drive/test_fetcher_enrollment.py -ra"
+        ]
+      }
+    ],
+    "windows": {
+      "job": 111722702185,
+      "status": "IN_PROGRESS",
+      "logs_fetched": false
+    },
+    "later_required_groups": "NOT_EXECUTED",
+    "linux_packages": "NOT_EXECUTED",
+    "failures": [
+      "FAILED tests/drive/test_folder_mapping_after_probe_native.py::test_actual_after_proof_refuses_unfinished_or_lost_native_mapping_and_seal_without_writes[before]",
+      "FAILED tests/drive/test_folder_mapping_after_probe_native.py::test_actual_fixed_ssh_after_probe_returns_fresh_current_native_mapping_witness"
+    ],
+    "artifact_metadata": [],
+    "artifacts_downloaded": false
+  },
+  "defects": [
+    "DEF-109",
+    "DEF-110"
+  ],
+  "diagnosis": {
+    "DEF_109": "The before-move negative fixture reaches facts() before it has any folder_plan; actual KeyError occurs before production AFTER proof. Preserve predicate; derive expected witness from a qualified terminal fixture while exercising the actual pre-move endpoint separately.",
+    "DEF_110": "Actual native direct proof and other loss cases pass, but actual protected fixed SSH positive proof refuses MAPPING_AFTER_UNAVAILABLE in both required jobs and full Linux suites. Root cause not established; preserve failed hypothesis and inspect deterministic transport/helper stages."
+  },
+  "tests_not_acceptance": true,
+  "limits": "Current A037 native13 remain unexecuted. Required39 not passing; no mapped consumer accepted. Native original pending and complete staged runtime/common C1-C4 remain held.",
+  "next": "Publish/readback failures and frozen38 platform qualification. Bounded diagnostic/repair INTENT for actual before-move fixture and fixed native SSH proof. No replay of old39 jobs."
+}

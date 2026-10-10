@@ -1,0 +1,54 @@
+{
+  "source_ref": "f7d283897eaef2ca521df99d45544dad2d07dd5e",
+  "checkout": "cdce686e815367b4778530ee16e1934f9e190278",
+  "intent": "RP-027-A001-0267",
+  "environment": "Synthetic Docs SDK and MemoryNative stores; actual admission/first-run logic; no OS-native or live qualification",
+  "explicit_test_helper_import_paths": true,
+  "results": [
+    {
+      "boundary": "release",
+      "expected": "BLOCKED",
+      "observed": "ADMITTED",
+      "revision": 2,
+      "leadership_timing_mismatch": true,
+      "local_shared_timing_coherent": true,
+      "protected_profile_preserved": true,
+      "checkpoint_preserved": false,
+      "maintenance_before": true,
+      "maintenance_after": false,
+      "shared_document_preserved": true,
+      "remote_write_count_unchanged": true
+    },
+    {
+      "boundary": "revision",
+      "expected": "BLOCKED",
+      "observed": "ADMITTED",
+      "revision": 2,
+      "leadership_timing_mismatch": true,
+      "local_shared_timing_coherent": true,
+      "protected_profile_preserved": true,
+      "checkpoint_preserved": true,
+      "maintenance_before": false,
+      "maintenance_after": false,
+      "shared_document_preserved": true,
+      "remote_write_count_unchanged": true
+    },
+    {
+      "boundary": "late-first-run",
+      "expected": "BLOCKED",
+      "observed": "ADMITTED",
+      "revision": 2,
+      "leadership_timing_mismatch": true,
+      "local_shared_timing_coherent": true,
+      "protected_profile_preserved": true,
+      "checkpoint_preserved": false,
+      "maintenance_before": true,
+      "maintenance_after": false,
+      "shared_document_preserved": true,
+      "remote_write_count_unchanged": true
+    }
+  ],
+  "elapsed_seconds": 7.302,
+  "diagnostic_completed": true,
+  "tests_executed": 0
+}

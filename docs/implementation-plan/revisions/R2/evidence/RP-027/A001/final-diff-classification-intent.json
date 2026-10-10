@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "intent": "RP-027-A001-0570",
+  "procedure": "Check exact Git blob lines for each reported diagnostic: EOF-only empty lines versus the documented line-ending whitespace. Fail on any unclassified diagnostic or behavioral token. Retain diff-check exit2 as a reviewed nonblocking format finding only if all are nonsemantic. Verify exact source43 equality/current main/qualified PR parents; review concrete assertions/dependencies/defects and run unchanged ledger with main-history and public scanner. Complete current per-check receipts/manifest only if all original behavioral/common gates hold. This is a reviewer classification, not a waiver of a product invariant or a relabeling of the failed preliminary script.",
+  "expected": "Every diff diagnostic is exactly classified with public path/line/bytes category and no production/fixture/protocol semantics. All original acceptance invariants/common gates hold on byte-identical source43; unresolved defects/field/GUI limits remain explicit.",
+  "prior_failed_review": "RP-027-A001-0569",
+  "no_product_requirement_waived": true,
+  "no_source_change": true,
+  "acceptance": false
+}

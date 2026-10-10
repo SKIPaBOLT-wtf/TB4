@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TB4 protected same-Docs remote rebind WAL; no activation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kind",
+    "installation_id",
+    "transition_id",
+    "base_revision",
+    "base_sha256",
+    "authority",
+    "pin",
+    "binding",
+    "dispatch",
+    "plan"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "kind": {
+      "const": "RECONFIGURATION_REMOTE_REBIND"
+    },
+    "installation_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "transition_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "base_revision": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9223372036854775807
+    },
+    "base_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "tab_id",
+        "domain_id"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "tab_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "domain_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      }
+    },
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commit",
+        "profile",
+        "policy_digest",
+        "runtime",
+        "instructions",
+        "files"
+      ],
+      "properties": {
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "profile": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{0,63}$"
+        },
+        "policy_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "runtime": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "build_commit",
+            "protocol",
+            "capabilities"
+          ],
+          "properties": {
+            "build_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "protocol": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "capabilities": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "instructions": {
+          "type": "string"
+        },
+        "files": {
+          "type": "object",
+          "minProperties": 2,
+          "maxProperties": 17,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "binding": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "dispatch": {
+      "type": "string",
+      "enum": [
+        "PREPARED",
+        "INVOKING",
+        "CONFIRMED"
+      ]
+    },
+    "plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner",
+        "epoch",
+        "header",
+        "protected",
+        "before",
+        "after"
+      ],
+      "properties": {
+        "owner": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "epoch": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "header": {
+          "type": "string",
+          "maxLength": 262144,
+          "contentEncoding": "base64"
+        },
+        "protected": {
+          "type": "string",
+          "maxLength": 262144,
+          "contentEncoding": "base64"
+        },
+        "before": {
+          "type": "string",
+          "maxLength": 262144,
+          "contentEncoding": "base64"
+        },
+        "after": {
+          "type": "string",
+          "maxLength": 262144,
+          "contentEncoding": "base64"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "rebindReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "transition_id",
+        "configuration_revision",
+        "previous_generation",
+        "previous_marker_sha256",
+        "source_blueprint_sha256",
+        "root_plan_sha256",
+        "work_sha256",
+        "catalogues_sha256"
+      ],
+      "properties": {
+        "transition_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "previous_marker_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "source_blueprint_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "root_plan_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "work_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "catalogues_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "configuration_revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9223372036854775807
+        },
+        "previous_generation": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9223372036854775806
+        }
+      }
+    }
+  }
+}

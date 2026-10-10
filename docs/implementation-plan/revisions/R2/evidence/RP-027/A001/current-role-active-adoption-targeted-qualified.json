@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "kind": "CURRENT_ROLE_ACTIVE_ADOPTION_WINDOWS_TARGETED_QUALIFICATION",
+  "source_ref": "6d061a3af4c31e72fbc1c806ff04d66bfc89f80e",
+  "intent": "RP-027-A001-0215",
+  "windows": {
+    "source": "6d061a3af4c31e72fbc1c806ff04d66bfc89f80e",
+    "checkout": "2d14833148ba497bcb0fd758374b24340704ff5e",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 74.161,
+    "owned_absent_fixture_root": true,
+    "targets": [
+      "tests/drive/test_reconfiguration_active_adoption.py",
+      "tests/security/test_reconfiguration_active_adoption_native.py"
+    ],
+    "cases": [
+      {
+        "name": "test_actual_current_role_adopts_without_former_host_wal_or_ack_and_retains_own_profile",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_inherited_shared_work_does_not_require_old_peer_ack_or_change_work[BUSY]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_inherited_shared_work_does_not_require_old_peer_ack_or_change_work[UNREAD]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_inherited_shared_work_does_not_require_old_peer_ack_or_change_work[UNKNOWN]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_inherited_shared_unknown_effect_never_replays_but_current_role_can_observe",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[source]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[permission]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[environment]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[profile]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[role]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[force]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[timing]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_current_facts_change_refuses_main_promotion_without_remote_write_or_replay[barrier]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[setup-unknown]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[local-effect]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[clock]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[caps]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_own_local_state_never_stages_or_blocks_actual_election[identities]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_selected_own_credential_is_preserved_and_fresh_revocation_refuses_promotion",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_change_during_first_run_never_promotes_main[stage]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_change_during_first_run_never_promotes_main[takeover]",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_receipt_named_schema_owner_alias_and_default_activation_are_not_saved_grants",
+        "classname": "tests.drive.test_reconfiguration_active_adoption",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[intent]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[archive]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[stage]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[staged]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[prepared]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[original]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_cut_recovers_same_frame_and_never_writes_shared_authority[confirmed]",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_adoption_copied_transaction_and_broad_main_permissions_refuse",
+        "classname": "tests.security.test_reconfiguration_active_adoption_native",
+        "status": "PASS"
+      }
+    ],
+    "failures": [],
+    "counts": {
+      "PASS": 30,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    }
+  },
+  "initial_failure": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-role-active-adoption-initial-failure.json",
+  "invariants": [
+    "current-role epoch2 adoption with former protected host/WAL unavailable; own identity, nonce, known history, selected credential metadata and private interfaces retained",
+    "same fixed document/tab/domain, current target first-run, actual source/role/force/protected profiles checked",
+    "shared BUSY/UNREAD/UNKNOWN work preserved; inherited SSH UNKNOWN no invocation or replay and current role observation remains available",
+    "seven actual Windows native pending cuts intent/archive/stage/staged/prepared/Main/confirmed: revoked source refuses with unchanged pending bytes; restored exact source promotes same frame, no shared write",
+    "own typed LinuxKeyStore policy fixture image/select refs retained; actual resolver revocation refuses current first-run with zero synthetic runner invocation",
+    "copied native WAL and broad Main permissions refused; default activation denied; own current-profile admission restarts without adoption archive/stage/WAL"
+  ],
+  "limits": {
+    "actual_OS": "Windows native protected private settings IO",
+    "native_Linux": "NOT_YET_QUALIFIED_ON_THIS_SOURCE",
+    "credential_test": "actual typed LinuxKeyStore/CredentialResolver with synthetic native/key-runner policy fixture; no actual Linux kernel key proof",
+    "whole_RP027_checks_accepted": false,
+    "installed_runtime_active": false,
+    "regressions": "NOT_YET_RUN: new targeted group now PASS; next separate exact-source regression/collection/Linux/full/platform qualification"
+  },
+  "next_action": "Publish separate broader qualification INTENT, exact6d original295+affected BALLPARK/configuration/credential persistence/default collection and actual Linux453/full CI/platform/progress."
+}

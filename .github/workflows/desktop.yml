@@ -24,7 +24,7 @@ jobs:
       matrix:
         os: [ubuntu-22.04, windows-latest]
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 40
+    timeout-minutes: 90
     env:
       QT_QPA_PLATFORM: offscreen
       PYTHONUTF8: '1'

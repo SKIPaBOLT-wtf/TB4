@@ -15,9 +15,9 @@ from tb4.drive.commissioning_bootstrap import AuthorityHandle
 from tb4.exchange_layout import Capacity
 from tb4.instructions import CATALOG, ENTRY, REPOSITORY, REPOSITORY_ID, Head, RuntimeFacts
 from tb4.private_settings import PrivateSettings, SettingsError
-from test_private_settings import MemoryNative
-from test_ballpark_contract import fixture as descriptor_fixture
-from test_credential_contract import FixtureStore, TARGET, TRUST
+from tests.security.test_private_settings import MemoryNative
+from tests.security.test_ballpark_contract import fixture as descriptor_fixture
+from tests.security.test_credential_contract import FixtureStore, TARGET, TRUST
 
 DOMAIN = "00000000-0000-4000-8000-000000000001"
 ACTOR = "00000000-0000-4000-8000-000000000002"

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "source_ref": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "result": "PASS",
+  "reviewed": true,
+  "review_method": "Reviewed the original check and requirement mapping, actual implementation and positive/negative assertions; matched exact current source to the immutable executed jobs and current common review.",
+  "procedure": "Check exact Git blob lines for each reported diagnostic: EOF-only empty lines versus the documented line-ending whitespace. Fail on any unclassified diagnostic or behavioral token. Retain diff-check exit2 as a reviewed nonblocking format finding only if all are nonsemantic. Verify exact source43 equality/current main/qualified PR parents; review concrete assertions/dependencies/defects and run unchanged ledger with main-history and public scanner. Complete current per-check receipts/manifest only if all original behavioral/common gates hold. This is a reviewer classification, not a waiver of a product invariant or a relabeling of the failed preliminary script. Representative concrete functions and all exact six required selections/default collected functions are linked in the artifacts.",
+  "expected": "Coherent monotonic descriptor/ACTIVE publication, exact conditional Main promotion and fresh per-use current admission preserve identities/history and work generations. Obsolete timing/source/profile/role denies, inherited UNKNOWN never grants replay. Restart uses current Main, not obsolete private staging files.",
+  "observed": "Coherent monotonic descriptor/ACTIVE publication, exact conditional Main promotion and fresh per-use current admission preserve identities/history and work generations. Obsolete timing/source/profile/role denies, inherited UNKNOWN never grants replay. Restart uses current Main, not obsolete private staging files. Established by actual current source43 native1234 cases twice without skip/failure, complete CI/Windows/Linux regression and current-source common review. Stale role/source/timing/capability/native profile and post-publication mapping loss refuse admission/promotion. Late cold-Main child mutation is caught at actual internal ACTIVE_ADOPTION_RECOVERY behind opaque SETTINGS_STORE_UNAVAILABLE, preserving Main/pending/shared bytes. Pending recovery does not resave/replay a shared effect; monotonic configuration/work generations and inherited UNKNOWN remain; old WAL absence does not block independent current-role takeover.",
+  "exit_code": 0,
+  "platform_scope": "Native protected state is exercised on Windows and Linux. The physical same-filesystem no-replace move and actual fixed-helper loopback SSH scenarios are Linux fixtures; Windows checks native profiles/credentials and portable logic. Docs SDK behavior uses commissioned synthetic provider adapters. Real Google deployment, remote production Windows SSH, ARM64 and filesystem families beyond declared fixtures, physical power loss and live migration remain unqualified. These are explicit later field/pilot limits, not fabricated passes.",
+  "negative_cases": [
+    "Stale role/source/timing/capability/native profile and post-publication mapping loss refuse admission/promotion.",
+    "Late cold-Main child mutation is caught at actual internal ACTIVE_ADOPTION_RECOVERY behind opaque SETTINGS_STORE_UNAVAILABLE, preserving Main/pending/shared bytes.",
+    "Pending recovery does not resave/replay a shared effect; monotonic configuration/work generations and inherited UNKNOWN remain; old WAL absence does not block independent current-role takeover."
+  ],
+  "unverified_scope": "Windows348/Linux21/CI27 skips and four strict expected failures are retained verbatim and not called passing tests. Four existing cancellation/runtime xfails remain assigned to RP-044/045/046. Historical discovery failures DEF088/094 retain unknown causes. Physical native Folder/SSH qualification is Linux; Docs adapters are commissioned synthetic fixtures. Full Qt reconfiguration exposure remains RP053.C2 under A040; authorized field/pilot, other hardware/topologies and live migration are not inferred.",
+  "privacy_review": "PUBLIC_SAFE_REVIEWED",
+  "rollback": "Before publication original Main and full immutable archive remain. Pending recovery promotes only exact already-written bytes with fresh predicates. After a possibly applied root or shared change, inspect the same operation and retain UNKNOWN; restoring an old path/profile is not safe rollback. A reverse change must be a new monotonic same-authority transaction, not an epoch/generation rewind. Destination collision, source/role/capability loss and native cuts have explicit negative assertions; no destructive cleanup or rollback performed.",
+  "intent_event": "RP-027-A001-0570",
+  "outcome_event": "RP-027-A001-0571",
+  "artifacts": [
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-source-common-acceptance.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-complete-qualification.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-collected-functions.json",
+    "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-checks-common-audit.json"
+  ]
+}

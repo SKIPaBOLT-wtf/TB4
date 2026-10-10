@@ -1,0 +1,209 @@
+{
+  "source": "c64fc64258fca7846d71f70ed725326ec2e83edd",
+  "checkout": "f6ba7c195c1ee9dffde4d057233f6668d1bb7bb8",
+  "probes": [
+    {
+      "case": "own-prepared-pending-proof",
+      "error_class": "ConfigurationError",
+      "code": "CONFIGURATION_ROOT_EVIDENCE",
+      "frames": [
+        {
+          "file": "rp27-adoption-diagnostic.py",
+          "function": "<module>",
+          "line": 24
+        },
+        {
+          "file": "reconfiguration_roots.py",
+          "function": "advance",
+          "line": 333
+        },
+        {
+          "file": "reconfiguration_root_resume.py",
+          "function": "_proof",
+          "line": 188
+        },
+        {
+          "file": "configuration_contract.py",
+          "function": "require",
+          "line": 18
+        }
+      ],
+      "pending_prepared": true,
+      "receipt_exact_own": true,
+      "blockers": [
+        {
+          "kind": "SHARED_UNKNOWN",
+          "is_summary": true,
+          "is_pending_operation": false
+        },
+        {
+          "kind": "SHARED_EFFECT_UNKNOWN",
+          "is_summary": false,
+          "is_pending_operation": true
+        }
+      ],
+      "summary_unknown": true,
+      "sdk_requests": 0,
+      "profile_unchanged": true
+    },
+    {
+      "case": "actual-full-first-run-refusal",
+      "error_class": "SettingsError",
+      "code": "STORAGE_UNAVAILABLE",
+      "frames": [
+        {
+          "file": "rp27-adoption-diagnostic.py",
+          "function": "<module>",
+          "line": 38
+        },
+        {
+          "file": "commissioning_checks.py",
+          "function": "verify",
+          "line": 91
+        }
+      ],
+      "shared_unchanged": true,
+      "profile_unchanged": true,
+      "sdk_unchanged": true,
+      "sdk_requests": 3
+    },
+    {
+      "case": "source-switch-offline",
+      "result": "MOVING",
+      "error_class": null,
+      "code": null,
+      "shared_unchanged": true,
+      "profile_unchanged": true,
+      "sdk_requests": 0,
+      "root_store_absent": false,
+      "evidence_store_absent": false,
+      "actual_fail_resolve": false
+    },
+    {
+      "case": "source-switch-fail_resolve",
+      "error_class": "ConfigurationError",
+      "code": "CONFIGURATION_INSTRUCTIONS_REQUIRED",
+      "frames": [
+        {
+          "file": "rp27-adoption-diagnostic.py",
+          "function": "<module>",
+          "line": 48
+        },
+        {
+          "file": "reconfiguration_root_resume.py",
+          "function": "begin",
+          "line": 206
+        },
+        {
+          "file": "reconfiguration_root_facts.py",
+          "function": "require_fresh",
+          "line": 93
+        },
+        {
+          "file": "reconfiguration_root_facts.py",
+          "function": "inspect",
+          "line": 44
+        },
+        {
+          "file": "reconfiguration_root_settlement.py",
+          "function": "_role",
+          "line": 49
+        },
+        {
+          "file": "reconfiguration_maintenance.py",
+          "function": "_proof",
+          "line": 213
+        }
+      ],
+      "shared_unchanged": true,
+      "profile_unchanged": true,
+      "sdk_requests": 0,
+      "root_store_absent": true,
+      "evidence_store_absent": true,
+      "actual_fail_resolve": true
+    },
+    {
+      "case": "other-unknown-valid-summary-envelope",
+      "error_class": "ConfigurationError",
+      "code": "CONFIGURATION_ROOT_EVIDENCE",
+      "frames": [
+        {
+          "file": "rp27-adoption-diagnostic.py",
+          "function": "<module>",
+          "line": 66
+        },
+        {
+          "file": "reconfiguration_root_resume.py",
+          "function": "begin",
+          "line": 207
+        },
+        {
+          "file": "configuration_contract.py",
+          "function": "require",
+          "line": 18
+        }
+      ],
+      "malformed_error": {
+        "error_class": "ConfigurationError",
+        "code": "CONFIGURATION_EFFECT_JOURNAL",
+        "frames": [
+          {
+            "file": "rp27-adoption-diagnostic.py",
+            "function": "<module>",
+            "line": 60
+          },
+          {
+            "file": "reconfiguration_effects.py",
+            "function": "ledger",
+            "line": 53
+          },
+          {
+            "file": "configuration_contract.py",
+            "function": "require",
+            "line": 18
+          }
+        ]
+      },
+      "malformed_retention": "RETAINED",
+      "canonical_retention": "UNKNOWN",
+      "blocker_kinds": [
+        "SHARED_UNKNOWN",
+        "SHARED_EFFECT_UNKNOWN"
+      ],
+      "shared_unchanged": true,
+      "root_store_absent": true,
+      "evidence_store_absent": true,
+      "sdk_requests": 0
+    },
+    {
+      "case": "second-takeover-same-helper-transition",
+      "error_class": "AuthorityError",
+      "code": "TRANSITION_REUSED",
+      "frames": [
+        {
+          "file": "rp27-adoption-diagnostic.py",
+          "function": "<module>",
+          "line": 79
+        },
+        {
+          "file": "test_reconfiguration_effects.py",
+          "function": "acquire_fallback",
+          "line": 37
+        },
+        {
+          "file": "leadership.py",
+          "function": "acquire",
+          "line": 204
+        },
+        {
+          "file": "docs_authority.py",
+          "function": "require",
+          "line": 24
+        }
+      ],
+      "first_grant_uses_fixed_helper_transition": true,
+      "shared_unchanged": true,
+      "sdk_requests": 0
+    }
+  ]
+}

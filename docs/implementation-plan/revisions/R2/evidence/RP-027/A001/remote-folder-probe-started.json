@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "kind": "REMOTE_FOLDER_PROBE_QUALIFICATION_STARTED",
+  "source_ref": "f7d283897eaef2ca521df99d45544dad2d07dd5e",
+  "intent": "RP-027-A001-0265",
+  "trigger_commit": "d163f2b23a881000ea5cdcfc0ef97b0adcc441e8",
+  "request_revision": 18,
+  "windows": {
+    "source": "f7d283897eaef2ca521df99d45544dad2d07dd5e",
+    "checkout": "898c2a488b4417c9579d01029a80d9dd7c77f5f3",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.212,
+    "owned_absent_fixture_root": true,
+    "targets": [
+      "tests/drive/test_folder_probe.py",
+      "tests/drive/test_folder_protocol.py"
+    ],
+    "cases": [
+      {
+        "name": "test_portable_exact_observation_is_fresh_and_has_no_mutating_api",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[root-10000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[domain-40000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[nonce-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[mode-FOLDER_SQLITE_V1]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[version-2]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[revision-True]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[revision-0]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[revision-1208925819614629174706176]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[body-***]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[body-eyJjYXBhY2l0eSI6eyJkZXZpY2VzIjoxLCJoaXN0b3J5IjoxLCJpbmdyZXNzIjoxLCJxdWFyYW50aW5lIjoxfSwiY29tcGF0aWJpbGl0eV9zdGF0dXMiOiJVTlJFTEVBU0VEIiwiZG9tYWluX2lkIjoiMTAwMDAwMDAtMDAwMC00MDAwLTgwMDAtMDAwMDAwMDAwMDAxIiwibGF5b3V0X3JldmlzaW9uIjoxLCJsYXlvdXRfdmVyc2lvbiI6MSwicmVjb3JkcyI6eyJhcnRpZmFjdC4wMDAuaW5wdXQiOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn0sImFydGlmYWN0LjAwMC5vdXRwdXQiOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn0sImdsb2JhbC5jb21taXNzaW9uaW5nIjp7ImJvZHkiOm51bGwsImdlbmVyYXRpb24iOjAsIm9wZXJhdGlvbl9pZCI6bnVsbCwicmV0ZW50aW9uIjoiRlJFRSJ9LCJnbG9iYWwuZm9yY2VfcmVxdWVzdCI6eyJib2R5IjpudWxsLCJnZW5lcmF0aW9uIjowLCJvcGVyYXRpb25faWQiOm51bGwsInJldGVudGlvbiI6IkZSRUUifSwiZ2xvYmFsLmxlYWRlcnNoaXAiOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn0sImdsb2JhbC5yZWdpc3RyeSI6eyJib2R5IjpudWxsLCJnZW5lcmF0aW9uIjowLCJvcGVyYXRpb25faWQiOm51bGwsInJldGVudGlvbiI6IkZSRUUifSwiZ2xvYmFsLnNldHRpbmdzIjp7ImJvZHkiOm51bGwsImdlbmVyYXRpb24iOjAsIm9wZXJhdGlvbl9pZCI6bnVsbCwicmV0ZW50aW9uIjoiRlJFRSJ9LCJnbG9iYWwuc3VtbWFyeSI6eyJib2R5IjpudWxsLCJnZW5lcmF0aW9uIjowLCJvcGVyYXRpb25faWQiOm51bGwsInJldGVudGlvbiI6IkZSRUUifSwiaGlzdG9yeS4wMDAiOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn0sImluZ3Jlc3MuMDAwIjp7ImJvZHkiOm51bGwsImdlbmVyYXRpb24iOjAsIm9wZXJhdGlvbl9pZCI6bnVsbCwicmV0ZW50aW9uIjoiRlJFRSJ9LCJxdWFyYW50aW5lLjAwMCI6eyJib2R5IjpudWxsLCJnZW5lcmF0aW9uIjowLCJvcGVyYXRpb25faWQiOm51bGwsInJldGVudGlvbiI6IkZSRUUifSwidGFyZ2V0LjAwMC5hY2siOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn0sInRhcmdldC4wMDAuY2FuY2VsIjp7ImJvZHkiOm51bGwsImdlbmVyYXRpb24iOjAsIm9wZXJhdGlvbl9pZCI6bnVsbCwicmV0ZW50aW9uIjoiRlJFRSJ9LCJ0YXJnZXQuMDAwLmNhdGFsb2d1ZSI6eyJib2R5IjpudWxsLCJnZW5lcmF0aW9uIjowLCJvcGVyYXRpb25faWQiOm51bGwsInJldGVudGlvbiI6IkZSRUUifSwidGFyZ2V0LjAwMC5yZXN1bHQiOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn0sInRhcmdldC4wMDAuc3RhdHVzIjp7ImJvZHkiOm51bGwsImdlbmVyYXRpb24iOjAsIm9wZXJhdGlvbl9pZCI6bnVsbCwicmV0ZW50aW9uIjoiRlJFRSJ9LCJ0YXJnZXQuMDAwLndvcmsiOnsiYm9keSI6bnVsbCwiZ2VuZXJhdGlvbiI6MCwib3BlcmF0aW9uX2lkIjpudWxsLCJyZXRlbnRpb24iOiJGUkVFIn19fQ==]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[blueprint-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[authority-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[extra-SYNTHETIC_PRIVATE_CANARY]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[result-SNAPSHOT]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_foreign_replayed_partial_or_malformed_reply_refuses_without_retry[result-UNKNOWN]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_saved_reply_cannot_qualify_next_observation",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[duck]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[no-access]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[wrong-root]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[tab]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_construction_refuses_before_transport[mode]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[operation-CAS]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[path-SYNTHETIC_PRIVATE_CANARY]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[blueprint-bad]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[authority-bad]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[mode-FOLDER_SQLITE_V1]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[root-10000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[domain-40000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_invalid_probe_request_never_touches_storage[nonce-invalid]",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_default_read_cas_handler_does_not_accept_probe",
+        "classname": "tests.drive.test_folder_probe",
+        "status": "PASS"
+      },
+      {
+        "name": "test_distinct_clients_strict_revision_and_readback",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_lost_commit_reply_is_unknown_and_reconnect_inspects_same_object",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_no_same_exchange_authorized_llm_no_activation_or_io[None]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_no_same_exchange_authorized_llm_no_activation_or_io[access1]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_no_same_exchange_authorized_llm_no_activation_or_io[access2]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_no_same_exchange_authorized_llm_no_activation_or_io[access3]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_no_same_exchange_authorized_llm_no_activation_or_io[access4]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[root-10000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[domain-40000000-0000-4000-8000-000000000001]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[nonce-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[mode-DRIVE]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[version-True]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[revision-True]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[revision-0]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[body-***]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[extra-unexpected]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_read_rejects_foreign_replayed_or_malformed_response[result-ACCEPTED]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[duplicate]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[nan]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[bool]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[depth]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[nested]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[scalar]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[encoding]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_decoder[oversize]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_helper_rejects_paths_commands_and_mismatched_root_before_mutation",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_snapshot_origin_layout_and_canonical_validation",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fixed_process_failure_bounded_and_sanitized[nonzero-private-stderr]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fixed_process_failure_bounded_and_sanitized[bounded-stdout]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fixed_process_failure_bounded_and_sanitized[timeout]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fixed_process_success_and_input_bound",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[nfs]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[nfs4]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[cifs]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[fuse]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[overlay]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[tmpfs]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_network_sync_and_unqualified_filesystems_cannot_activate[9p]",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "test_nested_mount_overrides_parent_filesystem",
+        "classname": "tests.drive.test_folder_protocol",
+        "status": "PASS"
+      }
+    ],
+    "failures": [],
+    "counts": {
+      "PASS": 70,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    }
+  },
+  "default_collection": {
+    "schema_version": 1,
+    "source": "f7d283897eaef2ca521df99d45544dad2d07dd5e",
+    "checkout": "898c2a488b4417c9579d01029a80d9dd7c77f5f3",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.883,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3036,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "runs": [
+    {
+      "run_id": 37160441288,
+      "name": "CI",
+      "event": "pull_request",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37160441288",
+      "jobs": [
+        {
+          "job_id": 111312590119,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37160441283,
+      "name": "Progress",
+      "event": "pull_request",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37160441283",
+      "jobs": [
+        {
+          "job_id": 111312590090,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "run_id": 37160441307,
+      "name": "Desktop",
+      "event": "pull_request",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37160441307",
+      "jobs": [
+        {
+          "job_id": 111312590064,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "job_id": 111312590238,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37160441325,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37160441325",
+      "jobs": [
+        {
+          "job_id": 111312590451,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37160439918,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37160439918",
+      "jobs": [
+        {
+          "job_id": 111312586101,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "remaining": "Actual required Linux553 including physical13/isolated SSH plus full platform/native/GUI/build/package/Progress. No prior run restarted or live resource touched.",
+  "acceptance": false
+}

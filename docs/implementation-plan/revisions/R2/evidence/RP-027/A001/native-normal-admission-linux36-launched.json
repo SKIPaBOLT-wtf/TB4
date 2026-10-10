@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0490",
+  "source": "18969f784e2e2431ed31f6a6c0a3eef62279e31d",
+  "trigger": "c69dd69f56ee29fa03c592e0fe12027ab8391e33",
+  "request_revision": 36,
+  "result": "LAUNCHED",
+  "groups": {
+    "physical_probe_and_first_run": 558,
+    "mapping_relocation": 51,
+    "retained": 6,
+    "current_role_folder": 22,
+    "original_native": 107,
+    "docs_effect_admission": 327
+  },
+  "required_cases": 1071,
+  "pr": 36,
+  "launch_pr_checkout": "fa9e872f7fcf3621fb9f8f16145ef3f8327a10ac",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "c69dd69f56ee29fa03c592e0fe12027ab8391e33"
+  ],
+  "source_equivalence": {
+    "actual_git_non_doc_diff": {
+      "trigger": [],
+      "pr": []
+    },
+    "baseline": "18969f784e2e2431ed31f6a6c0a3eef62279e31d"
+  },
+  "runs": [
+    {
+      "id": 37285034773,
+      "name": "CI",
+      "event": "pull_request",
+      "head": "c69dd69f56ee29fa03c592e0fe12027ab8391e33",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111681799849,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37285034737,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "head": "c69dd69f56ee29fa03c592e0fe12027ab8391e33",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111681800003,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37285034705,
+      "name": "Desktop",
+      "event": "pull_request",
+      "head": "c69dd69f56ee29fa03c592e0fe12027ab8391e33",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111681799722,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111681799978,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37285034712,
+      "name": "Progress",
+      "event": "pull_request",
+      "head": "c69dd69f56ee29fa03c592e0fe12027ab8391e33",
+      "status": "completed",
+      "jobs": [
+        {
+          "id": 111681800135,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37285029711,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "head": "c69dd69f56ee29fa03c592e0fe12027ab8391e33",
+      "status": "in_progress",
+      "jobs": [
+        {
+          "id": 111681782985,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "readback": "EXACT request/file/ref plus API/Gitparents/empty non-docdiff",
+  "notes": "Initialemptylist/stale3ad01 merge reconciled againstsamec69head, no relaunch. Exact5runs6jobs. Progresssuccessstatusnotexecutionproof, terminal lognotinspectedinlaunchunit.",
+  "acceptance": false,
+  "next": "IndependentstagedCandidate endpointreplacement source underseparateINTENT groundedexistingnative endpoint/C1/Candidate contracts; current36/source/fullplatform/common held untilactualtests. Frozen35Desktopsamejobs terminal later."
+}

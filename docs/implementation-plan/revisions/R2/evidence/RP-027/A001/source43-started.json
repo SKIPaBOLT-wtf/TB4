@@ -1,0 +1,96 @@
+{
+  "intent": "RP-027-A001-0558",
+  "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "trigger": "3ddb43327697f823a51967b33f71863c573da636",
+  "git_merge": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "3ddb43327697f823a51967b33f71863c573da636"
+  ],
+  "non_documentation_diff": [],
+  "actual_job_checkouts": "PENDING: Git merge proof is not a substitute for actual terminal checkout logs.",
+  "runs": [
+    {
+      "run": 38078398151,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 114290072918,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "queued",
+          "conclusion": null
+        },
+        {
+          "id": 114290073008,
+          "name": "desktop (windows-latest)",
+          "status": "queued",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 38078398145,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 114290072704,
+          "name": "native-folder",
+          "status": "queued",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 38078398146,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 114290072986,
+          "name": "test",
+          "status": "queued",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 38078398186,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 114290073309,
+          "name": "ledger",
+          "status": "queued",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 38078394779,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 114290063680,
+          "name": "native-folder",
+          "status": "queued",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "pr_metadata": {
+    "number": 36,
+    "title": "Stage recoverable reconfiguration on the existing authority",
+    "draft": true,
+    "state": "open",
+    "exact_body_readback": true,
+    "readback_at": "cf895d6c772df908f40bb2c58c20cc2aa58abba2"
+  },
+  "launch_state": "All five workflows/six jobs queued at first observation; waiting is not execution or success.",
+  "acceptance": false,
+  "next": "Inspect these same source43 jobs to terminal and compare actual checkouts/code; preserve zero-skip required1234 predicates, full platforms and package evidence. Inspect remaining original42 and recorded redundant jobs without replay."
+}

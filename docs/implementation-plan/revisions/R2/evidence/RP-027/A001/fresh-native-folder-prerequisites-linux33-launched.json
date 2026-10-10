@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0460",
+  "source": "ea4c2f72e471c7ab935fc2892e8551185d513ece",
+  "trigger": "afbd2de60cacbcbba31d9ef8f2e976b9a6dc1400",
+  "request_revision": 33,
+  "result": "RECORDED",
+  "groups": [
+    514,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "required_cases": 1027,
+  "pr": 36,
+  "launch_pr_checkout": "378d5010419cdea84a6b35f03031b3708fb0fa95",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "afbd2de60cacbcbba31d9ef8f2e976b9a6dc1400"
+  ],
+  "source_equivalence": {
+    "actual_git_non_doc_diff": {
+      "trigger": [],
+      "pr": []
+    },
+    "baseline": "ea4c2f72e471c7ab935fc2892e8551185d513ece"
+  },
+  "runs": [
+    {
+      "id": 37273694713,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111645957717,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37273694812,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111645957767,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111645958022,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37273694670,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111645957204,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37273694610,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111645957098,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37273690584,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 111645944639,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "readback": "Exact current source request/ref bytes verified; one launch, actualAPI/Git PR parents and source diffs checked.",
+  "notes": "Initial run list empty, initial08f8 merge staleINTENT683parent notused. Same actual378d merge verified main/trigger; terminal checkout source/parents must be reverified if recomputed. Progress success metadata only, actual235 notinspected.",
+  "acceptance": "CurrentLinux37/required1027/fullplatform/packages/stagedmapped/runtime/GUI/commonC1-C4 held.",
+  "next": "Inspect SAME earlierfrozen e8e8/request32 actualnative990/fullplatform and older30/31 terminal logs under separateINTENT, no relaunch; then currentea4c/33 qualification."
+}

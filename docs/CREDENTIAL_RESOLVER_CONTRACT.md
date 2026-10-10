@@ -1,5 +1,29 @@
 # Local credential-reference resolver contract (RP-006)
 
+## RP-027 fresh native first-run credential cache
+
+[A-035](implementation-plan/revisions/R2/amendments/RP-027/A-035-native-folder-retained-and-controller.md) composes trusted fresh native Candidate/current Main factories without saved code selection, key use, image rewrite or role creation. Existing per-request selected-purpose/image/native/key/trust/expiry checks and admission remain; factory reconstruction grants nothing. A failure before validation clears ephemeral GUI readiness.
+
+[A-034](implementation-plan/revisions/R2/amendments/RP-027/A-034-staged-native-folder-endpoint.md) changes only a separate resolved Candidate's protected pointer after explicit owner/expected-selection checks. Existing immutable selected-handle/image/revocation facts remain; selection/recovery never open a key or send a request. Fresh native per-use capability and physical proof still decide availability. Original Main/credential history and default denial remain.
+
+[A-033](implementation-plan/revisions/R2/amendments/RP-027/A-033-native-folder-normal-admission.md) optionally exposes normal authority through an exact native commissioning port. Every request still rereads explicit FOLDER_AUTHORITY selection and restores its current native image/key/trust/expiry; proof uses separate FOLDER_PROBE. A trusted boolean selects code, grants no credentials and defaults to the previous read-only facade. Lost CAS remains UNKNOWN once, with read inspection and no resend.
+
+Test-only [A-032](implementation-plan/revisions/R2/amendments/RP-027/A-032-native-candidate-mapped-ssh.md) restores the staged Candidate's actual native image for mapped SSH proof. Selection/enrollment occurs only during owned fixture setup; current revocation/key/trust/expiry loss after readiness must refuse without transport. No new product purpose or deployment permission.
+
+[A031](implementation-plan/revisions/R2/amendments/RP-027/A-031-fresh-native-folder-prerequisites.md) restores only the actual current protected image into fresh native pairs for each first-run review and final capability check. The default pair verifies the pinned Folder target; an optional trusted program factory may provide other already commissioned native targets. Saved profile data never selects a factory. Explicit current probe scope and every selected capability remain required; untyped pairs, late revocation/expiry/version/trust loss and changed frames refuse. No reselection/enrollment/image rewrite, hidden scope or activation grant occurs; failed attempts clear cached credentials. Legacy validation and runtime per-boundary requirements remain.
+
+## RP-027 per-call protected selection
+
+[A030](implementation-plan/revisions/R2/amendments/RP-027/A-030-fresh-native-folder-connection.md) adds trusted native-profile connection processes. Each validated request rereads the actual immutable endpoint and selected pointer/operation purpose under native locks, then restores only the current protected image into the existing purpose-specific pair. Native key/trust/scope/expiry checks remain; a broader saved image never replaces the explicit selected purpose. No key selection, enrollment, image/profile rewrite or READY/activation grant occurs. Replies require unchanged complete frames; ambiguity never retries. Actual first-run prerequisite/runtime/GUI/common acceptance remains held.
+
+## RP-027 native endpoint attachment remains metadata
+
+[A029](implementation-plan/revisions/R2/amendments/RP-027/A-029-native-endpoint-pointer-attachment.md) verifies the actual protected endpoint/profile/install/selected-handle/image/revocation before linking a private pointer. Attach/inspect/recovery never invoke a credential, open a key, create a grant or return READY. Full parent and exact pending semantics preserve history. Existing per-use native key/known-host/expiry/purpose checks and default activation remain required; trusted fresh first-run/authority/runtime/GUI composition is still held.
+
+## RP-027 opt-in fixed helper dispatch
+
+[A028](implementation-plan/revisions/R2/amendments/RP-027/A-028-opt-in-fixed-folder-helper-dispatch.md) permits one explicitly configured server forced helper to dispatch only the exact qualified probe or normal command. FOLDER_PROBE and FOLDER_AUTHORITY retain separate explicit grants and trusted purpose-specific native factories; the dispatcher enrolls, selects or broadens nothing. Missing/malformed command tokens fail before protected config/stdin/storage access and are never executed. Old helper modes and native per-use key/trust checks remain; native pointer attachment/fresh Setup composition/runtime/GUI/common acceptance stays held.
+
 `tb4.credential_contract` defines a local-only enrollment/capability/fixed-use
 interface. It contains no implementation that reads a real key, OS secret store,
 OAuth file or SSH profile. Tests use a synthetic in-memory adapter. Native secure
@@ -15,7 +39,7 @@ trust fingerprint, approved-store locator, exact permitted helper purposes,
 expiry, generation and revocation. Handles and locators stay local; BALLPARK and
 LLM capability reports never receive them. Binding repr omits protected fields.
 
-The only purposes are FETCHER_STATUS and FETCHER_START. There is no arbitrary
+The initial RP-006 purposes are FETCHER_STATUS and FETCHER_START. There is no arbitrary
 command/payload argument. An authorized trusted local setup controller enrolls
 the minimum needed purpose set. Owner authorization is control state established
 outside the incoming LLM/device proposal; passing a boolean from remote JSON is
@@ -76,3 +100,57 @@ copied or deployed by this change. Its raw internal transport/result objects are
 not public diagnostic artifacts; later fixed adapters must adopt the new safe
 result boundary. Rollback removes/revokes only newly introduced local metadata
 and reports capability unavailable while keeping unrelated credentials untouched.
+
+RP-027 [A-022](implementation-plan/revisions/R2/amendments/RP-027/A-022-closed-folder-probe-credential-purpose.md)
+adds the explicit read-only FOLDER_PROBE fixed purpose. Only its commissioned
+folder_probe callback may run; a missing method is DENIED and never maps to a
+FETCHER command. Public results remain the same closed outcomes/booleans, with
+no arbitrary payload or secret return. Protected images/choices accept unique
+declared purposes up to the closed enum size, retaining old metadata meanings.
+FETCHER summaries retain their original two purposes. This foundation does not
+construct an authenticated Folder transport, expose a physical proof through
+UseResult, migrate an installed binding or grant activation/runtime authority.
+
+RP-027 [A-023](implementation-plan/revisions/R2/amendments/RP-027/A-023-credential-bound-folder-proof-transport.md)
+supplies that separate trusted read-only construction. The native adapters expose
+only internal held-file process paths to fixed code; key bytes never become a
+resolver/report result or temporary file. One private thread-owned proof slot
+invokes FOLDER_PROBE and clears after use; LocalStore/UseResult remain closed
+outcomes. Fresh endpoint/known-host version/key/session/trust/expiry checks and
+the exact opt-in helper precede a current typed proof, with no automatic fallback
+or retry. Durable endpoint reconstruction and normal authority/runtime/GUI remain
+separate qualification; no existing installation is migrated by this source.
+
+RP-027 [A-024](implementation-plan/revisions/R2/amendments/RP-027/A-024-closed-folder-authority-credential-purpose.md)
+adds explicit FOLDER_AUTHORITY for the normal existing-Folder READ/CAS fixed
+method, separately scoped from commissioning FOLDER_PROBE. Missing methods or
+ungranted/untyped use deny without fallback; per-use native/key/trust/expiry
+guards and closed UNKNOWN/no-retry outputs remain. Historical one/two/three-scope
+images keep their meanings; a new four-scope image is explicit protected local
+metadata. This foundation supplies no authenticated authority transport, effect
+authorization, caller payload, migration or activation. Existing effect/runtime
+gates and separate actual Linux/current platform qualification remain required.
+
+RP-027 [A-025](implementation-plan/revisions/R2/amendments/RP-027/A-025-credential-bound-folder-authority-transport.md)
+supplies exact credential-bound normal Folder READ/CAS construction. Protected
+endpoint/native/store/binding pins, closed requests before credential IO, held
+key/known-host version and per-use checks feed only the fixed normal helper via
+FOLDER_AUTHORITY. A private one-use correlated reply keeps LocalStore/UseResult
+as closed outcomes; ACCEPTED requires readback and UNKNOWN never retries. Old
+probe/FETCHER scopes cannot grant it. Durable endpoint metadata, typed first-run
+authority and runtime/GUI activation remain separate qualified composition.
+
+## RP-027 A-026 private endpoint facts
+
+A distinct immutable actual native Folder endpoint frame binds existing saved
+installation/storage/authority and selected credential metadata to trusted endpoint
+and known-host facts. The opaque reference and closed metadata-only status grant
+no live key readiness or credential use. The resolver still performs fresh
+selection/version/permission/expiry/revocation/trust checks on every actual use;
+lookup never enrolls, reselects or broadens a purpose. Native pending recovery
+promotes only the same sealed bytes with fresh profile checks. Endpoint attachment
+and composite transport/first-run/runtime/GUI integration remain separately gated.
+
+## RP-027 optional protected endpoint pointer
+
+[A027](implementation-plan/revisions/R2/amendments/RP-027/A-027-optional-protected-endpoint-pointer.md) defines only bounded private root/reference/binding syntax in optional Setup metadata. It copies no key or endpoint values and performs no lookup, selection/enrollment or credential use. A valid pointer or saved READY flag is not a grant; actual native attachment/composite and fresh protected selection/key/trust checks remain required.

@@ -1,0 +1,360 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0494",
+  "source": "cb9501f0e7d54601a06318e2de220d9d319070b4",
+  "result": "PASS",
+  "trigger": "af607d178c3aadc2b76821af6eebf080b7409ca7",
+  "actual_pr_checkout": "3bd28da221270de22620ce472e1aa1b2c2130d46",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "af607d178c3aadc2b76821af6eebf080b7409ca7"
+  ],
+  "source_equivalence": {
+    "actual_git_non_doc_diff": {
+      "trigger": [],
+      "pr": []
+    },
+    "baseline": "cb9501f0e7d54601a06318e2de220d9d319070b4"
+  },
+  "required": {
+    "source": "cb9501f0e7d54601a06318e2de220d9d319070b4",
+    "trigger": "af607d178c3aadc2b76821af6eebf080b7409ca7",
+    "pr_checkout": "3bd28da221270de22620ce472e1aa1b2c2130d46",
+    "previously_verified_parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "af607d178c3aadc2b76821af6eebf080b7409ca7"
+    ],
+    "actual": [
+      {
+        "run": 37279877475,
+        "job": 111665217623,
+        "name": "native-folder",
+        "conclusion": "success",
+        "checkout": "af607d178c3aadc2b76821af6eebf080b7409ca7",
+        "summaries": [
+          {
+            "counts": {
+              "passed": 527
+            },
+            "seconds": 168.42
+          },
+          {
+            "counts": {
+              "passed": 51
+            },
+            "seconds": 118.79
+          },
+          {
+            "counts": {
+              "passed": 6
+            },
+            "seconds": 51.83
+          },
+          {
+            "counts": {
+              "passed": 22
+            },
+            "seconds": 255.71
+          },
+          {
+            "counts": {
+              "passed": 107
+            },
+            "seconds": 16.7
+          },
+          {
+            "counts": {
+              "passed": 327
+            },
+            "seconds": 551.19
+          }
+        ],
+        "failures": [],
+        "packages": []
+      },
+      {
+        "run": 37279882752,
+        "job": 111665234588,
+        "name": "native-folder",
+        "conclusion": "success",
+        "checkout": "3bd28da221270de22620ce472e1aa1b2c2130d46",
+        "summaries": [
+          {
+            "counts": {
+              "passed": 527
+            },
+            "seconds": 93.91
+          },
+          {
+            "counts": {
+              "passed": 51
+            },
+            "seconds": 53.05
+          },
+          {
+            "counts": {
+              "passed": 6
+            },
+            "seconds": 22.61
+          },
+          {
+            "counts": {
+              "passed": 22
+            },
+            "seconds": 114.8
+          },
+          {
+            "counts": {
+              "passed": 107
+            },
+            "seconds": 9.02
+          },
+          {
+            "counts": {
+              "passed": 327
+            },
+            "seconds": 284.17
+          }
+        ],
+        "failures": [],
+        "packages": []
+      }
+    ],
+    "selectors": [
+      {
+        "job": 111665217623,
+        "actual_new_candidate_file_selected": true,
+        "actual_new_first_run_file_selected": true
+      },
+      {
+        "job": 111665234588,
+        "actual_new_candidate_file_selected": true,
+        "actual_new_first_run_file_selected": true
+      }
+    ],
+    "prior_cases": 1027,
+    "new_cases": 13,
+    "each_actual": 1040,
+    "scope": "Frozen corrected C1 expectation source cb950, exact13 meaningfulSSH cases, not newer18969 normalport."
+  },
+  "progress": {
+    "run": 37279882662,
+    "job": 111665234235,
+    "name": "ledger",
+    "conclusion": "success",
+    "checkout": "3bd28da221270de22620ce472e1aa1b2c2130d46",
+    "summaries": [
+      {
+        "counts": {
+          "passed": 235
+        },
+        "seconds": 6.14
+      }
+    ],
+    "failures": [],
+    "packages": []
+  },
+  "ci": {
+    "run": 37279882701,
+    "job": 111665234410,
+    "name": "test",
+    "conclusion": "success",
+    "checkout": "3bd28da221270de22620ce472e1aa1b2c2130d46",
+    "summaries": [
+      {
+        "counts": {
+          "passed": 43
+        },
+        "seconds": 0.18
+      },
+      {
+        "counts": {
+          "passed": 34
+        },
+        "seconds": 0.44
+      },
+      {
+        "counts": {
+          "passed": 2
+        },
+        "seconds": 0.04
+      },
+      {
+        "counts": {
+          "passed": 3475,
+          "skipped": 27,
+          "xfailed": 4
+        },
+        "seconds": 1823.88
+      }
+    ],
+    "failures": [],
+    "packages": []
+  },
+  "windows": {
+    "run": 37279882673,
+    "job": 111665234302,
+    "name": "desktop (windows-latest)",
+    "conclusion": "success",
+    "checkout": "3bd28da221270de22620ce472e1aa1b2c2130d46",
+    "summaries": [
+      {
+        "counts": {
+          "passed": 74,
+          "skipped": 20
+        },
+        "seconds": 3.41
+      },
+      {
+        "counts": {
+          "passed": 15
+        },
+        "seconds": 0.34
+      },
+      {
+        "counts": {
+          "passed": 30,
+          "skipped": 4
+        },
+        "seconds": 1.91
+      },
+      {
+        "counts": {
+          "passed": 2
+        },
+        "seconds": 5.8
+      },
+      {
+        "counts": {
+          "passed": 75
+        },
+        "seconds": 10.57
+      },
+      {
+        "counts": {
+          "passed": 79
+        },
+        "seconds": 19.36
+      },
+      {
+        "counts": {
+          "passed": 3254,
+          "skipped": 265,
+          "xfailed": 4
+        },
+        "seconds": 2483.85
+      }
+    ],
+    "failures": [],
+    "packages": [
+      [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    ]
+  },
+  "linux": {
+    "run": 37279882673,
+    "job": 111665234478,
+    "name": "desktop (ubuntu-22.04)",
+    "conclusion": "success",
+    "checkout": "3bd28da221270de22620ce472e1aa1b2c2130d46",
+    "summaries": [
+      {
+        "counts": {
+          "passed": 90,
+          "skipped": 4
+        },
+        "seconds": 3.52
+      },
+      {
+        "counts": {
+          "passed": 43
+        },
+        "seconds": 0.25
+      },
+      {
+        "counts": {
+          "passed": 34
+        },
+        "seconds": 1.45
+      },
+      {
+        "counts": {
+          "passed": 2
+        },
+        "seconds": 0.54
+      },
+      {
+        "counts": {
+          "passed": 75
+        },
+        "seconds": 9.48
+      },
+      {
+        "counts": {
+          "passed": 79
+        },
+        "seconds": 17.28
+      },
+      {
+        "counts": {
+          "passed": 3498,
+          "skipped": 21,
+          "xfailed": 4
+        },
+        "seconds": 2769.68
+      }
+    ],
+    "failures": [],
+    "packages": [
+      [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    ]
+  },
+  "artifacts": [
+    {
+      "id": 11333634007,
+      "name": "tb4-desktop-Linux-3bd28da221270de22620ce472e1aa1b2c2130d46",
+      "size_in_bytes": 314557722,
+      "digest": "sha256:8e64031e080b8a1d67b67ba7d044eddfd96ce78d8cf96e024b67a57b6db54858"
+    },
+    {
+      "id": 11333388634,
+      "name": "tb4-desktop-Windows-3bd28da221270de22620ce472e1aa1b2c2130d46",
+      "size_in_bytes": 120949893,
+      "digest": "sha256:7814b1d63ffd1e0743fff4ee2c0ef6a0ed32b5a71625a5a7e0bb5309855cdd46"
+    }
+  ],
+  "scope": "Frozen correctedcb950 test-only C1refusal/nativeCandidate completeplatform+bothrolefourflag packages. Doesnotqualifynewnormal18969 orstaged6f419 product/commonC1-C4.",
+  "acceptance": false
+}

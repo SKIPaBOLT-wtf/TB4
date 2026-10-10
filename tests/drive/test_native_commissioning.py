@@ -103,8 +103,8 @@ class Provider:
         return Documents()
 
 
-def system():
-    spec=SetupSpec("synthetic-root",DOMAIN,tid("native-setup"),ACTORS[0],"NATIVE_DOCS",Capacity(1,1,1,1))
+def system(*, capacity=None):
+    spec=SetupSpec("synthetic-root",DOMAIN,tid("native-setup"),ACTORS[0],"NATIVE_DOCS",capacity or Capacity(1,1,1,1))
     provider=Provider(spec)
     port=NativeCommissioning(provider,provider,spec,llm_authorized=True)
     journal=BootstrapJournal(spec)

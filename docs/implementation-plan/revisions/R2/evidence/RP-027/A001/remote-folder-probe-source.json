@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "kind": "READ_ONLY_REMOTE_FOLDER_PROBE_SOURCE",
+  "intent": "RP-027-A001-0263",
+  "source_ref": "f7d283897eaef2ca521df99d45544dad2d07dd5e",
+  "local_commit": "2ae5a9baff8f46bc4e51d1cc424cf20d0e9b560b",
+  "paths": [
+    "src/tb4/drive/folder_probe.py",
+    "src/tb4/drive/folder_helper.py",
+    "tests/drive/test_folder_probe.py",
+    "tests/drive/test_folder_probe_native.py",
+    "tests/drive/test_folder_ssh.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-020-read-only-remote-folder-proof.md",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md"
+  ],
+  "static_review": {
+    "ast_files": 5,
+    "diff_check": "PASS",
+    "public_scan": "PASS",
+    "scope": "Exactly nine paths. Default READ/CAS handler and FixedProcess bounds unchanged; helper adds explicit opt-in dispatch, SSH fixture default unchanged; additive workflow and amendment. No candidate schema/catalogue/runtime activation changes.",
+    "data": "All fixture identities and payloads synthetic; no private topology/credential/readback in public records.",
+    "locking": "Config/mapping selection and authority inspection precede DB lock; per-artifact inspect/root/config checks inside lock perform no DB read or mapping selection."
+  },
+  "tests_executed": 0,
+  "remaining": "Focused portable and actual Linux/isolated SSH qualification before typed remote first-run integration, credential resolver and runtime/GUI composition. Existing C1-C4 acceptance remains held."
+}

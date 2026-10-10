@@ -1,0 +1,1198 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0488",
+  "source": "18969f784e2e2431ed31f6a6c0a3eef62279e31d",
+  "result": "PASS",
+  "windows": {
+    "source": "18969f784e2e2431ed31f6a6c0a3eef62279e31d",
+    "checkout": "a8e020cfc2601ad75483a72f2339bf07cb4bb29a",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 118.33,
+    "owned_absent_fixture_root": true,
+    "targets": [
+      "tests/drive/test_folder_first_run.py",
+      "tests/security/test_folder_runtime_native.py",
+      "tests/security/test_folder_prerequisites_native.py",
+      "tests/security/test_first_run.py",
+      "tests/security/test_first_run_native.py",
+      "tests/security/test_folder_endpoint_attachment_native.py",
+      "tests/security/test_folder_connection_native.py",
+      "tests/security/test_remote_folder_first_run_native.py",
+      "tests/security/test_credential_persistence_native.py",
+      "tests/drive/test_reconfiguration_admission.py",
+      "tests/security/test_reconfiguration_admission_native.py"
+    ],
+    "cases": [
+      {
+        "name": "test_actual_first_run_consumes_one_new_proof_per_review_and_keeps_default_activation_closed",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[root]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[domain]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[setup]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[actor]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[capacity]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[mode]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[authority]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[authority-root]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[tab]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[root-transition]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[extra]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_protected_selection_refuses_before_transport[missing]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[spec]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[handle]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[transport]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[origin]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_changed_trusted_probe_pin_refuses_before_any_io[binding]",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_saved_success_is_not_new_first_run_readiness",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_remote_error_is_closed_and_does_not_retry_or_disclose_private_canary",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_only_exact_probe_type_can_construct_read_only_port",
+        "classname": "tests.drive.test_folder_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_opt_in_constructor_has_no_key_proof_write_or_default_change",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_opt_in_proof_read_cas_readback_keeps_profile_and_default_denial",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_normal_port_rechecks_current_loss_before_transport[unselected]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_normal_port_rechecks_current_loss_before_transport[revoked]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_normal_port_rechecks_current_loss_before_transport[selection-revoked]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_normal_port_rechecks_current_loss_before_transport[key-version]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_normal_port_rechecks_current_loss_before_transport[known-version]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_normal_port_rechecks_current_loss_before_transport[key-permission]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_normal_port_rechecks_current_loss_before_transport[known-permission]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_normal_port_rechecks_current_loss_before_transport[expired]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_normal_authority_bad_handle_refuses_before_native_io[duck]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_normal_authority_bad_handle_refuses_before_native_io[root]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_normal_authority_bad_handle_refuses_before_native_io[seal]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_normal_authority_bad_handle_refuses_before_native_io[tab]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_mutated_normal_composition_never_uses_cached_authority[_connection]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_mutated_normal_composition_never_uses_cached_authority[_access]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_mutated_normal_composition_never_uses_cached_authority[_proof]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_mutated_normal_composition_never_uses_cached_authority[spec]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_mutated_normal_composition_never_uses_cached_authority[mode]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_untyped_normal_opt_in_refuses_before_profile_lookup[None]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_untyped_normal_opt_in_refuses_before_profile_lookup[1]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_untyped_normal_opt_in_refuses_before_profile_lookup[enabled]",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_hidden_image_authority_scope_and_local_unknown_have_separate_meanings",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_lost_normal_cas_is_unknown_once_and_read_inspects_existing_effect",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_native_admission_context_does_not_fabricate_ready_or_role",
+        "classname": "tests.security.test_folder_runtime_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_first_run_restart_and_default_activation_keep_identity_image_history",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_validation_does_not_hide_current_native_loss[unselected]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_validation_does_not_hide_current_native_loss[revoked]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_validation_does_not_hide_current_native_loss[selection-revoked]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_validation_does_not_hide_current_native_loss[key-version]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_validation_does_not_hide_current_native_loss[known-version]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_validation_does_not_hide_current_native_loss[key-permission]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_validation_does_not_hide_current_native_loss[known-permission]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_prior_validation_does_not_hide_current_native_loss[expired]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_forged_caller_payload_is_refused_before_proof_or_key_io[history]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_forged_caller_payload_is_refused_before_proof_or_key_io[descriptor]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_forged_caller_payload_is_refused_before_proof_or_key_io[image]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_constructor_has_no_key_proof_selection_or_profile_write",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_trusted_native_factory_restores_same_image_twice_without_new_handles",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_untyped_credential_factory_refuses_before_proof[None]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_untyped_credential_factory_refuses_before_proof[result1]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_explicit_current_probe_scope_is_required_despite_broader_saved_image",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_local_unknown_remains_blocked_for_setup_without_becoming_an_election_barrier",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_original_first_run_gates_are_not_replaced_by_native_storage_proof[environment]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_original_first_run_gates_are_not_replaced_by_native_storage_proof[descriptor]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_original_first_run_gates_are_not_replaced_by_native_storage_proof[instructions]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_existing_pending_is_preserved_without_recovery_or_transport[profile]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_existing_pending_is_preserved_without_recovery_or_transport[endpoint]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_loss_during_instruction_check_refuses_returned_validation[expiry]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_loss_during_instruction_check_refuses_returned_validation[key-version]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_loss_during_instruction_check_refuses_returned_validation[known-version]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_valid_protected_frame_change_during_review_cannot_grant_readiness[instructions]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_valid_protected_frame_change_during_review_cannot_grant_readiness[final-factory]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_mutated_trusted_composition_is_refused_before_key_or_proof[source]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_mutated_trusted_composition_is_refused_before_key_or_proof[storage]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_mutated_trusted_composition_is_refused_before_key_or_proof[environment]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_mutated_trusted_composition_is_refused_before_key_or_proof[clock]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_mutated_trusted_composition_is_refused_before_key_or_proof[native_folder]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_mutated_trusted_composition_is_refused_before_key_or_proof[cleared-native-folder]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_mutated_trusted_composition_is_refused_before_key_or_proof[cleared-guard-required]",
+        "classname": "tests.security.test_folder_prerequisites_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_persist_identity_once_cancel_resume_and_restart_ready_invalidation",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_only_missing_owner_choices_are_requested_before_probes",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_default_activation_remains_independently_denied",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_activation_refreshes_pin_and_never_enters_after_revocation",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_synthetic_authorized_activation_checks_again_after_review",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_failed_prerequisite_has_closed_reason_and_never_enters[environment]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_failed_prerequisite_has_closed_reason_and_never_enters[storage]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_failed_prerequisite_has_closed_reason_and_never_enters[descriptor]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_failed_prerequisite_has_closed_reason_and_never_enters[instructions]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_opaque_credential_is_rechecked_without_use[ABSENT]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_opaque_credential_is_rechecked_without_use[DENIED]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_opaque_credential_is_rechecked_without_use[LOCKED]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_opaque_credential_is_rechecked_without_use[EXPIRED]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_opaque_credential_is_rechecked_without_use[REVOKED]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_exact_opaque_credential_is_rechecked_without_use[STORE_UNAVAILABLE]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_saved_opaque_handle_does_not_fabricate_missing_restart_binding",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_unknown_side_effect_survives_cancel_restart_and_cannot_replay",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_failed_persist_cannot_call_external_action",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_unapproved_action_or_invented_inspection_cannot_advance",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_stale_instance_and_saved_ready_flag_cannot_activate",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_or_secret_bearing_choices_never_persist[extra-field]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_or_secret_bearing_choices_never_persist[role]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_or_secret_bearing_choices_never_persist[host-bits]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_or_secret_bearing_choices_never_persist[duplicate-scope]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_or_secret_bearing_choices_never_persist[fake-store]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_or_secret_bearing_choices_never_persist[secret]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_bad_or_secret_bearing_choices_never_persist[timing]",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_safe_rollback_appends_revision_and_never_restores_readiness",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_rollback_cannot_erase_recorded_external_effect",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_status_and_exception_outputs_omit_all_private_choices",
+        "classname": "tests.security.test_first_run",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_model_restart_preserves_identity_and_cancellation",
+        "classname": "tests.security.test_first_run_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_environment_probe_reports_only_closed_nonidentifying_facts",
+        "classname": "tests.security.test_first_run_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_desktop_reopen_recovers_same_complete_candidate[first-identity]",
+        "classname": "tests.security.test_first_run_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_desktop_reopen_recovers_same_complete_candidate[cancel-unknown]",
+        "classname": "tests.security.test_first_run_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_desktop_reopen_never_repairs_partial_staging_or_empty_identity",
+        "classname": "tests.security.test_first_run_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_attach_preserves_full_parent_identity_image_history_and_grants_nothing",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_same_pointer_is_idempotent_in_ready_and_unknown_states_without_reset",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_explicit_owner_required_before_save_or_recovery[False]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_explicit_owner_required_before_save_or_recovery[None]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_explicit_owner_required_before_save_or_recovery[1]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_explicit_owner_required_before_save_or_recovery[true]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_stale_model_cannot_attach_new_profile_selection",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_new_link_requires_incomplete_profile_and_preserves_bytes[SETTINGS_READY-SETTINGS_VALIDATED]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_new_link_requires_incomplete_profile_and_preserves_bytes[BLOCKED-STORAGE_UNAVAILABLE]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_new_link_requires_incomplete_profile_and_preserves_bytes[CANCELLED-CANCELLED]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_first_selection_refuses_local_unknown_but_retains_it_for_takeover",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_existing_different_pointer_cannot_be_rebound_silently[reference]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_existing_different_pointer_cannot_be_rebound_silently[root]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_existing_different_pointer_cannot_be_rebound_silently[binding_digest]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_foreign_reference_does_not_attach_or_mint_new_frame",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_alias_and_untyped_stores_are_denied",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_selected_revocation_is_not_overridden_by_attachment",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_same_pending_or_completed_link_restarts_without_repeating_save[False]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_same_pending_or_completed_link_restarts_without_repeating_save[True]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_pending_semantic_conflicts_hold_both_complete_frames[profile]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_pending_semantic_conflicts_hold_both_complete_frames[previous]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_pending_semantic_conflicts_hold_both_complete_frames[revision]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_pending_semantic_conflicts_hold_both_complete_frames[reference]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_pending_semantic_conflicts_hold_both_complete_frames[root]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_pending_semantic_conflicts_hold_both_complete_frames[binding_digest]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_pending_cannot_promote_after_original_current_profile_changes",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_recovery_does_not_create_an_unstarted_link",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_metadata_frame_refuses_attachment_and_preserves_profile",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_endpoint_lock_contention_does_not_touch_profile_or_pending",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_unsafe_hardlinked_frame_is_not_a_private_attachment_grant[endpoint]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_unsafe_hardlinked_frame_is_not_a_private_attachment_grant[profile]",
+        "classname": "tests.security.test_folder_endpoint_attachment_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_constructor_and_each_operation_preserve_profile_image_history_and_key",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_existing_pending_profile_is_held_without_recovery_or_transport",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_immutable_endpoint_frame_is_refused_without_repair",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_hardlinked_frame_is_never_a_selection_grant[profile]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_hardlinked_frame_is_never_a_selection_grant[endpoint]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_mutated_cached_pins_are_refused_before_native_io[pointer]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_mutated_cached_pins_are_refused_before_native_io[endpoint]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_mutated_cached_pins_are_refused_before_native_io[profile]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_mutated_cached_pins_are_refused_before_native_io[clock]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_untyped_store_or_connection_never_acquires_protected_io",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_restored_hidden_scope_cannot_override_explicit_current_selection[FOLDER_PROBE-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_restored_hidden_scope_cannot_override_explicit_current_selection[FOLDER_AUTHORITY-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[unselected]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[revoked]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[selection-revoked]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[key-version]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[known-version]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[key-permission]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[known-permission]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_success_never_grants_later_access_after_current_credential_or_trust_loss[expired]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[operation-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[operation-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[root-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[root-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[nonce-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[nonce-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[extra-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[extra-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[raw-type-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[raw-type-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[duplicate-FOLDER_PROBE]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_closed_request_rejection_precedes_every_profile_or_key_io[duplicate-FOLDER_AUTHORITY]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_current_pointer_never_reuses_previously_constructed_connection[reference]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_current_pointer_never_reuses_previously_constructed_connection[root]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_current_pointer_never_reuses_previously_constructed_connection[binding_digest]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_current_pointer_never_reuses_previously_constructed_connection[null]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_held_lock_refuses_immediately_without_transport_or_profile_change[profile]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_held_lock_refuses_immediately_without_transport_or_profile_change[endpoint]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_lost_reply_after_cas_is_unknown_once_then_read_inspects_same_effect",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_protected_frame_after_reply_is_not_returned_as_success[READ]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_changed_protected_frame_after_reply_is_not_returned_as_success[CAS]",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_native_local_unknown_history_does_not_block_existing_proof_or_authority",
+        "classname": "tests.security.test_folder_connection_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_restart_rechecks_remote_proof_and_preserves_private_identity_history",
+        "classname": "tests.security.test_remote_folder_first_run_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_activation_refreshes_remote_access_before_enter",
+        "classname": "tests.security.test_remote_folder_first_run_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_unknown_work_blocks_probe_and_replay_after_restart",
+        "classname": "tests.security.test_remote_folder_first_run_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_restore_rechecks_original_external_key[none-READY]",
+        "classname": "tests.security.test_credential_persistence_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_restore_rechecks_original_external_key[rotated-REVOKED]",
+        "classname": "tests.security.test_credential_persistence_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_restore_rechecks_original_external_key[expired-EXPIRED]",
+        "classname": "tests.security.test_credential_persistence_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_restore_rechecks_original_external_key[revoked-REVOKED]",
+        "classname": "tests.security.test_credential_persistence_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_release_changes_only_native_reservation_and_ordinary_runtime_uses_fresh_admission",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_restarted_admission_allows_new_work_without_old_frozen_transaction_proof",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[source]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[permission]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[clock]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[caps]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[profile]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[timing]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[maintenance]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[barrier]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[shared-unknown]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[local-unknown]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[local-mutation]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[environment]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_admission_facts_refuse_release_without_reset_or_remote_write[leadership-timing]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_first_cas_fallback_is_immediate_and_old_promoted_profile_cannot_admit",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_user_force_request_flag_fences_incumbent_before_claim_without_ack",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_credential_revocation_refuses_release_without_secret_use",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_late_first_run_changes_cannot_clear_native_reservation[profile]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_late_first_run_changes_cannot_clear_native_reservation[force]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_late_first_run_changes_cannot_clear_native_reservation[leadership-timing]",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_stale_actual_runtime_timing_refuses_work_before_receipt_or_external_effect",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_typed_ports_alias_owner_confirmation_and_saved_ready_never_replace_current_proof",
+        "classname": "tests.drive.test_reconfiguration_admission",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_release_pending_recovers_only_current_exact_frame_without_remote_repeat[False]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_release_pending_recovers_only_current_exact_frame_without_remote_repeat[True]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_admission_profile_copy_and_checkpoint_broad_permissions_refuse",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames[release]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames[revision]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames[late-first-run]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_stale_timing_preserves_profile_and_exact_checkpoint_frames[pending]",
+        "classname": "tests.security.test_reconfiguration_admission_native",
+        "status": "PASS"
+      }
+    ],
+    "failures": [],
+    "counts": {
+      "PASS": 226,
+      "FAILURE": 0,
+      "ERROR": 0,
+      "SKIPPED": 0
+    }
+  },
+  "new_native25_actual": "ALL_PASS",
+  "default_collection": {
+    "schema_version": 1,
+    "source": "18969f784e2e2431ed31f6a6c0a3eef62279e31d",
+    "checkout": "a8e020cfc2601ad75483a72f2339bf07cb4bb29a",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.802,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3554,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "exact_case_ids": {
+    "baseline_count": 3554,
+    "current_count": 3554,
+    "added_count": 0,
+    "removed_count": 0,
+    "exact_baseline_preserved": true
+  },
+  "next": "Launchone current18969source Linux36 required1071/31; same35/Desktopterminal results later. Thenstagedendpoint/coherentruntimeGUI/common C1-C4 remains."
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C3",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0518",
+  "source": "c000c0ded9a480172dd9e8269de9617df4224d09",
+  "base": "2360db4083b14968ac0971ee5419510c5f7a625a",
+  "local_preserved": "0c3acf00ec548e550f9b075b05c52ec0779c1a6e",
+  "result": "RECORDED",
+  "files": [
+    "src/tb4/reconfiguration_native_folder_adoption.py",
+    "tests/drive/test_native_folder_active_adoption_authenticated_ssh.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-037-native-current-role-active-adoption.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/RECONFIGURATION_CONTRACT.md"
+  ],
+  "static": {
+    "schema_version": 1,
+    "base": "2360db4083b14968ac0971ee5419510c5f7a625a",
+    "result": "PASS",
+    "python_ast": "PASS",
+    "all_old_adoption_native_normal_retained_endpoint_mapping_source": "EXACT_UNCHANGED",
+    "all_schema_hashes_and_election": "EXACT_UNCHANGED",
+    "declared_cases": {
+      "test_actual_native_current_role_adopts_active_without_former_client_and_retains_own_full_history": 2,
+      "test_actual_current_native_main_runtime_uses_fresh_admission_once_after_adoption_stores_unavailable": 2,
+      "test_actual_native_adoption_refuses_late_owner_role_or_current_capability_loss_before_stage_write": 4,
+      "test_native_endpoint_metadata_cannot_alias_own_adoption_store_before_mutation": 3,
+      "test_actual_native_adoption_transaction_cut_recovers_same_child_without_main_resave": 2
+    },
+    "tests_executed": 0,
+    "original_main_native_pending_recovery": "HELD_FOR_SEPARATE_QUALIFICATION",
+    "public_grants": "NONE"
+  },
+  "public_scan": "CLEAN",
+  "diff_check": "PASS",
+  "readback": "EXACT_ALL_FILES",
+  "tests_executed": 0,
+  "acceptance": false,
+  "scope": "Exact own native ACTIVE subclass; fresh protected original/stage/Main validators, no former client orACK/sharedmutation/newgrant. Existing qualified stale-CAS role is fixture input, not new election implementation. Alllegacy adoption/native/retained/endpoint/mapping/election/schema unchanged.",
+  "limits": "Original Main pending/native held-lock recovery remains held for separate review/qualification; source does not claim all crash recovery. UnqualifiedA036 witness notconsumed, strictmappedC4unchanged.",
+  "next": "ActualWindowsaffectedadoption/currentfactory +default3643 exact3630+13, same38/39terminal qualification. New13 actual nativeSSH/currentrole/runtime/transactioncuts thenallplatform/common; mappedC4consumer/originalMainrecovery/fullstagedruntime remain."
+}

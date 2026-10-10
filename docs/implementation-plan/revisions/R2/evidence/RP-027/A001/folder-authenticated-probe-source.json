@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0313",
+  "base": "a59728649df4d9c132382af4615b1a488833fc3d",
+  "source": "9a6c6923bfd64c5a5a0b125582c7c5808d3465d4",
+  "local_commit": "ba7b155e01f6d017b5537faa83637662f06de092",
+  "files": [
+    "src/tb4/linux_key_native.py",
+    "src/tb4/windows_key_native.py",
+    "src/tb4/drive/folder_probe_transport.py",
+    "src/tb4/drive/folder_probe.py",
+    "src/tb4/drive/folder_first_run.py",
+    "tests/drive/test_folder_probe_transport.py",
+    "tests/security/test_folder_probe_transport_native.py",
+    "tests/drive/test_folder_probe_authenticated_ssh.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-023-credential-bound-folder-proof-transport.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/CREDENTIAL_RESOLVER_CONTRACT.md"
+  ],
+  "review": {
+    "python_ast_files": 8,
+    "diff_check": "PASS",
+    "public_security_scan": "CLEAN",
+    "tests_executed": 0,
+    "source_publication": "EXACT_ALL_FILES_READBACK",
+    "bytes": "Exact committed Git blobs exported; original Linux file bytes/line endings preserved outside new method; diff10 inserted lines only."
+  },
+  "retained_authoring_failures": [
+    {
+      "stage": "tool input",
+      "result": "JavaScript template interpolation syntax rejected before any tool/file action; corrected literal source construction."
+    },
+    {
+      "stage": "multi-file documentation patch",
+      "result": "Unmatched contract anchor rejected before all file mutations; verified new amendment/workflow/docs absent before corrected exact patch."
+    },
+    {
+      "stage": "source static diff",
+      "result": "New native Linux lines initially carried CR endings flagged as whitespace. Whole-file normalization was rejected as unnecessary drift; restored original byte image and inserted only the owned LF method, then diff/privacy/AST pass."
+    },
+    {
+      "stage": "coordinated checkpoint candidate",
+      "result": "First candidate refused protected source_commit cursor override before publication. Removed override; source_commit is derived from the exact journal source_ref by unchanged helper. No guard was weakened."
+    }
+  ],
+  "prior_functional_source": "d19639c8adf93ea2df9c8aa0863ba7a0d96d9ba1",
+  "prior_ci_milestone": {
+    "run": 37234348143,
+    "job": 111530380562,
+    "checkout": "559cb310140959fadc72b81cf96582050f1b944f",
+    "passed": 3048,
+    "skipped": 27,
+    "xfailed": 4,
+    "elapsed_s": 1691.41,
+    "terminal": "success",
+    "current_source": false,
+    "full_platform_intent_pending": "RP-027-A001-0306"
+  },
+  "invariants": [
+    "Closed explicit FOLDER_PROBE and public Outcome only; private one-use nonce-bound reply and no arbitrary command/CAS.",
+    "Existing native key and known-host file/version recheck/borrowed lifetime, no temporary secret file or alternate selected pathname on Linux.",
+    "Exact typed fixed/credential proof process and current first-run selection; old FixedProcess/helper READ/CAS/default denial unchanged.",
+    "Parallel slot refuses and no slot lock held over resolver/IO; lost/malformed/stale response discards and never retries."
+  ],
+  "planned_new_cases": {
+    "portable": 28,
+    "native_windows_linux": 20,
+    "actual_linux_ssh": 9,
+    "qualification": "NOT_RUN; counts must be confirmed by default collection"
+  },
+  "not_accepted": [
+    "No actual new source tests yet.",
+    "Durable endpoint/profile/authority/runtime/GUI/common composition pending.",
+    "Actual Windows authenticated SSH not proven; native Windows lifetime and offline flags separately testable.",
+    "C1-C4 held; no live deployment."
+  ],
+  "next_action": "Authorize default scoped Windows/native/portable and whole default collection; preserve actual failures before repair. Then required Linux actual SSH and source-specific full package/platform qualification."
+}

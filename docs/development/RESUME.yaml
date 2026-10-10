@@ -1,33 +1,36 @@
 schema_version: 1
 revision: R2
-work_item: RP-027
-check: RP-027.C1
+work_item: RP-028
+check: RP-028.C1
 attempt: A001
-phase: PUBLICATION_TARGET_AUTHORITY_RECORDED
-source_branch: main
-source_commit: 7ca9e1576266783c2190078138893098bf4b3409
-journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0004
-last_completed: RP-026
-next_action: 'Complete the existing RP-027-A001-0003 inspection: create/read back
-  feat/rp027-staged-reconfiguration from the current verified main record, safely
-  acquire its clean tracking checkout and inspect exact commissioning/authority/work/result/revision
-  contracts; record concrete invariants and the next bounded implementation unit.'
-verification: Same rejected documentation publication reconciled with explicit owner
-  continuation; exact ref/files verified. Existing RP-027 inspection INTENT remains
-  pending; no implementation acceptance.
+phase: DEPENDENCY_READY_PR36_MERGE
+source_branch: feat/rp027-staged-reconfiguration
+source_commit: fc4ca02786c025fb9487726a5fdc06c663412543
+journal: docs/development/journal/RP-028/A001/events.jsonl
+last_verified_event: RP-028-A001-0003
+last_completed: RP-027
+next_action: Verify the exact current source/progress/rules/PR evidence, finalize
+  PR36 metadata/readiness and perform the one expected-head merge if all current gates
+  hold; inspect/read back the same operation and publish exact main OUTCOME before
+  RP028 implementation inspection.
+verification: RP027 accepted;56 repairs closed atfc4ca027 with exact readback; four
+  defects retainedOPEN. Separate PR36 merge operation now pending; recover it by PR/head/main/parents/tree,
+  never blind repeat.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
-- RP-027-A001-0003
+- RP-028-A001-0003
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
 - DEF-001
 - DEF-002
-rollback: Keep the exact main/candidate/source history and previous rejection/stop
-  records. All refs remain non-force; no live configuration, authority or workload
-  changes occur.
-next_implementation_step: RP-027
-next_implementation_check: RP-027.C1
+- DEF-088
+- DEF-094
+rollback: Public owned source branch only. Preserve all accepted sources, prior source/approval
+  records, budgets and operation generations. No installed SKILL/profile, real network/router/provider/authority/credential/workload
+  mutation. If any compatibility assumption fails, preserve its reproduction before
+  repair.
+next_implementation_step: RP-028
+next_implementation_check: RP-028.C1

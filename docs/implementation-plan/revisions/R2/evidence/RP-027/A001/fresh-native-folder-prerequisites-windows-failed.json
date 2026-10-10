@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0451",
+  "started": "RP-027-A001-0452",
+  "source": "6436da86d4cd12853b1631a56b463c0a152889c6",
+  "checkout": "1a84a0195a4765d5a3130458278f6c53b91077ca",
+  "result": "FAIL",
+  "actual": {
+    "exit_code": 1,
+    "counts": {
+      "PASS": 887,
+      "FAILURE": 2,
+      "ERROR": 0,
+      "SKIPPED": 53
+    },
+    "seconds": 221.109,
+    "platform": "Windows",
+    "python": "3.11.9",
+    "architecture": "AMD64"
+  },
+  "new_native": {
+    "passed": 33,
+    "failed": 2,
+    "errors": 0,
+    "cases": 35
+  },
+  "failure": {
+    "defect": "DEF-102",
+    "file": "tests/security/test_folder_prerequisites_native.py",
+    "node": "test_existing_pending_is_preserved_without_recovery_or_transport",
+    "parameters": [
+      "profile",
+      "endpoint"
+    ],
+    "closed_message": "TypeError: unsupported operand type(s) for /: 'str' and 'str'",
+    "stage": "Pending fixture staged, then test constructs store.native.root / filename before guard validation.",
+    "origin": "Windows native root is str from local_path; Linux is Path. New test assumes Path. Production guard never reached in these two cases.",
+    "prior_similar": "Earlier DEF-095 root-path test assumption; chronology retained, new source-specific defect."
+  },
+  "default_collection": {
+    "schema_version": 1,
+    "source": "6436da86d4cd12853b1631a56b463c0a152889c6",
+    "checkout": "1a84a0195a4765d5a3130458278f6c53b91077ca",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.85,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3510,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "node_difference": {
+    "baseline_count": 3473,
+    "current_count": 3510,
+    "added_count": 37,
+    "removed_count": 0,
+    "native_added": 35,
+    "ssh_added": 2,
+    "exact_baseline_preserved": true
+  },
+  "unchanged_prior": "All prior854 target cases PASS; only newpending test fails. Two new realSSH cases declared Linuxskip onWindows.",
+  "privacy": "Raw result/JUnit/stdout retained privately; only closed typeerror/counts/node labels public, no native frames/paths copied.",
+  "acceptance": "First-run source/nativepending/Linux/fullplatform/staged/runtime/GUI/C1-C4 held.",
+  "next": "Minimal test-only Path(store.native.root) conversion at two reads; preserve actualpending bytes/no-recovery/transport refusal assertions, then actual focused35/default/affected regression and requiredLinux."
+}

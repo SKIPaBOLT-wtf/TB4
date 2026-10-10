@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0197",
+  "source": "923741e9027a2fa6e0289f42cfd59149f8c33d3d",
+  "qualified_application_source": "a2cb9dc0d0baf1812dfec9d5baa12b7e52db9fd9",
+  "trigger": "83ac271e46e3095af0493438f1ea9a2440df9d3c",
+  "timeout_minutes": {
+    "before": 40,
+    "qualified": 90
+  },
+  "full": [
+    {
+      "run": 37120998494,
+      "job": 111196924074,
+      "platform": "Linux CI",
+      "source": "923741e9027a2fa6e0289f42cfd59149f8c33d3d",
+      "trigger": "83ac271e46e3095af0493438f1ea9a2440df9d3c",
+      "checkout": "67414b561683f507c12878bd726025a1df8e0c51",
+      "conclusion": "success",
+      "full_counts": [
+        "2838 passed, 27 skipped, 4 xfailed in 975.92s (0:16:15)"
+      ],
+      "packages": [],
+      "artifacts": []
+    },
+    {
+      "run": 37120998439,
+      "job": 111196923903,
+      "platform": "Linux Desktop",
+      "source": "923741e9027a2fa6e0289f42cfd59149f8c33d3d",
+      "trigger": "83ac271e46e3095af0493438f1ea9a2440df9d3c",
+      "checkout": "67414b561683f507c12878bd726025a1df8e0c51",
+      "conclusion": "success",
+      "full_counts": [
+        "2861 passed, 21 skipped, 4 xfailed in 1308.44s (0:21:48)"
+      ],
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 11274430512,
+          "name": "tb4-desktop-Linux-67414b561683f507c12878bd726025a1df8e0c51",
+          "size_in_bytes": 314478271,
+          "digest": "sha256:3440549d3ec34ba3827ba6bd3dbb2a95f175002010f840811556f43d95b3a09c",
+          "expired": false,
+          "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37120998439/artifacts/11274430512"
+        }
+      ]
+    },
+    {
+      "run": 37120998439,
+      "job": 111196923951,
+      "platform": "Windows Desktop",
+      "source": "923741e9027a2fa6e0289f42cfd59149f8c33d3d",
+      "trigger": "83ac271e46e3095af0493438f1ea9a2440df9d3c",
+      "checkout": "67414b561683f507c12878bd726025a1df8e0c51; samePR Desktop source/trigger, Windows log format differs",
+      "conclusion": "success",
+      "full_counts": [
+        "2724 passed, 158 skipped, 4 xfailed in 2224.78s (0:37:04)"
+      ],
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 11274462040,
+          "name": "tb4-desktop-Windows-67414b561683f507c12878bd726025a1df8e0c51",
+          "size_in_bytes": 120913823,
+          "digest": "sha256:d46bd72fb173097e3df292a755d731da73bbaa04a42f9e1aa2a1d076907643ef",
+          "expired": false,
+          "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37120998439/artifacts/11274462040"
+        }
+      ]
+    }
+  ],
+  "linux": [
+    {
+      "run": 37120998436,
+      "job": 111196923979,
+      "event": "pull_request",
+      "source": "923741e9027a2fa6e0289f42cfd59149f8c33d3d",
+      "trigger": "83ac271e46e3095af0493438f1ea9a2440df9d3c",
+      "checkout": "67414b561683f507c12878bd726025a1df8e0c51",
+      "conclusion": "success",
+      "groups": [
+        "51 passed in 119.11s (0:01:59)",
+        "107 passed in 16.67s",
+        "242 passed, 1 deselected in 313.48s (0:05:13)"
+      ],
+      "artifacts": [
+        {
+          "id": 11272789857,
+          "name": "folder-reconfiguration-67414b561683f507c12878bd726025a1df8e0c51",
+          "size_in_bytes": 9460,
+          "digest": "sha256:2bfca2457749a5de4be2c9194dee22ea6437160098811b6e66c2c90ec3b62e58",
+          "expired": false,
+          "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37120998436/artifacts/11272789857"
+        }
+      ]
+    },
+    {
+      "run": 37120995350,
+      "job": 111196914601,
+      "event": "push",
+      "source": "923741e9027a2fa6e0289f42cfd59149f8c33d3d",
+      "trigger": "83ac271e46e3095af0493438f1ea9a2440df9d3c",
+      "checkout": "83ac271e46e3095af0493438f1ea9a2440df9d3c",
+      "conclusion": "success",
+      "groups": [
+        "51 passed in 53.79s",
+        "107 passed in 8.54s",
+        "242 passed, 1 deselected in 156.69s (0:02:36)"
+      ],
+      "artifacts": [
+        {
+          "id": 11272904263,
+          "name": "folder-reconfiguration-83ac271e46e3095af0493438f1ea9a2440df9d3c",
+          "size_in_bytes": 9349,
+          "digest": "sha256:35fd968b33764c0b8cc4da27bdbc972a3d08de1d5fa6a2429d3cd5c7a7549eca",
+          "expired": false,
+          "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37120995350/artifacts/11272904263"
+        }
+      ]
+    }
+  ],
+  "windows_log_span": {
+    "first": "2026-10-03T11:51:45.6310638Z",
+    "last": "2026-10-03T12:35:34.7388492Z",
+    "elapsed_s": 2629.107
+  },
+  "verified_budget_scope": "Windows actual full2724PASS/158SKIP/4XFAIL2224.78s and both packages/GUI/setup/install isolation/upload succeed; terminal log span2629.107s exceeds former2400s bound. Linux full2861PASS/21SKIP/4XFAIL and both packages/upload; CI2838PASS/27SKIP/4XFAIL; nativeLinux400each0Skip. No test/dependency/matrix/build/gate weakened; artifacts retained on GitHub only, not downloaded.",
+  "origin_limit": "Earlier c5 Windows fullPASS then cancellation at2401.46s retained. Exact provider cancellation reason absent, budget cause remains supported inference; current actual923 job cannot fit former40minute bound and succeeds with90.",
+  "current_source_scope": "Historical workflow-only budget source923 unchanged qualified applicationa2cb9, not current14a53a8 native-admission/full-C4 acceptance. Independent current14 full/platform runs continue; allC1-C4/cloudACTIVEadoption/fullcomposition held.",
+  "acceptance": false,
+  "checkpoint_preparation": {
+    "initial_result": "CURSOR_OVERRIDE_REJECTED",
+    "detail": "Attempted source_commit/phase overrides are outside existing helper allowlist; removed, preserving source923 historical qualification. Next action explicitly names current14 source; subsequent source INTENT will set its cursor before dependent work. No validator weakened or prior record changed."
+  }
+}

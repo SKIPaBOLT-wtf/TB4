@@ -1,0 +1,7 @@
+# RP-027.C3 A001 — before-send superseded-owner provenance
+
+Actual source `3603f2678d580a9be225becae56f81e6bb10a95d`, failed same `LOCAL-SESSION-58687`; read-only original trace/source, no repeat or source/native/provider mutation. Root integration introduced at `90635ed953d297fdea34209cb305439c464c4470`.
+
+Trace: `reconfiguration_roots.py:281` after actual effect start/fallback calls `_proof(dispatch=True)`; line181 calls full Leadership.observe; `drive/leadership.py:114` -> `_records:127` requires replacement owner in this old installation's enrollment and raises raw `AuthorityError: LEADERSHIP_IDENTITY` before root's explicit `_owns` rejection. This is the exact DEF-063 projection origin. It does not show failed fallback acquisition or require the new owner to wait for old enrollment/ACK.
+
+Existing `drive/authority_transaction.py:24` OwnerGuard.matches rejects changed owner/epoch, nonACTIVE phase or nonFREE force record from fresh validated document without requiring the replacement's name. Add root-only fresh OwnerGuard preflight to reject OWNER_SUPERSEDED before full observation; retain unchanged full Leadership.observe and `_owns` (including acquisition ID), capabilities/clock/native reservation/schema/work/config checks before any new send. An early rejection never grants work. Ordinary Leadership/RecordMutation and roster checks unchanged. Same original before-send predicate must reach all no-send/epoch/UNKNOWN/profile/single-authority assertions on repeat; no count-only acceptance.

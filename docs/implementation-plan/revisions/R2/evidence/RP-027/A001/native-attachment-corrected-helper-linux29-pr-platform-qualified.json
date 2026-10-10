@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0426",
+  "source": "a68893fa004b896695d5d22a83fa4c3016b6d516",
+  "checkout": "021d73011e35237167df62608382e9c2cef1135a",
+  "request_revision": 29,
+  "result": "RECORDED",
+  "jobs": [
+    {
+      "run": 37262977471,
+      "id": 111613865010,
+      "name": "native-folder",
+      "status": "completed",
+      "conclusion": "success",
+      "checkout": "021d73011e35237167df62608382e9c2cef1135a",
+      "groups": [
+        {
+          "passed": 423,
+          "deselected": 0,
+          "seconds": 65.08
+        },
+        {
+          "passed": 51,
+          "deselected": 0,
+          "seconds": 119.58
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "seconds": 51.67
+        },
+        {
+          "passed": 22,
+          "deselected": 0,
+          "seconds": 258.94
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "seconds": 16.91
+        },
+        {
+          "passed": 327,
+          "deselected": 1,
+          "seconds": 555.03
+        }
+      ],
+      "full": [],
+      "packages": [],
+      "failed_nodes": []
+    },
+    {
+      "run": 37262977466,
+      "id": 111613865029,
+      "name": "test",
+      "status": "completed",
+      "conclusion": "success",
+      "checkout": "021d73011e35237167df62608382e9c2cef1135a",
+      "groups": [
+        {
+          "passed": 43,
+          "deselected": 0,
+          "seconds": 0.21
+        },
+        {
+          "passed": 34,
+          "deselected": 0,
+          "seconds": 0.89
+        },
+        {
+          "passed": 2,
+          "deselected": 0,
+          "seconds": 0.17
+        }
+      ],
+      "full": [
+        {
+          "failed": 0,
+          "passed": 3371,
+          "skipped": 27,
+          "xfailed": 4,
+          "seconds": 1848.3
+        }
+      ],
+      "packages": [],
+      "failed_nodes": []
+    },
+    {
+      "run": 37262977468,
+      "id": 111613865234,
+      "name": "desktop (ubuntu-22.04)",
+      "status": "completed",
+      "conclusion": "success",
+      "checkout": "021d73011e35237167df62608382e9c2cef1135a",
+      "groups": [
+        {
+          "passed": 43,
+          "deselected": 0,
+          "seconds": 0.22
+        },
+        {
+          "passed": 34,
+          "deselected": 0,
+          "seconds": 0.92
+        },
+        {
+          "passed": 2,
+          "deselected": 0,
+          "seconds": 0.02
+        },
+        {
+          "passed": 75,
+          "deselected": 0,
+          "seconds": 6.93
+        },
+        {
+          "passed": 79,
+          "deselected": 0,
+          "seconds": 12.64
+        }
+      ],
+      "full": [
+        {
+          "failed": 0,
+          "passed": 3394,
+          "skipped": 21,
+          "xfailed": 4,
+          "seconds": 2003.19
+        }
+      ],
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ],
+      "failed_nodes": []
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11326228060,
+      "name": "tb4-desktop-Linux-021d73011e35237167df62608382e9c2cef1135a",
+      "size": 314537693,
+      "digest": "sha256:bd67a710f218a089a5b8c069c2628fd1bc0386eb116710a1dfaf01476fe15636"
+    }
+  ],
+  "pending": [
+    {
+      "run": 37262977468,
+      "id": 111613865056,
+      "name": "desktop (windows-latest)",
+      "status": "in_progress",
+      "conclusion": null
+    }
+  ],
+  "qualification": "Required PR936 and push936 PASS, actual31native/17SSH/38portable; CI3371PASS/27declaredSKIP/4existingXFAIL and LinuxDesktop3394PASS/21SKIP/4XFAIL, bothroles/fourpackageflags PASS. WindowsDesktop terminal proof still pending.",
+  "defect": "DEF099 corrected actualLinux and fullCI/Linux regressions pass on a688, remains OPEN/common C1-C4 held.",
+  "source_scope": "a688 only; new2f43 fresh connection Windows854 result is separate and not yet published. No source conflation or package inference.",
+  "next": "Publish separate2f43 Windows854/default3473 outcome then request30 currentLinux990/fullplatform. Inspect same olda688 Windows job later; no rerun."
+}

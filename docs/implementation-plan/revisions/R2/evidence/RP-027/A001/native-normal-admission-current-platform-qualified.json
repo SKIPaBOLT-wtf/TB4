@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0504",
+  "source": "18969f784e2e2431ed31f6a6c0a3eef62279e31d",
+  "actual_pr": "fa9e872f7fcf3621fb9f8f16145ef3f8327a10ac",
+  "trigger": "c69dd69f56ee29fa03c592e0fe12027ab8391e33",
+  "verified_parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "c69dd69f56ee29fa03c592e0fe12027ab8391e33"
+  ],
+  "non_documentation_diff": "EMPTY_VERIFIED",
+  "result": "PASS",
+  "qualified_scope": "Frozen A033 normal native port/admission only; newer staged endpoint/controller/common acceptance held",
+  "required_prior_evidence": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/staged-endpoint-collection-and-native36-qualified.json",
+  "windows_prior_evidence": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-normal-admission-windows-platform-qualified.json",
+  "ci": {
+    "job": 111681799849,
+    "checkout": "fa9e872f7fcf3621fb9f8f16145ef3f8327a10ac",
+    "summaries": [
+      "43 passed in 0.29s",
+      "34 passed in 0.65s",
+      "2 passed in 0.05s",
+      "3506 passed, 27 skipped, 4 xfailed in 2746.67s (0:45:46)"
+    ],
+    "failures": [],
+    "packages": []
+  },
+  "linux_desktop": {
+    "job": 111681799978,
+    "checkout": "fa9e872f7fcf3621fb9f8f16145ef3f8327a10ac",
+    "summaries": [
+      "90 passed, 4 skipped in 2.92s",
+      "43 passed in 0.25s",
+      "34 passed in 0.63s",
+      "2 passed in 0.04s",
+      "75 passed in 9.78s",
+      "79 passed in 16.89s",
+      "3529 passed, 21 skipped, 4 xfailed in 2867.85s (0:47:47)"
+    ],
+    "failures": [],
+    "packages": [
+      [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    ]
+  },
+  "artifacts": [
+    {
+      "id": 11335404829,
+      "name": "tb4-desktop-Linux-fa9e872f7fcf3621fb9f8f16145ef3f8327a10ac",
+      "size_in_bytes": 314524026,
+      "digest": "sha256:2e237d542ecee57173123c90bf3d3ec6fe97cea690f791f73859549c7df8f45e"
+    },
+    {
+      "id": 11334853588,
+      "name": "tb4-desktop-Windows-fa9e872f7fcf3621fb9f8f16145ef3f8327a10ac",
+      "size_in_bytes": 120950655,
+      "digest": "sha256:18f8c1f7895cb7bd0d4e26f4b5af2ad7d318d2753d5f1369479223e72a17aff5"
+    }
+  ],
+  "public_scan": "CLEAN",
+  "acceptance": "Actual1071 twice/new31, Progress235, Windows3279/271SKIP/4XFAIL, CI3506/27SKIP/4XFAIL, Linux3529/21SKIP/4XFAIL plus both-role Windows/Linux four package flags PASS. No artifact downloads/live installs."
+}

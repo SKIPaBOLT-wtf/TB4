@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "result": "PENDING",
+  "finding": "The RP-027 definition preserves bounded-unit historical pending clauses. A035 uses the ambiguous phrase coherent runtime/GUI/controller composition. Its implemented trusted CandidateController has actual fresh native/runtime integration and failure-readiness tests, while canonical RP-053.C2 separately owns full Qt exposure and correlated UI feedback. current-checks-common-audit.json already records this distinction, but the canonical step should link an explicit amendment before acceptance.",
+  "action": "Append A040 clarifying acceptance evidence boundaries and add one navigation paragraph to RP-027.md. Preserve all previous amendments, original C1-C4 wording, dependencies, requirement links and actual native/runtime/platform/negative checks. Link A040 in the manifest through a guarded outcome. No source, tests, CI workflow, runtime or accepted status changes.",
+  "independence": "Documentation reconciliation within RP-027 depends on current canonical definitions and inspected source, not on assuming the still-running source43 full qualification passed. INTENT558 and its exact jobs remain pending throughout.",
+  "expected": "The canonical step distinguishes historical bounded-unit gates from current manifest/receipts without claiming a completed Qt screen, deployment or pilot. Actual C1-C4 and common evidence are still mandatory.",
+  "next": "After exact INTENT readback, publish the two documentation files with skip-ci, verify exact bytes, then publish guarded manifest/amendment/outcome/RESUME. Continue the same source43 CI/Desktop jobs."
+}

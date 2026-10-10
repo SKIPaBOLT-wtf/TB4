@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "intent": "RP-027-A001-0547",
+  "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "trigger": "12740484281b9f0b8e333eab0e462e653ed970da",
+  "runs": [
+    {
+      "job": 114282053261,
+      "checkout": "12740484281b9f0b8e333eab0e462e653ed970da",
+      "summaries": [
+        "1 failed, 720 passed in 1326.40s (0:22:06)"
+      ],
+      "failures": [
+        {
+          "test": "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof",
+          "error": "tb4.private_settings.SettingsError: SETTINGS_STORE_UNAVAILABLE"
+        }
+      ],
+      "codes": [
+        "SETTINGS_STORE_UNAVAILABLE"
+      ]
+    },
+    {
+      "job": 114282061713,
+      "checkout": "ef020ad81ca8c7afefa59596baf86945ec72d9ec",
+      "summaries": [
+        "1 failed, 720 passed in 1579.01s (0:26:19)"
+      ],
+      "failures": [
+        {
+          "test": "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof",
+          "error": "tb4.private_settings.SettingsError: SETTINGS_STORE_UNAVAILABLE"
+        }
+      ]
+    }
+  ],
+  "actual_pr_merge": "ef020ad81ca8c7afefa59596baf86945ec72d9ec",
+  "merge_parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "12740484281b9f0b8e333eab0e462e653ed970da"
+  ],
+  "non_documentation_diff": [],
+  "observed": "Both original immutable first groups executed721 cases:720 passed and the same single case failed, no skip. Later required groups were not executed. A038 portable37/mappedSSH9 and eleven of twelve A039 coldMain cases passed within this group; the late-child negative assertion did not finish.",
+  "failure": {
+    "test": "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof",
+    "expected_exception": "ConfigurationError: ACTIVE_ADOPTION_RECOVERY",
+    "actual_exception": "SettingsError: SETTINGS_STORE_UNAVAILABLE",
+    "trace_locations": [
+      "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py:148",
+      "src/tb4/reconfiguration_native_folder_adoption.py:177",
+      "src/tb4/private_settings_linux.py:79"
+    ]
+  },
+  "source_review": "The negative test changes the existing pending child after _qualified returns. Recovery compares original/pending bytes inside native locked contexts before promotion. LinuxSettingsNative.locked deliberately converts a non-SettingsError exception into the closed SETTINGS_STORE_UNAVAILABLE at line79. The observed outward exception therefore fits the established sanitizer, but a new exact internal-code and late-mutation witness is still required to prove this is the intended guard rather than an earlier unrelated failure.",
+  "hypothesis": "Test expectation crosses the native sanitizer incorrectly. No product guard repair is justified by this evidence; retain sanitizer and actual recovery implementation while strengthening the exact negative predicate.",
+  "remaining": "Original source42 fullCI/Desktop still running; inspect the same jobs later, never rerun them. Source41 full qualification remains historical to that source. No C1-C4 acceptance.",
+  "privacy": "Only synthetic public code locations, exception codes and run IDs; no raw native frames, credential data or provider output.",
+  "next": "Publish a bounded test-only repair INTENT. Observe exact internal ACTIVE_ADOPTION_RECOVERY after successful fresh proof and deliberate pending mutation; expect the closed native SettingsError and require unchanged Main/altered-pending/shared bytes. Preserve every other case, then qualify fresh source."
+}

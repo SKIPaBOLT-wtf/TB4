@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0383",
+  "source": "87ca92c4417ae0a3647d08b9a05d4baedb7f7c1d",
+  "trigger": "63150974ae2ef8805a7e95ad27a93a579eec2035",
+  "actual_checkout": "8e3d78cc9c99b9b9f446ed43d6e79ccdfa227e01",
+  "source_equivalence": "Documented exact non-document source equivalence to trigger and PR; all three current terminal checkout logs match pinned PR merge.",
+  "result": "IMMUTABLE_SOURCE_FULL_AND_BOTH_ROLE_PACKAGES_QUALIFIED",
+  "jobs": [
+    {
+      "run": 37251072111,
+      "id": 111578631407,
+      "kind": "CI",
+      "status": "completed",
+      "conclusion": "success",
+      "passed": 3259,
+      "skipped": 27,
+      "xfailed": 4,
+      "failed": 0,
+      "errors": 0,
+      "seconds": 2499.66
+    },
+    {
+      "run": 37251072101,
+      "id": 111578631553,
+      "kind": "Desktop Windows",
+      "status": "completed",
+      "conclusion": "success",
+      "passed": 3082,
+      "skipped": 221,
+      "xfailed": 4,
+      "failed": 0,
+      "errors": 0,
+      "seconds": 2438.81
+    },
+    {
+      "run": 37251072101,
+      "id": 111578631823,
+      "kind": "Desktop Linux",
+      "status": "completed",
+      "conclusion": "success",
+      "passed": 3282,
+      "skipped": 21,
+      "xfailed": 4,
+      "failed": 0,
+      "errors": 0,
+      "seconds": 2140.83
+    }
+  ],
+  "both_roles": [
+    "watchdog",
+    "fetcher"
+  ],
+  "package_assertions": {
+    "bundle_self_test": "PASS",
+    "gui_smoke": "PASS",
+    "setup_gui_smoke": "PASS",
+    "install_uninstall_profile_isolation": "PASS"
+  },
+  "artifacts": [
+    {
+      "id": 11322201993,
+      "name": "tb4-desktop-Linux-8e3d78cc9c99b9b9f446ed43d6e79ccdfa227e01",
+      "size_in_bytes": 314535739,
+      "digest": "sha256:dc4616142ead4d888921310e1986741471373f6ccf58e1f7ae96d8406683de59",
+      "expired": false
+    },
+    {
+      "id": 11321494428,
+      "name": "tb4-desktop-Windows-8e3d78cc9c99b9b9f446ed43d6e79ccdfa227e01",
+      "size_in_bytes": 120949599,
+      "digest": "sha256:38db54fa7c77a5f7b8821d52710d3496911f8ab24f6ac221e4b1971fef542582",
+      "expired": false
+    }
+  ],
+  "already_separately_qualified": {
+    "required_linux": "824 passed twice, actual push631 and PR8e3; proof folder-endpoint-linux26-qualified.json event378",
+    "progress": "235 passed, actual PR8e3; event374"
+  },
+  "limits": [
+    "Declared platform-specific skipped cases and four pre-existing xfails retain their original meanings, never count as PASS.",
+    "Package artifacts inspected metadata only; no download, installation or real deployment.",
+    "Qualifies source87ca only; current pointer sourceacc26 request27 terminal results remain separate.",
+    "DEF095/DEF096 fixes have actual targeted Windows/Linux/full/package evidence; common integration and all C1-C4 acceptance remain held. DEF094 original cause remains unproven."
+  ],
+  "independent_scheduling": {
+    "unit": "A028 opt-in fixed SSH helper dispatch foundation",
+    "reason": "Uses qualified A020/A023/A024/A025 fixed probe and authority protocols plus original helper; does not invoke or alter A026 endpoint operations or A027 pointer semantics. Current immutable acc26 request27 jobs can finish unchanged; no pending evidence treated as acceptance.",
+    "scope": "Exact two fixed SSH original commands selected only by an opt-in server forced-command flag; malformed command refused before config/stdin/storage; no shell execution, client path, credential grant, endpoint attach, runtime activation or peer ACK barrier."
+  },
+  "next": "Record A028 scoped source INTENT for helper opt-in dispatch, portable negative/order/compatibility tests and real Linux native credential combined forced-helper cases. Execute no tests before separate test INTENT; later inspect immutable request27 acc26 terminal evidence."
+}

@@ -1,0 +1,63 @@
+{
+  "intent": "RP-027-A001-0535",
+  "source": "1395294b4bb938f5c32158043b8340f872041faf",
+  "trigger": "09be1e6ead16bf0f3ebaeec1679cc617ae523be6",
+  "actual_pr_merge": "eb713b33adb9010fbff208bcfa091425a0c1e099",
+  "merge_parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "09be1e6ead16bf0f3ebaeec1679cc617ae523be6"
+  ],
+  "non_documentation_source_diff": [],
+  "required": [
+    {
+      "run": 38073293590,
+      "job": 114274964436,
+      "kind": "push",
+      "conclusion": "success",
+      "checkout": "09be1e6ead16bf0f3ebaeec1679cc617ae523be6",
+      "summaries": [
+        "663 passed in 686.80s (0:11:26)",
+        "51 passed in 96.95s (0:01:36)",
+        "6 passed in 39.40s",
+        "22 passed in 191.64s (0:03:11)",
+        "107 passed in 13.72s",
+        "327 passed, 1 deselected in 406.09s (0:06:46)"
+      ],
+      "passed": 1176,
+      "failed": 0,
+      "skipped": 0,
+      "excluded": "actual_max_capacity129_fixed_objects: one deselected only from last327 required group; fullCI/Desktop include it"
+    },
+    {
+      "run": 38073297389,
+      "job": 114274976207,
+      "kind": "pull_request",
+      "conclusion": "success",
+      "checkout": "eb713b33adb9010fbff208bcfa091425a0c1e099",
+      "summaries": [
+        "663 passed in 845.94s (0:14:05)",
+        "51 passed in 118.21s (0:01:58)",
+        "6 passed in 51.61s",
+        "22 passed in 257.30s (0:04:17)",
+        "107 passed in 16.69s",
+        "327 passed, 1 deselected in 561.06s (0:09:21)"
+      ],
+      "passed": 1176,
+      "failed": 0,
+      "skipped": 0,
+      "excluded": "actual_max_capacity129_fixed_objects: one deselected only from last327 required group; fullCI/Desktop include it"
+    }
+  ],
+  "progress": {
+    "run": 38073297310,
+    "job": 114274975447,
+    "conclusion": "success",
+    "passed": 235,
+    "seconds": 12.81,
+    "checkout": "eb713b33adb9010fbff208bcfa091425a0c1e099"
+  },
+  "full_ci_and_desktop": "Still running; preserve same run IDs from STARTED536. This is targeted qualification only.",
+  "privacy": "Allowlisted counts/IDs/public SHAs only; no raw runtime data or downloaded artifacts.",
+  "acceptance": false,
+  "checkpoint_preparation": "First local candidate rejected before publication because repair record lacked required item/attempt/intent/rechecks keys. Corrected to canonical shape; no source/runtime/test repeated."
+}

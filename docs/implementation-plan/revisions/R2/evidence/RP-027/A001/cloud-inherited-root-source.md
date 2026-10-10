@@ -1,0 +1,9 @@
+# RP-027.C3 A001 — cloud-only inherited root settlement source
+
+Verified source `54a628583ba33cf4d2454049ed1f243d21c35088`. Nine owned source/test/schema/catalogue/amendment paths; static review only, no tests/import/build/native fixture or live action.
+
+Fresh actual current leadership, clock, source compatibility, capabilities and native checkpoint validate only historical applied evidence while MAINTENANCE retains old routing. Original commissioning blueprint and catalogue bind the exact fixed object/key/operation. Actual same-object new-parent metadata requires the unique transition witness and expected MIME, size, access and commissioning properties. No old host, local root WAL or acknowledgement is read. Dedicated ROOT_SETTLE strictly protects settings/commissioning/relevant catalogue, changes only inherited IDENTITY UNKNOWN to COMPLETE, retains original owner/epoch/operation and records native intent before strict CAS. Ordinary START/FINISH/first-run checks remain unchanged; no SDK mutation or activation.
+
+Effects schema SHA `67734c81f897fb55d41ea3543e6a92c35b202e9156dbe35cd5a4ee12951f44de`, closed ROOT_SETTLE only in UNRELEASED;64KiB WAL and1MiB actual private frame budgets unchanged. Original772 predicates retained; nineteen added source predicates exercise old-store unavailability, input/output/authority applied receipts, forged/stale/missing/inaccessible/wrong-operation/root/source/owner/clock/configuration evidence, default owner refusal, lost receipt and actual native promotion cut/recovery with no reissue. These have not run.
+
+[Amendment A-006](../../../amendments/RP-027/A-006-cloud-inherited-root-settlement.md). No C1-C4 accepted. Next: exact32-target fresh native/offscreenQt WindowsX64 test; record full actual result before repair or known-no-send/partial-plan/folder/rebind/C4 work.

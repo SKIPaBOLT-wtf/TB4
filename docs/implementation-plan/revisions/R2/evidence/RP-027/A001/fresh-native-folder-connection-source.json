@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0422",
+  "source": "2f43d0ed3e4510c95dc916f87545c53ced3d18aa",
+  "local_commit": "6e7c07b67bfaf08f14934ee82cffb6185b993858",
+  "result": "RECORDED",
+  "paths": [
+    "src/tb4/drive/folder_connection.py",
+    "src/tb4/drive/folder_probe_transport.py",
+    "src/tb4/drive/folder_probe.py",
+    "tests/security/test_folder_connection_native.py",
+    "tests/drive/test_folder_connection_authenticated_ssh.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-030-fresh-native-folder-connection.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/CREDENTIAL_RESOLVER_CONTRACT.md"
+  ],
+  "static": {
+    "ast_files": 5,
+    "import_paths": "PASS",
+    "native_test_functions": 14,
+    "native_cases_declared": 42,
+    "ssh_test_functions": 6,
+    "ssh_cases_declared": 12,
+    "diff": "PASS",
+    "privacy": "PASS",
+    "compatibility": "PASS",
+    "tests_executed": 0
+  },
+  "behavior": "Pure closed request before native IO; actual endpoint/profile locks through one fixed operation; current pointer/immutable metadata/explicit purpose then fresh protected image restore into existing native pairs. Native key/trust/expiry still per-use. Full frame rechecks, no profile rewrite/selection/enrollment/activation/retry. UNKNOWN does not block first-CAS election.",
+  "static_corrections": "One ambiguous draft patch inserted test helpers before a positive-test tail; static body review identified and restored the tail before any execution/commit. One failed atomic correction anchor was preserved in tool history; exact anchor correction succeeded. Missing drafted timing import corrected to actual timing_contract before publication. No test outcome inferred.",
+  "protocol": "Existing schemas, native frames, pointer, image and normal/probe fields unchanged. Default DenyActivation/runtime permission false retained.",
+  "readback": "Exact ten committed public files/ref verified.",
+  "scheduling": "421 actual a688 push936/currentWindows139 and qualified transport/metadata foundations. Immutable pending request29 PR/full jobs remain source-distinct.",
+  "acceptance": "No execution/currentLinux/fullplatform/prerequisite/runtime/GUI/C1-C4 acceptance.",
+  "next": "Separate actual Windows native/probe/authority/endpoint/candidate regression and default3473 exact54 additions/no removals; required Linux990 includes all42native/12SSH. Source-specific full/platform evidence remains required."
+}

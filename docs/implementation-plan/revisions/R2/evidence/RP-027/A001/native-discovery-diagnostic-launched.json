@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0347",
+  "source_commit": "91bad7a54916766417a882ef537ca812a08bfb05",
+  "trigger_commit": "10cbb790a7cd09a4f9a1e4535c5aa034a8468074",
+  "request_revision": 1,
+  "request_path": "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/native-discovery-diagnostic-request.json",
+  "request_readback": "EXACT",
+  "pr_checkout": "614e8d015483175a79eb41d22cfd5177659ef5af",
+  "pr_parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "10cbb790a7cd09a4f9a1e4535c5aa034a8468074"
+  ],
+  "non_doc_source_diff": [],
+  "actual_job_checkout_confirmation": "Pending terminal log inspection",
+  "workflows": [
+    {
+      "run_id": 37244931128,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "head": "10cbb790a7cd09a4f9a1e4535c5aa034a8468074",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37244931128",
+      "jobs": [
+        {
+          "job_id": 111560824341,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37244931115,
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "head": "10cbb790a7cd09a4f9a1e4535c5aa034a8468074",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37244931115",
+      "jobs": [
+        {
+          "job_id": 111560824158,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37244931131,
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "head": "10cbb790a7cd09a4f9a1e4535c5aa034a8468074",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37244931131",
+      "jobs": [
+        {
+          "job_id": 111560824199,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "job_id": 111560824351,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run_id": 37244931122,
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "completed",
+      "head": "10cbb790a7cd09a4f9a1e4535c5aa034a8468074",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37244931122",
+      "jobs": [
+        {
+          "job_id": 111560824217,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "run_id": 37244928658,
+      "name": "Native discovery diagnostic",
+      "event": "push",
+      "status": "completed",
+      "head": "10cbb790a7cd09a4f9a1e4535c5aa034a8468074",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37244928658",
+      "jobs": [
+        {
+          "job_id": 111560817123,
+          "name": "isolated-windows",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "diagnostic_run_id": 37244928658,
+  "diagnostic_job_id": 111560817123,
+  "diagnostic_terminal_metadata": "SUCCESS; metrics uninspected",
+  "diagnostic_acceptance": false,
+  "qualification": "PENDING",
+  "defect": "DEF-094",
+  "next_action": "Publish diagnostic terminal-log inspection INTENT before reading closed metrics. Continue exact remaining request 25 full-platform inspection 348. Fresh incidental PR full/platform/required-Linux qualification requires its own inspection INTENT."
+}

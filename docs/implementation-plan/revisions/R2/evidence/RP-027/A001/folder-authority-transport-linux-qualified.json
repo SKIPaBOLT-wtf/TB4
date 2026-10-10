@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0343",
+  "source_commit": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25",
+  "trigger_commit": "72a436ffc7e3962210fcea52f295ebc88d4828be",
+  "request_revision": 25,
+  "qualified": true,
+  "required_cases_per_job": 771,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "new_authority_transport_cases": 62,
+  "all_new_cases_executed": true,
+  "jobs": [
+    {
+      "event": "push",
+      "run_id": 37243307194,
+      "job_id": 111556168442,
+      "checkout": "72a436ffc7e3962210fcea52f295ebc88d4828be",
+      "groups": [
+        {
+          "passed": 258,
+          "deselected": 0,
+          "elapsed_s": 38.39
+        },
+        {
+          "passed": 51,
+          "deselected": 0,
+          "elapsed_s": 117.55
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "elapsed_s": 50.96
+        },
+        {
+          "passed": 22,
+          "deselected": 0,
+          "elapsed_s": 256.96
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "elapsed_s": 17.08
+        },
+        {
+          "passed": 327,
+          "deselected": 1,
+          "elapsed_s": 554.15
+        }
+      ]
+    },
+    {
+      "event": "pull_request",
+      "run_id": 37243309445,
+      "job_id": 111556175280,
+      "checkout": {
+        "sha": "47d287692af8430db880b1f7fc923ae726d1f2a1",
+        "parents": [
+          "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+          "72a436ffc7e3962210fcea52f295ebc88d4828be"
+        ],
+        "source_commit": "d7b0bf7d0a2fd18433b1b00fad2db286dc4e6c25"
+      },
+      "groups": [
+        {
+          "passed": 258,
+          "deselected": 0,
+          "elapsed_s": 26.59
+        },
+        {
+          "passed": 51,
+          "deselected": 0,
+          "elapsed_s": 59.02
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "elapsed_s": 23.78
+        },
+        {
+          "passed": 22,
+          "deselected": 0,
+          "elapsed_s": 119.63
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "elapsed_s": 9.08
+        },
+        {
+          "passed": 327,
+          "deselected": 1,
+          "elapsed_s": 291.73
+        }
+      ]
+    }
+  ],
+  "actual_checkout_confirmed_in_terminal_logs": true,
+  "source_equivalence": [],
+  "scope": "Disposable actual Linux native protected key/known-file use, authenticated fixed normal Folder helper READ/CAS, one-use nonce replies, lost-after-commit UNKNOWN inspection, stale/forced first-CAS role transfer without old-owner acknowledgments, original Folder/Docs/effect regressions.",
+  "group6_intentional_deselected": 1,
+  "qualification_limit": "Source d7b0bf7 only. Later diagnostic-only source does not change production/test bytes but remains separately scoped; all full platform/package/C1-C4 acceptance held.",
+  "windows_defect": "DEF-094",
+  "acceptance": false,
+  "next_action": "Publish one-time isolated Windows diagnostic launch INTENT and exact request/readback. Inspect remaining same request 25 CI/Linux Desktop/Progress terminal logs under a separate full-platform INTENT. Do not repeat failed Windows job or infer cause from local success."
+}

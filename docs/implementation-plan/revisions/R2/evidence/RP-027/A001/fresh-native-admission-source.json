@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0199",
+  "source": "96b95bae1a06c06de5e08fc538522d3f24d99e5c",
+  "local_preserved": "7a89a1471bb1e3b30e5811c92ef893fa8afab149",
+  "files": [
+    "src/tb4/reconfiguration_admission.py",
+    "tests/drive/reconfiguration_admission_support.py",
+    "tests/drive/test_reconfiguration_admission.py",
+    "tests/security/test_reconfiguration_admission_native.py",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-016-fresh-native-current-admission.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    ".github/workflows/folder-reconfiguration.yml"
+  ],
+  "amendment": "docs/implementation-plan/revisions/R2/amendments/RP-027/A-016-fresh-native-current-admission.md",
+  "static_review": "Exactly8paths source/doc/workflow whitelist and git diff --check pass; actual native CP lock avoids its own nonreentrant reacquisition by passing only the held port binding. No source/tests imported or executed in source unit.",
+  "proposed_invariants": [
+    "Typed actual protected profile+NativeCheckpoint+Leadership+Prerequisites/CommissionedStorage; actual native Docs/Folder/mapped ports, capabilities and clock only.",
+    "Every trusted revision callback rereads current protected profile/source17-file pin/current first-run metadata/storage/credential/environment/current ACTIVE descriptor/timing/provenance/current force-role and CP protection. Saved READY/revision and historical frozen work/WAL are not grants.",
+    "Owner-confirmed release requires current covered transition and zero C1 blockers; under actual protected CP lock changes only maintenance, retains full previous/grant/election/mutation/receipts/profile/work/operation IDs.",
+    "Exact pending release recovery freshly qualifies current frame+1/fullprevious/solemaintenance change and promotes same bytes without remote/root/work mutation repeat.",
+    "Steady-state current admission allows normal BUSY/UNREAD and own live UNKNOWN; unchanged ordinary Effects/Runtime no-replay guards remain. Stale/force-superseded owner refuses; election remains independent.",
+    "Default installed entrypoints/DenyActivation/protocol/source closure and ordinary writer/election code untouched; newsource alone no runtime/deployment grant."
+  ],
+  "proposed_cases": {
+    "drive": 20,
+    "native": 3,
+    "scope": "Required actual default Windows/Linux scoped qualification after sourceOUTCOME; source artifact contains no passed test result."
+  },
+  "source_preparation": [
+    "Initial source apply_patch rejected malformed final patch marker before any source write; source script then rejected unparenthesized anonymous helper expression before tool mutation. Corrected patch serialization/expression; no application tests/imports/runtime or remote effects.",
+    "Amendment creation succeeded, then an empty contract-header patch rejected mismatched existing title before any contract mutation; read actual tail/header and use verified context."
+  ],
+  "independent_qualification": "923741e workflow-only budget INTENT197/STARTED198 immutable-source jobs continue; thissource consumes qualifieda2cb9 promotion194, not their pendingpackage result. All finalacceptance held.",
+  "tests_executed": 0,
+  "not_accepted": [
+    "Cloud ACTIVE adoption without former private host/WAL/ACK",
+    "Folder/rootless/runtime/GUI/helper composition",
+    "RP-027.C1",
+    "RP-027.C2",
+    "RP-027.C3",
+    "RP-027.C4"
+  ],
+  "acceptance": false
+}

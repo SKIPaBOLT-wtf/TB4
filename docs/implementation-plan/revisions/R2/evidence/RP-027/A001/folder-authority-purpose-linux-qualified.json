@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0329",
+  "source_commit": "4951204c062cd422467fb6661e146b5d978011c3",
+  "trigger_commit": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+  "pr_checkout": {
+    "sha": "992182700ac230e308e7235713695f8227217673",
+    "parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "7b5fcfa366a25f62bb4165f3dc0483066f27d17c"
+    ],
+    "source_commit": "4951204c062cd422467fb6661e146b5d978011c3"
+  },
+  "job_checkout_confirmation": "Actual push7b5fcfa/PR9921827 terminal logs match; non-doc source differences empty and actual PR parents/source verified.",
+  "push": {
+    "run_id": 37239920053,
+    "job_id": 111546409484,
+    "conclusion": "success",
+    "groups": [
+      {
+        "passed": 196,
+        "deselected": 0,
+        "seconds": 26.58
+      },
+      {
+        "passed": 51,
+        "deselected": 0,
+        "seconds": 106.21
+      },
+      {
+        "passed": 6,
+        "deselected": 0,
+        "seconds": 40.53
+      },
+      {
+        "passed": 22,
+        "deselected": 0,
+        "seconds": 196.38
+      },
+      {
+        "passed": 107,
+        "deselected": 0,
+        "seconds": 14.26
+      },
+      {
+        "passed": 327,
+        "deselected": 1,
+        "seconds": 409.45
+      }
+    ],
+    "total_passed": 709,
+    "skipped": 0,
+    "failed": 0,
+    "errors": 0
+  },
+  "pull_request": {
+    "run_id": 37239922639,
+    "job_id": 111546417590,
+    "conclusion": "success",
+    "groups": [
+      {
+        "passed": 196,
+        "deselected": 0,
+        "seconds": 26.52
+      },
+      {
+        "passed": 51,
+        "deselected": 0,
+        "seconds": 118.82
+      },
+      {
+        "passed": 6,
+        "deselected": 0,
+        "seconds": 51.88
+      },
+      {
+        "passed": 22,
+        "deselected": 0,
+        "seconds": 257.86
+      },
+      {
+        "passed": 107,
+        "deselected": 0,
+        "seconds": 16.96
+      },
+      {
+        "passed": 327,
+        "deselected": 1,
+        "seconds": 550.09
+      }
+    ],
+    "total_passed": 709,
+    "skipped": 0,
+    "failed": 0,
+    "errors": 0
+  },
+  "case_boundary": {
+    "new_authority_portable": 27,
+    "new_authority_actual_native_linux": 12,
+    "all_new_authority_executed": 39,
+    "new_authority_skips": 0,
+    "inherited_authprobe_executed": 57,
+    "method": "Immutable first group196 selects both new authority files plus all A023 threefiles; no deselection/skip/failure/error in firstgroup. Same six terminalcounts/actual files confirm execution.",
+    "unchanged_deselection": "Only historical final-group Docs maxcapacity129 case, unchanged workflowfilter; no credential/Folder/native/SSH case omitted."
+  },
+  "acceptance": false,
+  "held": "Current4951204 complete platform330 and earlier9a6c321 remain pending; fullC1-C4 durable endpoint/runtime/GUI/common and later finalsource qualification required.",
+  "next_action": "Publish bounded authenticated normal existing-Folder READ/CAS transport source intent onqualified A023/A024 primitives. Only trusted fixed authority callback/private one-call reply, defaulthelper/noactivation unchanged; new unit needs own source/native/currentLinux/fullqualification. Finish same321/330 pendingplatformjobs."
+}

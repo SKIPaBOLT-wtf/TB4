@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "intent_event": "RP-027-A001-0159",
+  "source_commit": "b90713351a910341da0454f8f7b4d82e144e22b2",
+  "trigger_head": "e51c91cee841a1f8eeb185e05aca7a675763a65f",
+  "jobs": [
+    {
+      "run_id": 37108514882,
+      "job_id": 111161656613,
+      "event": "pull_request",
+      "checkout": "699b58afd99013d1849de83ea090ae7567a48ebc",
+      "result": "SUCCESS",
+      "native": {
+        "passed": 51,
+        "failed": 0,
+        "skipped": 0,
+        "duration_s": 60.95
+      },
+      "original_folder_native": {
+        "passed": 107,
+        "failed": 0,
+        "skipped": 0,
+        "duration_s": 9.24
+      },
+      "original_docs_effect": {
+        "passed": 155,
+        "failed": 0,
+        "skipped": 0,
+        "deselected": 1,
+        "duration_s": 57.71
+      },
+      "artifact": {
+        "id": 11268223216,
+        "name": "folder-reconfiguration-699b58afd99013d1849de83ea090ae7567a48ebc",
+        "size_in_bytes": 7769,
+        "digest": "sha256:a05573d12b2fc7a9ecf65d3cdf1a3f0a74ad7301038cefe7511d2a6a90025626",
+        "expired": false,
+        "created_at": "2026-10-03T08:07:42Z",
+        "expires_at": "2027-01-01T08:05:16Z",
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37108514882/artifacts/11268223216"
+      }
+    },
+    {
+      "run_id": 37108512107,
+      "job_id": 111161648091,
+      "event": "push",
+      "checkout": "e51c91cee841a1f8eeb185e05aca7a675763a65f",
+      "result": "SUCCESS",
+      "native": {
+        "passed": 51,
+        "failed": 0,
+        "skipped": 0,
+        "duration_s": 95.15
+      },
+      "original_folder_native": {
+        "passed": 107,
+        "failed": 0,
+        "skipped": 0,
+        "duration_s": 14.49
+      },
+      "original_docs_effect": {
+        "passed": 155,
+        "failed": 0,
+        "skipped": 0,
+        "deselected": 1,
+        "duration_s": 96.35
+      },
+      "artifact": {
+        "id": 11268946438,
+        "name": "folder-reconfiguration-e51c91cee841a1f8eeb185e05aca7a675763a65f",
+        "size_in_bytes": 7799,
+        "digest": "sha256:bd4d8ab2abddf20388c95b6bf82acc7bc782d3330c6981a4f6050727ec3caa1e",
+        "expired": false,
+        "created_at": "2026-10-03T08:08:58Z",
+        "expires_at": "2027-01-01T08:05:13Z",
+        "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37108512107/artifacts/11268946438"
+      }
+    }
+  ],
+  "verified": [
+    "Actual first-run/C1/C2/native stores",
+    "Actual single renameat2 no-replace syscall under original DB inode lock, Unicode, existing bytes/inodes and persistent same authority",
+    "Durability/ambiguous BEFORE/AFTER inspection without second invocation",
+    "Actual native pending exact promotion cuts",
+    "Actual stale first-CAS role takeover independent of old stores/ACK, inherited AFTER settlement only",
+    "Exact own operation/sender allowance, foreign or duplicate-digest UNKNOWN, changed sender/epoch/native election refusal",
+    "Actual last SQL image catches force request as OWNER_SUPERSEDED before syscall, while native outward boundary stays opaque",
+    "Original folder/maintenance/Docs/effect regression cases"
+  ],
+  "deselected": "Only historical expensive actual_max_capacity129_fixed_objects; unchanged automatic full CI/platform suites retain it",
+  "acceptance": false,
+  "remaining": "Actual remote monotonic rebind, first-run profile/composition, final descriptor/configuration publication/cache/lease admission and all C1-C4/common qualification."
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0412",
+  "source": "a68893fa004b896695d5d22a83fa4c3016b6d516",
+  "local_commit": "ab18d936bca9fa769fa2ad42afa0271e794750f5",
+  "result": "RECORDED",
+  "paths": [
+    "tests/drive/test_folder_combined_authenticated_ssh.py"
+  ],
+  "static": {
+    "ast": 1,
+    "test_functions": 7,
+    "combined_cases_retained": 17,
+    "command_cases_retained": 4,
+    "tests_executed": 0,
+    "diff_check": "PASS",
+    "privacy": "PASS",
+    "compatibility": "PASS"
+  },
+  "change": "dataclasses.replace now inside exact expected code boundary; transparent observer delegates actual FixedProcess.call and asserts empty0/nonempty1 calls. Same4 params/no case deletion or mocks returning fake SSH replies; existing storage/profile/inventory byte preservation assertion retained.",
+  "source_equivalence": {
+    "baseline": "d168a74ed9ef55e77926be1ee3de8666f4216fc6",
+    "actual_git_non_doc_changed": [
+      "tests/drive/test_folder_combined_authenticated_ssh.py"
+    ],
+    "product_workflow_original_native_test_bytes": "All unchanged; original Windows704 proof411 remains scoped evidence for identical protected product/native fixture code.",
+    "current_helper": "5f80 product unchanged, current native test correction not Linux qualified"
+  },
+  "defect": "DEF-099",
+  "readback": "Exact single file/tree/ref and immutable source verified",
+  "rollback": "Reversible test-only change; failed request28/test source and complete history preserved. No installed/private/network mutation.",
+  "acceptance": "No Linux/currentfull/platform/C1-C4 acceptance from AST/unchanged source.",
+  "next": "Focused actual currentWindows38portable/70protocol/31native=139PASS with17declaredLinuxSKIP; default3419 exactsame IDs then one source-specific currentrequest29 nativeLinux936/fullplatform."
+}

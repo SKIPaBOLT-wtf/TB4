@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0418",
+  "source": "5f80eec64e89fba848f5da1a78a1af4e2d37fb5f",
+  "pr_checkout": "d0d5c05bbada4235e66a20d9dbb6a4583d969406",
+  "request_revision": 28,
+  "result": "FAIL",
+  "jobs": [
+    {
+      "run": 37259779777,
+      "id": 111604383811,
+      "name": "test",
+      "status": "completed",
+      "conclusion": "failure",
+      "checkout": "d0d5c05bbada4235e66a20d9dbb6a4583d969406",
+      "full": {
+        "failed": 1,
+        "passed": 3339,
+        "skipped": 27,
+        "xfailed": 4,
+        "seconds": 2525.04
+      },
+      "packages": [],
+      "closed_failure": "DEF-099/HELPER_COMMAND empty argv construction"
+    },
+    {
+      "run": 37259779803,
+      "id": 111604383757,
+      "name": "desktop (windows-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "checkout": "d0d5c05bbada4235e66a20d9dbb6a4583d969406",
+      "full": {
+        "failed": 0,
+        "passed": 3146,
+        "skipped": 238,
+        "xfailed": 4,
+        "seconds": 2494.24
+      },
+      "packages": [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ],
+      "closed_failure": null
+    },
+    {
+      "run": 37259779803,
+      "id": 111604383988,
+      "name": "desktop (ubuntu-22.04)",
+      "status": "completed",
+      "conclusion": "failure",
+      "checkout": "d0d5c05bbada4235e66a20d9dbb6a4583d969406",
+      "full": {
+        "failed": 1,
+        "passed": 3362,
+        "skipped": 21,
+        "xfailed": 4,
+        "seconds": 2654.93
+      },
+      "packages": [],
+      "closed_failure": "DEF-099/HELPER_COMMAND empty argv construction"
+    }
+  ],
+  "artifacts": [
+    {
+      "run": 37259779803,
+      "artifacts": [
+        {
+          "id": 11325074085,
+          "name": "tb4-desktop-Windows-d0d5c05bbada4235e66a20d9dbb6a4583d969406",
+          "size": 120944427,
+          "digest": "sha256:ed2a3568d8dd08a5523aee2afe892f04fa98ca88b06e5aba9f7dc410222b2169"
+        }
+      ]
+    },
+    {
+      "run": 37259779777,
+      "artifacts": []
+    }
+  ],
+  "origin": "Both full Linux runs show the same sole empty-command FixedProcess construction failure DEF099 proven410. No extra failure or product origin inferred.",
+  "required": "Original request28 required groups already FAIL410; remaining groups not executed. Progress235 PASS410.",
+  "windows": "Full3146PASS/238 declaredSKIP/4existingXFAIL, bothrole/fourpackageflags PASS; source5f80 only. Never currenta688 attachment or C1-C4 proof.",
+  "current": "a688 test repair and A029 native attachment request29 running separately; exact launch417.",
+  "privacy": "Closed codes/counters/case IDs and artifact metadata only. No artifact downloaded/installed or raw native frame published.",
+  "next": "Inspect SAME currenta688 request29 required936 and Progress; qualify correction only from actual executed Linux cases. Full current packages still require terminal evidence."
+}

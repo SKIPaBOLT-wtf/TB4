@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0502",
+  "source": "632fd1a0459b6ce64d6ccff4c90957cbabd26645",
+  "base": "a4e77fe7df715100457802de38842136112eb181",
+  "local_preserved": "8092f7dce1855fad67538d340c8620604b1a05a1",
+  "result": "RECORDED",
+  "files": [
+    "src/tb4/reconfiguration_retained.py",
+    "src/tb4/reconfiguration_folder_runtime.py",
+    "src/tb4/desktop/reconfiguration.py",
+    "tests/drive/test_folder_retained_authenticated_ssh.py",
+    "tests/security/test_folder_runtime_factory_native.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-035-native-folder-retained-and-controller.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/CREDENTIAL_RESOLVER_CONTRACT.md"
+  ],
+  "static": {
+    "schema_version": 1,
+    "base": "a4e77fe7df715100457802de38842136112eb181",
+    "python_ast": "PASS",
+    "legacy_retained_c4_methods_and_mapped_after_ast": "EXACT_UNCHANGED",
+    "old_controller_except_prefactory_readiness_reset_ast": "EXACT_UNCHANGED",
+    "scoped_files": [
+      "src/tb4/reconfiguration_retained.py",
+      "src/tb4/reconfiguration_folder_runtime.py",
+      "src/tb4/desktop/reconfiguration.py",
+      "tests/drive/test_folder_retained_authenticated_ssh.py",
+      "tests/security/test_folder_runtime_factory_native.py",
+      ".github/workflows/folder-reconfiguration.yml",
+      "docs/implementation-plan/revisions/R2/amendments/RP-027/A-035-native-folder-retained-and-controller.md",
+      "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+      "docs/RECONFIGURATION_CONTRACT.md",
+      "docs/CREDENTIAL_RESOLVER_CONTRACT.md"
+    ],
+    "declared_cases": {
+      "tests/security/test_folder_runtime_factory_native.py": {
+        "test_actual_current_profile_factory_has_no_key_proof_save_or_role_and_denies_missing_grant": 1,
+        "test_actual_factory_rebuilds_timing_from_current_protected_choices_without_grant": 1,
+        "test_actual_current_factory_refuses_lost_native_selection_before_transport_or_profile_write": 2
+      },
+      "tests/drive/test_folder_retained_authenticated_ssh.py": {
+        "test_actual_native_rootless_c4_promotion_and_current_profile_factory_preserve_work": 1,
+        "test_actual_controller_factory_late_native_metadata_loss_clears_ephemeral_readiness": 2,
+        "test_actual_remote_native_port_cannot_replace_server_local_mapped_after_qualification": 1,
+        "test_actual_native_retained_commit_refuses_late_role_capability_or_owner_loss": 3
+      }
+    },
+    "tests_executed": 0
+  },
+  "public_scan": "CLEAN",
+  "readback": "EXACT_ALL_FILES/Gitparent/branch",
+  "tests_executed": 0,
+  "readiness_finding": {
+    "status": "STATIC_REVIEW_ONLY",
+    "baseline": "b6288d53c5eb29d51708b1f6099114529f79a701",
+    "cause": "Old controller called checker_factory before Candidate.review could clear _reviewed_revision. A factory exception can preserve old green UI flag; no historical runtime failure asserted.",
+    "repair": "Clear ephemeral flag before factory in refresh andactivate; no profile/sharedwrite or activationgrant."
+  },
+  "next": "ActualWindows newnative4/affectedCandidate-controller/retained regressions anddefault3590, same36/37 terminals. New7SSH/rootless/mapdenial/UI-factoryloss andcurrentfullplatform pending; staged/common held."
+}

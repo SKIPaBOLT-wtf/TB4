@@ -1,0 +1,17 @@
+{
+  "event": "RP-027-A001-0544",
+  "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "targets": [
+    "tests/drive/test_folder_first_run.py",
+    "tests/drive/test_reconfiguration_active_adoption.py",
+    "tests/security/test_reconfiguration_active_adoption_native.py",
+    "tests/security/test_folder_runtime_factory_native.py",
+    "tests/security/test_reconfiguration_admission_native.py"
+  ],
+  "prior_affected_cases": 62,
+  "collection_expected": 3717,
+  "prior_collection": 3705,
+  "new_native_declared": 12,
+  "actual_native_execution": "PENDING",
+  "acceptance": false
+}

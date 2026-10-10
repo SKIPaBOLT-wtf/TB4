@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C3",
+  "attempt": "A001",
+  "source": "c1402a50f66131c7771ca1c21a344097dab08bed",
+  "trigger": "0cccc24debbf81ff74e254b45719399e273d54b8",
+  "intent_event": "RP-027-A001-0164",
+  "linux": [
+    {
+      "run": 37112158359,
+      "job": 111172010422,
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "failure",
+      "checkout_log": [
+        "2026-10-03T09:10:39.3748811Z 0d631efabdc9f22e09d341711aa7cde6d9cf56c5",
+        "2026-10-03T09:10:39.4204809Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065"
+      ],
+      "summaries": [
+        "2026-10-03T09:12:44.4043002Z 51 passed in 117.95s (0:01:57)",
+        "2026-10-03T09:13:01.1196832Z 107 passed in 16.49s",
+        "2026-10-03T09:15:26.5536061Z 27 failed, 154 passed, 1 deselected in 145.17s (0:02:25)"
+      ],
+      "artifacts": [
+        {
+          "id": 11269719912,
+          "name": "folder-reconfiguration-0d631efabdc9f22e09d341711aa7cde6d9cf56c5",
+          "size_in_bytes": 14216,
+          "digest": "sha256:150ccc05f1363bface84963ecd70db2df5a42ec8d3f80102865b39bc50594447",
+          "expired": false,
+          "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37112158359/artifacts/11269719912"
+        }
+      ]
+    },
+    {
+      "run": 37112155503,
+      "job": 111172002261,
+      "event": "push",
+      "status": "completed",
+      "conclusion": "failure",
+      "checkout_log": [
+        "2026-10-03T09:10:36.5242851Z 0cccc24debbf81ff74e254b45719399e273d54b8",
+        "2026-10-03T09:10:36.5590671Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065"
+      ],
+      "summaries": [
+        "2026-10-03T09:12:07.7918716Z 51 passed in 84.15s (0:01:24)",
+        "2026-10-03T09:12:20.9775094Z 107 passed in 12.99s",
+        "2026-10-03T09:14:18.0450036Z 27 failed, 154 passed, 1 deselected in 116.80s (0:01:56)"
+      ],
+      "artifacts": [
+        {
+          "id": 11269804604,
+          "name": "folder-reconfiguration-0cccc24debbf81ff74e254b45719399e273d54b8",
+          "size_in_bytes": 14303,
+          "digest": "sha256:12386d6f18c6b7e5fdf1436d82d352ff1c0454eae68c21ed78d86ddcadf0b987",
+          "expired": false,
+          "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37112155503/artifacts/11269804604"
+        }
+      ]
+    }
+  ],
+  "actual_result": "Both exact-source required native51 and original107 pass/zeroSkip; Docs/effects/rebind181 has27FAIL154PASS1deselected, same inherited import and fixture prerequisites as Windows.",
+  "evidence_method": "Terminal exact-job logs and uploaded JUnit artifact metadata; no claim that raw XML was separately parsed.",
+  "acceptance": false
+}

@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0531",
+  "source": "d39bda8915af63ce621134aad0e703703c064301",
+  "result": "PARTIAL",
+  "trigger": "22c4de1f60a70119791c062acd23403883eab0ac",
+  "pr_checkout": "d2a51d8d5bdcdced5cb8729e3ea1eab7de95cc32",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "22c4de1f60a70119791c062acd23403883eab0ac"
+  ],
+  "source_diff": "Empty complete non-documentation diff for both immutable trigger and PR checkout; parents independently verified.",
+  "required": [
+    {
+      "job": 111742128434,
+      "checkout": "22c4de1f60a70119791c062acd23403883eab0ac",
+      "summaries": [
+        "663 passed in 845.16s (0:14:05)",
+        "51 passed in 117.81s (0:01:57)",
+        "6 passed in 51.51s",
+        "22 passed in 259.56s (0:04:19)",
+        "107 passed in 16.81s"
+      ],
+      "failures": [],
+      "cancellation": [
+        "##[error]The operation was canceled."
+      ],
+      "packages": [],
+      "result": "PARTIAL_CANCELLED",
+      "completed_groups": [
+        663,
+        51,
+        6,
+        22,
+        107
+      ],
+      "completed_cases": 849,
+      "uncompleted_group": {
+        "expected_cases": 327,
+        "group": "Original Docs and effect regressions",
+        "result": "CANCELLED_NO_TERMINAL_SUMMARY"
+      },
+      "new_files": {
+        "portable_mapping_reply45": "PASS_COMPLETE_FILE",
+        "native_mapping11": "PASS_COMPLETE_FILE",
+        "native_current_role_adoption13": "PASS_COMPLETE_FILE"
+      },
+      "new_file_selection_verified": true,
+      "skipped_in_completed_groups": 0
+    },
+    {
+      "job": 111742145906,
+      "checkout": "d2a51d8d5bdcdced5cb8729e3ea1eab7de95cc32",
+      "summaries": [
+        "663 passed in 903.42s (0:15:03)",
+        "51 passed in 133.80s (0:02:13)",
+        "6 passed in 49.59s",
+        "22 passed in 262.38s (0:04:22)",
+        "107 passed in 19.87s"
+      ],
+      "failures": [],
+      "cancellation": [
+        "##[error]The operation was canceled."
+      ],
+      "packages": [],
+      "result": "PARTIAL_CANCELLED",
+      "completed_groups": [
+        663,
+        51,
+        6,
+        22,
+        107
+      ],
+      "completed_cases": 849,
+      "uncompleted_group": {
+        "expected_cases": 327,
+        "group": "Original Docs and effect regressions",
+        "result": "CANCELLED_NO_TERMINAL_SUMMARY"
+      },
+      "new_files": {
+        "portable_mapping_reply45": "PASS_COMPLETE_FILE",
+        "native_mapping11": "PASS_COMPLETE_FILE",
+        "native_current_role_adoption13": "PASS_COMPLETE_FILE"
+      },
+      "new_file_selection_verified": true,
+      "skipped_in_completed_groups": 0
+    }
+  ],
+  "progress": {
+    "job": 111742146629,
+    "checkout": "d2a51d8d5bdcdced5cb8729e3ea1eab7de95cc32",
+    "summaries": [
+      "235 passed in 11.71s"
+    ],
+    "failures": [],
+    "cancellation": [],
+    "packages": []
+  },
+  "ci": {
+    "job": 111742145882,
+    "checkout": "d2a51d8d5bdcdced5cb8729e3ea1eab7de95cc32",
+    "summaries": [
+      "43 passed in 0.22s",
+      "34 passed in 0.48s",
+      "2 passed in 0.04s",
+      "3611 passed, 27 skipped, 4 xfailed in 2401.81s (0:40:01)"
+    ],
+    "failures": [],
+    "cancellation": [],
+    "packages": []
+  },
+  "desktop": [
+    {
+      "job": 111742146077,
+      "checkout": "d2a51d8d5bdcdced5cb8729e3ea1eab7de95cc32",
+      "summaries": [
+        "90 passed, 4 skipped in 2.98s",
+        "43 passed in 0.25s",
+        "34 passed in 0.63s",
+        "2 passed in 0.04s",
+        "75 passed in 9.64s",
+        "79 passed in 17.55s",
+        "3634 passed, 21 skipped, 4 xfailed in 3471.14s (0:57:51)"
+      ],
+      "failures": [],
+      "cancellation": [],
+      "packages": [
+        [
+          {
+            "role": "watchdog",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          },
+          {
+            "role": "fetcher",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          }
+        ]
+      ]
+    },
+    {
+      "job": 111742146347,
+      "checkout": "d2a51d8d5bdcdced5cb8729e3ea1eab7de95cc32",
+      "summaries": [
+        "74 passed, 20 skipped in 2.93s\r",
+        "15 passed in 0.50s\r",
+        "30 passed, 4 skipped in 1.92s\r",
+        "2 passed in 7.78s\r",
+        "75 passed in 10.29s\r",
+        "79 passed in 19.39s\r",
+        "3328 passed, 327 skipped, 4 xfailed in 2492.44s (0:41:32)\r"
+      ],
+      "failures": [],
+      "cancellation": [],
+      "packages": [
+        [
+          {
+            "role": "watchdog",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          },
+          {
+            "role": "fetcher",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          }
+        ]
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11345443639,
+      "name": "tb4-desktop-Linux-d2a51d8d5bdcdced5cb8729e3ea1eab7de95cc32",
+      "size_in_bytes": 314549209,
+      "digest": "sha256:40f74e928a4a30936670a85bb9d421a514c64647549b50f7d4e3562c3db41718"
+    },
+    {
+      "id": 11345061371,
+      "name": "tb4-desktop-Windows-d2a51d8d5bdcdced5cb8729e3ea1eab7de95cc32",
+      "size_in_bytes": 120962633,
+      "digest": "sha256:ef6269b2e9d7980a0dc570e87f204c12d9fba238c3890c56ecc70b90b606f165"
+    }
+  ],
+  "artifacts_downloaded": false,
+  "cancellation": {
+    "configured_job_timeout_minutes": 30,
+    "observed_job_log_elapsed_seconds": [
+      1816.626,
+      1814.235
+    ],
+    "terminal_step": "Original Docs and effect regressions",
+    "observed_error": "The operation was canceled.",
+    "cause": "Strongly supports exhausted job budget. Provider-specific cancellation annotation was not available through the connector; do not claim an annotation was read.",
+    "failed_metadata_paths": "Job/check annotation payloads are not exposed by the read wrapper; terminal logs and step summaries remain the direct evidence."
+  },
+  "qualified_scope": "A036 exact repaired native mapping AFTER11, pure runner45 and A037 native current-role ACTIVE adoption13 all executed in complete first663 group twice, with no skip/failure. The code is also covered by source-qualified full CI and both Desktop suites/packages. This qualifies these scoped foundations; it does not turn cancelled workflows into successful required runs.",
+  "defects": {
+    "DEF_109": "Scoped regression passing at d39bda, old failure retained; common acceptance still open.",
+    "DEF_110": "Scoped native SSH and pure correlated reply regression passing at d39bda; common acceptance still open.",
+    "DEF_111": "Current special suite exceeds its configured execution budget; last327 group remains unqualified by this workflow."
+  },
+  "acceptance": false,
+  "remaining": [
+    "Complete required workflow with an adequate finite budget",
+    "Fresh native mapped C4 proof after ACTIVE publication",
+    "Original Main pending recovery using own protected stage/current capabilities",
+    "Complete staged endpoint/current Main/admission/runtime/controller composition",
+    "C1-C4/common acceptance and PR36"
+  ],
+  "next": "Publish this partial outcome. Repair only the special workflow time budget under a new INTENT, keep all selectors/cases and old cancelled runs. Qualify a new exact source request. Independently proceed with source-reviewed native mapped C4/own Main pending integration using the fully executed scoped native foundations; whole-step acceptance stays held."
+}

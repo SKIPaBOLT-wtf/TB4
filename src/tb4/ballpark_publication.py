@@ -16,16 +16,20 @@ from .drive.commissioning import frozen_plan, restored_plan
 from .exchange_layout import empty_document, encoded, validate_document
 from .instructions import check_boundary
 from .watchdog.leadership_runtime import Action
+from .configuration_contract import configuration
 
 
 def changes(document, draft, choices):
     """Pure exact revision plan; byte budgets apply before any write-ahead save."""
+    require(configuration(document) is None, "CONFIGURATION_TRANSACTION_REQUIRED")
     spec, _ = storage_spec(choices["storage"])
     require(validate_document(document) == spec.capacity and document["domain_id"] == spec.domain_id,
             "BALLPARK_AUTHORITY_BINDING")
     records = document["records"]
-    require(records["global.commissioning"] == dict(generation=0, operation_id=spec.setup_id,
-        retention="RETAINED", body=spec.marker("STORAGE_READY")), "BALLPARK_AUTHORITY_BINDING")
+    from .commissioning_records import current_record
+    from .drive.docs_authority import AuthorityError
+    try:current_record(document,spec,root_transition=choices["storage"].get("root_transition"))
+    except AuthorityError:require(False,"BALLPARK_AUTHORITY_BINDING")
     candidate = draft["candidate"]
     require(candidate is not None and draft["decision"] is not None, "BALLPARK_CHOICES_INCOMPLETE")
     if draft["base_revision"] == 0:

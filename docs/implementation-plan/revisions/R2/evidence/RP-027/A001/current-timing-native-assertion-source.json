@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0274",
+  "source_commit": "bf5c34f9fc79fcc6784ccd71009e2551608522a7",
+  "local_preservation_commit": "2a7c8dce0730bd7b6f4307298219c01f98deb0df",
+  "changed_files": [
+    "tests/security/test_reconfiguration_admission_native.py"
+  ],
+  "actual_change": "Capture and re-raise the real _current ConfigurationError in the test instance; require exact ['ADMISSION_TIMING'] before frame-preservation and restored-profile recovery assertions. Respect native SETTINGS_STORE_UNAVAILABLE normalization at the public boundary.",
+  "review": {
+    "ast_files": 1,
+    "diff": "PASS",
+    "public_security_scan": "CLEAN",
+    "github_exact_readback": "PASS",
+    "new_test_cases": 0,
+    "removed_test_cases": 0,
+    "tests_executed": 0
+  },
+  "unchanged": "Every production/workflow/schema/catalogue byte from0b537c1 and all seven timing regressions are unchanged. No guard weakening, skip addition, native error contract change or live action.",
+  "acceptance": false
+}

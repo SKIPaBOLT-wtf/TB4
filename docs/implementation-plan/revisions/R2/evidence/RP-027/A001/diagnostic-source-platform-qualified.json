@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0352",
+  "source_commit": "91bad7a54916766417a882ef537ca812a08bfb05",
+  "trigger_commit": "10cbb790a7cd09a4f9a1e4535c5aa034a8468074",
+  "actual_checkout": "614e8d015483175a79eb41d22cfd5177659ef5af",
+  "pr_parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "10cbb790a7cd09a4f9a1e4535c5aa034a8468074"
+  ],
+  "actual_checkout_confirmed_all_terminal_logs": true,
+  "non_doc_source_diff": [],
+  "all_five_pr_jobs_terminal_success": true,
+  "required_linux": {
+    "run_id": 37244931128,
+    "job_id": 111560824341,
+    "cases": 771,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "groups": [
+      {
+        "passed": 258,
+        "deselected": 0,
+        "elapsed_s": 37.8
+      },
+      {
+        "passed": 51,
+        "deselected": 0,
+        "elapsed_s": 117.29
+      },
+      {
+        "passed": 6,
+        "deselected": 0,
+        "elapsed_s": 50.7
+      },
+      {
+        "passed": 22,
+        "deselected": 0,
+        "elapsed_s": 254.07
+      },
+      {
+        "passed": 107,
+        "deselected": 0,
+        "elapsed_s": 16.65
+      },
+      {
+        "passed": 327,
+        "deselected": 1,
+        "elapsed_s": 549.62
+      }
+    ]
+  },
+  "ci": {
+    "run_id": 37244931115,
+    "job_id": 111560824158,
+    "conclusion": "success",
+    "passed": 3206,
+    "skipped": 27,
+    "xfailed": 4,
+    "elapsed_s": 2496.73
+  },
+  "desktop_linux": {
+    "run_id": 37244931131,
+    "job_id": 111560824199,
+    "conclusion": "success",
+    "passed": 3229,
+    "skipped": 21,
+    "xfailed": 4,
+    "elapsed_s": 2640.25,
+    "packages": [
+      {
+        "role": "watchdog",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      },
+      {
+        "role": "fetcher",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      }
+    ]
+  },
+  "desktop_windows": {
+    "run_id": 37244931131,
+    "job_id": 111560824351,
+    "conclusion": "success",
+    "passed": 3029,
+    "skipped": 221,
+    "xfailed": 4,
+    "elapsed_s": 2553.04,
+    "packages": [
+      {
+        "role": "watchdog",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      },
+      {
+        "role": "fetcher",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      }
+    ]
+  },
+  "progress": {
+    "run_id": 37244931122,
+    "job_id": 111560824217,
+    "conclusion": "success",
+    "passed": 235,
+    "elapsed_s": 7.71
+  },
+  "artifacts_metadata_only": [
+    {
+      "id": 11319708278,
+      "name": "tb4-desktop-Windows-614e8d015483175a79eb41d22cfd5177659ef5af",
+      "size_bytes": 120944465,
+      "digest": "sha256:828c389d6b49325af8cc3fe1379fffecc0de0f44468dc6aa38268b05c9148349",
+      "expired": false
+    },
+    {
+      "id": 11319444008,
+      "name": "tb4-desktop-Linux-614e8d015483175a79eb41d22cfd5177659ef5af",
+      "size_bytes": 314528716,
+      "digest": "sha256:fe0a661caebc897e4dd17ea87fd7e978ff69ef0821b62c8faa959154a156ab2c",
+      "expired": false
+    }
+  ],
+  "windows_native_discovery": "Fresh unchanged required two-case native loopback step SUCCESS, full platform/packages completed; original failure/cause remains preserved and unproven.",
+  "source_limit": "Qualifies exact diagnostic source 91bad7 (production/tests identical d7), never later endpoint source c381 or repaired feb214.",
+  "acceptance": false,
+  "next_action": "Publish corrected endpoint source feb214 scoped/default qualification INTENT and run once with new owned result/fixture names. Preserve original DEF094 unknown cause and DEF095 failed fixture evidence. Current endpoint Linux/full/composite/runtime/GUI/common gates remain."
+}

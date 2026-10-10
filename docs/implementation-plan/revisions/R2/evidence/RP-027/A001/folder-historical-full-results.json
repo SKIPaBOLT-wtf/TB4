@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C3",
+  "attempt": "A001",
+  "source_results": [
+    {
+      "source": "b90713351a910341da0454f8f7b4d82e144e22b2",
+      "run": 37108514891,
+      "job": 111161656649,
+      "platform": "CI",
+      "counts": {
+        "pass": 2751,
+        "skip": 27,
+        "xfail": 4,
+        "fail": 0
+      },
+      "elapsed_seconds": 1494.8,
+      "checkout": "699b58afd99013d1849de83ea090ae7567a48ebc",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37108514891"
+    },
+    {
+      "source": "b90713351a910341da0454f8f7b4d82e144e22b2",
+      "run": 37108514969,
+      "job": 111161657013,
+      "platform": "Windows",
+      "counts": {
+        "pass": 2637,
+        "skip": 158,
+        "xfail": 4,
+        "fail": 0
+      },
+      "elapsed_seconds": 1951.46,
+      "package_acceptance_both_roles": "PASS",
+      "checkout": null,
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37108514969"
+    },
+    {
+      "source": "b90713351a910341da0454f8f7b4d82e144e22b2",
+      "run": 37108514969,
+      "job": 111161657196,
+      "platform": "Linux",
+      "counts": {
+        "pass": 2774,
+        "skip": 21,
+        "xfail": 4,
+        "fail": 0
+      },
+      "elapsed_seconds": 1244.04,
+      "package_acceptance_both_roles": "PASS",
+      "checkout": "699b58afd99013d1849de83ea090ae7567a48ebc",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37108514969"
+    },
+    {
+      "source": "98b5948618877160536fca2525fdb7277054d00c",
+      "run": 37107923470,
+      "job": 111159980497,
+      "platform": "CI",
+      "counts": {
+        "pass": 2749,
+        "skip": 27,
+        "xfail": 4,
+        "fail": 2
+      },
+      "elapsed_seconds": 1198.97,
+      "checkout": "cd918309b5835030a9f817e75c43e05943cb5cf1",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37107923470"
+    },
+    {
+      "source": "98b5948618877160536fca2525fdb7277054d00c",
+      "run": 37107923474,
+      "job": 111159980726,
+      "platform": "Linux",
+      "counts": {
+        "pass": 2772,
+        "skip": 21,
+        "xfail": 4,
+        "fail": 2
+      },
+      "elapsed_seconds": 1821.18,
+      "checkout": "cd918309b5835030a9f817e75c43e05943cb5cf1",
+      "url": "https://github.com/SKIPaBOLT-wtf/TB4/actions/runs/37107923474"
+    }
+  ],
+  "method": "Read existing terminal same-run job logs/API jobs; no run repeated. Exact checkout and test summaries, actual frozen GUI/setup/install/uninstall/isolation for both roles in successful platform jobs.",
+  "limits": [
+    "Historical results are kept with their original source; do not qualify current rebind source.",
+    "Declared skips/strict xfails remain separate; all RP027 checks unaccepted."
+  ],
+  "acceptance": false
+}

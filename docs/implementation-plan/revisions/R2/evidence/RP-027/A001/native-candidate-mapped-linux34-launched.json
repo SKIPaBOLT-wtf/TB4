@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0470",
+  "source": "b8f08653e7285a8943b9ebcda7552e3960d9b67c",
+  "trigger": "55ad0107e5b59a876bf5208b0c42612fc5e9d993",
+  "request_revision": 34,
+  "result": "RECORDED",
+  "groups": [
+    527,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "required_cases": 1040,
+  "pr": 36,
+  "launch_pr_checkout": "5613f732fdd38d22c6fe13226e67189fc5c270ff",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "55ad0107e5b59a876bf5208b0c42612fc5e9d993"
+  ],
+  "source_equivalence": {
+    "actual_git_non_doc_diff": {
+      "trigger": [],
+      "pr": []
+    },
+    "baseline": "b8f08653e7285a8943b9ebcda7552e3960d9b67c"
+  },
+  "runs": [
+    {
+      "id": 37277251292,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111656909954,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111656910192,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37277251134,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111656909006,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37277251243,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111656909864,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37277251268,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111656909844,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37277247811,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 111656899251,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "readback": "Exactrequest/ref; one launch, actual API/Git main/trigger parents and source diffs verified.",
+  "notes": "Initialrunlist empty and bece15 stale initialmerge not used. Actual5613 sourcepin checked. Progress success metadata only; actual235 uninspected.",
+  "acceptance": "Newactual13/1040/fullplatform/runtime/GUI/C1-C4 pending; no expectedcounts as executionproof.",
+  "next": "Read-only inspect same frozen ea4c33 terminalfullplatform/packageflags and retain jobs ifpending. Then same b8f08634 actual13/1040/Progress; debug any observedfail beforedependentwork."
+}

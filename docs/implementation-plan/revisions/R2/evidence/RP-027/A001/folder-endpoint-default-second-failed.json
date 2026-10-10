@@ -1,0 +1,339 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0361",
+  "source_commit": "feb214963f5b7436469957102c42f3482d627b1f",
+  "actual_checkout": "d7ca76498e027b0502f8c341e6e172b03f29469c",
+  "scoped": {
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 1,
+    "counts": {
+      "PASS": 547,
+      "FAILURE": 2,
+      "ERROR": 0,
+      "SKIPPED": 22
+    },
+    "elapsed_s": 21.411,
+    "failures": [
+      {
+        "name": "test_native_pending_cannot_be_promoted_after_profile_change",
+        "classname": "tests.security.test_folder_endpoint_native",
+        "message": "tb4.private_settings.SettingsError: SETTINGS_STORE_UNAVAILABLE"
+      },
+      {
+        "name": "test_native_conflicting_pending_is_not_silently_repaired",
+        "classname": "tests.security.test_folder_endpoint_native",
+        "message": "tb4.private_settings.SettingsError: SETTINGS_STORE_UNAVAILABLE"
+      }
+    ]
+  },
+  "new_cases": [
+    {
+      "name": "test_closed_frame_is_copied_and_private_selection_repr_has_no_values",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[extra]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[missing]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[version-bool]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[version]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[kind]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[reference]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[installation]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[authority-extra]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[authority-root]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[blueprint]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[handle-hash]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[credential]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[store-binding]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[endpoint-extra]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[endpoint-host]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[port-bool]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[port-zero]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[known-bool]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[known-zero]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[timeout-bool]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[timeout-infinite]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_frame_is_rejected_without_private_value_diagnostics[endpoint-password]",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_memory_store_is_denied_before_any_native_or_transport_use",
+      "classname": "tests.drive.test_folder_endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_same_record_restart_lookup_preserves_profile_key_history_and_closed_status",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_selection_requires_exact_explicit_owner_authorization[False]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_selection_requires_exact_explicit_owner_authorization[1]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_selection_requires_exact_explicit_owner_authorization[yes]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_wrong_selected_target_refuses_before_metadata_write[target]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_wrong_selected_target_refuses_before_metadata_write[trust]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_saved_endpoint_cannot_override_later_protected_selection[root]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_saved_endpoint_cannot_override_later_protected_selection[domain]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_saved_endpoint_cannot_override_later_protected_selection[setup]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_saved_endpoint_cannot_override_later_protected_selection[actor]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_saved_endpoint_cannot_override_later_protected_selection[capacity]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_saved_endpoint_cannot_override_later_protected_selection[mode]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_saved_endpoint_cannot_override_later_protected_selection[authority]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_saved_endpoint_cannot_override_later_protected_selection[unselected]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_saved_endpoint_cannot_override_later_protected_selection[non-folder-purpose]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_saved_endpoint_cannot_override_later_protected_selection[saved-revocation]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_metadata_does_not_grant_live_credential_readiness_or_reselect[version]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_metadata_does_not_grant_live_credential_readiness_or_reselect[permission]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_metadata_does_not_grant_live_credential_readiness_or_reselect[expired]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_wrong_reference_foreign_installation_and_changed_store_pin_refuse",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_setup_alias_and_stale_snapshot_refuse_without_another_selection",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_lost_metadata_protection_or_immutable_revision_refuses[protection]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_lost_metadata_protection_or_immutable_revision_refuses[revision]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_held_endpoint_lock_cannot_create_or_change_profile",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_same_pending_or_completed_selection_inspected_without_reselection[before-promote]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_same_pending_or_completed_selection_inspected_without_reselection[after-promote]",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    },
+    {
+      "name": "test_native_pending_cannot_be_promoted_after_profile_change",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_conflicting_pending_is_not_silently_repaired",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "FAILURE"
+    },
+    {
+      "name": "test_native_unknown_history_is_preserved_and_lookup_grants_no_activation",
+      "classname": "tests.security.test_folder_endpoint_native",
+      "status": "PASS"
+    }
+  ],
+  "new_passed": 51,
+  "new_failed": 2,
+  "new_skipped": 0,
+  "declared_linux_only_skips": 22,
+  "default_collection": {
+    "schema_version": 1,
+    "source": "feb214963f5b7436469957102c42f3482d627b1f",
+    "checkout": "d7ca76498e027b0502f8c341e6e172b03f29469c",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.753,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3307,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "node_id_diff": {
+    "base_nodes": 3307,
+    "current_nodes": 3307,
+    "added": [],
+    "removed": []
+  },
+  "old_path_errors": "NOT_OBSERVED; corrected original selected Path is used.",
+  "observed_native_boundary": "Actual WindowsSettingsNative.locked yields a native port, rethrows SettingsError, but wraps any other caller exception as closed SETTINGS_STORE_UNAVAILABLE. Both retained new test assertions currently demand AuthorityError.",
+  "suspected_guard_causes": [
+    "FOLDER_ENDPOINT_PROFILE",
+    "FOLDER_ENDPOINT_RECOVERY_CONFLICT"
+  ],
+  "internal_rejection_observed": false,
+  "production_failure_inferred": false,
+  "defect": "DEF-096",
+  "acceptance": false,
+  "next_action": "Publish bounded same-source two-case diagnostic INTENT. Observe only closed failed require codes while executing the original require and actual native contexts unchanged, in fresh owned fixtures. Record which exact policy rejected before altering expected native error types or code."
+}

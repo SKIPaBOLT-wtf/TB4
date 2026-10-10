@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "paused_by_owner": true,
+  "continue_automatically": false,
+  "owner_instruction": "Stop until I say continue; record the exact stopping point so actions are not repeated.",
+  "as_of": "2026-10-05T11:39:11.535Z",
+  "last_accepted_item": "RP-026",
+  "current_acceptance": {
+    "item": "RP-027",
+    "status": "IN_PROGRESS",
+    "accepted_checks": [],
+    "live_deployment": false
+  },
+  "source": "d39bda8915af63ce621134aad0e703703c064301",
+  "source_branch": "feat/rp027-staged-reconfiguration",
+  "pr": 36,
+  "last_verified_before_pause": "aec020014934cab6d26257cab10ca14e5cb00517",
+  "last_journal_event": "RP-027-A001-0529",
+  "last_result": {
+    "windows_source": "d39bda8915af63ce621134aad0e703703c064301",
+    "tests_passed": 225,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 6.469,
+    "collection_only": 3659,
+    "legacy3643_exact": true,
+    "added": 16,
+    "adoption_affected_windows": {
+      "source": "c000c0ded9a480172dd9e8269de9617df4224d09",
+      "tests_passed": 62,
+      "elapsed_seconds": 122.827,
+      "linux_native13_executed": false
+    },
+    "frozen38_platform": "Qualified source940b34ac/1107twice/fullCI/Windows/Linux/both packaged roles; exact recorded evidence retained"
+  },
+  "pending_qualification": {
+    "request_revision": 40,
+    "source": "d39bda8915af63ce621134aad0e703703c064301",
+    "trigger": "22c4de1f60a70119791c062acd23403883eab0ac",
+    "actual_pr_merge": "d2a51d8d5bdcdced5cb8729e3ea1eab7de95cc32",
+    "verified_parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "22c4de1f60a70119791c062acd23403883eab0ac"
+    ],
+    "required_cases": 1176,
+    "group_counts": {
+      "physical_probe_and_first_run": 663,
+      "mapping_relocation": 51,
+      "retained": 6,
+      "current_role_folder": 22,
+      "original_native": 107,
+      "docs_effect_admission": 327
+    },
+    "jobs": [
+      {
+        "run_id": 37303680911,
+        "name": "Progress",
+        "event": "pull_request",
+        "jobs": [
+          {
+            "id": 111742146629,
+            "name": "ledger",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "run_id": 37303681005,
+        "name": "Folder reconfiguration",
+        "event": "pull_request",
+        "jobs": [
+          {
+            "id": 111742145906,
+            "name": "native-folder",
+            "status": "in_progress",
+            "conclusion": null
+          }
+        ]
+      },
+      {
+        "run_id": 37303680915,
+        "name": "CI",
+        "event": "pull_request",
+        "jobs": [
+          {
+            "id": 111742145882,
+            "name": "test",
+            "status": "in_progress",
+            "conclusion": null
+          }
+        ]
+      },
+      {
+        "run_id": 37303681121,
+        "name": "Desktop",
+        "event": "pull_request",
+        "jobs": [
+          {
+            "id": 111742146077,
+            "name": "desktop (ubuntu-22.04)",
+            "status": "in_progress",
+            "conclusion": null
+          },
+          {
+            "id": 111742146347,
+            "name": "desktop (windows-latest)",
+            "status": "in_progress",
+            "conclusion": null
+          }
+        ]
+      },
+      {
+        "run_id": 37303675205,
+        "name": "Folder reconfiguration",
+        "event": "push",
+        "jobs": [
+          {
+            "id": 111742128434,
+            "name": "native-folder",
+            "status": "in_progress",
+            "conclusion": null
+          }
+        ]
+      }
+    ],
+    "results_read": false,
+    "relaunch_allowed": false,
+    "background_agent_work": false,
+    "already_dispatched_ci": "Existing hosted jobs may finish independently; no new agent action or workflow has been scheduled."
+  },
+  "failed_history": {
+    "same39": "Both required first groups632PASS/2FAIL, CI3580PASS/2sameFAIL, Linux3603PASS/2sameFAIL retained. Windows3312PASS/314SKIP/4XFAIL/bothrolespackages PASS. Immutable same39 not rerun.",
+    "open_repairs": [
+      "DEF-109",
+      "DEF-110"
+    ],
+    "actual_repaired_linux11_and_adoption13": "Not yet qualified"
+  },
+  "unpublished": {
+    "candidate": "rp27-native-integration-source-review-intent-530-plan.json",
+    "result": "Prepared locally and validated only; not published, no action started. Preserved as an abandoned unpublished candidate after owner stop.",
+    "source_changes": []
+  },
+  "remaining_scope": [
+    "Current source40 new29/Linux/required1176twice/common platform qualification",
+    "Native mapped C4 consumer and fresh proof after ACTIVE publication",
+    "Own original Main pending recovery using current native capabilities",
+    "Complete staged endpoint/current Main/admission/runtime/controller composition",
+    "All C1-C4/common acceptance and PR36 readiness/merge"
+  ],
+  "next_action": "Wait for explicit owner continuation. Then re-read CURRENT/WORK_INSTRUCTION/manifest/RESUME/this checkpoint and actual branch/PR36 refs; inspect the SAME source40 runs/jobs, fetch terminal logs only and verify actual checkout/parents/non-documentation source diff. Do not create a new request or replay old39/40. Record actual new29 outcomes/defects/fullplatform qualification before any dependent mapped C4 consumer or own Main pending recovery/source implementation. The unpublished review INTENT candidate was not executed or published; reconsider scope only after current results.",
+  "privacy": "Only public source/synthetic evidence and closed availability facts; no private environment identity, credentials, paths or artifact downloads.",
+  "checkpoint_status": "Publish coordinated journal/RESUME/this evidence and verify remote readback before stopping."
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0563",
+  "source": "5a03161df6a62d590d02bdbec8da570b269a9d78",
+  "result": "RECORDED",
+  "acceptance": false,
+  "files": [
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-040-acceptance-scope-and-evidence.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md"
+  ],
+  "method": "Confirmed amendment path absent at31cd; added A040 and one RP-027 navigation paragraph. String comparison proves removing only that new paragraph reproduces the entire original step text; all four exact check lines are unchanged. Both files were published with skip-ci and exact GitHub content/ref readback.",
+  "finding": "The staged transaction, fresh CandidateController failure-readiness and native Main/admission composition remain RP-027 gates. Complete Qt reconfiguration exposure and correlated feedback remain canonical RP-053.C2. Original A035 and all earlier amendment/pending text are preserved as unit-time history; actual accepted state still belongs to the manifest and current reviewed receipts.",
+  "preserved": [
+    "All four original checks, dependencies and requirement links",
+    "Current-source native/runtime, negative, full-platform and package gates",
+    "First successful CAS takeover, no old-host or all-peer ACK",
+    "All prior history and unresolved fault/availability evidence",
+    "Existing implementation and live-action authorization boundaries"
+  ],
+  "code_tests_workflows_changed": false,
+  "current_qualification": "Both source43 native1234 runs/Progress235 and actual Windows/full/packages now PASS. The original CI and Linux Desktop jobs under558 remain pending; no C1-C4 accepted here.",
+  "next": "Finish inspecting the existing source43 CI and Linux Desktop jobs; verify final source-linked/common evidence and resolve only justified defect scopes before per-check acceptance."
+}

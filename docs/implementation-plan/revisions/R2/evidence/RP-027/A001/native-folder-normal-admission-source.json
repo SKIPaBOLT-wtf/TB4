@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0482",
+  "source": "8719fe0c5bfde6436f3c5f6f6b5595a928636494",
+  "base": "50e05aa37fee7c83f804e984f6c58483341a6da6",
+  "local_preserved": "4be04ae36b39b4f82a81492b140cc824fbcf3d96",
+  "result": "RECORDED",
+  "files": [
+    "src/tb4/drive/folder_runtime.py",
+    "src/tb4/commissioning_checks.py",
+    "src/tb4/drive/folder_prerequisites.py",
+    "src/tb4/reconfiguration_admission.py",
+    "tests/security/test_folder_runtime_native.py",
+    "tests/drive/test_folder_runtime_authenticated_ssh.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-033-native-folder-normal-admission.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/CREDENTIAL_RESOLVER_CONTRACT.md"
+  ],
+  "static": {
+    "schema_version": 1,
+    "base": "50e05aa37fee7c83f804e984f6c58483341a6da6",
+    "python_ast": "PASS",
+    "legacy_validation_ast": "EXACT_UNCHANGED",
+    "legacy_normal_flag_default": false,
+    "scoped_files": [
+      "src/tb4/drive/folder_runtime.py",
+      "src/tb4/commissioning_checks.py",
+      "src/tb4/drive/folder_prerequisites.py",
+      "src/tb4/reconfiguration_admission.py",
+      "tests/security/test_folder_runtime_native.py",
+      "tests/drive/test_folder_runtime_authenticated_ssh.py",
+      ".github/workflows/folder-reconfiguration.yml",
+      "docs/implementation-plan/revisions/R2/amendments/RP-027/A-033-native-folder-normal-admission.md",
+      "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+      "docs/RECONFIGURATION_CONTRACT.md",
+      "docs/CREDENTIAL_RESOLVER_CONTRACT.md"
+    ],
+    "declared_cases": {
+      "tests/security/test_folder_runtime_native.py": {
+        "test_actual_native_opt_in_constructor_has_no_key_proof_write_or_default_change": 1,
+        "test_actual_native_opt_in_proof_read_cas_readback_keeps_profile_and_default_denial": 1,
+        "test_actual_native_normal_port_rechecks_current_loss_before_transport": 8,
+        "test_actual_normal_authority_bad_handle_refuses_before_native_io": 4,
+        "test_actual_mutated_normal_composition_never_uses_cached_authority": 5,
+        "test_untyped_normal_opt_in_refuses_before_profile_lookup": 3,
+        "test_hidden_image_authority_scope_and_local_unknown_have_separate_meanings": 1,
+        "test_lost_normal_cas_is_unknown_once_and_read_inspects_existing_effect": 1,
+        "test_exact_native_admission_context_does_not_fabricate_ready_or_role": 1
+      },
+      "tests/drive/test_folder_runtime_authenticated_ssh.py": {
+        "test_actual_native_current_admission_after_c4_and_promotion_keeps_work_and_default_denial": 2,
+        "test_actual_current_native_admission_refuses_work_after_late_loss_without_receipt_or_replay": 4
+      }
+    },
+    "tests_executed": 0
+  },
+  "reviewer_failed_attempt": {
+    "attempt": 1,
+    "outcome": "FAIL",
+    "tests_executed": 0,
+    "observed": "Owned static reviewer searched nonexistent _validate in NativeFolderFirstRun and raised StopIteration before privacy/source preservation; actual method validate verified; reviewer selector corrected. Product unexecuted and unchanged by correction."
+  },
+  "public_scan": "CLEAN",
+  "readback": "EXACT_ALL_FILES/Gitparent/branch verified",
+  "tests_executed": 0,
+  "next": "Actual Windows new25native and affected regressions/defaultcollection, corrected35/old34 terminal evidence, current source Linux/platform/package qualification; staged endpoint/coherentGUI/common C1-C4 held."
+}

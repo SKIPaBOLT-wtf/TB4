@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0287",
+  "source": "119e518cc7adee8f5226d61cce38b05d351d8bad",
+  "local_preserved_commit": "c1a8370c73ffa2e2c1f3db28e037d2ba9ed2708e",
+  "base": "8b66d40e146ece614b0775c5d6f21cc5b6ed4a17",
+  "files": [
+    "tests/security/test_first_run.py"
+  ],
+  "diff": {
+    "insertions": 3,
+    "deletions": 3,
+    "only_change": "Fully qualified tests.security fixture imports for private_settings, ballpark_contract and credential_contract; no fixture/assertion/production/config changes."
+  },
+  "validation": {
+    "ast_parsed": 1,
+    "diff_check": "PASS",
+    "public_repo_scan": "CLEAN",
+    "tests_executed": 0,
+    "github_readback": "EXACT"
+  },
+  "local_preservation_note": "Initial preservation helper invocation supplied a parent-relative input name although this helper resolves a basename relative to its own work directory. It failed before reading input or any git mutation. Inspected unchanged HEAD/owned diff, then completed the same authorized preservation using the existing basename. No action effect was replayed.",
+  "acceptance": false,
+  "next_action": "Repeat default selected seven-target preflight and default whole collection under a separately published intent. Required Linux/full platform only after passing default preflight."
+}

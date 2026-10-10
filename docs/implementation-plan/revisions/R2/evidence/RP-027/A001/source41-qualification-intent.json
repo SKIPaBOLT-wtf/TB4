@@ -1,0 +1,18 @@
+{
+  "event": "RP-027-A001-0535",
+  "source": "1395294b4bb938f5c32158043b8340f872041faf",
+  "request_revision": 41,
+  "required_cases": 1176,
+  "groups": [
+    663,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "required_native": true,
+  "budget_minutes": 60,
+  "independent_work": "Remote mapped C4/own original pending foundations qualified by source40 first663 and full platforms; source41 frozen, no aggregate acceptance.",
+  "acceptance": false
+}

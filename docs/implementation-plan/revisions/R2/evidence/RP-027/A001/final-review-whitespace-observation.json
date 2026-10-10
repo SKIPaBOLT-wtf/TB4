@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "intent": "RP-027-A001-0568",
+  "outcome": "RP-027-A001-0569",
+  "result": "FAIL",
+  "action": "Read-only final review script",
+  "failed_guard": {
+    "command": "git diff --check ed974c57ce99e54b3a28da79d212c86f07951ec7 HEAD",
+    "exit_code": 2,
+    "diagnostic_count": 33,
+    "new_blank_line_at_eof": 32,
+    "trailing_whitespace": 1
+  },
+  "verified_before_stop": [
+    "Clean owned feature checkout",
+    "Main remains ed974c57",
+    "Entire non-documentation diff from source43 to current head, immutable trigger and actual qualified PR checkout is empty",
+    "Qualified PR parents equal expected main and trigger"
+  ],
+  "not_run": [
+    "Subsequent AST/dependency/defect extraction",
+    "Final ledger/main-history and public scanner in this script"
+  ],
+  "public_source_changed": false,
+  "acceptance": false,
+  "qualification": "All original source43 test/package results remain valid unchanged; no workflow repeated.",
+  "next": "Publish/read back a bounded classification-and-final-review INTENT. Classify all33 exact whitespace diagnostics, preserve the literal diff-check exit2, and review compatibility/privacy/history and original C1-C4. Do not modify or rerun the already-qualified implementation solely to normalize historical whitespace."
+}

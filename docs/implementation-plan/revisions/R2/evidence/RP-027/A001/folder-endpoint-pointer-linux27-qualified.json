@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0389",
+  "source": "acc26c1d6424f05f1a9369d6d5a6c2ad34a704ce",
+  "trigger": "af5b1b384441dba56da7701c968eccba33ba7c68",
+  "pinned_pr_checkout": "24d0c991aabe030cfa307a3f2a3d56f1c9b804d6",
+  "result": "REQUIRED_LINUX_BOTH_AND_CI_LINUX_PACKAGES_PROGRESS_QUALIFIED_WINDOWS_PENDING",
+  "qualified_jobs": [
+    {
+      "run": 37254880981,
+      "job": 111589711833,
+      "checkout": "af5b1b384441dba56da7701c968eccba33ba7c68",
+      "groups": [
+        {
+          "passed": 337,
+          "deselected": 0,
+          "seconds": 26.87
+        },
+        {
+          "passed": 51,
+          "deselected": 0,
+          "seconds": 60.64
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "seconds": 24.67
+        },
+        {
+          "passed": 22,
+          "deselected": 0,
+          "seconds": 129.45
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "seconds": 9.94
+        },
+        {
+          "passed": 327,
+          "deselected": 1,
+          "seconds": 297.58
+        }
+      ],
+      "full": [],
+      "packages": []
+    },
+    {
+      "run": 37254884585,
+      "job": 111589723211,
+      "checkout": "24d0c991aabe030cfa307a3f2a3d56f1c9b804d6",
+      "groups": [
+        {
+          "passed": 337,
+          "deselected": 0,
+          "seconds": 40.04
+        },
+        {
+          "passed": 51,
+          "deselected": 0,
+          "seconds": 119.03
+        },
+        {
+          "passed": 6,
+          "deselected": 0,
+          "seconds": 52.01
+        },
+        {
+          "passed": 22,
+          "deselected": 0,
+          "seconds": 256.39
+        },
+        {
+          "passed": 107,
+          "deselected": 0,
+          "seconds": 16.67
+        },
+        {
+          "passed": 327,
+          "deselected": 1,
+          "seconds": 553.51
+        }
+      ],
+      "full": [],
+      "packages": []
+    },
+    {
+      "run": 37254884525,
+      "job": 111589722941,
+      "checkout": "24d0c991aabe030cfa307a3f2a3d56f1c9b804d6",
+      "groups": [
+        {
+          "passed": 43,
+          "deselected": 0,
+          "seconds": 0.21
+        },
+        {
+          "passed": 34,
+          "deselected": 0,
+          "seconds": 0.78
+        },
+        {
+          "passed": 2,
+          "deselected": 0,
+          "seconds": 0.04
+        }
+      ],
+      "full": [
+        {
+          "passed": 3285,
+          "skipped": 27,
+          "xfailed": 4,
+          "seconds": 1730.33
+        }
+      ],
+      "packages": []
+    },
+    {
+      "run": 37254884514,
+      "job": 111589723073,
+      "checkout": "24d0c991aabe030cfa307a3f2a3d56f1c9b804d6",
+      "groups": [
+        {
+          "passed": 43,
+          "deselected": 0,
+          "seconds": 0.13
+        },
+        {
+          "passed": 34,
+          "deselected": 0,
+          "seconds": 0.3
+        },
+        {
+          "passed": 2,
+          "deselected": 0,
+          "seconds": 0.04
+        },
+        {
+          "passed": 75,
+          "deselected": 0,
+          "seconds": 5.25
+        },
+        {
+          "passed": 79,
+          "deselected": 0,
+          "seconds": 9.43
+        }
+      ],
+      "full": [
+        {
+          "passed": 3308,
+          "skipped": 21,
+          "xfailed": 4,
+          "seconds": 1316.7
+        }
+      ],
+      "packages": [
+        [
+          {
+            "role": "watchdog",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          },
+          {
+            "role": "fetcher",
+            "bundle_self_test": "PASS",
+            "gui_smoke": "PASS",
+            "setup_gui_smoke": "PASS",
+            "install_uninstall_profile_isolation": "PASS"
+          }
+        ]
+      ]
+    },
+    {
+      "run": 37254884507,
+      "job": 111589722873,
+      "checkout": "24d0c991aabe030cfa307a3f2a3d56f1c9b804d6",
+      "groups": [
+        {
+          "passed": 235,
+          "deselected": 0,
+          "seconds": 10.64
+        }
+      ],
+      "full": [],
+      "packages": []
+    }
+  ],
+  "required_linux": {
+    "passed_each": 850,
+    "groups": [
+      337,
+      51,
+      6,
+      22,
+      107,
+      327
+    ],
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "declared_final_group_deselected_each": 1,
+    "includes": "All26newpointerportable and53previousendpoint plus original authenticated/protocol/native/effect regressions."
+  },
+  "artifacts_metadata": [
+    {
+      "id": 11322364566,
+      "name": "tb4-desktop-Linux-24d0c991aabe030cfa307a3f2a3d56f1c9b804d6",
+      "digest": "sha256:be76164147e6a9ab79b8508da6a48876c17599e8223fb8f7e6fb263ad374d0e9",
+      "size_in_bytes": 314535270,
+      "expired": false
+    }
+  ],
+  "pending": [
+    {
+      "run": 37254884514,
+      "job": 111589722960,
+      "kind": "Desktop Windows",
+      "status": "in_progress",
+      "conclusion": null,
+      "actual_terminal_checkout": "PENDING"
+    }
+  ],
+  "source_equivalence": "Exact non-document Git diff to both immutable trigger and PR verified in event382; every completed actual terminal checkout matches its pinned push/PR.",
+  "acceptance": "HELD",
+  "limits": [
+    "Sourceacc26 only, not new8c75 helper source.",
+    "Windows final full/package proof remains pending; no repeatlaunch/download/install.",
+    "Declared CI/Linux skips and four existing xfails remain explicit, never countPASS; final-group capacity case expressly deselected, notPASS/skip.",
+    "All actual endpoint attachment/fresh Setup connection/runtime/GUI/C1-C4/common acceptance held."
+  ],
+  "next": "Publish separate current8c75 Windows scoped test OUTCOME FAIL retaining19fixtureerrors and exact3333→3388 node-set/add55remove0. Inspect actual safe error signature and register defect before minimal scoped test-only repair; later inspect same oldacc26 Windowsjob111589722960 without relaunch."
+}

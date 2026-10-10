@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0416",
+  "source": "a68893fa004b896695d5d22a83fa4c3016b6d516",
+  "trigger": "93fa1bf040edf37abae7810f2ff71bef584f831b",
+  "request_revision": 29,
+  "result": "RECORDED",
+  "groups": [
+    423,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "required_cases": 936,
+  "pr": 36,
+  "pinned_pr_checkout": "021d73011e35237167df62608382e9c2cef1135a",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "93fa1bf040edf37abae7810f2ff71bef584f831b"
+  ],
+  "source_equivalence": {
+    "actual_git_non_doc_diff_to_a688": {
+      "trigger": [],
+      "pr": []
+    },
+    "source_scope": "All31 native attachment and38portable/17combined retained; required/full/platform terminal evidence pending"
+  },
+  "runs": [
+    {
+      "id": 37262977471,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111613865010,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37262977495,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111613865086,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37262977466,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111613865029,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37262977468,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111613865056,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111613865234,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37262974389,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 111613856150,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "readback": "Exact request/ref/all file bytes verified; one launch.",
+  "initial_stale_merge": {
+    "sha": "93d1ceeca1bd55341125890f45943a267466e190",
+    "parents": [
+      "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+      "bd6d45f40be13a19c75094c7b8977fa58f4fdbe6"
+    ],
+    "used_as_launch_pin": false
+  },
+  "notes": "Initial run list empty; SAME trigger later yielded five workflows/six jobs. SAME PR updated to exact actual trigger parent; no duplicate launch. Progress success metadata only, actual235 not inspected. Terminal actual checkout/source/counts remain required.",
+  "acceptance": "No actual936/fullplatform/freshconnection/runtime/GUI/C1-C4 acceptance yet.",
+  "next": "Inspect old5f80 immutable request28 remaining terminal fulljobs under separate INTENT, then SAME request29 required936/Progress before fresh connection composition."
+}

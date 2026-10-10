@@ -39,6 +39,24 @@ new root or replacement journal is created by normal operations.
 
 ## Publication and ownership
 
+Unreleased RP-027 A-038 adds a separate FOLDER_MAPPING_ACTIVE_PROBE_V1 observation
+on that same fixed command, with nine closed fields and no private client path.
+The server's exact protected target, seals and coherent ACTIVE transition/revision
+must match the completed mapping operation. An explicitly opted-in retained C4
+consumer also verifies its frozen publication and protected work. This does not
+reuse the prepublication stable-record digest after control rows change. Old
+modes/default refusal remain; no grant, replay, automatic fallback or live upgrade.
+
+Unreleased RP-027 A-036 adds an opt-in FOLDER_MAPPING_AFTER_PROBE_V1 observation
+on the existing fixed probe command. Nine closed flat request/reply fields bind
+a current protected mapping digest, terminal shared plan and physical proof.
+The helper's protected mapping location is the only location input. Requests
+carry no path/code/key. Fresh native mapping/target and exact authority readback
+are required; missing/pending/BEFORE/changed/UNKNOWN facts refuse without a body.
+It grants no CAS, relocation, role, replay or activation, changes no installed
+protocol, and leaves ordinary VERIFY/READ/CAS and flat limits unchanged. Current
+qualification and the subsequent remote RetainedC4/adoption consumers remain held.
+
 Each helper call checks Linux filesystem type, exact object identities, private
 ownership/modes (0700 directory, 0600 files), no symlink/hardlink file, bounded
 sizes and absence of foreign WAL/SHM. SQLite opens mode=rw, then EXCLUSIVE locking,

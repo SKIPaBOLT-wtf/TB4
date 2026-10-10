@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "source": "a71954afb45c9e667ae1dd554b6b134fcf7c17c9",
+  "checkout": "b5c92d5d3b0b3a02311c1bdc4cca0abf65d14666",
+  "branch": "feat/rp027-staged-reconfiguration",
+  "platform": "Windows",
+  "architecture": "AMD64",
+  "python": "3.11.9",
+  "exit_code": 0,
+  "elapsed_seconds": 1.916,
+  "default_pytest_configuration": true,
+  "custom_helper_pythonpath": false,
+  "collection_only": true,
+  "collected": 2748,
+  "errors": [],
+  "tests_executed": 0
+}

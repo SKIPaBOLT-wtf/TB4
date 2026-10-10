@@ -1,0 +1,9 @@
+# RP-027.C3 A001 — exact root failure provenance
+
+Source `90635ed953d297fdea34209cb305439c464c4470`; actual previously failed run `LOCAL-SESSION-64942`. Diagnosis only reads the same result log and current public source; no duplicate test, native promotion, SDK move, profile/source repair or installed action.
+
+Nine traces converge: `src/tb4/reconfiguration_roots.py:277` calls `Effects.start`; `src/tb4/reconfiguration_effects.py:288` prepares purpose `START`; line99 invokes dedicated validation; lines123–124 deliberately refuse `INITIALIZE`/`START` in MAINTENANCE. This adapter overrides both prepare and evaluate. The earlier suspected inherited ordinary prepare mechanism is not the actual cause. The root controller incorrectly selected normal START for a maintenance identity operation (DEF-061). Required remedy: separately closed maintenance-only IDENTITY start with actual native reservation/current owner and same covered transition. Preserve ordinary START/RecordMutation/runtime maintenance refusal; do not permit arbitrary actions/unknown replacement.
+
+Target-access trace: root begin line218 checks the new root; `src/tb4/drive/commissioning_native.py:55–60` enforces exact ID/FOLDER/not-trashed/canEdit; line57 raises actual `AuthorityError: SETUP_ROOT`. `tests/drive/test_reconfiguration_roots.py:142` expects only ConfigurationError/SettingsError, so the fixture fails on a correct refusal (DEF-062). Retain exact closed code and no-SDK/no-profile-change assertions, extend this fault's expected class only.
+
+Effect WAL schemas currently enumerate INITIALIZE,START,FINISH,CERTIFY. Any added purpose must update only the unreleased schema hash/catalogue; legacy absence and accepted installed instructions stay unchanged. No check accepted. Next is a separately verified source repair INTENT then same full predicate repeat plus new negative admission cases. Raw private-path logs remain local.

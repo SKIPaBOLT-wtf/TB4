@@ -37,7 +37,8 @@ class ConnectedDocsSelection:
                 if request is not None:
                     require(request["mode"] == "NATIVE_DOCS"
                             and drive_root_id(request["location"]) == spec.root_id, "STORAGE_UNAVAILABLE")
-                port=NativeCommissioning(self.drive,self.docs,spec,llm_authorized=True)
+                port=NativeCommissioning(self.drive,self.docs,spec,llm_authorized=True,
+                                        root_transition=current.get("root_transition"))
                 return StorageSelection(current,CommissionedStorage(port))
             request=choices.get("storage_request")
             require(type(request) is dict and request["mode"] == "NATIVE_DOCS", "STORAGE_UNAVAILABLE")
@@ -91,7 +92,12 @@ class BoundFolderSelection:
             request=choices.get("storage_request")
             require(port.mode=="FOLDER_SQLITE_V1", "STORAGE_UNAVAILABLE")
             if request is not None:
-                require(request["mode"]==port.mode and Path(request["location"])==port.root,
+                from tb4.drive.folder_mapping import FolderMappedCommissioning
+                current_path=port.root  # Actual protected mapping is checked now.
+                accepted={current_path}
+                if type(port) is FolderMappedCommissioning:
+                    accepted.add(port.expected.root)
+                require(request["mode"]==port.mode and Path(request["location"]) in accepted,
                         "STORAGE_UNAVAILABLE")
             current=choices["storage"]
             known=None if current is None else storage_spec(current)[1]

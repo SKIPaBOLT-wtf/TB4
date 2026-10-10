@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C3",
+  "attempt": "A001",
+  "source": "4b66bc7a9e46eeb134579fb43c8b861eaaf2e985",
+  "intent_event": "RP-027-A001-0169",
+  "windows": {
+    "source": "4b66bc7a9e46eeb134579fb43c8b861eaaf2e985",
+    "checkout": "cb88b43996f5a4d9227399985ae3e132f37ca3c1",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 1,
+    "elapsed_seconds": 37.938,
+    "owned_absent_fixture_root": true,
+    "targets": [
+      "tests/drive/test_reconfiguration_rebind.py",
+      "tests/security/test_reconfiguration_rebind_native.py",
+      "tests/drive/test_reconfiguration_root_settlement.py::test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[wrong-blueprint]"
+    ],
+    "cases": [
+      {
+        "name": "test_actual_all_after_rebind_same_document_metadata_media_work_first_run_and_original_profile",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_lost_conditional_reply_inspects_without_repeating_before_or_after[False]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_lost_conditional_reply_inspects_without_repeating_before_or_after[True]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_role_first_cas_race_and_shared_after_need_no_old_host_ack[False]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_role_first_cas_race_and_shared_after_need_no_old_host_ack[True]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_preconditions_refuse_without_remote_write_or_reset[permission]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_preconditions_refuse_without_remote_write_or_reset[source]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_preconditions_refuse_without_remote_write_or_reset[clock]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_preconditions_refuse_without_remote_write_or_reset[caps]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_preconditions_refuse_without_remote_write_or_reset[election]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_preconditions_refuse_without_remote_write_or_reset[work]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_preconditions_refuse_without_remote_write_or_reset[unknown]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_preconditions_refuse_without_remote_write_or_reset[metadata]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_preconditions_refuse_without_remote_write_or_reset[authority]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_changed_preconditions_refuse_without_remote_write_or_reset[profile]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fresh_shared_after_proof_never_accepts_saved_or_changed_facts[work]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fresh_shared_after_proof_never_accepts_saved_or_changed_facts[catalogue]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fresh_shared_after_proof_never_accepts_saved_or_changed_facts[metadata]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_fresh_shared_after_proof_never_accepts_saved_or_changed_facts[forged-proof]",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_closed_schema_current_source_pin_store_alias_and_partial_plan_are_not_grants",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "PASS"
+      },
+      {
+        "name": "test_max129_reference_plan_hashes_large_retained_unicode_instead_of_copying_full_work",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_actual_native_pending_rebind_cut_recovers_exact_frame_without_conditional_repeat[begin]",
+        "classname": "tests.security.test_reconfiguration_rebind_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_pending_rebind_cut_recovers_exact_frame_without_conditional_repeat[invoking]",
+        "classname": "tests.security.test_reconfiguration_rebind_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_pending_rebind_cut_recovers_exact_frame_without_conditional_repeat[confirmed]",
+        "classname": "tests.security.test_reconfiguration_rebind_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_copy_and_broad_permissions_are_refused",
+        "classname": "tests.security.test_reconfiguration_rebind_native",
+        "status": "PASS"
+      },
+      {
+        "name": "test_actual_native_max129_reference_pending_and_previous_frame_budget",
+        "classname": "tests.security.test_reconfiguration_rebind_native",
+        "status": "FAILURE"
+      },
+      {
+        "name": "test_unproven_or_currently_unauthorized_inherited_root_never_clears_unknown[wrong-blueprint]",
+        "classname": "tests.drive.test_reconfiguration_root_settlement",
+        "status": "PASS"
+      }
+    ],
+    "failures": [
+      {
+        "name": "test_max129_reference_plan_hashes_large_retained_unicode_instead_of_copying_full_work",
+        "classname": "tests.drive.test_reconfiguration_rebind",
+        "message": "tb4.configuration_contract.ConfigurationError: CONFIGURATION_ROOT_BINDING"
+      },
+      {
+        "name": "test_actual_native_max129_reference_pending_and_previous_frame_budget",
+        "classname": "tests.security.test_reconfiguration_rebind_native",
+        "message": "tb4.configuration_contract.ConfigurationError: CONFIGURATION_ROOT_BINDING"
+      }
+    ],
+    "counts": {
+      "PASS": 25,
+      "FAILURE": 2,
+      "ERROR": 0,
+      "SKIPPED": 0
+    }
+  },
+  "provenance": "Exact original c140 failures preserved; repaired missing import and final MOVED fixture now allow20 new conformance +4 actual-native cases +original wrong-blueprint to pass.",
+  "remaining": {
+    "cases": 2,
+    "public_code": "CONFIGURATION_ROOT_BINDING",
+    "source_fact": "large_plan retains1500 two-byte Unicode characters per target catalogue while exchange_layout enforces1024bytes including slot/envelope; current_record first validates exact layout. This remaining invalid fixture is not evidence of a rebind failure.",
+    "underlying_reason": "SLOT_BYTE_BUDGET is source-derived, not claimed as a separately executed diagnostic trace."
+  },
+  "acceptance": false
+}

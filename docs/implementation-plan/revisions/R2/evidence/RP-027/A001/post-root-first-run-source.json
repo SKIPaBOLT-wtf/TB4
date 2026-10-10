@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "source": "3ad08dfbb64e057ea5140f7bd1c9b5d2d43d894c",
+  "local_source": "0a76dc695f6b82c987fda2af38fce94305aee13e",
+  "intent_event": "RP-027-A001-0176",
+  "paths": [
+    "src/tb4/reconfiguration_post_root.py",
+    "src/tb4/reconfiguration_candidate.py",
+    "protocol/reconfiguration-candidate-v1.schema.json",
+    "skill/tb4/compatibility.json",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-013-post-root-first-run-candidate.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "tests/drive/reconfiguration_post_root_support.py",
+    "tests/drive/test_reconfiguration_post_root.py",
+    "tests/security/test_reconfiguration_post_root_native.py",
+    ".github/workflows/folder-reconfiguration.yml"
+  ],
+  "amendment": "A-013",
+  "named_schema_definition": "postRootCandidate",
+  "candidate_schema_sha256": "ebe8dd1acaaa4d8e02e2dc9b17d8f862a62447b5baedb0ec6ba1c4e244df2bef",
+  "max_pin_files": 17,
+  "legacy_top_level_schema_unchanged": true,
+  "prepared_main_cases": 16,
+  "prepared_actual_native_cases": 4,
+  "tests_executed": 0,
+  "diff_check_passed": true,
+  "source_readback": "VERIFIED",
+  "review": [
+    "Same existing authority and actual fresh RemoteRebind current-role AFTER; no old host/WAL/profile/ACK dependency.",
+    "Protected native STAGING before immutable original archive and separate cache-free target first-run seed; original identity/nonce/operation/credential/table history retained.",
+    "Exact current epoch/configuration/work/source/profile/native pin checks; source/storage-bound actual first-run at verified SDK target.",
+    "Late candidate change during actual prerequisite probes refuses frozen/new proof.",
+    "Exact native pending recovery without remote write/replay; source has no active publication/promotion/activation port."
+  ],
+  "remaining": [
+    "Actual source/test/native/legacy/default imports qualification.",
+    "Final C4 descriptor/configuration publication, original active profile/admission, cache/lease invalidation.",
+    "Folder/rootless and runtime/GUI/helper composition/common final acceptance."
+  ],
+  "acceptance": false
+}

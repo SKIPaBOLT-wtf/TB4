@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0403",
+  "source": "5f80eec64e89fba848f5da1a78a1af4e2d37fb5f",
+  "trigger": "8092760f15fe0714d79436b19273c0c404dceacd",
+  "request_revision": 28,
+  "result": "ONE_CURRENT_SOURCE_LINUX_PLATFORM_LAUNCH_RECORDED",
+  "required_cases": 905,
+  "groups": {
+    "physical_probe_and_first_run": 392,
+    "mapping_relocation": 51,
+    "retained": 6,
+    "current_role_folder": 22,
+    "original_native": 107,
+    "docs_effect_admission": 327
+  },
+  "pr": 36,
+  "pinned_pr_checkout": "d0d5c05bbada4235e66a20d9dbb6a4583d969406",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "8092760f15fe0714d79436b19273c0c404dceacd"
+  ],
+  "source_equivalence": "Exact non-document Git diffs to actual trigger809 and current PRd0d are empty versus5f80.",
+  "runs": [
+    {
+      "id": 37259779791,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111604383754,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37259779777,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111604383811,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37259779734,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111604383803,
+          "name": "ledger",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37259779803,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111604383757,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111604383988,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 37259776759,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 111604373120,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "readback": "EXACT_REQUEST_FILE_AND_REF",
+  "terminal_actual_checkout": "PENDING_TERMINAL_LOG_VERIFICATION",
+  "acceptance": "HELD",
+  "notes": [
+    "Published request28 once; initial empty run list inspected same trigger later without relaunch; fiveworkflows/sixjobs found.",
+    "Initial PR merge b727 still referred to earlier intent4cb. Inspecting same PR later produced currentd0d with exactmain/actualtrigger809 parents. Oldmerge retainedasstale observation, notlaunchpin. Fetching actualtrigger and currentmerge provedempty non-doc source diffs; no source replay.",
+    "Progress terminalmetadataSUCCESS only; required905/CI/Desktop stillrunning, no terminalcount/package qualification."
+  ],
+  "independent_scheduling": {
+    "unit": "A029 native metadata endpoint attachment/recovery",
+    "reason": "Uses fully qualified A026 protected native endpoint and A027 pointer/schema/seed foundations (old87ca full384 and acc26 full397). No credential invocation, helper dispatch, shared/physical mutation or unfinished A028 capability; current immutable5f80 jobs can finish unchanged.",
+    "limits": "Only explicit native private INCOMPLETE profile attachment or exact same pending recovery; first-time routing selection denied during localUNKNOWN. This guard applies to selection change, never leadership takeover; no oldowner/allpeerACK. Actual freshSetup connection/helper/runtime/GUI/platform/common acceptance remains held."
+  },
+  "next": "Publish scoped A029 source INTENT for exact native metadata pointer attachment/inspect/recovery with real Windows/Linux private tests and unchanged endpoint format/defaultactivation. Separate source/tests; no currentA028 inference. Inspect immutable request28 actual905/full/platform after source-independent unit."
+}

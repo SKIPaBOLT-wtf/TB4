@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "inspection_event": "RP-027-A001-0321",
+  "milestone_only": true,
+  "source_commit": "9a6c6923bfd64c5a5a0b125582c7c5808d3465d4",
+  "trigger_commit": "4d04bdaee22e1d2a6c184132fb46f28c48307cce",
+  "checkout": "d31bd0f952d33d336757be6cdb3bf6435f41ee4d",
+  "linux_desktop": {
+    "run_id": 37238706248,
+    "job_id": 111542872479,
+    "conclusion": "success",
+    "checkout_confirmed": true,
+    "full_suite": {
+      "passed": 3128,
+      "skipped": 21,
+      "xfailed": 4,
+      "seconds": 1317.75
+    },
+    "packages": [
+      {
+        "role": "watchdog",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      },
+      {
+        "role": "fetcher",
+        "bundle_self_test": "PASS",
+        "gui_smoke": "PASS",
+        "setup_gui_smoke": "PASS",
+        "install_uninstall_profile_isolation": "PASS"
+      }
+    ],
+    "artifacts": [
+      {
+        "id": 11316738659,
+        "name": "tb4-desktop-Linux-d31bd0f952d33d336757be6cdb3bf6435f41ee4d",
+        "size_in_bytes": 314522710,
+        "digest": "sha256:b7da28cab9a78290640260df36069e659fb1cdad27de8adb9b6cce20101d2acc",
+        "expired": false
+      }
+    ]
+  },
+  "progress": {
+    "run_id": 37238706257,
+    "job_id": 111542872360,
+    "conclusion": "success",
+    "passed": 235,
+    "seconds": 12.66,
+    "checkout_confirmed": true,
+    "ledger": "PASS",
+    "privacy": "CLEAN"
+  },
+  "secondary_current_foundation_progress": {
+    "source_commit": "4951204c062cd422467fb6661e146b5d978011c3",
+    "trigger_commit": "7b5fcfa366a25f62bb4165f3dc0483066f27d17c",
+    "checkout": "992182700ac230e308e7235713695f8227217673",
+    "inspection_event": "RP-027-A001-0330",
+    "run_id": 37239922591,
+    "job_id": 111546417398,
+    "conclusion": "success",
+    "passed": 235,
+    "seconds": 11.94,
+    "checkout_confirmed": true
+  },
+  "acceptance": false,
+  "pending": "Old9a6c CI and WindowsDesktop still inprogress;321 remains unsettled. Current4951204 functional329/full330 unsettled. Linux artifactmetadata only, no download/install, no later-source qualification.",
+  "next_action": "Inspect same old23 CI/Windows toterminal andsettle321; inspect samecurrent24 two709jobs andsettle329 beforedependent normal authoritysource. Preserve current24full330 separately."
+}

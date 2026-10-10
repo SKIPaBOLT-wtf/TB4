@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "checkout": "30e0e1904c0e0031caf5045e0a1e81211dc8c3a0",
+  "source": "c000c0ded9a480172dd9e8269de9617df4224d09",
+  "normal_response": "PASS",
+  "exact_after_response": "REJECTED",
+  "internal_code": "PROBE_MODE",
+  "invoked_method": "FolderProbeRunner._response",
+  "native_or_ssh_invoked": false,
+  "mutations": 0,
+  "scope": "Pure parser diagnostic only; no native proof or acceptance",
+  "item": "RP-027",
+  "check": "RP-027.C3",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0522",
+  "result": "PASS",
+  "private_diagnostic_cases": 1,
+  "preflights": [
+    {
+      "action": "Direct external script import",
+      "result": "ModuleNotFoundError tests",
+      "mutations": 0
+    },
+    {
+      "action": "Default-root runpy import",
+      "result": "ModuleNotFoundError test_folder_probe",
+      "mutations": 0
+    }
+  ],
+  "method": "Default pytest collection of existing drive initializer first plus one private pure parser case; no custom helper PYTHONPATH, native operation or SSH. Ordinary response accepted; exact valid AFTER9 response rejects internal PROBE_MODE before AFTER body validation.",
+  "hosted39_windows": {
+    "job": 111722702185,
+    "status": "IN_PROGRESS",
+    "logs_fetched": false
+  },
+  "acceptance": false,
+  "next": "Minimal opt-in current-response validation branch and actual before-move fixture repair. Retain old normal AST, all10 other native predicates, source40 executes repaired40 +new13 andfullplatform."
+}

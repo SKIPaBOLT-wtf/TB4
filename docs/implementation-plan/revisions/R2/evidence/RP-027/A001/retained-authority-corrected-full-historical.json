@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "kind": "RETAINED_AUTHORITY_CORRECTED_IMMUTABLE_FULL_HISTORICAL",
+  "intent": "RP-027-A001-0245",
+  "source_ref": "28ade36af1d6c98e7402ced9e19510ca58aa14fa",
+  "schema_sha256": "b4e9aefd0d9e88c02d462745632c1853cf4b7ba05b146be17a598c11f9ab0498",
+  "trigger_commit": "0a7d93007bcd65f13b881d8201734b773b0428a3",
+  "checkout": "c2d00366c61e45ba7af7a9c44c1d7120e4df0835",
+  "ci": {
+    "run_id": 37133658457,
+    "job_id": 111233640090,
+    "conclusion": "success",
+    "passed": 2922,
+    "failed": 0,
+    "skipped": 27,
+    "xfailed": 4,
+    "duration_seconds": 1826.7
+  },
+  "desktop": {
+    "run_id": 37133658458,
+    "linux": {
+      "job_id": 111233640149,
+      "conclusion": "success",
+      "full": {
+        "passed": 2945,
+        "failed": 0,
+        "skipped": 21,
+        "xfailed": 4,
+        "duration_seconds": 2023.16
+      },
+      "both_role_builds": "success",
+      "packaged_application_and_installer_acceptance": "success",
+      "artifact": {
+        "id": 11278027986,
+        "name": "tb4-desktop-Linux-c2d00366c61e45ba7af7a9c44c1d7120e4df0835",
+        "size_in_bytes": 314514445,
+        "digest": "sha256:47319a82e264fc3a8f745153aa0eb263a3f55e1ccd1558c280ef6969e90aa532",
+        "expired": false
+      }
+    },
+    "windows": {
+      "job_id": 111233640009,
+      "conclusion": "failure",
+      "step": "Native scoped discovery qualification",
+      "passed": 1,
+      "failed": 1,
+      "duration_seconds": 11.43,
+      "cause": "UNKNOWN, normalized DISCOVERY_UNAVAILABLE in existing bounded system loopback query (DEF088)",
+      "full_and_builds_packages": "not executed",
+      "retry": "243/244 known failed-job retry request explicitly NOTSTARTED403 while Linuxpeer ran; never repeated. Subsequent newsource requires its own full gates, no oldsource retry needed."
+    }
+  },
+  "required_linux": "Both484actual0skip qualified242, exactsource/operations/results retained.",
+  "later_windows_discovery_boundary": {
+    "source_ref": "103d0eb2009880a7e76ac4604e611ce6958060da",
+    "run_id": 37136408960,
+    "job_id": 111241734602,
+    "passed": 2,
+    "failed": 0,
+    "duration_seconds": 8.6,
+    "meaning": "Existing discovery implementation/fixture unchanged; no repeat of original failure in this exact later native step. It does not prove cause or later full/package acceptance."
+  },
+  "evidence_limits": "No current FolderACTIVEsource or final C1-C4 acceptance from earlier full/platform facts; originalhistoricalfailure retained. Metadata only/no large installer downloads/no deployment.",
+  "next": "Current103d DEF089/90 exactfixture/UNRELEASEDcataloguehash source repair and corrected-sourceLinux506/Windowsaffected497/full qualification. Original103d CI unchanged under252.",
+  "acceptance": false,
+  "runtime_active": false
+}

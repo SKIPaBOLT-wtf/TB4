@@ -1,0 +1,3893 @@
+{
+  "source": "90635ed953d297fdea34209cb305439c464c4470",
+  "checkout": "8f7f3d2dad87e88544b2c834ae2233e2854a0556",
+  "branch": "feat/rp027-staged-reconfiguration",
+  "platform": "Windows",
+  "architecture": "AMD64",
+  "python": "3.11.9",
+  "exit_code": 1,
+  "elapsed_seconds": 77.24,
+  "targets": [
+    "tests/test_reconfiguration_foundation.py",
+    "tests/drive/test_reconfiguration_dispatch.py",
+    "tests/security/test_reconfiguration_evidence_native.py",
+    "tests/drive/test_native_docs_transport.py",
+    "tests/drive/test_native_leadership.py",
+    "tests/drive/test_native_watchdog_startup.py",
+    "tests/drive/test_ballpark_setup.py",
+    "tests/drive/test_ballpark_publication.py",
+    "tests/drive/test_discovery_workflow.py",
+    "tests/drive/test_fetcher_enrollment.py",
+    "tests/drive/test_first_run_storage.py",
+    "tests/drive/test_network_table_store.py",
+    "tests/drive/test_network_table_schema.py",
+    "tests/security/test_private_settings.py",
+    "tests/security/test_private_settings_native.py",
+    "tests/security/test_first_run.py",
+    "tests/security/test_first_run_native.py",
+    "tests/security/test_network_table_native.py",
+    "tests/security/test_ballpark_contract.py",
+    "tests/coach/test_instruction_selection.py",
+    "tests/drive/test_reconfiguration_maintenance.py",
+    "tests/security/test_reconfiguration_maintenance_native.py",
+    "tests/drive/test_reconfiguration_effects.py",
+    "tests/security/test_reconfiguration_effects_native.py",
+    "tests/drive/test_reconfiguration_candidate.py",
+    "tests/security/test_reconfiguration_candidate_native.py",
+    "tests/desktop/test_setup_ui.py",
+    "tests/drive/test_reconfiguration_roots.py",
+    "tests/security/test_reconfiguration_roots_native.py",
+    "tests/drive/test_native_commissioning.py"
+  ],
+  "counts": {
+    "PASS": 743,
+    "FAILURE": 10,
+    "ERROR": 0,
+    "SKIPPED": 4
+  },
+  "prior_predicate_comparison": {
+    "prior_total": 720,
+    "retained": 720,
+    "status_changed": [],
+    "new_cases": 37
+  },
+  "cases": [
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_closed_marker_schema_matches_runtime_and_legacy_absence",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_active_marker_requires_actual_matching_local_revision[None]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_active_marker_requires_actual_matching_local_revision[True]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_active_marker_requires_actual_matching_local_revision[0]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_active_marker_requires_actual_matching_local_revision[2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_active_marker_requires_actual_matching_local_revision[9223372036854775808]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_inspection_preserves_unread_unknown_and_local_effects_without_leaking_identities",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_stable_unknown_facts_and_retained_metadata_are_not_work_blockers",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_foreign_local_authority_and_malformed_checkpoint_refuse",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_evidence_needs_owner_is_immutable_and_binds_exact_readback",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_lost_evidence_commit_is_inspect_only_not_overwritten[stage]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_lost_evidence_commit_is_inspect_only_not_overwritten[promote]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_lost_evidence_commit_is_inspect_only_not_overwritten[readback]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_shared_plan_prepared_before_maintenance_cannot_cross_cas_race",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.test_reconfiguration_foundation",
+      "name": "test_active_configuration_change_invalidates_prepared_record_plan",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_dispatch",
+      "name": "test_stale_first_reader_acquires_during_maintenance_without_peer_acks",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_dispatch",
+      "name": "test_eager_effect_refuses_maintenance_and_same_runtime_resumes_after_revision_check",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_dispatch",
+      "name": "test_maintenance_arriving_during_local_wal_blocks_external_call",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_evidence_native",
+      "name": "test_actual_private_restart_returns_same_bytes_and_binding",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_evidence_native",
+      "name": "test_actual_copied_file_lock_and_broad_permissions_are_refused",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_evidence_native",
+      "name": "test_actual_mid_promotion_leaves_exact_pending_without_replay",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_evidence_native",
+      "name": "test_large_unicode_authority_fits_one_native_frame_without_previous_copy",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_evidence_native",
+      "name": "test_full_capacity_unknown_work_is_archived_in_one_native_frame",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_success_and_idempotent_same_operation_require_full_readback[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_success_and_idempotent_same_operation_require_full_readback[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_required_invariant_same_owner_benign_metadata_change_does_not_strand_result[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_required_invariant_same_owner_benign_metadata_change_does_not_strand_result[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_fresh_retry_preserves_unrelated_updates_and_same_owner[wire-heartbeat]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_fresh_retry_preserves_unrelated_updates_and_same_owner[wire-unrelated-record]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_fresh_retry_preserves_unrelated_updates_and_same_owner[atomic-model-heartbeat]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_fresh_retry_preserves_unrelated_updates_and_same_owner[atomic-model-unrelated-record]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[wire-owner]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[wire-epoch]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[wire-force-request]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[wire-work]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[wire-typed-work]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[wire-result]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[wire-status]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[atomic-model-owner]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[atomic-model-epoch]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[atomic-model-force-request]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[atomic-model-work]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[atomic-model-typed-work]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[atomic-model-result]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changes_between_check_and_atomic_write_are_never_overwritten[atomic-model-status]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_repeated_contention_is_bounded_and_never_executes_payload[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_repeated_contention_is_bounded_and_never_executes_payload[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_success_or_lost_reply_with_delayed_readback_never_rewrites[wire-False]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_success_or_lost_reply_with_delayed_readback_never_rewrites[wire-True]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_success_or_lost_reply_with_delayed_readback_never_rewrites[atomic-model-False]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_success_or_lost_reply_with_delayed_readback_never_rewrites[atomic-model-True]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_unknown_outcome_only_inspects_and_recovers_same_transition[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_unknown_outcome_only_inspects_and_recovers_same_transition[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_inspect_mode_never_treats_absence_as_permission_to_replay[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_inspect_mode_never_treats_absence_as_permission_to_replay[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_new_metadata_revision_after_applied_write_does_not_invalidate_readback[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_new_metadata_revision_after_applied_write_does_not_invalidate_readback[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_applied_but_superseded_before_readback_does_not_authorize_work[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_applied_but_superseded_before_readback_does_not_authorize_work[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_doc_indices_are_utf16_and_terminal_newline_is_preserved",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_principal_specific_revision_is_read_locally_and_never_compared_as_epoch",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_provider_errors_are_closed_and_never_expose_raw_message[400-REJECTED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_provider_errors_are_closed_and_never_expose_raw_message[409-REJECTED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_provider_errors_are_closed_and_never_expose_raw_message[412-REJECTED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_provider_errors_are_closed_and_never_expose_raw_message[401-UNAVAILABLE]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_provider_errors_are_closed_and_never_expose_raw_message[403-UNAVAILABLE]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_provider_errors_are_closed_and_never_expose_raw_message[404-UNAVAILABLE]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_provider_errors_are_closed_and_never_expose_raw_message[429-UNKNOWN]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_provider_errors_are_closed_and_never_expose_raw_message[500-UNKNOWN]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_provider_errors_are_closed_and_never_expose_raw_message[503-UNKNOWN]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_unchanged_revision_after_generic_400_is_not_misdiagnosed_as_race",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_failed_atomic_batch_never_exposes_deleted_control_or_requires_final_rename",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[wrong-document]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[wrong-tab]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[second-tab]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[missing-revision]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[table]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[suggestion]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[wrong-index]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[no-newline]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[extra-newline]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[wrong-domain]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[duplicate-key]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[noncanonical]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[surrogate]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_or_human_edited_control_is_rejected_without_write[oversize]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_terminal_plan_never_accepts_a_matching_name_without_complete_binding[domain]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_terminal_plan_never_accepts_a_matching_name_without_complete_binding[target]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_terminal_plan_never_accepts_a_matching_name_without_complete_binding[operation]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_terminal_plan_never_accepts_a_matching_name_without_complete_binding[generation]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_terminal_plan_never_accepts_a_matching_name_without_complete_binding[payload]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_terminal_plan_never_accepts_a_matching_name_without_complete_binding[result-hash]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_terminal_plan_never_accepts_a_matching_name_without_complete_binding[body-corrupt]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_terminal_plan_never_accepts_a_matching_name_without_complete_binding[state]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_terminal_plan_never_accepts_a_matching_name_without_complete_binding[owner]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_terminal_plan_never_accepts_a_matching_name_without_complete_binding[force]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_caller_cannot_mutate_snapshot_by_alias_or_elect_with_record_helper",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_private_use_characters_survive_docs_insertion_without_hash_or_data_loss",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changed_inline_bytes_are_rejected_before_any_publication_write[text-altered]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_changed_inline_bytes_are_rejected_before_any_publication_write[size_bytes-1]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload[None]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload[slot]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload[generation]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload[operation]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload[target]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload[size]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload[hash]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload[incomplete]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload[float-size]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_artifact_finalization_pins_exact_descriptor_and_never_fetches_payload[numeric-complete]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_artifact_descriptor_changes_after_plan_are_protected_from_reconciliation",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_typed_desired_record_cannot_be_mistaken_for_confirmed_result[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_typed_desired_record_cannot_be_mistaken_for_confirmed_result[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_unknown_without_visible_apply_does_not_repeat_the_mutation[429]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_unknown_without_visible_apply_does_not_repeat_the_mutation[500]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_unknown_without_visible_apply_does_not_repeat_the_mutation[503]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_receipt_is_recovered_only_by_complete_same_operation_readback[None]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_receipt_is_recovered_only_by_complete_same_operation_readback[receipt1]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_malformed_receipt_is_recovered_only_by_complete_same_operation_readback[receipt2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_reconciliation_rejects_unsupported_mode_or_unbounded_budget[wire-RETRY-6-3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_reconciliation_rejects_unsupported_mode_or_unbounded_budget[wire-START-1-3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_reconciliation_rejects_unsupported_mode_or_unbounded_budget[wire-START-13-3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_reconciliation_rejects_unsupported_mode_or_unbounded_budget[wire-START-6-5]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_reconciliation_rejects_unsupported_mode_or_unbounded_budget[wire-START-True-3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_reconciliation_rejects_unsupported_mode_or_unbounded_budget[atomic-model-RETRY-6-3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_reconciliation_rejects_unsupported_mode_or_unbounded_budget[atomic-model-START-1-3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_reconciliation_rejects_unsupported_mode_or_unbounded_budget[atomic-model-START-13-3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_reconciliation_rejects_unsupported_mode_or_unbounded_budget[atomic-model-START-6-5]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_docs_transport",
+      "name": "test_reconciliation_rejects_unsupported_mode_or_unbounded_budget[atomic-model-START-True-3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_simultaneous_stale_starts_have_one_atomic_winner_and_no_sink_barrier[wire-order0]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_simultaneous_stale_starts_have_one_atomic_winner_and_no_sink_barrier[wire-order1]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_simultaneous_stale_starts_have_one_atomic_winner_and_no_sink_barrier[wire-order2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_simultaneous_stale_starts_have_one_atomic_winner_and_no_sink_barrier[wire-order3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_simultaneous_stale_starts_have_one_atomic_winner_and_no_sink_barrier[wire-order4]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_simultaneous_stale_starts_have_one_atomic_winner_and_no_sink_barrier[wire-order5]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_simultaneous_stale_starts_have_one_atomic_winner_and_no_sink_barrier[atomic-model-order0]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_simultaneous_stale_starts_have_one_atomic_winner_and_no_sink_barrier[atomic-model-order1]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_simultaneous_stale_starts_have_one_atomic_winner_and_no_sink_barrier[atomic-model-order2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_simultaneous_stale_starts_have_one_atomic_winner_and_no_sink_barrier[atomic-model-order3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_simultaneous_stale_starts_have_one_atomic_winner_and_no_sink_barrier[atomic-model-order4]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_simultaneous_stale_starts_have_one_atomic_winner_and_no_sink_barrier[atomic-model-order5]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_first_read_of_stale_timestamp_takes_over_without_second_wait_window[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_first_read_of_stale_timestamp_takes_over_without_second_wait_window[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_renewal_rejects_prepared_stale_candidate_and_resumed_old_actor[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_renewal_rejects_prepared_stale_candidate_and_resumed_old_actor[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_forced_flag_stops_old_writes_and_transfers_fresh_role_without_ack[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_forced_flag_stops_old_writes_and_transfers_fresh_role_without_ack[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_competing_force_request_and_wrong_requester_cannot_steal_flag[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_competing_force_request_and_wrong_requester_cannot_steal_flag[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_crashed_requester_flag_expires_and_stale_takeover_can_clear_it[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_crashed_requester_flag_expires_and_stale_takeover_can_clear_it[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_explicit_expiry_clear_is_conditional_and_does_not_change_owner[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_explicit_expiry_clear_is_conditional_and_does_not_change_owner[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_uncertain_wall_clock_uses_bounded_unchanged_heartbeat_not_unrelated_writes[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_uncertain_wall_clock_uses_bounded_unchanged_heartbeat_not_unrelated_writes[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_heartbeat_progress_and_unreliable_or_reversed_monotonic_prevent_false_staleness[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_heartbeat_progress_and_unreliable_or_reversed_monotonic_prevent_false_staleness[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_backward_wall_clock_qualifies_monotonic_window_without_backdated_heartbeat[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_backward_wall_clock_qualifies_monotonic_window_without_backdated_heartbeat[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_partition_stops_authoritative_work_and_rejoin_observes_new_owner[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_partition_stops_authoritative_work_and_rejoin_observes_new_owner[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_lost_acquisition_reply_is_read_back_once_without_second_claim[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_lost_acquisition_reply_is_read_back_once_without_second_claim[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_restart_inspects_exact_acquisition_and_never_assumes_success[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_restart_inspects_exact_acquisition_and_never_assumes_success[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_dispatch_check_cannot_revoke_external_effect_after_suspension[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_dispatch_check_cannot_revoke_external_effect_after_suspension[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_epoch_overflow_never_wraps_or_reuses_authority[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_epoch_overflow_never_wraps_or_reuses_authority[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_changed_observation_foreign_plan_or_manufactured_success_cannot_grant_role[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_changed_observation_foreign_plan_or_manufactured_success_cannot_grant_role[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_malformed_persisted_leadership_stops_before_any_mutation[wire-owner]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_malformed_persisted_leadership_stops_before_any_mutation[wire-display]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_malformed_persisted_leadership_stops_before_any_mutation[wire-epoch]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_malformed_persisted_leadership_stops_before_any_mutation[wire-sequence]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_malformed_persisted_leadership_stops_before_any_mutation[wire-extra]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_malformed_persisted_leadership_stops_before_any_mutation[wire-force-generation]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_malformed_persisted_leadership_stops_before_any_mutation[atomic-model-owner]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_malformed_persisted_leadership_stops_before_any_mutation[atomic-model-display]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_malformed_persisted_leadership_stops_before_any_mutation[atomic-model-epoch]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_malformed_persisted_leadership_stops_before_any_mutation[atomic-model-sequence]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_malformed_persisted_leadership_stops_before_any_mutation[atomic-model-extra]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_malformed_persisted_leadership_stops_before_any_mutation[atomic-model-force-generation]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_invalid_clock_samples_are_not_freshness_evidence[sample0]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_invalid_clock_samples_are_not_freshness_evidence[sample1]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_invalid_clock_samples_are_not_freshness_evidence[sample2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_invalid_clock_samples_are_not_freshness_evidence[sample3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_invalid_clock_samples_are_not_freshness_evidence[sample4]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_same_computer_display_name_is_not_the_owner_identity",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_stale_snapshot_cannot_overwrite_incumbent_renewal_in_actual_cas",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_clock_uncertain_forced_flag_does_not_invent_an_expiry[wire]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_leadership",
+      "name": "test_clock_uncertain_forced_flag_does_not_invent_an_expiry[atomic-model]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_fresh_incumbent_prevents_every_eager_side_effect[REPAIR]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_fresh_incumbent_prevents_every_eager_side_effect[REGISTER]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_fresh_incumbent_prevents_every_eager_side_effect[IDENTITY]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_fresh_incumbent_prevents_every_eager_side_effect[ROUTE]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_fresh_incumbent_prevents_every_eager_side_effect[RETENTION]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_fresh_incumbent_prevents_every_eager_side_effect[SCAN]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_fresh_incumbent_prevents_every_eager_side_effect[WOL]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_fresh_incumbent_prevents_every_eager_side_effect[SSH]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_fresh_incumbent_prevents_every_eager_side_effect[LAUNCH]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_fallback_observation_does_not_interrupt_incumbent_renewal",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_stale_start_acquires_before_each_effect_and_persists_receipt[REPAIR]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_stale_start_acquires_before_each_effect_and_persists_receipt[REGISTER]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_stale_start_acquires_before_each_effect_and_persists_receipt[IDENTITY]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_stale_start_acquires_before_each_effect_and_persists_receipt[ROUTE]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_stale_start_acquires_before_each_effect_and_persists_receipt[RETENTION]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_stale_start_acquires_before_each_effect_and_persists_receipt[SCAN]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_stale_start_acquires_before_each_effect_and_persists_receipt[WOL]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_stale_start_acquires_before_each_effect_and_persists_receipt[SSH]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_stale_start_acquires_before_each_effect_and_persists_receipt[LAUNCH]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_resumed_old_owner_cannot_prepare_or_dispatch_any_action[REPAIR]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_resumed_old_owner_cannot_prepare_or_dispatch_any_action[REGISTER]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_resumed_old_owner_cannot_prepare_or_dispatch_any_action[IDENTITY]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_resumed_old_owner_cannot_prepare_or_dispatch_any_action[ROUTE]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_resumed_old_owner_cannot_prepare_or_dispatch_any_action[RETENTION]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_resumed_old_owner_cannot_prepare_or_dispatch_any_action[SCAN]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_resumed_old_owner_cannot_prepare_or_dispatch_any_action[WOL]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_resumed_old_owner_cannot_prepare_or_dispatch_any_action[SSH]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_resumed_old_owner_cannot_prepare_or_dispatch_any_action[LAUNCH]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_owner_changes_during_shared_preparation_rejects_old_write",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_owner_changes_during_durable_external_intent_prevents_dispatch",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_forced_requester_claims_fresh_incumbent_without_ack",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_restart_uses_own_persisted_grant_but_never_computer_name",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_another_installation_cannot_use_copied_grant_or_capability",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_context_rejects_other_installation_checkpoint",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_lost_acquisition_reply_restart_inspects_same_transition_once",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_failed_local_intent_persistence_never_writes_authority",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_external_unknown_survives_restart_and_does_not_block_new_leadership",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_lost_shared_reply_is_reconciled_without_another_write",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_partition_blocks_admission_and_rejoin_observes_new_owner",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_clock_uncertainty_uses_bounded_monotonic_standby_observations",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_read_capability_loss_performs_no_provider_call",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_specific_action_requires_own_installation_capability",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_unknown_shared_intent_is_not_erased_by_an_external_receipt",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_clock_loss_between_tick_and_external_dispatch_is_rejected[False-False]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_clock_loss_between_tick_and_external_dispatch_is_rejected[True-True]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_empty_authority_needs_explicit_commissioning",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_invalid_shared_callback_cannot_return_arbitrary_effect_plan",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_stop_before_native_worker_start_never_reads_authority",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_native_factory_does_not_enter_legacy_tree_repair",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_watchdog_startup",
+      "name": "test_desktop_entry_emits_paused_reason_without_any_worker_side_effect",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_blank_deployment_has_no_machine_seed_or_implicit_scan",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_partial_choices_restart_request_only_missing_and_never_expose_hints",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_exact_owner_decision_stages_private_descriptor_without_any_shared_write",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_untrusted_proposal_cannot_inject_private_data_instructions_or_authority[credential]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_untrusted_proposal_cannot_inject_private_data_instructions_or_authority[topology]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_untrusted_proposal_cannot_inject_private_data_instructions_or_authority[capability]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_untrusted_proposal_cannot_inject_private_data_instructions_or_authority[command]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_untrusted_proposal_cannot_inject_private_data_instructions_or_authority[instructions]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_untrusted_proposal_cannot_inject_private_data_instructions_or_authority[authority]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_untrusted_proposal_cannot_inject_private_data_instructions_or_authority[alias]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_untrusted_proposal_cannot_inject_private_data_instructions_or_authority[name]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_invalid_closed_selection_preserves_draft[schema]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_invalid_closed_selection_preserves_draft[revision]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_invalid_closed_selection_preserves_draft[identity]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_invalid_closed_selection_preserves_draft[duplicate]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_invalid_closed_selection_preserves_draft[launch]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_invalid_closed_selection_preserves_draft[role]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_proposal_is_never_owner_approval",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_revoked_guidance_blocks_new_changes_and_preserves_draft[propose]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_revoked_guidance_blocks_new_changes_and_preserves_draft[confirm]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_revoked_guidance_blocks_new_changes_and_preserves_draft[restart]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_restart_keeps_original_pin_when_main_advances_and_rejects_changed_bytes",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_unreleased_or_missing_guidance_has_no_fallback",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_discovery_change_requires_new_proposal_before_confirmation",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_cancel_restart_resume_and_rollback_cannot_erase_owner_decision",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_protected_frame_rejects_wrong_binding_or_tampered_draft[domain]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_protected_frame_rejects_wrong_binding_or_tampered_draft[root]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_protected_frame_rejects_wrong_binding_or_tampered_draft[schema]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_protected_frame_rejects_wrong_binding_or_tampered_draft[decision]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_protected_frame_rejects_wrong_binding_or_tampered_draft[candidate]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_protected_frame_rejects_wrong_binding_or_tampered_draft[authority]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_protected_frame_rejects_wrong_binding_or_tampered_draft[provenance]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_unconfirmed_operation_blocks_staging",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_existing_descriptor_remains_active_and_choices_cannot_bypass_draft",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_repository_profile_remains_unreleased_and_hashes_include_setup_guidance",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_restored_pin_must_match_original_repository_catalogue[entry]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_restored_pin_must_match_original_repository_catalogue[closure]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_setup",
+      "name": "test_restored_pin_must_match_original_repository_catalogue[hash]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_atomic_minimal_revision_preserves_artifacts_discovery_and_unknown_work",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_lost_reply_keeps_old_active_then_restart_only_inspects_exact_revision",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_new_owner_or_force_request_blocks_old_owner_without_sink_ack_barrier[False]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_new_owner_or_force_request_blocks_old_owner_without_sink_ack_barrier[True]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_takeover_after_applied_lost_reply_still_allows_read_only_confirmation",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_revocation_after_pending_save_leaves_read_only_unknown_without_writing",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_local_pending_save_failure_never_reaches_shared_write[stage]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_local_pending_save_failure_never_reaches_shared_write[promote]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_local_pending_save_failure_never_reaches_shared_write[readback]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_cancel_allows_inspection_but_never_resends",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_next_revision_is_atomic_and_keeps_first_until_confirmed",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_invalid_remote_binding_never_writes_or_activates[wrong-root]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_invalid_remote_binding_never_writes_or_activates[wrong-domain]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_invalid_remote_binding_never_writes_or_activates[wrong-schema]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_invalid_remote_binding_never_writes_or_activates[unpublished]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_invalid_remote_binding_never_writes_or_activates[alias]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_persisted_plan_tamper_is_rejected_before_restart_inspection[after]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_persisted_plan_tamper_is_rejected_before_restart_inspection[before]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_persisted_plan_tamper_is_rejected_before_restart_inspection[protected]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_persisted_plan_tamper_is_rejected_before_restart_inspection[header]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_discovery_refresh_preserves_descriptor_and_shared_decode",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_newer_remote_revision_does_not_confirm_or_overwrite_lost_old_write",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_native_protected_file_restart_confirmed_descriptor",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_remote_record_over_budget_cannot_be_replaced_or_reset",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_discovery_pending_plan_cannot_change_ballpark_selection",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_takeover_between_local_intent_and_write_keeps_pending_inspection",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_all_64_slots_roundtrip_with_maximum_catalogue_fields_within_fixed_budgets",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_compact_codec_rejects_ambiguous_or_unrecognized_values[none]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_compact_codec_rejects_ambiguous_or_unrecognized_values[empty]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_compact_codec_rejects_ambiguous_or_unrecognized_values[bool-version]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_compact_codec_rejects_ambiguous_or_unrecognized_values[bool-revision]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_compact_codec_rejects_ambiguous_or_unrecognized_values[duplicate-role]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_compact_codec_rejects_ambiguous_or_unrecognized_values[negative-os]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_compact_codec_rejects_ambiguous_or_unrecognized_values[bool-launch]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_compact_codec_rejects_ambiguous_or_unrecognized_values[duplicate-transport]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_real_qt_owner_review_approval_is_separate_from_publication",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_ballpark_publication",
+      "name": "test_real_qt_restart_unknown_exposes_only_inspection",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_discovery_reports_unconfigured_description_table_without_provisioning",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_unavailable_description_clock_keeps_discovery_status_inspectable",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_persist_before_publication_restart_stable_alias_and_minimal_projection",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_discovery_binding_cannot_be_reconfigured_by_general_setup[role-fetcher]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_discovery_binding_cannot_be_reconfigured_by_general_setup[storage-None]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_discovery_binding_cannot_be_reconfigured_by_general_setup[network_scope-value2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_discovery_binding_cannot_be_reconfigured_by_general_setup[storage_request-value3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_cancel_resume_and_rollback_preserve_mappings",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_failed_local_persistence_never_sends_shared_write[stage]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_failed_local_persistence_never_sends_shared_write[promote]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_failed_local_persistence_never_sends_shared_write[readback]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_lost_reply_restart_is_read_only_then_confirms_same_plan",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_stale_or_forced_takeover_stops_old_publication_without_all_sink_barrier[False]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_stale_or_forced_takeover_stops_old_publication_without_all_sink_barrier[True]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_takeover_after_pending_save_blocks_cas_and_keeps_exact_inspection",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_retained_work_blocks_new_identity_but_is_never_erased",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_existing_identity_refresh_preserves_unknown_work",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_full_quarantine_preserves_foreign_record_and_local_evidence",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_quarantine_uses_one_existing_slot_with_no_private_observation",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_copied_or_extended_private_package_is_rejected[installation]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_copied_or_extended_private_package_is_rejected[domain]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_copied_or_extended_private_package_is_rejected[capacity]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_copied_or_extended_private_package_is_rejected[scope]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_copied_or_extended_private_package_is_rejected[field]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_legacy_payload_without_package_still_validates",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_adopted_shared_identity_does_not_import_remote_trust",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_conflicting_shared_identity_does_not_reassign_private_mapping",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_selected_scope_and_capabilities_precede_any_collection",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_scope_round_trip_is_closed_and_not_an_expansion",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_older_local_projection_preserves_newer_shared_network_evidence[newer]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_older_local_projection_preserves_newer_shared_network_evidence[expired]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_older_local_projection_preserves_newer_shared_network_evidence[future]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_newer_qualified_local_probe_updates_same_identity_without_enrollment",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_restored_pending_plan_cannot_expand_scope_or_rebind[owner]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_restored_pending_plan_cannot_expand_scope_or_rebind[authority]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_restored_pending_plan_cannot_expand_scope_or_rebind[generation]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_restored_pending_plan_cannot_expand_scope_or_rebind[slot]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_restored_pending_plan_cannot_expand_scope_or_rebind[artifact]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_discovery_workflow",
+      "name": "test_actual_native_settings_restart_keeps_discovery_without_per_device_files",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_owner_approved_distinct_installation_changes_one_existing_catalogue",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_same_confirmed_report_is_idempotent_but_reinstall_cannot_take_its_identity",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_unverified_peer_or_copied_identity_never_saves_or_writes[false-verifier]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_unverified_peer_or_copied_identity_never_saves_or_writes[raw-dict]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_unverified_peer_or_copied_identity_never_saves_or_writes[wrong-installation]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_unverified_peer_or_copied_identity_never_saves_or_writes[wrong-device]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_unverified_peer_or_copied_identity_never_saves_or_writes[wrong-digest]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_unverified_peer_or_copied_identity_never_saves_or_writes[old-proof]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_unverified_peer_or_copied_identity_never_saves_or_writes[same-watchdog]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_unverified_peer_or_copied_identity_never_saves_or_writes[unknown-build]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_actual_runtime_policy_not_saved_watchdog_or_fetcher_proposal_drives_report",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_profile_revision_and_freshness_are_effective_not_a_ready_guess",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_conflicting_or_stale_report_preserves_confirmed_state[stale-revision]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_conflicting_or_stale_report_preserves_confirmed_state[revision-gap]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_conflicting_or_stale_report_preserves_confirmed_state[old-sample]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_conflicting_or_stale_report_preserves_confirmed_state[future]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_conflicting_or_stale_report_preserves_confirmed_state[expired]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_conflicting_or_stale_report_preserves_confirmed_state[changed-device]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_conflicting_or_stale_report_preserves_confirmed_state[alias-conflict]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_conflicting_or_stale_report_preserves_confirmed_state[capacity]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_same_installation_cannot_enroll_second_approved_device_or_rebind_local_choices",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_discovery_alone_or_unselected_device_has_no_enrollment_grant",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_lost_reply_restart_only_inspects_exact_operation_after_takeover",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_unsent_durable_intent_cancelled_restart_remains_unknown_without_resend",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_persisted_pending_tamper_is_rejected_before_recovery[authority]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_persisted_pending_tamper_is_rejected_before_recovery[mode]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_persisted_pending_tamper_is_rejected_before_recovery[request]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_persisted_pending_tamper_is_rejected_before_recovery[operation]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_persisted_pending_tamper_is_rejected_before_recovery[owner]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_persisted_pending_tamper_is_rejected_before_recovery[protected]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_persisted_pending_tamper_is_rejected_before_recovery[before]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_persisted_pending_tamper_is_rejected_before_recovery[after]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_revocation_preserves_unknown_work_history_and_prevents_old_binding",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_native_file_restart_keeps_both_distinct_installations_and_receipts",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_native_own_credentials_availability_is_not_copied_or_exposed",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_whole_record_headroom_rejection_does_not_reset_or_truncate",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_all64_preallocated_targets_keep_complete_profiles_within_existing_budgets",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_discovery_refresh_preserves_enrollment_and_effective_profile",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_new_owner_or_forced_request_stops_old_enrollment_without_ack_barrier[False]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_new_owner_or_forced_request_stops_old_enrollment_without_ack_barrier[True]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_private_intent_failure_never_reaches_authority[stage]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_private_intent_failure_never_reaches_authority[promote]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_private_intent_failure_never_reaches_authority[readback]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_peer_change_after_durable_intent_is_inspection_only",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_general_setup_or_rollback_cannot_erase_registration[role]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_general_setup_or_rollback_cannot_erase_registration[storage]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_general_setup_or_rollback_cannot_erase_registration[network_scope]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_general_setup_or_rollback_cannot_erase_registration[descriptor]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_summary_pages_only_initially_approved_fetcher_roles[role_sets0]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_summary_pages_only_initially_approved_fetcher_roles[role_sets1]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_summary_pages_only_initially_approved_fetcher_roles[role_sets2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_summary_pages_only_initially_approved_fetcher_roles[role_sets3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_summary_pages_only_initially_approved_fetcher_roles[role_sets4]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_watchdog_only_role_still_cannot_register_fetcher",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_fetcher_enrollment",
+      "name": "test_summary_cannot_hide_bound_fetcher_on_unapproved_role",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_first_run_storage",
+      "name": "test_exact_commissioned_root_authority_and_artifacts_are_rechecked_read_only",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_first_run_storage",
+      "name": "test_stale_or_mismatched_commissioning_marker_is_not_readiness[root-permission]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_first_run_storage",
+      "name": "test_stale_or_mismatched_commissioning_marker_is_not_readiness[trashed-authority]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_first_run_storage",
+      "name": "test_stale_or_mismatched_commissioning_marker_is_not_readiness[changed-tab]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_first_run_storage",
+      "name": "test_stale_or_mismatched_commissioning_marker_is_not_readiness[different-domain]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_first_run_storage",
+      "name": "test_stale_or_mismatched_commissioning_marker_is_not_readiness[missing-artifact]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_first_run_storage",
+      "name": "test_stale_or_mismatched_commissioning_marker_is_not_readiness[unready]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_default_custom_location_and_restart_keep_the_exact_table",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_custom_initial_location_never_creates_default",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_owner_permission_is_not_inferred_from_access[configure]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_owner_permission_is_not_inferred_from_access[move]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_owner_permission_is_not_inferred_from_access[approve]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_stale_owner_proposal_and_competing_settings_writer_cannot_overwrite",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_failed_update_recovers_the_same_complete_candidate_without_second_write[stage]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_failed_update_recovers_the_same_complete_candidate_without_second_write[promote]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_failed_target_readback_preserves_prior_root_then_inspects_same_written_table",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_existing_destination_is_never_overwritten[existing-folder]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_existing_destination_is_never_overwritten[existing-table]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_target_creation_race_leaves_pending_and_does_not_adopt_empty_foreign_folder",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_changed_source_after_move_intent_is_not_replaced_or_falsely_confirmed",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_observations_recheck_current_owner_at_the_actual_native_write",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_wrong_native_directory_binding_is_refused_without_altering_data",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_store",
+      "name": "test_unknown_setup_operations_preserve_all_private_payloads",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_generated_machine_schemas_and_canonical_round_trip",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_secret_topology_and_instruction_fields_are_not_description_inputs[password]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_secret_topology_and_instruction_fields_are_not_description_inputs[token]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_secret_topology_and_instruction_fields_are_not_description_inputs[private_key]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_secret_topology_and_instruction_fields_are_not_description_inputs[resolver_handle]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_secret_topology_and_instruction_fields_are_not_description_inputs[path]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_secret_topology_and_instruction_fields_are_not_description_inputs[address]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_secret_topology_and_instruction_fields_are_not_description_inputs[router_procedure]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_secret_topology_and_instruction_fields_are_not_description_inputs[instruction_url]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_secret_topology_and_instruction_fields_are_not_description_inputs[shell]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_secret_topology_and_instruction_fields_are_not_description_inputs[display_name]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_invalid_proposal_identity_revision_and_types[schema_version-True]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_invalid_proposal_identity_revision_and_types[expected_revision-True]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_invalid_proposal_identity_revision_and_types[expected_revision-0]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_invalid_proposal_identity_revision_and_types[device_id-not-an-identity]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_invalid_proposal_identity_revision_and_types[description-value4]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_invalid_proposal_identity_revision_and_types[description-None]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_duplicate_nonfinite_and_unbounded_proposals_fail_closed[{\"schema_version\":1,\"schema_version\":1}]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_duplicate_nonfinite_and_unbounded_proposals_fail_closed[{\"expected_revision\":NaN}]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_duplicate_nonfinite_and_unbounded_proposals_fail_closed[[]]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_duplicate_nonfinite_and_unbounded_proposals_fail_closed[]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_duplicate_nonfinite_and_unbounded_proposals_fail_closed[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_observations_need_descriptions_and_never_leak_private_hints",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_optional_addressing_does_not_block_adequate_description_or_other_prerequisites[UNKNOWN]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_optional_addressing_does_not_block_adequate_description_or_other_prerequisites[NOT_ASSIGNED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_optional_addressing_does_not_block_adequate_description_or_other_prerequisites[ASSIGNED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_fresh_verified_addressing_is_scoped_to_only_that_action_and_endpoint",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_stale_unknown_platform_and_noncomputer_descriptions_are_distinct",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_untrusted_clock_does_not_present_zero_timestamp_as_fresh",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_semantic_table_identity_and_schema_errors_are_closed[identity]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_semantic_table_identity_and_schema_errors_are_closed[foreign-description]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_semantic_table_identity_and_schema_errors_are_closed[role]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_semantic_table_identity_and_schema_errors_are_closed[extra]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_semantic_table_identity_and_schema_errors_are_closed[revision]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_network_table_schema",
+      "name": "test_semantic_table_identity_and_schema_errors_are_closed[duplicate-entry]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_revision_previous_and_restart_are_observations_not_new_identity",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_stale_writer_cannot_replace_newer_state",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_interrupted_first_commit_preserves_exact_candidate[stage]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_interrupted_first_commit_preserves_exact_candidate[promote]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_lost_readback_inspects_committed_state_without_replay",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_recovery_refuses_an_unrelated_or_stale_candidate",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_pending_update_blocks_reading_a_stale_current_payload",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_partial_or_malformed_pending_is_preserved[empty]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_partial_or_malformed_pending_is_preserved[partial]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_partial_or_malformed_pending_is_preserved[duplicate]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_partial_or_malformed_pending_is_preserved[nonfinite]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_partial_or_malformed_pending_is_preserved[array]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_copying_state_to_another_directory_or_owner_fails",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_payload_corruption_cannot_be_read_or_overwritten",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_counter_exhaustion_does_not_stage_an_unreadable_frame",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_invalid_payload_never_stages[nonfinite]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_invalid_payload_never_stages[oversized]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings",
+      "name": "test_concurrent_lock_and_provider_errors_do_not_leak",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_actual_private_owner_lock_write_restart_and_previous",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_existing_root_cannot_be_recreated_or_repaired",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_creation_needs_explicit_selected_root_authorization",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_actual_lock_contention_is_explicit_and_releases",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_actual_copied_state_is_rejected_by_directory_binding",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_actual_interrupted_stage_recovers_exact_identity",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_actual_malformed_staging_is_not_overwritten",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_actual_broad_permissions_fail_without_repair[root]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_actual_broad_permissions_fail_without_repair[settings.json]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_actual_broad_permissions_fail_without_repair[settings.lock]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_actual_hardlink_is_rejected[settings.json]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_actual_hardlink_is_rejected[settings.pending]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_actual_hardlink_is_rejected[settings.lock]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_linux_special_objects_fail_without_opening_or_blocking[symlink]",
+      "status": "SKIPPED"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_linux_special_objects_fail_without_opening_or_blocking[fifo]",
+      "status": "SKIPPED"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_linux_special_objects_fail_without_opening_or_blocking[directory]",
+      "status": "SKIPPED"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_actual_payload_digest_corruption_is_preserved",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_private_settings_native",
+      "name": "test_linux_directory_replacement_during_transaction_fails",
+      "status": "SKIPPED"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_persist_identity_once_cancel_resume_and_restart_ready_invalidation",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_only_missing_owner_choices_are_requested_before_probes",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_default_activation_remains_independently_denied",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_activation_refreshes_pin_and_never_enters_after_revocation",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_synthetic_authorized_activation_checks_again_after_review",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_failed_prerequisite_has_closed_reason_and_never_enters[environment]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_failed_prerequisite_has_closed_reason_and_never_enters[storage]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_failed_prerequisite_has_closed_reason_and_never_enters[descriptor]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_failed_prerequisite_has_closed_reason_and_never_enters[instructions]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_exact_opaque_credential_is_rechecked_without_use[ABSENT]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_exact_opaque_credential_is_rechecked_without_use[DENIED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_exact_opaque_credential_is_rechecked_without_use[LOCKED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_exact_opaque_credential_is_rechecked_without_use[EXPIRED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_exact_opaque_credential_is_rechecked_without_use[REVOKED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_exact_opaque_credential_is_rechecked_without_use[STORE_UNAVAILABLE]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_saved_opaque_handle_does_not_fabricate_missing_restart_binding",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_unknown_side_effect_survives_cancel_restart_and_cannot_replay",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_failed_persist_cannot_call_external_action",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_unapproved_action_or_invented_inspection_cannot_advance",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_stale_instance_and_saved_ready_flag_cannot_activate",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_bad_or_secret_bearing_choices_never_persist[extra-field]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_bad_or_secret_bearing_choices_never_persist[role]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_bad_or_secret_bearing_choices_never_persist[host-bits]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_bad_or_secret_bearing_choices_never_persist[duplicate-scope]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_bad_or_secret_bearing_choices_never_persist[fake-store]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_bad_or_secret_bearing_choices_never_persist[secret]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_bad_or_secret_bearing_choices_never_persist[timing]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_safe_rollback_appends_revision_and_never_restores_readiness",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_rollback_cannot_erase_recorded_external_effect",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run",
+      "name": "test_status_and_exception_outputs_omit_all_private_choices",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run_native",
+      "name": "test_actual_native_model_restart_preserves_identity_and_cancellation",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run_native",
+      "name": "test_actual_environment_probe_reports_only_closed_nonidentifying_facts",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run_native",
+      "name": "test_desktop_reopen_recovers_same_complete_candidate[first-identity]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run_native",
+      "name": "test_desktop_reopen_recovers_same_complete_candidate[cancel-unknown]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_first_run_native",
+      "name": "test_desktop_reopen_never_repairs_partial_staging_or_empty_identity",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_network_table_native",
+      "name": "test_native_default_restart_approval_custom_move_and_prior_data",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_network_table_native",
+      "name": "test_native_insecure_destination_cannot_be_adopted_or_repaired",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_network_table_native",
+      "name": "test_native_table_permission_loss_is_closed_and_not_repaired",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_network_table_native",
+      "name": "test_native_table_lock_blocks_competing_writer_without_losing_revision",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_network_table_native",
+      "name": "test_native_existing_location_identity_swap_is_refused",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_network_table_native",
+      "name": "test_actual_discovery_owner_callback_updates_native_table_without_lock_reentry",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_network_table_native",
+      "name": "test_native_owner_read_scope_refuses_writes_and_expired_port",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_network_table_native",
+      "name": "test_other_thread_cannot_borrow_native_owner_read_scope",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_network_table_native",
+      "name": "test_native_owner_callback_refusal_restores_store_and_retains_pending[False]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_network_table_native",
+      "name": "test_native_owner_callback_refusal_restores_store_and_retains_pending[True]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_network_table_native",
+      "name": "test_native_discovery_reports_pending_table_update_without_replay",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_topology_and_platform_variations_are_explicit[FLAT]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_topology_and_platform_variations_are_explicit[ROUTED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_topology_and_platform_variations_are_explicit[MULTI_SUBNET]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_topology_and_platform_variations_are_explicit[VPN]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_topology_and_platform_variations_are_explicit[ISOLATED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_topology_and_platform_variations_are_explicit[MIXED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_projection_omits_network_paths_and_local_installation",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_secret_and_unknown_fields_are_rejected_without_echo[root]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_secret_and_unknown_fields_are_rejected_without_echo[device]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_secret_and_unknown_fields_are_rejected_without_echo[interface]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_secret_and_unknown_fields_are_rejected_without_echo[platform]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_secret_and_unknown_fields_are_rejected_without_echo[fact]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_shared_catalogue_cannot_add_endpoints_or_resolver_handles",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_no_inference_between_network_ssh_fetcher_and_result",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_each_observation_has_its_own_freshness_and_future_clock_guard",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_configuration_or_incomplete_observation_cannot_claim_online[fact0]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_configuration_or_incomplete_observation_cannot_claim_online[fact1]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_configuration_or_incomplete_observation_cannot_claim_online[fact2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_configuration_or_incomplete_observation_cannot_claim_online[fact3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_duplicate_display_names_allowed_but_id_alias_and_address_collisions_fail",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_same_address_on_isolated_segments_is_not_global_identity",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_address_change_keeps_device_identity_and_requires_next_revision",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_identity_removal_and_domain_change_need_separate_maintenance",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_watchdog_authority_is_separate_from_owner_skill_proposal",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_public_schema_artifact_matches_code",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_invalid_or_interface_scoped_address_has_fixed_diagnostic[not-an-address]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_invalid_or_interface_scoped_address_has_fixed_diagnostic[192.0.2.3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_invalid_or_interface_scoped_address_has_fixed_diagnostic[192.0.2.3/99]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_invalid_or_interface_scoped_address_has_fixed_diagnostic[fe80::3%private-interface/64]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_ballpark_contract",
+      "name": "test_uuid_case_and_alias_newline_cannot_create_ambiguous_identity",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_new_workflow_resolves_fresh_and_pins_complete_reference_closure",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_branch_advance_during_load_cannot_mix_references",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_stale_or_untrusted_head_blocks_before_content[patch0]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_stale_or_untrusted_head_blocks_before_content[patch1]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_stale_or_untrusted_head_blocks_before_content[patch2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_stale_or_untrusted_head_blocks_before_content[patch3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_stale_or_untrusted_head_blocks_before_content[patch4]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_stale_or_untrusted_head_blocks_before_content[patch5]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_stale_or_untrusted_head_blocks_before_content[patch6]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_source_failure_does_not_reuse_prior_pin_or_expose_exception",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_missing_source_never_returns_partial_bundle[skill/tb4/compatibility.json]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_missing_source_never_returns_partial_bundle[skill/tb4/SKILL.md]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_missing_source_never_returns_partial_bundle[skill/tb4/operations/example.md]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_missing_source_never_returns_partial_bundle[protocol/example.json]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_modified_reference_rejected_even_at_same_commit[skill/tb4/SKILL.md]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_modified_reference_rejected_even_at_same_commit[skill/tb4/operations/example.md]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_modified_reference_rejected_even_at_same_commit[protocol/example.json]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_exact_runtime_compatibility_required[facts0]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_exact_runtime_compatibility_required[facts1]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_exact_runtime_compatibility_required[facts2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_unverified_or_malformed_runtime_facts_rejected[facts0]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_unverified_or_malformed_runtime_facts_rejected[facts1]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_unverified_or_malformed_runtime_facts_rejected[facts2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_unverified_or_malformed_runtime_facts_rejected[facts3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_unverified_or_malformed_runtime_facts_rejected[facts4]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_nonreleased_profile_never_selected[UNRELEASED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_nonreleased_profile_never_selected[REVOKED]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_ambiguous_compatible_release_is_not_chosen_by_order",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_catalog_cannot_redirect_trust_or_escape_reference_scope[sanitized-parameter-609]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_catalog_cannot_redirect_trust_or_escape_reference_scope[protocol/../docs/x.md]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_catalog_cannot_redirect_trust_or_escape_reference_scope[protocol//x.json]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_catalog_cannot_redirect_trust_or_escape_reference_scope[protocol/./x.json]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_catalog_cannot_redirect_trust_or_escape_reference_scope[C:/private/binding.json]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_catalog_cannot_redirect_trust_or_escape_reference_scope[src/loader.py]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_catalog_cannot_redirect_trust_or_escape_reference_scope[skill/tb4/compatibility.json]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_catalog_cannot_redirect_trust_or_escape_reference_scope[skill/tb4/SKILL.md]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_catalog_closed_identity_and_structure[patch0]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_catalog_closed_identity_and_structure[patch1]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_catalog_closed_identity_and_structure[patch2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_catalog_closed_identity_and_structure[patch3]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_duplicate_json_keys_and_oversized_content_fail_closed",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_boundary_refresh_preserves_pinned_bytes_after_unrelated_update",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_withdrawal_or_changed_policy_blocks_new_mutations_keeps_old_evidence[revoke]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_withdrawal_or_changed_policy_blocks_new_mutations_keeps_old_evidence[remove]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_withdrawal_or_changed_policy_blocks_new_mutations_keeps_old_evidence[policy]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_runtime_upgrade_holds_mutations_without_replacing_pin",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_result_links_are_data_not_fetch_authority[docs/other.md]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_result_links_are_data_not_fetch_authority[../SKILL.md]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_result_links_are_data_not_fetch_authority[sanitized-parameter-629]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_repository_catalog_consistent_but_deliberately_not_live_eligible",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.coach.test_instruction_selection",
+      "name": "test_installable_pointer_contains_only_metadata_and_source_location",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_enter_is_one_settings_cas_after_native_wal_and_preserves_every_other_record",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_no_default_grant_or_authority_mutation_on_failed_prerequisite[not-owner-approved]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_no_default_grant_or_authority_mutation_on_failed_prerequisite[action]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_no_default_grant_or_authority_mutation_on_failed_prerequisite[typed-action]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_no_default_grant_or_authority_mutation_on_failed_prerequisite[root-access]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_no_default_grant_or_authority_mutation_on_failed_prerequisite[withdrawn]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_no_default_grant_or_authority_mutation_on_failed_prerequisite[schema-pin]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_explicit_checkbox_cannot_resolve_retained_work_or_erase_its_evidence[BUSY]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_explicit_checkbox_cannot_resolve_retained_work_or_erase_its_evidence[UNREAD]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_explicit_checkbox_cannot_resolve_retained_work_or_erase_its_evidence[UNKNOWN]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_unknown_local_effect_blocks_resolution_without_blocking_role_takeover",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_resolution_is_explicit_fresh_and_invalidated_by_new_work_not_heartbeat",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_stale_resolution_or_profile_replacement_cannot_be_approved",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_lost_shared_reply_restarts_in_inspect_only_and_confirms_after_takeover",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_unknown_before_apply_is_not_replayed_by_inspection",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_local_intent_crash_never_reaches_remote_and_recovers_same_payload[stage]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_local_intent_crash_never_reaches_remote_and_recovers_same_payload[promote]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_local_intent_crash_never_reaches_remote_and_recovers_same_payload[readback]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_current_wal_schema_pin_and_formed_payload_agree",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_fresh_fallback_adopts_role_and_marker_without_claiming_missing_old_local_evidence",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_changed_incumbent_label_refuses_before_acquisition_without_authority_write",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_maintenance",
+      "name": "test_malformed_pending_cannot_recover_or_change_protected_identity",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_maintenance_native",
+      "name": "test_actual_native_wal_before_cas_restart_resolution_and_profile_preservation",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_maintenance_native",
+      "name": "test_actual_native_local_promotion_cut_recovers_exact_wal_without_provider_replay",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_maintenance_native",
+      "name": "test_actual_native_wrong_directory_or_broad_state_cannot_mint_resolution",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_guarded_entry_reserves_native_runtime_and_changes_only_two_records",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_external_unknown_survives_fallback_without_acknowledgements_or_replay",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_covered_empty_fallback_can_explicitly_resolve_with_old_machine_unavailable",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_lost_journal_reply_restarts_inspect_only_and_never_invokes_external_work",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_native_reservation_during_unknown_guard_cas_prevents_late_invocation",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_actual_late_reply_preserves_reservation_and_requires_fresh_local_evidence",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_normal_summary_plan_cannot_erase_guard_or_cross_concurrent_initialization",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_empty_later_owner_cannot_bootstrap_coverage_of_unobserved_old_effects",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_occupied_unresolved_summary_cannot_be_reset_as_a_new_guard[BUSY]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_occupied_unresolved_summary_cannot_be_reset_as_a_new_guard[UNREAD]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_occupied_unresolved_summary_cannot_be_reset_as_a_new_guard[UNKNOWN]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_even_same_guard_normal_summary_update_cannot_conceal_unresolved_work",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_shared_terminal_binding_and_same_operation_are_not_replayed[COMPLETE]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_shared_terminal_binding_and_same_operation_are_not_replayed[NO_WORK]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_shared_terminal_binding_and_same_operation_are_not_replayed[UNKNOWN]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_effects",
+      "name": "test_effect_schema_pin_and_complete_native_payload_agree",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_effects_native",
+      "name": "test_actual_checkpoint_restart_reservation_cas_and_schema",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_effects_native",
+      "name": "test_actual_all_native_maintenance_resolution_and_late_role_heartbeat",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_effects_native",
+      "name": "test_native_reservation_promotion_cut_recovers_exact_frame_without_authority_mutation",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_effects_native",
+      "name": "test_native_effect_intent_cut_is_inspect_only_and_never_resends",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_effects_native",
+      "name": "test_native_copy_and_broad_checkpoint_cannot_admit_or_resolve",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_effects_native",
+      "name": "test_truthfully_initial_native_fixture_retains_verified_bootstrap_acquisition",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_effects_native",
+      "name": "test_native_typed_checkpoint_refuses_malformed_saved_values[boolean-epoch]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_effects_native",
+      "name": "test_native_typed_checkpoint_refuses_malformed_saved_values[foreign-field]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_effects_native",
+      "name": "test_native_typed_checkpoint_refuses_malformed_saved_values[foreign-authority]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_effects_native",
+      "name": "test_native_full_action_unknown_capacity_preserves_every_reference",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_original_complete_payload_and_history_retained_with_one_authority",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_actual_first_run_choice_review_restart_and_descriptor_timing_change",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_default_desktop_activation_remains_denied_and_old_profile_unchanged",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_owner_cannot_replace_identity_backend_or_root_in_this_candidate_unit[patch0]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_owner_cannot_replace_identity_backend_or_root_in_this_candidate_unit[patch1]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_owner_cannot_replace_identity_backend_or_root_in_this_candidate_unit[patch2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_arbitrary_ready_checker_and_saved_ready_flag_do_not_qualify_access",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_exact_candidate_credentials_rechecked_after_ready_without_execution",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_new_access_readback_and_pin_failure_never_promotes_original[access]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_new_access_readback_and_pin_failure_never_promotes_original[metadata]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_new_access_readback_and_pin_failure_never_promotes_original[readback]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_new_access_readback_and_pin_failure_never_promotes_original[withdrawn]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_new_access_readback_and_pin_failure_never_promotes_original[schema]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_saved_candidate_tampering_cannot_erase_history_or_construct_readiness[history]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_saved_candidate_tampering_cannot_erase_history_or_construct_readiness[nonce]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_saved_candidate_tampering_cannot_erase_history_or_construct_readiness[derived-package]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_saved_candidate_tampering_cannot_erase_history_or_construct_readiness[boolean-revision]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_saved_candidate_tampering_cannot_erase_history_or_construct_readiness[extra-field]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_alias_and_rewritten_archive_are_refused_without_old_configuration_change",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_new_unread_work_invalidates_explicit_resolution_and_candidate_review",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_local_staging_cut_is_same_candidate_inspection_not_remote_replay[transaction]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_local_staging_cut_is_same_candidate_inspection_not_remote_replay[archive]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_local_staging_cut_is_same_candidate_inspection_not_remote_replay[profile]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_candidate",
+      "name": "test_schema_exact_pin_native_metadata_and_nonidentifying_status",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_candidate_native",
+      "name": "test_actual_native_candidate_retains_original_frames_and_requires_restart_review",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_candidate_native",
+      "name": "test_actual_native_cut_recovery_preserves_exact_candidate_and_never_sends[transaction]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_candidate_native",
+      "name": "test_actual_native_cut_recovery_preserves_exact_candidate_and_never_sends[archive]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_candidate_native",
+      "name": "test_actual_native_cut_recovery_preserves_exact_candidate_and_never_sends[profile]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_candidate_native",
+      "name": "test_copied_native_staged_profile_cannot_replace_original_or_qualify",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_candidate_native",
+      "name": "test_broad_native_candidate_protection_refuses_review_without_provider_write",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.desktop.test_setup_ui",
+      "name": "test_gui_save_cancel_restart_preserves_identity_and_owner_choices",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.desktop.test_setup_ui",
+      "name": "test_gui_invalid_scope_does_not_replace_saved_choices",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.desktop.test_setup_ui",
+      "name": "test_gui_unknown_cannot_be_bypassed_with_check_or_changed_choices",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.desktop.test_setup_ui",
+      "name": "test_private_location_gate_never_auto_creates_or_repairs",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.desktop.test_setup_ui",
+      "name": "test_entry_routes_only_fresh_gui_to_setup_and_preserves_legacy",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.desktop.test_setup_ui",
+      "name": "test_untrusted_environment_or_provider_text_never_reaches_status",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.desktop.test_setup_ui",
+      "name": "test_default_setup_cannot_manufacture_ballpark_publication_context",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_existing_objects_move_once_and_original_profile_work_and_media_are_preserved",
+      "status": "FAILURE"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_unique_metadata_witness_and_seals_are_actual_but_not_yet_an_active_root",
+      "status": "FAILURE"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_response_loss_inspects_same_item_and_never_reissues_move[before]",
+      "status": "FAILURE"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_response_loss_inspects_same_item_and_never_reissues_move[after]",
+      "status": "FAILURE"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_native_and_shared_intent_are_present_and_exclusive_during_sdk_send",
+      "status": "FAILURE"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_first_cas_stale_fallback_needs_no_ack_and_old_root_sender_stops[before-send]",
+      "status": "FAILURE"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_first_cas_stale_fallback_needs_no_ack_and_old_root_sender_stops[during-send]",
+      "status": "FAILURE"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_failed_current_prerequisite_sends_no_sdk_move[target-access]",
+      "status": "FAILURE"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_failed_current_prerequisite_sends_no_sdk_move[withdrawn]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_failed_current_prerequisite_sends_no_sdk_move[unread]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_failed_current_prerequisite_sends_no_sdk_move[action]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_failed_current_prerequisite_sends_no_sdk_move[clock]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_foreign_object_or_record_hash_cannot_be_injected_into_saved_move_plan",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_wrong_historical_after_witness_never_resolves_unknown",
+      "status": "FAILURE"
+    },
+    {
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "name": "test_root_schema_exact_pin_and_default_owner_refusal",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_roots_native",
+      "name": "test_actual_native_root_cut_promotes_same_frame_and_never_reissues_old_sdk[begin]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_roots_native",
+      "name": "test_actual_native_root_cut_promotes_same_frame_and_never_reissues_old_sdk[prepared]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_roots_native",
+      "name": "test_actual_native_root_cut_promotes_same_frame_and_never_reissues_old_sdk[completed]",
+      "status": "FAILURE"
+    },
+    {
+      "classname": "tests.security.test_reconfiguration_roots_native",
+      "name": "test_actual_native_root_wal_restart_copy_and_broad_protection",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_native_complete_bootstrap_and_allocation_with_exact_request_bodies",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_native_unknown_never_repeats_a_possibly_applied_request[create-after]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_native_unknown_never_repeats_a_possibly_applied_request[create-before]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_native_unknown_never_repeats_a_possibly_applied_request[seed-after]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_native_initial_authority_refuses_ambiguous_or_unauthorized_setup[standby]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_native_initial_authority_refuses_ambiguous_or_unauthorized_setup[unauthorized]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_native_initial_authority_refuses_ambiguous_or_unauthorized_setup[llm-missing]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_native_initial_authority_refuses_ambiguous_or_unauthorized_setup[foreign-root]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_native_initial_authority_refuses_ambiguous_or_unauthorized_setup[pagination]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_native_initial_authority_refuses_ambiguous_or_unauthorized_setup[duplicate]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_raw_metadata_is_not_trusted_or_replaced[capabilities-None]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_raw_metadata_is_not_trusted_or_replaced[properties-None]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_raw_metadata_is_not_trusted_or_replaced[parents-value2]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_raw_metadata_is_not_trusted_or_replaced[mimeType-application/vnd.google-apps.folder]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_raw_metadata_is_not_trusted_or_replaced[size-8388609]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_raw_metadata_is_not_trusted_or_replaced[trashed-True]",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_missing_pinned_authority_or_raw_file_is_inspect_only",
+      "status": "PASS"
+    },
+    {
+      "classname": "tests.drive.test_native_commissioning",
+      "name": "test_completed_bootstrap_cannot_restore_superseded_grant",
+      "status": "PASS"
+    }
+  ],
+  "failures": [
+    {
+      "name": "test_existing_objects_move_once_and_original_profile_work_and_media_are_preserved",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "message": "tb4.configuration_contract.ConfigurationError: CONFIGURATION_MAINTENANCE"
+    },
+    {
+      "name": "test_unique_metadata_witness_and_seals_are_actual_but_not_yet_an_active_root",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "message": "tb4.configuration_contract.ConfigurationError: CONFIGURATION_MAINTENANCE"
+    },
+    {
+      "name": "test_response_loss_inspects_same_item_and_never_reissues_move[before]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "message": "tb4.configuration_contract.ConfigurationError: CONFIGURATION_MAINTENANCE"
+    },
+    {
+      "name": "test_response_loss_inspects_same_item_and_never_reissues_move[after]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "message": "tb4.configuration_contract.ConfigurationError: CONFIGURATION_MAINTENANCE"
+    },
+    {
+      "name": "test_native_and_shared_intent_are_present_and_exclusive_during_sdk_send",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "message": "tb4.configuration_contract.ConfigurationError: CONFIGURATION_MAINTENANCE"
+    },
+    {
+      "name": "test_first_cas_stale_fallback_needs_no_ack_and_old_root_sender_stops[before-send]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "message": "AssertionError: Regex pattern did not match.\n  Expected regex: 'OWNER_SUPERSEDED'\n  Actual message: 'CONFIGURATION_MAINTENANCE'"
+    },
+    {
+      "name": "test_first_cas_stale_fallback_needs_no_ack_and_old_root_sender_stops[during-send]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "message": "tb4.configuration_contract.ConfigurationError: CONFIGURATION_MAINTENANCE"
+    },
+    {
+      "name": "test_failed_current_prerequisite_sends_no_sdk_move[target-access]",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "message": "tb4.drive.docs_authority.AuthorityError: SETUP_ROOT"
+    },
+    {
+      "name": "test_wrong_historical_after_witness_never_resolves_unknown",
+      "classname": "tests.drive.test_reconfiguration_roots",
+      "message": "tb4.configuration_contract.ConfigurationError: CONFIGURATION_MAINTENANCE"
+    },
+    {
+      "name": "test_actual_native_root_cut_promotes_same_frame_and_never_reissues_old_sdk[completed]",
+      "classname": "tests.security.test_reconfiguration_roots_native",
+      "message": "tb4.configuration_contract.ConfigurationError: CONFIGURATION_MAINTENANCE"
+    }
+  ]
+}

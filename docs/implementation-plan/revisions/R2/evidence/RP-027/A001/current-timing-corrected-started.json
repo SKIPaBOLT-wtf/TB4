@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C4",
+  "attempt": "A001",
+  "intent_event": "RP-027-A001-0276",
+  "source_commit": "bf5c34f9fc79fcc6784ccd71009e2551608522a7",
+  "trigger_commit": "dcf61d2bebc1183ff38c2d28e25fcf036dabf2ad",
+  "request_revision": 20,
+  "collection": {
+    "schema_version": 1,
+    "source": "bf5c34f9fc79fcc6784ccd71009e2551608522a7",
+    "checkout": "075962ca97bb0a80dd84c7493da26e9454c43f27",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.848,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3043,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "windows_scope": {
+    "status": "RUNNING",
+    "expected_cases": 504,
+    "source": "bf5c34f9fc79fcc6784ccd71009e2551608522a7",
+    "checkout": "075962ca97bb0a80dd84c7493da26e9454c43f27",
+    "own_fixture": true
+  },
+  "github_jobs": [
+    {
+      "run": 37162934072,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111319945967,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 37162934096,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111319946055,
+          "name": "ledger",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 37162934065,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111319946029,
+          "name": "test",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 37162934086,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 111319946185,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "id": 111319946297,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "run": 37162931531,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 111319938467,
+          "name": "native-folder",
+          "status": "in_progress",
+          "conclusion": null
+        }
+      ]
+    }
+  ],
+  "prior_runs": "Request18 and19 exact jobs remain separately tracked; no cancellation or replay. First Windows failure and correction source are preserved in events273-275.",
+  "owner_pause": "Finish current qualification, reconcile prior terminal jobs, publish/readback checkpoint then stop until owner says continue.",
+  "acceptance": false
+}

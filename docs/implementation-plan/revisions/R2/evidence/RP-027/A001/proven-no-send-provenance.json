@@ -1,0 +1,106 @@
+{
+  "source": "6a7337e887dd2f63fcc9c1cf953c0893d4dc3427",
+  "checkout": "7a0f13ceb0b435fb890f212401f7f888936836fe",
+  "probes": [
+    {
+      "case": "fresh-second-reader-of-identical-native-root",
+      "bindings_equal": true,
+      "fresh_actual_proof_equal": true,
+      "result": "CONFIRMED",
+      "changed_rows": [
+        "global.summary"
+      ],
+      "receipt_retains_operation": true,
+      "sdk_moves": 0,
+      "profile_unchanged": true
+    },
+    {
+      "case": "actual-different-protected-native-root",
+      "bindings_distinct": true,
+      "error_class": "ConfigurationError",
+      "code": "CONFIGURATION_ROOT_REVOCATION_REQUIRED",
+      "frames": [
+        {
+          "file": "rp27-no-send-diagnostic.py",
+          "function": "<module>",
+          "line": 31
+        },
+        {
+          "file": "reconfiguration_root_settlement.py",
+          "function": "settle",
+          "line": 179
+        },
+        {
+          "file": "reconfiguration_root_settlement.py",
+          "function": "_proof",
+          "line": 163
+        },
+        {
+          "file": "reconfiguration_roots.py",
+          "function": "require_revocation",
+          "line": 402
+        },
+        {
+          "file": "reconfiguration_roots.py",
+          "function": "revocation",
+          "line": 387
+        },
+        {
+          "file": "configuration_contract.py",
+          "function": "require",
+          "line": 18
+        }
+      ],
+      "shared_unchanged": true,
+      "receipt_unknown": true,
+      "sdk_moves": 0,
+      "profile_unchanged": true
+    },
+    {
+      "case": "malformed-force-before-admission",
+      "error_class": "AuthorityError",
+      "code": "FORCE_SHAPE",
+      "frames": [
+        {
+          "file": "rp27-no-send-diagnostic.py",
+          "function": "<module>",
+          "line": 40
+        },
+        {
+          "file": "reconfiguration_root_settlement.py",
+          "function": "settle",
+          "line": 179
+        },
+        {
+          "file": "reconfiguration_root_settlement.py",
+          "function": "_proof",
+          "line": 169
+        },
+        {
+          "file": "reconfiguration_root_settlement.py",
+          "function": "_current",
+          "line": 65
+        },
+        {
+          "file": "leadership.py",
+          "function": "observe",
+          "line": 114
+        },
+        {
+          "file": "leadership.py",
+          "function": "_records",
+          "line": 140
+        },
+        {
+          "file": "docs_authority.py",
+          "function": "require",
+          "line": 24
+        }
+      ],
+      "shared_unchanged": true,
+      "receipt_unknown": true,
+      "sdk_moves": 0,
+      "profile_unchanged": true
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0449",
+  "source": "6436da86d4cd12853b1631a56b463c0a152889c6",
+  "local_source": "aed6745c1a9960f4d9a1aac81d57f24bbee11835",
+  "base": "eafeaf8c2cdbe899f781e487ad9d0add4a4ff727",
+  "amendment": "A-031",
+  "result": "RECORDED",
+  "paths": [
+    "src/tb4/commissioning_checks.py",
+    "src/tb4/drive/folder_prerequisites.py",
+    "tests/security/test_folder_prerequisites_native.py",
+    "tests/drive/test_folder_connection_authenticated_ssh.py",
+    ".github/workflows/folder-reconfiguration.yml",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-031-fresh-native-folder-prerequisites.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/CREDENTIAL_RESOLVER_CONTRACT.md"
+  ],
+  "scheduling": {
+    "independent_of": "Running current e8e8 request32 election/990/fullplatform qualification",
+    "basis": [
+      "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-windows-qualified.json",
+      "docs/implementation-plan/revisions/R2/evidence/RP-027/A001/fresh-native-folder-connection-linux31-failed.json"
+    ],
+    "qualified_scopes": "Actual native42 Win/Linux and11 realSSH including first-run/proof/current-loss/readback; source-equivalent production unchanged through two test repairs.",
+    "limits": "No election/transport/helper change; current12/election/990/fullplatform required before commonC1-C4."
+  },
+  "verification": {
+    "ast": "PASS four Python modules",
+    "legacy_validation_body": "Exact identical AST factored as _validate",
+    "existing12ssh": "Exact identical prior AST after removing only three new definitions",
+    "privacy": "PASS tools/scan_public_repo.py clean",
+    "diff": "PASS exactly nine ownedfiles",
+    "tests_executed": 0
+  },
+  "declared": {
+    "new_native": 35,
+    "new_ssh": 2,
+    "default": 3510,
+    "required_linux_groups": [
+      514,
+      51,
+      6,
+      22,
+      107,
+      327
+    ],
+    "required_linux_total": 1027
+  },
+  "behavior": "Actual exact Prerequisites/CommissionedStorage native factory. Current full protected payload/endpoint/pending/selected probe scope matched; fresh actual native image/pair for original checks and final selected capability recheck. Complete frame/pin checks before returning Validation; failed attempts clear credentials, cleared guard refuses rather than legacy fallback. No selection/enrollment/profile mutation/retry/role grant.",
+  "preservation": "Profile schema/candidate hash/legacybody/oldSSH/identity/nonce/history and defaultDenyActivation unchanged; Setup.review retains existing legitimate readiness/fullparent save.",
+  "acceptance": "Source only; new native/SSH/default/affected platform and actual staged replacement/runtime/GUI/C1-C4 held.",
+  "next": "Separate actual Windows/default qualification INTENT; inspect same frozen older e8e8/request32 native990/fullplatform under read-only source-specific INTENT."
+}

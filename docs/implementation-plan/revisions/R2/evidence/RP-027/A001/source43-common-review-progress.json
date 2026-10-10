@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0558",
+  "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "result": "RECORDED",
+  "acceptance": false,
+  "progress": {
+    "job": 114290073309,
+    "checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+    "summaries": [
+      "235 passed in 7.18s"
+    ]
+  },
+  "historical42_ci": {
+    "job": 114282061718,
+    "checkout": "ef020ad81ca8c7afefa59596baf86945ec72d9ec",
+    "summary": [
+      "43 passed in 0.20s",
+      "34 passed in 0.59s",
+      "2 passed in 0.03s",
+      "1 failed, 3668 passed, 27 skipped, 4 xfailed in 3215.56s (0:53:35)"
+    ],
+    "failed": [
+      "FAILED tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof"
+    ],
+    "codes": [
+      "SettingsError: SETTINGS_STORE_UNAVAILABLE"
+    ]
+  },
+  "historical42_windows": {
+    "job": 114282061540,
+    "checkout": "ef020ad81ca8c7afefa59596baf86945ec72d9ec",
+    "summaries": [
+      "74 passed, 20 skipped in 4.34s",
+      "15 passed in 0.40s",
+      "30 passed, 4 skipped in 1.76s",
+      "2 passed in 8.81s",
+      "75 passed in 10.67s",
+      "79 passed in 19.22s",
+      "3365 passed, 348 skipped, 4 xfailed in 2555.51s (0:42:35)"
+    ],
+    "packages": [
+      [
+        {
+          "role": "watchdog",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        },
+        {
+          "role": "fetcher",
+          "bundle_self_test": "PASS",
+          "gui_smoke": "PASS",
+          "setup_gui_smoke": "PASS",
+          "install_uninstall_profile_isolation": "PASS"
+        }
+      ]
+    ]
+  },
+  "test_retention": "Git diff d39bda8915af63ce621134aad0e703703c064301..e9d3af33a6a2d0325eedd3e83029b2df73a8320a --tests contains only three added files: mapping_active_probe, mapped_c4_authenticated_ssh, native_folder_main_recovery_authenticated_ssh. Every preexisting test blob from source40 is unchanged. Source42..43 modifies only the last new file; production/protocol/workflows unchanged.",
+  "current_negative_review": {
+    "path": "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof",
+    "predicate": "The original _qualified method must return before the test changes pending bytes exactly once. The real require guard is observed without replacing its behavior. Only ACTIVE_ADOPTION_RECOVERY is recorded, outward SettingsError remains opaque, and both original Main and the deliberately changed pending frame plus shared authority must be byte-identical afterward.",
+    "production": "Source42 recovery first matches exact child, prepared stage, full archive and own endpoint/credential image; obtains fresh current source/role/physical proof under the transaction lock; compares Main and pending raw bytes again while holding Main; then promotes existing bytes without save, CAS, role acquisition or reservation release. Source43 has the same production bytes.",
+    "execution": "Current Linux negative predicate not yet confirmed; native push and PR plus full platforms are running."
+  },
+  "discovery_review": {
+    "unresolved": [
+      "DEF-088",
+      "DEF-094"
+    ],
+    "paths": [
+      "src/tb4/discovery_native.py",
+      "tests/discovery/test_native_collection.py",
+      "tests/discovery/test_native_loopback.py"
+    ],
+    "finding": "Both original hosted failures remain unexplained; later passes do not prove the hidden cause. BoundedRead retains finite timeout, no implicit retry, closed DISCOVERY_UNAVAILABLE and child cleanup. Actual deterministic tests cover provider nonzero exit, excessive output and timeout with an unchanged closed error, bounded completion and no canary output; positive and wrong-identity cases are required in current Windows/Linux jobs.",
+    "scope": "No production discovery repair or timeout increase is justified by current evidence. Retain both defects OPEN unless diagnosed. A later successful declared-scope qualification must explicitly retain this unresolved availability limitation rather than claim the original faults repaired."
+  },
+  "defect_review": {
+    "records_reviewed": 58,
+    "method": "Review the concrete regression predicates in DEF-056 through DEF-113 against the current source/test coverage map and original failed/passing provenance. No case or assertion from source40 was removed; all current native/portable regressions and full default platforms remain required.",
+    "pending": "No defect is resolved by this checkpoint. All four acceptance checks remain held; final source43 execution and common gate review are still required."
+  },
+  "next": "Inspect the same original42 Linux and all source43 jobs to terminal. Preserve current fail/pass summaries, actual checkout equivalence and package flags before final receipts; no run is repeated."
+}

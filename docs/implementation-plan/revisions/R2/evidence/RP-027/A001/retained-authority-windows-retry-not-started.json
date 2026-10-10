@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "kind": "KNOWN_FAILED_WINDOWS_RETRY_NOT_STARTED",
+  "intent": "RP-027-A001-0243",
+  "source_ref": "28ade36af1d6c98e7402ced9e19510ca58aa14fa",
+  "run_id": 37133658458,
+  "original_failed_job": 111233640009,
+  "operation": "github_rerun_workflow_job exactly once",
+  "observed": {
+    "http_status": 403,
+    "message": "The workflow run containing this job is already running",
+    "new_job_id": null,
+    "new_attempt_id": null,
+    "launched": false
+  },
+  "safety": "Known explicit rejection; no guessed success, no repeated API call while unchanged state. Native loopback original failure/UNKNOWNcause DEF088 and original source retained.",
+  "remaining_current_jobs": {
+    "ci": {
+      "run": 37133658457,
+      "job": 111233640090
+    },
+    "desktop_linux": {
+      "run": 37133658458,
+      "job": 111233640149
+    }
+  },
+  "next": "Separately logged inspection of same immutable current jobs; only after actual entire Desktop run terminal permits distinct verified retry INTENT. Public next composition source is independent per242, existing checkouts unchanged; final candidate full/common gates remain.",
+  "acceptance": false,
+  "runtime_active": false
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0568",
+  "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "qualified_trigger": "3ddb43327697f823a51967b33f71863c573da636",
+  "qualified_pr_checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+  "expected_main": "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+  "checks": [
+    "RP-027.C1",
+    "RP-027.C2",
+    "RP-027.C3",
+    "RP-027.C4"
+  ],
+  "procedure": "Verify current feature/main refs, clean owned checkout and exact non-documentation equality to source43 and its actual qualified PR checkout. Run unchanged ledger/main-history/public-data/diff guards. Review original C1-C4, all six accepted dependencies, named positive/negative assertions, all completed current jobs, declared skip/xfail/platform/controller/rollback limits and full defect records. If all required invariants are established, prepare reviewed matching PASS receipts, VERIFIED C1-C4 and resolve only proven linked repairs; preserve unproven and later-step defects. Publish the coherent candidate and verify exact remote bytes before a separate RP-028 merge-handoff intent.",
+  "evidence_inputs": [
+    "source43-complete-qualification.json",
+    "current-checks-common-audit.json",
+    "source43-collected-functions.json",
+    "docs-ci-duplicates-all-terminal.json"
+  ],
+  "unproven_defects_retained": [
+    "DEF-001",
+    "DEF-002",
+    "DEF-088",
+    "DEF-094"
+  ],
+  "publication": "Routine documentation commit with skip-ci; unchanged local gates; acceptance only after readback.",
+  "acceptance": false
+}

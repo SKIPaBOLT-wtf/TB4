@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "intent_event": "RP-027-A001-0152",
+  "source_commit": "98b5948618877160536fca2525fdb7277054d00c",
+  "local_preserved_commit": "1ad8d6bc71aa998cb46d3a7b42d7634a72d47b96",
+  "paths": [
+    "src/tb4/reconfiguration_folder.py",
+    "tests/drive/test_folder_relocation.py"
+  ],
+  "scope": "Exact own operation and native original sender guard;5 new negative native cases",
+  "required_native_cases": 51,
+  "tests_executed": false,
+  "diff_check": "PASS",
+  "acceptance": false
+}

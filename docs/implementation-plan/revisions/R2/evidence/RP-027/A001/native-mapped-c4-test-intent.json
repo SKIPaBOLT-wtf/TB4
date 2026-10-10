@@ -1,0 +1,24 @@
+{
+  "event": "RP-027-A001-0539",
+  "source": "1d0bf6e6f96ea60b18bb9b40b297cb6be3838596",
+  "targets": [
+    "tests/drive/test_folder_first_run.py",
+    "tests/drive/test_folder_mapping_active_probe.py",
+    "tests/drive/test_folder_mapping_after_probe.py",
+    "tests/drive/test_folder_helper_dispatch.py",
+    "tests/drive/test_folder_probe.py",
+    "tests/security/test_folder_connection_native.py",
+    "tests/security/test_folder_probe_transport_native.py",
+    "tests/drive/test_folder_probe_transport.py",
+    "tests/drive/test_reconfiguration_retained.py",
+    "tests/security/test_reconfiguration_retained_native.py",
+    "tests/drive/test_reconfiguration_promotion.py",
+    "tests/security/test_reconfiguration_promotion_native.py"
+  ],
+  "default_collection_expected": 3705,
+  "baseline": 3659,
+  "new_declared": 46,
+  "no_custom_pythonpath": true,
+  "raw_logs": "Private owned local only; sanitized facts published",
+  "acceptance": false
+}

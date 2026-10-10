@@ -1,0 +1,24 @@
+{
+  "source": "5b9c339e06d91822c594dca6f276f6634dd2dc48",
+  "checkout": "2ca73df1e3929dfea9855481f4c8a7ccfeef1944",
+  "error_class": "KeyError",
+  "code": "global.summary",
+  "frames": [
+    {
+      "file": "rp27-root-envelope-diagnostic.py",
+      "function": "<module>",
+      "line": 14
+    },
+    {
+      "file": "reconfiguration_roots.py",
+      "function": "begin",
+      "line": 237
+    }
+  ],
+  "slot_absent_at_top_level": true,
+  "slot_present_in_records": true,
+  "shared_unchanged": true,
+  "profile_unchanged": true,
+  "root_store_absent": true,
+  "sdk_moves": 0
+}

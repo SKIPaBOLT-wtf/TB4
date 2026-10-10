@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0456",
+  "source": "ea4c2f72e471c7ab935fc2892e8551185d513ece",
+  "checkout": "52a748cf4f22f9c934d11963d975b49aedf6dfd7",
+  "result": "FAIL",
+  "focused": {
+    "targets": [
+      "tests/security/test_folder_prerequisites_native.py",
+      "tests/security/test_first_run.py",
+      "tests/security/test_first_run_native.py",
+      "tests/security/test_folder_endpoint_attachment_native.py",
+      "tests/security/test_folder_connection_native.py",
+      "tests/security/test_remote_folder_first_run_native.py",
+      "tests/security/test_credential_persistence_native.py"
+    ],
+    "exit_code": 2,
+    "counts": {
+      "PASS": 0,
+      "FAILURE": 0,
+      "ERROR": 1,
+      "SKIPPED": 0
+    },
+    "seconds": 0.899,
+    "executed_tests": 0
+  },
+  "failure": {
+    "defect": "DEF-103",
+    "closed_message": "ModuleNotFoundError: No module named 'test_folder_probe'",
+    "origin": "Focused selection contains only security-directory targets; existing remote native first-run module uses direct imports of drive test helpers. No drive target has initialized the default pytest import path before it is collected.",
+    "production": "No product defect inferred; full default3510/noerrors1.772s, old same-source full43target selection included drive helpers and actual854 passed."
+  },
+  "default_collection": {
+    "schema_version": 1,
+    "source": "ea4c2f72e471c7ab935fc2892e8551185d513ece",
+    "checkout": "52a748cf4f22f9c934d11963d975b49aedf6dfd7",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.772,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3510,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "prior_context": "DEF102 source Path-only repair retained, but correctedpending not executed in this failed selection.",
+  "next": "Correct test selection by placing existing drive/test_folder_first_run.py first before same seven security targets, normal pytest/no customPYTHONPATH. Then execute all35/affected regressions and exactsame3510nodes; source unchanged."
+}

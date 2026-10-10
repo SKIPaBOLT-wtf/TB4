@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0420",
+  "source": "a68893fa004b896695d5d22a83fa4c3016b6d516",
+  "request_revision": 29,
+  "result": "RECORDED",
+  "push": {
+    "run": 37262974389,
+    "id": 111613856150,
+    "status": "completed",
+    "conclusion": "success",
+    "checkout": "93fa1bf040edf37abae7810f2ff71bef584f831b",
+    "groups": [
+      {
+        "passed": 423,
+        "deselected": 0,
+        "seconds": 47.79
+      },
+      {
+        "passed": 51,
+        "deselected": 0,
+        "seconds": 66.33
+      },
+      {
+        "passed": 6,
+        "deselected": 0,
+        "seconds": 27.24
+      },
+      {
+        "passed": 22,
+        "deselected": 0,
+        "seconds": 137.39
+      },
+      {
+        "passed": 107,
+        "deselected": 0,
+        "seconds": 10.77
+      },
+      {
+        "passed": 327,
+        "deselected": 1,
+        "seconds": 341.99
+      }
+    ],
+    "total": 936,
+    "failures": []
+  },
+  "progress": {
+    "run": 37262977495,
+    "id": 111613865086,
+    "name": "ledger",
+    "status": "completed",
+    "conclusion": "success",
+    "checkout": "021d73011e35237167df62608382e9c2cef1135a",
+    "groups": [
+      {
+        "failed": 0,
+        "passed": 235,
+        "deselected": 0,
+        "seconds": 7.94
+      }
+    ],
+    "failed_nodes": [],
+    "closed": []
+  },
+  "pr": {
+    "run": 37262977471,
+    "id": 111613865010,
+    "status": "in_progress",
+    "actual_terminal_checkout": null
+  },
+  "new_cases": {
+    "native_attachment": 31,
+    "combined_native_ssh": 17,
+    "portable_helper_dispatch": 38,
+    "all_executed_push": true,
+    "applicable_skips": 0
+  },
+  "defects": {
+    "DEF099": "Corrected four boundary cases actually execute and pass; empty0 actual transport/nonempty1 original SSH and exact code/assertions. passing_source a688, status remains OPEN/common checks held."
+  },
+  "source_equivalence": "Recorded417 actual trigger93fa and PR021d non-doc Gitdiffs empty to a688. CurrentWindows139/all31native/all38portable and unchanged native704 evidence415 remain scoped.",
+  "remaining": "PR required936 and currentCI/Desktop/fullpackage terminal evidence pending. Source-only next unit grants no acceptance.",
+  "independent_scheduling": {
+    "next": "A030 bounded fresh native Folder connection, using actual qualified old A023/A025 fixed transport, A026/A027 immutable metadata/pointer, A029 actualWindows31 and currentLinux31 plus currentcombinedSSH17.",
+    "permission": "Same authorized RP027.C2 source/tests unit. No deployment/provider operation or check acceptance. Actual first-run typed probe and per-call image restore use established selected grants only.",
+    "held": "Current PR936/fullplatform packages and whole C1-C4; prerequisite/runtime/GUI integration remains future work."
+  },
+  "next": "Publish A030 source INTENT. Keep same old/current CI identities; later inspect terminalPR936/currentfull proof. No relaunch of request29."
+}

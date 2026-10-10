@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0558",
+  "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "trigger": "3ddb43327697f823a51967b33f71863c573da636",
+  "actual_pr_checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+  "result": "PASS",
+  "scope": "Both immutable required native qualification jobs only; C1-C4/common acceptance remains held.",
+  "push": {
+    "run": 38078394779,
+    "job": 114290063680,
+    "checkout": "3ddb43327697f823a51967b33f71863c573da636",
+    "summaries": [
+      "721 passed in 1309.63s (0:21:49)",
+      "51 passed in 85.46s (0:01:25)",
+      "6 passed in 36.97s",
+      "22 passed in 187.92s (0:03:07)",
+      "107 passed in 12.79s",
+      "327 passed, 1 deselected in 397.70s (0:06:37)"
+    ],
+    "failed": [],
+    "codes": [],
+    "packages": []
+  },
+  "pr": {
+    "run": 38078398145,
+    "job": 114290072704,
+    "checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+    "summaries": [
+      "721 passed in 903.32s (0:15:03)",
+      "51 passed in 52.43s",
+      "6 passed in 22.45s",
+      "22 passed in 112.09s (0:01:52)",
+      "107 passed in 8.76s",
+      "327 passed, 1 deselected in 270.25s (0:04:30)"
+    ],
+    "failed": [],
+    "codes": [],
+    "packages": []
+  },
+  "required_counts": [
+    721,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "required_total_each": 1234,
+  "skipped_each": 0,
+  "failed_each": 0,
+  "excluded_case": "Only the predeclared actual_max_capacity129_fixed_objects case is deselected in the last327 group. Full current CI and platform suites include it and remain pending; it is not counted as passing here.",
+  "source_proof": "Exact actual log checkout3ddb for push and0c332 for PR agrees with the immutable source43-started Git parent/non-documentation equality proof. e9d3af33 differs from564bc157 only in the single new native late-child test; production/protocol/workflow bytes are unchanged.",
+  "negative_predicates": "The first721 group includes every A038 portable37/mappedSSH9 and A039 coldMain12 case. The late-child case delegates successful real fresh proof, changes the pending child once, observes only the real ACTIVE_ADOPTION_RECOVERY rejection through the native sanitizer, and checks exact original Main/changed pending/shared-authority bytes. Full no-skip success proves these assertions completed on both actual Linux runs. Prior fixture failures are retained, not reclassified as passes.",
+  "coverage": "Required groups exercise actual Linux native files, same-inode/no-replace relocation, separate protected profiles and fixed-helper SSH, current-role ACTIVE adoption, exact pending cuts, source/role/credential/physical loss, inherited UNKNOWN and no replay. Concrete coverage/preservation mapping remains in current-checks-common-audit.json and source43-common-review-progress.json; counts alone are not acceptance.",
+  "artifacts_metadata_only": [
+    {
+      "id": 11680586308,
+      "name": "folder-reconfiguration-3ddb43327697f823a51967b33f71863c573da636",
+      "size": 24965,
+      "digest": "sha256:c18843d6c5e53bd0efffedbef82f6e4ef8215f2ac83dfab5cdce86a5c1f4f98c"
+    },
+    {
+      "id": 11679913514,
+      "name": "folder-reconfiguration-0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+      "size": 24828,
+      "digest": "sha256:ee87cda3dc0bed6d53d3e1627c5914f831bf3fb13600aab65f0f850648f098f2"
+    }
+  ],
+  "progress": {
+    "job": 114290073309,
+    "checkout": "0c3322b48b5f7e32fddc4b6efbb3b02f347e6f66",
+    "summaries": [
+      "235 passed in 7.18s"
+    ]
+  },
+  "defect_status": "DEF-113 test-boundary mismatch is now reproduced with unchanged production and passing exact internal/outward negative witness. passing_source e9d3af33 is justified; keep status OPEN until current full/platform/common gates. DEF-111 finite60-minute workflow completed both groups again. Other defects are not resolved by this partial milestone.",
+  "next": "Inspect original source43 CI38078398146/job114290072986 and Desktop38078398151/Linux114290072918/Windows114290073008 to terminal. Verify actual source, full regressions, known xfail/skip scopes and both-role package flags, then finalize C1-C4/common receipts only if all required predicates pass."
+}

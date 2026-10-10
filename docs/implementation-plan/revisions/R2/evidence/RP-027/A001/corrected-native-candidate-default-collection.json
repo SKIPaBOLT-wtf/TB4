@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0476",
+  "source": "cb9501f0e7d54601a06318e2de220d9d319070b4",
+  "result": "PASS",
+  "collection": {
+    "schema_version": 1,
+    "source": "cb9501f0e7d54601a06318e2de220d9d319070b4",
+    "checkout": "ba6c825787c3c2cf711fc43bcbad9722ebed3b71",
+    "branch": "feat/rp027-staged-reconfiguration",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "python": "3.11.9",
+    "exit_code": 0,
+    "elapsed_seconds": 1.913,
+    "default_pytest_configuration": true,
+    "custom_helper_pythonpath": false,
+    "collection_only": true,
+    "collected": 3523,
+    "errors": [],
+    "tests_executed": 0
+  },
+  "nodes": {
+    "baseline_count": 3523,
+    "current_count": 3523,
+    "added_count": 0,
+    "removed_count": 0,
+    "exact_baseline_preserved": true
+  },
+  "tests_executed": 0,
+  "next": "Launch one correctedcb950 request35 requiredLinux1040, all13actualmapped cases and affectedregressions. Frozen33Windows/34 oldfull terminal results separate."
+}

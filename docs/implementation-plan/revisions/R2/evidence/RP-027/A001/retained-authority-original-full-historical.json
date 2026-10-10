@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "kind": "RETAINED_AUTHORITY_ORIGINAL_IMMUTABLE_FULL_HISTORICAL",
+  "intent": "RP-027-A001-0237",
+  "source_ref": "1f238122cf44681a4617ed4ef5807cfee6f8f370",
+  "schema_sha256": "b4e9aefd0d9e88c02d462745632c1853cf4b7ba05b146be17a598c11f9ab0498",
+  "trigger_commit": "83f21b3a7b3cda949c148118b431674b770f8845",
+  "checkout": "03977b351bc29a91ca07ba22062c8900fc89ee19",
+  "ci": {
+    "run_id": 37132232335,
+    "job_id": 111229456265,
+    "conclusion": "failure",
+    "passed": 2921,
+    "failed": 1,
+    "skipped": 27,
+    "xfailed": 4,
+    "duration_seconds": 2204.6,
+    "failure": "Old GC-labelled nonexistent slot fixture StopIteration (DEF087); no other full failure."
+  },
+  "desktop": {
+    "run_id": 37132232396,
+    "windows": {
+      "job_id": 111229456497,
+      "conclusion": "success",
+      "full": {
+        "passed": 2802,
+        "failed": 0,
+        "skipped": 164,
+        "xfailed": 4,
+        "duration_seconds": 2432.75
+      },
+      "native_discovery": {
+        "passed": 2,
+        "failed": 0,
+        "duration_seconds": 8.43
+      },
+      "both_role_builds": "success",
+      "packaged_application_and_installer_acceptance": "success",
+      "artifact": {
+        "id": 11278257339,
+        "name": "tb4-desktop-Windows-03977b351bc29a91ca07ba22062c8900fc89ee19",
+        "size_in_bytes": 120929009,
+        "digest": "sha256:cfbfd278ae9629a859fa0c4c42304c051a91e797d228072c7df348f49ac3188d",
+        "expired": false
+      }
+    },
+    "linux": {
+      "job_id": 111229456678,
+      "conclusion": "failure",
+      "full": {
+        "passed": 2944,
+        "failed": 1,
+        "skipped": 21,
+        "xfailed": 4,
+        "duration_seconds": 1605.66
+      },
+      "failure": "Only old GC-labelled StopIteration",
+      "role_builds_and_packages": "not executed after failure"
+    }
+  },
+  "progress": {
+    "run_id": 37132232394,
+    "job_id": 111229456363,
+    "conclusion": "success"
+  },
+  "evidence_limits": "Original immutable source test/build facts only; no later-source or whole RP027 acceptance. No run/job cancelled/replayed; installer metadata only, no large downloads/deployment.",
+  "followup": "DEF087 corrected on source28ade with bothLinux484 qualified242; that later source historicalfull245 recorded separately. CurrentFolderACTIVEsource103d Windows55/default2992 qualify only scoped facts; DEF089/90 exacttwofile repair remains.",
+  "acceptance": false,
+  "runtime_active": false
+}

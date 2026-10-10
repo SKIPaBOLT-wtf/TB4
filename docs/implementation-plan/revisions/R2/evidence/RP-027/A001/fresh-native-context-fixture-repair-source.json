@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "item": "RP-027",
+  "check": "RP-027.C2",
+  "attempt": "A001",
+  "intent": "RP-027-A001-0435",
+  "source": "10badf7bbe08f54cfaeef640c062d4ceae8e319c",
+  "local_source": "3e557329251490014bfd3f8ce1442e852c5263d8",
+  "base": "9ed3fa21eabae832d17df9c96f3f54c2a85ce9e7",
+  "result": "RECORDED",
+  "paths": [
+    "tests/drive/test_folder_connection_authenticated_ssh.py"
+  ],
+  "change": "Exactly one import: existing context fixture from test_folder_commissioning into fresh native SSH test module. All remaining AST identical to prior source; all12 case IDs/assertions and all production files unchanged.",
+  "verification": {
+    "ast": "PASS exact prior AST after removing only import",
+    "diff": "PASS exactly one insertion",
+    "privacy": "PASS static fixture import only",
+    "executed_tests": 0
+  },
+  "defect": "DEF-100",
+  "qualification": "Actual Linux12/required990/fullplatform/C1-C4 pending. Original source2f43 Windows854 unchanged by Linux-only test import.",
+  "next": "Actual corrected Linux required suites then source-specific full qualification; no declaration of success from static review."
+}
