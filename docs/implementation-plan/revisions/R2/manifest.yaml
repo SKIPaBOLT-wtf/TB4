@@ -1162,6 +1162,7 @@ steps:
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-036-readonly-remote-mapping-after-proof.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-037-native-current-role-active-adoption.md
     - docs/implementation-plan/revisions/R2/amendments/RP-027/A-038-native-mapped-retained-publication.md
+    - docs/implementation-plan/revisions/R2/amendments/RP-027/A-039-native-own-main-pending-recovery.md
     active_attempt: A001
     check_evidence: {}
     revalidation_required:

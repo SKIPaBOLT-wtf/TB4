@@ -1,0 +1,23 @@
+{
+  "event": "RP-027-A001-0543",
+  "source": "564bc157d2f7d9bd41fa946add887daf81faeea5",
+  "local_source": "c94e42a253fe2fa8ee9044c52f5deff8c28ffb2f",
+  "paths": [
+    ".github/workflows/folder-reconfiguration.yml",
+    "src/tb4/reconfiguration_native_folder_adoption.py",
+    "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py",
+    "docs/implementation-plan/revisions/R2/amendments/RP-027/A-039-native-own-main-pending-recovery.md",
+    "docs/RECONFIGURATION_CONTRACT.md",
+    "docs/implementation-plan/revisions/R2/steps/RP-027.md"
+  ],
+  "static": {
+    "python_ast": "PASS",
+    "diff": "PASS",
+    "privacy": "PASS",
+    "old_methods_ast": "UNCHANGED",
+    "generic_adoption_and_normal_pending_connection": "UNCHANGED",
+    "new_native_declared": 12
+  },
+  "tests_run": 0,
+  "acceptance": false
+}
