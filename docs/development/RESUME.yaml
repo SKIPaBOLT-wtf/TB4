@@ -3,17 +3,15 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: NATIVE_MAPPED_C4_WINDOWS_PASS_NATIVE_PENDING
+phase: NATIVE_OWN_MAIN_PENDING_RECOVERY_SOURCE_UNIT
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 1d0bf6e6f96ea60b18bb9b40b297cb6be3838596
+source_commit: 2eadba23ecb0a5dcbd50cd47930b0ad7a3bd2eeb
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0541
+last_verified_event: RP-027-A001-0542
 last_completed: RP-026
-next_action: Preserve actual305/default3705 evidence. Independently implement A037
-  own native original-Main pending recovery under new source INTENT, retaining exact
-  parent/stage/endpoint pins and ordinary Main pending denial. Then run appropriate
-  regressions and combined actual Linux/current platform qualification. Inspect immutable
-  source41 samejobs; all C1-C4 held.
+next_action: Publish source OUTCOME/amendment then default affected regressions/fullcollection;
+  request combined A038/A039 actual native Linux and current packages under separate
+  exact-source INTENT. Continue same immutable source41 inspection.
 verification: A038 new37+old268 Windows PASS/default3705 imports; actual native9 and
   full source platform gates held. Source41 same immutable jobs running. No C1-C4
   acceptance.
@@ -22,6 +20,7 @@ runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0535
+- RP-027-A001-0542
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

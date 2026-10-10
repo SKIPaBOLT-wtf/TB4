@@ -1,0 +1,14 @@
+{
+  "event": "RP-027-A001-0542",
+  "base": "2eadba23ecb0a5dcbd50cd47930b0ad7a3bd2eeb",
+  "qualified_foundation": "source40 A037 native13 twice; A019/A017 native exact-frame recovery",
+  "independence": "Same source41 immutable jobs continue; A038 native9 not consumed",
+  "guards": [
+    "exact native PREPARED transaction and frozen stage/archive before key use",
+    "standalone cold restart without original Main connection",
+    "transaction-before-Main lock order; no Main lock through SSH",
+    "fresh role/source/physical proof; same pending bytes conditional promotion only",
+    "full parent/history/own endpoint/image; no replay/grant/default activation"
+  ],
+  "acceptance": false
+}
