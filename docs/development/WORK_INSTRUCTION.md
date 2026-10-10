@@ -133,6 +133,18 @@ Until they pass, perform the same transaction manually. Their future existence i
 not grounds to omit checkpoints now. A lightweight progress validation gate must
 not trigger full installer builds for each documentation-only checkpoint.
 
+GitHub pull-request path filters inspect the accumulated PR diff. A commit that
+only updates development records can therefore start full CI/Desktop/Folder jobs
+again while an implementation PR is open. Publish routine documentation-only
+checkpoints with `[skip ci]`; still run the unchanged local ledger/history/privacy
+guards and verify exact remote bytes. An explicitly journaled immutable test/build
+request must omit that directive and retain its own run identities. Before every
+publication, classify the changed paths and the intended trigger. Never use a
+routine checkpoint as an undocumented repeat of qualification. Preserve and
+reconcile accidentally started runs; cancel only exact redundant synthetic runs
+when the existing Actions capability permits it, and never claim an unconfirmed
+cancellation. This rule does not waive any source, platform or acceptance check.
+
 For a long test/build, publish STARTED with its recoverable run/job identity before
 waiting. Record milestones at meaningful completed boundaries, not repeated
 unchanged status polls. On returning to the chat, inspect that same run instead
