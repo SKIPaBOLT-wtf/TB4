@@ -3,22 +3,23 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: SOURCE41_HOSTED_RUNS_STARTED
+phase: NATIVE_MAPPED_C4_SOURCE_UNIT
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 1395294b4bb938f5c32158043b8340f872041faf
+source_commit: 7e4a7768c4bba70820453e2317ccaaa23586f145
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0536
+last_verified_event: RP-027-A001-0537
 last_completed: RP-026
-next_action: Inspect these same immutable run/job IDs to terminal. Independently implement
-  opt-in remote mapped retained C4/promotion under separate source INTENT using source40
-  qualified foundations, without altering request41 runs.
-verification: Source41 hosted runs started; immutable source40 native foundations
-  qualified. No C1-C4 acceptance; required1176twice/current packages pending.
+next_action: Publish source OUTCOME with A038 manifest amendment link, then separately
+  authorize/run default portable/affected regressions and required actual Linux/source-specific
+  full platform qualification. Native original Main pending recovery stays separate.
+verification: Immutable source41 running; independent A038 uses fully executed source40
+  mapping/native foundations. Native mapped consumer/source tests not yet executed.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
 unsettled_intents:
 - RP-027-A001-0535
+- RP-027-A001-0537
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:

@@ -1,0 +1,20 @@
+{
+  "event": "RP-027-A001-0537",
+  "base": "7e4a7768c4bba70820453e2317ccaaa23586f145",
+  "qualified_foundations": "source40 d39bda first663 twice plus CI/platform/packages; source38 A035",
+  "independent_of": "source41 workflow budget/final327 qualification; immutable runs preserved",
+  "invariants": [
+    "old modes/default guard unchanged",
+    "exact native protected mapping target plus allocated seals",
+    "nine fields/no request path/key/code",
+    "fresh mutation READY or CONFIRMED including work hash",
+    "no former host or peer ACK; no grant or replay"
+  ],
+  "test_scope": [
+    "portable parser/nonce/cross-mode/phase tampering",
+    "actual mapped C4/promotion/current profile runtime once/UNKNOWN",
+    "late mapping/endpoint/key/owner/force loss",
+    "exact conditional Main cut recovery after mapped C4"
+  ],
+  "acceptance": false
+}
