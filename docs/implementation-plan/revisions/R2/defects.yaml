@@ -8201,7 +8201,12 @@ defects:
       source_ref: 564bc157d2f7d9bd41fa946add887daf81faeea5
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source42-native-late-child-failure.json
-    proven_origin: null
+    proven_origin:
+      work_item: RP-027
+      source_ref: 564bc157d2f7d9bd41fa946add887daf81faeea5
+      evidence:
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source42-native-late-child-failure.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-required-native-qualified.json
     reproduction:
       procedure: 'Both original immutable first groups executed721 cases:720 passed
         and the same single case failed, no skip. Later required groups were not executed.
@@ -8210,11 +8215,12 @@ defects:
         expects ConfigurationError: ACTIVE_ADOPTION_RECOVERY but receives SettingsError:
         SETTINGS_STORE_UNAVAILABLE.'
       failing_source: 564bc157d2f7d9bd41fa946add887daf81faeea5
-      passing_source: null
+      passing_source: e9d3af33a6a2d0325eedd3e83029b2df73a8320a
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source42-native-late-child-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/cold-main-guard-test-repair-source.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source42-all-original-jobs-terminal.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-required-native-qualified.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -8249,7 +8255,8 @@ defects:
       then the established opaque native SettingsError; original Main, altered pending
       evidence and shared authority remain byte-identical. All1234 required and full
       platform/common gates remain.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source43-required-native-qualified.json
     notes: 'Both original42 first groups720PASS/1FAIL, later required groups not run.
       FullCI/Desktop pending. No source assertion or native sanitizer weakened; suspected
       test boundary not yet proved by internal guard witness. Exact one-file test
@@ -8259,5 +8266,10 @@ defects:
       bytes are unchanged from564bc157. All original42 jobs are now terminal: Linux
       full1FAIL3691PASS21SKIP4XFAIL3730.93s, CI1FAIL3668PASS27SKIP4XFAIL3215.56s,
       same late-child test only. Windows complete3365PASS348SKIP4XFAIL with both-role
-      package flagsPASS. No original job rerun; current43 proof still pending.'
+      package flagsPASS. No original job rerun; current43 proof still pending. Later
+      source43 both exact native runs passed1234 each with no skip/failure; actualpush3ddb
+      andPR0c332 checkouts match pinned source. The strengthened late-child internal/outward
+      guard and exact pending/frame preservation assertions completed, proving the
+      test expectation mismatch without changing production. Status remains OPEN pending
+      current full/platform/common acceptance.'
     legacy_record: null

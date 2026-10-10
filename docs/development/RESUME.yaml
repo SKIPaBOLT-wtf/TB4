@@ -3,18 +3,19 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: SOURCE42_ALL_ORIGINAL_JOBS_TERMINAL
+phase: SOURCE43_BOTH_REQUIRED_NATIVE_JOBS_PASS
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: 564bc157d2f7d9bd41fa946add887daf81faeea5
+source_commit: e9d3af33a6a2d0325eedd3e83029b2df73a8320a
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0561
+last_verified_event: RP-027-A001-0562
 last_completed: RP-026
-next_action: Inspect the existing source43 native push/PR, full CI and Linux/Windows
-  Desktop jobs. Current acceptance and defect closure remain held until exact repaired
-  predicates and all common gates pass.
-verification: All original42 terminal, known same single native test failure only;
-  source43 actual ledger235PASS but required/full/platform/package results still pending.
-  C1-C4 remains unaccepted.
+next_action: Inspect original source43 CI38078398146/job114290072986 and Desktop38078398151/Linux114290072918/Windows114290073008
+  to terminal. Verify actual source, full regressions, known xfail/skip scopes and
+  both-role package flags, then finalize C1-C4/common receipts only if all required
+  predicates pass.
+verification: Both current source43 required native jobs1234PASS each/zero skip, actual3ddb/0c332;
+  exact late-child guard proved. Progress235PASS. FullCI and Linux/Windows Desktop/package
+  results still pending; C1-C4 unaccepted.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
