@@ -1,0 +1,23 @@
+{
+  "source": "e9d3af33a6a2d0325eedd3e83029b2df73a8320a",
+  "request_revision": 43,
+  "required_cases": 1234,
+  "groups": [
+    721,
+    51,
+    6,
+    22,
+    107,
+    327
+  ],
+  "scope": "One new immutable repaired-test request, not a replay of source42 jobs. Exact late-child internal/outward guard and preserved frames must pass. Production/protocol/workflow bytes unchanged from564bc157; local default3717 collection only has passed.",
+  "procedure": "After exact INTENT readback, update draft PR36 title/body to the concrete current scope and pending qualification, without changing base/state/permissions. Publish only folder-linux-request.json as an explicit CI trigger without skip-ci. Capture exact trigger, actual PR checkout/parents/non-doc equivalence and five workflow/six job IDs in STARTED; inspect those same jobs to terminal. Routine subsequent documentation commits retain skip-ci and full local guards.",
+  "expected": "All1234 required Linux cases twice with no skip/failure; Progress/fullCI, current Windows/Linux suites and both-role four package flags. Actual source/negative predicates, not counts alone, are required for final C1-C4/common acceptance.",
+  "pr_metadata": {
+    "number": 36,
+    "title": "Stage recoverable reconfiguration on the existing authority",
+    "body": "Changing an existing deployment now uses a protected, resumable configuration transaction. Maintenance preserves in-flight and unread work; a separate candidate passes fresh first-run checks before coherent descriptor/configuration publication and conditional Main promotion. Docs changes retain the same fixed objects, and qualified Folder relocation retains the same physical authority. Current-role recovery and ordinary restart preserve full profile history and UNKNOWN evidence without requiring the former WATCHDOG's acknowledgement.\n\nThe current source is e9d3af33a6a2d0325eedd3e83029b2df73a8320a. It corrects one native recovery test to verify the exact internal guard and the established outer error, with stronger pending-frame preservation assertions; production bytes are unchanged from source564bc157. Default collection retains all3,717 cases. Source41 completed required Linux, full CI, Windows/Linux and both-role package qualification. Source42 exposed one test-boundary failure, preserved in DEF-113; fresh request43 must qualify the repaired predicate and complete current-source gates.\n\nThis PR remains a draft: RP-027.C1-C4 are unaccepted pending final reviewed evidence. Candidate/controller and runtime admission coverage do not claim the complete Qt reconfiguration screen assigned to RP-053. The instruction profile remains UNRELEASED and this PR grants no live deployment or migration.\n\nCanonical plan: [RP-027](docs/implementation-plan/revisions/R2/steps/RP-027.md). Exact current action and runs: [RESUME](docs/development/RESUME.yaml). [Current check/evidence map](docs/implementation-plan/revisions/R2/evidence/RP-027/A001/current-checks-common-audit.json)."
+  },
+  "prior": "Source41 all jobs terminal success. Source42 firstgroups720PASS/1FAIL both, fulljobs still inspected to terminal. DEF112 redundant docs runs are recorded and not cleanup-confirmed; never cancel protected explicit runs.",
+  "acceptance": false
+}
