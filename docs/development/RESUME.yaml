@@ -3,25 +3,21 @@ revision: R2
 work_item: RP-027
 check: RP-027.C4
 attempt: A001
-phase: SOURCE40_SCOPED_NATIVE_PASS_REQUIRED_BUDGET_INCOMPLETE
+phase: REQUIRED_LINUX_BUDGET_REPAIR
 source_branch: feat/rp027-staged-reconfiguration
-source_commit: d39bda8915af63ce621134aad0e703703c064301
+source_commit: a5df3727c3b05525a62165de8afe7d6fb497a8ef
 journal: docs/development/journal/RP-027/A001/events.jsonl
-last_verified_event: RP-027-A001-0532
+last_verified_event: RP-027-A001-0533
 last_completed: RP-026
-next_action: Publish this partial outcome. Repair only the special workflow time budget
-  under a new INTENT, keep all selectors/cases and old cancelled runs. Qualify a new
-  exact source request. Independently proceed with source-reviewed native mapped C4/own
-  Main pending integration using the fully executed scoped native foundations; whole-step
-  acceptance stays held.
-verification: Source40 native first663 and other completed groups pass twice; repairedA03611/A03713
-  scoped foundations qualified. Full CI and Windows/Linux packaged roles pass for
-  exactd39bda. Last327 special group cancelled at30minutes; required workflow/common
-  C1-C4 and remaining integrations held.
+next_action: Publish source-only OUTCOME then a separate exact-source request41 INTENT;
+  retain both cancelled source40 jobs and all acceptance holds.
+verification: Source40 scoped cases and packages qualified; workflow final327 held.
+  Source-only finite budget repair now pending.
 execution_authorization: PUBLIC_IMPLEMENTATION_AUTHORIZED
 runtime_actions_allowed: false
 implementation_started: true
-unsettled_intents: []
+unsettled_intents:
+- RP-027-A001-0533
 expected_user_action: null
 blocking_decisions: []
 known_open_defects:
