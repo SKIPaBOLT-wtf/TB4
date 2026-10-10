@@ -8214,6 +8214,7 @@ defects:
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source42-native-late-child-failure.json
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/cold-main-guard-test-repair-source.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/source42-all-original-jobs-terminal.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -8249,11 +8250,14 @@ defects:
       evidence and shared authority remain byte-identical. All1234 required and full
       platform/common gates remain.
     resolution_evidence: []
-    notes: Both original42 first groups720PASS/1FAIL, later required groups not run.
+    notes: 'Both original42 first groups720PASS/1FAIL, later required groups not run.
       FullCI/Desktop pending. No source assertion or native sanitizer weakened; suspected
       test boundary not yet proved by internal guard witness. Exact one-file test
       repair e9d3af33 now records internal guard and strengthens full pending-frame
       preservation. Static/public scan and default3717 collection pass; zero test
       cases executed and no passing_source assigned. Production/protocol/workflow
-      bytes are unchanged from564bc157.
+      bytes are unchanged from564bc157. All original42 jobs are now terminal: Linux
+      full1FAIL3691PASS21SKIP4XFAIL3730.93s, CI1FAIL3668PASS27SKIP4XFAIL3215.56s,
+      same late-child test only. Windows complete3365PASS348SKIP4XFAIL with both-role
+      package flagsPASS. No original job rerun; current43 proof still pending.'
     legacy_record: null
