@@ -1,0 +1,81 @@
+{
+  "event": "RP-027-A001-0536",
+  "intent": "RP-027-A001-0535",
+  "source": "1395294b4bb938f5c32158043b8340f872041faf",
+  "trigger": "09be1e6ead16bf0f3ebaeec1679cc617ae523be6",
+  "merge": "eb713b33adb9010fbff208bcfa091425a0c1e099",
+  "parents": [
+    "ed974c57ce99e54b3a28da79d212c86f07951ec7",
+    "09be1e6ead16bf0f3ebaeec1679cc617ae523be6"
+  ],
+  "nondoc_source_diff": [],
+  "runs": [
+    {
+      "run": 38073297389,
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 114274976207,
+          "name": "native-folder",
+          "status": "in_progress"
+        }
+      ]
+    },
+    {
+      "run": 38073297310,
+      "name": "Progress",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 114274975447,
+          "name": "ledger",
+          "status": "in_progress"
+        }
+      ]
+    },
+    {
+      "run": 38073297406,
+      "name": "CI",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 114274975969,
+          "name": "test",
+          "status": "in_progress"
+        }
+      ]
+    },
+    {
+      "run": 38073297302,
+      "name": "Desktop",
+      "event": "pull_request",
+      "jobs": [
+        {
+          "id": 114274975411,
+          "name": "desktop (windows-latest)",
+          "status": "in_progress"
+        },
+        {
+          "id": 114274975548,
+          "name": "desktop (ubuntu-22.04)",
+          "status": "in_progress"
+        }
+      ]
+    },
+    {
+      "run": 38073293590,
+      "name": "Folder reconfiguration",
+      "event": "push",
+      "jobs": [
+        {
+          "id": 114274964436,
+          "name": "native-folder",
+          "status": "in_progress"
+        }
+      ]
+    }
+  ],
+  "actual_checkout_logs": "PENDING",
+  "acceptance": false
+}
