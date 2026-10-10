@@ -8149,9 +8149,10 @@ defects:
         This is the author's publication error. Actual run/head identities confirm
         duplication; no product source differs.
       failing_source: 9ec2b7db576d6d622d7e8aa10ddd607b375f5142
-      passing_source: null
+      passing_source: 440dadf3770680a9914e2217fbc82ffda9c4fa0e
       evidence:
       - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicate-intent.json
+      - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicate-reconciled.json
     repair_steps:
     - RP-027
     affected_acceptance:
@@ -8182,7 +8183,11 @@ defects:
     regression_test: A documentation-only checkpoint carries [skip ci], exact remote
       readback and zero full-workflow runs at that head; original source42 explicit
       qualification remains available and unchanged.
-    resolution_evidence: []
+    resolution_evidence:
+    - docs/implementation-plan/revisions/R2/evidence/RP-027/A001/docs-ci-duplicate-reconciled.json
     notes: Task publication repair, not application change. Preserve all accidental
-      run IDs and actual cleanup state; no false no-duplicate claim.
+      run IDs and actual cleanup state; no false no-duplicate claim. Guarded checkpoint0fcd
+      has zero workflow runs and WORK_INSTRUCTION440dad documents prevention. Existing
+      cancellation capability absent; no cancellations attempted and duplicates preserved.
+      Common C1-C4 remains held.
     legacy_record: null

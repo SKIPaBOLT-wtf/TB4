@@ -1,0 +1,216 @@
+{
+  "intent": "RP-027-A001-0553",
+  "source": "440dadf3770680a9914e2217fbc82ffda9c4fa0e",
+  "guard_test_head": "0fcd07037f588fc7f48e180151fb23f4f9fa74f1",
+  "guarded_head_workflow_count": 0,
+  "changed": "Future ordinary docs-only task publication appends [skip ci]; explicit folder-linux-request is exempt. WORK_INSTRUCTION now records cumulative PR diff behavior, required local guards/readback, explicit test request semantics and exact-run cleanup.",
+  "cleanup": {
+    "repository": "SKIPaBOLT-wtf/TB4",
+    "verified_heads": [
+      "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "9ec2b7db576d6d622d7e8aa10ddd607b375f5142"
+    ],
+    "credential_capability": "NO_NONINTERACTIVE_CACHED_GIT_CREDENTIAL",
+    "runs": []
+  },
+  "connector_capability": "No workflow cancellation tool is exposed; local gh absent and no noninteractive cached Git credential. No cancellation request made, no credentials disclosed or changed. Original and redundant isolated hosted jobs remain inspectable.",
+  "run_inventory": [
+    {
+      "id": 38077203332,
+      "head": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "queued",
+      "conclusion": null
+    },
+    {
+      "id": 38077203354,
+      "head": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+      "name": "CI",
+      "event": "pull_request",
+      "status": "queued",
+      "conclusion": null
+    },
+    {
+      "id": 38077203362,
+      "head": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "queued",
+      "conclusion": null
+    },
+    {
+      "id": 38077203307,
+      "head": "9ec2b7db576d6d622d7e8aa10ddd607b375f5142",
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "queued",
+      "conclusion": null
+    },
+    {
+      "id": 38076771951,
+      "head": "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076771920,
+      "head": "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 38076771871,
+      "head": "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076771893,
+      "head": "146991bb8a04a20d2df488e85553862d05f12e4c",
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076432708,
+      "head": "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076432723,
+      "head": "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076432734,
+      "head": "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 38076432805,
+      "head": "33c2407e2f5cb1a580739f75ca0c63dfabac3d64",
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076335137,
+      "head": "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076335146,
+      "head": "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076335152,
+      "head": "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076335119,
+      "head": "cf4023ae5eb0c57294f33252d5ee58ca4ab3444a",
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 38076127533,
+      "head": "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "name": "Desktop",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076127591,
+      "head": "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "name": "CI",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076127549,
+      "head": "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "name": "Folder reconfiguration",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 38076127574,
+      "head": "d3a21b1d687a446d87c08bb2c2d2d0c229396b8d",
+      "name": "Progress",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "rollback": "No application source/workflow changes, no run replay, deletion, history rewrite or runtime mutation. Original source42 jobs preserved.",
+  "new_qualification_finding": {
+    "push": {
+      "job": 114282053261,
+      "checkout": "12740484281b9f0b8e333eab0e462e653ed970da",
+      "summaries": [
+        "1 failed, 720 passed in 1326.40s (0:22:06)"
+      ],
+      "failures": [
+        {
+          "test": "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof",
+          "error": "tb4.private_settings.SettingsError: SETTINGS_STORE_UNAVAILABLE"
+        }
+      ],
+      "codes": [
+        "SETTINGS_STORE_UNAVAILABLE"
+      ]
+    },
+    "pull_request": {
+      "job": 114282061713,
+      "checkout": "ef020ad81ca8c7afefa59596baf86945ec72d9ec",
+      "summaries": [
+        "1 failed, 720 passed in 1579.01s (0:26:19)"
+      ],
+      "failures": [
+        {
+          "test": "tests/drive/test_native_folder_main_recovery_authenticated_ssh.py::test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof",
+          "error": "tb4.private_settings.SettingsError: SETTINGS_STORE_UNAVAILABLE"
+        }
+      ]
+    },
+    "note": "Both original source42 groups reached720PASS/1FAIL. Late pending-child test expected an internal exception; actual native outward error SETTINGS_STORE_UNAVAILABLE. Failure will be registered independently; remaining full jobs inspected without rerun."
+  },
+  "next": "Register source42 failure with exact guarded native exception evidence and a separate repair intent. Inspect existing source42 full jobs and accidental run terminal status as available."
+}
