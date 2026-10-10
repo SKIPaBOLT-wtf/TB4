@@ -23,7 +23,7 @@ permissions:
 jobs:
   native-folder:
     runs-on: ubuntu-22.04
-    timeout-minutes: 30
+    timeout-minutes: 60
     env:
       PYTHONUTF8: '1'
       TB4_REQUIRE_FOLDER_SSH: '1'
