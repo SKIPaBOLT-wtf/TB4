@@ -7,6 +7,7 @@ from pathlib import Path
 import sys
 import pytest
 
+from tb4 import reconfiguration_native_folder_adoption as adoption_module
 from tb4.configuration_contract import ConfigurationError
 from tb4.drive.docs_authority import AuthorityError
 from tb4.drive.folder_authority import FolderStore
@@ -138,15 +139,23 @@ def test_actual_cold_recovery_keeps_pending_and_parent_when_current_facts_no_lon
 
 def test_actual_cold_recovery_checks_same_pending_bytes_after_final_readonly_proof(own,monkeypatch):
     v=own;cut(v,monkeypatch);raw,_=frames(v)
-    original=_PendingMainProof._qualified
+    original=_PendingMainProof._qualified;guard=adoption_module.require
+    changed_pending=[];failed=[]
     def changed(proof,*args,**kwargs):
         result=original(proof,*args,**kwargs)
         changed_child(v)
+        changed_pending.append(frames(v)[1])
         return result
+    def observe(condition,code='CONFIGURATION_INVALID'):
+        if not condition:failed.append(code)
+        return guard(condition,code)
     monkeypatch.setattr(_PendingMainProof,'_qualified',changed)
+    monkeypatch.setattr(adoption_module,'require',observe)
     shared=FolderStore(v.s.port._config()).read()
-    with pytest.raises(ConfigurationError,match='^ACTIVE_ADOPTION_RECOVERY$'):recover(v)
-    assert frames(v)[0]==raw and frames(v)[1] is not None
+    with pytest.raises(SettingsError,match='^SETTINGS_STORE_UNAVAILABLE$'):recover(v)
+    assert len(changed_pending)==1 and changed_pending[0] is not None
+    assert failed==['ACTIVE_ADOPTION_RECOVERY']
+    assert frames(v)==(raw,changed_pending[0])
     assert FolderStore(v.s.port._config()).read()==shared
 
 
